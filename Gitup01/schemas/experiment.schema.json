@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CEvNS Experiment Specification",
+  "type": "object",
+  "required": [
+    "dataset_name",
+    "source_type",
+    "target_mode"
+  ],
+  "properties": {
+    "dataset_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "spec_status": {
+      "type": "string"
+    },
+    "source_type": {
+      "enum": [
+        "reactor",
+        "stopped_pion",
+        "solar",
+        "accelerator_continuous",
+        "custom_tabulated"
+      ]
+    },
+    "flavor": {
+      "type": "string"
+    },
+    "target_mode": {
+      "type": "string"
+    },
+    "analysis_window_evee": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "number"
+      }
+    }
+  },
+  "additionalProperties": true
+}

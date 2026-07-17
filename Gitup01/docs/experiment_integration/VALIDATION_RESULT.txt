@@ -1,0 +1,1 @@
+{'status': 'PASS_WITH_REQUIRED_INPUTS', 'errors': [], 'required_inputs': ['Publication reactor spectrum has 16 missing cells', 'C2 efficiency has 3 missing cells', 'C3 efficiency has 3 missing cells', 'C5 efficiency has 3 missing cells']}

@@ -95,3 +95,54 @@ Fast APIs are available both from their split modules and from the compatibility
 $env:PYTHONPATH = (Join-Path (Get-Location) "src")
 & "F:\Work\.codex_conda_envs\codex-py311\python.exe" -c "from cevns_pyeft.core import engine; print(len(engine.li2026_left_basis()), engine.build_fast_kernel_csi2021.__name__)"
 ```
+
+## Data-Driven Experiment Extension
+
+This copy now includes the experiment-integration pack under project-native
+paths so new experiments can be added without first hard-coding them into the
+COHERENT modules.
+
+Key locations:
+
+```text
+data/experiments/                         Data-driven experiment inputs
+data/experiments/conus_plus_2025/         CONUS+ publication-facing template
+data/experiments/conus_plus_2025_reproduction/
+data/experiments/conus_legacy_mathematica/
+schemas/experiment.schema.json            Minimal experiment YAML contract
+schemas/csv_contracts.json                CSV table contracts
+docs/experiment_integration/              Integration notes, specs, prompts
+tools/experiment_integration/             Validation and data-prep helpers
+```
+
+The current CONUS+ publication-facing files intentionally keep missing official
+likelihood inputs as templates. They should not be described as a complete
+official likelihood reproduction until observed spectra, backgrounds,
+efficiencies, and covariance inputs are supplied.
+
+Experiment specs are discovered from:
+
+```text
+data/experiments/<dataset_directory>/experiment.yaml
+```
+
+Registry access:
+
+```powershell
+$env:PYTHONPATH = (Join-Path (Get-Location) "src")
+& "F:\Work\.codex_conda_envs\codex-py311\python.exe" -c "from cevns_pyeft.experiments.registry import list_experiments; print(list_experiments())"
+& "F:\Work\.codex_conda_envs\codex-py311\python.exe" -c "from cevns_pyeft.experiments.registry import get_experiment_spec; print(get_experiment_spec('conus_plus_2025_reproduction').source_type)"
+```
+
+Validate the migrated experiment input package:
+
+```powershell
+& "F:\Work\.codex_conda_envs\codex-py311\python.exe" tools/experiment_integration/validate_experiment_package.py
+```
+
+When adding a new experiment, start from:
+
+```text
+docs/experiment_integration/experiment_specs/EXPERIMENT_SPEC_TEMPLATE.md
+docs/experiment_integration/INTEGRATE_CEVNS_EXPERIMENT_SKILL.md
+```

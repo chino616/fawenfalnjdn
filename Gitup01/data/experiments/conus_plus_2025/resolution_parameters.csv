@@ -1,0 +1,4 @@
+detector,noise_fwhm_evee,noise_fwhm_sigma_evee,fano_factor,pair_creation_energy_eV,status
+C2,48,1,0.11,2.96,publication_value
+C3,47,1,0.11,2.96,publication_value
+C5,47,1,0.11,2.96,publication_value

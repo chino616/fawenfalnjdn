@@ -1,0 +1,4 @@
+energy_evee,efficiency,uncertainty,status
+140,,,REQUIRES_INPUT; paper states trigger efficiency >90% around this region but no numeric table here
+160,,,REQUIRES_INPUT; detector threshold
+800,,,REQUIRES_INPUT

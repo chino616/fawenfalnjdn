@@ -1,0 +1,36 @@
+dataset_name: conus_plus_2025_first_observation
+spec_status: incomplete_for_exact_publication_reproduction
+source_type: reactor
+flavor: nuebar
+site: Kernkraftwerk Leibstadt
+reactor_thermal_power_gw: 3.6
+baseline_m: 20.7
+nominal_detector_site_flux_cm2_s: 1.5e13
+flux_normalization_mode: thermal_power_and_geometry
+fission_fractions:
+  U235: 0.53
+  U238: 0.08
+  Pu239: 0.32
+  Pu241: 0.07
+energy_release_per_fission_mev:
+  U235: 202.36
+  U238: 205.99
+  Pu239: 211.12
+  Pu241: 214.26
+reactor_on_exposure_kg_day: 327
+reactor_off_exposure_kg_day: 60
+combined_active_mass_kg: 2.83
+combined_active_mass_sigma_kg: 0.02
+analysis_window_evee: [160, 800]
+observable: reconstructed_ionization_energy
+observable_unit: eVee
+target_mode: natural_germanium
+lindhard_k: 0.162
+lindhard_k_sigma: 0.004
+pair_creation_energy_eV: 2.96
+fano_factor: 0.11
+sm_expected_events: 347
+sm_expected_events_sigma: 59
+fitted_signal_events: 395
+fitted_signal_events_sigma: 106
+reported_significance_sigma: 3.7

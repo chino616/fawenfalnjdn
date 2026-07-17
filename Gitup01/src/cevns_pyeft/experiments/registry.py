@@ -6,6 +6,7 @@ from cevns_pyeft.experiments.coherent.sns import loadNeutrinoEmpiricalFluxSNS
 from cevns_pyeft.experiments.coherent.slow_counts_ar2020 import slow_counts_ar2020
 from cevns_pyeft.experiments.coherent.slow_counts_csi2017 import slow_counts_csi2017
 from cevns_pyeft.experiments.coherent.slow_counts_csi2021 import slow_counts_csi2021
+from cevns_pyeft.experiments.specs import list_spec_experiment_names, load_experiment_spec
 
 
 EXPERIMENT_REGISTRY: Dict[str, Callable[[], dict]] = {
@@ -23,9 +24,12 @@ EXPERIMENT_SLOW_COUNT_REGISTRY: Dict[str, Callable] = {
 
 def get_experiment(name: str) -> dict:
     key = str(name).strip()
-    if key not in EXPERIMENT_REGISTRY:
-        raise KeyError(f"Unknown experiment {name!r}. Available: {list(EXPERIMENT_REGISTRY)}")
-    return EXPERIMENT_REGISTRY[key]()
+    if key in EXPERIMENT_REGISTRY:
+        return EXPERIMENT_REGISTRY[key]()
+    try:
+        return load_experiment_spec(key).as_dict()
+    except KeyError as exc:
+        raise KeyError(f"Unknown experiment {name!r}. Available: {list_experiments()}") from exc
 
 
 def get_slow_count_function(name: str) -> Callable:
@@ -35,4 +39,24 @@ def get_slow_count_function(name: str) -> Callable:
     return EXPERIMENT_SLOW_COUNT_REGISTRY[key]
 
 
-__all__ = ["EXPERIMENT_REGISTRY", "EXPERIMENT_SLOW_COUNT_REGISTRY", "get_experiment", "get_slow_count_function"]
+def get_experiment_spec(name: str):
+    return load_experiment_spec(name)
+
+
+def list_experiments(*, include_specs: bool = True) -> tuple[str, ...]:
+    names = list(EXPERIMENT_REGISTRY)
+    if include_specs:
+        for name in list_spec_experiment_names():
+            if name not in names:
+                names.append(name)
+    return tuple(names)
+
+
+__all__ = [
+    "EXPERIMENT_REGISTRY",
+    "EXPERIMENT_SLOW_COUNT_REGISTRY",
+    "get_experiment",
+    "get_experiment_spec",
+    "get_slow_count_function",
+    "list_experiments",
+]

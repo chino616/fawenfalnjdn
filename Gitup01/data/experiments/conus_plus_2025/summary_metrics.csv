@@ -1,0 +1,7 @@
+quantity,value,uncertainty,unit,status
+reactor_on_exposure,327,,kg day,publication_summary
+reactor_off_exposure,60,,kg day,publication_summary
+combined_active_mass,2.83,0.02,kg,publication_summary
+sm_expected_signal,347,59,events,publication_summary
+fitted_signal,395,106,events,publication_summary
+significance,3.7,,sigma,publication_summary

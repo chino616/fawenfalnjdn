@@ -1,0 +1,4 @@
+detector,threshold_evee,active_mass_kg,reactor_on_exposure_kg_day,reactor_off_exposure_kg_day,status
+C2,180,,,,threshold_publication; masses_and_exposures_REQUIRES_INPUT
+C3,160,,,,threshold_publication; masses_and_exposures_REQUIRES_INPUT
+C5,170,,,,threshold_publication; masses_and_exposures_REQUIRES_INPUT

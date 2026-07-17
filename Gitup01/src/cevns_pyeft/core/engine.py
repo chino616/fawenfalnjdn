@@ -15,6 +15,7 @@ from cevns_pyeft.theory.li2026.amplitude import *  # noqa: F401,F403
 from cevns_pyeft.theory.li2026.cross_section import *  # noqa: F401,F403
 from cevns_pyeft.experiments.base import *  # noqa: F401,F403
 from cevns_pyeft.experiments.registry import *  # noqa: F401,F403
+from cevns_pyeft.experiments.specs import *  # noqa: F401,F403
 from cevns_pyeft.experiments.coherent.sns import *  # noqa: F401,F403
 from cevns_pyeft.experiments.coherent.slow_counts_csi2017 import *  # noqa: F401,F403
 from cevns_pyeft.experiments.coherent.slow_counts_csi2021 import *  # noqa: F401,F403
