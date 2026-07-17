@@ -1,0 +1,222 @@
+[
+  {
+    "index": 0,
+    "name": "1",
+    "label": "C(5,1)",
+    "triplet": [
+      5,
+      1,
+      ""
+    ]
+  },
+  {
+    "index": 1,
+    "name": "2",
+    "label": "C(6,1)_u",
+    "triplet": [
+      6,
+      1,
+      "u"
+    ]
+  },
+  {
+    "index": 2,
+    "name": "3",
+    "label": "C(6,1)_d",
+    "triplet": [
+      6,
+      1,
+      "d"
+    ]
+  },
+  {
+    "index": 3,
+    "name": "4",
+    "label": "C(6,2)_u",
+    "triplet": [
+      6,
+      2,
+      "u"
+    ]
+  },
+  {
+    "index": 4,
+    "name": "5",
+    "label": "C(6,2)_d",
+    "triplet": [
+      6,
+      2,
+      "d"
+    ]
+  },
+  {
+    "index": 5,
+    "name": "6",
+    "label": "C(7,1)_u",
+    "triplet": [
+      7,
+      1,
+      "u"
+    ]
+  },
+  {
+    "index": 6,
+    "name": "7",
+    "label": "C(7,1)_d",
+    "triplet": [
+      7,
+      1,
+      "d"
+    ]
+  },
+  {
+    "index": 7,
+    "name": "8",
+    "label": "C(7,2)_u",
+    "triplet": [
+      7,
+      2,
+      "u"
+    ]
+  },
+  {
+    "index": 8,
+    "name": "9",
+    "label": "C(7,2)_d",
+    "triplet": [
+      7,
+      2,
+      "d"
+    ]
+  },
+  {
+    "index": 9,
+    "name": "10",
+    "label": "C(7,3)_u",
+    "triplet": [
+      7,
+      3,
+      "u"
+    ]
+  },
+  {
+    "index": 10,
+    "name": "11",
+    "label": "C(7,3)_d",
+    "triplet": [
+      7,
+      3,
+      "d"
+    ]
+  },
+  {
+    "index": 11,
+    "name": "12",
+    "label": "C(7,4)_u",
+    "triplet": [
+      7,
+      4,
+      "u"
+    ]
+  },
+  {
+    "index": 12,
+    "name": "13",
+    "label": "C(7,4)_d",
+    "triplet": [
+      7,
+      4,
+      "d"
+    ]
+  },
+  {
+    "index": 13,
+    "name": "14",
+    "label": "C(7,5)_u",
+    "triplet": [
+      7,
+      5,
+      "u"
+    ]
+  },
+  {
+    "index": 14,
+    "name": "15",
+    "label": "C(7,5)_d",
+    "triplet": [
+      7,
+      5,
+      "d"
+    ]
+  },
+  {
+    "index": 15,
+    "name": "16",
+    "label": "C(7,6)",
+    "triplet": [
+      7,
+      6,
+      ""
+    ]
+  },
+  {
+    "index": 16,
+    "name": "17",
+    "label": "C(7,7)",
+    "triplet": [
+      7,
+      7,
+      ""
+    ]
+  },
+  {
+    "index": 17,
+    "name": "18",
+    "label": "C(8,1)_u",
+    "triplet": [
+      8,
+      1,
+      "u"
+    ]
+  },
+  {
+    "index": 18,
+    "name": "19",
+    "label": "C(8,1)_d",
+    "triplet": [
+      8,
+      1,
+      "d"
+    ]
+  },
+  {
+    "index": 19,
+    "name": "20",
+    "label": "C(8,2)_u",
+    "triplet": [
+      8,
+      2,
+      "u"
+    ]
+  },
+  {
+    "index": 20,
+    "name": "21",
+    "label": "C(8,2)_d",
+    "triplet": [
+      8,
+      2,
+      "d"
+    ]
+  },
+  {
+    "index": 21,
+    "name": "22",
+    "label": "C(8,9)",
+    "triplet": [
+      8,
+      9,
+      ""
+    ]
+  }
+]

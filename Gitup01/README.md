@@ -17,6 +17,18 @@ Required companions:
 - `data/responses/responses_all.json`
 - COHERENT data files under `data/datafiles/`
 
+The slow COHERENT count entry points are split by dataset:
+
+- `cevns_pyeft.experiments.coherent.slow_counts_csi2017`
+- `cevns_pyeft.experiments.coherent.slow_counts_csi2021`
+- `cevns_pyeft.experiments.coherent.slow_counts_ar2020`
+
+The old aggregate files `experiments/coherent/csi.py` and `experiments/coherent/argon.py` are intentionally not included in this minimal copy.
+
+The three slow-count check notebooks compare against:
+
+`backup/pre_split_reference_slow_counts.json`
+
 ## Run Imports Or Python Snippets
 
 From this folder:
@@ -35,6 +47,13 @@ $env:PYTHONPATH = (Join-Path (Get-Location) "src")
 
 The compatibility `core.engine` in this folder only re-exports the split modules. It does not include the old monolithic fast-kernel, statistics, plotting, or Streamlit code.
 
+Slow-count functions are also available through the registry:
+
+```powershell
+$env:PYTHONPATH = (Join-Path (Get-Location) "src")
+& "F:\Work\.codex_conda_envs\codex-py311\python.exe" -c "from cevns_pyeft.experiments.registry import get_slow_count_function; print(get_slow_count_function('CsI2021').__name__)"
+```
+
 ## Run Notebook Checks
 
 Notebook execution requires `nbconvert` and `ipykernel`. If they are not installed in the Python environment, install them into a local virtual environment first.
@@ -46,3 +65,33 @@ Get-ChildItem -Path .\src\cevns_pyeft -Recurse -Filter *_check.ipynb | ForEach-O
 ```
 
 If using the shared Codex conda Python instead, replace the Python path accordingly.
+
+## Fast Kernel Split Modules
+
+This minimal copy also includes the fast-kernel split modules:
+
+- `cevns_pyeft.kernels.basis`
+- `cevns_pyeft.kernels.builder`
+- `cevns_pyeft.kernels.reconstruction`
+- `cevns_pyeft.kernels.storage`
+- `cevns_pyeft.experiments.coherent.fast_kernel_csi2017`
+- `cevns_pyeft.experiments.coherent.fast_kernel_csi2021`
+- `cevns_pyeft.experiments.coherent.fast_kernel_ar2020`
+
+The fast split keeps the current implementation basis size and pair count:
+
+```text
+basis size = 22
+pair count = 231
+```
+
+Reference arrays for fast checks are included under:
+
+`tests/reference_fast_split/`
+
+Fast APIs are available both from their split modules and from the compatibility shim:
+
+```powershell
+$env:PYTHONPATH = (Join-Path (Get-Location) "src")
+& "F:\Work\.codex_conda_envs\codex-py311\python.exe" -c "from cevns_pyeft.core import engine; print(len(engine.li2026_left_basis()), engine.build_fast_kernel_csi2021.__name__)"
+```
