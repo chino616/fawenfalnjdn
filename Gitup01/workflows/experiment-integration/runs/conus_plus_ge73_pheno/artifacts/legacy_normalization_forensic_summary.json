@@ -1,0 +1,46 @@
+{
+  "dataset": "conus_plus_ge73_pheno",
+  "pdf_text_extraction_status": "ok; pages=12",
+  "pdf_hit_counts": {
+    "119": 4,
+    "327": 1,
+    "347": 1,
+    "395": 1,
+    "kg day": 3,
+    "Rexp": 9,
+    "background-subtracted": 4
+  },
+  "totals": {
+    "theory_abs_events_119kgday": 150.4943459871272,
+    "yData_direct_sum": 132.8131,
+    "absolute_difference_theory_minus_yData": 17.6812459871272,
+    "relative_difference_vs_yData": 0.13312878012129226,
+    "ratio_theory_over_yData": 1.1331287801212921,
+    "theory_counts_per_kg_10eV_sum_if_axis_literal": 1.2646583696397244,
+    "yData_abs_events_119kgday_if_axis_literal": 15804.758899999999,
+    "exposure_only_scaled_to_327kgday": 413.54328687218987,
+    "official_effective_mass_327_over_119": 2.7478991596638656,
+    "official_active_mass_approx_kg": 2.83,
+    "official_sm_events": 347.0,
+    "official_measured_events": 395.0,
+    "pull_vs_official_sm": 1.127852319867625,
+    "pull_vs_official_measured": 0.17493666860556478,
+    "residual_ratio_347_over_exposure_scaled": 0.8390899115410962,
+    "residual_percent_change_to_347": -16.091008845890375
+  },
+  "shape_metrics": {
+    "chi2_like_absolute_events_using_y_errors": 7.269820848499806,
+    "rms_residual_absolute_events": 7.906262784042176,
+    "rms_shape_fraction_difference": 0.05909902305097987
+  },
+  "classification": {
+    "is_150494_numerically_wrong": "NO within the current legacy/PDF/Python contract",
+    "is_150494_unit_semantics_wrong": "NO for absolute events/bin at 119 kg day; YES if plotted as kg^-1 per 10 eVee",
+    "is_yData_absolute_events_per_bin": "LIKELY, but provenance remains secondary/local",
+    "is_old_mathematica_y_axis_label_correct": "UNLIKELY",
+    "is_119_live_time_or_exposure": "best supported in executable code as exposureKgDay; physically also equals reactor-on days for a 1 kg normalization",
+    "is_current_python_faithful_to_current_pdf": "YES",
+    "is_current_pdf_faithful_to_legacy_notebook": "PARTIAL",
+    "can_legacy_model_be_claimed_as_official_conus_plus": "NO"
+  }
+}

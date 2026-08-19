@@ -1,0 +1,241 @@
+{
+  "dataset_id": "conus_plus_ge73_pheno",
+  "recompute": false,
+  "timestamp": "2026-08-06T11:22:41.997557+00:00",
+  "git_commit_if_available": "11c2c8de6461e4ef863223e4d132ef06b8c4265a",
+  "source": {
+    "integral": 14999999978239.064,
+    "relative_error": 1.4507290364583332e-09,
+    "minimum": 5989430.090963032,
+    "maximum": 13412675912711.447,
+    "match_delta_mev": 1e-07,
+    "match_left": 2920683331873.608,
+    "match": 2920683197072.8447,
+    "match_right": 2920682979461.6245,
+    "match_relative_jump": 7.450695797234606e-08
+  },
+  "kinematics": {
+    "A": 73,
+    "Z": 32,
+    "N": 41,
+    "target_mass_GeV": 67.99906957156,
+    "Tmax_10MeV_keVnr": 2.940351893369968
+  },
+  "target": {
+    "nuclei_per_kg": 8.249507890410958e+24,
+    "target_seconds": 8.48181403260493e+31
+  },
+  "detector_response": {
+    "max_response_norm_abs_error": 2.220446049250313e-16,
+    "efficiency_159p999": 0.0,
+    "efficiency_160": 1.0,
+    "efficiency_160p001": 1.0,
+    "representative_table": [
+      {
+        "T_keVnr": 0.01,
+        "Q_T": 0.09478091995716437,
+        "E_ee_eVee": 0.9478091995716438,
+        "sigma_eVee": 20.387542384242593,
+        "response_norm": 1.0,
+        "density_finite": true,
+        "density_nonnegative": true,
+        "status": "PASS"
+      },
+      {
+        "T_keVnr": 0.05,
+        "Q_T": 0.11788851450847417,
+        "E_ee_eVee": 5.894425725423709,
+        "sigma_eVee": 20.42686089481541,
+        "response_norm": 1.0000000000000002,
+        "density_finite": true,
+        "density_nonnegative": true,
+        "status": "PASS"
+      },
+      {
+        "T_keVnr": 0.1,
+        "Q_T": 0.12935251521984925,
+        "E_ee_eVee": 12.935251521984924,
+        "sigma_eVee": 20.48269519759927,
+        "response_norm": 1.0,
+        "density_finite": true,
+        "density_nonnegative": true,
+        "status": "PASS"
+      },
+      {
+        "T_keVnr": 0.25,
+        "Q_T": 0.14610344277587264,
+        "E_ee_eVee": 36.52586069396816,
+        "sigma_eVee": 20.66867130763113,
+        "response_norm": 1.0,
+        "density_finite": true,
+        "density_nonnegative": true,
+        "status": "PASS"
+      },
+      {
+        "T_keVnr": 0.5,
+        "Q_T": 0.1601263099041248,
+        "E_ee_eVee": 80.0631549520624,
+        "sigma_eVee": 21.007574074055487,
+        "response_norm": 1.0,
+        "density_finite": true,
+        "density_nonnegative": true,
+        "status": "PASS"
+      },
+      {
+        "T_keVnr": 1.0,
+        "Q_T": 0.17548084697565272,
+        "E_ee_eVee": 175.48084697565272,
+        "sigma_eVee": 21.73184746984143,
+        "response_norm": 1.0,
+        "density_finite": true,
+        "density_nonnegative": true,
+        "status": "PASS"
+      },
+      {
+        "T_keVnr": 2.0,
+        "Q_T": 0.1923862097560571,
+        "E_ee_eVee": 384.7724195121142,
+        "sigma_eVee": 23.241573295464356,
+        "response_norm": 1.0000000000000002,
+        "density_finite": true,
+        "density_nonnegative": true,
+        "status": "PASS"
+      },
+      {
+        "T_keVnr": 2.940351893369968,
+        "Q_T": 0.20257033398562094,
+        "E_ee_eVee": 595.6280650752074,
+        "sigma_eVee": 24.669326589095178,
+        "response_norm": 1.0,
+        "density_finite": true,
+        "density_nonnegative": true,
+        "status": "PASS"
+      }
+    ]
+  },
+  "slow": {
+    "total_events": 150.49434598713285,
+    "minimum_bin": 0.2574053192390878,
+    "maximum_bin": 34.17364951955145,
+    "number_of_bins": 19,
+    "reference_max_relative_error": 3.5457451155991277e-13,
+    "medium_total_relative_delta": 6.323341968326e-05,
+    "medium_max_bin_relative_delta": 0.0001165397973771,
+    "first_five_bins": [
+      34.17364951955145,
+      26.521690711385965,
+      20.61344100250405,
+      16.029144835149076,
+      12.459438892414418
+    ],
+    "last_five_bins": [
+      0.8549627674328445,
+      0.638015773236546,
+      0.4737070071901111,
+      0.3499943812517372,
+      0.2574053192390878
+    ],
+    "fraction_first_five": 0.7295780066740353,
+    "fraction_above_300_eVee": 0.017104199041274342
+  },
+  "fast": {
+    "summary": [
+      {
+        "point": "sm_full_response",
+        "slow_total": 150.4848297149926,
+        "fast_total": 150.4848297149926,
+        "total_absolute_error": 0.0,
+        "total_relative_error": 0.0,
+        "max_bin_absolute_error": 4.796163466381e-14,
+        "max_bin_relative_error": 5.757217090831e-14,
+        "slow_runtime_s": 2.424647199921,
+        "fast_reconstruction_runtime_s": 3.740005195141e-05,
+        "speedup": 64830.04898152,
+        "status": "PASS"
+      },
+      {
+        "point": "complex_c61u",
+        "slow_total": 151.4483698343021,
+        "fast_total": 151.4483698343021,
+        "total_absolute_error": 0.0,
+        "total_relative_error": 0.0,
+        "max_bin_absolute_error": 3.919087276927e-14,
+        "max_bin_relative_error": 1.512860019516e-13,
+        "slow_runtime_s": 3.888933399925,
+        "fast_reconstruction_runtime_s": 6.340001709759e-05,
+        "speedup": 61339.62698999,
+        "status": "PASS"
+      },
+      {
+        "point": "helm_sm",
+        "slow_total": 149.2233461213546,
+        "fast_total": 149.2233461213547,
+        "total_absolute_error": 8.526512829121202e-14,
+        "total_relative_error": 5.713926842376989e-16,
+        "max_bin_absolute_error": 3.630429290524e-14,
+        "max_bin_relative_error": 1.0693730872329999e-13,
+        "slow_runtime_s": 0.5447895000689,
+        "fast_reconstruction_runtime_s": 4.990003071725e-05,
+        "speedup": 10917.61853125,
+        "status": "PASS"
+      }
+    ],
+    "worst_max_relative_error": 1.512860019516e-13,
+    "minimum_speedup": 10917.61853125,
+    "maximum_speedup": 64830.04898152,
+    "cumulative_reference_metadata": {
+      "model": "conus_plus_ge73_pheno_cumulative_spectrum_v1",
+      "dataset_id": "conus_plus_ge73_pheno",
+      "axis": "reco_energy_evee",
+      "unit": "expected_events_per_bin",
+      "bin_edges_evee": [
+        160.0,
+        170.0,
+        180.0,
+        190.0,
+        200.0,
+        210.0,
+        220.0,
+        230.0,
+        240.0,
+        250.0,
+        260.0,
+        270.0,
+        280.0,
+        290.0,
+        300.0,
+        310.0,
+        320.0,
+        330.0,
+        340.0,
+        350.0
+      ],
+      "fast_settings": {
+        "grid_step_evee": 2.0,
+        "n_fit": 3,
+        "n_cumulative": 2,
+        "f_floor": 1e-300
+      },
+      "slow_integration_settings": {
+        "n_true_recoil": 61,
+        "n_neutrino": 120,
+        "reco_step_evee": 2.0,
+        "recoil_max_keVnr": null
+      },
+      "cross_section_model": "full_response",
+      "kinematics": "publication_reproduction",
+      "include_sm": true,
+      "coefficient_dependent": true,
+      "representation_scope": "fixed reconstructed spectrum for the supplied coefficient point",
+      "eft_template_status": "BLOCKED_UNTIL_COMPLETE_20_GROUP_BASIS_DEFINED"
+    }
+  },
+  "optional_blockers": [
+    {
+      "representation": "eft_template_fast",
+      "status": "BLOCKED",
+      "reason": "Complete 20-group EFT template basis mapping is not yet defined."
+    }
+  ],
+  "overall_status": "PASS_WITH_OPTIONAL_BLOCKER"
+}

@@ -2,6 +2,24 @@
 
 This folder contains the phase-1 split modules and their compact check notebooks.
 
+## Experimental Workflows
+
+This copy includes one imported experimental Codex workflow:
+
+```text
+workflows/experiment-integration/
+```
+
+It is a workflow package for adding new CEvNS experiment datasets, not runtime
+package code. Its local entry points are:
+
+- `workflows/experiment-integration/README.md`
+- `workflows/experiment-integration/MANIFEST.md`
+- `workflows/experiment-integration/AGENTS.md`
+- `workflows/experiment-integration/EXPERIMENT_WORKFLOW.md`
+- `workflows/experiment-integration/skills/`
+- `workflows/experiment-integration/templates/`
+
 ## Can The Files Run Alone?
 
 The individual `.py` files are not standalone scripts. They are package modules and should be run through the `cevns_pyeft` package layout under `src/`.

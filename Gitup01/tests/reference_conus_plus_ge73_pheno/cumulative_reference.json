@@ -1,0 +1,46 @@
+{
+  "model": "conus_plus_ge73_pheno_cumulative_spectrum_v1",
+  "dataset_id": "conus_plus_ge73_pheno",
+  "axis": "reco_energy_evee",
+  "unit": "expected_events_per_bin",
+  "bin_edges_evee": [
+    160.0,
+    170.0,
+    180.0,
+    190.0,
+    200.0,
+    210.0,
+    220.0,
+    230.0,
+    240.0,
+    250.0,
+    260.0,
+    270.0,
+    280.0,
+    290.0,
+    300.0,
+    310.0,
+    320.0,
+    330.0,
+    340.0,
+    350.0
+  ],
+  "fast_settings": {
+    "grid_step_evee": 2.0,
+    "n_fit": 3,
+    "n_cumulative": 2,
+    "f_floor": 1e-300
+  },
+  "slow_integration_settings": {
+    "n_true_recoil": 61,
+    "n_neutrino": 120,
+    "reco_step_evee": 2.0,
+    "recoil_max_keVnr": null
+  },
+  "cross_section_model": "full_response",
+  "kinematics": "publication_reproduction",
+  "include_sm": true,
+  "coefficient_dependent": true,
+  "representation_scope": "fixed reconstructed spectrum for the supplied coefficient point",
+  "eft_template_status": "BLOCKED_UNTIL_COMPLETE_20_GROUP_BASIS_DEFINED"
+}

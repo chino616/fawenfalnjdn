@@ -1,0 +1,21 @@
+Physics layer,Current implementation,External reference,Match,Importance,Confidence
+dataset identity,conus_plus_ge73_pheno phenomenology model,Official CONUS+ run 1 detector-level result,DIFFERENT,CRITICAL,HIGH
+run period,phenomenological_effective_dataset,Nov 2023-Jul 2024 reactor-on run 1,DIFFERENT,HIGH,HIGH
+detector inventory,one effective Ge73 detector,"C2, C3 and C5 HPGe detectors",DIFFERENT,CRITICAL,HIGH
+exposure,119 kg day,327 kg day reactor-on active-mass exposure,DIFFERENT,CRITICAL,HIGH
+active mass,included in aggregate 119 kg day,2.83 +/- 0.02 kg total active mass,DIFFERENT,HIGH,HIGH
+target composition,pure effective Ge73,natural HPGe isotope mix in detector crystals,DIFFERENT,HIGH,MEDIUM
+source normalization,Phi0 = 1.5e13 cm^-2 s^-1 at detector,"reactor antineutrino flux at 20.7 m, more than 1e13 cm^-2 s^-1",UNCERTAIN,MEDIUM,MEDIUM
+source spectrum,"Kopeikin low energy + Mueller high energy, normalized release spectrum",official reactor-spectrum prediction used by collaboration,UNCERTAIN,MEDIUM,LOW
+source composition,fixed fission fractions U235/U238/Pu239/Pu241 = 0.56/0.07/0.31/0.06,official reactor-core evolution/power based spectrum,UNCERTAIN,MEDIUM,LOW
+kinematics,"Ge73 CEvNS kinematics, Tmax(10 MeV)=2.940351893 keVnr",Ge CEvNS kinematics,MATCH,LOW,MEDIUM
+cross section,CEvNS-pyEFT Li2026 full response for Ge73,SM CEvNS with Ge detector response/form factor assumptions,UNCERTAIN,HIGH,MEDIUM
+quenching,Lindhard Ge k=0.162,Lindhard theory with measured quenching parameter,MATCH,MEDIUM,MEDIUM
+resolution,single Gaussian sigma0/F/eta model,detector-dependent noise/resolution calibration,DIFFERENT,MEDIUM,MEDIUM
+efficiency,ideal step at 160 eVee,analysis efficiency/cuts from official detector data,DIFFERENT,HIGH,MEDIUM
+thresholds,160 eVee,threshold as low as 160 eVee,MATCH,MEDIUM,MEDIUM
+analysis window,"160 <= E_reco < 350 eVee, 19 bins",official signal extraction below 350 eV in thesis; official Nature result detector-level,UNCERTAIN,MEDIUM,MEDIUM
+binning,19 x 10 eVee bins from 160 to 350,official public per-bin spectrum not machine-readable here,UNCERTAIN,MEDIUM,LOW
+observable definition,expected events per reconstructed-energy bin,measured/predicted neutrino interactions after detector-level analysis,DIFFERENT,HIGH,HIGH
+output units,expected events/bin and total expected events,"total neutrino events, uncertainty included",MATCH,LOW,HIGH
+statistical data mode,background_subtracted_excess planned; statistics module not implemented,official background model and signal extraction,MISSING_CURRENT,HIGH,HIGH

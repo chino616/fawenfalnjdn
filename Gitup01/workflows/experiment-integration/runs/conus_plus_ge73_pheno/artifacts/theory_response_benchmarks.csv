@@ -1,0 +1,5 @@
+benchmark,target,E_nu_MeV,recoil_keV,coefficient_point,amplitude_squared,finite,nonnegative,response_variable_y,q_MeV
+sm_low_recoil,Ge73,2.0,0.05,sm,9.805216750533882e-13,True,True,0.00019396880554673724,2.6076631218690807
+sm_mid_recoil,Ge73,5.0,0.5,sm,3.3892758353508845e-12,True,True,0.0019396880554673726,8.246154835531527
+sm_upper_recoil,Ge73,10.0,2.5,sm,6.1456336886785915e-12,True,True,0.009698440277336861,18.438962765237093
+zero_bsm_mid_recoil,Ge73,5.0,0.5,zero_bsm,0.0,True,True,0.0019396880554673726,8.246154835531527

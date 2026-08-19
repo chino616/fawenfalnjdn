@@ -1,0 +1,101 @@
+dataset_id: conus_plus_ge73_pheno
+dataset_name: conus_plus_ge73_pheno
+family: conus
+spec_status: kinematics_cross_section_validated
+source_type: reactor
+flavor: electron_antineutrino
+target_mode: Ge73_only
+statistical_data_mode: background_subtracted_excess
+analysis_window_evee: [160, 350]
+
+provenance:
+  physics_document: docs/CONUS_docs/2026_07_16_CEvNSpyEFT - CONUS.pdf
+  workflow_run: workflows/experiment-integration/runs/conus_plus_ge73_pheno
+  phase: CROSS_SECTION_VALIDATED
+
+detector:
+  configuration: effective_Ge73_detector
+  detector_label: Ge73
+  exposure_kg_day: 119
+  exposure_semantics: mass_times_live_time
+  exposure_note: Do not multiply by detector mass or live time again.
+
+binning:
+  observable: reconstructed_electron_equivalent_energy
+  axis: reco_energy_evee
+  unit: eVee
+  minimum_eVee: 160
+  maximum_eVee: 350
+  width_eVee: 10
+  number_of_bins: 19
+  edge_rule: E_i = 160 + 10*i eVee for i = 0..19
+
+target:
+  isotope: Ge73
+  A: 73
+  Z: 32
+  N: 41
+  response_key: Ge73
+  molar_mass_g_mol: 73
+  isotope_summing: none
+
+source:
+  status: ADAPTER_VALIDATED
+  component: reactor_electron_antineutrino_flux_at_detector
+  flavor: electron_antineutrino
+  energy_unit: MeV
+  flux_unit: cm^-2 s^-1 MeV^-1
+  phi0_cm2_s: 1.5e13
+  energy_min_mev: 0.01
+  matching_energy_mev: 2.0
+  energy_max_mev: 10.0
+  boundary_rule: zero_for_E_lt_0_and_0_to_0p01_and_E_gt_10
+  interpolation: linear_kopeikin_low_energy_and_mueller_high_energy
+  normalization_rule: recompute_N_rho_from_release_spectrum
+
+kinematics:
+  status: ADAPTER_VALIDATED
+  default: publication_reproduction
+  available: [publication_reproduction, heavy_nucleus_approximation]
+  target_mass_rule: m_A_GeV = A * AMU_GEV
+  enu_min_rule: E_nu_min_MeV = 1000 * sqrt(m_A_GeV * T_keVnr * 1e-6 / 2)
+  recoil_endpoint_rule: exact_two_body_Tmax
+
+cross_section:
+  status: ADAPTER_VALIDATED
+  callable: src.cevns_pyeft.experiments.conus.kinematics.differential_cross_section_conus_ge73
+  shared_callable: src.cevns_pyeft.rates.differential.differential_cross_section_nn
+  default_model: full_response
+  available_models: [full_response, helm_sm]
+  default_unit: cm2_per_keV
+  helm_sm_restriction: Standard Model weak-charge comparison only; reject EFT coefficients.
+
+expected_output:
+  axes: [reco_energy_evee]
+  shape: [19]
+  dtype: float64
+  unit: expected_events_per_bin
+
+planned_data_files:
+  mueller_coefficients: data/experiments/conus_plus_ge73_pheno/mueller_coefficients.csv
+  kopeikin_low_energy_spectrum: data/experiments/conus_plus_ge73_pheno/kopeikin_low_energy_spectrum.csv
+  excess_counts: data/experiments/conus_plus_ge73_pheno/excess_counts.csv
+
+callables:
+  source: src.cevns_pyeft.experiments.conus.source.load_conus_plus_ge73_reactor_flux
+  detector_response: src.cevns_pyeft.experiments.conus.detector_response.conus_ge73_response_density
+  slow_counts: src.cevns_pyeft.experiments.conus.slow_counts_conus_plus_ge73_pheno.slow_counts_conus_plus_ge73_pheno
+  cumulative_fast: src.cevns_pyeft.experiments.conus.fast_cumulative_conus_plus_ge73_pheno.cumulative_fast_counts_conus_plus_ge73_pheno
+  eft_template_fast: BLOCKED_UNTIL_TEMPLATE_BASIS_DEFINED
+  statistics: src.cevns_pyeft.experiments.conus.statistics_conus_plus_ge73_pheno.chi2_profile_conus_plus_ge73_pheno
+
+phase1_boundaries:
+  reactor_flux_implemented: true
+  source_tables_created: true
+  kinematics_cross_section_implemented: true
+  detector_response_implemented: false
+  slow_counts_implemented: false
+  cumulative_fast_implemented: false
+  eft_kernel_implemented: false
+  statistics_implemented: false
+  registry_modified: false

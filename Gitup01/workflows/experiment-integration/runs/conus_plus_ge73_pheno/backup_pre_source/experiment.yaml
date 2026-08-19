@@ -1,0 +1,69 @@
+dataset_id: conus_plus_ge73_pheno
+dataset_name: conus_plus_ge73_pheno
+family: conus
+spec_status: dataset_phase_only
+source_type: reactor
+flavor: electron_antineutrino
+target_mode: Ge73_only
+statistical_data_mode: background_subtracted_excess
+analysis_window_evee: [160, 350]
+
+provenance:
+  physics_document: docs/CONUS_docs/2026_07_16_CEvNSpyEFT - CONUS.pdf
+  workflow_run: workflows/experiment-integration/runs/conus_plus_ge73_pheno
+  phase: DATASET_VALIDATED
+
+detector:
+  configuration: effective_Ge73_detector
+  detector_label: Ge73
+  exposure_kg_day: 119
+  exposure_semantics: mass_times_live_time
+  exposure_note: Do not multiply by detector mass or live time again.
+
+binning:
+  observable: reconstructed_electron_equivalent_energy
+  axis: reco_energy_evee
+  unit: eVee
+  minimum_eVee: 160
+  maximum_eVee: 350
+  width_eVee: 10
+  number_of_bins: 19
+  edge_rule: E_i = 160 + 10*i eVee for i = 0..19
+
+target:
+  isotope: Ge73
+  A: 73
+  Z: 32
+  N: 41
+  response_key: Ge73
+  molar_mass_g_mol: 73
+  isotope_summing: none
+
+expected_output:
+  axes: [reco_energy_evee]
+  shape: [19]
+  dtype: float64
+  unit: expected_events_per_bin
+
+planned_data_files:
+  mueller_coefficients: data/experiments/conus_plus_ge73_pheno/mueller_coefficients.csv
+  kopeikin_low_energy_spectrum: data/experiments/conus_plus_ge73_pheno/kopeikin_low_energy_spectrum.csv
+  excess_counts: data/experiments/conus_plus_ge73_pheno/excess_counts.csv
+
+callables:
+  source: src.cevns_pyeft.experiments.conus.source.load_conus_plus_ge73_reactor_flux
+  detector_response: src.cevns_pyeft.experiments.conus.detector_response.conus_ge73_response_density
+  slow_counts: src.cevns_pyeft.experiments.conus.slow_counts_conus_plus_ge73_pheno.slow_counts_conus_plus_ge73_pheno
+  cumulative_fast: src.cevns_pyeft.experiments.conus.fast_cumulative_conus_plus_ge73_pheno.cumulative_fast_counts_conus_plus_ge73_pheno
+  eft_template_fast: BLOCKED_UNTIL_TEMPLATE_BASIS_DEFINED
+  statistics: src.cevns_pyeft.experiments.conus.statistics_conus_plus_ge73_pheno.chi2_profile_conus_plus_ge73_pheno
+
+phase1_boundaries:
+  reactor_flux_implemented: false
+  source_tables_created: false
+  detector_response_implemented: false
+  slow_counts_implemented: false
+  cumulative_fast_implemented: false
+  eft_kernel_implemented: false
+  statistics_implemented: false
+  registry_modified: false

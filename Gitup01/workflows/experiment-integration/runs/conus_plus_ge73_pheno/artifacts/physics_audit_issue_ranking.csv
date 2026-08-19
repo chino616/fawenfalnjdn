@@ -1,0 +1,6 @@
+Rank,Issue,Severity,Confidence,Evidence,Estimated impact
+1,dataset identity,CRITICAL,HIGH,Current dataset explicitly says phenomenology and not official C2/C3/C5 model.,Defines whether official reproduction can be claimed.
+2,exposure and detector inventory,CRITICAL,HIGH,119 kg day effective detector versus 327 kg day C2/C3/C5 official analysis.,Exposure-only diagnostic changes total by factor 2.748.
+3,target composition,HIGH,MEDIUM,Pure Ge73 versus natural HPGe detector isotope mixture.,May change rate and spectral shape at moderate/high level.
+4,detector response/statistics,HIGH,MEDIUM,Ideal threshold and no statistics module versus official detector-level extraction.,Can explain remaining discrepancy after exposure scaling.
+5,source model,MEDIUM,LOW,Current fixed Kopeikin-Mueller model versus official reactor prediction details not imported.,"Likely moderate, but evidence incomplete."

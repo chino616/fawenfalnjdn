@@ -1,0 +1,20 @@
+{
+  "dataset": "conus_plus_ge73_pheno",
+  "input_mode": "recompute",
+  "corrected_observable_contract": {
+    "primary_observable": "expected_signal_events_per_bin",
+    "primary_unit": "events per 10 eVee reconstructed-energy bin",
+    "primary_exposure_kg_day": 119.0,
+    "normalized_diagnostic_unit": "events per kg day per 10 eVee bin",
+    "official_exposure_diagnostic_kg_day": 327.0,
+    "warning": "327 kg day scaling is exposure-only, not an official detector-level CONUS+ prediction."
+  },
+  "totals": {
+    "events_per_bin_total_119kgday": 150.49434598713285,
+    "events_per_kg_day_bin_total": 1.2646583696397717,
+    "exposure_only_events_total_327kgday": 413.5432868722054,
+    "scale_327_over_119": 2.7478991596638656,
+    "pull_vs_official_sm_347_pm_59": 1.1278523198678878,
+    "pull_vs_official_measured_395_pm_106": 0.1749366686057112
+  }
+}
