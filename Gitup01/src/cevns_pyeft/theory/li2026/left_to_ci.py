@@ -3,23 +3,33 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Dict, Literal, Mapping, Optional, Tuple
 import math
+import warnings
 
 from cevns_pyeft.foundation import constants as c
+from cevns_pyeft.theory.li2026.flavor import FlavorMatrix, zero_flavor_matrix
 from cevns_pyeft.theory.li2026.lec import DEFAULT_LECS, Li2026LECs
+from cevns_pyeft.theory.li2026.operators import LeftKey, validate_operator_coefficient
 
-LeftKey = Tuple[int, int, str]
-C10MassMode = Literal['paper', 'flavor']
+C10MassMode = Literal['paper', 'quark_mass_resolved', 'flavor']
 _Q_TOL = 1e-12
 _POLE_TOL = 1e-30
 
-def _C(left_hat: Mapping[LeftKey, complex], dim: int, idx: int, flavor: str='') -> complex:
-    return complex(left_hat.get((dim, idx, flavor), 0.0 + 0j))
+def _C(
+    left_hat: Mapping[LeftKey, FlavorMatrix],
+    dim: int,
+    idx: int,
+    quark_flavor: str='',
+) -> FlavorMatrix:
+    key = (dim, idx, quark_flavor)
+    if key not in left_hat:
+        return zero_flavor_matrix()
+    return validate_operator_coefficient(key, left_hat[key])
 
 @dataclass(frozen=True)
 class CiPN:
-    p: Dict[int, complex]
-    n: Dict[int, complex]
-    iso: Dict[int, Tuple[complex, complex]]
+    p: Dict[int, FlavorMatrix]
+    n: Dict[int, FlavorMatrix]
+    iso: Dict[int, Tuple[FlavorMatrix, FlavorMatrix]]
 
 @dataclass(frozen=True)
 class LeftKinematics:
@@ -74,19 +84,26 @@ def _resolve_kinematics(*, q0: Optional[float], q2: Optional[float], qabs: Optio
         return LeftKinematics(q0=q0_val, q2=q0_val * q0_val - qabs2, qabs=qabs, qabs2=qabs2)
     return LeftKinematics(q0=0.0, q2=-qabs2, qabs=qabs, qabs2=qabs2)
 
-def _safe_div_by_q2(numerator: complex, q2: float) -> complex:
+def _safe_div_by_q2(numerator: FlavorMatrix, q2: float) -> FlavorMatrix:
     if abs(q2) <= _POLE_TOL:
-        return 0.0 + 0j
+        return zero_flavor_matrix()
     return numerator / q2
 
-def _safe_pion_pole(numerator: complex, m_pi: float, q2: float) -> complex:
+def _safe_pion_pole(numerator: FlavorMatrix, m_pi: float, q2: float) -> FlavorMatrix:
     denom = m_pi * m_pi - q2
     if abs(denom) <= _POLE_TOL:
-        return 0.0 + 0j
+        return zero_flavor_matrix()
     return numerator / denom
 
-def left_to_ci(left_hat: Mapping[LeftKey, complex], *, E_nu: float, q0: Optional[float]=None, q2: Optional[float]=None, qabs: Optional[float]=None, qabs2: Optional[float]=None, q: Optional[float]=None, mA: Optional[float]=None, c10_mass_mode: C10MassMode='flavor', lecs: Li2026LECs=DEFAULT_LECS) -> CiPN:
+def left_to_ci(left_hat: Mapping[LeftKey, FlavorMatrix], *, E_nu: float, q0: Optional[float]=None, q2: Optional[float]=None, qabs: Optional[float]=None, qabs2: Optional[float]=None, q: Optional[float]=None, mA: Optional[float]=None, c10_mass_mode: C10MassMode='quark_mass_resolved', lecs: Li2026LECs=DEFAULT_LECS) -> CiPN:
     E_nu = float(E_nu)
+    if c10_mass_mode == 'flavor':
+        warnings.warn(
+            "c10_mass_mode='flavor' is deprecated; use 'quark_mass_resolved'",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        c10_mass_mode = 'quark_mass_resolved'
     kin = _resolve_kinematics(q0=q0, q2=q2, qabs=qabs, qabs2=qabs2, q=q, mA=mA)
     q0 = kin.q0
     q2 = kin.q2
@@ -134,12 +151,12 @@ def left_to_ci(left_hat: Mapping[LeftKey, complex], *, E_nu: float, q0: Optional
     if c10_mass_mode == 'paper':
         c10_ud_p = m_u * (C7u5 - C7d5)
         c10_ud_n = m_u * (C7d5 - C7u5)
-    elif c10_mass_mode == 'flavor':
+    elif c10_mass_mode == 'quark_mass_resolved':
         c10_ud_p = m_u * C7u5 - m_d * C7d5
         c10_ud_n = m_d * C7d5 - m_u * C7u5
     else:
         raise ValueError(f'Unknown c10_mass_mode: {c10_mass_mode}')
-    cp: Dict[int, complex] = {}
+    cp: Dict[int, FlavorMatrix] = {}
     cp[1] = 2.0 * C6u1 + C6d1 + (g1 + g2) * C7u1 + g2 * C7d1
     cp[2] = 2.0 * (L3 + L4) * C6u2 + 2.0 * L4 * C6d2
     cp[3] = su_p * C7u4 + sd_p * C7d4 + L13 * C7_6 - _safe_div_by_q2(2.0 * alpha * Ebar / math.pi * C5_1, q2)
@@ -154,7 +171,7 @@ def left_to_ci(left_hat: Mapping[LeftKey, complex], *, E_nu: float, q0: Optional
     cp[12] = _safe_div_by_q2(alpha * m_N / (3.0 * math.pi) * (1.0 + 2.0 * L1) * C5_1, q2)
     cp[13] = (g5 + g6) * C8u1 + g6 * C8d1 + g9 * C8_9
     cp[14] = 2.0 * (g7 + g8) * C8u2 + 2.0 * g8 * C8d2
-    cn: Dict[int, complex] = {}
+    cn: Dict[int, FlavorMatrix] = {}
     cn[1] = C6u1 + 2.0 * C6d1 + (g1 + g2) * C7d1 + g2 * C7u1
     cn[2] = 2.0 * (L3 + L4) * C6d2 + 2.0 * L4 * C6u2
     cn[3] = su_n * C7u4 + sd_n * C7d4 + L13 * C7_6
@@ -169,7 +186,7 @@ def left_to_ci(left_hat: Mapping[LeftKey, complex], *, E_nu: float, q0: Optional
     cn[12] = cp[12]
     cn[13] = (g5 + g6) * C8d1 + g6 * C8u1 + g9 * C8_9
     cn[14] = 2.0 * (g7 + g8) * C8d2 + 2.0 * g8 * C8u2
-    iso: Dict[int, Tuple[complex, complex]] = {}
+    iso: Dict[int, Tuple[FlavorMatrix, FlavorMatrix]] = {}
     for i in range(1, 15):
         c0 = 0.5 * (cp[i] + cn[i])
         c1 = 0.5 * (cp[i] - cn[i])
