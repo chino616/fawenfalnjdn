@@ -14,6 +14,7 @@ from cevns_pyeft.experiments.conus.kinematics import (
     AVAILABLE_CROSS_SECTION_MODELS,
     AVAILABLE_KINEMATICS,
     differential_cross_section_conus_ge73,
+    enu_min_exact_conus_ge73,
     enu_min_heavy_nucleus_conus_ge73,
     recoil_max_exact_keV,
 )
@@ -83,11 +84,23 @@ def true_recoil_grid_keVnr(settings: SlowIntegrationSettings | None = None) -> n
     return np.linspace(0.0, recoil_max, int(cfg.n_true_recoil), dtype=float)
 
 
-def neutrino_grid_for_recoil(T_keVnr: float, settings: SlowIntegrationSettings | None = None) -> np.ndarray:
+def neutrino_grid_for_recoil(
+    T_keVnr: float,
+    settings: SlowIntegrationSettings | None = None,
+    *,
+    kinematics: str = "publication_reproduction",
+) -> np.ndarray:
     cfg = SlowIntegrationSettings() if settings is None else settings
     if int(cfg.n_neutrino) < 2:
         raise ValueError("n_neutrino must be >= 2")
-    emin = max(float(enu_min_heavy_nucleus_conus_ge73(float(T_keVnr))), ENERGY_MIN_MEV)
+    if kinematics not in AVAILABLE_KINEMATICS:
+        raise ValueError(f"Unknown kinematics {kinematics!r}")
+    threshold_fn = (
+        enu_min_heavy_nucleus_conus_ge73
+        if kinematics == "heavy_nucleus_approximation"
+        else enu_min_exact_conus_ge73
+    )
+    emin = max(float(threshold_fn(float(T_keVnr))), ENERGY_MIN_MEV)
     if emin >= ENERGY_MAX_MEV:
         return np.asarray([], dtype=float)
     return np.linspace(emin, ENERGY_MAX_MEV, int(cfg.n_neutrino), dtype=float)
@@ -104,7 +117,7 @@ def true_recoil_spectrum_per_nucleus_s_keV(
     cross_section_model: str = "full_response",
     kinematics: str = "publication_reproduction",
     sin2thetaW: float = 0.23873,
-    c10_mass_mode: str = "flavor",
+    c10_mass_mode: str = "quark_mass_resolved",
     settings: SlowIntegrationSettings | None = None,
 ) -> float:
     spec = _resolve_spec(experiment_spec)
@@ -112,7 +125,11 @@ def true_recoil_spectrum_per_nucleus_s_keV(
         raise ValueError(f"Unknown cross_section_model {cross_section_model!r}")
     if kinematics not in AVAILABLE_KINEMATICS:
         raise ValueError(f"Unknown kinematics {kinematics!r}")
-    enu = neutrino_grid_for_recoil(float(T_keVnr), settings)
+    enu = neutrino_grid_for_recoil(
+        float(T_keVnr),
+        settings,
+        kinematics=kinematics,
+    )
     if enu.size == 0:
         return 0.0
     flux = load_conus_plus_ge73_reactor_flux(spec)["measured"]["nuebar"]
@@ -143,7 +160,7 @@ def true_recoil_spectrum_grid(
     cross_section_model: str = "full_response",
     kinematics: str = "publication_reproduction",
     sin2thetaW: float = 0.23873,
-    c10_mass_mode: str = "flavor",
+    c10_mass_mode: str = "quark_mass_resolved",
     settings: SlowIntegrationSettings | None = None,
 ) -> tuple[np.ndarray, np.ndarray]:
     grid = true_recoil_grid_keVnr(settings)
@@ -193,7 +210,7 @@ def reconstructed_spectrum_grid(
     cross_section_model: str = "full_response",
     kinematics: str = "publication_reproduction",
     sin2thetaW: float = 0.23873,
-    c10_mass_mode: str = "flavor",
+    c10_mass_mode: str = "quark_mass_resolved",
     settings: SlowIntegrationSettings | None = None,
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     spec = _resolve_spec(experiment_spec)
@@ -243,7 +260,7 @@ def slow_counts_conus_plus_ge73_pheno(
     cross_section_model: str = "full_response",
     kinematics: str = "publication_reproduction",
     sin2thetaW: float = 0.23873,
-    c10_mass_mode: str = "flavor",
+    c10_mass_mode: str = "quark_mass_resolved",
     return_components: bool = False,
     integration_settings: SlowIntegrationSettings | None = None,
 ) -> dict[str, Any]:

@@ -8,7 +8,9 @@ import numpy as np
 
 from cevns_pyeft.nuclear.response import ResponseDB
 from cevns_pyeft.rates.differential import _sm_left_dim6
-from cevns_pyeft.theory.li2026.amplitude import amplitude_squared_onebody_li2026
+from cevns_pyeft.sources.state import pure_flavor_density
+from cevns_pyeft.theory.li2026.amplitude import flavor_kernel_onebody_li2026
+from cevns_pyeft.theory.li2026.flavor import contract_density_kernel
 
 
 RUN_DIR = Path("workflows/experiment-integration/runs/conus_plus_ge73_pheno")
@@ -27,16 +29,17 @@ def test_ge73_response_metadata_and_channels():
 def test_shared_li2026_amplitude_sm_is_finite_nonnegative():
     resp = ResponseDB(RESPONSES_JSON).get("Ge73")
     left_hat = _sm_left_dim6(True, 0.23873)
-    amp = amplitude_squared_onebody_li2026(
+    amp = flavor_kernel_onebody_li2026(
         resp,
         E_nu_GeV=0.005,
         ER_keV=0.5,
         left_hat=left_hat,
         basis="np",
-        c10_mass_mode="flavor",
+        c10_mass_mode="quark_mass_resolved",
     )
-    assert math.isfinite(amp.amp2)
-    assert amp.amp2 >= 0.0
+    contracted = contract_density_kernel(pure_flavor_density("e"), amp.kernel)
+    assert math.isfinite(contracted)
+    assert contracted >= 0.0
     assert amp.basis == "np"
     assert set(amp.pieces) == EXPECTED_CHANNELS
 

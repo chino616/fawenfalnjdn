@@ -32,6 +32,13 @@ NR_SECTOR = {
 
 @dataclass(frozen=True)
 class RKinematics:
+    """Particle-response kinematics.
+
+    Enu, qabs, m_A, and m_N are in GeV.  All returned response matrices
+    from ``responses_R`` carry GeV^-2 when c1-c12 are GeV^-2 and
+    c13-c14 are GeV^-3.
+    """
+
     Enu: float
     qabs: float
     m_A: float

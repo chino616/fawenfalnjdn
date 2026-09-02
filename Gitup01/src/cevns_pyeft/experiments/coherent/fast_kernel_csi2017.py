@@ -47,7 +47,7 @@ def build_fast_kernel_csi2017(
     pe_bins: np.ndarray = CSI2017_BINS_25,
     pe_per_keV: float = CSI2017_PE_PER_KEV,
     sin2thetaW: float = 0.2387,
-    c10_mass_mode: str = "flavor",
+    c10_mass_mode: str = "quark_mass_resolved",
     n_er: int = 251,
     n_enu: int = 120,
 ) -> Dict[str, Any]:

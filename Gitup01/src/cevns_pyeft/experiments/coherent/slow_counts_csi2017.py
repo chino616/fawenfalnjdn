@@ -6,7 +6,10 @@ from typing import Any, Dict, Mapping, Optional, Tuple
 import numpy as np
 
 from cevns_pyeft.experiments.base import _data_path, _interp_eff
-from cevns_pyeft.experiments.coherent.sns import loadNeutrinoEmpiricalFluxSNS
+from cevns_pyeft.experiments.coherent.sns import (
+    loadNeutrinoEmpiricalFluxSNS,
+    sns_component_state,
+)
 from cevns_pyeft.nuclear.response import ResponseDB
 from cevns_pyeft.rates.counts import _rate_per_kg
 from cevns_pyeft.rates.differential import _trapz
@@ -25,7 +28,7 @@ def slow_counts_csi2017(
     *,
     include_sm: bool = True,
     sin2thetaW: float = 0.2387,
-    c10_mass_mode: str = "flavor",
+    c10_mass_mode: str = "quark_mass_resolved",
     n_er: int = 21,
     n_enu: int = 120,
     n_pe_bin: int = 8,
@@ -43,7 +46,18 @@ def slow_counts_csi2017(
     for flv in raw:
         spectrum = np.zeros_like(pe_grid)
         for target, key, weight in targets:
-            rate_er = _rate_per_kg(db.get(key), flux, er_grid, flv, wc_triplets, include_sm, sin2thetaW, c10_mass_mode, n_enu)
+            rate_er = _rate_per_kg(
+                db.get(key),
+                flux,
+                er_grid,
+                flv,
+                wc_triplets,
+                include_sm,
+                sin2thetaW,
+                c10_mass_mode,
+                n_enu,
+                source_state=sns_component_state(flv),
+            )
             dndpe = np.asarray(eff(pe_grid), dtype=float) * 14.6 * (1.0 / CSI2017_PE_PER_KEV) * rate_er
             raw[flv][target] = dndpe
             spectrum += float(weight) * dndpe

@@ -8,13 +8,25 @@ import warnings
 
 from cevns_pyeft.foundation import constants as c
 from cevns_pyeft.nuclear.response import ResponseW
-from cevns_pyeft.theory.li2026.flavor import FlavorMatrix, as_flavor_matrix, zero_flavor_matrix
+from cevns_pyeft.theory.li2026.flavor import (
+    FlavorMatrix,
+    as_flavor_matrix,
+    validate_flavor_kernel,
+    zero_flavor_matrix,
+)
 from cevns_pyeft.theory.li2026.lec import DEFAULT_LECS, Li2026LECs
 from cevns_pyeft.theory.li2026.left_to_ci import C10MassMode, LeftKey, left_to_ci
 from cevns_pyeft.theory.li2026.responses import Basis, compute_R_matrices
 
 @dataclass(frozen=True)
 class FlavorKernelResult:
+    """Flavor-space amplitude kernel and per-channel pieces.
+
+    ``kernel`` and ``pieces`` carry GeV^-2.  ``ER_keV`` is converted to
+    GeV immediately; q0/qabs are GeV, q2/qabs2 are GeV^2, and y is
+    dimensionless because the oscillator length b is GeV^-1.
+    """
+
     kernel: FlavorMatrix
     pieces: Dict[str, FlavorMatrix]
     basis: Basis
@@ -72,7 +84,7 @@ def _get_W_matrix(resp: ResponseW, *, wkey: str, y: float, basis: Basis) -> np.n
 
 def flavor_kernel_onebody_li2026(resp: ResponseW, *, E_nu_GeV: float, ER_keV: float, left_hat: Mapping[LeftKey, FlavorMatrix], lecs: Li2026LECs=DEFAULT_LECS, basis: Basis='np', c10_mass_mode: C10MassMode='quark_mass_resolved') -> FlavorKernelResult:
     E = float(E_nu_GeV)
-    T = float(ER_keV) * 1e-06
+    T = float(ER_keV) * c.keV
     A = float(resp.get_basic('A'))
     mA = A * float(c.AMU_GEV)
     q0 = T
@@ -83,19 +95,28 @@ def flavor_kernel_onebody_li2026(resp: ResponseW, *, E_nu_GeV: float, ER_keV: fl
     ci_basis = _build_ci_basis(basis=basis, ci_obj=ci)
     Rm = compute_R_matrices(ci_basis, E_nu=E, qabs=qabs, qabs2=qabs2, mA=mA, mN=float(lecs.m_N), basis=basis)
     b = float(resp.get_basic('b'))
-    y = (0.5 * qabs * b) ** 2
+    y = c.y_from_qb(qabs, b)
     key_map = {'MM': 'M', 'SSPP': 'SigmaPP', 'SSP': 'SigmaP', 'PhiPP': 'PhiPP', 'PhiPT': 'PhiPT', 'DD': 'Delta', 'MPhiPP': 'MPhiPP'}
     pieces: Dict[str, FlavorMatrix] = {}
     total = zero_flavor_matrix()
     for rkey, wkey in key_map.items():
         Wm = _get_W_matrix(resp, wkey=wkey, y=y, basis=basis)
         val = _contract_R_W(Rm[rkey], Wm)
+        if wkey == 'MPhiPP':
+            # A physical interference contribution is the matrix analogue of
+            # a scalar real part and must therefore enter Hermitianized.
+            val = 0.5 * (val + val.conj().T)
         pieces[wkey] = val
         total += val
     if 'SigmaPDelta' in resp.responses:
         pieces['SigmaPDelta'] = zero_flavor_matrix()
-    if not np.allclose(total, total.conj().T, atol=1.0e-12, rtol=1.0e-9):
-        raise RuntimeError('Flavor kernel is not Hermitian')
+    try:
+        total = validate_flavor_kernel(
+            total,
+            name="final Flavor amplitude kernel",
+        )
+    except ValueError as exc:
+        raise RuntimeError(f"Invalid final Flavor amplitude kernel: {exc}") from exc
     return FlavorKernelResult(kernel=total, pieces=pieces, basis=basis, y=float(y), q0=float(q0), q2=float(q2), qabs=float(qabs), qabs2=float(qabs2), ER_keV=float(ER_keV), E_nu_GeV=float(E))
 
 def amplitude_squared_onebody_li2026(resp: ResponseW, *, E_nu_GeV: float, ER_keV: float, left_hat: Mapping[LeftKey, FlavorMatrix], lecs: Li2026LECs=DEFAULT_LECS, basis: Basis='np', c10_mass_mode: C10MassMode='quark_mass_resolved') -> FlavorKernelResult:

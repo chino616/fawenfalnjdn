@@ -6,6 +6,8 @@ from typing import Dict, List, Mapping, Optional, Sequence, Tuple
 import numpy as np
 
 from cevns_pyeft.rates.differential import _sm_left_dim6
+from cevns_pyeft.theory.li2026.flavor import FlavorMatrix, zero_flavor_matrix
+from cevns_pyeft.theory.li2026.operators import canonicalize_wilson_coefficients
 
 Triplet = Tuple[int, int, str]
 
@@ -42,8 +44,45 @@ def coeff_vector_from_triplets(
     merged: Dict[Triplet, complex] = dict(wc_triplets or {})
     if include_sm:
         for key, value in _sm_left_dim6(True, float(sin2thetaW)).items():
-            merged[key] = complex(merged.get(key, 0.0 + 0j)) + complex(value)
+            matrix = np.asarray(value, dtype=np.complex128)
+            if matrix.shape != (3, 3) or not np.allclose(
+                matrix,
+                matrix[0, 0] * np.eye(3, dtype=np.complex128),
+                rtol=1.0e-14,
+                atol=0.0,
+            ):
+                raise ValueError("legacy scalar Fast SM coefficients must be flavor universal")
+            merged[key] = complex(merged.get(key, 0.0 + 0j)) + complex(matrix[0, 0])
     return np.asarray([complex(merged.get(be.triplet, 0.0 + 0j)) for be in basis], dtype=complex)
+
+
+def coeff_tensor_from_triplets(
+    basis: Sequence[BasisElement],
+    wc_triplets: Optional[Mapping[Triplet, FlavorMatrix]] = None,
+    *,
+    include_sm: bool = True,
+    sin2thetaW: float = 0.2387,
+) -> np.ndarray:
+    """Return a ``(B,3,3)`` Wilson tensor in the canonical flavor basis.
+
+    The Fast basis remains a list of LEFT operator structures.  Flavor lives
+    only on the coefficient tensor, with matrix indices ``[final, initial]``.
+    """
+
+    merged: Dict[Triplet, FlavorMatrix] = {
+        key: np.array(value, dtype=np.complex128, copy=True)
+        for key, value in canonicalize_wilson_coefficients(
+            wc_triplets=wc_triplets or {}
+        ).items()
+    }
+    if include_sm:
+        for key, value in _sm_left_dim6(True, float(sin2thetaW)).items():
+            merged[key] = merged.get(key, zero_flavor_matrix()) + value
+
+    out = np.zeros((len(basis), 3, 3), dtype=np.complex128)
+    for index, element in enumerate(basis):
+        out[index] = merged.get(element.triplet, zero_flavor_matrix())
+    return out
 
 
 __all__ = [
@@ -53,4 +92,5 @@ __all__ = [
     "li2026_left_basis_current",
     "pair_index_for_basis",
     "coeff_vector_from_triplets",
+    "coeff_tensor_from_triplets",
 ]

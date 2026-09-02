@@ -73,13 +73,21 @@ def test_validate_density_matrix_rejects_invalid_states(rho, message):
 
 def test_density_kernel_contraction_uses_trace_rho_kernel_convention():
     rho = flavor_projector("mu")
-    kernel = np.array(
-        [[1.0, 2.0 + 3.0j, 0.0], [2.0 - 3.0j, 4.0, 1.0], [0.0, 1.0, 7.0]],
+    coefficient = np.array(
+        [
+            [1.0, 0.5 + 0.2j, 0.0],
+            [0.0, 2.0, 0.3j],
+            [0.0, 0.0, 1.0],
+        ],
         dtype=complex,
     )
-    assert contract_density_kernel(rho, kernel) == pytest.approx(4.0)
+    kernel = coefficient.conj().T @ coefficient
+
+    assert contract_density_kernel(rho, kernel) == pytest.approx(
+        kernel[1, 1].real
+    )
 
 
-def test_density_kernel_contraction_rejects_nonreal_result():
-    with pytest.raises(ValueError, match="not real"):
+def test_density_kernel_contraction_rejects_nonphysical_kernel():
+    with pytest.raises(ValueError, match="not Hermitian"):
         contract_density_kernel(flavor_projector("e"), 1j * np.eye(3))

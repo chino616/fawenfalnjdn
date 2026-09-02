@@ -64,7 +64,6 @@ def test_cross_section_kernel_has_flavor_shape_and_expected_units_prefactor():
     expected_scale = (
         mA
         / (8.0 * math.pi * E_NU_GEV**2)
-        * 1e-6
         * INVGEV_TO_CM**2
     )
 
@@ -123,7 +122,12 @@ def test_density_api_is_exact_trace_rho_kernel_contraction():
         basis="iso",
     )
 
-    assert actual == pytest.approx(contract_density_kernel(rho, kernel))
+    assert math.isclose(
+        actual,
+        contract_density_kernel(rho, kernel),
+        rel_tol=1e-14,
+        abs_tol=0.0,
+    )
 
 
 @pytest.mark.parametrize(
@@ -189,4 +193,4 @@ def test_legacy_scalar_name_requires_rho_and_delegates_with_warning():
         **common,
     )
 
-    assert legacy == pytest.approx(canonical)
+    assert math.isclose(legacy, canonical, rel_tol=1e-14, abs_tol=0.0)

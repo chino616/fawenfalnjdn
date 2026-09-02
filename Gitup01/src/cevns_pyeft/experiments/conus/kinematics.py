@@ -9,6 +9,9 @@ import numpy as np
 from cevns_pyeft.foundation import constants as c
 from cevns_pyeft.nuclear.response import ResponseDB
 from cevns_pyeft.rates.differential import differential_cross_section_nn
+from cevns_pyeft.sources.state import pure_flavor_state
+from cevns_pyeft.theory.kinematics import minimum_neutrino_energy_GeV
+from cevns_pyeft.theory.li2026.flavor import zero_flavor_matrix
 
 ArrayLike = float | int | np.ndarray
 
@@ -19,6 +22,7 @@ DEFAULT_RESPONSE_KEY = "Ge73"
 DEFAULT_SIN2THETAW = 0.23873
 AVAILABLE_CROSS_SECTION_MODELS = ("full_response", "helm_sm")
 AVAILABLE_KINEMATICS = ("publication_reproduction", "heavy_nucleus_approximation")
+REACTOR_NUEBAR_STATE = pure_flavor_state("e", particle_kind="antinu")
 
 
 def _asarray(x: ArrayLike) -> np.ndarray:
@@ -31,6 +35,19 @@ def _scalar_or_array(values: np.ndarray, like_a: ArrayLike, like_b: ArrayLike):
     return values
 
 
+def _legacy_scalar_wilson_to_electron_only(
+    coefficients: Mapping[tuple[int, int, str], complex] | None,
+) -> dict[tuple[int, int, str], np.ndarray]:
+    """Map CONUS legacy scalar Wilson inputs to the reactor antinu_e state."""
+
+    out: dict[tuple[int, int, str], np.ndarray] = {}
+    for key, value in dict(coefficients or {}).items():
+        matrix = zero_flavor_matrix()
+        matrix[0, 0] = complex(value)
+        out[key] = matrix
+    return out
+
+
 def ge73_target_mass_gev(A: int = GE73_A) -> float:
     return float(A) * float(c.AMU_GEV)
 
@@ -39,6 +56,19 @@ def enu_min_heavy_nucleus_conus_ge73(T_keVnr: ArrayLike, mA_GeV: float | None = 
     mass = ge73_target_mass_gev() if mA_GeV is None else float(mA_GeV)
     recoil = _asarray(T_keVnr)
     out = 1000.0 * np.sqrt(np.maximum(mass * recoil * 1.0e-6 / 2.0, 0.0))
+    return float(out[0]) if np.isscalar(T_keVnr) else out
+
+
+def enu_min_exact_conus_ge73(T_keVnr: ArrayLike, mA_GeV: float | None = None) -> ArrayLike:
+    mass = ge73_target_mass_gev() if mA_GeV is None else float(mA_GeV)
+    recoil = _asarray(T_keVnr)
+    out = np.asarray(
+        [
+            minimum_neutrino_energy_GeV(float(value) * 1.0e-6, mass) * 1000.0
+            for value in recoil.reshape(-1)
+        ],
+        dtype=float,
+    ).reshape(recoil.shape)
     return float(out[0]) if np.isscalar(T_keVnr) else out
 
 
@@ -59,7 +89,15 @@ def physical_support_mask(
     if kinematics not in AVAILABLE_KINEMATICS:
         raise ValueError(f"Unknown kinematics {kinematics!r}; expected one of {AVAILABLE_KINEMATICS}")
     energy, recoil = np.broadcast_arrays(_asarray(E_nu_MeV), _asarray(T_keVnr))
-    threshold = _asarray(enu_min_heavy_nucleus_conus_ge73(recoil))
+    threshold_fn = (
+        enu_min_heavy_nucleus_conus_ge73
+        if kinematics == "heavy_nucleus_approximation"
+        else enu_min_exact_conus_ge73
+    )
+    threshold = np.full_like(energy, np.inf, dtype=float)
+    recoil_ok = recoil >= 0.0
+    if np.any(recoil_ok):
+        threshold[recoil_ok] = _asarray(threshold_fn(recoil[recoil_ok]))
     return (energy > 0.0) & (recoil >= 0.0) & (energy >= threshold)
 
 
@@ -135,7 +173,7 @@ def differential_cross_section_conus_ge73(
     sin2thetaW: float = DEFAULT_SIN2THETAW,
     responses_json: str | Path | None = None,
     basis: str = "np",
-    c10_mass_mode: str = "flavor",
+    c10_mass_mode: str = "quark_mass_resolved",
 ) -> ArrayLike:
     if kinematics not in AVAILABLE_KINEMATICS:
         raise ValueError(f"Unknown kinematics {kinematics!r}; expected one of {AVAILABLE_KINEMATICS}")
@@ -162,10 +200,11 @@ def differential_cross_section_conus_ge73(
                     Enu_MeV=float(energy[idx]),
                     basis=basis,  # type: ignore[arg-type]
                     left_wcs=dict(left_wcs or {}),
-                    wc_triplets=dict(wc_triplets or {}),
+                    wc_triplets=_legacy_scalar_wilson_to_electron_only(wc_triplets),
                     include_sm=include_sm,
                     sin2thetaW=sin2thetaW,
                     c10_mass_mode=c10_mass_mode,
+                    rho=REACTOR_NUEBAR_STATE,
                 ).dsigma_cm2_per_keV
             )
     return _scalar_or_array(out, E_nu_MeV, T_keVnr)
@@ -179,7 +218,9 @@ __all__ = [
     "GE73_A",
     "GE73_N",
     "GE73_Z",
+    "REACTOR_NUEBAR_STATE",
     "differential_cross_section_conus_ge73",
+    "enu_min_exact_conus_ge73",
     "enu_min_heavy_nucleus_conus_ge73",
     "ge73_target_mass_gev",
     "helm_form_factor_ge73",

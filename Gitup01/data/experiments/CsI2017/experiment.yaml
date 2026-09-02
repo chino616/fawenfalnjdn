@@ -1,0 +1,116 @@
+dataset_id: CsI2017
+dataset_name: CsI2017
+family: COHERENT_CsI
+spec_status: detector_response_validated_slow_pending
+source_type: stopped_pion
+flavor: mixed_sns_components
+target_mode: CsI_equal_stoichiometry
+statistical_data_mode: background_subtracted_excess
+
+provenance:
+  physics_document: "../../CEvNS-pyEFT Flavor 重构：问题处理优先级提示词.md"
+  implementation_spec: "../../CEvNS_pyeFT_full_flavor_refactor_implementation_spec.md"
+  workflow_run: workflows/experiment-integration/runs/CsI2017
+  phase: DETECTOR_RESPONSE_VALIDATED
+
+run:
+  period: 2017_release_current_reproduction
+  detector_configuration: "CsI[Na]; 14.57 kg source metadata and 14.6 kg legacy Slow multiplier"
+  source_configuration: "SNS prompt nu_mu plus delayed nu_e and antinu_mu"
+  target_configuration: "equal Cs:I stoichiometry; Cs-133 and I-127"
+
+detector:
+  source_metadata_mass_kg: 14.57
+  legacy_slow_mass_kg: 14.6
+  mass_resolution_status: preserve_legacy_per_module
+  reconstructed_observable: PE
+  response_status: VALIDATED_PHASE_6
+  response_classification: REUSE
+  true_variable: E_R
+  true_variable_unit: keV
+  reconstructed_variable_unit: PE
+  mean_mapping_model: "PE = 1.17 * E_R_keV"
+  resolution_model: deterministic_Dirac
+  resolution_width_pe: 0.0
+  response_normalization: "formal Dirac probability mass = 1 on PE >= 0"
+  efficiency_model: tabulated_linear_interpolation
+  efficiency_variable: PE
+  efficiency_threshold_pe: 4.9
+  efficiency_low_value: 1.0e-10
+  efficiency_data_file: data/datafiles/COHERENT_eff.txt
+  migration_rule: outside_analysis_window_excluded
+
+target:
+  material: CsI
+  isotopes: [Cs133, I127]
+  response_keys: [Cs133, I]
+  stoichiometry: equal
+  target_mass_weights: [0.5115384615384615, 0.48846153846153845]
+  nuclei_per_kg_convention: "mass_kg = A * 1.6605390666e-27"
+
+source:
+  status: VALIDATED_PHASE_3
+  classification: SHARED_EXTENSION
+  components: [mu, e, mub]
+  density_flavors: [mu, e, mu]
+  particle_kinds: [nu, nu, antinu]
+  energy_unit: MeV
+  continuum_flux_unit: cm^-2_MeV^-1
+  prompt_flux_unit: cm^-2
+  tabulation_energy_support_mev: [0.001, 300.0]
+  physical_node_mask_mev: [0.001, 56.0]
+  time_support: time_integrated
+  normalization: "r * N_POT / (4*pi*L_cm^2) once per SNS component"
+  interpolation: "200-node linear interpolation on 0.001-300 MeV"
+  boundary_behavior: "zero outside tabulation; preserve reproduction-mode taper in the final physical-support cell"
+  matching: "prompt mu line remains separate from delayed e and mub continua"
+
+binning:
+  mode: regular_edges
+  observable: PE
+  unit: PE
+  minimum: 0.001
+  maximum: 50.0
+  width: 1.99996
+  number_of_bins: 25
+  edge_convention: "edge_i = 0.001 + 1.99996*i for i=0..25"
+
+expected_output:
+  axes: [source_component, pe_bin]
+  shape: [25]
+  dtype: float64
+  unit: expected_events_per_bin
+  component_keys: [mu, e, mub, total]
+
+exposure:
+  source_metadata_detector_mass_kg: 14.57
+  legacy_slow_detector_mass_kg: 14.6
+  semantics: "time-integrated SNS flux multiplied by detector mass exactly once"
+  pot: 1.73e23
+  baseline_m: 19.3
+
+planned_data_files:
+  nuclear_responses: data/responses/responses_all.json
+  efficiency: data/datafiles/COHERENT_eff.txt
+  fast_reference_metadata: tests/reference_fast_split/csi2017_metadata.json
+
+callables:
+  source_state: cevns_pyeft.experiments.coherent.sns.sns_component_state
+  source_flux: cevns_pyeft.experiments.coherent.sns.loadNeutrinoEmpiricalFluxSNS
+  detector_response: "REUSE: cevns_pyeft.experiments.coherent.slow_counts_csi2017 deterministic PE mapping"
+  detector_efficiency: "REUSE: cevns_pyeft.experiments.base._interp_eff configured by slow_counts_csi2017"
+  slow_counts: "PENDING_PHASE_7: cevns_pyeft.experiments.coherent.slow_counts_csi2017.slow_counts_csi2017"
+  fast_counts: BLOCKED_UNTIL_P4_FLAVOR_CONTRACT
+  statistics: BLOCKED_PENDING_AUTHORITATIVE_PROVENANCE
+
+phase_boundaries:
+  dataset_validated: true
+  target_validated: true
+  source_validated: true
+  theory_validated: true
+  cross_section_validated: true
+  detector_response_validated: true
+  slow_validated: false
+  fast_validated: false
+  statistics_validated: false
+  registry_modified: false

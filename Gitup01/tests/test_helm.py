@@ -3,10 +3,13 @@ from __future__ import annotations
 import math
 
 import numpy as np
+import pytest
 
 from cevns_pyeft.foundation import constants as c
 from cevns_pyeft.theory.helm import (
     cevns_kinematic_factor,
+    dsigma_dER_helm_cm2_per_GeV,
+    dsigma_dER_helm_kernel_cm2_per_GeV,
     dsigma_dER_helm_cm2_per_keV,
     dsigma_dER_helm_density_cm2_per_keV,
     dsigma_dER_helm_kernel_cm2_per_keV,
@@ -114,3 +117,50 @@ def test_nucleon_charge_builder_has_correct_sm_limit() -> None:
         neutron_coupling=ident,
     )
     np.testing.assert_allclose(qmat, sm_weak_charge(A, Z, sin2_theta_w=s2w) * ident)
+
+
+def test_helm_canonical_per_GeV_and_per_keV_wrappers_have_exact_unit_ratio() -> None:
+    e_mev, er_kev = 12.0, 0.2
+    A, Z = 73, 32
+
+    scalar_GeV = dsigma_dER_helm_cm2_per_GeV(e_mev, er_kev, A, Z)
+    scalar_keV = dsigma_dER_helm_cm2_per_keV(e_mev, er_kev, A, Z)
+    kernel_GeV = dsigma_dER_helm_kernel_cm2_per_GeV(e_mev, er_kev, A, Z)
+    kernel_keV = dsigma_dER_helm_kernel_cm2_per_keV(e_mev, er_kev, A, Z)
+
+    assert math.isclose(
+        scalar_GeV / scalar_keV,
+        1.0e6,
+        rel_tol=1.0e-14,
+        abs_tol=0.0,
+    )
+    np.testing.assert_allclose(
+        kernel_GeV,
+        1.0e6 * kernel_keV,
+        rtol=1.0e-14,
+        atol=0.0,
+    )
+
+
+def test_helm_exact_support_distinguishes_endpoint_from_next_float() -> None:
+    e_mev = 5.0
+    A, Z = 73, 32
+    endpoint_keV = recoil_max_keV(e_mev, A)
+    below_keV = np.nextafter(endpoint_keV, 0.0)
+    above_keV = np.nextafter(endpoint_keV, math.inf)
+
+    assert dsigma_dER_helm_cm2_per_GeV(e_mev, 0.0, A, Z) > 0.0
+    assert dsigma_dER_helm_cm2_per_GeV(e_mev, below_keV, A, Z) > 0.0
+    assert dsigma_dER_helm_cm2_per_GeV(e_mev, endpoint_keV, A, Z) >= 0.0
+    assert dsigma_dER_helm_cm2_per_GeV(e_mev, above_keV, A, Z) == 0.0
+
+
+@pytest.mark.parametrize("energy_MeV", [0.0, -1.0])
+def test_helm_core_rejects_nonpositive_neutrino_energy(energy_MeV) -> None:
+    with pytest.raises(ValueError):
+        dsigma_dER_helm_cm2_per_GeV(energy_MeV, 0.1, 73, 32)
+
+
+def test_helm_core_rejects_negative_recoil() -> None:
+    with pytest.raises(ValueError):
+        dsigma_dER_helm_cm2_per_GeV(5.0, -0.1, 73, 32)

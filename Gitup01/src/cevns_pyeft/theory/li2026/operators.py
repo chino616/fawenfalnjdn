@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from numbers import Integral
+import re
 from types import MappingProxyType
-from typing import Literal, Mapping, Tuple
+from typing import Dict, Literal, Mapping, Optional, Tuple
 
 import numpy as np
 
@@ -112,6 +114,82 @@ def validate_operator_coefficient(
     return matrix
 
 
+def parse_operator_name(name: str) -> LeftKey:
+    """Parse and validate a canonical string such as ``C1u(6)``."""
+
+    if not isinstance(name, str):
+        raise TypeError(f"LEFT operator name must be a string, got {type(name).__name__}")
+    match = re.fullmatch(r"C(\d+)([ud])?\((\d+)\)", name)
+    if match is None:
+        raise ValueError(f"Cannot parse Li2026 LEFT operator name: {name!r}")
+    key = (int(match.group(3)), int(match.group(1)), match.group(2) or "")
+    get_operator_spec(key)
+    return key
+
+
+def validate_operator_key(key: object) -> LeftKey:
+    """Validate the shape, types, and metadata membership of a triplet key."""
+
+    if not isinstance(key, tuple) or len(key) != 3:
+        raise ValueError(
+            "Li2026 LEFT operator key must be a "
+            f"(dimension, index, quark_flavor) tuple, got {key!r}"
+        )
+    dimension, index, quark_flavor = key
+    if (
+        isinstance(dimension, bool)
+        or not isinstance(dimension, Integral)
+        or isinstance(index, bool)
+        or not isinstance(index, Integral)
+        or not isinstance(quark_flavor, str)
+    ):
+        raise TypeError(
+            "Li2026 LEFT operator key must have types (int, int, str), "
+            f"got {key!r}"
+        )
+    canonical_key = (int(dimension), int(index), quark_flavor)
+    get_operator_spec(canonical_key)
+    return canonical_key
+
+
+def canonicalize_wilson_coefficients(
+    *,
+    left_wcs: Optional[Mapping[str, object]] = None,
+    wc_triplets: Optional[Mapping[LeftKey, object]] = None,
+) -> Dict[LeftKey, FlavorMatrix]:
+    """Return one validated Li2026 Wilson mapping.
+
+    Every supplied key and value is validated before physics evaluation.
+    Supplying the same operator through both string and triplet interfaces (or
+    through two string aliases) is rejected instead of relying on overwrite
+    order.
+    """
+
+    canonical: Dict[LeftKey, FlavorMatrix] = {}
+    origins: Dict[LeftKey, str] = {}
+
+    def add(key: LeftKey, value: object, *, origin: str) -> None:
+        if key in canonical:
+            raise ValueError(
+                f"Duplicate Li2026 LEFT operator {key}: "
+                f"supplied by {origins[key]} and {origin}"
+            )
+        canonical[key] = validate_operator_coefficient(key, value)
+        origins[key] = origin
+
+    if wc_triplets is not None:
+        for raw_key, value in wc_triplets.items():
+            key = validate_operator_key(raw_key)
+            add(key, value, origin=f"wc_triplets[{raw_key!r}]")
+
+    if left_wcs is not None:
+        for name, value in left_wcs.items():
+            key = parse_operator_name(name)
+            add(key, value, origin=f"left_wcs[{name!r}]")
+
+    return canonical
+
+
 __all__ = [
     "LeftKey",
     "LeptonNumberSector",
@@ -120,4 +198,7 @@ __all__ = [
     "OPERATOR_SPECS_BY_KEY",
     "get_operator_spec",
     "validate_operator_coefficient",
+    "parse_operator_name",
+    "validate_operator_key",
+    "canonicalize_wilson_coefficients",
 ]

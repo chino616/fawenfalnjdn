@@ -9,30 +9,38 @@ MEV_TO_GEV = 0.001
 
 @dataclass(frozen=True)
 class Li2026LECs:
+    """Low-energy constants for the current Li2026 proof convention.
+
+    Units: L1-L4 and g5-g9 are dimensionless; B0_m_u/B0_m_d are
+    GeV^2; L5-L14, g1-g4, sigma terms, and masses are in GeV.
+    """
+
     g_A: float = float(c.g_A)
     Sigma_ud: float = float(c.Sigma_ud)
-    L1: float = 1.355
-    L2: float = -1.535
-    L3: float = 0.6377
-    L4: float = -0.22
-    L5: float = 0.41 * MEV_TO_GEV
-    L6: float = 0.49 * MEV_TO_GEV
-    L7: float = -1.68 * MEV_TO_GEV
-    L8: float = 0.88 * MEV_TO_GEV
-    L9: float = 11.52 * MEV_TO_GEV
-    L10: float = 24.05 * MEV_TO_GEV
-    L11: float = -42.96 * MEV_TO_GEV
-    L12: float = -36.75 * MEV_TO_GEV
-    L13: float = -50.4 * MEV_TO_GEV
-    L14: float = -0.306
-    sigma_u_p: float = 16.3 * MEV_TO_GEV
-    sigma_d_p: float = 30.6 * MEV_TO_GEV
-    sigma_u_n: float = 14.5 * MEV_TO_GEV
-    sigma_d_n: float = 34.5 * MEV_TO_GEV
-    g1: float = 1.0
-    g2: float = 1.0
-    g3: float = 1.0
-    g4: float = 1.0
+    B0_m_u: float = float(c.LECs_known["B0mu"])
+    B0_m_d: float = float(c.LECs_known["B0md"])
+    L1: float = float(c.LECs_known["L1"])
+    L2: float = float(c.LECs_known["L2"])
+    L3: float = float(c.LECs_known["L3"])
+    L4: float = float(c.LECs_known["L4"])
+    L5: float = float(c.LECs_known["L5"])
+    L6: float = float(c.LECs_known["L6"])
+    L7: float = float(c.LECs_known["L7"])
+    L8: float = float(c.LECs_known["L8"])
+    L9: float = float(c.LECs_known["L9"])
+    L10: float = float(c.LECs_known["L10"])
+    L11: float = float(c.LECs_known["L11"])
+    L12: float = float(c.LECs_known["L12"])
+    L13: float = float(c.LECs_known["L13"])
+    L14: float = float(c.LECs_known["L14"])
+    sigma_u_p: float = 18.5 * MEV_TO_GEV
+    sigma_d_p: float = 36.0 * MEV_TO_GEV
+    sigma_u_n: float = 16.7 * MEV_TO_GEV
+    sigma_d_n: float = 39.7 * MEV_TO_GEV
+    g1: float = float(c.Lambda_chi)
+    g2: float = float(c.Lambda_chi)
+    g3: float = float(c.Lambda_chi)
+    g4: float = float(c.Lambda_chi)
     g5: float = 1.0
     g6: float = 1.0
     g7: float = 1.0

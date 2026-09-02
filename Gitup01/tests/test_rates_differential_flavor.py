@@ -158,6 +158,7 @@ def test_sm_differential_rate_is_independent_of_physical_density_matrix():
             ER_keV=ER_KEV,
             Enu_MeV=E_NU_MEV,
             rho=rho,
+            particle_kind="nu",
             include_sm=True,
             sin2thetaW=SIN2THETAW,
         ).dsigma_cm2_per_keV
@@ -192,7 +193,7 @@ def test_sm_plus_np_uses_matrix_addition_before_kernel_evaluation():
         basis="np",
     )
 
-    np.testing.assert_allclose(actual, expected, rtol=1e-14, atol=0.0)
+    np.testing.assert_allclose(actual, 1.0e-6 * expected, rtol=1e-14, atol=0.0)
     assert abs(actual[1, 2]) > 0.0
 
 
@@ -211,6 +212,7 @@ def test_density_api_contracts_each_energy_kernel_and_preserves_array_shape():
         ER_keV=ER_KEV,
         Enu_MeV=energies,
         rho=rho,
+        particle_kind="nu",
         include_sm=True,
         sin2thetaW=SIN2THETAW,
     )
@@ -251,6 +253,7 @@ def test_scalar_differential_api_requires_explicit_valid_rho():
             ER_keV=ER_KEV,
             Enu_MeV=E_NU_MEV,
             rho=np.diag([0.6, 0.6, -0.2]),
+            particle_kind="nu",
             include_sm=True,
         )
 

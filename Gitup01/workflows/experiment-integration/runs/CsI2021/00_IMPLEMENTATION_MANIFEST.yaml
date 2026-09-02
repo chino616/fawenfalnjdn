@@ -1,0 +1,585 @@
+dataset_id: CsI2021
+experiment_family: COHERENT_CsI
+physics_document: "F:/Work/2026-07-15 CEvNSpyEFT-Local/260820Gitup1-Flavor/CEvNS-pyEFT Flavor 重构：问题处理优先级提示词.md"
+
+reference_documents:
+  - "F:/Work/2026-07-15 CEvNSpyEFT-Local/260820Gitup1-Flavor/CEvNS_pyeFT_full_flavor_refactor_implementation_spec.md"
+  - PHASE1_SPLIT_REPORT.md
+machine_readable_attachments:
+  - data/responses/responses_all.json
+  - tests/reference_fast_split/csi2021_metadata.json
+optional_reference_code:
+  - src/cevns_pyeft/experiments/coherent/sns.py
+  - src/cevns_pyeft/experiments/coherent/slow_counts_csi2021.py
+  - src/cevns_pyeft/rates/counts.py
+
+dataset_identity:
+  run_period: 2021 release/current reproduction
+  detector_configuration: CsI[Na], 14.57 kg with CsI2021 efficiency and acceptance
+  source_configuration: SNS prompt nu_mu and delayed nu_e/antinu_mu
+  target_configuration: equal Cs:I stoichiometry, Cs-133 and I-127
+  statistical_data_mode: background_subtracted_excess
+
+observable_contract:
+  true_observables:
+    - E_nu_MeV
+    - E_R_keV
+  reconstructed_observables:
+    - PE
+  output_axes:
+    - source_component
+    - pe_bin
+  output_shape:
+    - 9
+  output_unit: events/bin
+
+modules:
+  dataset:
+    status: REUSE
+    user_document_sections:
+      - priority P3
+      - implementation spec sections 35-39
+    supplied_inputs:
+      - legacy dataset name CsI2021
+      - 9 irregular PE bins
+      - existing registry callable
+    csi_reference_files:
+      - src/cevns_pyeft/experiments/base.py
+      - src/cevns_pyeft/experiments/registry.py
+      - src/cevns_pyeft/experiments/coherent/slow_counts_csi2021.py
+    reuse_files:
+      - src/cevns_pyeft/experiments/registry.py
+      - src/cevns_pyeft/experiments/coherent/__init__.py
+    create_files: []
+    modify_files: []
+    conditional_modify_files:
+      - path: src/cevns_pyeft/experiments/registry.py
+        condition: only if the existing slow_counts_csi2021 public callable cannot remain registered unchanged
+        required_tests:
+          - tests/test_csi_slow_source_state_p3.py
+    must_not_modify:
+      - schemas/experiment.schema.json
+    public_api: []
+    tests:
+      - path: tests/test_csi_slow_source_state_p3.py
+        purpose: registry continues resolving CsI2021 to slow_counts_csi2021
+        inputs: get_slow_count_function("CsI2021")
+        expected: existing callable identity and signature remain discoverable
+        tolerance: exact
+        provenance: current registry contract
+    blockers: []
+
+  source:
+    status: SHARED_EXTENSION
+    user_document_sections:
+      - priority P2 particle separation
+      - implementation spec sections 34-38
+    supplied_inputs:
+      - prompt mu line
+      - delayed e and mub Michel spectra
+      - canonical NeutrinoState from P2
+    numerical_tables: []
+    physical_contract:
+      components:
+        - mu
+        - e
+        - mub
+      flavors:
+        - mu
+        - e
+        - mu
+      energy_unit: MeV
+      flux_unit: cm^-2 MeV^-1 for continua; cm^-2 for prompt line
+      energy_support: configured 0.001-300 MeV with physical mask 0.001-56 MeV
+      time_support: time-integrated
+      normalization: r*N_POT/(4*pi*L_cm^2) per component
+      interpolation: existing 200-node linear interpolation
+      matching: prompt line remains separate from delayed continua
+      lower_boundary: existing interpolator returns zero below first node
+      upper_boundary: existing interpolator returns zero beyond final tabulation node
+      extrapolation: none
+      nonnegative_required: true
+      zero_outside_support: intended; boundary-cell taper retained for reproduction
+      publication_mode: exact physical-support audit deferred
+      reproduction_mode: preserve current spectra and attach states only
+    csi_reference_files:
+      - src/cevns_pyeft/experiments/coherent/sns.py
+      - src/cevns_pyeft/sources/state.py
+    reuse_files:
+      - src/cevns_pyeft/sources/state.py
+    create_files: []
+    modify_files:
+      - src/cevns_pyeft/experiments/coherent/sns.py
+    conditional_modify_files: []
+    must_not_modify:
+      - data/datafiles/COHERENT_spectrum.txt
+    public_api:
+      - name: sns_component_state
+        location: src/cevns_pyeft/experiments/coherent/sns.py
+        purpose: map a beam component to canonical Flavor density and particle identity
+        inputs:
+          - name: component
+            type: SourceSpecies
+            unit: dimensionless
+            shape: scalar
+            meaning: one of mu, e, mub
+        keyword_arguments: []
+        returns:
+          type: NeutrinoState
+          unit: dimensionless
+          shape: [3, 3]
+          axes:
+            - final density row
+            - initial density column
+        error_behavior: reject unknown or aggregate components
+    tests:
+      - path: tests/test_csi_slow_source_state_p3.py
+        purpose: validate prompt/delayed SNS component states
+        inputs: mu, e, mub
+        expected: mu=(nu,rho_mu), e=(nu,rho_e), mub=(antinu,rho_mu)
+        tolerance: exact
+        provenance: implementation spec section 35
+      - path: tests/test_csi_slow_source_state_p3.py
+        purpose: source spectra and normalizations are unchanged by state attachment
+        inputs: fixed energy grid and both source construction modes
+        expected: pre-P3 flux values and prompt weight are bitwise unchanged
+        tolerance: rtol=0, atol=0
+        provenance: current sns.py reproduction behavior
+    blockers:
+      - exact upper-support interpolation audit is deferred and must not alter P3 values
+
+  target:
+    status: REUSE
+    user_document_sections:
+      - existing CsI Slow target composition
+    supplied_inputs:
+      - Cs-133 and I-127
+      - weights 133/260 and 127/260
+    physical_contract:
+      detectors:
+        - CsI2021 CsI[Na]
+      materials:
+        - CsI
+      isotopes:
+        - Cs-133
+        - I-127
+      exposure_semantics: time-integrated flux times detector mass once
+      nuclei_per_kg_convention: A*1.6605390666e-27 kg per nucleus
+      response_keys:
+        - Cs133
+        - I
+    csi_reference_files:
+      - src/cevns_pyeft/experiments/coherent/slow_counts_csi2021.py
+      - src/cevns_pyeft/nuclear/response.py
+    reuse_files:
+      - src/cevns_pyeft/nuclear/response.py
+      - data/responses/responses_all.json
+    create_files: []
+    modify_files: []
+    conditional_modify_files: []
+    must_not_modify:
+      - data/responses/responses_all.json
+    public_api: []
+    tests:
+      - path: tests/test_csi_slow_source_state_p3.py
+        purpose: response keys and target weights remain available and normalized
+        inputs: ResponseDB and Cs/I weights
+        expected: A values 133 and 127; weights sum to one
+        tolerance: exact
+        provenance: current CsI2021 Slow contract
+    blockers: []
+
+  theory_response:
+    status: REUSE
+    user_document_sections:
+      - P0-P2 Flavor contracts
+    supplied_inputs:
+      - 22 canonical matrix Wilson coefficients
+      - K=C-dagger-C convention
+    physical_contract:
+      incoming_flavor: rho in e,mu,tau initial-flavor space
+      outgoing_flavor: summed into K
+      neutrino_or_antineutrino: explicit metadata; same numeric kernel pending audit
+      coefficient_basis: 22 Li2026 LeftKey operators with 3x3 values
+      coefficient_order:
+        - row final
+        - column initial
+      standard_model_point: c_SM times I3
+      response_keys:
+        - Cs133
+        - I
+    csi_reference_files:
+      - src/cevns_pyeft/theory/li2026/
+      - src/cevns_pyeft/nuclear/response.py
+    reuse_files:
+      - src/cevns_pyeft/theory/li2026/
+      - src/cevns_pyeft/nuclear/response.py
+    create_files: []
+    modify_files: []
+    conditional_modify_files: []
+    must_not_modify:
+      - src/cevns_pyeft/theory/li2026/
+      - src/cevns_pyeft/nuclear/response.py
+    public_api: []
+    tests:
+      - path: tests/test_li2026_p1_csi_kernel.py
+        purpose: preserve Cs/I Hermitian PSD Flavor kernels
+        inputs: random physical LNC matrices
+        expected: Hermitian, PSD and nonnegative contraction
+        tolerance: scale-aware existing tolerance
+        provenance: P1 Gate
+    blockers: []
+
+  kinematics_cross_section:
+    status: REUSE
+    user_document_sections:
+      - priority P0 units and support
+      - priority P3 rates boundary
+    supplied_inputs:
+      - E_nu in MeV
+      - E_R in keV
+      - NeutrinoState
+    physical_contract:
+      incident_energy_unit: MeV at rates API; GeV in theory core
+      recoil_energy_unit: keV at rates API; GeV in theory core
+      cross_section_unit: cm^2/keV
+      minimum_incident_energy: exact two-body boundary in differential API
+      recoil_endpoint: 2*E_nu^2/(m_A+2*E_nu)
+      baseline_kinematics: exact P0 helper
+      diagnostic_kinematics: counts pre-mask may remain an optimization only
+      out_of_support_behavior: exact zero
+    csi_reference_files:
+      - src/cevns_pyeft/rates/differential.py
+    reuse_files:
+      - src/cevns_pyeft/rates/differential.py
+      - src/cevns_pyeft/theory/kinematics.py
+    create_files: []
+    modify_files: []
+    conditional_modify_files: []
+    implementation_location: src/cevns_pyeft/rates/differential.py
+    must_not_modify:
+      - src/cevns_pyeft/theory/kinematics.py
+    public_api:
+      - name: differential_cross_section_nn
+        location: src/cevns_pyeft/rates/differential.py
+        purpose: contract a canonical state with the Flavor differential kernel
+        inputs:
+          - name: rho
+            type: NeutrinoState or density array
+            unit: dimensionless
+            shape: [3, 3] or Enu.shape+[3,3]
+            meaning: incoming source density
+          - name: Enu_MeV
+            type: float or ndarray
+            unit: MeV
+            shape: scalar or arbitrary energy grid
+            meaning: incident energy
+          - name: ER_keV
+            type: float
+            unit: keV
+            shape: scalar
+            meaning: recoil energy
+        keyword_arguments:
+          - particle_kind required for raw rho
+        returns:
+          type: DSigmaResult
+          unit: cm^2/keV
+          shape: Enu.shape
+          axes:
+            - neutrino energy
+        error_behavior: reject invalid states, units, Wilson values and negative energies
+    tests:
+      - path: tests/test_source_state_p2.py
+        purpose: P2 constant and energy-dependent density contraction remains valid
+        inputs: Cs133 and I127 grids
+        expected: exact elementwise Tr[rho K]
+        tolerance: rtol=1e-14, atol=0
+        provenance: P2 Gate
+    blockers: []
+
+  detector_response:
+    status: REUSE
+    user_document_sections:
+      - implementation spec section 39
+    supplied_inputs:
+      - existing p_smearing_csi recoil-to-PE response
+      - CsI2021 analytic efficiency parameters
+      - 9 irregular PE bins
+    numerical_tables: []
+    physical_contract:
+      true_observable: E_R_keV
+      reconstructed_observable: PE
+      mean_mapping: p_smearing_csi mean PE response as a function of E_R_keV
+      stochastic_response: p_smearing_csi
+      efficiency: a/(1+exp[-b*(PE-c)])+d, clamped at zero
+      efficiency_domain: PE
+      binning: 9 irregular bins with edges [0.001,8.001,12.001,16.001,20.001,24.001,32.001,40.001,48.001,60.001]
+      migration_rule: outside analysis window excluded
+    csi_reference_files:
+      - src/cevns_pyeft/experiments/coherent/slow_counts_csi2021.py
+      - src/cevns_pyeft/experiments/base.py
+    reuse_files:
+      - src/cevns_pyeft/experiments/coherent/slow_counts_csi2021.py
+      - src/cevns_pyeft/experiments/base.py
+    create_files: []
+    modify_files: []
+    conditional_modify_files: []
+    must_not_modify: []
+    public_api: []
+    tests:
+      - path: tests/test_csi_slow_source_state_p3.py
+        purpose: detector folding receives scalar spectra and preserves bins
+        inputs: migrated per-component true recoil rate
+        expected: no Flavor axes after contraction; output shape (9,)
+        tolerance: exact shape and finite nonnegative values
+        provenance: implementation spec section 39
+    blockers: []
+
+  slow_counts:
+    status: CORE_EXTENSION
+    user_document_sections:
+      - priority P3
+      - implementation spec sections 37-39 and Gate F5
+    supplied_inputs:
+      - canonical Wilson matrices
+      - component-specific NeutrinoState
+      - frozen source, target and detector behavior
+    physical_contract:
+      integration_chain: flux/state -> K -> Tr[rho K] -> E_nu -> nuclei/kg -> PE -> efficiency -> bin
+      integration_order:
+        - E_nu at fixed E_R
+        - stochastic recoil-to-PE folding
+        - PE-bin integration
+        - target combination
+      component_axes:
+        - source_component
+        - target
+        - PE_bin
+      returned_axes:
+        - source_component dictionary key
+        - PE_bin
+      returned_shape:
+        - 9
+      returned_unit: events/bin
+    csi_reference_files:
+      - src/cevns_pyeft/experiments/coherent/slow_counts_csi2021.py
+      - src/cevns_pyeft/rates/counts.py
+    reuse_files:
+      - src/cevns_pyeft/rates/differential.py
+      - src/cevns_pyeft/sources/state.py
+    create_files:
+      - tests/test_csi_slow_source_state_p3.py
+    modify_files:
+      - src/cevns_pyeft/rates/counts.py
+      - src/cevns_pyeft/experiments/coherent/slow_counts_csi2021.py
+    conditional_modify_files: []
+    must_not_modify:
+      - src/cevns_pyeft/experiments/coherent/fast_kernel_csi2021.py
+      - tests/reference_fast_split/
+      - src/cevns_pyeft/experiments/conus/
+    public_api:
+      - name: slow_counts_csi2021
+        location: src/cevns_pyeft/experiments/coherent/slow_counts_csi2021.py
+        purpose: Flavor-aware authoritative CsI2021 Slow prediction
+        inputs:
+          - name: wc_triplets
+            type: Mapping[LeftKey,FlavorMatrix]
+            unit: GeV^(4-d) by operator
+            shape: each value [3,3]
+            meaning: canonical Wilson map
+          - name: responses_json
+            type: path
+            unit: none
+            shape: scalar
+            meaning: nuclear response database
+        keyword_arguments:
+          - include_sm
+          - sin2thetaW
+          - integration-grid controls
+        returns:
+          type: dictionary of arrays
+          unit: events/bin and events/PE
+          shape: counts arrays [9]
+          axes:
+            - source component
+            - PE bin
+        error_behavior: reject scalar/invalid Wilson values and invalid source states
+      - name: _rate_per_kg
+        location: src/cevns_pyeft/rates/counts.py
+        purpose: integrate a component-specific canonical state and flux at fixed recoil grid
+        inputs:
+          - name: source_state
+            type: NeutrinoState
+            unit: dimensionless
+            shape: [3,3] for SNS
+            meaning: incoming component state
+          - name: ER_grid
+            type: ndarray
+            unit: keV
+            shape: [N_ER]
+            meaning: recoil grid
+        keyword_arguments:
+          - canonical Wilson map and numerical settings
+        returns:
+          type: ndarray
+          unit: events/(kg keV)
+          shape: [N_ER]
+          axes:
+            - recoil energy
+        error_behavior: reject component/state contradictions and propagate differential validation errors
+    tests:
+      - path: tests/test_csi_slow_source_state_p3.py
+        purpose: each CsI2021 component uses the correct state and particle label
+        inputs: SM and one flavor-changing matrix point
+        expected: explicit direct differential integration equals Slow component result
+        tolerance: rtol=1e-12 with scale-appropriate atol=0
+        provenance: independent Tr[rho K] reference loop
+      - path: tests/test_csi_slow_source_state_p3.py
+        purpose: component and target sums preserve the public output contract
+        inputs: small deterministic grids
+        expected: total=mu+e+mub, weights sum correctly, all arrays shape (9,)
+        tolerance: rtol=1e-13, atol=0
+        provenance: current Slow API contract
+      - path: tests/test_csi_slow_source_state_p3.py
+        purpose: legacy SM small-grid total regression
+        inputs: PHASE1 split settings
+        expected: total 773.8789850850715
+        tolerance: freeze after reproducing exact documented settings; never loosen to pass
+        provenance: PHASE1_SPLIT_REPORT.md
+    reference_outputs:
+      - PHASE1_SPLIT_REPORT.md CsI2021 total 773.8789850850715
+      - tests/reference_fast_split/csi2021_* protected diagnostic only
+    blockers: []
+    backup_plan:
+      - backup/src/cevns_pyeft/experiments/coherent/sns.py
+      - backup/src/cevns_pyeft/rates/counts.py
+      - backup/src/cevns_pyeft/experiments/coherent/slow_counts_csi2021.py
+      - backup/BACKUP_MANIFEST.md
+
+  fast_counts:
+    status: BLOCKED
+    user_document_sections:
+      - priority P4
+      - implementation spec sections 40-47
+    supplied_inputs:
+      - existing legacy scalar Fast arrays
+    representations:
+      - name: Flavor quadratic EFT kernel
+        status: BLOCKED
+        mathematical_basis: sum_IJ H_IJ Tr[rho C_I-dagger C_J]
+        required_slow_state: SLOW_VALIDATED
+        coefficient_basis: 22 operators with coefficient tensor (22,3,3)
+        storage_file: future P4 output; existing scalar files are stale
+        storage_shape: unresolved by P4
+        returned_shape:
+          - 9
+        create_files: []
+        modify_files: []
+        must_not_modify:
+          - src/cevns_pyeft/experiments/coherent/fast_kernel_csi2021.py
+          - tests/reference_fast_split/
+        public_api: []
+        tests: []
+        blockers:
+          - P4 math/storage/stale-kernel contract not yet implemented
+    csi_reference_files:
+      - src/cevns_pyeft/experiments/coherent/fast_kernel_csi2021.py
+      - tests/reference_fast_split/csi2021_metadata.json
+    reuse_files: []
+    create_files: []
+    modify_files: []
+    conditional_modify_files: []
+    must_not_modify:
+      - src/cevns_pyeft/kernels/
+      - src/cevns_pyeft/experiments/coherent/fast_kernel_csi2021.py
+      - tests/reference_fast_split/
+    public_api: []
+    tests: []
+    blockers:
+      - P3 Slow must validate before P4 starts
+
+  statistics:
+    status: BLOCKED
+    user_document_sections:
+      - none in Flavor migration documents
+    supplied_inputs: []
+    numerical_tables: []
+    physical_contract:
+      data_mode: background_subtracted_excess
+      observed_data: not authoritatively supplied
+      background_data: not authoritatively supplied
+      covariance: not supplied
+      nuisance_parameters: []
+      test_statistic: not supplied
+      profiling: not supplied
+      confidence_construction: not supplied
+    csi_reference_files: []
+    reuse_files: []
+    create_files: []
+    modify_files: []
+    conditional_modify_files: []
+    must_not_modify:
+      - data/datafiles/COHERENT_data.txt
+      - data/datafiles/COHERENT_lower.txt
+      - data/datafiles/COHERENT_upper.txt
+    public_api: []
+    tests: []
+    reference_outputs: []
+    blockers:
+      - authoritative statistical provenance is missing and statistics is outside P3
+
+  validation_registry:
+    status: ADAPTER
+    user_document_sections:
+      - P3 Gate reporting
+    supplied_inputs:
+      - existing registry
+      - P2 and CsI references
+    discovery_strategy: preserve current Python registry; add focused P3 tests only
+    csi_reference_files:
+      - src/cevns_pyeft/experiments/registry.py
+    reuse_files:
+      - src/cevns_pyeft/experiments/registry.py
+    create_files:
+      - tests/test_csi_slow_source_state_p3.py
+    modify_files: []
+    conditional_modify_files: []
+    must_not_modify:
+      - tests/reference_fast_split/
+    public_api: []
+    tests:
+      - path: tests/test_csi_slow_source_state_p3.py
+        purpose: aggregate P3 Source/Slow Gate
+        inputs: both Cs/I targets and all three SNS components
+        expected: state mapping, direct contraction, sums, shapes, units and regression pass
+        tolerance: contract-specific explicit tolerances
+        provenance: P3 user documents and existing references
+    regression_scope:
+      - P0-P2 Flavor tests
+      - Helm and CsI differential tests
+      - CsI2021 and CsI2021 Slow tests
+      - Ar2020 non-regression because shared SNS/counts code is touched
+      - exclude CONUS-specific implementation work
+    blockers: []
+
+global_blockers:
+  - ANTI-NU AUDIT is required before changing nu/antinu kernel physics
+  - P4 Fast redesign is not part of P3
+  - statistics provenance is absent
+
+protected_existing_datasets:
+  - CsI2017 public behavior
+  - CsI2021 behavior outside approved source-state and Slow plumbing
+  - Ar2020 behavior and source outputs
+  - all CONUS and CONUS+ implementations
+
+gate:
+  phase: I
+  status: PASS
+  reasons:
+    - CsI2021 is uniquely identified and all P3 inputs and observable axes are inventoried
+    - every module has one classification and concrete file boundaries
+    - source and Slow APIs, units, shapes, tests and blockers are explicit
+    - no production code or production data was created or modified in Phase 0
+
+next_skill: cevns-dataset

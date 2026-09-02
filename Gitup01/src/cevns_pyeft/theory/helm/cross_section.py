@@ -28,7 +28,13 @@ from typing import Literal
 import numpy as np
 
 from cevns_pyeft.foundation import constants as c
+from cevns_pyeft.foundation.units import cm2_per_GeV_to_cm2_per_keV
 from cevns_pyeft.theory.helm.form_factor import helm_form_factor_squared
+from cevns_pyeft.theory.kinematics import (
+    is_two_body_recoil_allowed,
+    minimum_neutrino_energy_GeV,
+    two_body_recoil_max_GeV,
+)
 from cevns_pyeft.theory.li2026.flavor import (
     FlavorMatrix,
     NeutrinoFlavor,
@@ -75,12 +81,10 @@ def recoil_max_keV(
     """Return the exact elastic maximum nuclear recoil in keV."""
 
     e = float(E_nu_MeV) * c.MeV
-    if not math.isfinite(e) or e < 0.0:
-        raise ValueError("E_nu_MeV must be non-negative and finite")
-    if e == 0.0:
-        return 0.0
+    if not math.isfinite(e) or e <= 0.0:
+        raise ValueError("E_nu_MeV must be positive and finite")
     m_a = nuclear_mass_GeV(A, amu_GeV=amu_GeV)
-    t_max = 2.0 * e * e / (m_a + 2.0 * e)
+    t_max = two_body_recoil_max_GeV(e, m_a)
     return float(t_max / c.keV)
 
 
@@ -96,7 +100,7 @@ def minimum_neutrino_energy_MeV(
     if not math.isfinite(t) or t < 0.0:
         raise ValueError("ER_keV must be non-negative and finite")
     m_a = nuclear_mass_GeV(A, amu_GeV=amu_GeV)
-    e_min = 0.5 * (t + math.sqrt(t * t + 2.0 * m_a * t))
+    e_min = minimum_neutrino_energy_GeV(t, m_a)
     return float(e_min / c.MeV)
 
 
@@ -122,30 +126,30 @@ def cevns_kinematic_factor(
 
     e = float(E_nu_MeV) * c.MeV
     t = float(ER_keV) * c.keV
-    if not math.isfinite(e) or e < 0.0:
-        raise ValueError("E_nu_MeV must be non-negative and finite")
+    if not math.isfinite(e) or e <= 0.0:
+        raise ValueError("E_nu_MeV must be positive and finite")
     if not math.isfinite(t) or t < 0.0:
         raise ValueError("ER_keV must be non-negative and finite")
-    if e == 0.0:
-        return 0.0
-
+    if kinematics not in ("mathematica", "exact_vector"):
+        raise ValueError(
+            "kinematics must be 'mathematica' or 'exact_vector', "
+            f"got {kinematics!r}"
+        )
     m_a = nuclear_mass_GeV(A, amu_GeV=amu_GeV)
-    t_max = 2.0 * e * e / (m_a + 2.0 * e)
-    # Small relative tolerance only protects floating-point points at endpoint.
-    if t > t_max * (1.0 + 1.0e-12) + 1.0e-18:
+    if not is_two_body_recoil_allowed(e, t, m_a):
         return 0.0
 
     base = 1.0 - m_a * t / (2.0 * e * e)
     if kinematics == "mathematica":
         value = base
     elif kinematics == "exact_vector":
-        value = base - t / e
+        value = 1.0 - t / two_body_recoil_max_GeV(e, m_a)
     else:
         raise ValueError(
             "kinematics must be 'mathematica' or 'exact_vector', "
             f"got {kinematics!r}"
         )
-    return float(max(value, 0.0))
+    return float(value)
 
 
 def sm_weak_charge(
@@ -205,7 +209,7 @@ def nuclear_weak_charge_matrix(
     return np.asarray(z * cp + n * cn, dtype=np.complex128)
 
 
-def _helm_prefactor_cm2_per_keV(
+def _helm_prefactor_cm2_per_GeV(
     E_nu_MeV: float,
     ER_keV: float,
     A: int | float,
@@ -228,10 +232,133 @@ def _helm_prefactor_cm2_per_keV(
     m_a = nuclear_mass_GeV(A, amu_GeV=amu_GeV)
     ff2 = float(helm_form_factor_squared(ER_keV, A, amu_GeV=amu_GeV))
 
-    # In natural units dσ/dT is GeV^-3.  GEV_INV2_TO_CM2 converts the area
-    # factor, and c.keV = 1e-6 converts from per-GeV to per-keV.
-    conversion = c.GEV_INV2_TO_CM2 * c.keV
-    return float((c.G_F**2 * m_a / (4.0 * math.pi)) * kine * ff2 * conversion)
+    # In natural units dσ/dT is GeV^-3.  GEV_INV2_TO_CM2 converts only the
+    # area factor; the canonical theory derivative remains per GeV.
+    return float(
+        (c.G_F**2 * m_a / (4.0 * math.pi))
+        * kine
+        * ff2
+        * c.GEV_INV2_TO_CM2
+    )
+
+
+def dsigma_dER_helm_cm2_per_GeV(
+    E_nu_MeV: float,
+    ER_keV: float,
+    A: int | float,
+    Z: int | float,
+    *,
+    sin2_theta_w: float = DEFAULT_SIN2_THETA_W,
+    kinematics: HelmKinematics = "mathematica",
+    amu_GeV: float = c.AMU_GEV,
+) -> float:
+    """Return the SM Helm CEvNS differential cross section in cm^2/GeV."""
+
+    _validate_target(A, Z)
+    q_w = sm_weak_charge(A, Z, sin2_theta_w=sin2_theta_w)
+    pref = _helm_prefactor_cm2_per_GeV(
+        E_nu_MeV,
+        ER_keV,
+        A,
+        kinematics=kinematics,
+        amu_GeV=amu_GeV,
+    )
+    if pref == 0.0:
+        return 0.0
+    return float(pref * q_w * q_w)
+
+
+def dsigma_dER_helm_kernel_cm2_per_GeV(
+    E_nu_MeV: float,
+    ER_keV: float,
+    A: int | float,
+    Z: int | float,
+    *,
+    weak_charge_matrix: object | None = None,
+    sin2_theta_w: float = DEFAULT_SIN2_THETA_W,
+    kinematics: HelmKinematics = "mathematica",
+    amu_GeV: float = c.AMU_GEV,
+) -> FlavorMatrix:
+    """Return the flavor detection kernel ``dK/dE_R`` in cm^2/GeV.
+
+    ``weak_charge_matrix`` is dimensionless and follows ``Q[final, initial]``.
+    If omitted, the SM value ``Q_W I_3`` is used.  The outgoing flavor is not
+    observed, so the matrix entering the initial-flavor space is ``Q^dagger Q``.
+    """
+
+    _validate_target(A, Z)
+    if weak_charge_matrix is None:
+        qmat = sm_weak_charge_matrix(A, Z, sin2_theta_w=sin2_theta_w)
+    else:
+        qmat = as_flavor_matrix(weak_charge_matrix, name="weak_charge_matrix")
+
+    pref = _helm_prefactor_cm2_per_GeV(
+        E_nu_MeV,
+        ER_keV,
+        A,
+        kinematics=kinematics,
+        amu_GeV=amu_GeV,
+    )
+    if pref == 0.0:
+        return zero_flavor_matrix()
+
+    kernel = pref * (dagger(qmat) @ qmat)
+    return np.asarray(kernel, dtype=np.complex128)
+
+
+def dsigma_dER_helm_density_cm2_per_GeV(
+    E_nu_MeV: float,
+    ER_keV: float,
+    A: int | float,
+    Z: int | float,
+    rho: object,
+    *,
+    weak_charge_matrix: object | None = None,
+    sin2_theta_w: float = DEFAULT_SIN2_THETA_W,
+    kinematics: HelmKinematics = "mathematica",
+    amu_GeV: float = c.AMU_GEV,
+    atol: float = 1.0e-10,
+) -> float:
+    """Return ``Tr[rho dK/dE_R]`` in cm^2/GeV."""
+
+    kernel = dsigma_dER_helm_kernel_cm2_per_GeV(
+        E_nu_MeV,
+        ER_keV,
+        A,
+        Z,
+        weak_charge_matrix=weak_charge_matrix,
+        sin2_theta_w=sin2_theta_w,
+        kinematics=kinematics,
+        amu_GeV=amu_GeV,
+    )
+    return contract_density_kernel(rho, kernel, atol=atol)
+
+
+def dsigma_dER_helm_flavor_cm2_per_GeV(
+    E_nu_MeV: float,
+    ER_keV: float,
+    A: int | float,
+    Z: int | float,
+    flavor: NeutrinoFlavor,
+    *,
+    weak_charge_matrix: object | None = None,
+    sin2_theta_w: float = DEFAULT_SIN2_THETA_W,
+    kinematics: HelmKinematics = "mathematica",
+    amu_GeV: float = c.AMU_GEV,
+) -> float:
+    """Return the Helm cross section for one pure incoming flavor state."""
+
+    return dsigma_dER_helm_density_cm2_per_GeV(
+        E_nu_MeV,
+        ER_keV,
+        A,
+        Z,
+        flavor_projector(flavor),
+        weak_charge_matrix=weak_charge_matrix,
+        sin2_theta_w=sin2_theta_w,
+        kinematics=kinematics,
+        amu_GeV=amu_GeV,
+    )
 
 
 def dsigma_dER_helm_cm2_per_keV(
@@ -244,20 +371,19 @@ def dsigma_dER_helm_cm2_per_keV(
     kinematics: HelmKinematics = "mathematica",
     amu_GeV: float = c.AMU_GEV,
 ) -> float:
-    """Return the SM Helm CEvNS differential cross section in cm^2/keV."""
+    """Explicitly convert the canonical SM Helm result to cm^2/keV."""
 
-    _validate_target(A, Z)
-    pref = _helm_prefactor_cm2_per_keV(
-        E_nu_MeV,
-        ER_keV,
-        A,
-        kinematics=kinematics,
-        amu_GeV=amu_GeV,
+    return cm2_per_GeV_to_cm2_per_keV(
+        dsigma_dER_helm_cm2_per_GeV(
+            E_nu_MeV,
+            ER_keV,
+            A,
+            Z,
+            sin2_theta_w=sin2_theta_w,
+            kinematics=kinematics,
+            amu_GeV=amu_GeV,
+        )
     )
-    if pref == 0.0:
-        return 0.0
-    q_w = sm_weak_charge(A, Z, sin2_theta_w=sin2_theta_w)
-    return float(pref * q_w * q_w)
 
 
 def dsigma_dER_helm_kernel_cm2_per_keV(
@@ -271,31 +397,20 @@ def dsigma_dER_helm_kernel_cm2_per_keV(
     kinematics: HelmKinematics = "mathematica",
     amu_GeV: float = c.AMU_GEV,
 ) -> FlavorMatrix:
-    """Return the flavor detection kernel ``dK/dE_R`` in cm^2/keV.
+    """Explicitly convert the canonical Helm Flavor kernel to cm^2/keV."""
 
-    ``weak_charge_matrix`` is dimensionless and follows ``Q[final, initial]``.
-    If omitted, the SM value ``Q_W I_3`` is used.  The outgoing flavor is not
-    observed, so the matrix entering the initial-flavor space is ``Q^dagger Q``.
-    """
-
-    _validate_target(A, Z)
-    pref = _helm_prefactor_cm2_per_keV(
-        E_nu_MeV,
-        ER_keV,
-        A,
-        kinematics=kinematics,
-        amu_GeV=amu_GeV,
+    return cm2_per_GeV_to_cm2_per_keV(
+        dsigma_dER_helm_kernel_cm2_per_GeV(
+            E_nu_MeV,
+            ER_keV,
+            A,
+            Z,
+            weak_charge_matrix=weak_charge_matrix,
+            sin2_theta_w=sin2_theta_w,
+            kinematics=kinematics,
+            amu_GeV=amu_GeV,
+        )
     )
-    if pref == 0.0:
-        return zero_flavor_matrix()
-
-    if weak_charge_matrix is None:
-        qmat = sm_weak_charge_matrix(A, Z, sin2_theta_w=sin2_theta_w)
-    else:
-        qmat = as_flavor_matrix(weak_charge_matrix, name="weak_charge_matrix")
-
-    kernel = pref * (dagger(qmat) @ qmat)
-    return np.asarray(kernel, dtype=np.complex128)
 
 
 def dsigma_dER_helm_density_cm2_per_keV(
@@ -311,19 +426,22 @@ def dsigma_dER_helm_density_cm2_per_keV(
     amu_GeV: float = c.AMU_GEV,
     atol: float = 1.0e-10,
 ) -> float:
-    """Return ``Tr[rho dK/dE_R]`` in cm^2/keV."""
+    """Explicitly convert the canonical density contraction to cm^2/keV."""
 
-    kernel = dsigma_dER_helm_kernel_cm2_per_keV(
-        E_nu_MeV,
-        ER_keV,
-        A,
-        Z,
-        weak_charge_matrix=weak_charge_matrix,
-        sin2_theta_w=sin2_theta_w,
-        kinematics=kinematics,
-        amu_GeV=amu_GeV,
+    return cm2_per_GeV_to_cm2_per_keV(
+        dsigma_dER_helm_density_cm2_per_GeV(
+            E_nu_MeV,
+            ER_keV,
+            A,
+            Z,
+            rho,
+            weak_charge_matrix=weak_charge_matrix,
+            sin2_theta_w=sin2_theta_w,
+            kinematics=kinematics,
+            amu_GeV=amu_GeV,
+            atol=atol,
+        )
     )
-    return contract_density_kernel(rho, kernel, atol=atol)
 
 
 def dsigma_dER_helm_flavor_cm2_per_keV(
@@ -338,23 +456,29 @@ def dsigma_dER_helm_flavor_cm2_per_keV(
     kinematics: HelmKinematics = "mathematica",
     amu_GeV: float = c.AMU_GEV,
 ) -> float:
-    """Return the Helm cross section for one pure incoming flavor state."""
+    """Explicitly convert one incoming-Flavor Helm result to cm^2/keV."""
 
-    return dsigma_dER_helm_density_cm2_per_keV(
-        E_nu_MeV,
-        ER_keV,
-        A,
-        Z,
-        flavor_projector(flavor),
-        weak_charge_matrix=weak_charge_matrix,
-        sin2_theta_w=sin2_theta_w,
-        kinematics=kinematics,
-        amu_GeV=amu_GeV,
+    return cm2_per_GeV_to_cm2_per_keV(
+        dsigma_dER_helm_flavor_cm2_per_GeV(
+            E_nu_MeV,
+            ER_keV,
+            A,
+            Z,
+            flavor,
+            weak_charge_matrix=weak_charge_matrix,
+            sin2_theta_w=sin2_theta_w,
+            kinematics=kinematics,
+            amu_GeV=amu_GeV,
+        )
     )
 
 
 __all__ = [
     "HelmKinematics",
+    "dsigma_dER_helm_cm2_per_GeV",
+    "dsigma_dER_helm_kernel_cm2_per_GeV",
+    "dsigma_dER_helm_density_cm2_per_GeV",
+    "dsigma_dER_helm_flavor_cm2_per_GeV",
     "DEFAULT_SIN2_THETA_W",
     "nuclear_mass_GeV",
     "recoil_max_keV",

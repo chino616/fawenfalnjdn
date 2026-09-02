@@ -109,7 +109,7 @@ def build_cumulative_fast_representation(
     cross_section_model: str = "full_response",
     kinematics: str = "publication_reproduction",
     sin2thetaW: float = 0.23873,
-    c10_mass_mode: str = "flavor",
+    c10_mass_mode: str = "quark_mass_resolved",
     slow_integration_settings: SlowIntegrationSettings | None = None,
     fast_settings: CumulativeFastSettings | None = None,
 ) -> CumulativeFastRepresentation:
@@ -185,7 +185,7 @@ def cumulative_fast_counts_conus_plus_ge73_pheno(
     cross_section_model: str = "full_response",
     kinematics: str = "publication_reproduction",
     sin2thetaW: float = 0.23873,
-    c10_mass_mode: str = "flavor",
+    c10_mass_mode: str = "quark_mass_resolved",
     slow_integration_settings: SlowIntegrationSettings | None = None,
     fast_settings: CumulativeFastSettings | None = None,
     return_representation: bool = False,
