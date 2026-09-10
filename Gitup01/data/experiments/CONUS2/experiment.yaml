@@ -1,0 +1,25 @@
+dataset_id: CONUS2
+dataset_name: CONUS2
+family: conus
+spec_status: skeleton_requires_physics_input
+source_type: reactor
+flavor: electron_antineutrino
+target_mode: REQUIRES_INPUT_CONUS2_TARGET
+
+provenance:
+  physics_document: REQUIRES_INPUT_CONUS2_SOURCE
+  workflow_scope: independent_CONUS2_skeleton
+
+implementation:
+  existing_conus_dependency: none
+  source_implemented: false
+  detector_response_implemented: false
+  slow_counts_implemented: false
+  fast_counts_implemented: false
+  statistics_implemented: false
+  registry_modified: false
+
+expected_output:
+  axes: REQUIRES_INPUT_CONUS2_OUTPUT_AXES
+  shape: REQUIRES_INPUT_CONUS2_OUTPUT_SHAPE
+  unit: expected_events_per_bin
