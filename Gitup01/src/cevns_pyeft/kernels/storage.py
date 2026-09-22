@@ -210,6 +210,7 @@ def build_fastscan_template(
     n_er: int = 21,
     n_enu: int = 120,
     n_pe_sub: int = 8,
+    pe_step: float = 3.0,
     n_csi2017_er: int = 251,
     n_obs_sub: int = 8,
 ) -> dict[str, Any]:
@@ -227,6 +228,7 @@ def build_fastscan_template(
             n_er=n_er,
             n_enu=n_enu,
             n_pe_sub=n_pe_sub,
+            pe_step=pe_step,
         )
     if dataset == "CsI2017":
         return build_fast_kernel_csi2017(
@@ -279,6 +281,7 @@ def build_save_load_reconstruct(
     n_er: int = 21,
     n_enu: int = 120,
     n_pe_sub: int = 8,
+    pe_step: float = 3.0,
     n_csi2017_er: int = 251,
     n_obs_sub: int = 8,
 ) -> dict[str, Any]:
@@ -290,6 +293,7 @@ def build_save_load_reconstruct(
         n_er=n_er,
         n_enu=n_enu,
         n_pe_sub=n_pe_sub,
+        pe_step=pe_step,
         n_csi2017_er=n_csi2017_er,
         n_obs_sub=n_obs_sub,
     )
@@ -332,6 +336,7 @@ def saved_kernel_main(argv: Optional[Sequence[str]] = None) -> int:
     parser.add_argument("--n-er", type=int, default=21)
     parser.add_argument("--n-enu", type=int, default=120)
     parser.add_argument("--n-pe-sub", type=int, default=8)
+    parser.add_argument("--pe-step", type=float, default=3.0)
     parser.add_argument("--n-csi2017-er", type=int, default=251)
     parser.add_argument("--n-obs-sub", type=int, default=8)
     args = parser.parse_args(argv)
@@ -345,6 +350,7 @@ def saved_kernel_main(argv: Optional[Sequence[str]] = None) -> int:
             n_er=args.n_er,
             n_enu=args.n_enu,
             n_pe_sub=args.n_pe_sub,
+            pe_step=args.pe_step,
             n_csi2017_er=args.n_csi2017_er,
             n_obs_sub=args.n_obs_sub,
         )

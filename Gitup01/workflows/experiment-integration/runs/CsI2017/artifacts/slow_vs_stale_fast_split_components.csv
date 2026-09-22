@@ -1,0 +1,5 @@
+component,current_slow_total,stale_fast_split_total,delta,relative_delta_vs_stale_fast,diagnosis
+mu,2.8048148797486174e+01,2.7261352523562570e+01,7.8679627392360270e-01,2.8861233984761314e-02,prompt-line-sensitive stale Fast diagnostic
+e,3.9463669145376680e+01,3.9463671319003396e+01,-2.1736267186156510e-06,-5.5079181585646330e-08,continuum component agrees at diagnostic precision
+mub,7.7465073687442310e+01,7.7465077199521930e+01,-3.5120796155752030e-06,-4.5337586207128670e-08,continuum component agrees at diagnostic precision
+total,1.4497689163030518e+02,1.4419010104208792e+02,7.8679058821725790e-01,5.4566199935431080e-03,total mismatch dominated by prompt mu component

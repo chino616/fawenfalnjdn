@@ -2,13 +2,13 @@
 
 ## 1. Status
 
-Gate L status: BLOCKED_PENDING_REFERENCE_ARRAY_APPROVAL
+Gate L status: PASS
 
 The direct Slow implementation is wired through the validated SNS source state,
 shared Li2026 differential cross section, target-time normalization, and the
-CsI2021 detector response.  The current user instruction forbids updating or
-creating reference arrays in this pass, so the final Gate L reference-array
-criterion is intentionally left open.
+CsI2021 detector response.  After explicit user approval, authoritative Slow
+reference arrays were generated from the direct Slow defaults and the saved
+reference reproducibility test passes.
 
 ## 2. Reference Path Inspected
 
@@ -88,6 +88,16 @@ rejects an automatically generated `pe_step` coarser than the smallest PE bin
 width, because such settings alias the detector response and can inflate the
 diagnostic totals by orders of magnitude.
 
+Component-level stale-Fast comparison now lives in:
+
+```text
+workflows/experiment-integration/runs/CsI2021/artifacts/slow_vs_stale_fast_split_components.csv
+```
+
+It shows the total delta `-0.13227960865830823` events is dominated by the
+delayed `mub` component (`-0.1314554726063193` events).  The prompt `mu`
+component is numerically negligible in both coarse diagnostics.
+
 ## 5. Tests
 
 Generated diagnostic artifacts:
@@ -97,6 +107,7 @@ workflows/experiment-integration/runs/CsI2021/artifacts/slow_bin_counts.csv
 workflows/experiment-integration/runs/CsI2021/artifacts/slow_component_totals.csv
 workflows/experiment-integration/runs/CsI2021/artifacts/slow_convergence.csv
 workflows/experiment-integration/runs/CsI2021/artifacts/ar2020_shared_counts_nonregression.csv
+workflows/experiment-integration/runs/CsI2021/artifacts/slow_vs_stale_fast_split_components.csv
 workflows/experiment-integration/runs/CsI2021/figures/slow_bin_counts.png
 workflows/experiment-integration/runs/CsI2021/figures/slow_convergence.png
 ```
@@ -115,8 +126,19 @@ Ar2020 shared-counts non-regression diagnostic:
 | `{'n_er': 3, 'n_enu': 6, 'n_pe_bin': 3}` | 23.203475634474284 | True | True |
 
 The diagnostic artifacts are not reference arrays.  They are current-state
-evidence for the direct Slow chain and remain separate from the final Gate L
-saved-reference criterion.
+evidence for the direct Slow chain and remain separate from the authoritative
+Gate L saved reference.
+
+Authoritative Gate L reference:
+
+```text
+tests/reference_CsI2021/slow_reference.npy
+tests/reference_CsI2021/slow_reference.json
+settings = {'n_er': 21, 'n_enu': 120, 'n_pe_bin': 8, 'pe_step': 3.0, 'direct_slow_defaults': True}
+shape = (9,)
+sum = 332.9338350257275
+sha256 = e180acc63414b2a29d8ab13482d768c9cb47d7c64cce2271d50ad0af26d24292
+```
 
 ## 6. Tests
 
@@ -129,10 +151,19 @@ python -m pytest -q -p no:cacheprovider --basetemp .pytest-tmp tests/test_csi_sl
 Result:
 
 ```text
-35 passed
+39 passed
+
+python -m pytest -q -p no:cacheprovider --basetemp .pytest-tmp tests/test_li2026_p0_contract.py tests/test_li2026_p1_csi_kernel.py tests/test_source_state_p2.py tests/test_li2026_units_contract.py tests/test_csi_slow_counts_phase7.py tests/test_csi_slow_source_state_p3.py
+75 passed
+
+python -m pytest -q -p no:cacheprovider --basetemp .pytest-tmp -k "not conus"
+205 passed, 1 skipped, 33 deselected
+
+python tools/experiment_integration/generate_csi_slow_references.py --dataset all --write-reference-arrays --acknowledge-reference-update "I approve updating CsI Slow reference arrays"
+REFERENCE_WRITTEN for CsI2017 and CsI2021
 ```
 
-The CsI Phase 7/source subset contains 35 collected tests.  Coverage added in
+The CsI Phase 7/source subset contains 39 collected tests.  Coverage added in
 `tests/test_csi_slow_counts_phase7.py`:
 
 - output shape, finite/nonnegative counts, and component sum;
@@ -140,14 +171,16 @@ The CsI Phase 7/source subset contains 35 collected tests.  Coverage added in
 - `include_sm=False` with no NP coefficients gives zero counts;
 - explicit `(3,3)` Flavor Wilson matrix input remains finite and nonnegative;
 - Slow path has no Fast, reference-fast, statistics, or likelihood dependency.
+- stale Fast split metadata is diagnosed as non-authoritative for Gate L.
+- CsI Slow reference generation is non-writing by default and requires an
+  explicit approval phrase before formal reference arrays can be saved.
+- saved authoritative Slow reference arrays reproduce direct Slow defaults at
+  `rtol=1e-12, atol=1e-12`.
 
 ## 7. Blockers
 
-Gate L cannot be marked PASS in this pass because the workflow template requires
-an independently generated Slow reference array, while the current instruction
-is not to update reference arrays.
+No CsI2021 Slow-counts blocker remains for Gate L.
 
-Next action: after explicit approval for new CsI Slow reference arrays, generate
-`tests/reference_CsI2021/slow_reference.npy` from the direct Slow calculation,
-add saved-reference reproducibility checks, then update `experiment.yaml` to
-`slow_validated: true`.
+Next action: proceed to P4/Fast only after preserving the Gate L Slow reference
+contract.  The existing stale Fast split remains diagnostic-only and must not be
+treated as a flavor-compatible Fast kernel.

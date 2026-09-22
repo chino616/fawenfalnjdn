@@ -1,0 +1,5 @@
+component,current_slow_total,stale_fast_split_total,delta,relative_delta_vs_stale_fast,diagnosis
+mu,2.5771898551389090e-34,4.3015434477265180e-46,2.5771898551346074e-34,5.9913142490673240e+11,prompt component is numerically negligible in both coarse diagnostics
+e,1.9822209293462550e+01,1.9823033429514540e+01,-8.2413605198894400e-04,-4.1574668928413700e-05,small continuum drift against stale Fast diagnostic
+mub,8.0732726230882040e+01,8.0864181703488360e+01,-1.3145547260631930e-01,-1.6256328801834460e-03,dominant stale Fast diagnostic mismatch
+total,1.0055493552434457e+02,1.0068721513300288e+02,-1.3227960865830823e-01,-1.3137676762990550e-03,total mismatch dominated by delayed mub component

@@ -457,7 +457,7 @@ modules:
       - backup/BACKUP_MANIFEST.md
 
   fast_counts:
-    status: BLOCKED
+    status: FULL_DRY_RUN_PASS_REFERENCE_WRITE_PENDING
     user_document_sections:
       - priority P4
       - implementation spec sections 40-47
@@ -465,28 +465,34 @@ modules:
       - existing legacy scalar Fast arrays
     representations:
       - name: Flavor quadratic EFT kernel
-        status: BLOCKED
+        status: FULL_DRY_RUN_PASS_REFERENCE_WRITE_PENDING
         mathematical_basis: sum_IJ H_IJ Tr[rho C_I-dagger C_J]
         required_slow_state: SLOW_VALIDATED
         coefficient_basis: 22 operators with coefficient tensor (22,3,3)
-        storage_file: future P4 output; existing scalar files are stale
-        storage_shape: unresolved by P4
+        storage_file: future P4 full output; existing scalar files are stale diagnostics only
+        storage_shape: target/source/channel/22/22/bin with flavor_schema_version=1 metadata
         returned_shape:
           - 9
-        create_files: []
-        modify_files: []
-        must_not_modify:
+        create_files:
+          - workflows/experiment-integration/runs/CsI2021/08_FAST_COUNTS.md
+        modify_files:
+          - src/cevns_pyeft/kernels/builder.py
+          - src/cevns_pyeft/kernels/storage.py
           - src/cevns_pyeft/experiments/coherent/fast_kernel_csi2021.py
+          - tests/test_fast_flavor_tensor.py
+        must_not_modify:
           - tests/reference_fast_split/
         public_api: []
-        tests: []
+        tests:
+          - tests/test_fast_flavor_tensor.py::test_csi2021_fast_saved_kernel_reconstructs_lightweight_slow_counts
         blockers:
-          - P4 math/storage/stale-kernel contract not yet implemented
+          - authoritative full-resolution Flavor Fast reference not yet written or promoted
     csi_reference_files:
       - src/cevns_pyeft/experiments/coherent/fast_kernel_csi2021.py
       - tests/reference_fast_split/csi2021_metadata.json
     reuse_files: []
-    create_files: []
+    create_files:
+      - workflows/experiment-integration/runs/CsI2021/08_FAST_COUNTS.md
     modify_files: []
     conditional_modify_files: []
     must_not_modify:
@@ -494,9 +500,10 @@ modules:
       - src/cevns_pyeft/experiments/coherent/fast_kernel_csi2021.py
       - tests/reference_fast_split/
     public_api: []
-    tests: []
+    tests:
+      - tests/test_fast_flavor_tensor.py
     blockers:
-      - P3 Slow must validate before P4 starts
+      - authoritative full-resolution Flavor Fast reference not yet written or promoted
 
   statistics:
     status: BLOCKED

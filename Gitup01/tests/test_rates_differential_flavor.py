@@ -197,6 +197,35 @@ def test_sm_plus_np_uses_matrix_addition_before_kernel_evaluation():
     assert abs(actual[1, 2]) > 0.0
 
 
+def test_np_and_iso_internal_basis_change_preserves_flavor_changing_rate():
+    coefficient = zero_flavor_matrix()
+    coefficient[0, 1] = 1.0e-6 + 2.0e-7j
+    coefficient[2, 0] = -3.0e-7 + 4.0e-7j
+    rho = _random_density_matrix()
+    common = dict(
+        ER_keV=ER_KEV,
+        Enu_MeV=np.array([E_NU_MEV, 6.0]),
+        rho=rho,
+        particle_kind="nu",
+        wc_triplets={(6, 1, "u"): coefficient},
+        include_sm=True,
+        sin2thetaW=SIN2THETAW,
+    )
+
+    np_basis = differential_cross_section_nn(
+        RESPONSE,
+        basis="np",
+        **common,
+    ).dsigma_cm2_per_keV
+    iso_basis = differential_cross_section_nn(
+        RESPONSE,
+        basis="iso",
+        **common,
+    ).dsigma_cm2_per_keV
+
+    np.testing.assert_allclose(np_basis, iso_basis, rtol=1.0e-13, atol=0.0)
+
+
 def test_density_api_contracts_each_energy_kernel_and_preserves_array_shape():
     rho = _random_density_matrix()
     energies = np.array([0.0, E_NU_MEV, 6.0])

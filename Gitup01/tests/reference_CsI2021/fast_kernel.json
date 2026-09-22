@@ -1,0 +1,349 @@
+{
+  "model": "li2026_matrixized_v2",
+  "flavor_schema_version": 1,
+  "neutrino_flavor_order": [
+    "e",
+    "mu",
+    "tau"
+  ],
+  "wilson_flavor_axis": {
+    "row": "final",
+    "column": "initial"
+  },
+  "operator_basis_size": 22,
+  "coefficient_shape": [
+    22,
+    3,
+    3
+  ],
+  "lnc_lnv_interference": false,
+  "responses": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260820Gitup1-Flavor\\git-worktree-f0\\Gitup01\\data\\responses\\responses_all.json",
+  "dataset": "CsI2021",
+  "target_mode": "all",
+  "targets": [
+    "Cs133",
+    "I127",
+    "CsI"
+  ],
+  "source_flavors": [
+    "e",
+    "mu",
+    "mub"
+  ],
+  "channels": [
+    "M",
+    "SigmaPP",
+    "SigmaP",
+    "PhiPP",
+    "PhiPT",
+    "Delta",
+    "MPhiPP",
+    "SigmaPDelta"
+  ],
+  "basis": [
+    {
+      "index": 0,
+      "name": "1",
+      "label": "C(5,1)",
+      "triplet": [
+        5,
+        1,
+        ""
+      ]
+    },
+    {
+      "index": 1,
+      "name": "2",
+      "label": "C(6,1)_u",
+      "triplet": [
+        6,
+        1,
+        "u"
+      ]
+    },
+    {
+      "index": 2,
+      "name": "3",
+      "label": "C(6,1)_d",
+      "triplet": [
+        6,
+        1,
+        "d"
+      ]
+    },
+    {
+      "index": 3,
+      "name": "4",
+      "label": "C(6,2)_u",
+      "triplet": [
+        6,
+        2,
+        "u"
+      ]
+    },
+    {
+      "index": 4,
+      "name": "5",
+      "label": "C(6,2)_d",
+      "triplet": [
+        6,
+        2,
+        "d"
+      ]
+    },
+    {
+      "index": 5,
+      "name": "6",
+      "label": "C(7,1)_u",
+      "triplet": [
+        7,
+        1,
+        "u"
+      ]
+    },
+    {
+      "index": 6,
+      "name": "7",
+      "label": "C(7,1)_d",
+      "triplet": [
+        7,
+        1,
+        "d"
+      ]
+    },
+    {
+      "index": 7,
+      "name": "8",
+      "label": "C(7,2)_u",
+      "triplet": [
+        7,
+        2,
+        "u"
+      ]
+    },
+    {
+      "index": 8,
+      "name": "9",
+      "label": "C(7,2)_d",
+      "triplet": [
+        7,
+        2,
+        "d"
+      ]
+    },
+    {
+      "index": 9,
+      "name": "10",
+      "label": "C(7,3)_u",
+      "triplet": [
+        7,
+        3,
+        "u"
+      ]
+    },
+    {
+      "index": 10,
+      "name": "11",
+      "label": "C(7,3)_d",
+      "triplet": [
+        7,
+        3,
+        "d"
+      ]
+    },
+    {
+      "index": 11,
+      "name": "12",
+      "label": "C(7,4)_u",
+      "triplet": [
+        7,
+        4,
+        "u"
+      ]
+    },
+    {
+      "index": 12,
+      "name": "13",
+      "label": "C(7,4)_d",
+      "triplet": [
+        7,
+        4,
+        "d"
+      ]
+    },
+    {
+      "index": 13,
+      "name": "14",
+      "label": "C(7,5)_u",
+      "triplet": [
+        7,
+        5,
+        "u"
+      ]
+    },
+    {
+      "index": 14,
+      "name": "15",
+      "label": "C(7,5)_d",
+      "triplet": [
+        7,
+        5,
+        "d"
+      ]
+    },
+    {
+      "index": 15,
+      "name": "16",
+      "label": "C(7,6)",
+      "triplet": [
+        7,
+        6,
+        ""
+      ]
+    },
+    {
+      "index": 16,
+      "name": "17",
+      "label": "C(7,7)",
+      "triplet": [
+        7,
+        7,
+        ""
+      ]
+    },
+    {
+      "index": 17,
+      "name": "18",
+      "label": "C(8,1)_u",
+      "triplet": [
+        8,
+        1,
+        "u"
+      ]
+    },
+    {
+      "index": 18,
+      "name": "19",
+      "label": "C(8,1)_d",
+      "triplet": [
+        8,
+        1,
+        "d"
+      ]
+    },
+    {
+      "index": 19,
+      "name": "20",
+      "label": "C(8,2)_u",
+      "triplet": [
+        8,
+        2,
+        "u"
+      ]
+    },
+    {
+      "index": 20,
+      "name": "21",
+      "label": "C(8,2)_d",
+      "triplet": [
+        8,
+        2,
+        "d"
+      ]
+    },
+    {
+      "index": 21,
+      "name": "22",
+      "label": "C(8,9)",
+      "triplet": [
+        8,
+        9,
+        ""
+      ]
+    }
+  ],
+  "pe_bins": [
+    0.001,
+    8.001,
+    12.001,
+    16.001,
+    20.001,
+    24.001,
+    32.001,
+    40.001,
+    48.001,
+    60.001
+  ],
+  "ER_min_keV": 0.1,
+  "n_ER": 21,
+  "n_Enu": 120,
+  "n_PE_sub": 8,
+  "n_PE_bin": 8,
+  "pe_step": 3.0,
+  "detector_fold_contract": "Slow PE interpolation grid",
+  "c10_mass_mode": "quark_mass_resolved",
+  "n_jobs": 1,
+  "flavor_acceptance": {
+    "e": 0.848,
+    "mu": 0.997,
+    "mub": 0.848
+  },
+  "kernel_shape": [
+    3,
+    3,
+    8,
+    22,
+    22,
+    9
+  ],
+  "diag_shape": [
+    22,
+    3,
+    3,
+    8,
+    9
+  ],
+  "pair_re_shape": [
+    231,
+    3,
+    3,
+    8,
+    9
+  ],
+  "pair_im_shape": [
+    231,
+    3,
+    3,
+    8,
+    9
+  ],
+  "pair_index_shape": [
+    231,
+    2
+  ],
+  "notes": [
+    "full_kernel stores operator-space transfer K[target,source_flavor,channel,a,b,bin]; physical Flavor enters only through Tr[rho C_a^dagger C_b] during reconstruction",
+    "Active basis includes only LEFT coefficients with NR c_i mappings documented in docs/theory/li2026_draft_checked_wilson_R_formulas.md",
+    "SigmaPDelta is retained as an explicit channel axis; the checked draft gives only the compact form, not an expanded c_i formula",
+    "CsI is combined from Cs133 and I127 with 133:127 stoichiometric weights at the event-kernel level"
+  ],
+  "total_events": 332.9338348870574,
+  "n_bins": 9,
+  "npz_path": "tests/reference_CsI2021/fast_kernel.npz",
+  "json_path": "tests/reference_CsI2021/fast_kernel.json",
+  "reference_kind": "authoritative_flavor_fast_kernel",
+  "gate": "P4_FAST",
+  "slow_reference_path": "tests/reference_CsI2021/slow_reference.npy",
+  "reconstructed_total_events": 332.9338348870574,
+  "fast_slow_rtol": 1e-09,
+  "fast_slow_atol": 2e-08,
+  "fast_slow_allclose": true,
+  "slow_total_events": 332.9338350257275,
+  "fast_total_events": 332.9338348870574,
+  "total_delta_vs_slow_reference": -1.3867010340007369e-07,
+  "max_abs_bin_delta_vs_slow_reference": 3.1649634024688567e-08,
+  "worst_bin_index": 2,
+  "worst_bin_abs_delta": 3.1649634024688567e-08,
+  "worst_bin_tolerance": 9.598774498437396e-08,
+  "worst_bin_tolerance_ratio": 0.3297257793673648
+}

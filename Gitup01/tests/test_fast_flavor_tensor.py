@@ -3,6 +3,8 @@ from __future__ import annotations
 import numpy as np
 import pytest
 import json
+import runpy
+from pathlib import Path
 
 from cevns_pyeft.kernels.basis import coeff_tensor_from_triplets, coeff_vector_from_triplets, li2026_left_basis
 from cevns_pyeft.kernels.builder import _build_ci_units, _kernel_to_diag_pair_templates
@@ -15,12 +17,33 @@ from cevns_pyeft.kernels.reconstruction import (
     source_densities_for_fast_flavors,
 )
 from cevns_pyeft.kernels.storage import (
+    build_fastscan_template,
     StaleKernelError,
     load_fastscan_template,
+    reconstruct_saved_kernel,
     save_fastscan_template,
     validate_fastscan_template,
 )
+from cevns_pyeft.experiments.specs import read_simple_yaml
+from cevns_pyeft.experiments.coherent.slow_counts_csi2017 import slow_counts_csi2017
+from cevns_pyeft.experiments.coherent.slow_counts_csi2021 import slow_counts_csi2021
 from cevns_pyeft.theory.li2026.flavor import identity_flavor_matrix, zero_flavor_matrix
+
+
+RESPONSES_JSON = "data/responses/responses_all.json"
+REFERENCE_FAST_GENERATOR = Path("tools/experiment_integration/generate_csi_fast_references.py")
+REFERENCE_FAST = {
+    "CsI2017": Path("tests/reference_CsI2017/fast_kernel.npz"),
+    "CsI2021": Path("tests/reference_CsI2021/fast_kernel.npz"),
+}
+REFERENCE_SLOW = {
+    "CsI2017": Path("tests/reference_CsI2017/slow_reference.npy"),
+    "CsI2021": Path("tests/reference_CsI2021/slow_reference.npy"),
+}
+EXPERIMENT_SPECS = {
+    "CsI2017": Path("data/experiments/CsI2017/experiment.yaml"),
+    "CsI2021": Path("data/experiments/CsI2021/experiment.yaml"),
+}
 
 
 def _minimal_kernel_metadata() -> dict[str, object]:
@@ -186,3 +209,205 @@ def test_fast_template_load_rejects_stale_saved_metadata(tmp_path):
 
     with pytest.raises(StaleKernelError):
         load_fastscan_template(path)
+
+
+def test_csi_fast_reference_generator_defaults_to_nonwriting_guard():
+    namespace = runpy.run_path(str(REFERENCE_FAST_GENERATOR))
+    assert namespace["APPROVAL_PHRASE"] == "I approve updating CsI Fast reference kernels"
+    assert namespace["FAST_SLOW_RTOL"] == 1.0e-9
+    assert namespace["FAST_SLOW_ATOL"] == 2.0e-8
+    assert namespace["REFERENCE_PATHS"]["CsI2017"].as_posix().endswith(
+        "tests/reference_CsI2017/fast_kernel.npz"
+    )
+    assert namespace["REFERENCE_PATHS"]["CsI2021"].as_posix().endswith(
+        "tests/reference_CsI2021/fast_kernel.npz"
+    )
+
+    main = namespace["main"]
+    before = {
+        str(path): path.exists()
+        for path in namespace["REFERENCE_PATHS"].values()
+    }
+    assert main(["--dataset", "CsI2017", "--no-compute"]) == 0
+    assert main(["--dataset", "CsI2021", "--no-compute"]) == 0
+    after = {
+        str(path): path.exists()
+        for path in namespace["REFERENCE_PATHS"].values()
+    }
+    assert after == before
+
+
+def test_csi_fast_reference_generator_rejects_write_without_exact_acknowledgement():
+    namespace = runpy.run_path(str(REFERENCE_FAST_GENERATOR))
+    main = namespace["main"]
+    before = {
+        str(path): path.exists()
+        for path in namespace["REFERENCE_PATHS"].values()
+    }
+
+    with pytest.raises(SystemExit, match="exact acknowledgement phrase"):
+        main(
+            [
+                "--dataset",
+                "CsI2017",
+                "--no-compute",
+                "--write-reference-kernels",
+                "--acknowledge-reference-update",
+                "I approve updating CsI Slow reference arrays",
+            ]
+        )
+
+    after = {
+        str(path): path.exists()
+        for path in namespace["REFERENCE_PATHS"].values()
+    }
+    assert after == before
+
+
+def test_csi_fast_reference_generator_no_compute_stays_nonwriting_with_acknowledgement():
+    namespace = runpy.run_path(str(REFERENCE_FAST_GENERATOR))
+    main = namespace["main"]
+    before = {
+        str(path): path.exists()
+        for path in namespace["REFERENCE_PATHS"].values()
+    }
+
+    assert (
+        main(
+            [
+                "--dataset",
+                "CsI2017",
+                "--no-compute",
+                "--write-reference-kernels",
+                "--acknowledge-reference-update",
+                namespace["APPROVAL_PHRASE"],
+            ]
+        )
+        == 0
+    )
+
+    after = {
+        str(path): path.exists()
+        for path in namespace["REFERENCE_PATHS"].values()
+    }
+    assert after == before
+
+
+def test_csi_fast_reference_generator_alignment_metadata_is_strict():
+    namespace = runpy.run_path(str(REFERENCE_FAST_GENERATOR))
+    alignment = namespace["fast_slow_alignment_metadata"](
+        np.array([1.0, 2.0, 3.0]),
+        np.array([1.0, 2.0, 3.0 + 1.0e-8]),
+    )
+    assert alignment["fast_slow_allclose"] is True
+    assert alignment["max_abs_bin_delta_vs_slow_reference"] == pytest.approx(1.0e-8)
+    assert alignment["worst_bin_index"] == 2
+
+    failed = namespace["fast_slow_alignment_metadata"](
+        np.array([1.0, 2.0, 3.0 + 1.0e-4]),
+        np.array([1.0, 2.0, 3.0]),
+    )
+    assert failed["fast_slow_allclose"] is False
+    assert failed["worst_bin_tolerance_ratio"] > 1.0
+
+    with pytest.raises(ValueError, match="shape mismatch"):
+        namespace["fast_slow_alignment_metadata"](
+            np.array([1.0, 2.0]),
+            np.array([1.0]),
+        )
+
+
+def test_csi_authoritative_fast_references_reproduce_slow_gate_l_counts():
+    missing = [
+        str(path)
+        for path in REFERENCE_FAST.values()
+        if not path.exists() or not path.with_suffix(".json").exists()
+    ]
+    if missing:
+        pytest.skip("P4 pending authoritative CsI Flavor Fast references: " + ", ".join(missing))
+
+    for dataset, fast_path in REFERENCE_FAST.items():
+        slow_reference = np.load(REFERENCE_SLOW[dataset])
+        loaded, prediction = reconstruct_saved_kernel(fast_path)
+        predicted = np.asarray(prediction["counts_per_bin"]["total"], dtype=float)
+
+        assert loaded["metadata"]["flavor_schema_version"] == 1
+        assert loaded["metadata"]["coefficient_shape"] == [22, 3, 3]
+        assert loaded["metadata"]["reference_kind"] == "authoritative_flavor_fast_kernel"
+        assert loaded["metadata"]["gate"] == "P4_FAST"
+        assert loaded["metadata"]["slow_reference_path"] == str(REFERENCE_SLOW[dataset]).replace("\\", "/")
+        assert loaded["metadata"]["fast_slow_allclose"] is True
+        np.testing.assert_allclose(predicted, slow_reference, rtol=1.0e-9, atol=2.0e-8)
+
+
+def test_csi_fast_yaml_cannot_pass_without_authoritative_fast_references():
+    for dataset, fast_path in REFERENCE_FAST.items():
+        data = read_simple_yaml(EXPERIMENT_SPECS[dataset])
+        fast_validated = data["phase_boundaries"]["fast_validated"]
+        sidecar_path = fast_path.with_suffix(".json")
+
+        if not fast_validated:
+            assert data["callables"]["fast_counts"] == "BLOCKED_UNTIL_P4_FLAVOR_CONTRACT"
+            continue
+
+        assert fast_path.exists()
+        assert sidecar_path.exists()
+        metadata = json.loads(sidecar_path.read_text(encoding="utf-8"))
+        assert metadata["flavor_schema_version"] == 1
+        assert metadata["coefficient_shape"] == [22, 3, 3]
+        assert metadata["reference_kind"] == "authoritative_flavor_fast_kernel"
+        assert metadata["gate"] == "P4_FAST"
+        assert metadata["fast_slow_allclose"] is True
+        assert metadata["dataset"] == dataset
+
+
+def test_csi2017_fast_saved_kernel_reconstructs_lightweight_slow_counts(tmp_path):
+    slow = slow_counts_csi2017(RESPONSES_JSON, n_enu=6)["counts_per_bin"]["total"]
+    kernel = build_fastscan_template(
+        "CsI2017",
+        RESPONSES_JSON,
+        n_enu=6,
+        n_csi2017_er=251,
+    )
+    path = save_fastscan_template(tmp_path / "csi2017_fast_kernel.npz", kernel)
+    loaded, prediction = reconstruct_saved_kernel(path)
+
+    assert loaded["metadata"]["flavor_schema_version"] == 1
+    assert loaded["metadata"]["coefficient_shape"] == [22, 3, 3]
+    np.testing.assert_allclose(
+        prediction["counts_per_bin"]["total"],
+        slow,
+        rtol=1.0e-9,
+        atol=2.0e-8,
+    )
+
+
+def test_csi2021_fast_saved_kernel_reconstructs_lightweight_slow_counts(tmp_path):
+    slow = slow_counts_csi2021(
+        RESPONSES_JSON,
+        n_er=3,
+        n_enu=6,
+        n_pe_bin=3,
+        pe_step=3.0,
+    )["counts_per_bin"]["total"]
+    kernel = build_fastscan_template(
+        "CsI2021",
+        RESPONSES_JSON,
+        n_er=3,
+        n_enu=6,
+        n_pe_sub=3,
+        pe_step=3.0,
+    )
+    path = save_fastscan_template(tmp_path / "csi2021_fast_kernel.npz", kernel)
+    loaded, prediction = reconstruct_saved_kernel(path)
+
+    assert loaded["metadata"]["flavor_schema_version"] == 1
+    assert loaded["metadata"]["coefficient_shape"] == [22, 3, 3]
+    assert loaded["metadata"]["pe_step"] == 3.0
+    assert loaded["metadata"]["detector_fold_contract"] == "Slow PE interpolation grid"
+    np.testing.assert_allclose(
+        prediction["counts_per_bin"]["total"],
+        slow,
+        rtol=1.0e-9,
+        atol=2.0e-8,
+    )

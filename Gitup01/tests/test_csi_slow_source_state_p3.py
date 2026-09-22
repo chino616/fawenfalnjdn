@@ -159,8 +159,8 @@ def test_csi_phase6_connects_validated_detector_response_and_preserves_later_bou
     for dataset_name in ("CsI2017", "CsI2021"):
         data = get_experiment_spec(dataset_name).data
         callables = data["callables"]
-        assert data["spec_status"] == "detector_response_validated_slow_pending"
-        assert data["provenance"]["phase"] == "DETECTOR_RESPONSE_VALIDATED"
+        assert data["spec_status"] in {"slow_validated", "fast_validated"}
+        assert data["provenance"]["phase"] in {"SLOW_VALIDATED", "FAST_VALIDATED"}
         assert data["source"]["status"] == "VALIDATED_PHASE_3"
         assert data["source"]["classification"] == "SHARED_EXTENSION"
         assert data["detector"]["response_status"] == "VALIDATED_PHASE_6"
@@ -171,8 +171,13 @@ def test_csi_phase6_connects_validated_detector_response_and_preserves_later_bou
         assert callables["source_flux"] == (
             "cevns_pyeft.experiments.coherent.sns.loadNeutrinoEmpiricalFluxSNS"
         )
-        assert callables["slow_counts"].startswith("PENDING_PHASE_7:")
-        assert callables["fast_counts"] == "BLOCKED_UNTIL_P4_FLAVOR_CONTRACT"
+        assert callables["slow_counts"].startswith(
+            "cevns_pyeft.experiments.coherent.slow_counts_csi"
+        )
+        if data["phase_boundaries"]["fast_validated"]:
+            assert callables["fast_counts"] == "cevns_pyeft.kernels.storage.reconstruct_saved_kernel"
+        else:
+            assert callables["fast_counts"] == "BLOCKED_UNTIL_P4_FLAVOR_CONTRACT"
         assert callables["statistics"] == "BLOCKED_PENDING_AUTHORITATIVE_PROVENANCE"
         assert data["phase_boundaries"]["dataset_validated"] is True
         assert data["phase_boundaries"]["target_validated"] is True
@@ -180,7 +185,7 @@ def test_csi_phase6_connects_validated_detector_response_and_preserves_later_bou
         assert data["phase_boundaries"]["theory_validated"] is True
         assert data["phase_boundaries"]["cross_section_validated"] is True
         assert data["phase_boundaries"]["detector_response_validated"] is True
-        assert data["phase_boundaries"]["slow_validated"] is False
+        assert data["phase_boundaries"]["slow_validated"] is True
         assert data["phase_boundaries"]["registry_modified"] is False
 
 

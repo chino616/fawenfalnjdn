@@ -36,6 +36,7 @@ from cevns_pyeft.rates.differential import (
     enr_max_keV,
     p_smearing_csi,
 )
+from cevns_pyeft.theory.kinematics import minimum_neutrino_energy_GeV
 from cevns_pyeft.theory.li2026.lec import DEFAULT_LECS
 from cevns_pyeft.theory.li2026.left_to_ci import left_to_ci
 from cevns_pyeft.theory.li2026.flavor import zero_flavor_matrix
@@ -165,7 +166,7 @@ class KernelPayload:
     pair_im: np.ndarray
     pair_index: np.ndarray
 
-def _build_target_static(responses_json: str, *, target: str, pe_bins: np.ndarray, ER_min_keV: float, n_ER: int, n_PE_sub: int, basis: Literal['np', 'iso']='np') -> TargetStatic:
+def _build_target_static(responses_json: str, *, target: str, pe_bins: np.ndarray, ER_min_keV: float, n_ER: int, n_PE_sub: int, pe_step: Optional[float]=None, basis: Literal['np', 'iso']='np') -> TargetStatic:
     if basis != 'np':
         raise NotImplementedError("The matrixized scan currently supports basis='np' only")
     resp_db = ResponseDB(str(responses_json))
@@ -190,12 +191,41 @@ def _build_target_static(responses_json: str, *, target: str, pe_bins: np.ndarra
             W_by_ER[ier, h] = _response_matrix_np_safe(resp, channel, float(y))
     M = pe_bins.size - 1
     fold_kernel = np.zeros((ER_grid.size, M), dtype=float)
+    pe_eval_grid: Optional[np.ndarray] = None
+    if pe_step is not None:
+        if float(pe_step) <= 0.0:
+            raise ValueError("pe_step must be positive")
+        min_bin_width = float(np.min(np.diff(pe_bins)))
+        if float(pe_step) > min_bin_width:
+            raise ValueError(
+                "pe_step must not exceed the smallest PE bin width when "
+                "matching the Slow PE interpolation grid"
+            )
+        pe_eval_grid = np.arange(
+            float(pe_bins[0]),
+            float(pe_bins[-1]) + 0.5 * float(pe_step),
+            float(pe_step),
+            dtype=float,
+        )
     for ier, ER in enumerate(ER_grid):
+        smear_grid = None
+        if pe_eval_grid is not None:
+            smear_grid = np.asarray(
+                [float(p_smearing_csi(float(x), float(ER))) for x in pe_eval_grid],
+                dtype=float,
+            )
         for ib in range(M):
             left = float(pe_bins[ib])
             right = float(pe_bins[ib + 1])
             xs = np.linspace(left, right, int(n_PE_sub), dtype=float)
-            ys = np.asarray([float(csi_efficiency(float(x))) * float(p_smearing_csi(float(x), float(ER))) for x in xs], dtype=float)
+            if smear_grid is None:
+                smear = np.asarray(
+                    [float(p_smearing_csi(float(x), float(ER))) for x in xs],
+                    dtype=float,
+                )
+            else:
+                smear = np.interp(xs, pe_eval_grid, smear_grid, left=0.0, right=0.0)
+            ys = np.asarray([float(csi_efficiency(float(x))) for x in xs], dtype=float) * smear
             fold_kernel[ier, ib] = float(_trapz(ys, xs)) * ER_weights[ier]
     return TargetStatic(target=target, A=A, mA_GeV=mA_GeV, nucleus_mass_kg=nucleus_mass_kg, ER_grid_keV=ER_grid, ER_weights_keV=ER_weights, q0_GeV=q0_GeV, q2_GeV2=q2_GeV2, qabs_GeV=qabs_GeV, qabs2_GeV2=qabs2_GeV2, W_by_ER=W_by_ER, fold_kernel=fold_kernel)
 
@@ -274,10 +304,10 @@ def _amplitude_kernel_by_channel(*, E_nu_GeV: float, qabs_GeV: float, mA_GeV: fl
             out[_CHANNEL_INDEX['SigmaPDelta']] += Ws[_CHANNEL_INDEX['SigmaPDelta']] * R_SigmaPDelta
     return out
 
-def _build_one_target_kernel(responses_json: str, dataset: str, target: str, basis_elements: Sequence[BasisElement], pe_bins: np.ndarray, ER_min_keV: float, n_ER: int, n_Enu: int, n_PE_sub: int, c10_mass_mode: str, flavor_acceptance: Mapping[str, float]) -> Tuple[str, np.ndarray]:
+def _build_one_target_kernel(responses_json: str, dataset: str, target: str, basis_elements: Sequence[BasisElement], pe_bins: np.ndarray, ER_min_keV: float, n_ER: int, n_Enu: int, n_PE_sub: int, pe_step: Optional[float], c10_mass_mode: str, flavor_acceptance: Mapping[str, float]) -> Tuple[str, np.ndarray]:
     flux_obj = load_flux(dataset)
     detector_mass_kg = float(flux_obj['basic'].get('detectorMassKg', 14.57))
-    static = _build_target_static(responses_json, target=target, pe_bins=pe_bins, ER_min_keV=ER_min_keV, n_ER=n_ER, n_PE_sub=n_PE_sub, basis='np')
+    static = _build_target_static(responses_json, target=target, pe_bins=pe_bins, ER_min_keV=ER_min_keV, n_ER=n_ER, n_PE_sub=n_PE_sub, pe_step=pe_step, basis='np')
     B = len(basis_elements)
     F = len(FLAVORS)
     H = len(CHANNELS)
@@ -297,7 +327,7 @@ def _build_one_target_kernel(responses_json: str, dataset: str, target: str, bas
         qabs = float(static.qabs_GeV[ier])
         qabs2 = float(static.qabs2_GeV2[ier])
         W_slice = static.W_by_ER[ier]
-        E_min_GeV = math.sqrt(max(mA * q0 / 2.0, 0.0))
+        E_min_GeV = minimum_neutrino_energy_GeV(q0, mA)
         E_min_MeV = float(c.from_energy_gev(E_min_GeV, 'MeV'))
         mask = Enu_grid_MeV >= E_min_MeV
         cont_e = np.zeros((H, B, B), dtype=complex)
@@ -330,12 +360,12 @@ def _build_one_target_kernel(responses_json: str, dataset: str, target: str, bas
         full_kernel[ifl] *= float(flavor_acceptance[flv])
     return (target, full_kernel)
 
-def _parallel_target_build(responses_json: str, dataset: str, raw_targets: Sequence[str], basis_elements: Sequence[BasisElement], pe_bins: np.ndarray, ER_min_keV: float, n_ER: int, n_Enu: int, n_PE_sub: int, c10_mass_mode: str, flavor_acceptance: Mapping[str, float], n_jobs: int) -> Dict[str, np.ndarray]:
+def _parallel_target_build(responses_json: str, dataset: str, raw_targets: Sequence[str], basis_elements: Sequence[BasisElement], pe_bins: np.ndarray, ER_min_keV: float, n_ER: int, n_Enu: int, n_PE_sub: int, pe_step: Optional[float], c10_mass_mode: str, flavor_acceptance: Mapping[str, float], n_jobs: int) -> Dict[str, np.ndarray]:
     if int(n_jobs) <= 1 or len(raw_targets) <= 1:
-        return {tgt: _build_one_target_kernel(responses_json, dataset, tgt, basis_elements, pe_bins, ER_min_keV, n_ER, n_Enu, n_PE_sub, c10_mass_mode, flavor_acceptance)[1] for tgt in raw_targets}
+        return {tgt: _build_one_target_kernel(responses_json, dataset, tgt, basis_elements, pe_bins, ER_min_keV, n_ER, n_Enu, n_PE_sub, pe_step, c10_mass_mode, flavor_acceptance)[1] for tgt in raw_targets}
     out: Dict[str, np.ndarray] = {}
     with ProcessPoolExecutor(max_workers=min(int(n_jobs), len(raw_targets))) as ex:
-        futs = {ex.submit(_build_one_target_kernel, responses_json, dataset, tgt, basis_elements, pe_bins, ER_min_keV, n_ER, n_Enu, n_PE_sub, c10_mass_mode, flavor_acceptance): tgt for tgt in raw_targets}
+        futs = {ex.submit(_build_one_target_kernel, responses_json, dataset, tgt, basis_elements, pe_bins, ER_min_keV, n_ER, n_Enu, n_PE_sub, pe_step, c10_mass_mode, flavor_acceptance): tgt for tgt in raw_targets}
         for fut in as_completed(futs):
             tgt, arr = fut.result()
             out[tgt] = arr
@@ -396,7 +426,7 @@ def reconstruct_real_events_from_full_kernel(full_kernel: np.ndarray, coeffs: np
 def reconstruct_real_events_from_pair_templates(*, diag: np.ndarray, pair_re: np.ndarray, pair_im: np.ndarray, pair_index: np.ndarray, coeffs: np.ndarray) -> np.ndarray:
     return np.real(reconstruct_from_pair_templates(diag=diag, pair_re=pair_re, pair_im=pair_im, pair_index=pair_index, coeffs=coeffs))
 
-def build_matrixized_kernel(*, responses_json: str, dataset: str='CsI2021', basis_elements: Optional[Sequence[BasisElement]]=None, pe_bins: Optional[np.ndarray]=None, target_mode: TargetMode='CsI', ER_min_keV: float=0.1, n_ER: int=41, n_Enu: int=300, n_PE_sub: int=64, c10_mass_mode: str='quark_mass_resolved', flavor_acceptance: Optional[Mapping[str, float]]=None, n_jobs: int=1) -> KernelPayload:
+def build_matrixized_kernel(*, responses_json: str, dataset: str='CsI2021', basis_elements: Optional[Sequence[BasisElement]]=None, pe_bins: Optional[np.ndarray]=None, target_mode: TargetMode='CsI', ER_min_keV: float=0.1, n_ER: int=41, n_Enu: int=300, n_PE_sub: int=64, pe_step: Optional[float]=3.0, c10_mass_mode: str='quark_mass_resolved', flavor_acceptance: Optional[Mapping[str, float]]=None, n_jobs: int=1) -> KernelPayload:
     if basis_elements is None:
         basis_elements = li2026_left_basis()
     if pe_bins is None:
@@ -404,10 +434,10 @@ def build_matrixized_kernel(*, responses_json: str, dataset: str='CsI2021', basi
     pe_bins = np.asarray(pe_bins, dtype=float)
     if flavor_acceptance is None:
         flavor_acceptance = DEFAULT_ACCEPTANCE
-    raw = _parallel_target_build(responses_json=responses_json, dataset=dataset, raw_targets=RAW_TARGETS, basis_elements=basis_elements, pe_bins=pe_bins, ER_min_keV=ER_min_keV, n_ER=n_ER, n_Enu=n_Enu, n_PE_sub=n_PE_sub, c10_mass_mode=c10_mass_mode, flavor_acceptance=flavor_acceptance, n_jobs=n_jobs)
+    raw = _parallel_target_build(responses_json=responses_json, dataset=dataset, raw_targets=RAW_TARGETS, basis_elements=basis_elements, pe_bins=pe_bins, ER_min_keV=ER_min_keV, n_ER=n_ER, n_Enu=n_Enu, n_PE_sub=n_PE_sub, pe_step=pe_step, c10_mass_mode=c10_mass_mode, flavor_acceptance=flavor_acceptance, n_jobs=n_jobs)
     full_kernel = _select_target_arrays(raw, target_mode)
     diag, pair_re, pair_im, pair_index = _kernel_to_diag_pair_templates(full_kernel)
-    metadata: Dict[str, Any] = {'model': 'li2026_matrixized_v2', 'flavor_schema_version': 1, 'neutrino_flavor_order': ['e', 'mu', 'tau'], 'wilson_flavor_axis': {'row': 'final', 'column': 'initial'}, 'operator_basis_size': len(basis_elements), 'coefficient_shape': [len(basis_elements), 3, 3], 'lnc_lnv_interference': False, 'responses': str(responses_json), 'dataset': str(dataset), 'target_mode': str(target_mode), 'targets': _target_output_names(target_mode), 'source_flavors': list(FLAVORS), 'channels': list(CHANNELS), 'basis': [asdict(b) for b in basis_elements], 'pe_bins': pe_bins.tolist(), 'ER_min_keV': float(ER_min_keV), 'n_ER': int(n_ER), 'n_Enu': int(n_Enu), 'n_PE_sub': int(n_PE_sub), 'n_PE_bin': int(n_PE_sub), 'c10_mass_mode': str(c10_mass_mode), 'n_jobs': int(n_jobs), 'flavor_acceptance': {str(k): float(v) for k, v in flavor_acceptance.items()}, 'kernel_shape': list(np.asarray(full_kernel).shape), 'diag_shape': list(np.asarray(diag).shape), 'pair_re_shape': list(np.asarray(pair_re).shape), 'pair_im_shape': list(np.asarray(pair_im).shape), 'pair_index_shape': list(np.asarray(pair_index).shape), 'notes': ['full_kernel stores operator-space transfer K[target,source_flavor,channel,a,b,bin]; physical Flavor enters only through Tr[rho C_a^dagger C_b] during reconstruction', 'Active basis includes only LEFT coefficients with NR c_i mappings documented in docs/theory/li2026_draft_checked_wilson_R_formulas.md', 'SigmaPDelta is retained as an explicit channel axis; the checked draft gives only the compact form, not an expanded c_i formula', 'CsI is combined from Cs133 and I127 with 133:127 stoichiometric weights at the event-kernel level']}
+    metadata: Dict[str, Any] = {'model': 'li2026_matrixized_v2', 'flavor_schema_version': 1, 'neutrino_flavor_order': ['e', 'mu', 'tau'], 'wilson_flavor_axis': {'row': 'final', 'column': 'initial'}, 'operator_basis_size': len(basis_elements), 'coefficient_shape': [len(basis_elements), 3, 3], 'lnc_lnv_interference': False, 'responses': str(responses_json), 'dataset': str(dataset), 'target_mode': str(target_mode), 'targets': _target_output_names(target_mode), 'source_flavors': list(FLAVORS), 'channels': list(CHANNELS), 'basis': [asdict(b) for b in basis_elements], 'pe_bins': pe_bins.tolist(), 'ER_min_keV': float(ER_min_keV), 'n_ER': int(n_ER), 'n_Enu': int(n_Enu), 'n_PE_sub': int(n_PE_sub), 'n_PE_bin': int(n_PE_sub), 'pe_step': None if pe_step is None else float(pe_step), 'detector_fold_contract': 'Slow PE interpolation grid' if pe_step is not None else 'direct PE sub-bin smearing', 'c10_mass_mode': str(c10_mass_mode), 'n_jobs': int(n_jobs), 'flavor_acceptance': {str(k): float(v) for k, v in flavor_acceptance.items()}, 'kernel_shape': list(np.asarray(full_kernel).shape), 'diag_shape': list(np.asarray(diag).shape), 'pair_re_shape': list(np.asarray(pair_re).shape), 'pair_im_shape': list(np.asarray(pair_im).shape), 'pair_index_shape': list(np.asarray(pair_index).shape), 'notes': ['full_kernel stores operator-space transfer K[target,source_flavor,channel,a,b,bin]; physical Flavor enters only through Tr[rho C_a^dagger C_b] during reconstruction', 'Active basis includes only LEFT coefficients with NR c_i mappings documented in docs/theory/li2026_draft_checked_wilson_R_formulas.md', 'SigmaPDelta is retained as an explicit channel axis; the checked draft gives only the compact form, not an expanded c_i formula', 'CsI is combined from Cs133 and I127 with 133:127 stoichiometric weights at the event-kernel level']}
     return KernelPayload(metadata=metadata, full_kernel=np.asarray(full_kernel), diag=np.asarray(diag), pair_re=np.asarray(pair_re), pair_im=np.asarray(pair_im), pair_index=np.asarray(pair_index))
 
 
@@ -475,7 +505,7 @@ def _build_one_target_kernel_csi2017_ar(
         qabs = float(static.qabs_GeV[ir])
         qabs2 = float(static.qabs2_GeV2[ir])
         W_slice = static.W_by_ER[ir]
-        E_min_GeV = math.sqrt(max(mA * q0 / 2.0, 0.0))
+        E_min_GeV = minimum_neutrino_energy_GeV(q0, mA)
         E_min_MeV = float(from_energy_gev(E_min_GeV, "MeV"))
 
         mask = enu_MeV >= E_min_MeV

@@ -1,7 +1,7 @@
 dataset_id: CsI2021
 dataset_name: CsI2021
 family: COHERENT_CsI
-spec_status: detector_response_validated_slow_pending
+spec_status: fast_validated
 source_type: stopped_pion
 flavor: mixed_sns_components
 target_mode: CsI_equal_stoichiometry
@@ -11,7 +11,7 @@ provenance:
   physics_document: "../../CEvNS-pyEFT Flavor 重构：问题处理优先级提示词.md"
   implementation_spec: "../../CEvNS_pyeFT_full_flavor_refactor_implementation_spec.md"
   workflow_run: workflows/experiment-integration/runs/CsI2021
-  phase: DETECTOR_RESPONSE_VALIDATED
+  phase: FAST_VALIDATED
 
 run:
   period: 2021_release_current_reproduction
@@ -90,15 +90,18 @@ exposure:
 
 planned_data_files:
   nuclear_responses: data/responses/responses_all.json
-  fast_reference_metadata: tests/reference_fast_split/csi2021_metadata.json
+  slow_reference: tests/reference_CsI2021/slow_reference.npy
+  slow_reference_metadata: tests/reference_CsI2021/slow_reference.json
+  fast_reference: tests/reference_CsI2021/fast_kernel.npz
+  fast_reference_metadata: tests/reference_CsI2021/fast_kernel.json
 
 callables:
   source_state: cevns_pyeft.experiments.coherent.sns.sns_component_state
   source_flux: cevns_pyeft.experiments.coherent.sns.loadNeutrinoEmpiricalFluxSNS
   detector_response: cevns_pyeft.rates.differential.p_smearing_csi
   detector_efficiency: cevns_pyeft.experiments.coherent.slow_counts_csi2021.efficiency_csi2021
-  slow_counts: "PENDING_PHASE_7: cevns_pyeft.experiments.coherent.slow_counts_csi2021.slow_counts_csi2021"
-  fast_counts: BLOCKED_UNTIL_P4_FLAVOR_CONTRACT
+  slow_counts: cevns_pyeft.experiments.coherent.slow_counts_csi2021.slow_counts_csi2021
+  fast_counts: cevns_pyeft.kernels.storage.reconstruct_saved_kernel
   statistics: BLOCKED_PENDING_AUTHORITATIVE_PROVENANCE
 
 phase_boundaries:
@@ -108,7 +111,7 @@ phase_boundaries:
   theory_validated: true
   cross_section_validated: true
   detector_response_validated: true
-  slow_validated: false
-  fast_validated: false
+  slow_validated: true
+  fast_validated: true
   statistics_validated: false
   registry_modified: false

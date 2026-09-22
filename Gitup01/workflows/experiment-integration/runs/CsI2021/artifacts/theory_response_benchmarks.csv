@@ -1,0 +1,11 @@
+benchmark,target,response_key,E_nu_MeV,recoil_keV,source_component,particle_kind,density_flavor,coefficient_point,amplitude_squared,amplitude_imag_abs,dsigma_cm2_per_keV,finite,nonnegative
+sm_lower,Cs-133,Cs133,10.0,0.01,e,nu,e,SM,1.5414042978524067e-10,0.0,2.958566923094693e-39,True,True
+sm_mid_mu,Cs-133,Cs133,30.0,5.0,mu,nu,mu,SM,6.994261176932275e-10,0.0,1.4916405051612944e-39,True,True
+sm_mid_antinu,Cs-133,Cs133,40.0,5.0,mub,antinu,mu,SM,1.529003132616062e-09,0.0,1.8342276016457563e-39,True,True
+sm_upper,Cs-133,Cs133,50.0,36.293625360624794,mu,nu,mu,SM,4.4243625448264825e-11,0.0,3.396843436635096e-41,True,True
+sm_plus_C6u1_e_from_mu,Cs-133,Cs133,30.0,5.0,mu,nu,mu,"SM + C6u1[final=e,initial=mu]",7.66910492496296e-10,0.0,1.635561963590295e-39,True,True
+sm_lower,I-127,I,10.0,0.01,e,nu,e,SM,1.3863721943094864e-10,0.0,2.540953698163757e-39,True,True
+sm_mid_mu,I-127,I,30.0,5.0,mu,nu,mu,SM,6.586627732691568e-10,0.0,1.3413358151188972e-39,True,True
+sm_mid_antinu,I-127,I,40.0,5.0,mub,antinu,mu,SM,1.4218216949214976e-09,0.0,1.6287036359487808e-39,True,True
+sm_upper,I-127,I,50.0,38.00683663132114,mu,nu,mu,SM,4.460122907101198e-11,0.0,3.269819126950483e-41,True,True
+sm_plus_C6u1_e_from_mu,I-127,I,30.0,5.0,mu,nu,mu,"SM + C6u1[final=e,initial=mu]",7.23220157656744e-10,0.0,1.4728038976092413e-39,True,True

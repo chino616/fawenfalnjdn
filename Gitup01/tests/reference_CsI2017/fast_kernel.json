@@ -1,0 +1,356 @@
+{
+  "model": "li2026_matrixized_csi2017_delta_fold",
+  "responses": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260820Gitup1-Flavor\\git-worktree-f0\\Gitup01\\data\\responses\\responses_all.json",
+  "dataset": "CsI2017",
+  "target_mode": "all",
+  "targets": [
+    "Cs133",
+    "I127",
+    "CsI"
+  ],
+  "source_flavors": [
+    "e",
+    "mu",
+    "mub"
+  ],
+  "channels": [
+    "M",
+    "SigmaPP",
+    "SigmaP",
+    "PhiPP",
+    "PhiPT",
+    "Delta",
+    "MPhiPP",
+    "SigmaPDelta"
+  ],
+  "basis": [
+    {
+      "index": 0,
+      "name": "1",
+      "label": "C(5,1)",
+      "triplet": [
+        5,
+        1,
+        ""
+      ]
+    },
+    {
+      "index": 1,
+      "name": "2",
+      "label": "C(6,1)_u",
+      "triplet": [
+        6,
+        1,
+        "u"
+      ]
+    },
+    {
+      "index": 2,
+      "name": "3",
+      "label": "C(6,1)_d",
+      "triplet": [
+        6,
+        1,
+        "d"
+      ]
+    },
+    {
+      "index": 3,
+      "name": "4",
+      "label": "C(6,2)_u",
+      "triplet": [
+        6,
+        2,
+        "u"
+      ]
+    },
+    {
+      "index": 4,
+      "name": "5",
+      "label": "C(6,2)_d",
+      "triplet": [
+        6,
+        2,
+        "d"
+      ]
+    },
+    {
+      "index": 5,
+      "name": "6",
+      "label": "C(7,1)_u",
+      "triplet": [
+        7,
+        1,
+        "u"
+      ]
+    },
+    {
+      "index": 6,
+      "name": "7",
+      "label": "C(7,1)_d",
+      "triplet": [
+        7,
+        1,
+        "d"
+      ]
+    },
+    {
+      "index": 7,
+      "name": "8",
+      "label": "C(7,2)_u",
+      "triplet": [
+        7,
+        2,
+        "u"
+      ]
+    },
+    {
+      "index": 8,
+      "name": "9",
+      "label": "C(7,2)_d",
+      "triplet": [
+        7,
+        2,
+        "d"
+      ]
+    },
+    {
+      "index": 9,
+      "name": "10",
+      "label": "C(7,3)_u",
+      "triplet": [
+        7,
+        3,
+        "u"
+      ]
+    },
+    {
+      "index": 10,
+      "name": "11",
+      "label": "C(7,3)_d",
+      "triplet": [
+        7,
+        3,
+        "d"
+      ]
+    },
+    {
+      "index": 11,
+      "name": "12",
+      "label": "C(7,4)_u",
+      "triplet": [
+        7,
+        4,
+        "u"
+      ]
+    },
+    {
+      "index": 12,
+      "name": "13",
+      "label": "C(7,4)_d",
+      "triplet": [
+        7,
+        4,
+        "d"
+      ]
+    },
+    {
+      "index": 13,
+      "name": "14",
+      "label": "C(7,5)_u",
+      "triplet": [
+        7,
+        5,
+        "u"
+      ]
+    },
+    {
+      "index": 14,
+      "name": "15",
+      "label": "C(7,5)_d",
+      "triplet": [
+        7,
+        5,
+        "d"
+      ]
+    },
+    {
+      "index": 15,
+      "name": "16",
+      "label": "C(7,6)",
+      "triplet": [
+        7,
+        6,
+        ""
+      ]
+    },
+    {
+      "index": 16,
+      "name": "17",
+      "label": "C(7,7)",
+      "triplet": [
+        7,
+        7,
+        ""
+      ]
+    },
+    {
+      "index": 17,
+      "name": "18",
+      "label": "C(8,1)_u",
+      "triplet": [
+        8,
+        1,
+        "u"
+      ]
+    },
+    {
+      "index": 18,
+      "name": "19",
+      "label": "C(8,1)_d",
+      "triplet": [
+        8,
+        1,
+        "d"
+      ]
+    },
+    {
+      "index": 19,
+      "name": "20",
+      "label": "C(8,2)_u",
+      "triplet": [
+        8,
+        2,
+        "u"
+      ]
+    },
+    {
+      "index": 20,
+      "name": "21",
+      "label": "C(8,2)_d",
+      "triplet": [
+        8,
+        2,
+        "d"
+      ]
+    },
+    {
+      "index": 21,
+      "name": "22",
+      "label": "C(8,9)",
+      "triplet": [
+        8,
+        9,
+        ""
+      ]
+    }
+  ],
+  "pe_bins": [
+    0.001,
+    2.00096,
+    4.000920000000001,
+    6.000880000000001,
+    8.00084,
+    10.0008,
+    12.000760000000001,
+    14.000720000000001,
+    16.000680000000003,
+    18.000640000000004,
+    20.000600000000002,
+    22.000560000000004,
+    24.000520000000005,
+    26.000480000000003,
+    28.000440000000005,
+    30.000400000000003,
+    32.00036,
+    34.00032,
+    36.000280000000004,
+    38.00024,
+    40.0002,
+    42.00016,
+    44.00012,
+    46.000080000000004,
+    48.000040000000006,
+    50.0
+  ],
+  "pe_per_keV": 1.17,
+  "n_ER": 251,
+  "n_Enu": 120,
+  "efficiency_data_path": "data/datafiles/COHERENT_eff.txt",
+  "detector_mass_kg": 14.6,
+  "flavor_acceptance": {
+    "e": 1.0,
+    "mu": 1.0,
+    "mub": 1.0
+  },
+  "detector_model": "delta PE = 1.17 * Tnr_keV, COHERENT CsI 2017 efficiency",
+  "kernel_shape": [
+    3,
+    3,
+    8,
+    22,
+    22,
+    25
+  ],
+  "diag_shape": [
+    22,
+    3,
+    3,
+    8,
+    25
+  ],
+  "pair_re_shape": [
+    231,
+    3,
+    3,
+    8,
+    25
+  ],
+  "pair_im_shape": [
+    231,
+    3,
+    3,
+    8,
+    25
+  ],
+  "pair_index_shape": [
+    231,
+    2
+  ],
+  "total_events": 174.39322951683258,
+  "n_bins": 25,
+  "npz_path": "tests/reference_CsI2017/fast_kernel.npz",
+  "json_path": "tests/reference_CsI2017/fast_kernel.json",
+  "reference_kind": "authoritative_flavor_fast_kernel",
+  "gate": "P4_FAST",
+  "slow_reference_path": "tests/reference_CsI2017/slow_reference.npy",
+  "reconstructed_total_events": 174.39322951683258,
+  "fast_slow_rtol": 1e-09,
+  "fast_slow_atol": 2e-08,
+  "fast_slow_allclose": true,
+  "slow_total_events": 174.3932295894691,
+  "fast_total_events": 174.39322951683258,
+  "total_delta_vs_slow_reference": -7.263649894908607e-08,
+  "max_abs_bin_delta_vs_slow_reference": 1.1029584356947453e-08,
+  "worst_bin_index": 6,
+  "worst_bin_abs_delta": 1.1029584356947453e-08,
+  "worst_bin_tolerance": 4.648094624909674e-08,
+  "worst_bin_tolerance_ratio": 0.23729259507408995,
+  "flavor_schema_version": 1,
+  "neutrino_flavor_order": [
+    "e",
+    "mu",
+    "tau"
+  ],
+  "wilson_flavor_axis": {
+    "row": "final",
+    "column": "initial"
+  },
+  "operator_basis_size": 22,
+  "coefficient_shape": [
+    22,
+    3,
+    3
+  ],
+  "lnc_lnv_interference": false
+}

@@ -1,0 +1,19 @@
+{
+  "dataset": "CsI2021",
+  "reference_kind": "authoritative_slow_counts",
+  "gate": "L",
+  "source": "direct Slow calculation",
+  "responses_json": "data\\responses\\responses_all.json",
+  "settings": {
+    "n_er": 21,
+    "n_enu": 120,
+    "n_pe_bin": 8,
+    "pe_step": 3.0,
+    "direct_slow_defaults": true
+  },
+  "shape": [
+    9
+  ],
+  "sum": 332.9338350257275,
+  "sha256": "e180acc63414b2a29d8ab13482d768c9cb47d7c64cce2271d50ad0af26d24292"
+}
