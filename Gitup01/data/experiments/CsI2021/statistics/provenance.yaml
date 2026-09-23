@@ -1,0 +1,21 @@
+experiment: COHERENT
+dataset: CsI2021
+source_type: legacy_code_arrays
+source_reference: "CEvNS-pyEFT-main legacy statistics/cutoff_single.py and core/engine.py"
+source_file: "F:/Work/2026-07-15 CEvNSpyEFT-Local/CEvNS-pyEFT-main/CEvNS-pyEFT-main/src/cevns_pyeft/core/engine.py"
+digitized_or_official: legacy provenance only; not authoritative
+observable: PE residual spectrum
+units: counts/PE
+bin_edges: [0.001, 8.001, 12.001, 16.001, 20.001, 24.001, 32.001, 40.001, 48.001, 60.001]
+bin_width_rule: "prediction raw events/bin is divided by PE bin width before likelihood"
+observed_definition: "legacy CSI_N_EXP residual array"
+background_definition: "legacy CSI_N_BG BRN+NIN background array, same counts/PE convention"
+error_definition: "legacy CSI_EXP_UNC symmetric Gaussian uncertainty, same counts/PE convention"
+nuisance_definition:
+  signal_norm_alpha_sigma: 0.125
+  background_norm_beta_sigma: 0.35
+confidence_convention: "1D cutoff uses Delta chi2 2.71/3.84/6.63; 2D Flow A uses 4.61 for 90% CL"
+known_limitations:
+  - "Legacy approximate Gaussian residual likelihood."
+  - "Not an official/full COHERENT likelihood."
+validation_status: legacy provenance only; statistics still blocked pending authoritative provenance

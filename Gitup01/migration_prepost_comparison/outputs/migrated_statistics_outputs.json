@@ -1,0 +1,359 @@
+{
+  "metadata": {
+    "kind": "migrated_post_split",
+    "repo_root": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260820Gitup1-Flavor\\git-worktree-f0\\Gitup01",
+    "python": "F:\\Work\\.codex_conda_envs\\codex-py311\\python.exe",
+    "python_version": "3.11.15",
+    "generated_utc": "2026-09-23T12:03:07.207322+00:00",
+    "files": [
+      {
+        "relative_path": "src/cevns_pyeft/statistics/__init__.py",
+        "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260820Gitup1-Flavor\\git-worktree-f0\\Gitup01\\src\\cevns_pyeft\\statistics\\__init__.py",
+        "size": 202,
+        "sha256": "ed5a1e1e4915bbe05daedfe46bb558f7a9c69ca215476d5b60bba4e485048167"
+      },
+      {
+        "relative_path": "src/cevns_pyeft/statistics/confidence.py",
+        "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260820Gitup1-Flavor\\git-worktree-f0\\Gitup01\\src\\cevns_pyeft\\statistics\\confidence.py",
+        "size": 6743,
+        "sha256": "dd9449ed9bda1a2cba959a1afd54bf93e5411dc81595d5b771dfd2094800ded5"
+      },
+      {
+        "relative_path": "src/cevns_pyeft/statistics/datasets.py",
+        "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260820Gitup1-Flavor\\git-worktree-f0\\Gitup01\\src\\cevns_pyeft\\statistics\\datasets.py",
+        "size": 6473,
+        "sha256": "20d1ff2f0811144844b8cf7883020907a5f2969be949f101253444237694b455"
+      },
+      {
+        "relative_path": "src/cevns_pyeft/statistics/likelihoods.py",
+        "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260820Gitup1-Flavor\\git-worktree-f0\\Gitup01\\src\\cevns_pyeft\\statistics\\likelihoods.py",
+        "size": 3654,
+        "sha256": "9f1e347157cc36cafcb9a6af82aecc46f000d57db3bf9bd7bda8e869820021b6"
+      },
+      {
+        "relative_path": "src/cevns_pyeft/statistics/profiling.py",
+        "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260820Gitup1-Flavor\\git-worktree-f0\\Gitup01\\src\\cevns_pyeft\\statistics\\profiling.py",
+        "size": 9673,
+        "sha256": "1ff56e0d802ec8b05ac8002633b070d8019e40895569dc083683029d0a26c120"
+      },
+      {
+        "relative_path": "src/cevns_pyeft/statistics/observables.py",
+        "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260820Gitup1-Flavor\\git-worktree-f0\\Gitup01\\src\\cevns_pyeft\\statistics\\observables.py",
+        "size": 4218,
+        "sha256": "562a18e77e4b0f75666847d220f785e6c54b99df436f014e203f76ef05109941"
+      }
+    ],
+    "note": "Direct run of the migrated split statistics package."
+  },
+  "profiles": {
+    "csi2021": {
+      "zero": {
+        "chi2": 54.20370924264971,
+        "alpha": 0.0,
+        "beta": 0.1920298344095535,
+        "chi2_data": 53.902685101397786,
+        "chi2_nuisance": 0.3010241412519228,
+        "success": true,
+        "message": "analytic",
+        "iterations": 0,
+        "selected_error_side": []
+      },
+      "ones": {
+        "chi2": 51.16748557415769,
+        "alpha": 0.022646628089881653,
+        "beta": 0.1868298092063141,
+        "chi2_data": 50.84972005124679,
+        "chi2_nuisance": 0.3177655229108933,
+        "success": true,
+        "message": "analytic",
+        "iterations": 0,
+        "selected_error_side": []
+      },
+      "ramp": {
+        "chi2": 47.2673425887033,
+        "alpha": 0.046090390345547266,
+        "beta": 0.1631996581035627,
+        "chi2_data": 46.91396439107386,
+        "chi2_nuisance": 0.35337819762943934,
+        "success": true,
+        "message": "analytic",
+        "iterations": 0,
+        "selected_error_side": []
+      },
+      "background_width_scaled": {
+        "chi2": 51.10942523891148,
+        "alpha": 0.023284270589630906,
+        "beta": 0.1825486814227063,
+        "chi2_data": 50.80269434925274,
+        "chi2_nuisance": 0.3067308896587375,
+        "success": true,
+        "message": "analytic",
+        "iterations": 0,
+        "selected_error_side": []
+      }
+    },
+    "csi2017": {
+      "zero": {
+        "chi2": 45.0356331901066,
+        "alpha": 0.0,
+        "beta": 0.0,
+        "chi2_data": 45.0356331901066,
+        "chi2_nuisance": 0.0,
+        "success": true,
+        "message": "analytic one-alpha profile",
+        "iterations": 0,
+        "selected_error_side": []
+      },
+      "ones": {
+        "chi2": 40.86890179325482,
+        "alpha": 0.1044502228238709,
+        "beta": 0.0,
+        "chi2_data": 40.72974555539824,
+        "chi2_nuisance": 0.1391562378565852,
+        "success": true,
+        "message": "analytic one-alpha profile",
+        "iterations": 0,
+        "selected_error_side": []
+      },
+      "legacy_spectrum": {
+        "chi2": 22.80691583538208,
+        "alpha": -0.1435254876708204,
+        "beta": 0.0,
+        "chi2_data": 22.54416627401541,
+        "chi2_nuisance": 0.26274956136666855,
+        "success": true,
+        "message": "analytic one-alpha profile",
+        "iterations": 0,
+        "selected_error_side": []
+      },
+      "observed": {
+        "chi2": 0.0,
+        "alpha": 0.0,
+        "beta": 0.0,
+        "chi2_data": 0.0,
+        "chi2_nuisance": 0.0,
+        "success": true,
+        "message": "analytic one-alpha profile",
+        "iterations": 0,
+        "selected_error_side": []
+      }
+    },
+    "ar2020": {
+      "zero": {
+        "irls": {
+          "chi2": 21.475163767247462,
+          "alpha": 0.0,
+          "beta": 0.022139222826523013,
+          "chi2_data": 21.452169528771087,
+          "chi2_nuisance": 0.022994238476376327,
+          "success": true,
+          "message": "piecewise_asym_irls",
+          "iterations": 2,
+          "selected_error_side": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper"
+          ]
+        },
+        "bounded": {
+          "chi2": 21.475163767247473,
+          "alpha": -9.137275075952577e-09,
+          "beta": 0.0221392166535751,
+          "chi2_data": 21.452169541593783,
+          "chi2_nuisance": 0.02299422565369022,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 2,
+          "selected_error_side": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper"
+          ]
+        }
+      },
+      "ones": {
+        "irls": {
+          "chi2": 22.144771954272212,
+          "alpha": -0.005077153274017248,
+          "beta": 0.008128498086911021,
+          "chi2_data": 22.13988218508916,
+          "chi2_nuisance": 0.0048897691830529725,
+          "success": true,
+          "message": "piecewise_asym_irls",
+          "iterations": 2,
+          "selected_error_side": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper"
+          ]
+        },
+        "bounded": {
+          "chi2": 22.14477195427232,
+          "alpha": -0.005077166361426735,
+          "beta": 0.008128525673949274,
+          "chi2_data": 22.139882154820793,
+          "chi2_nuisance": 0.004889799451526663,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 3,
+          "selected_error_side": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper"
+          ]
+        }
+      },
+      "observed_minus_background": {
+        "irls": {
+          "chi2": 1.419673342683211e-32,
+          "alpha": 0.0,
+          "beta": 0.0,
+          "chi2_data": 1.419673342683211e-32,
+          "chi2_nuisance": 0.0,
+          "success": true,
+          "message": "piecewise_asym_irls",
+          "iterations": 2,
+          "selected_error_side": [
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper"
+          ]
+        },
+        "bounded": {
+          "chi2": 1.419673342683211e-32,
+          "alpha": 0.0,
+          "beta": 0.0,
+          "chi2_data": 1.419673342683211e-32,
+          "chi2_nuisance": 0.0,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 0,
+          "selected_error_side": [
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper"
+          ]
+        }
+      },
+      "ramp": {
+        "irls": {
+          "chi2": 44.11480898570853,
+          "alpha": -0.2535173828774901,
+          "beta": -0.10867150725751293,
+          "chi2_data": 39.09752040314383,
+          "chi2_nuisance": 5.017288582564695,
+          "success": true,
+          "message": "piecewise_asym_irls",
+          "iterations": 2,
+          "selected_error_side": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper"
+          ]
+        },
+        "bounded": {
+          "chi2": 44.11480898570855,
+          "alpha": -0.25351738050209843,
+          "beta": -0.10867149766162783,
+          "chi2_data": 39.0975205846251,
+          "chi2_nuisance": 5.0172884010834515,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 3,
+          "selected_error_side": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper"
+          ]
+        }
+      }
+    }
+  },
+  "confidence": {
+    "CL_TO_DCHI2_1DOF": {
+      "0.9": 2.71,
+      "0.95": 3.84,
+      "0.99": 6.63
+    },
+    "CL_TO_DCHI2_2DOF": {
+      "0.683": 2.3,
+      "0.9": 4.61,
+      "0.95": 5.99,
+      "0.99": 9.21
+    },
+    "COHERENT_2D_90CL_THRESHOLD": 4.6,
+    "THRESHOLD_90CL_flow_b": 4.61
+  }
+}

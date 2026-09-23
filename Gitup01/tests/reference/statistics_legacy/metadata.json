@@ -1,0 +1,64 @@
+{
+  "source_root": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\CEvNS-pyEFT-main\\CEvNS-pyEFT-main",
+  "source_git_branch": null,
+  "source_git_commit": null,
+  "source_git_note": "source directory is not a git repository in the local migration bundle",
+  "files": [
+    {
+      "relative_path": "src/cevns_pyeft/statistics/__init__.py",
+      "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\CEvNS-pyEFT-main\\CEvNS-pyEFT-main\\src\\cevns_pyeft\\statistics\\__init__.py",
+      "size": 156,
+      "mtime": 1790101813.8112419,
+      "sha256": "ddd890f1ff88219c88dc9ecb27da9ac30cb6c2e16107071ec6ca29f3c4bed9c9"
+    },
+    {
+      "relative_path": "src/cevns_pyeft/statistics/cutoff_single.py",
+      "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\CEvNS-pyEFT-main\\CEvNS-pyEFT-main\\src\\cevns_pyeft\\statistics\\cutoff_single.py",
+      "size": 65333,
+      "mtime": 1790101813.840128,
+      "sha256": "40bd3ed819e05b4b577bc45714082b500b5f9ee3864afd38d109a38a572be451"
+    },
+    {
+      "relative_path": "src/cevns_pyeft/statistics/cutoff_multi.py",
+      "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\CEvNS-pyEFT-main\\CEvNS-pyEFT-main\\src\\cevns_pyeft\\statistics\\cutoff_multi.py",
+      "size": 74098,
+      "mtime": 1790101813.8331227,
+      "sha256": "e7393668ec432ab76062d2d00f19c561bdb8a2ea0628ae8fd553c961eca0ad81"
+    },
+    {
+      "relative_path": "src/cevns_pyeft/statistics/chi2_2d.py",
+      "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\CEvNS-pyEFT-main\\CEvNS-pyEFT-main\\src\\cevns_pyeft\\statistics\\chi2_2d.py",
+      "size": 94380,
+      "mtime": 1790101813.8227115,
+      "sha256": "66aa4e557649d57789dbdd10abc9305e4182216a61079fd8572796969d61ab61"
+    },
+    {
+      "relative_path": "data/datafiles/COHERENT_data.txt",
+      "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\CEvNS-pyEFT-main\\CEvNS-pyEFT-main\\data\\datafiles\\COHERENT_data.txt",
+      "size": 904,
+      "mtime": 1790101813.5117946,
+      "sha256": "6fb7b0b6d242bb05ab090bdff47432e656747504e34091c154944bf3705ac0f9"
+    },
+    {
+      "relative_path": "data/datafiles/COHERENT_lower.txt",
+      "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\CEvNS-pyEFT-main\\CEvNS-pyEFT-main\\data\\datafiles\\COHERENT_lower.txt",
+      "size": 932,
+      "mtime": 1790101813.5258214,
+      "sha256": "86b3420c60330caf7a2ce795a8d1dd90f80a9cca39817e73846d71693eac1452"
+    },
+    {
+      "relative_path": "data/datafiles/COHERENT_upper.txt",
+      "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\CEvNS-pyEFT-main\\CEvNS-pyEFT-main\\data\\datafiles\\COHERENT_upper.txt",
+      "size": 928,
+      "mtime": 1790101813.541138,
+      "sha256": "8c1b337880005c1957a8863c6310b2a0f0f4ec60b3370cf6bf46e1f47a5d712d"
+    },
+    {
+      "relative_path": "data/datafiles/COHERENT_spectrum.txt",
+      "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\CEvNS-pyEFT-main\\CEvNS-pyEFT-main\\data\\datafiles\\COHERENT_spectrum.txt",
+      "size": 932,
+      "mtime": 1790101813.5318215,
+      "sha256": "8303c60f2a4fee8fcc109115c45e96615e5d69a354c6647e9d25956df54e248d"
+    }
+  ]
+}

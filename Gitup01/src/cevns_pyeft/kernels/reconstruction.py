@@ -171,10 +171,14 @@ def reconstruct_counts_from_kernel(kernel: Mapping[str, Any], coeff_vector: np.n
     if 'CsI' in targets:
         target_index = targets.index('CsI')
         by_flavor = {flavor: np.asarray(channel_summed[target_index, i], dtype=float) for i, flavor in enumerate(flavors)}
-    else:
+    elif 'Cs133' in targets and 'I127' in targets:
         cs = targets.index('Cs133')
         ii = targets.index('I127')
         by_flavor = {flavor: combine_equal_stoichiometry(channel_summed[cs, i], channel_summed[ii, i]) for i, flavor in enumerate(flavors)}
+    elif len(targets) == 1:
+        by_flavor = {flavor: np.asarray(channel_summed[0, i], dtype=float) for i, flavor in enumerate(flavors)}
+    else:
+        raise ValueError(f'Unsupported target layout for Fast reconstruction: {targets}')
     counts_bin: Dict[str, np.ndarray] = {flavor: np.asarray(by_flavor[flavor], dtype=float) for flavor in ('mu', 'e', 'mub')}
     counts_bin['total'] = counts_bin['mu'] + counts_bin['e'] + counts_bin['mub']
     pe_widths = np.diff(np.asarray(kernel['pe_bins'], dtype=float))

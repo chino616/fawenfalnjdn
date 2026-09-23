@@ -1,0 +1,24 @@
+experiment: COHERENT
+dataset: Ar2020
+source_type: legacy_code_arrays
+source_reference: "CEvNS-pyEFT-main statistics/cutoff_multi.py and target slow_counts_ar2020.py carried arrays"
+source_file: "src/cevns_pyeft/experiments/coherent/slow_counts_ar2020.py"
+digitized_or_official: legacy provenance only; not authoritative
+observable: PE spectrum
+units: counts/bin
+bin_edges: "np.linspace(0.001, 120.001, 13)"
+observed_definition: "legacy AR_D array"
+background_definition: "legacy AR_B array"
+error_definition: "asymmetric lower/upper arrays AR_DMIN and AR_DMAX; side selected by model > data"
+nuisance_definition:
+  signal_norm_alpha_sigma: 0.12
+  background_norm_beta_sigma: 0.146
+  pull_bounds: [-1.0, 1.0]
+profile_algorithms:
+  irls: "piecewise asymmetric fixed-sigma analytic iteration, max 8 iterations"
+  bounded: "L-BFGS-B over alpha,beta in [-1,1]"
+confidence_convention: "1D cutoff uses Delta chi2 2.71/3.84/6.63; original 2D Flow A uses 4.61"
+known_limitations:
+  - "IRLS and bounded minimization are preserved as distinct algorithms."
+  - "Not an official/full COHERENT likelihood."
+validation_status: legacy provenance only; statistics still blocked pending authoritative provenance

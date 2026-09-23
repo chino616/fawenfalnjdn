@@ -1,0 +1,164 @@
+{
+  "csi2021": {
+    "zero": {
+      "component": "CsI2021",
+      "chi2": 54.20370924264971,
+      "alpha": 0.0,
+      "beta": 0.1920298344095535,
+      "chi2_data": 53.902685101397786,
+      "chi2_nuisance": 0.3010241412519228,
+      "signal_sum": 0.0,
+      "success": true,
+      "message": ""
+    },
+    "ones": {
+      "component": "CsI2021",
+      "chi2": 51.16748557415769,
+      "alpha": 0.022646628089881653,
+      "beta": 0.1868298092063141,
+      "chi2_data": 50.84972005124679,
+      "chi2_nuisance": 0.3177655229108933,
+      "signal_sum": 1.5833333333333333,
+      "success": true,
+      "message": ""
+    },
+    "ramp": {
+      "component": "CsI2021",
+      "chi2": 47.2673425887033,
+      "alpha": 0.046090390345547266,
+      "beta": 0.1631996581035627,
+      "chi2_data": 46.91396439107386,
+      "chi2_nuisance": 0.35337819762943934,
+      "signal_sum": 6.885416666666667,
+      "success": true,
+      "message": ""
+    },
+    "background_width_scaled": {
+      "component": "CsI2021",
+      "chi2": 51.109425238911484,
+      "alpha": 0.023284270589630906,
+      "beta": 0.1825486814227063,
+      "chi2_data": 50.80269434925275,
+      "chi2_nuisance": 0.3067308896587375,
+      "signal_sum": 2.484,
+      "success": true,
+      "message": ""
+    }
+  },
+  "csi2017": {
+    "zero": {
+      "component": "CsI2017",
+      "chi2": 45.0356331901066,
+      "alpha": 0.0,
+      "beta": 0.0,
+      "chi2_data": 45.0356331901066,
+      "chi2_nuisance": 0.0,
+      "signal_sum": 0.0,
+      "success": true,
+      "message": ""
+    },
+    "ones": {
+      "component": "CsI2017",
+      "chi2": 40.86890179325482,
+      "alpha": 0.1044502228238709,
+      "beta": 0.0,
+      "chi2_data": 40.72974555539824,
+      "chi2_nuisance": 0.1391562378565852,
+      "signal_sum": 25.0,
+      "success": true,
+      "message": ""
+    },
+    "legacy_spectrum": {
+      "component": "CsI2017",
+      "chi2": 22.80691583538208,
+      "alpha": -0.1435254876708204,
+      "beta": 0.0,
+      "chi2_data": 22.54416627401541,
+      "chi2_nuisance": 0.26274956136666855,
+      "signal_sum": 181.69736842105266,
+      "success": true,
+      "message": ""
+    },
+    "observed": {
+      "component": "CsI2017",
+      "chi2": 0.0,
+      "alpha": 0.0,
+      "beta": 0.0,
+      "chi2_data": 0.0,
+      "chi2_nuisance": 0.0,
+      "signal_sum": 148.3026315789474,
+      "success": true,
+      "message": ""
+    }
+  },
+  "ar2020": {
+    "zero": {
+      "irls": {
+        "component": "Ar2020",
+        "chi2": 21.475163767247462,
+        "alpha": 0.0,
+        "beta": 0.022139222826523013,
+        "chi2_data": 21.452169528771087,
+        "chi2_nuisance": 0.022994238476376327,
+        "signal_sum": 0.0,
+        "success": true,
+        "message": "piecewise_asym_irls"
+      },
+      "bounded": {
+        "available": false,
+        "message": "scipy.optimize.minimize is required for Ar2020 profile method='minimize'"
+      }
+    },
+    "ones": {
+      "irls": {
+        "component": "Ar2020",
+        "chi2": 22.144771954272212,
+        "alpha": -0.005077153274017248,
+        "beta": 0.008128498086911021,
+        "chi2_data": 22.13988218508916,
+        "chi2_nuisance": 0.0048897691830529725,
+        "signal_sum": 12.0,
+        "success": true,
+        "message": "piecewise_asym_irls"
+      },
+      "bounded": {
+        "available": false,
+        "message": "scipy.optimize.minimize is required for Ar2020 profile method='minimize'"
+      }
+    },
+    "observed_minus_background": {
+      "irls": {
+        "component": "Ar2020",
+        "chi2": 1.419673342683211e-32,
+        "alpha": 0.0,
+        "beta": 0.0,
+        "chi2_data": 1.419673342683211e-32,
+        "chi2_nuisance": 0.0,
+        "signal_sum": 39.04366474000002,
+        "success": true,
+        "message": "piecewise_asym_irls"
+      },
+      "bounded": {
+        "available": false,
+        "message": "scipy.optimize.minimize is required for Ar2020 profile method='minimize'"
+      }
+    },
+    "ramp": {
+      "irls": {
+        "component": "Ar2020",
+        "chi2": 44.11480898570853,
+        "alpha": -0.2535173828774901,
+        "beta": -0.10867150725751293,
+        "chi2_data": 39.09752040314383,
+        "chi2_nuisance": 5.017288582564695,
+        "signal_sum": 150.0,
+        "success": true,
+        "message": "piecewise_asym_irls"
+      },
+      "bounded": {
+        "available": false,
+        "message": "scipy.optimize.minimize is required for Ar2020 profile method='minimize'"
+      }
+    }
+  }
+}

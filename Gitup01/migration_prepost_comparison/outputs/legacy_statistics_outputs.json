@@ -1,0 +1,267 @@
+{
+  "metadata": {
+    "kind": "legacy_pre_migration",
+    "source_root": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\CEvNS-pyEFT-main\\CEvNS-pyEFT-main",
+    "python": "F:\\Work\\.codex_conda_envs\\codex-py311\\python.exe",
+    "python_version": "3.11.15",
+    "generated_utc": "2026-09-23T12:03:06.339476+00:00",
+    "files": [
+      {
+        "relative_path": "src/cevns_pyeft/statistics/__init__.py",
+        "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\CEvNS-pyEFT-main\\CEvNS-pyEFT-main\\src\\cevns_pyeft\\statistics\\__init__.py",
+        "size": 156,
+        "sha256": "ddd890f1ff88219c88dc9ecb27da9ac30cb6c2e16107071ec6ca29f3c4bed9c9"
+      },
+      {
+        "relative_path": "src/cevns_pyeft/statistics/cutoff_single.py",
+        "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\CEvNS-pyEFT-main\\CEvNS-pyEFT-main\\src\\cevns_pyeft\\statistics\\cutoff_single.py",
+        "size": 65333,
+        "sha256": "40bd3ed819e05b4b577bc45714082b500b5f9ee3864afd38d109a38a572be451"
+      },
+      {
+        "relative_path": "src/cevns_pyeft/statistics/cutoff_multi.py",
+        "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\CEvNS-pyEFT-main\\CEvNS-pyEFT-main\\src\\cevns_pyeft\\statistics\\cutoff_multi.py",
+        "size": 74098,
+        "sha256": "e7393668ec432ab76062d2d00f19c561bdb8a2ea0628ae8fd553c961eca0ad81"
+      },
+      {
+        "relative_path": "src/cevns_pyeft/statistics/chi2_2d.py",
+        "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\CEvNS-pyEFT-main\\CEvNS-pyEFT-main\\src\\cevns_pyeft\\statistics\\chi2_2d.py",
+        "size": 94380,
+        "sha256": "66aa4e557649d57789dbdd10abc9305e4182216a61079fd8572796969d61ab61"
+      },
+      {
+        "relative_path": "data/datafiles/COHERENT_data.txt",
+        "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\CEvNS-pyEFT-main\\CEvNS-pyEFT-main\\data\\datafiles\\COHERENT_data.txt",
+        "size": 904,
+        "sha256": "6fb7b0b6d242bb05ab090bdff47432e656747504e34091c154944bf3705ac0f9"
+      },
+      {
+        "relative_path": "data/datafiles/COHERENT_lower.txt",
+        "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\CEvNS-pyEFT-main\\CEvNS-pyEFT-main\\data\\datafiles\\COHERENT_lower.txt",
+        "size": 932,
+        "sha256": "86b3420c60330caf7a2ce795a8d1dd90f80a9cca39817e73846d71693eac1452"
+      },
+      {
+        "relative_path": "data/datafiles/COHERENT_upper.txt",
+        "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\CEvNS-pyEFT-main\\CEvNS-pyEFT-main\\data\\datafiles\\COHERENT_upper.txt",
+        "size": 928,
+        "sha256": "8c1b337880005c1957a8863c6310b2a0f0f4ec60b3370cf6bf46e1f47a5d712d"
+      },
+      {
+        "relative_path": "data/datafiles/COHERENT_spectrum.txt",
+        "absolute_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\CEvNS-pyEFT-main\\CEvNS-pyEFT-main\\data\\datafiles\\COHERENT_spectrum.txt",
+        "size": 932,
+        "sha256": "8303c60f2a4fee8fcc109115c45e96615e5d69a354c6647e9d25956df54e248d"
+      }
+    ],
+    "note": "Direct run of the pre-migration statistics package from CEvNS-pyEFT-main."
+  },
+  "profiles": {
+    "csi2021": {
+      "zero": {
+        "component": "CsI2021",
+        "chi2": 54.20370924264971,
+        "alpha": 0.0,
+        "beta": 0.1920298344095535,
+        "chi2_data": 53.902685101397786,
+        "chi2_nuisance": 0.3010241412519228,
+        "signal_sum": 0.0,
+        "success": true,
+        "message": ""
+      },
+      "ones": {
+        "component": "CsI2021",
+        "chi2": 51.16748557415769,
+        "alpha": 0.022646628089881653,
+        "beta": 0.1868298092063141,
+        "chi2_data": 50.84972005124679,
+        "chi2_nuisance": 0.3177655229108933,
+        "signal_sum": 1.5833333333333333,
+        "success": true,
+        "message": ""
+      },
+      "ramp": {
+        "component": "CsI2021",
+        "chi2": 47.2673425887033,
+        "alpha": 0.046090390345547266,
+        "beta": 0.1631996581035627,
+        "chi2_data": 46.91396439107386,
+        "chi2_nuisance": 0.35337819762943934,
+        "signal_sum": 6.885416666666667,
+        "success": true,
+        "message": ""
+      },
+      "background_width_scaled": {
+        "component": "CsI2021",
+        "chi2": 51.109425238911484,
+        "alpha": 0.023284270589630906,
+        "beta": 0.1825486814227063,
+        "chi2_data": 50.80269434925275,
+        "chi2_nuisance": 0.3067308896587375,
+        "signal_sum": 2.484,
+        "success": true,
+        "message": ""
+      }
+    },
+    "csi2017": {
+      "zero": {
+        "component": "CsI2017",
+        "chi2": 45.0356331901066,
+        "alpha": 0.0,
+        "beta": 0.0,
+        "chi2_data": 45.0356331901066,
+        "chi2_nuisance": 0.0,
+        "signal_sum": 0.0,
+        "success": true,
+        "message": ""
+      },
+      "ones": {
+        "component": "CsI2017",
+        "chi2": 40.86890179325482,
+        "alpha": 0.1044502228238709,
+        "beta": 0.0,
+        "chi2_data": 40.72974555539824,
+        "chi2_nuisance": 0.1391562378565852,
+        "signal_sum": 25.0,
+        "success": true,
+        "message": ""
+      },
+      "legacy_spectrum": {
+        "component": "CsI2017",
+        "chi2": 22.80691583538208,
+        "alpha": -0.1435254876708204,
+        "beta": 0.0,
+        "chi2_data": 22.54416627401541,
+        "chi2_nuisance": 0.26274956136666855,
+        "signal_sum": 181.69736842105266,
+        "success": true,
+        "message": ""
+      },
+      "observed": {
+        "component": "CsI2017",
+        "chi2": 0.0,
+        "alpha": 0.0,
+        "beta": 0.0,
+        "chi2_data": 0.0,
+        "chi2_nuisance": 0.0,
+        "signal_sum": 148.3026315789474,
+        "success": true,
+        "message": ""
+      }
+    },
+    "ar2020": {
+      "zero": {
+        "irls": {
+          "component": "Ar2020",
+          "chi2": 21.475163767247462,
+          "alpha": 0.0,
+          "beta": 0.022139222826523013,
+          "chi2_data": 21.452169528771087,
+          "chi2_nuisance": 0.022994238476376327,
+          "signal_sum": 0.0,
+          "success": true,
+          "message": "piecewise_asym_irls"
+        },
+        "bounded": {
+          "component": "Ar2020",
+          "chi2": 21.475163767247473,
+          "alpha": -9.137275075952577e-09,
+          "beta": 0.0221392166535751,
+          "chi2_data": 21.452169541593783,
+          "chi2_nuisance": 0.02299422565369022,
+          "signal_sum": 0.0,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+        }
+      },
+      "ones": {
+        "irls": {
+          "component": "Ar2020",
+          "chi2": 22.144771954272212,
+          "alpha": -0.005077153274017248,
+          "beta": 0.008128498086911021,
+          "chi2_data": 22.13988218508916,
+          "chi2_nuisance": 0.0048897691830529725,
+          "signal_sum": 12.0,
+          "success": true,
+          "message": "piecewise_asym_irls"
+        },
+        "bounded": {
+          "component": "Ar2020",
+          "chi2": 22.14477195427232,
+          "alpha": -0.005077166361426735,
+          "beta": 0.008128525673949274,
+          "chi2_data": 22.139882154820793,
+          "chi2_nuisance": 0.004889799451526663,
+          "signal_sum": 12.0,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+        }
+      },
+      "observed_minus_background": {
+        "irls": {
+          "component": "Ar2020",
+          "chi2": 1.419673342683211e-32,
+          "alpha": 0.0,
+          "beta": 0.0,
+          "chi2_data": 1.419673342683211e-32,
+          "chi2_nuisance": 0.0,
+          "signal_sum": 39.04366474000002,
+          "success": true,
+          "message": "piecewise_asym_irls"
+        },
+        "bounded": {
+          "component": "Ar2020",
+          "chi2": 1.419673342683211e-32,
+          "alpha": 0.0,
+          "beta": 0.0,
+          "chi2_data": 1.419673342683211e-32,
+          "chi2_nuisance": 0.0,
+          "signal_sum": 39.04366474000002,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+        }
+      },
+      "ramp": {
+        "irls": {
+          "component": "Ar2020",
+          "chi2": 44.11480898570853,
+          "alpha": -0.2535173828774901,
+          "beta": -0.10867150725751293,
+          "chi2_data": 39.09752040314383,
+          "chi2_nuisance": 5.017288582564695,
+          "signal_sum": 150.0,
+          "success": true,
+          "message": "piecewise_asym_irls"
+        },
+        "bounded": {
+          "component": "Ar2020",
+          "chi2": 44.11480898570855,
+          "alpha": -0.25351738050209843,
+          "beta": -0.10867149766162783,
+          "chi2_data": 39.0975205846251,
+          "chi2_nuisance": 5.0172884010834515,
+          "signal_sum": 150.0,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+        }
+      }
+    }
+  },
+  "confidence": {
+    "CL_TO_DCHI2_1DOF": {
+      "0.9": 2.71,
+      "0.95": 3.84,
+      "0.99": 6.63
+    },
+    "CL_TO_DCHI2_2DOF": {
+      "0.683": 2.3,
+      "0.9": 4.61,
+      "0.95": 5.99,
+      "0.99": 9.21
+    },
+    "COHERENT_2D_90CL_THRESHOLD": 4.6,
+    "THRESHOLD_90CL_flow_b": 4.61
+  }
+}
