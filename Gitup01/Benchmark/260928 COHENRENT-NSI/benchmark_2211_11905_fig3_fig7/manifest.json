@@ -1,0 +1,54 @@
+{
+  "paper": "arXiv:2211.11905v2",
+  "paper_url": "https://arxiv.org/pdf/2211.11905v2",
+  "confidence_2d": 4.605170185988092,
+  "note": "Figure 3-6: NSI. Figure 7: NGI. Raw profiled chi2 must be supplied; do not add delta-chi2 grids to form a joint fit.",
+  "figures": {
+    "3": {
+      "page_index": 18,
+      "title": "Flavor-preserving NSI: u versus d",
+      "rows": [
+        {"id": "top", "x": "eps_ee_dV", "y": "eps_ee_uV", "xlim": [-1, 1], "ylim": [-1, 1]},
+        {"id": "bottom", "x": "eps_mumu_dV", "y": "eps_mumu_uV", "xlim": [-1, 1], "ylim": [-1, 1]}
+      ]
+    },
+    "4": {
+      "page_index": 19,
+      "title": "Flavor-preserving NSI: e versus mu",
+      "rows": [
+        {"id": "top", "x": "eps_ee_uV", "y": "eps_mumu_uV", "xlim": [-0.4, 0.8], "ylim": [-0.3, 0.6]},
+        {"id": "bottom", "x": "eps_ee_dV", "y": "eps_mumu_dV", "xlim": [-0.4, 0.8], "ylim": [-0.3, 0.6]}
+      ]
+    },
+    "5": {
+      "page_index": 20,
+      "title": "Diagonal and flavor-changing NSI: e-tau and mu-tau",
+      "rows": [
+        {"id": "top", "x": "eps_ee_dV", "y": "eps_etau_dV", "xlim": [-0.4, 0.6], "ylim": [-0.6, 0.6]},
+        {"id": "bottom", "x": "eps_mumu_dV", "y": "eps_mutau_dV", "xlim": [-0.4, 0.6], "ylim": [-0.6, 0.6]}
+      ]
+    },
+    "6": {
+      "page_index": 21,
+      "title": "Diagonal and flavor-changing NSI: e-mu",
+      "rows": [
+        {"id": "top", "x": "eps_ee_dV", "y": "eps_emu_dV", "xlim": [-0.4, 0.6], "ylim": [-0.3, 0.3]},
+        {"id": "bottom", "x": "eps_mumu_dV", "y": "eps_emu_dV", "xlim": [-0.4, 0.6], "ylim": [-0.3, 0.3]}
+      ]
+    },
+    "7": {
+      "page_index": 22,
+      "title": "Neutrino generalized interactions (NGI)",
+      "profiles": [
+        {"id": "scalar", "x": "Cq_S"},
+        {"id": "vector", "x": "Cq_V"},
+        {"id": "tensor", "x": "Cq_T"}
+      ],
+      "planes": [
+        {"id": "scalar_tensor", "x": "Cq_S", "y": "Cq_T"},
+        {"id": "vector_scalar", "x": "Cq_V", "y": "Cq_S"},
+        {"id": "vector_tensor", "x": "Cq_V", "y": "Cq_T"}
+      ]
+    }
+  }
+}

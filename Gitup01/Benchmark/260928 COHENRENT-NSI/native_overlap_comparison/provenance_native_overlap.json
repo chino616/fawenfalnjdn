@@ -1,0 +1,13 @@
+{
+  "mode": "native approximate overlap comparison; not paper-matched reproduction",
+  "git_commit": "880dabab9a54911caa247c7dda12781e8c970123",
+  "paper_pdf": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260820Gitup1-Flavor\\git-worktree-f0\\Gitup01\\Benchmark\\260928 COHENRENT-NSI\\2211.11905v2.pdf",
+  "paper_sha256": "071225342b004f4e97001d6c200066b216f0af1af226f4b4aafa43512304a2b1",
+  "manifest_sha256": "db1ec4f6802c2ba0eb13c10d1f11150a10de2a36c238267cc5dc11edb0b83957",
+  "grid_n": 101,
+  "threshold_2d": 4.605170185988092,
+  "kernels": {
+    "csi": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260820Gitup1-Flavor\\git-worktree-f0\\Gitup01\\tests\\reference_CsI2021\\fast_kernel.npz",
+    "lar": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260820Gitup1-Flavor\\git-worktree-f0\\Gitup01\\results\\flavor_benchmark\\COHERENT_highres_all_grid101\\ar2020_fast_kernel_ne21_nenu120_nobs8\\ar2020_fast_kernel.npz"
+  }
+}

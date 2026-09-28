@@ -1,0 +1,13 @@
+dataset,plane,x_parameter,y_parameter,x_min,x_max,y_min,y_max,grid_n,bestfit_x,bestfit_y,chi2_min,dchi2_max,threshold_90cl,contour_available,bestfit_on_frame,contour_touches_frame,truncated_by_frame
+CsI2021,ee_uV_dV,epsilon_ee_uV,epsilon_ee_dV,-1.0,1.0,-1.0,1.0,101,1.0,-0.88,3.5487887479996605,62.50466540326901,4.61,True,True,True,True
+CsI2017,ee_uV_dV,epsilon_ee_uV,epsilon_ee_dV,-1.0,1.0,-1.0,1.0,101,1.0,-0.6,24.05337644427433,12.417794571859748,4.61,True,True,True,True
+Ar2020,ee_uV_dV,epsilon_ee_uV,epsilon_ee_dV,-1.0,1.0,-1.0,1.0,101,0.8400000000000001,-0.36,8.550754280965783,64.95071089262669,4.61,True,False,True,True
+combined,ee_uV_dV,epsilon_ee_uV,epsilon_ee_dV,-1.0,1.0,-1.0,1.0,101,0.94,-0.52,37.06211018584003,138.96398015515518,4.61,True,False,True,True
+CsI2021,mumu_uV_dV,epsilon_mumu_uV,epsilon_mumu_dV,-1.0,1.0,-1.0,1.0,101,0.94,-0.84,3.4902307780403006,62.797343008006195,4.61,True,False,True,True
+CsI2017,mumu_uV_dV,epsilon_mumu_uV,epsilon_mumu_dV,-1.0,1.0,-1.0,1.0,101,1.0,-0.5800000000000001,23.792586647457213,12.850470494305284,4.61,True,True,True,True
+Ar2020,mumu_uV_dV,epsilon_mumu_uV,epsilon_mumu_dV,-1.0,1.0,-1.0,1.0,101,0.94,-0.5,8.745519413095646,67.77428670211593,4.61,True,False,True,True
+combined,mumu_uV_dV,epsilon_mumu_uV,epsilon_mumu_dV,-1.0,1.0,-1.0,1.0,101,1.0,-0.56,36.92139443373214,142.52904260928844,4.61,True,True,True,True
+CsI2021,emu_uV_dV,epsilon_emu_uV,epsilon_emu_dV,-1.0,1.0,-1.0,1.0,101,0.0,0.0,3.8878776462152493,62.92332494265538,4.61,True,False,True,True
+CsI2017,emu_uV_dV,epsilon_emu_uV,epsilon_emu_dV,-1.0,1.0,-1.0,1.0,101,-0.94,0.8400000000000001,24.50174303433393,12.1173120557571,4.61,True,False,True,True
+Ar2020,emu_uV_dV,epsilon_emu_uV,epsilon_emu_dV,-1.0,1.0,-1.0,1.0,101,-0.88,0.72,8.701504349214776,67.93872894359912,4.61,True,False,True,True
+combined,emu_uV_dV,epsilon_emu_uV,epsilon_emu_dV,-1.0,1.0,-1.0,1.0,101,1.0,-0.88,37.64022772750931,142.43026324426623,4.61,True,True,True,True

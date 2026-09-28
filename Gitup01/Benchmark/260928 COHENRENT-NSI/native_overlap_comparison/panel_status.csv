@@ -1,0 +1,10 @@
+figure,panel,x,y,grid_n,status,raw_npz
+Fig3,top,eps_ee_dV,eps_ee_uV,101,NATIVE_APPROXIMATE_GENERATED,raw_native_approx\fig3_top.npz
+Fig3,bottom,eps_mumu_dV,eps_mumu_uV,101,NATIVE_APPROXIMATE_GENERATED,raw_native_approx\fig3_bottom.npz
+Fig4,top,eps_ee_uV,eps_mumu_uV,101,NATIVE_APPROXIMATE_GENERATED,raw_native_approx\fig4_top.npz
+Fig4,bottom,eps_ee_dV,eps_mumu_dV,101,NATIVE_APPROXIMATE_GENERATED,raw_native_approx\fig4_bottom.npz
+Fig5,top,eps_ee_dV,eps_etau_dV,101,NATIVE_APPROXIMATE_GENERATED,raw_native_approx\fig5_top.npz
+Fig5,bottom,eps_mumu_dV,eps_mutau_dV,101,NATIVE_APPROXIMATE_GENERATED,raw_native_approx\fig5_bottom.npz
+Fig6,top,eps_ee_dV,eps_emu_dV,101,NATIVE_APPROXIMATE_GENERATED,raw_native_approx\fig6_top.npz
+Fig6,bottom,eps_mumu_dV,eps_emu_dV,101,NATIVE_APPROXIMATE_GENERATED,raw_native_approx\fig6_bottom.npz
+Fig7,all,NGI,NGI,,NGI_MISSING_NOT_COMPARABLE,
