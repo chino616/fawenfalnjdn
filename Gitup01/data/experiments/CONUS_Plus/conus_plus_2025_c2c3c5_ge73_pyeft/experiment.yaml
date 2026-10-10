@@ -1,0 +1,145 @@
+dataset_id: conus_plus_2025_c2c3c5_ge73_pyeft
+dataset_name: conus_plus_2025_c2c3c5_ge73_pyeft
+experiment_name: "CONUS+"
+experiment_slug: CONUS_Plus
+family: CONUS_Plus
+spec_status: source_complete_theory_review_pending
+source_type: reactor
+flavor: electron_antineutrino
+target_mode: Ge73_only
+prediction_mode: signal_only_expected_CEvNS_events
+statistical_data_mode: not_yet_known
+analysis_window_evee: [160, 350]
+
+provenance:
+  user_input: docs/experiment_integration/experiment_inputs/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/EXPERIMENT_USER_INPUT.md
+  physics_contract: workflows/experiment-integration/runs/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/P03_PHYSICS_CONTRACT.yaml
+  implementation_manifest: workflows/experiment-integration/runs/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/00_IMPLEMENTATION_MANIFEST.yaml
+  workflow_run: workflows/experiment-integration/runs/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft
+  phase: P03_COMPLETE
+
+run:
+  site: Leibstadt_nuclear_power_plant
+  period: first_CONUS_Plus_CEvNS_observation
+  detectors_included: [C2, C3, C5]
+  detectors_excluded: [C4]
+  detector_order: [C2, C3, C5]
+
+detector:
+  reconstructed_observable: E_reco
+  reconstructed_observable_name: reconstructed_ionization_energy
+  reconstructed_variable_unit: eVee
+  threshold_detector_order: [C2, C3, C5]
+  thresholds_evee: [180, 160, 170]
+  efficiency_model: PENDING_PHASE_6_detector_specific_exact_step
+
+target:
+  material: Ge
+  isotopes: [Ge73]
+  isotope_number_fractions: [1.0]
+  fraction_convention: number_fraction
+  mass_numbers: [73]
+  proton_numbers: [32]
+  neutron_numbers: [41]
+  response_keys: [Ge73]
+  response_database: data/responses/responses_all.json
+  response_basis: np_(p,n)
+  nucleus_mass_convention: A_times_atomic_mass_constant
+  atomic_mass_constant_kg: 1.6605390666e-27
+  nucleus_masses_kg: [1.212193518618e-25]
+  nuclei_per_kg: [8.249507893261811e24]
+  target_status: P02_COMPLETE
+
+binning:
+  mode: explicit_edges
+  observable: E_reco
+  unit: eVee
+  edges: [160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350]
+  minimum: 160
+  maximum: 350
+  width: 10
+  number_of_bins: 19
+  edge_convention: adjacent_half_open_bins_[low_high)
+
+expected_output:
+  meaning: signal_only_expected_CEvNS_events
+  axes: [detector, reconstructed_energy_bin]
+  shape: [3, 19]
+  dtype: float64
+  unit: expected_events_per_bin
+  detector_order: [C2, C3, C5]
+  combined_spectrum_shape: [19]
+  detector_totals_shape: [3]
+  diagnostic_axes: [detector, reactor_fission_component, reconstructed_energy_bin]
+  diagnostic_shape: [3, 4, 19]
+
+observed_data:
+  attached: false
+  data_mode: pending_P09_data_semantics_gate
+  statistics_requested: true
+  benchmark_sequence: [Fig1_SM, weak_mixing_angle, vector_NSI_1D, vector_NSI_2D, magnetic_moment_CEvNS_only]
+
+exposure:
+  mode: detector_exposure_kg_day
+  detector_order: [C2, C3, C5]
+  calculation_profile: user_selected_equal_119_each
+  values_kg_day: [119.0, 119.0, 119.0]
+  selected_sum_kg_day: 357.0
+  raw_observed_values_kg_day: [111.15, 103.40, 111.86]
+  raw_observed_sum_kg_day: 326.41
+  published_rounded_total_kg_day: 327
+  normalization_owner: detector_exposure_kg_day
+  multiply_mass_or_live_time_again: false
+  exposure_already_mass_times_live_time: true
+  seconds_per_day: 86400.0
+  seconds_per_day_owner: P07_slow_normalization
+  target_nucleus_seconds: [8.481814035536064e31, 8.481814035536064e31, 8.481814035536064e31]
+
+source:
+  particle: electron_antineutrino
+  particle_kind: antinu
+  flavor: e
+  component_order: [U235, U238, Pu239, Pu241]
+  fission_fractions: [0.56, 0.07, 0.31, 0.06]
+  spectrum_model: Kopeikin_below_2MeV_plus_Mueller_above_2MeV
+  data_directory: data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/source
+  kopeikin_nodes: source/kopeikin_nodes.csv
+  mueller_coefficients: source/mueller_coefficients.csv
+  energy_support_mev: [0.0, 10.0]
+  mueller_fit_domain_mev: [2.0, 8.0]
+  high_energy_extension_domain_mev: [8.0, 10.0]
+  high_energy_extension_policy: continue_same_mueller_polynomial_baseline
+  high_energy_extension_status: model_assumption_requires_P07_binwise_sensitivity
+  match_energy_mev: 2.0
+  interpolation: piecewise_linear
+  low_end_policy: linear_extrapolation_clamped_nonnegative
+  outside_support: zero
+  component_matching: isotope_specific_continuity_at_2MeV
+  normalization_route: detector_site_absolute_flux
+  total_flux_cm2_s: 1.5e13
+  flux_unit: cm^-2_s^-1_MeV^-1
+  time_basis: per_second
+  normalization_integral: 6.461355163040058
+  normalization_uncertainty_fraction: 0.046
+  normalization_uncertainty_application: metadata_only_until_statistics
+  multiply_thermal_power_or_geometry: false
+  source_status: P03_COMPLETE
+
+phase_boundaries:
+  dataset_contract_approved: true
+  dataset_machine_validated: true
+  dataset_implementation_approved: true
+  target_validated: false
+  target_rebaseline_machine_validated: true
+  target_rebaseline_human_reviewed: false
+  source_contract_approved: true
+  source_machine_validated: true
+  source_rebaseline_human_reviewed: false
+  source_validated: false
+  theory_validated: false
+  cross_section_validated: false
+  detector_response_validated: false
+  slow_validated: false
+  fast_validated: false
+  statistics_validated: false
+  registry_modified: false

@@ -119,18 +119,19 @@ class FormFactors:
         return sigma[q, n]
 
     def FP(self, q: Quark, n: Nucleon) -> float:
-        B0 = {'u': 0.0061, 'd': 0.0133, 's': 0.268}
+        # B0_mq_GeV2 stores B0*m_q combinations, not B0 itself.
+        B0_mq_GeV2 = {'u': 0.0061, 'd': 0.0133, 's': 0.268}
         pp = self._pion_pole()
         ep = self._eta_pole()
         tmp = self.delta_u + self.delta_d - 2.0 * self.delta_s
         if n == 'p':
-            a_pi = +self.gA * B0[q] / self.MN if q == 'u' else -self.gA * B0[q] / self.MN if q == 'd' else 0.0
+            a_pi = +self.gA * B0_mq_GeV2[q] / self.MN if q == 'u' else -self.gA * B0_mq_GeV2[q] / self.MN if q == 'd' else 0.0
         else:
-            a_pi = +self.gA * B0[q] / self.MN if q == 'd' else -self.gA * B0[q] / self.MN if q == 'u' else 0.0
+            a_pi = +self.gA * B0_mq_GeV2[q] / self.MN if q == 'd' else -self.gA * B0_mq_GeV2[q] / self.MN if q == 'u' else 0.0
         if q == 's':
-            a_eta = -2.0 * B0[q] * tmp / (3.0 * self.MN)
+            a_eta = -2.0 * B0_mq_GeV2[q] * tmp / (3.0 * self.MN)
         else:
-            a_eta = +B0[q] * tmp / (3.0 * self.MN)
+            a_eta = +B0_mq_GeV2[q] * tmp / (3.0 * self.MN)
         return self.MN ** 2 * pp * a_pi + self.MN ** 2 * ep * a_eta
 
     def FT0(self, q: Quark, n: Nucleon) -> float:

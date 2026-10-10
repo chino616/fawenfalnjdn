@@ -8,7 +8,7 @@ from typing import Any, Mapping, Optional, Sequence
 
 import numpy as np
 
-from .basis import BasisElement, coeff_vector_from_triplets, li2026_left_basis_current
+from .basis import BasisElement, coeff_tensor_from_triplets, li2026_left_basis_current
 from .builder import KernelPayload, save_kernel
 from .reconstruction import reconstruct_counts_from_kernel
 
@@ -20,6 +20,10 @@ KERNEL_FILENAMES = {
     "CsI2017": "csi2017_fast_kernel.npz",
     "Ar2020": "ar2020_fast_kernel.npz",
 }
+
+
+class StaleKernelError(ValueError):
+    """Raised when a saved Fast kernel predates the Flavor tensor schema."""
 
 
 def _basis_from_jsonable(raw_basis: Sequence[Any]) -> list[BasisElement]:
@@ -63,6 +67,15 @@ def _template_paths(path: str | Path) -> tuple[Path, Path]:
 
 def validate_fastscan_template(kernel: Mapping[str, Any]) -> None:
     metadata = dict(kernel.get("metadata", {}))
+    if metadata.get("flavor_schema_version") != 1:
+        raise StaleKernelError(
+            "Fast kernel is missing flavor_schema_version=1; rebuild it with "
+            "the Flavor tensor Fast builder instead of loading it silently."
+        )
+    if list(metadata.get("neutrino_flavor_order", [])) != ["e", "mu", "tau"]:
+        raise ValueError("Fast kernel has an unsupported neutrino flavor order")
+    if dict(metadata.get("wilson_flavor_axis", {})) != {"row": "final", "column": "initial"}:
+        raise ValueError("Fast kernel has an unsupported Wilson flavor-axis convention")
     dataset = str(metadata.get("dataset", ""))
     if dataset not in DATASETS:
         raise ValueError(f"Unsupported dataset in template metadata: {dataset!r}")
@@ -90,6 +103,12 @@ def validate_fastscan_template(kernel: Mapping[str, Any]) -> None:
         raise ValueError("channels length does not match full_kernel axis 2")
     if len(basis) != full.shape[3]:
         raise ValueError("basis length does not match full_kernel basis axes")
+    if int(metadata.get("operator_basis_size", -1)) != len(basis):
+        raise ValueError("operator_basis_size does not match basis length")
+    if list(metadata.get("coefficient_shape", [])) != [len(basis), 3, 3]:
+        raise ValueError("coefficient_shape must be [B, 3, 3]")
+    if bool(metadata.get("lnc_lnv_interference", True)):
+        raise ValueError("Fast Flavor kernels must declare lnc_lnv_interference=false")
     if pe_bins.size - 1 != full.shape[5]:
         raise ValueError("pe_bins length does not match full_kernel bin axis")
     if diag.shape[0] != len(basis):
@@ -117,6 +136,12 @@ def save_fastscan_template(path: str | Path, kernel: Mapping[str, Any]) -> Path:
     metadata["pair_re_shape"] = list(np.asarray(kernel["pair_re"]).shape)
     metadata["pair_im_shape"] = list(np.asarray(kernel["pair_im"]).shape)
     metadata["pair_index_shape"] = list(np.asarray(kernel["pair_index"]).shape)
+    metadata.setdefault("flavor_schema_version", 1)
+    metadata.setdefault("neutrino_flavor_order", ["e", "mu", "tau"])
+    metadata.setdefault("wilson_flavor_axis", {"row": "final", "column": "initial"})
+    metadata.setdefault("operator_basis_size", len(metadata["basis"]))
+    metadata.setdefault("coefficient_shape", [len(metadata["basis"]), 3, 3])
+    metadata.setdefault("lnc_lnv_interference", False)
 
     payload = KernelPayload(
         metadata=metadata,
@@ -181,10 +206,11 @@ def build_fastscan_template(
     *,
     basis: Optional[Sequence[BasisElement]] = None,
     sin2thetaW: float = 0.2387,
-    c10_mass_mode: str = "flavor",
+    c10_mass_mode: str = "quark_mass_resolved",
     n_er: int = 21,
     n_enu: int = 120,
     n_pe_sub: int = 8,
+    pe_step: float = 3.0,
     n_csi2017_er: int = 251,
     n_obs_sub: int = 8,
 ) -> dict[str, Any]:
@@ -202,6 +228,7 @@ def build_fastscan_template(
             n_er=n_er,
             n_enu=n_enu,
             n_pe_sub=n_pe_sub,
+            pe_step=pe_step,
         )
     if dataset == "CsI2017":
         return build_fast_kernel_csi2017(
@@ -227,13 +254,13 @@ def build_fastscan_template(
 
 def reconstruct_saved_kernel(
     path: str | Path,
-    wc_triplets: Optional[Mapping[tuple[int, int, str], complex]] = None,
+    wc_triplets: Optional[Mapping[tuple[int, int, str], np.ndarray]] = None,
     *,
     include_sm: bool = True,
     sin2thetaW: float = 0.2387,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     kernel = load_fastscan_template(path)
-    coeff = coeff_vector_from_triplets(
+    coeff = coeff_tensor_from_triplets(
         kernel["basis"],
         wc_triplets or {},
         include_sm=include_sm,
@@ -250,10 +277,11 @@ def build_save_load_reconstruct(
     include_sm: bool = True,
     wc_triplets: Optional[Mapping[tuple[int, int, str], complex]] = None,
     sin2thetaW: float = 0.2387,
-    c10_mass_mode: str = "flavor",
+    c10_mass_mode: str = "quark_mass_resolved",
     n_er: int = 21,
     n_enu: int = 120,
     n_pe_sub: int = 8,
+    pe_step: float = 3.0,
     n_csi2017_er: int = 251,
     n_obs_sub: int = 8,
 ) -> dict[str, Any]:
@@ -265,6 +293,7 @@ def build_save_load_reconstruct(
         n_er=n_er,
         n_enu=n_enu,
         n_pe_sub=n_pe_sub,
+        pe_step=pe_step,
         n_csi2017_er=n_csi2017_er,
         n_obs_sub=n_obs_sub,
     )
@@ -307,6 +336,7 @@ def saved_kernel_main(argv: Optional[Sequence[str]] = None) -> int:
     parser.add_argument("--n-er", type=int, default=21)
     parser.add_argument("--n-enu", type=int, default=120)
     parser.add_argument("--n-pe-sub", type=int, default=8)
+    parser.add_argument("--pe-step", type=float, default=3.0)
     parser.add_argument("--n-csi2017-er", type=int, default=251)
     parser.add_argument("--n-obs-sub", type=int, default=8)
     args = parser.parse_args(argv)
@@ -320,6 +350,7 @@ def saved_kernel_main(argv: Optional[Sequence[str]] = None) -> int:
             n_er=args.n_er,
             n_enu=args.n_enu,
             n_pe_sub=args.n_pe_sub,
+            pe_step=args.pe_step,
             n_csi2017_er=args.n_csi2017_er,
             n_obs_sub=args.n_obs_sub,
         )
@@ -329,12 +360,13 @@ def saved_kernel_main(argv: Optional[Sequence[str]] = None) -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(saved_kernel_main())
 
 
 __all__ = [
     "DATASETS",
     "KERNEL_FILENAMES",
+    "StaleKernelError",
     "validate_fastscan_template",
     "save_fastscan_template",
     "load_fastscan_template",

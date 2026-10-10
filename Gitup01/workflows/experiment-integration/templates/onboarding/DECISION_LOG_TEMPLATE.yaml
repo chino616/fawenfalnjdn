@@ -1,0 +1,8 @@
+decisions:
+  - decision_id: D0001
+    phase: onboarding
+    field: dataset.identity
+    options_shown: []
+    user_choice: null
+    evidence_claims: []
+    result: null

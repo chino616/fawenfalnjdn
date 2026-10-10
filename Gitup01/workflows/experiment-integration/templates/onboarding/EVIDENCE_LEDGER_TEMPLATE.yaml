@@ -1,0 +1,15 @@
+sources: []
+claims:
+  - claim_id: C0001
+    field: null
+    value: null
+    unit: null
+    status: MISSING
+    source_id: null
+    locator: null
+    source_class: null
+    confidence: null
+    conflict_group: null
+    downstream_owner: null
+    derivation: null
+    notes: null

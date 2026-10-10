@@ -1,0 +1,425 @@
+% =============================================================================
+% EXPERIMENT_PHYSICS_STANDARD_TEMPLATE.tex
+%
+% CEvNS-pyEFT 新实验物理文档的标准层级。
+%
+% 固定 subsection：
+%   1. 实验目标
+%   2. 数据集
+%   3. 探测器
+%   4. 中微子源
+%   5. 振幅计算
+%   6. 运动学
+%   7. 截面计算
+%   8. 事例数计算
+%   9. 统计分析
+%  10. 计算目标
+%
+% 原则：
+%   - 论文和用户提供的数据决定实验模型。
+%   - 项目现有 Response/振幅层决定核物理计算。
+%   - 参考程序只用于验证，不作为物理输入。
+%   - Slow 先定义物理积分；Fast 只能由 Slow 推导并逐 bin 验证。
+%   - 统计分析必须声明输入是原始计数、ON/OFF 数据还是背景扣除 excess。
+% =============================================================================
+
+\providecommand{\dd}{\mathrm d}
+\providecommand{\eV}{\mathrm{eV}}
+\providecommand{\keV}{\mathrm{keV}}
+\providecommand{\MeV}{\mathrm{MeV}}
+\providecommand{\eVee}{\mathrm{eV_{ee}}}
+\providecommand{\keVee}{\mathrm{keV_{ee}}}
+\providecommand{\keVnr}{\mathrm{keV_{nr}}}
+\providecommand{\cm}{\mathrm{cm}}
+\providecommand{\kgday}{\mathrm{kg\,day}}
+\providecommand{\code}[1]{\texttt{#1}}
+
+\section{<实验名称>}
+\label{sec:<experiment-label>}
+
+\subsection{实验目标}
+
+说明实验研究的入射粒子、靶核、散射过程和最终观测量。
+例如
+\begin{equation}
+  \nu_\alpha + A
+  \longrightarrow
+  \nu_\beta + A.
+\end{equation}
+定义真实反冲变量 $T$ 和实验重建变量 $E_{\rm reco}$。
+
+给出本次接入目标：
+\begin{enumerate}
+  \item 标准模型或指定 EFT 情景的信号预测；
+  \item 重建能谱和分箱事例数；
+  \item Slow 计算；
+  \item Fast 计算；
+  \item 指定的统计分析。
+\end{enumerate}
+
+\subsection{数据集}
+
+给出唯一的数据集身份：
+\begin{equation}
+  \code{dataset\_id}
+  =
+  \code{<unique-dataset-id>}.
+\end{equation}
+
+说明：
+\begin{enumerate}
+  \item 实验地点和运行阶段；
+  \item 数据采集时间；
+  \item reactor-on、reactor-off 或其他运行模式；
+  \item 对应论文、补充材料和公开数据；
+  \item 本文件是否描述一个数据集，还是多个必须拆分的数据集。
+\end{enumerate}
+
+不同运行阶段、不同探测器配置和不同统计数据不得混入同一数据集。
+
+\subsection{探测器}
+
+\subsubsection{探测器集合、质量和曝光}
+
+给出探测器集合
+\begin{equation}
+  d\in\{d_1,d_2,\ldots\}.
+\end{equation}
+
+对每台探测器给出 active mass、live time 和曝光：
+\begin{equation}
+  \mathcal E_d
+  =
+  M_d\,t_d.
+\end{equation}
+
+如果直接使用实验给出的 $\mathcal E_d$，
+不得再次乘 $M_d$ 或 $t_d$。
+
+\subsubsection{探测器阈值与分析窗口}
+
+对每台探测器给出
+\begin{equation}
+  E_{{\rm th},d},
+  \qquad
+  E_{{\rm min},d},
+  \qquad
+  E_{{\rm max},d},
+\end{equation}
+以及精确 bin edges
+\begin{equation}
+  E_0,E_1,\ldots,E_{N_{\rm bin}}.
+\end{equation}
+
+\subsubsection{靶材}
+
+给出材料、同位素丰度和每千克核数。
+对同位素 $a$，
+\begin{equation}
+  n_{a/{\rm kg}}
+  =
+  \frac{N_A\,10^3}{M_{\rm mol}}\eta_a.
+\end{equation}
+
+同时给出项目 Response 数据库中对应的 target/response key。
+同位素丰度与核响应是两个独立输入。
+
+\subsection{中微子源}
+
+\subsubsection{通量模型}
+
+事件率最终需要探测器位置的微分通量
+\begin{equation}
+  \frac{\dd\Phi_s}{\dd E_\nu}.
+\end{equation}
+
+本节只写当前数据集实际采用的通量模型，不罗列无关的通用模式。
+必须给出：
+\begin{enumerate}
+  \item 源分量 $s$；
+  \item 能量范围；
+  \item 通量单位；
+  \item 谱形公式或数值表；
+  \item 归一化；
+  \item 插值、拼接和外推规则；
+  \item 通量不确定性。
+\end{enumerate}
+
+若由每次裂变谱构造探测器通量，
+则明确写出
+\begin{equation}
+  \frac{\dd\Phi}{\dd E_\nu}
+  =
+  \frac{P_{\rm th}}
+  {4\pi L^2\sum_r f_re_r}
+  \sum_r f_rS_r(E_\nu).
+\end{equation}
+若直接使用探测器位置通量，
+则不得再次乘热功率或几何因子。
+
+\subsection{振幅计算}
+
+实验模块默认调用 CEvNS-pyEFT 当前的振幅与核响应层。
+对同位素 $a$，
+\begin{equation}
+  \mathcal M_a
+  =
+  \mathcal M_a
+  \left(
+    E_\nu,T;
+    \boldsymbol C,
+    \mathcal R_a
+  \right),
+\end{equation}
+其中 $\boldsymbol C$ 是标准模型或 EFT 参数，
+$\mathcal R_a$ 是项目 Response 层给出的核响应。
+
+本节只需说明：
+\begin{enumerate}
+  \item 使用哪个理论参数基准点；
+  \item 使用哪些 Response keys；
+  \item 新模型是否仍被现有振幅接口覆盖；
+  \item 若不覆盖，理论层需要修改什么。
+\end{enumerate}
+
+标准模型弱荷、form factor 或核响应的具体实现，
+应合并在本节的一个说明中，不需要拆成多个实验小节。
+
+\subsection{运动学}
+
+对弹性核散射，
+\begin{equation}
+  E_{\nu,\min}(T)
+  =
+  \frac{
+    T+\sqrt{T^2+2m_AT}
+  }{2},
+\end{equation}
+\begin{equation}
+  T_{\max}(E_\nu)
+  =
+  \frac{2E_\nu^2}{m_A+2E_\nu}.
+\end{equation}
+
+列出当前实验使用的真实变量、重建变量、积分上下限和单位约定。
+任何近似都必须显式命名，不能静默替换精确运动学。
+
+\subsection{截面计算}
+
+微分截面由项目振幅层统一计算：
+\begin{equation}
+  \frac{\dd\sigma_a}{\dd T}
+  =
+  \mathcal F_\sigma
+  \left[
+    \overline{
+      \left|
+        \mathcal M_a
+      \right|^2
+    }
+  \right].
+\end{equation}
+
+本节给出：
+\begin{enumerate}
+  \item 截面输入和输出单位；
+  \item 同位素求和方式；
+  \item source flavor；
+  \item 理论参数入口；
+  \item 截面与 Response 的映射；
+  \item 运动学区间外返回零的规则。
+\end{enumerate}
+
+实验文档不另写一套与项目理论层重复的 CEvNS 截面。
+
+\subsection{事例数计算}
+
+\subsubsection{淬灭、分辨率与效率}
+
+给出真实核反冲到平均电子等效能量的映射
+\begin{equation}
+  \overline E_{\rm ee}(T)
+  =
+  1000\,Q(T)\,T,
+\end{equation}
+其中 $T$ 以 $\keVnr$ 输入，
+$\overline E_{\rm ee}$ 以 $\eVee$ 输出。
+
+给出重建响应
+\begin{equation}
+  \mathcal R_d(E_{\rm reco}\mid T)
+\end{equation}
+和效率
+\begin{equation}
+  \epsilon_d(E_{\rm reco}).
+\end{equation}
+
+必须说明效率作用于真实变量还是重建变量，
+并说明公开数据是否已经过效率校正。
+
+\subsubsection{Slow 事例数}
+
+真实反冲谱为
+\begin{equation}
+  \frac{\dd N_{das}^{\rm true}}{\dd T}
+  =
+  n_{a/{\rm kg}}\,
+  \mathcal E_d
+  \int
+  \dd E_\nu\,
+  \frac{\dd\Phi_s}{\dd E_\nu}
+  \frac{\dd\sigma_a}{\dd T}.
+\end{equation}
+
+重建谱为
+\begin{equation}
+  \frac{\dd N_{das}}
+  {\dd E_{\rm reco}}
+  =
+  \epsilon_d(E_{\rm reco})
+  \int
+  \dd T\,
+  \mathcal R_d(E_{\rm reco}\mid T)
+  \frac{\dd N_{das}^{\rm true}}{\dd T}.
+\end{equation}
+
+第 $i$ 个 bin 的事例数为
+\begin{equation}
+  N_{dasi}^{\rm slow}
+  =
+  \int_{E_i}^{E_{i+1}}
+  \dd E_{\rm reco}\,
+  \frac{\dd N_{das}}
+  {\dd E_{\rm reco}}.
+\end{equation}
+
+总预测为
+\begin{equation}
+  N_i^{\rm slow}
+  =
+  \sum_d\sum_a\sum_s
+  N_{dasi}^{\rm slow}.
+\end{equation}
+
+\subsubsection{Fast 事例数}
+
+先定义 detector-bin kernel
+\begin{equation}
+  W_{di}(T)
+  =
+  \int_{E_i}^{E_{i+1}}
+  \dd E_{\rm reco}\,
+  \epsilon_d(E_{\rm reco})
+  \mathcal R_d(E_{\rm reco}\mid T).
+\end{equation}
+
+则
+\begin{equation}
+  N_i
+  =
+  \sum_{d,a,s}
+  n_{a/{\rm kg}}\,
+  \mathcal E_d
+  \int\dd T\,
+  W_{di}(T)
+  \int\dd E_\nu\,
+  \frac{\dd\Phi_s}{\dd E_\nu}
+  \frac{\dd\sigma_a}{\dd T}.
+\end{equation}
+
+若振幅对 Wilson 系数线性，
+还可进一步构造
+\begin{equation}
+  N_i^{\rm fast}(\boldsymbol C)
+  =
+  \boldsymbol C^\dagger
+  K_i
+  \boldsymbol C.
+\end{equation}
+
+Fast 必须逐 bin 与 Slow 比较，不允许仅比较总事例数。
+
+\subsection{统计分析}
+
+必须先声明统计输入模式，只能选择一个：
+\begin{enumerate}
+  \item 原始观测计数与背景；
+  \item reactor-on/reactor-off；
+  \item 已经背景扣除的 excess counts。
+\end{enumerate}
+
+\subsubsection{背景扣除 excess 的简化卡方}
+
+若输入为
+\begin{equation}
+  D_i
+  =
+  \text{background-subtracted excess},
+\end{equation}
+则可使用
+\begin{equation}
+  \chi^2
+  =
+  \sum_i
+  \frac{
+    \left[
+      D_i-(1+\alpha)N_i^{\rm th}
+    \right]^2
+  }{
+    \sigma_i^2
+  }
+  +
+  \left(
+    \frac{\alpha}{\sigma_\alpha}
+  \right)^2.
+\end{equation}
+
+此时不得再把背景 $B_i$ 加入理论预测。
+
+\subsubsection{观测计数与背景的简化卡方}
+
+若输入为原始观测计数 $O_i$ 和背景预测 $B_i$，
+则可使用
+\begin{equation}
+  \chi^2
+  =
+  \sum_i
+  \frac{
+    \left[
+      O_i
+      -(1+\alpha)N_i^{\rm th}
+      -(1+\beta)B_i
+    \right]^2
+  }{
+    \sigma_i^2
+  }
+  +
+  \left(
+    \frac{\alpha}{\sigma_\alpha}
+  \right)^2
+  +
+  \left(
+    \frac{\beta}{\sigma_\beta}
+  \right)^2.
+\end{equation}
+
+Mathematica 参考程序采用哪一种形式，
+本文件就明确选择哪一种；
+参考程序只决定本次统计复现的公式，
+不决定 Flux、Response 或探测器物理。
+
+\subsection{计算目标}
+
+必须给出可量化验收目标：
+\begin{enumerate}
+  \item Flux 归一化；
+  \item 各探测器和同位素贡献；
+  \item 标准模型总事例数；
+  \item 逐 bin Slow 结果；
+  \item 逐 bin Fast/Slow 相对误差；
+  \item 指定参数点的 $\chi^2$；
+  \item 论文或用户提供的 benchmark；
+  \item 当前可以声明的复现等级。
+\end{enumerate}
+
+不得通过整体缩放强制命中 benchmark。

@@ -1,232 +1,105 @@
-﻿---
+---
 name: cevns-dataset
-description: Materialize an approved Phase 0 dataset plan as a minimal runtime experiment specification and validate it with the existing schema and loader.
+description: Phase 1 dataset contract and runtime-spec implementation with mandatory human approval of dataset identity, reconstructed observable, binning and statistical data semantics.
 ---
 
-# cevns-dataset
+# Phase 1 — Dataset
 
-## Purpose
+用户可见回复执行 `../../_shared.md` 第 1 节：先回答本轮问题；仅在相关时说明实际结果、影响、停下原因和下一步。下方字段用于核对，不是回复模板。
+隔离自动运行执行 `../../AUTO_RUN_PROTOCOL.md`：本阶段产物只是候选；下方人工批准要求约束正式导入，不得在候选目录内写成正式 Human Gate。
 
-Execute Phase 1 of the experiment-integration workflow.
+## Physics ownership
 
-Convert the approved Phase 0 outputs into the minimum runtime dataset
-specification.
+本阶段只冻结并落盘：dataset identity、run/detector scope、observable、binning、output shape/unit、data mode、静态 exposure/target metadata。
 
-This Skill does not re-parse the experiment physics document and does not
-implement experiment physics.
+不实现 source/detector/Slow/Fast/statistics。
 
-## Preconditions
-
-Require:
+## Read
 
 ```text
-Gate I = PASS
-```
-
-Read:
-
-```text
-workflows/experiment-integration/AGENTS.md
-workflows/experiment-integration/EXPERIMENT_WORKFLOW.md
-workflows/experiment-integration/templates/01_DATASET.md
-workflows/experiment-integration/runs/<dataset_id>/
-00_INPUT_INVENTORY.md
-workflows/experiment-integration/runs/<dataset_id>/
+_shared.md
+P01_EVIDENCE_LEDGER.yaml
+P03_PHYSICS_CONTRACT.yaml
 00_IMPLEMENTATION_MANIFEST.yaml
-```
-
-Inspect the current dataset schema and loader:
-
-```text
 schemas/experiment.schema.json
 src/cevns_pyeft/experiments/base.py
 src/cevns_pyeft/experiments/specs.py
-src/cevns_pyeft/experiments/registry.py
-data/experiments/*/experiment.yaml
-tests/test_experiment_specs.py
+data/experiments/*/*/experiment.yaml
+legacy data/experiments/*/experiment.yaml
 ```
 
-The Phase 0 inventory and manifest are the authoritative inputs for this phase.
+## Step 1 — Pre-code Dataset Contract（不可自动批准）
 
-Return to the user physics document only when the Phase 0 outputs contain an
-explicit ambiguity or inconsistency.
-
-Do not independently reinterpret the experiment document.
-
-## Procedure
-
-### 1. Verify the approved Phase 0 plan
-
-Confirm:
+用中文说明以下合同字段及其证据或用户决定；具体数值、单位和未决项仍须完整展示：
 
 ```text
 dataset_id
-experiment family
-run and detector configuration
-observable contract
-binning
-output axes and shape
-statistical data mode
-static target and exposure fields
-planned callable placeholders
+publication/reproduction/phenomenology/legacy mode
+site/run period
+detectors included/excluded
+observable + unit
+analysis window
+exact bin edges / edge rule
+output axes + shape + unit
+data mode:
+  raw_counts | signal_plus_background | on_off |
+  background_subtracted_excess | unbinned_events | not_yet_known
+exposure semantics
 ```
 
-Do not introduce fields that were not approved in the Phase 0 manifest.
+每行附 evidence claim 或 user decision。
 
-### 2. Map the approved fields to the current repository schema
-
-Use the existing field names and loader conventions.
-
-Do not replace the current schema with a new conceptual schema.
-
-If a required concept cannot be represented, record a blocker or a conditional
-schema extension. Do not modify the schema silently.
-
-### 3. Create the minimum runtime specification
-
-Create:
+选项：
 
 ```text
-data/experiments/<dataset_id>/experiment.yaml
+1 批准当前数据集约定（回复 APPROVE DATASET CONTRACT）
+2 修改约定或拆分数据集
+3 查看证据
+4 暂停本阶段
 ```
 
-Include only the approved dataset-level fields:
+## Step 2 — Technical implementation
+
+将批准字段映射到现有 schema，创建最小：
 
 ```text
-dataset identity
-provenance
-run and detector configuration
-observable axes
-regular or irregular binning
-output axes, shape, and unit
-statistical data mode
-small static target fields
-exposure and exposure semantics
-callable placeholders
-planned data-file references
+data/experiments/<experiment_slug>/<dataset_id>/experiment.yaml
+data/experiments/<experiment_slug>/<dataset_id>/README.md
+runs/<experiment_slug>/<dataset_id>/01_DATASET.md
 ```
 
-For planned files that do not yet exist, mark them explicitly as pending when
-supported by the current schema.
+目录身份执行 `_shared.md` 的 `PER_EXPERIMENT_DATASET_DIRECTORY`。配置内的
+`dataset_id` 仍是唯一机器标识，不能用 `experiment_slug` 代替。若现有 loader 只支持
+平铺路径，应将递归发现或显式路径映射列为已批准的最小实现；不得建立第二套数据副本
+来掩盖 loader 不兼容。
 
-Do not create those data files in this phase.
+不得引入未批准字段。schema 无法表达时 BLOCK 或提出显式 schema extension，不得静默改 schema。
 
-### 4. Create the dataset README
+## Step 3 — Machine Gate P01
 
-Create:
+验证：unique ID、schema、loader、repository-relative paths、bin edges、bin count/shape、data mode、pending callables。
+
+## Step 4 — Post-code Review
+
+先说明实现了什么、自动检查是否通过，以及本次希望用户审核什么。随后按需列出：
+
+- 实际创建或修改的文件；
+- 已批准字段与 `experiment.yaml` 配置项的对应关系；
+- 观测量、输出和曝光的单位；
+- schema 与 loader 的检查结果。
+
+使用中文标题，不打印 `[CODE]`、`[MAPPING]`、`[UNITS]`、`[TEST]` 标签。
+
+### ⛔ Human Gate Dataset
+
+先用一段话说明 P01 自动检查的结果、用户本次审核的具体内容，以及批准后是否
+还需单独授权写入记录。不要只展示 Gate 名称或下面的英文口令。
 
 ```text
-data/experiments/<dataset_id>/README.md
+1 批准当前实现（回复 APPROVE IMPLEMENTATION）
+2 指出需要修正的字段映射
+3 查看配置或改动明细
+4 暂停本阶段
 ```
 
-Record:
-
-```text
-dataset identity
-Phase 0 source files
-observable and binning
-output contract
-statistical data mode
-implemented phase
-pending modules
-known blockers
-```
-
-Do not describe pending modules as implemented.
-
-### 5. Create the Phase 1 report
-
-Create:
-
-```text
-workflows/experiment-integration/runs/<dataset_id>/01_DATASET.md
-```
-
-Use:
-
-```text
-workflows/experiment-integration/templates/01_DATASET.md
-```
-
-Record the mapping from Phase 0 fields to the actual `experiment.yaml` fields.
-
-### 6. Validate
-
-Run the current schema and loader tests.
-
-Verify:
-
-```text
-dataset ID is unique
-experiment.yaml passes schema validation
-experiment.yaml is loadable
-repository paths are relative
-binning is internally consistent
-number of bins matches output shape
-statistical data mode is valid
-callable placeholders are accepted
-no later-phase implementation was created
-```
-
-## Prohibited actions
-
-Do not:
-
-```text
-re-read and re-extract the complete physics document
-change Phase 0 physical definitions
-create source tables
-implement source
-implement detector response
-implement Slow
-implement Fast
-implement statistics
-create observed-data tables
-modify registry.py unless the approved manifest explicitly requires it
-modify theory, nuclear, rates, or kernels
-start the next Skill automatically
-```
-
-## Gate D0
-
-Gate D0 passes when:
-
-```text
-the approved Phase 0 dataset plan is represented in experiment.yaml
-the specification passes the existing schema
-the specification is loadable
-binning and output shape are consistent
-no experiment physics has been implemented
-```
-
-Record:
-
-```text
-PASS
-```
-
-or:
-
-```text
-BLOCKED
-```
-
-with reasons.
-
-## Final response
-
-Report only:
-
-```text
-files created
-files modified
-Phase 0 fields materialized
-schema tests
-loader tests
-Gate D0 status
-single next Skill
-```
-
-Then stop.
-
-Do not execute the next Skill automatically.
+只有 `P01=PASS` 且用户 APPROVED，Master 才可进入 Target。

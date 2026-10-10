@@ -1,0 +1,15 @@
+contract_version: 3
+dataset_id: null
+scientific_claim: null
+sections:
+  identity_and_goal: {decision_status: DRAFT, fields: {}}
+  dataset: {decision_status: DRAFT, fields: {}}
+  target_and_exposure: {decision_status: DRAFT, fields: {}}
+  source: {decision_status: DRAFT, fields: {}}
+  theory_response: {decision_status: DRAFT, fields: {}}
+  kinematics_cross_section: {decision_status: DRAFT, fields: {}}
+  detector_response: {decision_status: DRAFT, fields: {}}
+  slow_counts: {decision_status: DRAFT, fields: {}}
+  fast_counts: {decision_status: DRAFT, fields: {}}
+  statistics: {decision_status: DRAFT, fields: {}}
+  validation_claim: {decision_status: DRAFT, fields: {}}

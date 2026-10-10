@@ -29,31 +29,35 @@ one or more of the following:
 - adding experiment-specific statistical data or likelihoods;
 - registering a new experiment dataset.
 
-For such tasks, read the following files before making changes:
+For such tasks, the experiment-integration router is the mandatory entry point.
+Read the following files before any phase workflow or Skill:
 
 ```text
 workflows/experiment-integration/AGENTS.md
-workflows/experiment-integration/EXPERIMENT_WORKFLOW.md
-workflows/experiment-integration/CSI_REFERENCE_MAP.md
+workflows/experiment-integration/_shared.md
 ```
 
-Then follow the phase order defined in:
+Then start only through the Master Skill:
 
 ```text
-workflows/experiment-integration/EXPERIMENT_WORKFLOW.md
+workflows/experiment-integration/skills/cevns-experiment/SKILL.md
 ```
 
-Always start with Phase 0 and read:
+The Master Skill owns task scope, dataset/material ambiguity handling, input
+mode, phase transitions, and the gate state. Do not bypass it by directly
+entering an individual phase Skill or by treating local papers, placeholder
+directories, or old code as user-approved physics scope.
 
-```text
-workflows/experiment-integration/skills/cevns-experiment-intake/SKILL.md
-```
-
-Do not create or modify production experiment code before the Phase 0 input
-inventory and implementation manifest have been completed.
+Do not create or modify production experiment code before the Master Skill has
+cleared the relevant physics gates and the current phase explicitly allows the
+change.
 
 Do not automatically continue to the next phase. Stop after the current phase
 and wait for review unless the user explicitly requests multiple phases.
+An explicitly activated low/high automatic run may explore multiple phases in
+an isolated workspace under `AUTO_RUN_PROTOCOL.md`; those are provisional
+results. It does not advance canonical human gates or modify this repository.
+Canonical promotion still requires the user's review and exact approval.
 
 ## Normal repository work
 
@@ -95,6 +99,18 @@ They must not be added as runtime package dependencies.
 The workflow may create or modify files under the normal source, data, schema,
 and test directories only when an experiment-integration phase explicitly
 requires those changes.
+
+## Backup quarantine
+
+`backup/**` is recovery-only storage and is outside the experiment-integration
+physics workspace. The workflow must not automatically scan or read it for
+material discovery, dataset candidates, evidence extraction, repository maps,
+migration inputs, validation references, or `existing_dataset` detection.
+
+Files under `backup/**` may be accessed only while creating a required backup,
+or when the user explicitly requests backup recovery or audit. Explicit access
+does not make archived content an approved physics input; bringing any recovered
+material back into experiment integration requires the normal Master Skill gates.
 
 ## Existing experiment protection
 

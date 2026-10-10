@@ -1,0 +1,23 @@
+experiment: COHERENT
+dataset: CsI2017
+source_type: legacy_text_files
+source_reference: "CEvNS-pyEFT-main data/datafiles/COHERENT_*.txt and statistics/cutoff_multi.py"
+source_files:
+  observed: "data/datafiles/COHERENT_data.txt"
+  lower: "data/datafiles/COHERENT_lower.txt"
+  upper: "data/datafiles/COHERENT_upper.txt"
+  spectrum_reference: "data/datafiles/COHERENT_spectrum.txt"
+digitized_or_official: unknown; legacy provenance only; not authoritative
+observable: PE residual spectrum
+units: counts/bin
+bin_edges: "np.linspace(0.001, 50.0, 26)"
+observed_definition: "second column of COHERENT_data.txt"
+background_definition: null
+error_definition: "symmetric sigma = 0.5*((upper-data)+(data-lower)); clipped at 1e-12"
+nuisance_definition:
+  signal_norm_alpha_sigma: 0.28
+confidence_convention: "1D cutoff uses Delta chi2 2.71/3.84/6.63; complete NSI 2D Flow B uses 4.61"
+known_limitations:
+  - "Meaning of text files is inherited from legacy code and not independently authenticated."
+  - "Not an official/full COHERENT likelihood."
+validation_status: legacy provenance only; statistics still blocked pending authoritative provenance

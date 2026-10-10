@@ -1,0 +1,20 @@
+task_scope: null
+input_mode: null
+execution_mode: stepwise
+auto_run_id: null              # candidate run only; not canonical approval
+auto_plan_ref: null            # isolated-run plan, never a write authorization for this project
+pre_dataset_freeze: true
+dataset_id: null
+current_phase: onboarding
+phases:
+  onboarding: {machine_gate: NOT_RUN, human_gate: NOT_REVIEWED}
+  dataset: {machine_gate: NOT_RUN, human_gate: NOT_REVIEWED}
+  target: {machine_gate: NOT_RUN, human_gate: NOT_REVIEWED}
+  source: {machine_gate: NOT_RUN, human_gate: NOT_REVIEWED}
+  theory_response: {machine_gate: NOT_RUN, human_gate: NOT_REVIEWED}
+  kinematics_cross_section: {machine_gate: NOT_RUN, human_gate: NOT_REVIEWED}
+  detector_response: {machine_gate: NOT_RUN, human_gate: NOT_REVIEWED}
+  slow_counts: {machine_gate: NOT_RUN, human_gate: NOT_REVIEWED}
+  fast_counts: {machine_gate: NOT_RUN, human_gate: NOT_REVIEWED}
+  statistics: {machine_gate: NOT_RUN, human_gate: NOT_REVIEWED}
+  validation: {machine_gate: NOT_RUN, human_gate: NOT_REVIEWED}

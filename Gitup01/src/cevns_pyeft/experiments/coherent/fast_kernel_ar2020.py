@@ -43,7 +43,7 @@ def build_fast_kernel_ar2020(
     bin_edges: np.ndarray = AR_BINS_12,
     n_obs_sub: int = 8,
     sin2thetaW: float = 0.2387,
-    c10_mass_mode: str = "flavor",
+    c10_mass_mode: str = "quark_mass_resolved",
     n_er: int = 21,
     n_enu: int = 120,
 ) -> Dict[str, Any]:

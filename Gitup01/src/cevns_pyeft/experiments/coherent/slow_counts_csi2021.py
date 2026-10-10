@@ -6,7 +6,10 @@ from typing import Any, Dict, Literal, Mapping, Optional, Tuple, Union
 
 import numpy as np
 
-from cevns_pyeft.experiments.coherent.sns import loadNeutrinoEmpiricalFluxSNS
+from cevns_pyeft.experiments.coherent.sns import (
+    loadNeutrinoEmpiricalFluxSNS,
+    sns_component_state,
+)
 from cevns_pyeft.nuclear.response import ResponseDB
 from cevns_pyeft.rates.counts import bin_events_csi
 
@@ -61,7 +64,7 @@ def slow_counts_csi2021(
     *,
     include_sm: bool = True,
     sin2thetaW: float = 0.2387,
-    c10_mass_mode: str = "flavor",
+    c10_mass_mode: str = "quark_mass_resolved",
     n_er: int = 21,
     n_enu: int = 120,
     n_pe_bin: int = 8,
@@ -80,6 +83,7 @@ def slow_counts_csi2021(
                 flux_obj,
                 PE_BINS_9,
                 efficiency=efficiency,
+                source_state=sns_component_state(flavor),
                 flavor=flavor,
                 wc_triplets=dict(wc_triplets or {}),
                 include_sm=bool(include_sm),

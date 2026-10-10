@@ -1,0 +1,605 @@
+experiment_name: "CONUS+"
+experiment_slug: CONUS_Plus
+dataset_id: conus_plus_2025_c2c3c5_ge73_pyeft
+scope_gate: APPROVED
+sources:
+  - {source_id: S001, path: "docs/CONUS_docs/2026_07_16_CEvNSpyEFT - CONUS.pdf", source_class: USER_SUPPLIED}
+  - {source_id: S002, path: "docs/CONUS_docs/2501.17843v2.pdf", source_class: USER_SUPPLIED}
+  - {source_id: S003, locator: "user decisions in current onboarding conversation", source_class: USER_SUPPLIED}
+claims:
+  - claim_id: C0001
+    field: dataset.dataset_id
+    value: conus_plus_2025_c2c3c5_ge73_pyeft
+    unit: null
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "APPROVE DATASET decision"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: dataset
+    derivation: null
+    notes: null
+  - claim_id: C0002
+    field: identity_and_goal.scientific_claim
+    value: hybrid_approximate_signal_forward_model
+    unit: null
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "APPROVE CLAIM decision"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: validation
+    derivation: null
+    notes: "Actual C2/C3/C5 scope with Ge73-only and project response approximations."
+  - claim_id: C0003
+    field: dataset.detectors
+    value: [C2, C3, C5]
+    unit: null
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "user configuration choice; supported by S002 Sec. III"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: dataset
+    derivation: null
+    notes: "C4 excluded because of rate instability in S002."
+  - claim_id: C0004
+    field: target.mode
+    value: Ge73_only
+    unit: null
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "user target choice"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: G_TARGET_MODEL
+    downstream_owner: target
+    derivation: null
+    notes: "Hybrid approximation, not actual natural-germanium composition."
+  - claim_id: C0005
+    field: reference_paper.target_mode
+    value: natural_germanium
+    unit: null
+    status: REFERENCE_ONLY
+    source_id: S002
+    locator: "Sec. III, stable isotope abundances"
+    source_class: paper
+    confidence: high
+    conflict_group: G_TARGET_MODEL
+    downstream_owner: validation
+    derivation: null
+    notes: "Not selected for runtime target."
+  - claim_id: C0006
+    field: exposure.detector_exposures_kg_day
+    value: {C2: 111.15, C3: 103.40, C5: 111.86}
+    unit: kg_day
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "USE RAW DETECTOR EXPOSURES decision"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: target
+    derivation: "S002 approximate detector masses multiplied by reactor-on days."
+    notes: "Sum is 326.41 kg day; S002 reports rounded total 327 kg day."
+  - claim_id: C0007
+    field: detector.thresholds
+    value: {C2: 180, C3: 160, C5: 170}
+    unit: eVee
+    status: SOURCE_EXTRACTED
+    source_id: S002
+    locator: "Sec. III, CONUS+ DATA AND STATISTICAL ANALYSIS"
+    source_class: paper
+    confidence: high
+    conflict_group: null
+    downstream_owner: detector
+    derivation: null
+    notes: null
+  - claim_id: C0008
+    field: source.absolute_flux
+    value: 1.5e13
+    unit: cm^-2_s^-1
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "user source choice; supported by S001 Eq. 1.17 and S002 Sec. III"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: source
+    derivation: null
+    notes: "Detector-site total flux; do not multiply thermal-power geometry."
+  - claim_id: C0009
+    field: source.fission_fractions
+    value: {U235: 0.56, U238: 0.07, Pu239: 0.31, Pu241: 0.06}
+    unit: fraction
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "user source choice; values in S001 Eqs. 1.22-1.25"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: source
+    derivation: null
+    notes: "Phase 3 must verify sum=1."
+  - claim_id: C0010
+    field: source.spectrum_model
+    value: Kopeikin_below_2MeV_plus_Mueller_above_2MeV
+    unit: null
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "user source choice; S001 Sec. 1.4.1"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: source
+    derivation: null
+    notes: "Linear interpolation, matched at 2 MeV, linear low-end extrapolation, zero outside support."
+  - claim_id: C0011
+    field: detector.efficiency_model
+    value: exact_reconstructed_energy_step
+    unit: null
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "user detector choice"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: detector
+    derivation: null
+    notes: "Detector-specific thresholds."
+  - claim_id: C0012
+    field: theory_response.nuclear_response
+    value: cevns_pyeft_unified_Ge73_response
+    unit: null
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "user nuclear-response choice"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: theory
+    derivation: null
+    notes: "Actual repository response key must be inspected in Phase 2/4."
+  - claim_id: C0013
+    field: theory_response.sin2_theta_w
+    value: 0.23857
+    unit: dimensionless
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "user weak-mixing-angle choice; S002 Sec. II.A"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: G_WEAK_MIXING
+    downstream_owner: theory
+    derivation: null
+    notes: "Replaces the 0.2312 Fast-template constant in S001."
+  - claim_id: C0014
+    field: analysis.channels
+    value: [CEvNS]
+    unit: null
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "user channel choice"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: theory
+    derivation: null
+    notes: "E-nu electron scattering is excluded."
+  - claim_id: C0015
+    field: detector.lindhard_k
+    value: 0.162
+    unit: dimensionless
+    status: SOURCE_EXTRACTED
+    source_id: S002
+    locator: "Sec. III Eq. 31"
+    source_class: paper
+    confidence: high
+    conflict_group: null
+    downstream_owner: detector
+    derivation: null
+    notes: "Paper quotes +/-0.004; propagation is deferred unless statistics requests it."
+  - claim_id: C0016
+    field: detector.resolution
+    value: {sigma0_evee: 20.38, fano_factor: 0.1096, pair_creation_energy_ev: 2.96}
+    unit: mixed
+    status: SOURCE_EXTRACTED
+    source_id: S002
+    locator: "Sec. III Eqs. 29-30"
+    source_class: paper
+    confidence: high
+    conflict_group: null
+    downstream_owner: detector
+    derivation: null
+    notes: null
+  - claim_id: C0017
+    field: dataset.binning
+    value: {minimum_evee: 160, maximum_evee: 350, width_evee: 10, number_of_bins: 19}
+    unit: eVee
+    status: SOURCE_EXTRACTED
+    source_id: S001
+    locator: "Sec. 1.3.2 Eqs. 1.11-1.14"
+    source_class: project_note
+    confidence: high
+    conflict_group: null
+    downstream_owner: dataset
+    derivation: null
+    notes: "Phase 1 approved 20 explicit edges, 19 adjacent [low, high) bins, and [160, 350) eVee."
+  - claim_id: C0018
+    field: fast.requested_model
+    value: CEvNS_pyeft_Wilson_templates
+    unit: null
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "user Fast choice"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: fast
+    derivation: null
+    notes: "Must be derived from approved Slow."
+  - claim_id: C0019
+    field: validation.publication_sm_counts
+    value: {C2: 90, C3: 143, C5: 113, total: 346}
+    unit: expected_events
+    status: REFERENCE_ONLY
+    source_id: S002
+    locator: "Sec. III, paragraph after Fig. 1"
+    source_class: paper
+    confidence: high
+    conflict_group: null
+    downstream_owner: validation
+    derivation: null
+    notes: "Natural-Ge/Klein-Nystrand model; never a Ge73 pass/fail target."
+  - claim_id: C0020
+    field: target.response_key
+    value: null
+    unit: null
+    status: MISSING
+    source_id: null
+    locator: "Phase 2 repository inspection required"
+    source_class: repository
+    confidence: null
+    conflict_group: null
+    downstream_owner: target
+    derivation: null
+    notes: null
+  - claim_id: C0021
+    field: detector.response_normalization_domain
+    value: null
+    unit: null
+    status: MISSING
+    source_id: null
+    locator: "Phase 6 decision required"
+    source_class: null
+    confidence: null
+    conflict_group: null
+    downstream_owner: detector
+    derivation: null
+    notes: null
+  - claim_id: C0022
+    field: fast.complete_wilson_basis_order
+    value: null
+    unit: null
+    status: MISSING
+    source_id: S001
+    locator: "Sec. 1.8.3 lists only part of the mapping"
+    source_class: project_note
+    confidence: high
+    conflict_group: null
+    downstream_owner: fast
+    derivation: null
+    notes: "Blocks EFT kernel, not Slow or cumulative Fast."
+  - claim_id: C0023
+    field: statistics.machine_readable_official_data
+    value: null
+    unit: null
+    status: MISSING
+    source_id: null
+    locator: "official ancillary data not supplied"
+    source_class: official_data
+    confidence: null
+    conflict_group: null
+    downstream_owner: statistics
+    derivation: null
+    notes: "Statistics is currently not requested."
+  - claim_id: C0024
+    field: validation.external_Ge73_binned_reference
+    value: null
+    unit: expected_events_per_bin
+    status: MISSING
+    source_id: null
+    locator: "no matching external reference supplied"
+    source_class: null
+    confidence: null
+    conflict_group: null
+    downstream_owner: validation
+    derivation: null
+    notes: "Internal Slow will become authoritative after Phase 7 approval."
+  - claim_id: C0025
+    field: identity_and_goal.experiment_name
+    value: "CONUS+"
+    unit: null
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "user requested a clearly named experiment directory"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: dataset
+    derivation: null
+    notes: "Human-readable experiment name; not the machine dataset ID."
+  - claim_id: C0026
+    field: identity_and_goal.experiment_slug
+    value: CONUS_Plus
+    unit: null
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "APPROVE WRITE for the CONUS_Plus canonical directory plan"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: dataset
+    derivation: null
+    notes: "Filesystem-safe parent directory for CONUS+ datasets."
+  - claim_id: C0027
+    field: workflow.scope_gate
+    value: APPROVED
+    unit: null
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "APPROVE SCOPE"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: validation
+    derivation: null
+    notes: "Approves the Phase 0 route; it does not approve production file writes."
+  - claim_id: C0028
+    field: dataset.phase_1_contract
+    value: "C2/C3/C5 x 19 reconstructed-energy bins, signal-only expected CEvNS events"
+    unit: expected_events_per_bin
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "APPROVE DATASET CONTRACT"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: dataset
+    derivation: null
+    notes: "Primary axes [detector, reconstructed_energy_bin], shape [3, 19]."
+  - claim_id: C0029
+    field: dataset.statistical_data_mode
+    value: not_yet_known
+    unit: null
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "APPROVE DATASET CONTRACT"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: statistics
+    derivation: null
+    notes: "No observed data attached; current capability is a signal-only forward model."
+  - claim_id: C0030
+    field: workflow.P01_machine_gate
+    value: PASS
+    unit: null
+    status: PROJECT_DERIVED
+    source_id: null
+    locator: "Phase 1 dependency-free loader and contract invariant assertions"
+    source_class: project_validation
+    confidence: high
+    conflict_group: null
+    downstream_owner: validation
+    derivation: "AST parse; registry compatibility; flat/nested discovery; load-by-ID; bin, shape, unit and exposure assertions."
+    notes: "pytest command was NOT_RUN because pytest is not installed."
+  - claim_id: C0031
+    field: workflow.P01_implementation_human_gate
+    value: APPROVED
+    unit: null
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "APPROVE IMPLEMENTATION"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: dataset
+    derivation: null
+    notes: "Approves the reviewed Phase 1 dataset implementation only; it does not approve Phase 2 physics or writes."
+  - claim_id: C0032
+    field: target_and_exposure.phase_2_contract
+    value: "Ge73-only with project A*u nuclei-per-kg convention and detector-specific kg day exposures"
+    unit: null
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "APPROVE TARGET / EXPOSURE"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: target
+    derivation: null
+    notes: "Approves Ge73 number fraction 1.0, response key Ge73, A=73 mass convention, and exposure_kg_day as the sole mass-times-time owner."
+  - claim_id: C0033
+    field: target.response_key
+    value: Ge73
+    unit: null
+    status: PROJECT_DERIVED
+    source_id: null
+    locator: "data/responses/responses_all.json via ResponseDB.get_by_symbol_A('Ge', 73)"
+    source_class: repository
+    confidence: high
+    conflict_group: null
+    downstream_owner: target
+    derivation: "Loaded project response entry with A=73, Z=32, N=41 and eight finite response channels at y=0."
+    notes: "This verifies the active project key and internal API, not the unavailable external source-table provenance."
+  - claim_id: C0034
+    field: target.nuclei_per_kg
+    value: 8.249507893261811e24
+    unit: kg^-1
+    status: PROJECT_DERIVED
+    source_id: null
+    locator: "src/cevns_pyeft/rates/counts.py A*u convention; Phase 2 dependency-free calculation"
+    source_class: repository
+    confidence: high
+    conflict_group: null
+    downstream_owner: target
+    derivation: "1 / (73 * 1.6605390666e-27 kg)"
+    notes: "Single-isotope Ge73-only approximation approved by the user."
+  - claim_id: C0035
+    field: workflow.P02_machine_gate
+    value: PASS
+    unit: null
+    status: PROJECT_DERIVED
+    source_id: null
+    locator: "Phase 2 dependency-free composition, ResponseDB, nuclei-per-kg and exposure-owner assertions"
+    source_class: project_validation
+    confidence: high
+    conflict_group: null
+    downstream_owner: validation
+    derivation: "fraction sum; Response key/API; A/Z/N; finite channel values; A*u nuclei-per-kg; raw exposure sum; unique kg-day owner; seconds/day constant"
+    notes: "P02 post-code human implementation review remains pending."
+  - claim_id: C0036
+    field: workflow.P02_implementation_human_gate
+    value: APPROVED
+    unit: null
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "APPROVE IMPLEMENTATION after Phase 2 report"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: target
+    derivation: null
+    notes: "Approves the reviewed P02 static mapping and Machine Gate report only; it does not approve Phase 3 source physics or writes."
+  - claim_id: C0037
+    field: source.machine_readable_spectrum_inputs
+    value:
+      kopeikin_nodes: 32
+      mueller_components: [U235, U238, Pu239, Pu241]
+      mueller_coefficients_per_component: 6
+      fission_fractions: {U235: 0.56, U238: 0.07, Pu239: 0.31, Pu241: 0.06}
+      flux_uncertainty_fraction: 0.046
+    unit: mixed
+    status: SOURCE_EXTRACTED
+    source_id: S001
+    locator: "Sec. 1.4.1, Tables 1-2 and Eqs. 1.16-1.31; S002 Sec. III for 4.6% uncertainty"
+    source_class: project_note_and_paper
+    confidence: high
+    conflict_group: null
+    downstream_owner: source
+    derivation: "Transcribed to kopeikin_nodes.csv and mueller_coefficients.csv; row count, order and fraction sum validated."
+    notes: "S002 names the Kopeikin/Mueller references but does not publish the coefficients or low-end implementation details."
+  - claim_id: C0038
+    field: source.phase_3_diagnostics
+    value:
+      rho_mueller_at_2MeV: 1.2580795232698319
+      total_match_factor: 0.9677534794383323
+      literal_low_end_zero_crossing_mev: 0.006538461538461538
+      literal_normalization_integral: 6.460892614098174
+      approved_nonnegative_normalization_integral: 6.461355163040058
+      relative_normalization_shift: 7.159211110787685e-05
+    unit: mixed
+    status: PROJECT_DERIVED
+    source_id: S001
+    locator: "Phase 3 independent recomputation from registered tables and coefficients"
+    source_class: project_validation
+    confidence: high
+    conflict_group: null
+    downstream_owner: source
+    derivation: "Piecewise-linear low integral plus 256-point Gauss-Legendre integration from 2 to 10 MeV."
+    notes: "The approved nonnegative clamp changes only the sub-0.01 MeV normalization and prevents negative physical flux."
+  - claim_id: C0039
+    field: source.phase_3_contract
+    value: "detector-site absolute per-second flux; isotope-continuous 2 MeV matching; nonnegative linear low-end extrapolation; 4.6% metadata-only uncertainty"
+    unit: null
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "APPROVE SOURCE CONTRACT"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: source
+    derivation: null
+    notes: "Thermal-power geometry is not multiplied; target, exposure and detector response remain outside the source layer."
+  - claim_id: C0040
+    field: workflow.P03_machine_gate
+    value: PASS
+    unit: null
+    status: PROJECT_DERIVED
+    source_id: null
+    locator: "Phase 3 table, support, nonnegative, component-sum, continuity, normalization, scalar/array, state and metadata assertions"
+    source_class: project_validation
+    confidence: high
+    conflict_group: null
+    downstream_owner: validation
+    derivation: "Independent Python assertion run plus the five-test focused pytest suite in F:/Work/.codex_conda_envs/codex-py311; integrated flux exactly 1.5e13 cm^-2 s^-1."
+    notes: "Python 3.11.15, NumPy 2.4.6 and pytest 9.1.1: 5 passed in 0.43 s. The earlier unavailable-runner observation used a non-designated interpreter and is superseded."
+  - claim_id: C0041
+    field: workflow.P03_implementation_human_gate
+    value: APPROVED
+    unit: null
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "APPROVE IMPLEMENTATION after review of the source formulas, Mueller table, Kopeikin table, diagnostic spectrum, API and complete focused test suite"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: null
+    downstream_owner: source
+    derivation: null
+    notes: "Approves the reviewed P03 implementation in the designated Codex Python environment. It does not approve Phase 4 physics or any later write."
+  - claim_id: C0042
+    field: exposure.selected_calculation_profile
+    value: {C2: 119.0, C3: 119.0, C5: 119.0, total: 357.0}
+    unit: kg_day
+    status: USER_CONFIRMED
+    source_id: S003
+    locator: "User instruction on 2026-10-09: C2, C3 and C5 each use 119 kg day; mainline before benchmark"
+    source_class: USER_SUPPLIED
+    confidence: high
+    conflict_group: exposure_profile
+    downstream_owner: target
+    derivation: "Three independently integrated detector predictions; no rescaling of final counts."
+    notes: "The raw observed exposures 111.15/103.40/111.86 kg day remain reference metadata and are not the selected mainline calculation exposure."
+  - claim_id: C0043
+    field: source.mueller_high_energy_extension
+    value: {fit_domain_mev: [2.0, 8.0], baseline_extension_mev: [8.0, 10.0], policy: continue_same_mueller_polynomial}
+    unit: MeV
+    status: SOURCE_EXTRACTED
+    source_id: null
+    locator: "Mueller et al. arXiv:1101.2663 and user-supplied Helm/source audit dated 2026-10-08"
+    source_class: external_paper_and_project_audit
+    confidence: high
+    conflict_group: source_high_energy_validity
+    downstream_owner: source
+    derivation: "The existing implementation is unchanged; only its fit domain and extension status are made explicit."
+    notes: "P07 must separate E_nu <= 8 MeV and E_nu > 8 MeV contributions and compare allowed extension controls. No tail model may be tuned to force agreement with the paper."
+  - claim_id: C0044
+    field: workflow.P02_rebaseline_machine_gate
+    value: PASS
+    unit: null
+    status: PROJECT_DERIVED
+    source_id: null
+    locator: "test_selected_exposure_profile_and_mueller_extension_metadata; 2026-10-09 focused pytest"
+    source_class: project_validation
+    confidence: high
+    conflict_group: null
+    downstream_owner: validation
+    derivation: "119+119+119=357 kg day; each exposure maps to 8.481814035536064e31 target-nucleus seconds with the approved Ge73 nuclei-per-kg convention."
+    notes: "Machine validation does not replace the pending post-rebaseline human review."
+  - claim_id: C0045
+    field: workflow.P03_rebaseline_machine_gate
+    value: PASS
+    unit: null
+    status: PROJECT_DERIVED
+    source_id: null
+    locator: "test_mueller_baseline_is_integrable_on_fit_and_extension_domains; 2026-10-09 focused pytest"
+    source_class: project_validation
+    confidence: high
+    conflict_group: null
+    downstream_owner: validation
+    derivation: "The unchanged Mueller baseline is finite and positive on both 2-8 and 8-10 MeV, while metadata distinguishes the fitted and extended domains."
+    notes: "This does not validate the 8-10 MeV extension as a publication-accurate spectrum; that remains a modeled baseline with P07 sensitivity diagnostics."

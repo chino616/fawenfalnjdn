@@ -1,2 +1,0 @@
-row_bin_index,column_bin_index,covariance,unit,status
-,,,,REQUIRES_INPUT; use long-form matrix or replace with approved dense CSV

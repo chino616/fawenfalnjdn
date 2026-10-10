@@ -1,237 +1,93 @@
-﻿---
+---
 name: cevns-slow-counts
-description: Implement and validate the authoritative direct-integration event prediction for one CEvNS dataset.
+description: Phase 7 authoritative direct event-count calculation with a mandatory normalization ledger, convergence diagnostics and human freeze before any Fast implementation.
 ---
 
-# cevns-slow-counts
+# Phase 7 — Slow Authoritative Calculation
 
-## Purpose
+用户可见回复执行 `../../_shared.md` 第 1 节：先回答本轮问题；仅在相关时说明实际结果、影响、停下原因和下一步。下方字段用于核对，不是回复模板。
+隔离自动运行执行 `../../AUTO_RUN_PROTOCOL.md`：本阶段产物只是候选；下方人工批准要求约束正式导入，不得在候选目录内写成正式 Human Gate。
 
-Execute Phase 7.
+## Hard precondition
 
-Build the authoritative Slow prediction from validated Source, theory,
-cross-section, target normalization, and Detector Response components.
+Dataset/Target/Source/Theory/Kinematics/Detector 的需要 Gate 均 PASS + APPROVED。
 
-Slow is the reference against which every Fast representation is validated.
+## Step 1 — Normalization Ledger（必须先展示）
 
-## Preconditions
-
-Require:
+按实际项目 owner 写成：
 
 ```text
-Gate D0 = PASS
-Gate S0 = PASS
-Gate T1 = PASS
-Gate X = PASS
-Gate R = PASS
+source differential flux/fluence [unit]
+× differential cross section [unit]
+× nuclei per kg [unit]
+× exposure OR mass×time [unit]
+× time conversion if required
+= true recoil counts
+× detector response density/matrix [unit]
+× efficiency [dimensionless]
+= reconstructed spectrum
+× bin integration
+= expected events/bin
 ```
 
-Read:
+每个因子列：source file、symbol、input/output unit、是否已经包含在其他 factor 中。
+
+任何重复 normalization 必须在写 Slow 前解决。
+
+### ⛔ Pre-code Decision
 
 ```text
-workflows/experiment-integration/AGENTS.md
-workflows/experiment-integration/EXPERIMENT_WORKFLOW.md
-workflows/experiment-integration/CSI_REFERENCE_MAP.md
-workflows/experiment-integration/templates/07_SLOW_COUNTS.md
-
-runs/<dataset_id>/00_IMPLEMENTATION_MANIFEST.yaml
-runs/<dataset_id>/03_SOURCE.md
-runs/<dataset_id>/04_THEORY_RESPONSE.md
-runs/<dataset_id>/05_KINEMATICS_CROSS_SECTION.md
-runs/<dataset_id>/06_DETECTOR_RESPONSE.md
-
-data/experiments/<dataset_id>/experiment.yaml
+1 批准当前归一化计算链（回复 APPROVE NORMALIZATION LEDGER）
+2 修正某个因子的归属
+3 查看公式或代码中的因子来源
+4 暂停本阶段
 ```
 
-Inspect the actual CsI and Ar Slow modules only for:
+## Step 2 — Direct calculation
+
+Slow 必须直接执行批准的物理积分，不得依赖 EFT kernel、cumulative reconstructed Fast 或 global rescaling。
+
+典型链：
 
 ```text
-public API
-integration control flow
-component axes
-return shape
-test structure
+integrate Enu -> dR/dT
+fold T -> reconstructed observable
+integrate bins -> counts
 ```
 
-Do not copy a complete existing Slow module.
+输出 contract 必须与 dataset axes/shape/unit 一致。
 
-## Procedure
+## Step 3 — Diagnostics
 
-### 1. Inspect the real reference path
-
-Record actual files, symbols, signatures, units, axes, and return values.
-
-Trace:
+保存：
 
 ```text
-Slow wrapper
-→ source
-→ shared differential cross section
-→ target-time normalization
-→ detector folding
-→ reconstructed bins
+bin edges + units
+component-resolved counts
+total events
+true recoil spectrum
+reconstructed spectrum
+integration grids/tolerances
+normalization checkpoints
+grid convergence
+external/reference comparison (reference-only where appropriate)
 ```
 
-Do not start implementation before this path is documented.
+测试 exposure scaling、support、finite/nonnegative counts、complex EFT points if supported。
 
-### 2. Implement the direct calculation
+## Machine Gate P07
 
-Implement:
+通过 direct calculation、convergence、output contract、diagnostics、reference checks 后 PASS。
+
+## ⛔ Authoritative Slow Freeze
+
+Machine PASS 后必须再次展示关键数值和逐 bin/总计。
 
 ```text
-neutrino-energy integration
-true-recoil spectrum
-target-time normalization
-detector-response folding
-reconstructed-bin integration
+1 将当前 Slow 结果定为后续计算的基准（回复 APPROVE SLOW AS AUTHORITATIVE REFERENCE）
+2 重新计算或调整积分网格
+3 查看归一化与能谱
+4 暂停 Fast 阶段
 ```
 
-Use the validated Source, cross-section, Response, and Detector Response
-callables.
-
-Do not reproduce their physical formulas inside the Slow module.
-
-Apply exposure exactly once.
-
-### 3. Preserve model selection
-
-Pass explicit selections for:
-
-```text
-full_response or helm_sm
-exact or publication-reproduction kinematics
-```
-
-Do not combine Helm with the full nuclear Response.
-
-### 4. Define the public output
-
-Return the dataset prediction with the declared axes, shape, and unit.
-
-Preserve detector, target, or source components only when applicable.
-
-Document omitted component axes.
-
-### 5. Generate diagnostics and reference data
-
-Create:
-
-```text
-true-recoil spectrum grid
-reconstructed-spectrum grid
-binned Slow counts
-convergence table
-diagnostic figures
-independent Slow reference array
-```
-
-Store diagnostics under the workflow run directory.
-
-Store the validated regression reference under the approved test reference
-directory.
-
-### 6. Test
-
-Validate:
-
-```text
-shape
-units
-finite and nonnegative physical counts
-component sums
-exposure counted once
-support and endpoints
-integration convergence
-grid or tolerance refinement
-benchmark coefficient points
-supported complex coefficients
-absence of Fast imports or caches
-```
-
-Do not change Slow to improve Fast agreement.
-
-### 7. Update the experiment specification
-
-After tests pass, record the validated Slow callable and output contract in
-`experiment.yaml` when supported by the current schema.
-
-### 8. Create the report
-
-Create:
-
-```text
-runs/<dataset_id>/07_SLOW_COUNTS.md
-```
-
-using:
-
-```text
-templates/07_SLOW_COUNTS.md
-```
-
-## Allowed outputs
-
-```text
-src/cevns_pyeft/experiments/<family>/slow_counts_<dataset_id>.py
-tests/test_<dataset_id>_slow_counts.py
-tests/reference_<dataset_id>/slow_reference.npy
-runs/<dataset_id>/artifacts/*
-runs/<dataset_id>/figures/*
-runs/<dataset_id>/07_SLOW_COUNTS.md
-```
-
-## Prohibited actions
-
-Do not:
-
-```text
-import Fast kernels or Fast caches
-derive Slow reference values from Fast
-reimplement theory, source, cross section, or Detector Response
-apply exposure more than once
-modify another dataset
-modify existing reference arrays to hide disagreement
-implement Fast
-implement statistics
-start the next Skill automatically
-```
-
-## Gate L
-
-Gate L passes only when the direct calculation, convergence tests, output
-contract, diagnostics, and independent reference array are validated.
-
-Set:
-
-```text
-PASS
-```
-
-or:
-
-```text
-BLOCKED
-```
-
-and record reasons.
-
-## Final response
-
-Report only:
-
-```text
-Slow classification
-public callable
-files created
-files modified
-output axes and shape
-integration settings
-tests run
-numerical diagnostics
-reference array
-blockers
-Gate L status
-single next Skill
-```
-
-Then stop.
+只有用户选 1，Fast 才可开始。

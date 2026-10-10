@@ -2,12 +2,14 @@
 
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Callable, Dict, Optional, Tuple, Union
+from typing import Any, Callable, Dict, Literal, Optional, Tuple, Union
 import numpy as np
 
 from cevns_pyeft.foundation.constants import *  # noqa: F401,F403
+from cevns_pyeft.sources.state import NeutrinoState, pure_flavor_state
 
 ArrayLike = Union[float, int, np.ndarray]
+SourceSpecies = Literal["mu", "e", "mub"]
 
 def _asarray(x: ArrayLike) -> np.ndarray:
     return np.asarray(x, dtype=float)
@@ -116,6 +118,29 @@ def loadNeutrinoEmpiricalFluxSNS(dataset: str='CsI2017', *, num_points: int=200,
         return _scalar_or_array(out, E_GeV)
     return {'basic': {'name': ds.name, 'detectorMassKg': ds.mdet_kg, 'baseline_m': ds.L_m, 'N_POT': ds.N_POT, 'r': ds.r, 'EnuRangeMeV': (ds.EnuMin_MeV, ds.EnuMax_MeV), 'globalEnuRangeMeV': (ds.globalEnuMin_MeV, ds.globalEnuMax_MeV), 'NTimeIntegratedFlux_cm^-2': NTimeIntFlux}, 'measured': {'energyUnit': 'MeV', 'fluxUnit': 'cm^-2 MeV^-1', 'e': phi_e_measured, 'mub': phi_mub_measured, 'totalContinuous': phi_tot_measured, 'muLine': mu_line_measured}, 'natural': {'energyUnit': 'GeV', 'e': phi_e_natural, 'mub': phi_mub_natural, 'totalContinuous': phi_tot_natural, 'muLine': mu_line_natural}}
 load_neutrino_empirical_flux_sns = loadNeutrinoEmpiricalFluxSNS
+
+
+def sns_component_state(component: SourceSpecies) -> NeutrinoState:
+    """Return the canonical Flavor state for one time-integrated SNS component.
+
+    The component label determines both the incoming Flavor density and the
+    particle identity. Antineutrino identity is metadata at this boundary;
+    the interaction kernel remains unchanged until the dedicated ANTI-NU
+    physics audit.
+    """
+
+    if component == "mu":
+        return pure_flavor_state("mu", particle_kind="nu")
+    if component == "e":
+        return pure_flavor_state("e", particle_kind="nu")
+    if component == "mub":
+        return pure_flavor_state("mu", particle_kind="antinu")
+    raise ValueError(
+        "SNS state component must be one of ('mu', 'e', 'mub'), "
+        f"got {component!r}"
+    )
+
+
 def loadNeutrinoFlux(dataset: str, *, data_dir: Optional[str | Path]=None) -> Dict[str, Any]:
     key = str(dataset).strip()
     if key in SNS_DATASETS:
@@ -125,6 +150,8 @@ def loadNeutrinoFlux(dataset: str, *, data_dir: Optional[str | Path]=None) -> Di
 __all__ = [
     "SNSDataset",
     "SNS_DATASETS",
+    "SourceSpecies",
+    "sns_component_state",
     "loadNeutrinoEmpiricalFluxSNS",
     "load_neutrino_empirical_flux_sns",
     "loadNeutrinoFlux",

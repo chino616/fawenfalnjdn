@@ -1,0 +1,49 @@
+# Read-only draft shown to the user before activation; write the filled plan only
+# inside the isolated run directory after the exact enable command is received.
+schema_version: 1
+plan_id: null                 # SHA-256 of canonical plan payload excluding plan_id
+mode: low_auto                # low_auto | high_auto
+task_scope: null              # physics_onboarding | existing_dataset
+run_id: null
+workspace_root: null         # writable root containing, but outside, the source project
+source_project_root: null    # absolute path; always read-only during the run
+isolated_run_root: null      # absolute path outside source_project_root
+dataset_id: null
+scientific_goal: null
+phase_range: []
+starting_checkpoint: null
+source_fingerprints: []
+material_paths_to_copy: []
+candidate_work:
+  module_sequence: []        # ordered module IDs; one P01-P10 phase per module, onboarding modules explicit
+  allowed_phase_tasks: []
+  evidence_priority: []      # required before high_auto may choose among sources
+  max_parallel_candidates: 1
+  allowed_repairs: []         # no physics or tolerance changes
+  required_checks: []
+  max_repair_attempts: 3
+  max_runtime_minutes: null  # fill with positive limit before activation
+  max_disk_gb: null           # fill with positive limit before activation
+review_controls:
+  on_demand_physics_review: true
+  pause_candidate_on_review_request: true
+  show_review_entry_in_progress: true
+  low_auto_review_points: []  # fill with the phase checkpoints selected for review
+reporting:
+  per_module_report: true
+  report_directory: review/module_reports
+  user_summary_on_each_completion: true
+  require_report_before_next_module: true
+write_boundary:
+  stage_only: true
+  allow_network_writes: false
+  allow_external_app_writes: false
+  allow_writable_links_to_source: false
+  resolved_paths_must_stay_under_isolated_run_root: true
+stop_conditions: []          # evidence conflict, scope change, isolation failure, etc.
+user_warning_text: null      # explicit physical/code risk and source-project isolation notice
+promotion:
+  require_separate_review: true
+  require_exact_paths_and_actions: true
+  require_source_fingerprint_recheck: true
+  require_backup_and_post_import_checks: true

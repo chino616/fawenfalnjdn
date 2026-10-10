@@ -1,183 +1,84 @@
 ---
 name: cevns-target
-description: Extract and validate the detector/target inventory as a text-only workflow phase before source implementation.
+description: Phase 2 target/isotope/exposure physics review. Freezes target inventory, Response keys and normalization ownership before source/cross-section/counting work.
 ---
 
-# cevns-target
+# Phase 2 — Target / Exposure
 
-## Purpose
+用户可见回复执行 `../../_shared.md` 第 1 节：先回答本轮问题；仅在相关时说明实际结果、影响、停下原因和下一步。下方字段用于核对，不是回复模板。
+隔离自动运行执行 `../../AUTO_RUN_PROTOCOL.md`：本阶段产物只是候选；下方人工批准要求约束正式导入，不得在候选目录内写成正式 Human Gate。
 
-Execute the Target Inventory phase.
-
-This phase is intentionally text-only. It records the detector inventory, target
-composition, exposure semantics, nuclei-per-mass convention, and nuclear
-Response routing needed by later implementation phases.
-
-Do not create target Python code, target CSV files, or target tests in this
-phase. If the inventory later proves to require code, record that as a future
-implementation need instead of implementing it here.
-
-## Invocation condition
-
-Invoke after:
+## Physics ownership
 
 ```text
-Gate I = PASS
-Gate D0 = PASS
+material/isotope composition
+fraction convention
+molar mass
+nuclei_per_kg
+nuclear Response key(s)
+active mass / live time / exposure semantics
+normalization ownership
 ```
 
-Invoke before:
+本阶段通常是**物理核对阶段**，不因为 target 有小节就自动创建 target.py。
+
+## Precondition
+
+Dataset human gate APPROVED + P01 PASS。
+
+## Step 1 — Mandatory review
+
+用中文说明以下靶核与曝光核对项；需要用户决定的数值、单位和证据仍须完整展示：
 
 ```text
-cevns-source
+material
+isotope list
+abundance: number_fraction or mass_fraction
+A/Z/N or molar mass source
+nuclei_per_kg derivation
+Response key for each isotope
+active detector mass
+live time
+exposure
+whether exposure already = mass × live time
+seconds/day owner
 ```
 
-This phase applies to all target statuses, including:
+### Hard normalization rule
+
+同一 normalization 只能选一种：
 
 ```text
-REUSE
-CONFIG_ONLY
-ADAPTER
-SHARED_EXTENSION
-CORE_EXTENSION
-BLOCKED
+mass_kg + live_time
+OR
+exposure_kg_day
 ```
 
-The status controls the recorded future implementation need. It does not allow
-code creation during this phase.
+如果 sources 允许 natural isotope 与 single-isotope 两种解释，必须列两个候选，不得自行选择。
 
-## Required references
-
-Read:
+### ⛔ Physics Decision
 
 ```text
-workflows/experiment-integration/AGENTS.md
-workflows/experiment-integration/EXPERIMENT_WORKFLOW.md
-workflows/experiment-integration/CSI_REFERENCE_MAP.md
-workflows/experiment-integration/templates/02_DETECTOR_TARGET.md
-workflows/experiment-integration/runs/<dataset_id>/00_INPUT_INVENTORY.md
-workflows/experiment-integration/runs/<dataset_id>/00_IMPLEMENTATION_MANIFEST.yaml
-workflows/experiment-integration/runs/<dataset_id>/01_DATASET.md
-data/experiments/<dataset_id>/experiment.yaml
+1 批准当前靶核与曝光解释（回复 APPROVE TARGET / EXPOSURE）
+2 选择其他同位素或曝光解释
+3 查看核响应数据或计算过程
+4 暂停本阶段
 ```
 
-Return to the original physics document only when the Phase 0 inventory or
-manifest contains an explicit target ambiguity or inconsistency.
+## Step 2 — Technical verification
 
-Do not repeat the complete Phase 0 extraction.
+检查实际 response database/key、fraction sum、molar mass 和 nuclei/kg 计算；确认后续 Slow 不会再次乘相同 exposure 因子。
 
-## Phase boundary
-
-This phase is responsible for documenting:
+创建：
 
 ```text
-detector inventory
-target inventory
-exposure normalization
-nuclei-per-mass normalization
-Response-key routing
-component axes
-target classification
-future implementation need, if any
-Gate T0
+runs/<experiment_slug>/<dataset_id>/02_DETECTOR_TARGET.md
 ```
 
-It is not responsible for:
+除非 Master 已批准 `CONFIG_ONLY` 的静态字段补充，否则本阶段不写新的 target Python。
 
-```text
-source implementation
-target implementation
-differential cross section
-detector response
-Slow counts
-Fast counts
-statistics
-registry integration
-```
+## Gate P02
 
-## Procedure
+PASS 条件：composition 完整、Response keys 存在/明确、exposure ownership 唯一、nuclei/kg 可复算。
 
-1. Verify that Gate I and Gate D0 have passed.
-2. Read the approved Phase 0 target decision.
-3. Record every detector label, active mass, live time, exposure, material, and
-   target mode.
-4. Record every target component: isotope, `A`, `Z`, `N`, molar mass,
-   abundance or stoichiometric weight, material fraction, and Response key.
-5. State exposure semantics explicitly, including whether exposure already
-   includes active mass and live time.
-6. State the nuclei-per-kilogram formula for each component.
-7. Verify Response-key availability from the existing repository interfaces.
-8. Record required component axes and sum rules.
-9. Record whether later implementation should be `REUSE`, `CONFIG_ONLY`,
-   `ADAPTER`, `SHARED_EXTENSION`, `CORE_EXTENSION`, or `BLOCKED`.
-10. Create or update only:
-
-```text
-workflows/experiment-integration/runs/<dataset_id>/02_DETECTOR_TARGET.md
-```
-
-## Prohibited actions
-
-During this phase do not:
-
-```text
-create target.py
-create target_inventory.py
-create target.csv
-create isotope_inventory.csv
-create target tests
-modify experiment.yaml
-modify registry.py
-modify source files
-modify theory, rates, kernels, Slow, Fast, or statistics files
-copy CsI physical target values
-silently replace missing Response data
-start cevns-source automatically
-```
-
-## Gate T0
-
-Gate T0 passes only when:
-
-1. detector inventory is complete;
-2. target composition is complete;
-3. exposure semantics are explicit;
-4. exposure is counted exactly once in the documented convention;
-5. nuclei-per-mass normalization is explicit;
-6. required Response keys are identified;
-7. component axes and sum rules are defined;
-8. future implementation need is classified;
-9. no production code or runtime data were modified by this phase.
-
-Set:
-
-```text
-PASS
-```
-
-or:
-
-```text
-BLOCKED
-```
-
-and record the reason.
-
-## Final response
-
-Report only:
-
-```text
-target classification
-files created
-files modified
-protected files
-Response keys
-component axes
-numerical diagnostics
-blockers
-Gate T0 status
-single next Skill: cevns-source
-```
-
-Then stop.
+Post review 后要求用户再次确认实现/报告与已批准 contract 一致。

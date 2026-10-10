@@ -1,277 +1,74 @@
-﻿---
+---
 name: cevns-fast-counts
-description: Build and validate accelerated event-count representations against the authoritative Slow calculation.
+description: Phase 8 accelerated representations derived only from approved Slow, with explicit Fast type, cache invalidation semantics and per-bin validation.
 ---
 
-# cevns-fast-counts
+# Phase 8 — Fast
 
-## Purpose
+用户可见回复执行 `../../_shared.md` 第 1 节：先回答本轮问题；仅在相关时说明实际结果、影响、停下原因和下一步。下方字段用于核对，不是回复模板。
+隔离自动运行执行 `../../AUTO_RUN_PROTOCOL.md`：本阶段产物只是候选；下方人工批准要求约束正式导入，不得在候选目录内写成正式 Human Gate。
 
-Execute Phase 8.
+## Precondition
 
-Build only Fast representations justified by the approved parameter dependence.
+Slow Gate P07 PASS + Human Slow Freeze APPROVED。
 
-Validate every representation bin by bin against the verified Slow prediction.
+## Step 1 — Fast Type（不可模糊命名）
 
-Fast is not authoritative.
-
-## Preconditions
-
-Require:
+每个 representation 独立选择并命名：
 
 ```text
-Gate L = PASS
+reconstructed_spectrum_cumulative
+detector_response_matrix
+eft_quadratic_coefficient_kernel
+other_surrogate (必须定义数学意义)
 ```
 
-Read:
+对每种加速表示，先说明它加速了什么、适用范围和限制，再展示必要的核对项：
 
 ```text
-workflows/experiment-integration/AGENTS.md
-workflows/experiment-integration/EXPERIMENT_WORKFLOW.md
-workflows/experiment-integration/CSI_REFERENCE_MAP.md
-workflows/experiment-integration/templates/08_FAST_COUNTS.md
-
-runs/<dataset_id>/00_IMPLEMENTATION_MANIFEST.yaml
-runs/<dataset_id>/07_SLOW_COUNTS.md
-data/experiments/<dataset_id>/experiment.yaml
+省去的高成本计算
+缓存的内容
+构建时使用的输入
+哪些参数变化会使缓存失效
+输出维度、单位和元数据
+适用的理论模型范围
+构建成本与单次求值成本
+作为基准的 Slow 函数
 ```
 
-Inspect:
+缺 EFT basis mapping => EFT kernel `BLOCKED`，不得生成 partial kernel；其他 Fast 可独立继续。
+
+### ⛔ Fast Meaning Decision
 
 ```text
-existing CsI and Ar Fast wrappers
-kernels/basis.py
-kernels/builder.py
-kernels/reconstruction.py
-kernels/storage.py
-existing Fast tests
+1 批准当前加速表示（回复 APPROVE THIS FAST REPRESENTATION）
+2 修改表示类型或适用范围
+3 查看它与 Slow 结果或系数基的关系
+4 暂停这一种加速表示
 ```
 
-Use these only for API, metadata, basis, serialization, and validation
-conventions.
+## Step 2 — Build
 
-## Procedure
+从 validated Slow 推导，不修改 Slow 迎合 Fast。
 
-### 1. Inspect the real Fast interfaces
+cumulative：dense reconstructed spectrum -> cumulative -> edge differences。
 
-Record actual:
+EFT kernel：必须有完整 coefficient basis/order，构造全部 linear/quadratic terms，保存 convention/version metadata。
 
-```text
-files
-symbols
-function signatures
-basis metadata
-array shapes
-serialization format
-reconstruction API
-stale-artifact checks
-```
+## Step 3 — Validation
 
-Do not infer the API from filenames.
-
-### 2. Classify every requested representation
-
-Treat independently:
-
-```text
-cumulative spectrum
-EFT quadratic kernel
-response matrix
-source cache
-other surrogate
-```
-
-For every representation record:
-
-```text
-required for release
-parameter dependence
-implementation status
-inputs
-outputs
-blockers
-```
-
-Do not force all Fast methods into one implementation.
-
-### 3. Build only unblocked representations
-
-For cumulative Fast:
-
-```text
-sample the validated reconstructed spectrum
-build the cumulative representation
-reconstruct bin counts from bin edges
-validate grid and interpolation convergence
-```
-
-For EFT kernels:
-
-```text
-confirm the complete coefficient basis and order
-derive all linear and quadratic terms from Slow
-store metadata and kernel arrays
-validate reconstruction at multiple coefficient points
-```
-
-If the complete basis is unknown, mark the EFT kernel `BLOCKED`.
-
-Do not generate placeholder or partial formal kernels.
-
-### 4. Preserve the Slow contract
-
-Fast must return the same:
-
-```text
-axes
-shape
-unit
-component convention
-coefficient convention
-```
-
-as Slow.
-
-Fast must not apply source normalization, exposure, detector response, or
-statistics again.
-
-### 5. Validate bin by bin
-
-Compare multiple parameter points and save:
+必须逐 bin 比：
 
 ```text
 Slow
 Fast
-absolute difference
+abs difference
 relative difference
 tolerance
 ```
 
-Do not validate only total event counts.
+在多个 theory/parameter points 测试，不得只比较 total，不得用 global scale 修复。
 
-Include interference-sensitive and complex-coefficient points when supported.
+## Gate P08 + Human Approval
 
-### 6. Generate diagnostics
-
-Create:
-
-```text
-fast_vs_slow.csv
-fast_runtime.csv
-fast_vs_slow.png
-fast_relative_error.png
-```
-
-Record:
-
-```text
-maximum absolute error
-maximum relative error
-worst bin
-worst parameter point
-Slow runtime
-Fast runtime
-speedup
-```
-
-### 7. Test metadata and storage
-
-Validate:
-
-```text
-basis order
-shape
-units
-serialization round trip
-source metadata
-detector metadata
-grid metadata
-stale-artifact rejection
-unsupported input errors
-```
-
-Never accept a cached artifact whose conventions differ from the current
-dataset.
-
-### 8. Update the experiment specification
-
-Only validated Fast representations may be marked implemented in
-`experiment.yaml`.
-
-Blocked or deferred representations must remain explicitly unavailable.
-
-### 9. Create the report
-
-Create:
-
-```text
-runs/<dataset_id>/08_FAST_COUNTS.md
-```
-
-using:
-
-```text
-templates/08_FAST_COUNTS.md
-```
-
-## Prohibited actions
-
-Do not:
-
-```text
-change Slow to match Fast
-derive Slow references from Fast
-generate a kernel with an incomplete basis
-hide failed bins by comparing only totals
-apply exposure or detector response again
-relax tolerances without justification
-replace existing Fast reference arrays
-implement statistics
-start the next Skill automatically
-```
-
-## Gate F
-
-Evaluate every representation separately.
-
-Overall Gate F passes only when every representation required for the current
-release passes bin-by-bin validation.
-
-Optional blocked representations may remain blocked if clearly documented and
-not exposed as implemented.
-
-Set:
-
-```text
-PASS
-```
-
-or:
-
-```text
-BLOCKED
-```
-
-and record reasons.
-
-## Final response
-
-Report only:
-
-```text
-Fast representations requested
-representations implemented
-representations blocked
-files created
-files modified
-public APIs
-parameter points
-bin-by-bin errors
-runtime and speedup
-tests run
-blockers
-Gate F status
-single next Skill
-```
-
-Then stop.
+每种 representation 独立 Gate/approval。最终报告必须明确“Fast 加速什么、没有加速什么”。

@@ -1,5 +1,0 @@
-energy_mev,U235_per_fission_per_mev,U238_per_fission_per_mev,Pu239_per_fission_per_mev,Pu241_per_fission_per_mev,source_status
-0.001,,,,,REQUIRES_INPUT
-1.8,,,,,REQUIRES_INPUT
-8.0,,,,,REQUIRES_INPUT
-11.0,,,,,REQUIRES_INPUT

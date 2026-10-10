@@ -1,0 +1,35 @@
+schema_version: 1
+log_type: write_authorization_log
+
+# This is an append-only authority log for Write Approval Gate decisions.
+# It is separate from P04_DECISION_LOG.yaml, which records Physics Decisions.
+# Do not create or update this file until its path/action is covered by an
+# approved [WRITE PLAN], or a fully reviewed promotion plan with exact
+# `批准导入 <promotion_id>` response. Isolated-run activation only authorizes
+# writes within that run's separate directory, not this canonical log.
+
+entries: []
+
+# Append entries using this schema; do not replace or renumber older entries.
+#
+# - authorization_id: W0001
+#   status: ACTIVE  # ACTIVE|EXHAUSTED|REVOKED|SUPERSEDED
+#   approved_at: "2026-09-30T10:30:00+08:00"
+#   approval_message_ref: "conversation:<stable-message-reference>"
+#   approval_kind: manual_write  # manual_write|promotion
+#   promotion_id: null          # required when approval_kind=promotion
+#   physics_decision_ref: null  # separate Dxxxx for a reviewed promotion
+#   scope: physics_onboarding  # skill_debug|physics_onboarding|existing_dataset
+#   plan_ref: "conversation:<write-plan-message-reference>"
+#   allowed_actions: [create, modify]
+#   create_paths: []
+#   modify_paths: []
+#   delete_paths: []
+#   production_paths_affected: false
+#   recovery_plan: "..."
+#   continuous_progress_update:
+#     enabled: false
+#     path: null
+#     allowed_events: []
+#   supersedes: []
+#   superseded_by: null

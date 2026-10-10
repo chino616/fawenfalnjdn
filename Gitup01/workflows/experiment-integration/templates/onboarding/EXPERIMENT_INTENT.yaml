@@ -1,0 +1,12 @@
+experiment: null
+task_scope: physics_onboarding   # physics_onboarding | existing_dataset | skill_debug
+input_mode: guided              # guided | structured | expert
+requested_claims:
+  signal_forward_model: true
+  slow: true
+  fast: false
+  statistics: false
+materials: []
+reference_code: []
+confirm_mode: detailed
+execution_mode: stepwise        # stepwise | low_auto | high_auto; auto requires a separate isolated-run plan and exact activation

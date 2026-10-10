@@ -1,524 +1,88 @@
-﻿---
+---
 name: cevns-detector-response
-description: Implement and validate the experiment-specific mapping from true recoil to reconstructed observables, including quenching, resolution, efficiency, and migration.
+description: Phase 6 true-recoil to reconstructed-observable detector response, combining original implementation responsibilities with mandatory physics review.
 ---
 
-# cevns-detector-response
+# Phase 6 — Detector Response
 
-## Purpose
+用户可见回复执行 `../../_shared.md` 第 1 节：先回答本轮问题；仅在相关时说明实际结果、影响、停下原因和下一步。下方字段用于核对，不是回复模板。
+隔离自动运行执行 `../../AUTO_RUN_PROTOCOL.md`：本阶段产物只是候选；下方人工批准要求约束正式导入，不得在候选目录内写成正式 Human Gate。
 
-Execute Phase 6.
-
-Implement the detector-specific response:
-
-```text
-true recoil
-→ mean reconstructed observable
-→ stochastic resolution
-→ efficiency
-```
-
-Detector Response is experimental input.
-
-It is separate from the nuclear Response used by the theory and cross-section
-layers.
-
-This Skill does not calculate final Slow event counts.
-
-## Preconditions
-
-Require:
+## Ownership
 
 ```text
-Gate S0 = PASS
-Gate T1 = PASS
-Gate X = PASS
+true recoil T
+-> mean reconstructed observable / quenching / yield
+-> resolution or migration R(x|T)
+-> efficiency epsilon
+-> threshold/window/bin semantics
 ```
 
-Read:
+Detector Response 与 nuclear Response 完全不同。
+
+## Step 1 — Pre-code review
+
+逐参数展示 value/unit/source locator/source class，并标 official/digitized/phenomenological approximation。
+
+必须明确：
 
 ```text
-workflows/experiment-integration/AGENTS.md
-workflows/experiment-integration/EXPERIMENT_WORKFLOW.md
-workflows/experiment-integration/CSI_REFERENCE_MAP.md
-
-workflows/experiment-integration/templates/
-06_DETECTOR_RESPONSE.md
-
-workflows/experiment-integration/runs/<dataset_id>/
-00_INPUT_INVENTORY.md
-
-workflows/experiment-integration/runs/<dataset_id>/
-00_IMPLEMENTATION_MANIFEST.yaml
-
-workflows/experiment-integration/runs/<dataset_id>/
-01_DATASET.md
-
-workflows/experiment-integration/runs/<dataset_id>/
-03_SOURCE.md
-
-workflows/experiment-integration/runs/<dataset_id>/
-04_THEORY_RESPONSE.md
-
-workflows/experiment-integration/runs/<dataset_id>/
-05_KINEMATICS_CROSS_SECTION.md
-
-data/experiments/<dataset_id>/experiment.yaml
+true recoil variable + unit
+reconstructed variable + unit
+mean mapping formula
+yield/quenching
+resolution width/matrix
+efficiency function
+efficiency acts on T / mean x / reconstructed x
+threshold semantics
+analysis window/binning
 ```
 
-The Phase 0 inventory and manifest are authoritative for:
+Hard safeguards：
+
+- threshold 不自动等于 step efficiency；
+- 不得用 analysis-window 内重归一化偷偷吃掉 migration；
+- detector-by-detector differences 合并成 effective detector 时必须明确是 approximation。
+
+### ⛔ Decision
 
 ```text
-reconstructed observable
-quenching or yield
-resolution
-efficiency
-migration
-analysis bins
-planned files
-planned tests
+1 批准当前探测器响应约定（回复 APPROVE DETECTOR CONTRACT）
+2 修改淬火、分辨率或效率定义
+3 查看来源材料或诊断图
+4 暂停本阶段
 ```
 
-Return to the original physics document only when the Phase 0 outputs contain
-an explicit ambiguity or inconsistency.
+## Step 2 — Technical implementation
 
-## Procedure
-
-### 1. Verify the approved detector-response contract
-
-Confirm:
-
-```text
-true recoil variable and unit
-reconstructed observable and unit
-mean mapping
-quenching or yield model
-resolution model
-efficiency model
-efficiency domain
-analysis window
-binning
-```
-
-Do not introduce a new detector convention not approved in Phase 0.
-
-### 2. Inspect the actual reference implementation
-
-Inspect only the relevant detector-response and folding code identified by:
-
-```text
-CSI_REFERENCE_MAP.md
-```
-
-Normally inspect:
-
-```text
-src/cevns_pyeft/experiments/coherent/slow_counts_csi2017.py
-src/cevns_pyeft/experiments/coherent/slow_counts_csi2021.py
-src/cevns_pyeft/rates/counts.py
-```
-
-Record:
-
-```text
-actual files
-actual symbols
-function signatures
-input units
-return units
-scalar and array behavior
-broadcasting
-response normalization
-efficiency placement
-binning convention
-```
-
-Use CsI only as an API and control-flow reference.
-
-Do not copy:
-
-```text
-CsI quenching
-CsI photoelectron conversion
-CsI efficiency
-CsI timing response
-CsI detector parameters
-a complete CsI Slow module
-```
-
-### 3. Select the implementation type
-
-Use the approved Phase 0 classification:
-
-```text
-REUSE
-CONFIG_ONLY
-ADAPTER
-SHARED_EXTENSION
-CORE_EXTENSION
-BLOCKED
-```
-
-Use `CONFIG_ONLY` when generic detector-response models already represent the
-complete experiment response.
-
-Use `ADAPTER` when experiment-specific formulas are required.
-
-Create the smallest implementation layer possible.
-
-### 4. Materialize detector parameters
-
-Store small scalar parameters in:
-
-```text
-data/experiments/<dataset_id>/experiment.yaml
-```
-
-Examples:
-
-```text
-quenching parameters
-yield parameters
-resolution parameters
-threshold
-efficiency parameters
-```
-
-Use CSV or NPZ only for approved numerical curves or matrices.
-
-Do not create a data table for a short analytic formula.
-
-### 5. Implement the mean mapping
-
-Implement:
-
-```text
-true recoil → mean reconstructed observable
-```
-
-The implementation may include:
-
-```text
-quenching
-ionization yield
-light yield
-photoelectron conversion
-calibration mapping
-```
-
-Validate physical units and the approved recoil domain.
-
-Do not include resolution smearing or efficiency inside the mean mapping.
-
-### 6. Implement the resolution model
-
-Implement the approved stochastic width or migration model.
-
-Reuse generic Gaussian or other shared probability distributions when
-available.
-
-Do not rewrite generic probability-density mathematics.
-
-Require finite and positive resolution width over the approved domain.
-
-### 7. Implement the response density
-
-Implement:
-
-```text
-R(x_reco | T)
-```
-
-The response density must represent a probability density in the reconstructed
-variable.
-
-Its full-domain normalization must follow the approved detector model.
-
-Do not renormalize only over the analysis window.
-
-### 8. Implement efficiency
-
-Implement the approved efficiency as a separate function.
-
-State explicitly whether it depends on:
-
-```text
-true recoil
-mean observable
-reconstructed observable
-```
-
-Require:
-
-```text
-0 <= efficiency <= 1
-```
-
-Do not apply efficiency twice during later folding.
-
-### 9. Define the public API
-
-Follow the repository-native API.
-
-When an experiment adapter is required, expose functions equivalent to:
+按 manifest 选择 CONFIG_ONLY/ADAPTER 等。可实现：
 
 ```python
-def mean_reconstructed_observable(true_recoil, experiment_spec):
-    ...
-
-
-def resolution_width(mean_observable, experiment_spec):
-    ...
-
-
-def response_density(
-    reconstructed_observable,
-    true_recoil,
-    experiment_spec,
-):
-    ...
-
-
-def efficiency(reconstructed_observable, experiment_spec):
-    ...
+mean_reconstructed_observable(T, spec)
+resolution_width(mean_x, spec)
+response_density(x_reco, T, spec)
+efficiency(x_or_T, spec)
 ```
 
-Use actual repository naming after inspecting existing code.
+实际命名服从仓库 API。
 
-The Detector Response API must not:
+禁止在这些函数中 load flux、evaluate cross section、apply exposure、integrate final counts。
 
-```text
-load source flux
-evaluate the cross section
-apply exposure
-integrate event counts
-apply statistical data
-```
-
-### 10. Generate diagnostic artifacts
-
-Create:
+## Step 3 — Diagnostics/tests
 
 ```text
-runs/<dataset_id>/artifacts/detector_response_grid.csv
-
-runs/<dataset_id>/figures/mean_mapping.png
-runs/<dataset_id>/figures/mean_mapping.pdf
-
-runs/<dataset_id>/figures/resolution_width.png
-runs/<dataset_id>/figures/resolution_width.pdf
-
-runs/<dataset_id>/figures/detector_response_slices.png
-runs/<dataset_id>/figures/detector_response_slices.pdf
-
-runs/<dataset_id>/figures/efficiency.png
-runs/<dataset_id>/figures/efficiency.pdf
-```
-
-Use documented true-recoil and reconstructed-observable grids.
-
-Figures must be reproducible from the saved grid.
-
-### 11. Add focused tests
-
-Test:
-
-```text
-mean-mapping units
-mean-mapping physical range
-mean-mapping monotonicity when required
-positive resolution width
-response-density nonnegativity
-response-density normalization
-response mean and width
-efficiency range
+mean mapping physical range/monotonicity if required
+resolution width > 0
+response nonnegative + full-domain normalization
+response mean/width
+0 <= efficiency <= 1
 efficiency domain
-threshold or interpolation behavior
-analysis bin edges
-scalar input
-array input
-broadcasting
+threshold/interpolation boundaries
+scalar/array/broadcasting
 out-of-range behavior
+response grid + mean/resolution/efficiency plots
 ```
 
-Also test:
+## Gate P06 + Post review
 
-```text
-Detector Response does not apply source flux
-Detector Response does not call the cross section
-Detector Response does not apply exposure
-Detector Response does not calculate final binned counts
-```
-
-Do not relax tolerances or change experiment inputs merely to make tests pass.
-
-### 12. Update the experiment specification
-
-Only after all tests pass, update:
-
-```text
-data/experiments/<dataset_id>/experiment.yaml
-```
-
-Record:
-
-```text
-detector-response status
-detector-response callable
-mean-mapping model
-resolution model
-efficiency model
-data files
-true variable and unit
-reconstructed variable and unit
-```
-
-Do not mark Detector Response as implemented before validation passes.
-
-### 13. Create the phase report
-
-Create:
-
-```text
-workflows/experiment-integration/runs/<dataset_id>/
-06_DETECTOR_RESPONSE.md
-```
-
-Use:
-
-```text
-workflows/experiment-integration/templates/
-06_DETECTOR_RESPONSE.md
-```
-
-Record:
-
-```text
-approved detector-response contract
-reference implementation
-classification
-configuration fields
-production implementation
-public API
-tests
-diagnostic outputs
-experiment.yaml update
-Gate R
-```
-
-## Allowed outputs
-
-Depending on the approved manifest, this Skill may create:
-
-```text
-src/cevns_pyeft/experiments/<family>/detector_response.py
-tests/test_<dataset_id>_detector_response.py
-
-data/experiments/<dataset_id>/detector_efficiency.csv
-data/experiments/<dataset_id>/quenching_curve.csv
-data/experiments/<dataset_id>/migration_matrix.npz
-
-runs/<dataset_id>/artifacts/detector_response_grid.csv
-runs/<dataset_id>/figures/*.png
-runs/<dataset_id>/figures/*.pdf
-runs/<dataset_id>/06_DETECTOR_RESPONSE.md
-```
-
-It may modify:
-
-```text
-data/experiments/<dataset_id>/experiment.yaml
-```
-
-after validation passes.
-
-Create only files approved by the Phase 0 manifest.
-
-## Backup rule
-
-Before modifying an existing file, create a backup under:
-
-```text
-backup/<relative-original-path>
-```
-
-Record it in:
-
-```text
-backup/BACKUP_MANIFEST.md
-```
-
-Do not create backups for files that are only read.
-
-## Prohibited actions
-
-Do not:
-
-```text
-confuse Detector Response with nuclear Response
-repeat the complete Phase 0 extraction
-copy CsI detector parameters
-rewrite generic probability distributions
-renormalize migration only inside the analysis window
-apply efficiency twice
-apply exposure
-load source flux
-evaluate the differential cross section
-calculate final Slow counts
-implement Fast
-implement statistics
-modify registry.py without an approved condition
-start the next Skill automatically
-```
-
-## Gate R
-
-Gate R passes when:
-
-1. the approved mean mapping is implemented;
-2. the resolution model is implemented;
-3. the response density is finite and correctly normalized;
-4. efficiency acts on the correct variable;
-5. efficiency remains between zero and one;
-6. analysis binning is consistent;
-7. migration outside the analysis window is handled correctly;
-8. scalar, array, and broadcasting behavior pass;
-9. diagnostic grids and figures are generated;
-10. `experiment.yaml` points to the validated implementation;
-11. no source, cross-section, exposure, or event-count logic is duplicated.
-
-Set:
-
-```text
-PASS
-```
-
-or:
-
-```text
-BLOCKED
-```
-
-and record reasons.
-
-## Final response
-
-Report only:
-
-```text
-detector-response classification
-reference implementation
-configuration fields
-production files
-public API
-tests run
-diagnostic outputs
-files modified
-blockers
-Gate R status
-single next Skill
-```
-
-Then stop.
-
-Do not execute the next Skill automatically.
+向用户展示 mapping 图、response slices、efficiency、代码 symbol 与 normalization test。用户批准后才进入 Slow。

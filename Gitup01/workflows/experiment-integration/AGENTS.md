@@ -1,30 +1,21 @@
-﻿# Experimental Experiment-Integration Workflow
+# CEvNS Experiment Integration — Agent Router
 
-This workflow is experimental support material for adding CEvNS experiment
-datasets to CEvNS-pyEFT. It is scoped to experiment integration only. Future
-workflows for nuclear-response work, statistics, EFT mapping, or other domains
-should live beside this directory under `workflows/`.
+本目录只有一个 workflow 总入口：
 
-Use this workflow for tasks that explicitly ask to add a new experiment, migrate
-an experiment dataset, implement experiment event counts, implement Fast counts,
-or add statistics for a new experiment.
+```text
+skills/cevns-experiment/SKILL.md
+```
 
-Workflow entry points:
+当用户要求新增/迁移/继续 CEvNS 实验、从论文接入实验、实现 Slow/Fast/statistics，或测试实验集成 Skill 时：
 
-1. Read `EXPERIMENT_WORKFLOW.md`.
-2. Read the user-provided experiment physics document and its data attachments.
-3. Start with `skills/cevns-experiment-intake/SKILL.md`.
-4. Continue through the workflow stages in order.
-5. In each stage, read only the matching stage template and the relevant local
-   CsI reference module.
-6. Do not copy the CsI source, target, detector, or statistics implementation
-   wholesale into a new experiment.
-7. Do not ask the user again for data already present in the physics document
-   or attachments.
-8. Before modifying existing project files, save a backup under `backup/` and
-   record it in `backup/BACKUP_MANIFEST.md`.
-9. Implement and validate Slow counts before Fast counts.
-10. Statistics inputs must be explicitly classified as raw counts, ON/OFF,
-    signal+background, or background-subtracted excess.
-11. Stop when any gate fails; do not hide differences by changing references,
-    applying global rescaling, or loosening tolerances.
+1. 先读取 `_shared.md`；
+2. 再读取 `skills/cevns-experiment/SKILL.md`；
+3. 由 Master Skill 决定下一阶段；
+4. 不允许从 AGENTS.md 自行推断 dataset 或跳入某个 Phase；
+5. 不允许绕过 Master Skill 直接把本地文献、占位目录或旧代码解释成用户批准的 physics scope。
+6. 不允许在用户批准 `[WRITE PLAN]` 前创建 `.onboarding_tmp`、mock 文件、正式 run、data、src、tests 或 registry 修改。隔离自动候选只能按 `AUTO_RUN_PROTOCOL.md` 的带 `plan_id` 启用授权写到原项目之外；导入原项目仍需审核并准确批准。
+7. 必须执行 `_shared.md` 的 `BACKUP_QUARANTINE`：`backup/**` 不参与材料扫描、候选计数、证据抽取、dataset 判定、迁移输入、repository map 或验证；只有显式的备份写入、恢复或审计请求可以访问它。
+
+子 Skill 只负责自己的物理阶段；workflow 顺序只由 `cevns-experiment` 决定。
+用户要求进入低自动或高自动时，Master 先读取 `AUTO_RUN_PROTOCOL.md` 并展示警告与
+计划；“切换模式”请求本身不授权写入，也不使正式 Human Gate 自动通过。

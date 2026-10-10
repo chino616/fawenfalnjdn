@@ -28,7 +28,7 @@ def slow_counts_ar2020(
     *,
     include_sm: bool = True,
     sin2thetaW: float = 0.2387,
-    c10_mass_mode: str = "flavor",
+    c10_mass_mode: str = "quark_mass_resolved",
     n_er: int = 21,
     n_enu: int = 120,
     n_pe_bin: int = 8,

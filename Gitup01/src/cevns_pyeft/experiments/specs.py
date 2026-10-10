@@ -35,7 +35,7 @@ def discover_experiment_spec_paths(root: str | Path | None = None) -> tuple[Path
     data_root = experiment_data_root(root)
     if not data_root.exists():
         return ()
-    return tuple(sorted(data_root.glob("*/experiment.yaml")))
+    return tuple(sorted(data_root.rglob("experiment.yaml")))
 
 
 def list_spec_experiment_names(root: str | Path | None = None) -> tuple[str, ...]:
