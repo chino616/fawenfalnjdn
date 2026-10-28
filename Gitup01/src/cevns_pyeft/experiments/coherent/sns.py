@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
@@ -30,7 +30,13 @@ class SNSDataset:
     EnuMax_MeV: float
     globalEnuMin_MeV: float
     globalEnuMax_MeV: float
-SNS_DATASETS: Dict[str, SNSDataset] = {'CsI2017': SNSDataset(name='CsI2017', mdet_kg=14.57, L_m=19.3, N_POT=1.73e+23, r=0.08, EnuMin_MeV=0.001, EnuMax_MeV=300.0, globalEnuMin_MeV=0.001, globalEnuMax_MeV=56.0), 'CsI2021': SNSDataset(name='CsI2021', mdet_kg=14.57, L_m=19.3, N_POT=3.198e+23, r=0.0848, EnuMin_MeV=0.001, EnuMax_MeV=300.0, globalEnuMin_MeV=0.001, globalEnuMax_MeV=56.0), 'Ar2020': SNSDataset(name='Ar2020', mdet_kg=24.0, L_m=27.5, N_POT=1.38e+23, r=0.09, EnuMin_MeV=0.001, EnuMax_MeV=300.0, globalEnuMin_MeV=0.001, globalEnuMax_MeV=56.0)}
+def _compatibility_datasets():
+    from .csi2021_definition import DEFINITION as d21
+    from .csi2017_definition import DEFINITION as d17
+    from .ar2020_definition import DEFINITION as dar
+    return {d.dataset_id: d.physical.run.legacy_dataset(d.dataset_id) for d in (d17,d21,dar)}
+
+SNS_DATASETS = _compatibility_datasets()
 
 def _n_time_integrated_flux_cm2(L_m: float, N_POT: float, r: float) -> float:
     L_cm = float(from_length_invgev(to_length_invgev(L_m, 'm'), 'cm'))

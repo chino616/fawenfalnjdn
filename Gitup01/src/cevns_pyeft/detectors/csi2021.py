@@ -6,23 +6,23 @@ from cevns_pyeft.contracts.observation import BinProbabilities
 from cevns_pyeft.rates.differential import p_smearing_csi
 from .selection import LegacyComponentAcceptance
 
-PE_BINS_9 = np.array([0.001, 8.001, 12.001, 16.001, 20.001, 24.001, 32.001, 40.001, 48.001, 60.001])
+from cevns_pyeft.experiments.coherent.csi2021_definition import DEFINITION
+_DEFAULT = DEFINITION.physical
+PE_BINS_9 = np.asarray(DEFINITION.observation.edges)
 PE_BINS_9.setflags(write=False)
 PE_WIDTHS_9 = np.diff(PE_BINS_9)
 PE_WIDTHS_9.setflags(write=False)
-# Keep the legacy exported mapping picklable for existing multiprocessing Fast
-# builders. Each observation snapshots it into its own immutable selection.
-DEFAULT_ACCEPTANCE = {"e": 0.848, "mu": 0.997, "mub": 0.848}
+DEFAULT_ACCEPTANCE = dict(_DEFAULT.acceptance)
 ArrayLike = Union[float, int, np.ndarray]
 EfficiencyModel = Literal["CsI2021"]
 
 
 @dataclass(frozen=True)
 class CsI2021EfficiencyParams:
-    a: float = 1.32045
-    b: float = 0.285979
-    c: float = 10.8646
-    d: float = -0.3333
+    a: float = _DEFAULT.efficiency[0]
+    b: float = _DEFAULT.efficiency[1]
+    c: float = _DEFAULT.efficiency[2]
+    d: float = _DEFAULT.efficiency[3]
 
     def __post_init__(self):
         if not all(np.isfinite(value) for value in asdict(self).values()):
@@ -70,12 +70,19 @@ class ConstantEfficiency:
 
 @dataclass(frozen=True)
 class CsIGammaResponse:
+    quenching: tuple = _DEFAULT.quenching
+    gamma_a: float = _DEFAULT.gamma_a
+    gamma_b: float = _DEFAULT.gamma_b
+
+    def __post_init__(self):
+        if len(self.quenching) != 4 or not all(np.isfinite(x) for x in self.quenching) or self.gamma_a <= 0 or self.gamma_b <= 0:
+            raise ValueError('invalid CsI gamma response parameters')
     def density(self, observed, recoil_keV, *, target):
-        return np.asarray(p_smearing_csi(observed, recoil_keV), dtype=float)
+        return np.asarray(p_smearing_csi(observed, recoil_keV, quenching=self.quenching, gamma_a=self.gamma_a, gamma_b=self.gamma_b), dtype=float)
 
     def describe(self):
-        return {"model_id": "legacy_csi_gamma", "quenching": (0.0554628, 4.30681, -111.707, 840.384),
-                "gamma_a": 0.0749, "gamma_b": 9.56}
+        return {"model_id": "legacy_csi_gamma", "quenching": self.quenching,
+                "gamma_a": self.gamma_a, "gamma_b": self.gamma_b}
 
 
 @dataclass(frozen=True)

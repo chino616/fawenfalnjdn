@@ -8,6 +8,7 @@ deliberately excluded.
 from __future__ import annotations
 
 import csv
+from collections.abc import Mapping
 from functools import lru_cache
 from pathlib import Path
 from typing import Any, Callable, Dict, Literal, Optional, Tuple, Union, cast
@@ -21,19 +22,16 @@ ArrayLike = Union[float, int, np.ndarray]
 ReactorComponent = Literal["U235", "U238", "Pu239", "Pu241"]
 FluxComponent = Literal["U235", "U238", "Pu239", "Pu241", "total"]
 
-DATASET_ID = "conus_plus_2025_c2c3c5_ge73_pyeft"
-COMPONENTS: Tuple[ReactorComponent, ...] = (
-    "U235",
-    "U238",
-    "Pu239",
-    "Pu241",
-)
-TOTAL_FLUX_CM2_S = 1.5e13
-NORMALIZATION_UNCERTAINTY_FRACTION = 0.046
-ENERGY_SUPPORT_MEV = (0.0, 10.0)
-MATCH_ENERGY_MEV = 2.0
-LOWEST_KOPEIKIN_NODE_MEV = 0.01
-LOW_END_POLICY = "linear_extrapolation_clamped_nonnegative"
+from .definition import DEFINITION
+DEFAULT_SETTINGS = DEFINITION.physical.source
+DATASET_ID = DEFINITION.dataset_id
+COMPONENTS = DEFAULT_SETTINGS.components
+TOTAL_FLUX_CM2_S = DEFAULT_SETTINGS.total_flux_cm2_s
+NORMALIZATION_UNCERTAINTY_FRACTION = DEFAULT_SETTINGS.normalization_uncertainty
+ENERGY_SUPPORT_MEV = DEFAULT_SETTINGS.energy_support_mev
+MATCH_ENERGY_MEV = DEFAULT_SETTINGS.match_energy_mev
+LOWEST_KOPEIKIN_NODE_MEV = DEFAULT_SETTINGS.lowest_node_mev
+LOW_END_POLICY = DEFAULT_SETTINGS.low_end_policy
 TIME_BASIS = "per_second"
 FLUX_UNIT = "cm^-2 s^-1 MeV^-1"
 
@@ -53,18 +51,26 @@ def _scalar_or_array(value: np.ndarray, like: ArrayLike):
     return value
 
 
-def _data_dir_key(data_dir: Optional[str | Path]) -> str:
-    root = DEFAULT_DATA_DIR if data_dir is None else Path(data_dir)
-    return str(root.resolve())
+def _data_dir_key(data_dir):
+    """Key exact table paths and contents, including independently overridden files."""
+    import hashlib
+    if isinstance(data_dir, Mapping):
+        if set(data_dir) != {'kopeikin','mueller'}:
+            raise ValueError('source resource mapping requires kopeikin and mueller only')
+        paths = (Path(data_dir['kopeikin']).resolve(),Path(data_dir['mueller']).resolve())
+    else:
+        root = DEFAULT_DATA_DIR if data_dir is None else Path(data_dir)
+        paths = ((root/'kopeikin_nodes.csv').resolve(),(root/'mueller_coefficients.csv').resolve())
+    content = tuple(hashlib.sha256(path.read_bytes()).hexdigest() for path in paths)
+    return (str(paths[0]),str(paths[1]),content)
 
 
 @lru_cache(maxsize=None)
 def _load_tables(
     data_dir_key: str,
 ) -> Tuple[np.ndarray, np.ndarray, Dict[str, np.ndarray], Dict[str, float]]:
-    root = Path(data_dir_key)
-    nodes_path = root / "kopeikin_nodes.csv"
-    coefficients_path = root / "mueller_coefficients.csv"
+    nodes_path = Path(data_dir_key[0])
+    coefficients_path = Path(data_dir_key[1])
 
     with nodes_path.open("r", encoding="utf-8", newline="") as stream:
         rows = list(csv.DictReader(stream))
@@ -160,19 +166,20 @@ def _raw_component_shape(
     energy_mev: np.ndarray,
     *,
     data_dir_key: str,
+    settings=DEFAULT_SETTINGS,
 ) -> np.ndarray:
     energies, values, _, fractions = _load_tables(data_dir_key)
     result = np.zeros_like(energy_mev, dtype=float)
-    support = (energy_mev >= ENERGY_SUPPORT_MEV[0]) & (
-        energy_mev <= ENERGY_SUPPORT_MEV[1]
+    support = (energy_mev >= settings.energy_support_mev[0]) & (
+        energy_mev <= settings.energy_support_mev[1]
     )
-    low = support & (energy_mev < MATCH_ENERGY_MEV)
+    low = support & (energy_mev < settings.match_energy_mev)
     high = support & ~low
 
     mueller_at_match = float(
         _mueller_per_fission(
             component,
-            np.asarray(MATCH_ENERGY_MEV),
+            np.asarray(settings.match_energy_mev),
             data_dir_key=data_dir_key,
         )
     )
@@ -193,7 +200,7 @@ def _raw_component_shape(
 
 
 @lru_cache(maxsize=None)
-def _normalization_integral_cached(data_dir_key: str) -> float:
+def _normalization_integral_cached(data_dir_key: str, settings=DEFAULT_SETTINGS) -> float:
     energies, values, _, fractions = _load_tables(data_dir_key)
     slope = (values[1] - values[0]) / (energies[1] - energies[0])
     zero_crossing = energies[0] - values[0] / slope
@@ -208,7 +215,7 @@ def _normalization_integral_cached(data_dir_key: str) -> float:
         * float(
             _mueller_per_fission(
                 component,
-                np.asarray(MATCH_ENERGY_MEV),
+                np.asarray(settings.match_energy_mev),
                 data_dir_key=data_dir_key,
             )
         )
@@ -218,9 +225,9 @@ def _normalization_integral_cached(data_dir_key: str) -> float:
 
     nodes, weights = np.polynomial.legendre.leggauss(256)
     high_energies = 0.5 * (
-        (ENERGY_SUPPORT_MEV[1] - MATCH_ENERGY_MEV) * nodes
-        + ENERGY_SUPPORT_MEV[1]
-        + MATCH_ENERGY_MEV
+        (settings.energy_support_mev[1] - settings.match_energy_mev) * nodes
+        + settings.energy_support_mev[1]
+        + settings.match_energy_mev
     )
     high_shape = sum(
         fractions[component]
@@ -232,7 +239,7 @@ def _normalization_integral_cached(data_dir_key: str) -> float:
         for component in COMPONENTS
     )
     high_integral = 0.5 * (
-        ENERGY_SUPPORT_MEV[1] - MATCH_ENERGY_MEV
+        settings.energy_support_mev[1] - settings.match_energy_mev
     ) * float(np.dot(weights, high_shape))
     return low_integral + high_integral
 
@@ -248,6 +255,7 @@ def differential_flux(
     energy_mev: ArrayLike,
     *,
     data_dir: Optional[str | Path] = None,
+    settings=DEFAULT_SETTINGS,
 ):
     """Return one component or the total detector-site differential flux.
 
@@ -274,16 +282,16 @@ def differential_flux(
     data_dir_key = _data_dir_key(data_dir)
     if component == "total":
         raw = sum(
-            _raw_component_shape(key, energy, data_dir_key=data_dir_key)
+            _raw_component_shape(key, energy, data_dir_key=data_dir_key, settings=settings)
             for key in COMPONENTS
         )
     else:
         raw = _raw_component_shape(
             cast(ReactorComponent, component),
             energy,
-            data_dir_key=data_dir_key,
+            data_dir_key=data_dir_key, settings=settings,
         )
-    flux = TOTAL_FLUX_CM2_S / _normalization_integral_cached(data_dir_key) * raw
+    flux = settings.total_flux_cm2_s / _normalization_integral_cached(data_dir_key,settings) * raw
     return _scalar_or_array(flux, original)
 
 

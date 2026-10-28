@@ -14,7 +14,8 @@ ArrayLike = Union[float, int, np.ndarray]
 EfficiencyModel = Literal["CsI2021"]
 Triplet = Tuple[int, int, str]
 
-A_TARGET: Dict[str, float] = {"Cs133": 133.0, "I127": 127.0}
+from .csi2021_definition import DEFINITION
+A_TARGET: Dict[str, float] = {name:a for name,key,a in DEFINITION.physical.targets}
 
 
 def _asarray(x: ArrayLike) -> np.ndarray:
@@ -36,12 +37,12 @@ def slow_counts_csi2021(
     wc_triplets: Optional[Mapping[Triplet, complex]] = None,
     *,
     include_sm: bool = True,
-    sin2thetaW: float = 0.2387,
-    c10_mass_mode: str = "quark_mass_resolved",
-    n_er: int = 21,
-    n_enu: int = 120,
-    n_pe_bin: int = 8,
-    pe_step: float = 3.0,
+    sin2thetaW: float = DEFINITION.reproduction_sin2thetaW,
+    c10_mass_mode: str = DEFINITION.physical.c10_mass_mode,
+    n_er: int = DEFINITION.numerical_profiles['slow']['n_er'],
+    n_enu: int = DEFINITION.numerical_profiles['slow']['n_enu'],
+    n_pe_bin: int = DEFINITION.numerical_profiles['slow']['n_pe_bin'],
+    pe_step: float = DEFINITION.numerical_profiles['slow']['pe_step'],
 ) -> Dict[str, Any]:
     """Compatibility view of the validated composable prediction.
 

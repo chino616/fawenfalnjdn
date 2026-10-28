@@ -17,8 +17,9 @@ from cevns_pyeft.statistics.profiling import (
 )
 
 
-N_BINS = 19
-SIGMA_ALPHA = 0.169
+from .definition import DEFINITION
+N_BINS = len(DEFINITION.observation.edges)-1
+SIGMA_ALPHA = DEFINITION.statistics.signal_sigma
 
 
 def _spectrum(values: object, *, name: str) -> np.ndarray:

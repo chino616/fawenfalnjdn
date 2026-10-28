@@ -28,8 +28,13 @@ class ConstantSNSState:
 
 @dataclass(frozen=True)
 class SNSLegacySource:
-    baseline_m: float = 19.3
-    yield_per_pot: float = 0.0848
+    from cevns_pyeft.experiments.coherent.csi2021_definition import DEFINITION as _D
+    baseline_m: float = _D.physical.run.baseline_m
+    yield_per_pot: float = _D.physical.run.yield_per_pot
+    energy_tabulation: tuple = _D.physical.run.energy_tabulation
+    node_support: tuple = _D.physical.run.node_support
+    num_points: int = _D.physical.run.num_points
+    interpolation: bool = _D.physical.run.interpolation
 
     def __post_init__(self):
         positive(self.baseline_m, "baseline_m")
@@ -39,10 +44,10 @@ class SNSLegacySource:
         if not isinstance(run, POTExposure):
             raise IncompatibleNormalizationError("SNSLegacySource requires POTExposure")
         config = SNSDataset(run.run_id, 0.0, self.baseline_m, run.total_pot, self.yield_per_pot,
-                            0.001, 300.0, 0.001, 56.0)
-        flux = build_neutrino_empirical_flux_sns(config)
-        support = EnergySupport((0.0, emax_muon_dar_mev()), (0.001, 300.0),
-                                interpolation_id="linear_200_nodes_0.001_to_300",
+                            *self.energy_tabulation, *self.node_support)
+        flux = build_neutrino_empirical_flux_sns(config, num_points=self.num_points, use_interpolation=self.interpolation)
+        support = EnergySupport((0.0, emax_muon_dar_mev()), self.energy_tabulation,
+                                interpolation_id=f"linear_{self.num_points}_nodes_{self.energy_tabulation}",
                                 convention_id="legacy_sns_56MeV_node_mask_muon_DAR_quadrature")
         components = []
         for flavor in ("mu", "e", "mub"):
@@ -57,9 +62,9 @@ class SNSLegacySource:
                                 "total_pot": run.total_pot, "yield_per_pot": self.yield_per_pot,
                                 "fluence_per_species_cm^-2": flux["basic"]["NTimeIntegratedFlux_cm^-2"],
                                 "input_unit": "per_POT", "output_unit": "cm^-2 MeV^-1",
-                                "node_mask_MeV": (0.001, 56.0), "physical_endpoint_audited": False})
+                                "node_mask_MeV": self.node_support, "physical_endpoint_audited": False})
 
     def describe(self):
         return ModuleDescriptor("source", "sns_legacy", capabilities=("slow_1d", "fixed_state"),
                                 parameters={"baseline_m": self.baseline_m, "yield_per_pot": self.yield_per_pot,
-                                            "tabulation_nodes": 200, "tabulation_MeV": (0.001, 300), "node_mask_MeV": (0.001, 56)})
+                                            "tabulation_nodes": self.num_points, "tabulation_MeV": self.energy_tabulation, "node_mask_MeV": self.node_support, "interpolation": self.interpolation})

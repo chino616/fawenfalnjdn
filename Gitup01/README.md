@@ -42,7 +42,19 @@ $env:PYTHONPATH = (Resolve-Path .\src).Path
 python -B -m cevns_pyeft.cli
 ```
 
-`data` 位于源码树外，部分接口和测试使用相对路径，因此应从此 `Gitup01` 目录运行。当前打包配置不会自动把外置数据收入 wheel；保留此目录结构才能直接使用完整数据。
+`data` 是外置资源，不收入 wheel。旧接口与部分历史测试仍应从 `Gitup01` 目录运行；新的 `load_experiment(..., resources=ResourceCatalog(外置数据根))` 支持安装 wheel 后从项目外目录调用。
+
+## 按实验选择和替换
+
+四个既有数据集现分别有独立定义文件：
+`experiments/coherent/{csi2021,csi2017,ar2020}_definition.py` 与
+`experiments/conus_plus/definition.py`。统一使用 `load_experiment`、
+`predict_experiment`、`evaluate_experiment`；通过 selection 配置的 enabled 增减本次计算。
+完整例子、资源根设置、参数替换与各实验的 Fast/统计边界见
+[独立实验使用说明](docs/experiment_modularization/USAGE.md)、
+[参数归属表](docs/experiment_modularization/PARAMETER_OWNERSHIP.md) 和
+[能力矩阵](docs/experiment_modularization/CAPABILITY_MATRIX.md)。
+旧 `get_experiment` 返回字典的合同保留。
 
 ## 基线和限制
 

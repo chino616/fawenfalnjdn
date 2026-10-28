@@ -16,31 +16,38 @@ from cevns_pyeft.rates.differential import _trapz
 
 Triplet = Tuple[int, int, str]
 
-CSI2017_PE_PER_KEV = 1.17
-CSI2017_BINS_25 = np.linspace(0.001, 50.0, 26, dtype=float)
+from .csi2017_definition import DEFINITION
+CSI2017_PE_PER_KEV = DEFINITION.physical.pe_per_keV
+CSI2017_BINS_25 = np.asarray(DEFINITION.observation.edges)
 CSI2017_WIDTHS_25 = np.diff(CSI2017_BINS_25)
-CSI2017_DEFAULT_EFFICIENCY_RELATIVE_PATH = "data/datafiles/COHERENT_eff.txt"
-
+CSI2017_DEFAULT_EFFICIENCY_RELATIVE_PATH = next(r.path for r in DEFINITION.resources if r.id == 'efficiency')
 
 def slow_counts_csi2017(
     responses_json: str | Path,
     wc_triplets: Optional[Mapping[Triplet, complex]] = None,
     *,
     include_sm: bool = True,
-    sin2thetaW: float = 0.2387,
-    c10_mass_mode: str = "quark_mass_resolved",
+    sin2thetaW: float = DEFINITION.reproduction_sin2thetaW,
+    c10_mass_mode: str = DEFINITION.physical.c10_mass_mode,
     n_er: int = 21,
-    n_enu: int = 120,
+    n_enu: int = DEFINITION.numerical_profiles['slow']['n_enu'],
     n_pe_bin: int = 8,
     pe_step: float = 3.0,
     efficiency_data_path: str | Path = CSI2017_DEFAULT_EFFICIENCY_RELATIVE_PATH,
+    definition=None,
 ) -> Dict[str, Any]:
-    _ = (n_er, n_pe_bin, pe_step)
-    db, flux = ResponseDB(responses_json), loadNeutrinoEmpiricalFluxSNS("CsI2017")
-    eff = _interp_eff(_data_path(responses_json, efficiency_data_path), 0, 1, low=1.0e-10, threshold=4.9)
-    pe_grid = np.linspace(CSI2017_BINS_25[0], CSI2017_BINS_25[-1], 251, dtype=float)
-    er_grid = pe_grid / CSI2017_PE_PER_KEV
-    targets = (("I127", "I", 127.0 / (127.0 + 133.0)), ("Cs133", "Cs133", 133.0 / (127.0 + 133.0)))
+    config = definition or DEFINITION
+    physical = config.physical
+    bins = np.asarray(config.observation.edges)
+    widths = np.diff(bins)
+    from .sns import build_neutrino_empirical_flux_sns
+    db = ResponseDB(responses_json)
+    flux = build_neutrino_empirical_flux_sns(physical.run.legacy_dataset(config.dataset_id), num_points=physical.run.num_points, use_interpolation=physical.run.interpolation)
+    eff = _interp_eff(_data_path(responses_json, efficiency_data_path), *physical.efficiency_columns,
+                      low=physical.efficiency_low, threshold=physical.efficiency_threshold)
+    pe_grid = np.linspace(bins[0], bins[-1], physical.slow_pe_nodes, dtype=float)
+    er_grid = pe_grid / physical.pe_per_keV
+    targets = tuple((name,key,a/sum(t[2] for t in physical.targets)) for name,key,a in reversed(physical.targets))
     raw = {flv: {} for flv in ("mu", "e", "mub")}
     counts = {}
     for flv in raw:
@@ -57,13 +64,14 @@ def slow_counts_csi2017(
                 c10_mass_mode,
                 n_enu,
                 source_state=sns_component_state(flv),
+                nucleus_mass_kg=next(a for name,key,a in physical.targets if name==target)*physical.atomic_mass_kg,
             )
-            dndpe = np.asarray(eff(pe_grid), dtype=float) * 14.6 * (1.0 / CSI2017_PE_PER_KEV) * rate_er
+            dndpe = np.asarray(eff(pe_grid), dtype=float) * physical.mass_kg * (1.0 / physical.pe_per_keV) * rate_er
             raw[flv][target] = dndpe
             spectrum += float(weight) * dndpe
-        vals = np.zeros(CSI2017_WIDTHS_25.size, dtype=float)
+        vals = np.zeros(widths.size, dtype=float)
         for i in range(vals.size):
-            left, right = CSI2017_BINS_25[i], CSI2017_BINS_25[i + 1]
+            left, right = bins[i], bins[i + 1]
             inner = pe_grid[(pe_grid > left) & (pe_grid < right)]
             xs = np.r_[left, inner, right]
             vals[i] = float(_trapz(np.interp(xs, pe_grid, spectrum), xs))
@@ -71,11 +79,11 @@ def slow_counts_csi2017(
     counts["total"] = counts["mu"] + counts["e"] + counts["mub"]
     return {
         "counts_per_bin": counts,
-        "counts_per_npe": {k: v / CSI2017_WIDTHS_25 for k, v in counts.items()},
+        "counts_per_npe": {k: v / widths for k, v in counts.items()},
         "target_flavor_dndpe_grid": raw,
         "pe_grid": pe_grid,
-        "pe_bins": CSI2017_BINS_25.copy(),
-        "dataset": "CsI2017",
+        "pe_bins": bins.copy(),
+        "dataset": config.dataset_id,
     }
 
 

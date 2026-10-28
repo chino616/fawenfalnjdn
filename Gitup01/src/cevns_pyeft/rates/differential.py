@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Any, Dict, Literal, Mapping, Optional, Tuple, Union
@@ -135,24 +135,28 @@ def enr_max_keV(A: int, *, Emax_MeV: Optional[float]=None) -> float:
     )
     return endpoint_GeV / c.keV
 
-def eee_quenching_csi(enr_keV: ArrayLike) -> ArrayLike:
-    a = 0.0554628
-    b = 4.30681
-    c3 = -111.707
-    d4 = 840.384
+def eee_quenching_csi(enr_keV: ArrayLike, *, quenching=None) -> ArrayLike:
+    if quenching is None:
+        from cevns_pyeft.experiments.coherent.csi2021_definition import DEFINITION
+        quenching = DEFINITION.physical.quenching
+    a, b, c3, d4 = quenching
     x = _asarray(enr_keV)
     y = x * 0.001
     out = 1000.0 * (a * y + b * y ** 2 + c3 * y ** 3 + d4 * y ** 4)
     return _scalar_or_array(out, enr_keV)
 
-def p_smearing_csi(pe: ArrayLike, enr_keV: float) -> ArrayLike:
-    Eee = float(eee_quenching_csi(enr_keV))
+def p_smearing_csi(pe: ArrayLike, enr_keV: float, *, quenching=None, gamma_a=None, gamma_b=None) -> ArrayLike:
+    from cevns_pyeft.experiments.coherent.csi2021_definition import DEFINITION
+    params = DEFINITION.physical
+    gamma_a = params.gamma_a if gamma_a is None else gamma_a
+    gamma_b = params.gamma_b if gamma_b is None else gamma_b
+    Eee = float(eee_quenching_csi(enr_keV, quenching=quenching))
     if not Eee > 0.0:
         xx = _asarray(pe)
         out = np.zeros_like(xx)
         return _scalar_or_array(out, pe)
-    a = 0.0749 / Eee
-    b = 9.56 * Eee
+    a = gamma_a / Eee
+    b = gamma_b * Eee
     k = 1.0 + b
     lam = a * (1.0 + b)
     xx = _asarray(pe)

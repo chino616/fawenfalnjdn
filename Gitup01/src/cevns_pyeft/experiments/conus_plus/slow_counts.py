@@ -43,15 +43,17 @@ from cevns_pyeft.theory.kinematics import (
 )
 
 
-DATASET_ID = "conus_plus_2025_c2c3c5_ge73_pyeft"
-RESPONSE_KEY = "Ge73"
-SIN2_THETA_W = 0.23857
-NUCLEI_PER_KG = 8.249507893261811e24
-SECONDS_PER_DAY = 86400.0
-EXPOSURES_KG_DAY = np.asarray([119.0, 119.0, 119.0], dtype=float)
+from .definition import DEFINITION
+DEFAULT_SETTINGS = DEFINITION.physical
+DATASET_ID = DEFINITION.dataset_id
+RESPONSE_KEY = DEFAULT_SETTINGS.response_key
+SIN2_THETA_W = DEFINITION.reproduction_sin2thetaW
+NUCLEI_PER_KG = DEFAULT_SETTINGS.nuclei_per_kg
+SECONDS_PER_DAY = DEFAULT_SETTINGS.seconds_per_day
+EXPOSURES_KG_DAY = np.asarray([x.kg_day for x in DEFAULT_SETTINGS.exposures])
 EXPOSURES_KG_DAY.setflags(write=False)
-ENERGY_REGION_LABELS = ("E_nu_le_8_MeV", "E_nu_gt_8_MeV")
-ENERGY_REGION_BOUNDS_MEV = ((0.0, 8.0), (8.0, 10.0))
+ENERGY_REGION_LABELS = DEFAULT_SETTINGS.energy_region_labels
+ENERGY_REGION_BOUNDS_MEV = DEFAULT_SETTINGS.energy_region_bounds_mev
 
 DEFAULT_RESPONSE_JSON = (
     Path(__file__).resolve().parents[4]
@@ -83,11 +85,12 @@ def _gauss_interval(
 def _energy_segments(
     recoil_kev: float,
     energy_range_mev: Optional[tuple[float, float]] = None,
+    *, settings=DEFAULT_SETTINGS, source_data_dir=None,
 ) -> tuple[tuple[float, float], ...]:
     if not np.isfinite(recoil_kev) or recoil_kev < 0.0:
         raise ValueError("recoil_kev must be finite and non-negative")
 
-    support_min, support_max = map(float, ENERGY_SUPPORT_MEV)
+    support_min, support_max = map(float, settings.source.energy_support_mev)
     if energy_range_mev is None:
         requested_min, requested_max = support_min, support_max
     else:
@@ -101,7 +104,7 @@ def _energy_segments(
                 "energy_range_mev must have finite upper >= lower"
             )
 
-    mass_gev = 73.0 * float(c.AMU_GEV)
+    mass_gev = settings.target_A * float(c.AMU_GEV)
     kinematic_min_mev = float(
         minimum_neutrino_energy_GeV(float(recoil_kev) * c.keV, mass_gev)
         / c.MeV
@@ -111,8 +114,8 @@ def _energy_segments(
     if minimum_mev >= maximum_mev:
         return ()
 
-    low_nodes, _ = kopeikin_nodes()
-    diagnostic_breaks = np.asarray([8.0], dtype=float)
+    low_nodes, _ = kopeikin_nodes(data_dir=source_data_dir)
+    diagnostic_breaks = np.asarray([b[1] for b in settings.energy_region_bounds_mev[:-1]], dtype=float)
     candidate_breaks = np.concatenate((low_nodes, diagnostic_breaks))
     internal_breaks = candidate_breaks[
         (candidate_breaks > minimum_mev)
@@ -151,9 +154,10 @@ def true_recoil_rate_components_per_kg_day(
     *,
     include_sm: bool = True,
     sin2theta_w: float = SIN2_THETA_W,
-    n_energy: int = 12,
+    n_energy: int = DEFINITION.numerical_profiles['slow']['n_energy'],
     energy_range_mev: Optional[tuple[float, float]] = None,
-    c10_mass_mode: str = "quark_mass_resolved",
+    c10_mass_mode: str = DEFAULT_SETTINGS.c10_mass_mode,
+    settings=DEFAULT_SETTINGS, source_data_dir=None,
 ) -> np.ndarray:
     """Return component rates in events/(kg day keVnr).
 
@@ -168,7 +172,7 @@ def true_recoil_rate_components_per_kg_day(
     if not np.isfinite(sin2theta_w):
         raise ValueError("sin2theta_w must be finite")
 
-    response = ResponseDB(responses_json).get_by_symbol_A("Ge", 73)
+    response = ResponseDB(responses_json).get(settings.response_key)
     state = source_state()
     flat = original.reshape(-1)
     rates = np.zeros((flat.size, len(COMPONENTS)), dtype=float)
@@ -176,7 +180,7 @@ def true_recoil_rate_components_per_kg_day(
     for recoil_index, recoil in enumerate(flat):
         for lower, upper in _energy_segments(
             float(recoil),
-            energy_range_mev=energy_range_mev,
+            energy_range_mev=energy_range_mev, settings=settings, source_data_dir=source_data_dir,
         ):
             energy_mev, weights_mev = _gauss_interval(
                 n_energy,
@@ -201,7 +205,7 @@ def true_recoil_rate_components_per_kg_day(
             for component_index, component in enumerate(COMPONENTS):
                 integrand = (
                     np.asarray(
-                        differential_flux(component, energy_mev),
+                        differential_flux(component, energy_mev, data_dir=source_data_dir, settings=settings.source),
                         dtype=float,
                     )
                     * differential
@@ -210,7 +214,7 @@ def true_recoil_rate_components_per_kg_day(
                     np.dot(weights_mev, integrand)
                 )
 
-    rates *= NUCLEI_PER_KG * SECONDS_PER_DAY
+    rates *= settings.nuclei_per_kg * settings.seconds_per_day
     return _real_nonnegative(
         rates.reshape(original.shape + (len(COMPONENTS),)),
         name="true recoil rate",
@@ -254,14 +258,22 @@ def slow_counts_conus_plus(
     include_sm: bool = True,
     sin2theta_w: float = SIN2_THETA_W,
     exposures_kg_day: Optional[Mapping[str, float] | np.ndarray] = None,
-    n_recoil: int = 96,
-    n_energy: int = 12,
-    c10_mass_mode: str = "quark_mass_resolved",
+    n_recoil: int = DEFINITION.numerical_profiles['slow']['n_recoil'],
+    n_energy: int = DEFINITION.numerical_profiles['slow']['n_energy'],
+    c10_mass_mode: str = DEFAULT_SETTINGS.c10_mass_mode,
+    settings=DEFAULT_SETTINGS, source_data_dir=None, bin_edges_evee=None,
 ) -> dict[str, Any]:
     """Directly integrate the CONUS+ candidate reconstructed spectrum."""
 
-    exposure = _coerce_exposures(exposures_kg_day)
-    mass_gev = 73.0 * float(c.AMU_GEV)
+    exposure = _coerce_exposures([e.kg_day for e in settings.exposures] if exposures_kg_day is None else exposures_kg_day)
+    BIN_EDGES_EVEE = np.asarray(DEFINITION.observation.edges if bin_edges_evee is None else bin_edges_evee)
+    ENERGY_SUPPORT_MEV = settings.source.energy_support_mev
+    ENERGY_REGION_BOUNDS_MEV = settings.energy_region_bounds_mev
+    ENERGY_REGION_LABELS = settings.energy_region_labels
+    NUCLEI_PER_KG = settings.nuclei_per_kg
+    SECONDS_PER_DAY = settings.seconds_per_day
+    RESPONSE_KEY = settings.response_key
+    mass_gev = settings.target_A * float(c.AMU_GEV)
     recoil_max_kev = float(
         two_body_recoil_max_GeV(
             float(ENERGY_SUPPORT_MEV[1]) * c.MeV,
@@ -285,7 +297,7 @@ def slow_counts_conus_plus(
                 sin2theta_w=sin2theta_w,
                 n_energy=n_energy,
                 energy_range_mev=bounds,
-                c10_mass_mode=c10_mass_mode,
+                c10_mass_mode=c10_mass_mode, settings=settings, source_data_dir=source_data_dir,
             )
             for bounds in ENERGY_REGION_BOUNDS_MEV
         ],
@@ -295,7 +307,7 @@ def slow_counts_conus_plus(
 
     acceptances = np.stack(
         [
-            detector_bin_acceptance(recoil_nodes, detector)
+            detector_bin_acceptance(recoil_nodes, detector, settings=settings.detector, edges_evee=BIN_EDGES_EVEE)
             for detector in DETECTOR_ORDER
         ],
         axis=0,

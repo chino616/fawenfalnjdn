@@ -36,6 +36,8 @@ from cevns_pyeft.foundation import constants as c
 from cevns_pyeft.theory.kinematics import two_body_recoil_max_GeV
 
 
+from .definition import DEFINITION
+DEFAULT_SETTINGS = DEFINITION.physical
 CACHE_SCHEMA_VERSION = 1
 FAST_TYPE = "detector_response_matrix"
 Triplet = Tuple[int, int, str]
@@ -74,12 +76,13 @@ def _coerce_exposures(
 
 def _recoil_quadrature(
     n_recoil: int,
+    *, settings=DEFAULT_SETTINGS,
 ) -> tuple[np.ndarray, np.ndarray, float]:
     if int(n_recoil) != n_recoil or n_recoil < 2:
         raise ValueError("n_recoil must be an integer >= 2")
-    mass_gev = 73.0 * float(c.AMU_GEV)
+    mass_gev = settings.target_A * float(c.AMU_GEV)
     maximum_kev = float(
-        two_body_recoil_max_GeV(10.0 * c.MeV, mass_gev) / c.keV
+        two_body_recoil_max_GeV(settings.source.energy_support_mev[1] * c.MeV, mass_gev) / c.keV
     )
     nodes, weights = np.polynomial.legendre.leggauss(int(n_recoil))
     recoil = 0.5 * maximum_kev * (nodes + 1.0)
@@ -92,6 +95,7 @@ def _metadata_without_key(
     n_recoil: int,
     maximum_kev: float,
     exposures: np.ndarray,
+    settings=DEFAULT_SETTINGS, edges_evee=BIN_EDGES_EVEE,
 ) -> dict[str, Any]:
     return {
         "schema_version": CACHE_SCHEMA_VERSION,
@@ -109,7 +113,7 @@ def _metadata_without_key(
         "unit": "kg_day_keVnr",
         "detector_order": list(DETECTOR_ORDER),
         "component_order_for_reconstruction": list(COMPONENTS),
-        "bin_edges_evee": BIN_EDGES_EVEE.tolist(),
+        "bin_edges_evee": np.asarray(edges_evee).tolist(),
         "exposures_kg_day": exposures.tolist(),
         "recoil_quadrature": {
             "kind": "Gauss-Legendre",
@@ -117,11 +121,12 @@ def _metadata_without_key(
             "support_kevnr": [0.0, float(maximum_kev)],
         },
         "detector_response_contract": {
-            "lindhard_k": LINDHARD_K,
-            "sigma0_evee": SIGMA0_EVEE,
-            "fano_factor": FANO_FACTOR,
-            "pair_creation_energy_ev": PAIR_CREATION_ENERGY_EV,
-            "thresholds_evee": dict(DETECTOR_THRESHOLDS_EVEE),
+            "lindhard_k": settings.detector.lindhard_k,
+            **({"germanium_z":settings.detector.germanium_z} if settings.detector.germanium_z != DEFAULT_SETTINGS.detector.germanium_z else {}),
+            "sigma0_evee": settings.detector.sigma0_evee,
+            "fano_factor": settings.detector.fano_factor,
+            "pair_creation_energy_ev": settings.detector.pair_creation_energy_ev,
+            "thresholds_evee": dict(settings.detector.thresholds_evee),
             "gaussian_domain": "full_real_line",
             "analysis_window_renormalization": False,
             "efficiency_variable": "reconstructed_energy_evee",
@@ -151,14 +156,15 @@ def _cache_key(metadata_without_key: Mapping[str, Any]) -> str:
 
 def build_detector_response_matrix(
     *,
-    n_recoil: int = 128,
+    n_recoil: int = DEFINITION.numerical_profiles['fast']['n_recoil'],
     exposures_kg_day: Optional[Mapping[str, float] | np.ndarray] = None,
+    settings=DEFAULT_SETTINGS, edges_evee=BIN_EDGES_EVEE,
 ) -> dict[str, Any]:
-    exposures = _coerce_exposures(exposures_kg_day)
-    recoil, recoil_weights, maximum_kev = _recoil_quadrature(n_recoil)
+    exposures = _coerce_exposures([e.kg_day for e in settings.exposures] if exposures_kg_day is None else exposures_kg_day)
+    recoil, recoil_weights, maximum_kev = _recoil_quadrature(n_recoil, settings=settings)
     acceptance = np.stack(
         [
-            detector_bin_acceptance(recoil, detector)
+            detector_bin_acceptance(recoil, detector, settings=settings.detector, edges_evee=edges_evee)
             for detector in DETECTOR_ORDER
         ],
         axis=0,
@@ -171,7 +177,7 @@ def build_detector_response_matrix(
     metadata = _metadata_without_key(
         n_recoil=int(n_recoil),
         maximum_kev=maximum_kev,
-        exposures=exposures,
+        exposures=exposures, settings=settings, edges_evee=edges_evee,
     )
     metadata["cache_key_sha256"] = _cache_key(metadata)
     cache = {
@@ -179,14 +185,14 @@ def build_detector_response_matrix(
         "recoil_nodes_kev": recoil,
         "recoil_weights_kev": recoil_weights,
         "exposures_kg_day": exposures,
-        "bin_edges_evee": BIN_EDGES_EVEE.copy(),
+        "bin_edges_evee": np.asarray(edges_evee).copy(),
         "weighted_folding_kg_day_kev": weighted,
     }
-    validate_detector_response_matrix(cache)
+    validate_detector_response_matrix(cache, settings=settings, edges_evee=edges_evee)
     return cache
 
 
-def validate_detector_response_matrix(cache: Mapping[str, Any]) -> None:
+def validate_detector_response_matrix(cache: Mapping[str, Any], *, settings=DEFAULT_SETTINGS, edges_evee=BIN_EDGES_EVEE) -> None:
     metadata = dict(cache.get("metadata", {}))
     if metadata.get("schema_version") != CACHE_SCHEMA_VERSION:
         raise StaleConusResponseMatrixError(
@@ -216,11 +222,11 @@ def validate_detector_response_matrix(cache: Mapping[str, Any]) -> None:
     expected_shape = (
         len(DETECTOR_ORDER),
         n_recoil,
-        BIN_EDGES_EVEE.size - 1,
+        len(edges_evee) - 1,
     )
     if matrix.shape != expected_shape:
         raise ValueError("weighted folding matrix has the wrong shape")
-    if not np.array_equal(edges, BIN_EDGES_EVEE):
+    if not np.array_equal(edges, edges_evee):
         raise StaleConusResponseMatrixError(
             "analysis bin edges changed"
         )
@@ -232,10 +238,13 @@ def validate_detector_response_matrix(cache: Mapping[str, Any]) -> None:
     maximum_kev = float(
         metadata["recoil_quadrature"]["support_kevnr"][1]
     )
+    expected_recoil, expected_weights, expected_max = _recoil_quadrature(n_recoil, settings=settings)
+    if not np.array_equal(recoil, expected_recoil) or not np.array_equal(weights,expected_weights) or maximum_kev != expected_max:
+        raise StaleConusResponseMatrixError('source support or recoil quadrature changed')
     current = _metadata_without_key(
         n_recoil=n_recoil,
         maximum_kev=maximum_kev,
-        exposures=exposures,
+        exposures=exposures, settings=settings, edges_evee=edges_evee,
     )
     if metadata.get("cache_key_sha256") != _cache_key(current):
         raise StaleConusResponseMatrixError(
@@ -251,10 +260,11 @@ def validate_detector_response_matrix(cache: Mapping[str, Any]) -> None:
 def reconstruct_from_detector_response_matrix(
     cache: Mapping[str, Any],
     true_recoil_rate_components_per_kg_day_kev: np.ndarray,
+    *, settings=DEFAULT_SETTINGS, edges_evee=BIN_EDGES_EVEE,
 ) -> np.ndarray:
     """Contract rate[node,component] into events[detector,component,bin]."""
 
-    validate_detector_response_matrix(cache)
+    validate_detector_response_matrix(cache, settings=settings, edges_evee=edges_evee)
     matrix = np.asarray(
         cache["weighted_folding_kg_day_kev"],
         dtype=float,
@@ -293,10 +303,11 @@ def fast_counts_conus_plus_response_matrix(
     *,
     include_sm: bool = True,
     sin2theta_w: float = SIN2_THETA_W,
-    n_energy: int = 16,
-    c10_mass_mode: str = "quark_mass_resolved",
+    n_energy: int = DEFINITION.numerical_profiles['fast']['n_energy'],
+    c10_mass_mode: str = DEFAULT_SETTINGS.c10_mass_mode,
+    settings=DEFAULT_SETTINGS, edges_evee=BIN_EDGES_EVEE, source_data_dir=None,
 ) -> dict[str, Any]:
-    validate_detector_response_matrix(cache)
+    validate_detector_response_matrix(cache, settings=settings, edges_evee=edges_evee)
     recoil = np.asarray(cache["recoil_nodes_kev"], dtype=float)
     rate = true_recoil_rate_components_per_kg_day(
         recoil,
@@ -305,9 +316,9 @@ def fast_counts_conus_plus_response_matrix(
         include_sm=include_sm,
         sin2theta_w=sin2theta_w,
         n_energy=n_energy,
-        c10_mass_mode=c10_mass_mode,
+        c10_mass_mode=c10_mass_mode, settings=settings, source_data_dir=source_data_dir,
     )
-    counts = reconstruct_from_detector_response_matrix(cache, rate)
+    counts = reconstruct_from_detector_response_matrix(cache, rate, settings=settings, edges_evee=edges_evee)
     detector = np.sum(counts, axis=1)
     combined = np.sum(detector, axis=0)
     return {
@@ -325,8 +336,9 @@ def fast_counts_conus_plus_response_matrix(
 def save_detector_response_matrix(
     path: str | Path,
     cache: Mapping[str, Any],
+    *, settings=DEFAULT_SETTINGS, edges_evee=BIN_EDGES_EVEE,
 ) -> tuple[Path, Path]:
-    validate_detector_response_matrix(cache)
+    validate_detector_response_matrix(cache, settings=settings, edges_evee=edges_evee)
     npz_path = Path(path)
     if npz_path.suffix != ".npz":
         raise ValueError(
@@ -372,6 +384,7 @@ def save_detector_response_matrix(
 
 def load_detector_response_matrix(
     path: str | Path,
+    *, settings=DEFAULT_SETTINGS, edges_evee=BIN_EDGES_EVEE,
 ) -> dict[str, Any]:
     npz_path = Path(path)
     json_path = npz_path.with_suffix(".json")
@@ -393,7 +406,7 @@ def load_detector_response_matrix(
                 arrays["weighted_folding_kg_day_kev"]
             ),
         }
-    validate_detector_response_matrix(cache)
+    validate_detector_response_matrix(cache, settings=settings, edges_evee=edges_evee)
     return cache
 
 

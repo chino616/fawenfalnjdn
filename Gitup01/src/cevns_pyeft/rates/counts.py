@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Any, Callable, Dict, Optional, Tuple
@@ -73,10 +73,11 @@ def _rate_per_kg(
     n_enu,
     *,
     source_state: NeutrinoState,
+    nucleus_mass_kg=None,
 ):
     A = int(resp.basic.get('A'))
     mA_GeV = A * float(c.AMU_GEV)
-    mass_kg = A * 1.6605390666e-27
+    mass_kg = A * 1.6605390666e-27 if nucleus_mass_kg is None else float(nucleus_mass_kg)
     enu = np.linspace(0.0, emax_muon_dar_mev(), int(n_enu), dtype=float)
     phi = _choose_phi_cont(flux_obj, flavor)
     mu_E0, mu_weight = flux_obj['measured']['muLine']

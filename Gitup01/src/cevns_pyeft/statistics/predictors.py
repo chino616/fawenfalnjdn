@@ -85,7 +85,10 @@ def predict_raw_components(
     sin2thetaW: float = 0.2387,
     **kwargs,
 ) -> RawComponentPrediction:
-    dataset = str(experiment)
+    from cevns_pyeft.experiments.catalog import BUILTIN_CATALOG
+    dataset = BUILTIN_CATALOG.canonical_id(str(experiment))
+    if dataset not in ("CsI2021", "CsI2017", "Ar2020"):
+        raise ValueError(f"legacy statistical predictor does not support {dataset!r}")
     wc = dict(wilson_np or {})
     responses = Path(responses_json) if responses_json is not None else _responses_default()
     if mode == "slow":
@@ -124,25 +127,39 @@ def predict_raw_components(
         else:
             raise ValueError("experiment must be one of: CsI2021, CsI2017, Ar2020")
     elif mode == "fast":
+        if kwargs:
+            raise TypeError(f"saved kernel cannot consume overrides: {sorted(kwargs)}")
         if fast_kernel_path is None:
             raise ValueError("fast mode requires fast_kernel_path")
-        from cevns_pyeft.kernels.storage import reconstruct_saved_kernel
+        from cevns_pyeft.kernels.storage import load_fastscan_template
+        from cevns_pyeft.kernels.basis import coeff_tensor_from_triplets
+        from cevns_pyeft.kernels.reconstruction import reconstruct_counts_from_kernel
+        _kernel = load_fastscan_template(fast_kernel_path)
+        actual_id = _kernel["metadata"].get("dataset")
+        if actual_id != dataset:
+            raise ValueError(f"requested dataset {dataset!r} differs from kernel dataset {actual_id!r}")
+        expected = BUILTIN_CATALOG.definition(dataset).observation.edges
+        if not np.array_equal(_kernel["metadata"].get("pe_bins"), _kernel["pe_bins"]) or not np.array_equal(_kernel["pe_bins"], expected):
+            raise ValueError(f"{dataset}: saved kernel observation/binning mismatch")
+        targets = tuple(_kernel['targets'])
+        valid_targets = (('Ar40',),) if dataset == 'Ar2020' else (('CsI',),('Cs133','I127'),('Cs133','I127','CsI'))
+        if targets not in valid_targets or set(_kernel['source_flavors']) != {'e','mu','mub'} or len(_kernel['source_flavors']) != 3:
+            raise ValueError(f'{dataset}: saved kernel target/source layout mismatch')
+        result = reconstruct_counts_from_kernel(_kernel, coeff_tensor_from_triplets(
+            _kernel['basis'], wc, include_sm=include_sm, sin2thetaW=sin2thetaW))
 
-        _kernel, result = reconstruct_saved_kernel(
-            fast_kernel_path,
-            wc,
-            include_sm=include_sm,
-            sin2thetaW=sin2thetaW,
-        )
     else:
         raise ValueError("mode must be 'slow' or 'fast'")
 
-    return _prediction_from_backend_result(
+    prediction = _prediction_from_backend_result(
         result,
         experiment=dataset,
         mode=mode,
         include_sm=include_sm,
     )
+    if mode == 'fast':
+        prediction.metadata['kernel_identity'] = 'legacy_identity; checked dataset, bins, source/target layout; no full physics fingerprint'
+    return prediction
 
 
 def predict_raw_counts(

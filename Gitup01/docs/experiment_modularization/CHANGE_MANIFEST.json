@@ -1,0 +1,365 @@
+{
+  "project": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\Gitup01",
+  "task": "experiment_modularization_M0_M7",
+  "review_commit": "d7182a116353faf0ba5ba581338db1d2a4b63074",
+  "git_working_tree": "project has no .git; no branch or push performed in this task",
+  "changes": [
+    {
+      "path": "README.md",
+      "action": "modify",
+      "sha256": "f6a3f35d97b6c82b13c96f5e72a75f90e47b3805f8955f04e2eb9d149ea8708b",
+      "recovery_backup": "backup\\README.md",
+      "recovery_sha256": "3f0e30160e24f1f508fcab6274dacd0aeb930cfb0cfeaf09acd1b77bbaa3dc7a"
+    },
+    {
+      "path": "docs/experiment_modularization/CAPABILITY_MATRIX.md",
+      "action": "create",
+      "sha256": "c4e3b84738532928955d8a108f2c1e5e225f1ca7210eec761430a04deb49cd4b"
+    },
+    {
+      "path": "docs/experiment_modularization/PARAMETER_OWNERSHIP.md",
+      "action": "create",
+      "sha256": "66bd24a669bd048e251a033511928e9dd1bd14a480c1bee27a13061a33717d51"
+    },
+    {
+      "path": "docs/experiment_modularization/SKILL_OPERATION_GUIDE.md",
+      "action": "create",
+      "sha256": "958c02e1f206537e26515a476fed5dadafeb554fae09ecabd4e25edd3c66db59"
+    },
+    {
+      "path": "docs/experiment_modularization/USAGE.md",
+      "action": "create",
+      "sha256": "96cd04f4aca29504bc16acc43731af281e884acb6929a88168bb660bbd75a6f4"
+    },
+    {
+      "path": "docs/experiment_modularization/analysis_selection.example.yaml",
+      "action": "create",
+      "sha256": "2d98f26c0daf20d191dd45680b38d79457bb6bc2e0ca840f734b6d97c0beb062"
+    },
+    {
+      "path": "docs/experiment_modularization/resolved_experiments.json",
+      "action": "create",
+      "sha256": "b7d8c136086a03caab6ce48a25400a20eb9f335e78f67f17741fd74058ce3aba"
+    },
+    {
+      "path": "examples/experiment_modularization/run_experiments.py",
+      "action": "create",
+      "sha256": "998889cf0bdd8c6b4062c4187099ebce0879fb35df4a8b2349c64767feb02125"
+    },
+    {
+      "path": "examples/experiment_modularization/synthetic_dataset.py",
+      "action": "create",
+      "sha256": "2d975641f6c46fbf9a59f2e54f8aea44a4bacd8bb8cc2817ab2af07f0114bd0d"
+    },
+    {
+      "path": "src/cevns_pyeft/detectors/csi2021.py",
+      "action": "modify",
+      "sha256": "62284716edaa735d7e47e05d5e9c5e64dac2808dadd706688baa57cfbe402491",
+      "m0_sha256": "8b98cd91cafc05c41d4db8c2e1872286e2571a0aa841b6a6a4b8219a7c11e277",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\detectors\\csi2021.py",
+      "recovery_sha256": "8b98cd91cafc05c41d4db8c2e1872286e2571a0aa841b6a6a4b8219a7c11e277"
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/__init__.py",
+      "action": "modify",
+      "sha256": "3c1e78ec41faf6d0a840f0d144df62ad604243fc5adb802cbd579c7e67ae695b",
+      "m0_sha256": "66af4c1ace3646a17f50dcff953c04e58ca12840e3339c75edc5ab68082c1946",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\experiments\\__init__.py",
+      "recovery_sha256": "66af4c1ace3646a17f50dcff953c04e58ca12840e3339c75edc5ab68082c1946"
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/catalog.py",
+      "action": "create",
+      "sha256": "e41e298f50bb06605216c44fd136c34f02fca972345615b3ec8a2feabc8c162a",
+      "m0_sha256": null
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/coherent/__init__.py",
+      "action": "modify",
+      "sha256": "b23433a3630c3f3ede4e38beb05c0623f8cb78bddf5b1f4df243b60db483e8d2",
+      "m0_sha256": "666a9518b49ad9d3b745df3da27d9e7c83d27580ad4faabeee0818acc91e1b12",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\experiments\\coherent\\__init__.py",
+      "recovery_sha256": "666a9518b49ad9d3b745df3da27d9e7c83d27580ad4faabeee0818acc91e1b12"
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/coherent/ar2020_definition.py",
+      "action": "create",
+      "sha256": "8d61f68a4b3dea4490f0f4a3a81923b877c6882e4cd1478dd74ef4d0a05ec03a",
+      "m0_sha256": null
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/coherent/csi2017_definition.py",
+      "action": "create",
+      "sha256": "d12011fcd81e1f418581a8ead519412c2065a202292b0304895a9cf3287f3737",
+      "m0_sha256": null
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/coherent/csi2021.py",
+      "action": "modify",
+      "sha256": "8e5e2242f67b6bf177ca73ff1ab8a37809c38c93594677fb5d17c7c514869469",
+      "m0_sha256": "bfd530d802e9170e47829f80236b1ebb4b343927caa23f85fe66b2dae87bb7f9",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\experiments\\coherent\\csi2021.py",
+      "recovery_sha256": "bfd530d802e9170e47829f80236b1ebb4b343927caa23f85fe66b2dae87bb7f9"
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/coherent/csi2021_definition.py",
+      "action": "create",
+      "sha256": "000fce2d62fe22fc2c8d8209dab79d0510838f7de2f1a7e70ec61b3f64a78901",
+      "m0_sha256": null
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/coherent/execution.py",
+      "action": "create",
+      "sha256": "5d7d5aea8ac5c2ebcfe3422489a38796547454c95bb2804bce64ff01e6656a8c",
+      "m0_sha256": null
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/coherent/fast_kernel_ar2020.py",
+      "action": "modify",
+      "sha256": "1d94943787f86b367e2622dbb96df61e27a09b2f5da880302e08f8ee4d3b7169",
+      "m0_sha256": "1e13b94217c014337525e2de67190569de549518bdd228ba565f439ec6eebb86",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\experiments\\coherent\\fast_kernel_ar2020.py",
+      "recovery_sha256": "1e13b94217c014337525e2de67190569de549518bdd228ba565f439ec6eebb86"
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/coherent/fast_kernel_csi2017.py",
+      "action": "modify",
+      "sha256": "0c0e1c2244770208a6b9d5652011e42aa4899552f9f18894a028d579edb34db3",
+      "m0_sha256": "b68346d491aa0c5d8a881680402856938f2865e1eb7a00eff5ed0e0148e493b2",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\experiments\\coherent\\fast_kernel_csi2017.py",
+      "recovery_sha256": "b68346d491aa0c5d8a881680402856938f2865e1eb7a00eff5ed0e0148e493b2"
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/coherent/fast_kernel_csi2021.py",
+      "action": "modify",
+      "sha256": "38da6d73254ff2359afcd493197ab85e395eb7a0f97853a442fa2553e4a2a2d3",
+      "m0_sha256": "b6c6805868210eeb77b57f78c1308e95c653357d2bcd4c4e0adbf0db0d0c1e12",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\experiments\\coherent\\fast_kernel_csi2021.py",
+      "recovery_sha256": "b6c6805868210eeb77b57f78c1308e95c653357d2bcd4c4e0adbf0db0d0c1e12"
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/coherent/slow_counts_ar2020.py",
+      "action": "modify",
+      "sha256": "eab6ca19d46e5be3620fa66645568539d13dc796f0688a9335bc161f0fed931e",
+      "m0_sha256": "cea4d5a54bf39469df159ad36e914ec726e8eb8b1dea4a79ea6cb66bc2581067",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\experiments\\coherent\\slow_counts_ar2020.py",
+      "recovery_sha256": "cea4d5a54bf39469df159ad36e914ec726e8eb8b1dea4a79ea6cb66bc2581067"
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/coherent/slow_counts_csi2017.py",
+      "action": "modify",
+      "sha256": "6140512f44ac72189545891ad5eeffbbc11780070f5176d77ba88835dba6b32d",
+      "m0_sha256": "17c2911cb604d207c29b1621cee6eb5e1fb7fcae109cf2d65e731b7242b57d9f",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\experiments\\coherent\\slow_counts_csi2017.py",
+      "recovery_sha256": "17c2911cb604d207c29b1621cee6eb5e1fb7fcae109cf2d65e731b7242b57d9f"
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/coherent/slow_counts_csi2021.py",
+      "action": "modify",
+      "sha256": "f717ca544c74b862de7c63d32c9e6cb90b7038bb60d38df98e54a5492da2513c",
+      "m0_sha256": "69eb1d36f604e94915b4d3e35e6e1575338d6a8abc898bbe87c346adab44871c",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\experiments\\coherent\\slow_counts_csi2021.py",
+      "recovery_sha256": "69eb1d36f604e94915b4d3e35e6e1575338d6a8abc898bbe87c346adab44871c"
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/coherent/sns.py",
+      "action": "modify",
+      "sha256": "b10bd6a4110d5d13244fc5213da5a636b656f25dd8994d4c69c48c1eb371e7ef",
+      "m0_sha256": "62fea553879bf80388bfaa1c5ca2b955698dbe86b422854ec296da4e3a316b1e",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\experiments\\coherent\\sns.py",
+      "recovery_sha256": "62fea553879bf80388bfaa1c5ca2b955698dbe86b422854ec296da4e3a316b1e"
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/coherent/statistics_binding.py",
+      "action": "create",
+      "sha256": "84b5b0b241acb2a1ba77bd0177dbb3b85d78900d2176970fa3ddc3636d6839f7",
+      "m0_sha256": null
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/conus_plus/__init__.py",
+      "action": "modify",
+      "sha256": "6949384a682adc70526b72aeccfa028515135d604f899c29b6e5eda3425cc7df",
+      "m0_sha256": "d9384be64e10bd4d1ad9dabe67da874c88b14a152bb5e272772de3a5a6431feb",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\experiments\\conus_plus\\__init__.py",
+      "recovery_sha256": "d9384be64e10bd4d1ad9dabe67da874c88b14a152bb5e272772de3a5a6431feb"
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/conus_plus/definition.py",
+      "action": "create",
+      "sha256": "9e258b0160424562a06f4720ac6c7272e850e6170c66f2b4659a111ea3a92d22",
+      "m0_sha256": null
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/conus_plus/detector_response.py",
+      "action": "modify",
+      "sha256": "994a88cf23364894df0956f51eaf1fee466c06ffd32ad82f49400de082355e87",
+      "m0_sha256": "6d794596d7c1d17477bb7c19add5d1cb058f11a04e9feddcdc4dcc4c3257c947",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\experiments\\conus_plus\\detector_response.py",
+      "recovery_sha256": "6d794596d7c1d17477bb7c19add5d1cb058f11a04e9feddcdc4dcc4c3257c947"
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/conus_plus/execution.py",
+      "action": "create",
+      "sha256": "2f152815631f77570b830f3c6712f83087c2c369335dd3e0df615ca45a3bfc37",
+      "m0_sha256": null
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/conus_plus/fast_kernel.py",
+      "action": "modify",
+      "sha256": "730ee75a8adf2cc1f54b688005f3b7b66efeb542d7994f8c28fb202830e82a48",
+      "m0_sha256": "147d9ba145572eea68c9c4745a602d67a6731bf7cc4dadce98fa865e9b4b78dd",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\experiments\\conus_plus\\fast_kernel.py",
+      "recovery_sha256": "147d9ba145572eea68c9c4745a602d67a6731bf7cc4dadce98fa865e9b4b78dd"
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/conus_plus/slow_counts.py",
+      "action": "modify",
+      "sha256": "7d07739098c92cf692cdc5c01b4f0b2c19ca95ccf895fc4b88e1abf2c8298f19",
+      "m0_sha256": "81d2719f18dd72758c720b7df5cad5ef55381db7adce5493ec95d0354114ae4f",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\experiments\\conus_plus\\slow_counts.py",
+      "recovery_sha256": "81d2719f18dd72758c720b7df5cad5ef55381db7adce5493ec95d0354114ae4f"
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/conus_plus/source.py",
+      "action": "modify",
+      "sha256": "1898fc525b7bb0b107bca9331f15331b6c99ba5fc69005e1e80962dd7dd037d4",
+      "m0_sha256": "dbd3dc2aee9fc83c0a01e4ca938c50055598961520ccb324a62a6bb87878fcce",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\experiments\\conus_plus\\source.py",
+      "recovery_sha256": "dbd3dc2aee9fc83c0a01e4ca938c50055598961520ccb324a62a6bb87878fcce"
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/conus_plus/statistics.py",
+      "action": "modify",
+      "sha256": "1084b2228d63603509d3f74a1ed200a87aab1adf9b7a9a5292128efebb9b76b6",
+      "m0_sha256": "b8c618501e91e1c0bb30df9bc15335fbff0fa9200fe01349a1746f6545039af3",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\experiments\\conus_plus\\statistics.py",
+      "recovery_sha256": "b8c618501e91e1c0bb30df9bc15335fbff0fa9200fe01349a1746f6545039af3"
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/definition.py",
+      "action": "create",
+      "sha256": "08b0347134107ec7855b3b8b069f5e1e9422adf061e974b1ac1a5e9a47e34ed9",
+      "m0_sha256": null
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/loader.py",
+      "action": "create",
+      "sha256": "16e5154543671b7bfa1420f9c7494dd1b355e1879b9992a1d9ca91b39316675c",
+      "m0_sha256": null
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/runtime.py",
+      "action": "create",
+      "sha256": "a5c772f4ab8e95241b07c84289618c357d111a1ccb39829c7d7d423c56050b7c",
+      "m0_sha256": null
+    },
+    {
+      "path": "src/cevns_pyeft/experiments/selection.py",
+      "action": "create",
+      "sha256": "90efe3798980f3f80ffe428701a04f97e58c177e20e307077133e0cda4b852a9",
+      "m0_sha256": null
+    },
+    {
+      "path": "src/cevns_pyeft/kernels/builder.py",
+      "action": "modify",
+      "sha256": "9d1c1635ee1fce8e261c0574897b457d4e974cbca1ca9419d95d989fda5c2adf",
+      "m0_sha256": "43452dde99d1509c48176bda0cd33c21931dfc7d8d3670518220426ce6c584dd",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\kernels\\builder.py",
+      "recovery_sha256": "43452dde99d1509c48176bda0cd33c21931dfc7d8d3670518220426ce6c584dd"
+    },
+    {
+      "path": "src/cevns_pyeft/rates/counts.py",
+      "action": "modify",
+      "sha256": "97489d69e40960c3ed11c0f049211728fe137c02650134282c57ab44254dce01",
+      "m0_sha256": "776630b714f3cc0b03fab897a4b4a34d25812744728654f38c4ab8ad2ea17733",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\rates\\counts.py",
+      "recovery_sha256": "776630b714f3cc0b03fab897a4b4a34d25812744728654f38c4ab8ad2ea17733"
+    },
+    {
+      "path": "src/cevns_pyeft/rates/differential.py",
+      "action": "modify",
+      "sha256": "c98637b4aff81dab44c488e804e96066b8d5385382b0a33687144083ad8b6a6c",
+      "m0_sha256": "d7e7c42c6eb92202e52524447328521c71c3a1050b4e93b6acc5adf9a16a85ce",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\rates\\differential.py",
+      "recovery_sha256": "d7e7c42c6eb92202e52524447328521c71c3a1050b4e93b6acc5adf9a16a85ce"
+    },
+    {
+      "path": "src/cevns_pyeft/sources/sns.py",
+      "action": "modify",
+      "sha256": "e2876f74bf9a469f33a5539ac0e197ee345d4dada2a4dc48a1760fd0214a923b",
+      "m0_sha256": "f17595cbcac174a3884e418b828d58c0a7a4b74768b19994d6574e48533dc57f",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\sources\\sns.py",
+      "recovery_sha256": "f17595cbcac174a3884e418b828d58c0a7a4b74768b19994d6574e48533dc57f"
+    },
+    {
+      "path": "src/cevns_pyeft/statistics/datasets.py",
+      "action": "modify",
+      "sha256": "8e12bcfbce83c68fa9ca33dfc2d449d13bef37d0df1bc7e7f6379eaa0930ef64",
+      "m0_sha256": "20d1ff2f0811144844b8cf7883020907a5f2969be949f101253444237694b455",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\statistics\\datasets.py",
+      "recovery_sha256": "20d1ff2f0811144844b8cf7883020907a5f2969be949f101253444237694b455"
+    },
+    {
+      "path": "src/cevns_pyeft/statistics/predictors.py",
+      "action": "modify",
+      "sha256": "b5544ab74a7079092a7151c11b64955e3c3e5e90aa44a7e7fc67f6d48cff7799",
+      "m0_sha256": "7fcb2369087275c78085ccd04addef92e74e883fd60413b3b0859c3b46f3016e",
+      "recovery_backup": "backup\\src\\cevns_pyeft\\statistics\\predictors.py",
+      "recovery_sha256": "7fcb2369087275c78085ccd04addef92e74e883fd60413b3b0859c3b46f3016e"
+    },
+    {
+      "path": "tests/test_experiment_modularization.py",
+      "action": "create",
+      "sha256": "5303fbd437b16b2861856dd9f0b8296fbd677b2d5cc31adfa59486ea40436713"
+    },
+    {
+      "path": "tools/_modularization_edit.py",
+      "action": "create",
+      "sha256": "24669a1adf32205e3b88e893fba3d65ab8508336a1356477b932e304ef096598"
+    },
+    {
+      "path": "tools/build_modularization_wheel.py",
+      "action": "create",
+      "sha256": "38fc7263035d47df210e442d39d59a29e3d754224d91776b25ee4abe81bcfb7a"
+    },
+    {
+      "path": "tools/capture_modularization_baseline.py",
+      "action": "create",
+      "sha256": "568b60172212fb7ba3e96b02965b3629f91fa657802c6e68acd93be90406dc94"
+    },
+    {
+      "path": "tools/finalize_modularization_report.py",
+      "action": "create",
+      "sha256": "3a0e61fdd9cdd56be98fd7428cb9e50b5385b490b89feb826306a02b0371be1e"
+    },
+    {
+      "path": "tools/verify_conus_statistics_migration.py",
+      "action": "create",
+      "sha256": "1f1ea74cef553b58fe940e15538b59417bb47e0201cd535da6c89cb378cf2821"
+    },
+    {
+      "path": "tools/verify_modularization_baseline.py",
+      "action": "create",
+      "sha256": "2e78dd17acd0abdc017581c7e7fe6572faf2902a35135c7c50c219388db7238f"
+    },
+    {
+      "path": "tools/verify_modularization_release.py",
+      "action": "create",
+      "sha256": "208f79e879e6984d5542d70f8fe84bd3f971ba77b05dcf1f17f63240c8e29b51"
+    },
+    {
+      "path": "tools/verify_unified_fast.py",
+      "action": "create",
+      "sha256": "55a113e356f2309c1a9b35e57447017616966f75474a859d434d733db816ffbb"
+    }
+  ],
+  "delete": [],
+  "original_data_files_verified_unchanged": 37,
+  "recovery": "backup/BACKUP_MANIFEST.md records every modified existing file and revision; backups are recovery-only",
+  "artifacts": "outputs/experiment_modularization holds baseline, test logs and local wheel; these are not runtime data",
+  "auxiliary_created": [
+    "docs/experiment_modularization/CHANGE_MANIFEST.json",
+    "docs/experiment_modularization/FILE_CHANGES.md",
+    "docs/experiment_modularization/MIGRATION_REPORT.md"
+  ]
+}

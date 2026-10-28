@@ -401,6 +401,7 @@ def _target_static(
     target: str,
     er_grid_keV: np.ndarray,
     fold_kernel: np.ndarray,
+    nucleus_mass_kg=None,
 ) -> TargetStatic:
     resp = ResponseDB(str(responses_json)).get(TARGET_KEY_MAP.get(target, target))
     A = int(resp.get_basic("A"))
@@ -421,7 +422,7 @@ def _target_static(
         target=target,
         A=A,
         mA_GeV=mA_GeV,
-        nucleus_mass_kg=A * 1.6605390666e-27,
+        nucleus_mass_kg=A * 1.6605390666e-27 if nucleus_mass_kg is None else float(nucleus_mass_kg),
         ER_grid_keV=np.asarray(er_grid_keV, dtype=float),
         ER_weights_keV=np.zeros_like(np.asarray(er_grid_keV, dtype=float)),
         q0_GeV=q0,
@@ -441,8 +442,9 @@ def _build_one_target_kernel_csi2017_ar(
     c10_mass_mode: str,
     detector_mass_kg: float,
     flavor_acceptance: Mapping[str, float] = FLAVOR_ACCEPTANCE_ONE,
+    flux=None,
 ) -> np.ndarray:
-    flux = load_flux(dataset)
+    flux = load_flux(dataset) if flux is None else flux
     B, F, H = len(basis_elements), len(FLAVORS), len(CHANNELS)
     R = static.ER_grid_keV.size
     kernel_rate = np.zeros((F, H, B, B, R), dtype=complex)
