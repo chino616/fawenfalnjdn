@@ -98,13 +98,8 @@ def _checked_anti(i: int, j: int, ct_i: FlavorMatrix, ct_j: FlavorMatrix, cp_i: 
     _assert_same_sector(i, j)
     return _anti(ct_i, ct_j, cp_i, cp_j)
 
-def responses_R(
-    ci_basis: Mapping[int, Tuple[FlavorMatrix, FlavorMatrix]],
-    kin: RKinematics,
-    *,
-    tau: int,
-    taup: int,
-) -> Dict[str, FlavorMatrix]:
+def _response_polynomials(kin, ord_, sym_, anti_):
+    """Single formula owner for flavor- and operator-space bilinears."""
     E = float(kin.Enu)
     qabs = float(kin.qabs)
     qabs2 = float(kin.qabs2)
@@ -115,40 +110,28 @@ def responses_R(
     E2 = E * E
     E3 = E2 * E
     E4 = E2 * E2
-    c1t, c1p = (_ci_tau(ci_basis, 1, tau), _ci_tau(ci_basis, 1, taup))
-    c2t, c2p = (_ci_tau(ci_basis, 2, tau), _ci_tau(ci_basis, 2, taup))
-    c3t, c3p = (_ci_tau(ci_basis, 3, tau), _ci_tau(ci_basis, 3, taup))
-    c4t, c4p = (_ci_tau(ci_basis, 4, tau), _ci_tau(ci_basis, 4, taup))
-    c5t, c5p = (_ci_tau(ci_basis, 5, tau), _ci_tau(ci_basis, 5, taup))
-    c6t, c6p = (_ci_tau(ci_basis, 6, tau), _ci_tau(ci_basis, 6, taup))
-    c8t, c8p = (_ci_tau(ci_basis, 8, tau), _ci_tau(ci_basis, 8, taup))
-    c9t, c9p = (_ci_tau(ci_basis, 9, tau), _ci_tau(ci_basis, 9, taup))
-    c10t, c10p = (_ci_tau(ci_basis, 10, tau), _ci_tau(ci_basis, 10, taup))
-    c11t, c11p = (_ci_tau(ci_basis, 11, tau), _ci_tau(ci_basis, 11, taup))
-    c13t, c13p = (_ci_tau(ci_basis, 13, tau), _ci_tau(ci_basis, 13, taup))
-    c14t, c14p = (_ci_tau(ci_basis, 14, tau), _ci_tau(ci_basis, 14, taup))
-    b11 = _checked_ord(1, 1, c1t, c1p)
-    b1313 = _checked_ord(13, 13, c13t, c13p)
-    b33 = _checked_ord(3, 3, c3t, c3p)
-    b99 = _checked_ord(9, 9, c9t, c9p)
-    s1_13 = _checked_sym(1, 13, c1t, c13t, c1p, c13p)
-    a9_3 = _checked_anti(9, 3, c9t, c3t, c9p, c3p)
-    b1111 = _checked_ord(11, 11, c11t, c11p)
-    b1010 = _checked_ord(10, 10, c10t, c10p)
-    b44 = _checked_ord(4, 4, c4t, c4p)
-    a10_4 = _checked_anti(10, 4, c10t, c4t, c10p, c4p)
-    s11_14 = _checked_sym(11, 14, c11t, c14t, c11p, c14p)
-    s2_11 = _checked_sym(2, 11, c2t, c11t, c2p, c11p)
-    b1414 = _checked_ord(14, 14, c14t, c14p)
-    s2_14 = _checked_sym(2, 14, c2t, c14t, c2p, c14p)
-    a6_14 = _checked_anti(6, 14, c6t, c14t, c6p, c14p)
-    b22 = _checked_ord(2, 2, c2t, c2p)
-    a6_2 = _checked_anti(6, 2, c6t, c2t, c6p, c2p)
-    b66 = _checked_ord(6, 6, c6t, c6p)
-    b88 = _checked_ord(8, 8, c8t, c8p)
-    b55 = _checked_ord(5, 5, c5t, c5p)
-    b3_8 = _checked_ord(3, 8, c3t, c8p)
-    b9_8 = _checked_ord(9, 8, c9t, c8p)
+    b11 = ord_(1, 1)
+    b1313 = ord_(13, 13)
+    b33 = ord_(3, 3)
+    b99 = ord_(9, 9)
+    s1_13 = sym_(1, 13)
+    a9_3 = anti_(9, 3)
+    b1111 = ord_(11, 11)
+    b1010 = ord_(10, 10)
+    b44 = ord_(4, 4)
+    a10_4 = anti_(10, 4)
+    s11_14 = sym_(11, 14)
+    s2_11 = sym_(2, 11)
+    b1414 = ord_(14, 14)
+    s2_14 = sym_(2, 14)
+    a6_14 = anti_(6, 14)
+    b22 = ord_(2, 2)
+    a6_2 = anti_(6, 2)
+    b66 = ord_(6, 6)
+    b88 = ord_(8, 8)
+    b55 = ord_(5, 5)
+    b3_8 = ord_(3, 8)
+    b9_8 = ord_(9, 8)
     R_M = (4.0 * E2 - qabs2 - 2.0 * E * qabs2 / mA) * b11 + (16.0 * E4 - 4.0 * E2 * qabs2 - 16.0 * E3 * qabs2 / mA + 2.0 * E * qabs4 / mA) * b1313 + qabs2 * b33 + (8.0 * E3 - 2.0 * E * qabs2 - 6.0 * E2 * qabs2 / mA + qabs4 / (2.0 * mA)) * s1_13 + (2j * E * qabs2 / mN - 1j * qabs4 / (2.0 * mA * mN)) * a9_3 + (4.0 * E2 * qabs2 / (mN * mN) - 2.0 * E * qabs4 / (mA * mN * mN)) * b99
     R_SigmaPP = (E2 * qabs2 / (mN * mN) - E * qabs4 / (2.0 * mA * mN * mN) - qabs4 / (4.0 * mN * mN)) * b1111 + qabs4 / (4.0 * mN * mN) * b1010 + (E2 - E * qabs2 / (2.0 * mA)) * b44 + (1j * E * qabs2 / (2.0 * mN) - 1j * qabs4 / (8.0 * mA * mN)) * a10_4 + (E3 * qabs2 / (mA * mN) - E * qabs4 / (4.0 * mA * mN)) * s11_14 + (E2 * qabs2 / (2.0 * mA * mN) - qabs4 / (8.0 * mA * mN)) * s2_11
     R_SigmaP = (2.0 * E4 + 0.5 * E2 * qabs2 - 2.0 * E3 * qabs2 / mA - E * qabs4 / (4.0 * mA)) * b1414 + (E3 + 0.25 * E * qabs2 - 3.0 * E2 * qabs2 / (4.0 * mA) - qabs4 / (16.0 * mA)) * s2_14 + (2j * E2 * qabs2 / mN - 1j * E * qabs4 / (mA * mN)) * a6_14 + (0.5 * E2 + 0.125 * qabs2 - E * qabs2 / (4.0 * mA)) * b22 + (1j * E * qabs2 / mN - 1j * qabs4 / (4.0 * mA * mN)) * a6_2 + (2.0 * E2 * qabs2 / (mN * mN) + qabs4 / (2.0 * mN * mN) - E * qabs4 / (mA * mN * mN)) * b66 + (0.5 * E2 - E * qabs2 / (4.0 * mA) - 0.125 * qabs2) * b44
@@ -156,8 +139,40 @@ def responses_R(
     R_PhiPT = (2.0 * E2 - 0.5 * qabs2 - E * qabs2 / mA) * b88
     R_Delta = (2.0 * E2 + 0.5 * qabs2 - E * qabs2 / mA) * b55
     R_MPhiPP = (-2.0 * E * qabs + qabs3 / (2.0 * mA)) * b3_8 + (-4j * E2 * qabs / mN + 2j * E * qabs3 / (mA * mN)) * b9_8
-    R_SigmaPDelta = zero_flavor_matrix()
+    # This interference particle response is identically zero in the current
+    # Li2026 amplitude convention; a tabulated nuclear SigmaPDelta response
+    # therefore contributes zero until the particle-response formula changes.
+    R_SigmaPDelta = np.zeros_like(R_M)
     return {'M': R_M, 'SigmaPP': R_SigmaPP, 'SigmaP': R_SigmaP, 'PhiPP': R_PhiPP, 'PhiPT': R_PhiPT, 'Delta': R_Delta, 'MPhiPP': R_MPhiPP, 'SigmaPDelta': R_SigmaPDelta}
+
+
+def responses_R(
+    ci_basis: Mapping[int, Tuple[FlavorMatrix, FlavorMatrix]],
+    kin: RKinematics,
+    *,
+    tau: int,
+    taup: int,
+) -> Dict[str, FlavorMatrix]:
+    coefficients = {i: (_ci_tau(ci_basis, i, tau), _ci_tau(ci_basis, i, taup)) for i in NR_SECTOR}
+    def ord_(i, j):
+        return _checked_ord(i, j, coefficients[i][0], coefficients[j][1])
+    def sym_(i, j):
+        return _checked_sym(i, j, coefficients[i][0], coefficients[j][0], coefficients[i][1], coefficients[j][1])
+    def anti_(i, j):
+        return _checked_anti(i, j, coefficients[i][0], coefficients[j][0], coefficients[i][1], coefficients[j][1])
+    return _response_polynomials(kin, ord_, sym_, anti_)
+
+
+def coefficient_responses_R(ci, kin, *, tau, taup):
+    """Evaluate the same polynomials for an operator basis, not flavor matrices."""
+    def ord_(i, j):
+        _assert_same_sector(i, j)
+        return np.outer(np.conjugate(ci[:, i, tau]), ci[:, j, taup])
+    def sym_(i, j):
+        return ord_(i, j) + ord_(j, i)
+    def anti_(i, j):
+        return ord_(i, j) - ord_(j, i)
+    return _response_polynomials(kin, ord_, sym_, anti_)
 
 def compute_R_matrices(ci_basis: Mapping[int, Tuple[FlavorMatrix, FlavorMatrix]], *, E_nu: float, qabs: Optional[float]=None, qabs2: Optional[float]=None, q: Optional[float]=None, mA: float, mN: float, basis: Basis='np') -> Dict[str, np.ndarray]:
     if basis not in {'iso', 'np'}:

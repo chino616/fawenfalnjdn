@@ -109,6 +109,10 @@ def flavor_kernel_onebody_li2026(resp: ResponseW, *, E_nu_GeV: float, ER_keV: fl
         pieces[wkey] = val
         total += val
     if 'SigmaPDelta' in resp.responses:
+        # The current Li2026 particle-response implementation defines
+        # R_SigmaPDelta = 0 exactly.  Keep the channel visible in diagnostics,
+        # but do not turn the presence of a nuclear response table into a
+        # non-zero amplitude contribution.
         pieces['SigmaPDelta'] = zero_flavor_matrix()
     try:
         total = validate_flavor_kernel(

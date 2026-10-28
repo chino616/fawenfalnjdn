@@ -1,0 +1,45 @@
+{
+  "origin": "R3 verified code before shared response refactor",
+  "input_hashes": {
+    "src/cevns_pyeft/kernels/builder.py": "d05411d08999f137725a80f164660837a086b07ab33d7d1916a59dce37aa14c0",
+    "src/cevns_pyeft/theory/li2026/responses.py": "25d63e8c923d900a42c67f43ab0fcef40bf39e528767c949a114b37d02135dbe",
+    "data/responses/responses_all.json": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74"
+  },
+  "basis": [
+    [
+      6,
+      1,
+      "u"
+    ],
+    [
+      6,
+      1,
+      "d"
+    ],
+    [
+      6,
+      2,
+      "u"
+    ],
+    [
+      6,
+      2,
+      "d"
+    ]
+  ],
+  "n_enu": 6,
+  "grids": {
+    "CsI2021": {
+      "n_er": 3,
+      "n_pe_sub": 3
+    },
+    "CsI2017": {
+      "n_er": 51
+    },
+    "Ar2020": {
+      "n_er": 3,
+      "n_obs_sub": 3
+    }
+  },
+  "sha256": "1451fb132681cfad49c1702533f949718f21b6448d6c80c7962e35838cfa5978"
+}

@@ -13,7 +13,7 @@ authors = [
   { name = "CEvNS-pyEFT contributors" }
 ]
 dependencies = [
-  "numpy",
+  "numpy>=2.0",
   "pandas",
   "matplotlib",
   "scipy",

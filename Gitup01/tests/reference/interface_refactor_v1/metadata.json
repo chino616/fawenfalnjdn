@@ -1,0 +1,489 @@
+{
+  "origin": "Unmodified user-provided 261028Gitup1-CONUS-3/Gitup01",
+  "git_revision": null,
+  "python": "3.11.15 | packaged by Anaconda, Inc. | (main, Jun 11 2026, 15:12:53) [MSC v.1942 64 bit (AMD64)]",
+  "executable": "F:\\Work\\.codex_conda_envs\\codex-py311\\python.exe",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "numpy": "2.4.6",
+  "rtol": 1e-10,
+  "atol_events": 1e-12,
+  "grids": {
+    "small": {
+      "n_er": 5,
+      "n_enu": 12,
+      "n_pe_bin": 4,
+      "pe_step": 4.0
+    },
+    "medium": {
+      "n_er": 11,
+      "n_enu": 40,
+      "n_pe_bin": 8,
+      "pe_step": 3.0
+    },
+    "default": {
+      "n_er": 21,
+      "n_enu": 120,
+      "n_pe_bin": 8,
+      "pe_step": 3.0
+    }
+  },
+  "cases": [
+    {
+      "point": "sm",
+      "grid": "small",
+      "seconds": 8.043267900007777
+    },
+    {
+      "point": "sm",
+      "grid": "medium",
+      "seconds": 99.6489133000141
+    },
+    {
+      "point": "sm",
+      "grid": "default",
+      "seconds": 611.3965552999871
+    },
+    {
+      "point": "np",
+      "grid": "small",
+      "seconds": 7.035841600038111
+    },
+    {
+      "point": "np",
+      "grid": "medium",
+      "seconds": 127.23016149993055
+    },
+    {
+      "point": "sm_np",
+      "grid": "small",
+      "seconds": 17.24222999997437
+    },
+    {
+      "point": "sm_np",
+      "grid": "medium",
+      "seconds": 146.53975520003587
+    },
+    {
+      "point": "complex",
+      "grid": "small",
+      "seconds": 18.126488300040364
+    },
+    {
+      "point": "complex",
+      "grid": "medium",
+      "seconds": 151.75533640000504
+    },
+    {
+      "point": "multiflavor",
+      "grid": "small",
+      "seconds": 16.93539740005508
+    },
+    {
+      "point": "multiflavor",
+      "grid": "medium",
+      "seconds": 145.04608439991716
+    }
+  ],
+  "hashes": {
+    "src/cevns_pyeft/__init__.py": "589b45038aed28c22fd5b4c0b01535b42e8c1377cec81c04ec24261a4663a8b8",
+    "src/cevns_pyeft/cli.py": "4f682fdb4fa2cdfb5805c5e0b1063358a473938b46ad7352581552869bb5679f",
+    "src/cevns_pyeft/core/__init__.py": "3ca6502461c2abb1910369815a0da49112d88abe0664c850ae2ecf3245301050",
+    "src/cevns_pyeft/core/engine.py": "27562f649baae63081f4563766187daa3553ab53db450741aad7089fc2b45e7f",
+    "src/cevns_pyeft/experiments/__init__.py": "66af4c1ace3646a17f50dcff953c04e58ca12840e3339c75edc5ab68082c1946",
+    "src/cevns_pyeft/experiments/base.py": "5e4b6689fcb858b88e0036ce24ee53992760cb70174221a250007c2c1433cef4",
+    "src/cevns_pyeft/experiments/coherent/__init__.py": "666a9518b49ad9d3b745df3da27d9e7c83d27580ad4faabeee0818acc91e1b12",
+    "src/cevns_pyeft/experiments/coherent/fast_kernel_ar2020.py": "1e13b94217c014337525e2de67190569de549518bdd228ba565f439ec6eebb86",
+    "src/cevns_pyeft/experiments/coherent/fast_kernel_csi2017.py": "b68346d491aa0c5d8a881680402856938f2865e1eb7a00eff5ed0e0148e493b2",
+    "src/cevns_pyeft/experiments/coherent/fast_kernel_csi2021.py": "b6c6805868210eeb77b57f78c1308e95c653357d2bcd4c4e0adbf0db0d0c1e12",
+    "src/cevns_pyeft/experiments/coherent/slow_counts_ar2020.py": "cea4d5a54bf39469df159ad36e914ec726e8eb8b1dea4a79ea6cb66bc2581067",
+    "src/cevns_pyeft/experiments/coherent/slow_counts_csi2017.py": "17c2911cb604d207c29b1621cee6eb5e1fb7fcae109cf2d65e731b7242b57d9f",
+    "src/cevns_pyeft/experiments/coherent/slow_counts_csi2021.py": "73d793e61dfa190af26ca01b1381ba4b019da07b0b95f25a5a09a99f595773c9",
+    "src/cevns_pyeft/experiments/coherent/sns.py": "9ea97baf50e46a158680b556f9fe514502fd8ca7386d8e9ea36ed07681e7a764",
+    "src/cevns_pyeft/experiments/conus_plus/__init__.py": "d9384be64e10bd4d1ad9dabe67da874c88b14a152bb5e272772de3a5a6431feb",
+    "src/cevns_pyeft/experiments/conus_plus/detector_response.py": "6d794596d7c1d17477bb7c19add5d1cb058f11a04e9feddcdc4dcc4c3257c947",
+    "src/cevns_pyeft/experiments/conus_plus/eft_kernel.py": "606c1bbd5692ad22cecdf7d2f458de941e47f86ea16b6549666bdf23108247ab",
+    "src/cevns_pyeft/experiments/conus_plus/fast_kernel.py": "147d9ba145572eea68c9c4745a602d67a6731bf7cc4dadce98fa865e9b4b78dd",
+    "src/cevns_pyeft/experiments/conus_plus/slow_counts.py": "81d2719f18dd72758c720b7df5cad5ef55381db7adce5493ec95d0354114ae4f",
+    "src/cevns_pyeft/experiments/conus_plus/source.py": "dbd3dc2aee9fc83c0a01e4ca938c50055598961520ccb324a62a6bb87878fcce",
+    "src/cevns_pyeft/experiments/conus_plus/statistics.py": "b8c618501e91e1c0bb30df9bc15335fbff0fa9200fe01349a1746f6545039af3",
+    "src/cevns_pyeft/experiments/registry.py": "50b0ea299899cb38a8910d631f174180c97a9dd00de65c0946b50bd711d5b318",
+    "src/cevns_pyeft/experiments/specs.py": "5b0633166370d9ec45d06bc2f9e069a319ebca5a04c6b51c78cf070621dcdac7",
+    "src/cevns_pyeft/foundation/__init__.py": "747c1b2ae5a59c80a235455feccc5fec27b37827a87a6b94ea2dca5e8ba32411",
+    "src/cevns_pyeft/foundation/constants.py": "0bb51033d1ca64e18a7a7bb0fd4cce38bc679558dd7392740f72d4683276cd44",
+    "src/cevns_pyeft/foundation/units.py": "053e4c8d9e47cd32ba4bacbb33da8367c02a32aca02c16c1d6d4e4a7bba6640a",
+    "src/cevns_pyeft/kernels/__init__.py": "dd3de761cf5075d30e3c0132c5b68b9b258d04f1ef78929d1e895a778837e3eb",
+    "src/cevns_pyeft/kernels/basis.py": "053a369aadc49e14f515d5ba0275fe6523390a3f821db66208f329a30dabd991",
+    "src/cevns_pyeft/kernels/builder.py": "d05411d08999f137725a80f164660837a086b07ab33d7d1916a59dce37aa14c0",
+    "src/cevns_pyeft/kernels/reconstruction.py": "1d3ef686e45cae01f4a481532d7a025358400496e445b9707093a66400cca1ad",
+    "src/cevns_pyeft/kernels/storage.py": "86ab01e539701fe496ad937c6f53e4fd5285ba229e93424d778e6ad7c8ccbbaf",
+    "src/cevns_pyeft/nuclear/__init__.py": "d7869554724a9701a2b7dbe6818db7760317d3607207ae7eb7688d3a1f2d0e3f",
+    "src/cevns_pyeft/nuclear/response.py": "fc94a1582b11e58113e2f192be9733dfaf5b27b2604fe075da9e9f56b94d776f",
+    "src/cevns_pyeft/propagation/__init__.py": "4f961ad6cb85eea23f6a4484ab2e181117b77a4cdca57e2ac01052eceafc8db2",
+    "src/cevns_pyeft/propagation/backends/__init__.py": "a613261e76cc0d5ccfdb9850386941f5092edbd7a60e74b8e8a8d5e3333f05bd",
+    "src/cevns_pyeft/propagation/backends/snudd.py": "0a82dabc6be43cb26d8dfec33e382da782bd1ee58890564717e817f74e834e05",
+    "src/cevns_pyeft/propagation/base.py": "f1e531e91d96ffbc1ae46f855897a5c3793fa280f904d0e61c08e8b4b46eab0a",
+    "src/cevns_pyeft/propagation/density.py": "670b701aae958f66f0588c657e64cc3f1b4d63803d96ae6d14faefd45342f170",
+    "src/cevns_pyeft/rates/__init__.py": "ea0ff65eb2b2b0932dca0555b158d9b4ba1e3d2e667641fefec02880d7b20b10",
+    "src/cevns_pyeft/rates/counts.py": "776630b714f3cc0b03fab897a4b4a34d25812744728654f38c4ab8ad2ea17733",
+    "src/cevns_pyeft/rates/differential.py": "d7e7c42c6eb92202e52524447328521c71c3a1050b4e93b6acc5adf9a16a85ce",
+    "src/cevns_pyeft/sources/__init__.py": "479ec238313a0e039ab01ea0e559b6051f1399f524c93599f411cfe2861c1d3b",
+    "src/cevns_pyeft/sources/state.py": "39ae30776f58bb19c15e842317940cb3aece2040eabb19046d01842e55815100",
+    "src/cevns_pyeft/statistics/__init__.py": "ed5a1e1e4915bbe05daedfe46bb558f7a9c69ca215476d5b60bba4e485048167",
+    "src/cevns_pyeft/statistics/confidence.py": "dd9449ed9bda1a2cba959a1afd54bf93e5411dc81595d5b771dfd2094800ded5",
+    "src/cevns_pyeft/statistics/datasets.py": "20d1ff2f0811144844b8cf7883020907a5f2969be949f101253444237694b455",
+    "src/cevns_pyeft/statistics/likelihoods.py": "9f1e347157cc36cafcb9a6af82aecc46f000d57db3bf9bd7bda8e869820021b6",
+    "src/cevns_pyeft/statistics/observables.py": "562a18e77e4b0f75666847d220f785e6c54b99df436f014e203f76ef05109941",
+    "src/cevns_pyeft/statistics/parameters.py": "654f3d41fea1760fdb0af7c678bf42523c8c359fc1bbac00d045ec0f76eabca6",
+    "src/cevns_pyeft/statistics/predictors.py": "78a50e586342d82c38d797aa306c714a9dc91b5dac64ec9bb3693575b7b90ba3",
+    "src/cevns_pyeft/statistics/profiling.py": "1ff56e0d802ec8b05ac8002633b070d8019e40895569dc083683029d0a26c120",
+    "src/cevns_pyeft/statistics/scans.py": "0610e0248fa64632c8c8f7c9f8fc3e77b02cd9c3cfa13a85f5adcfa02132bdb0",
+    "src/cevns_pyeft/theory/__init__.py": "c5f71bea32f72a9c3ddafba06e96a425e9fcd2f47829b9c4683735d5d3840e20",
+    "src/cevns_pyeft/theory/helm/__init__.py": "ac67f2db7e4a3a3270af5b123a1096da200d6f3cb03ce1aeaa58b8b2c4490e34",
+    "src/cevns_pyeft/theory/helm/cross_section.py": "816add89966820f38e344174ef90e5e09e262c90bfdb63d7ac11da28ee88101f",
+    "src/cevns_pyeft/theory/helm/form_factor.py": "fcbcad484f52a5fc4c831a154c156cb5992dcd6d07802eec33e8498cc84882db",
+    "src/cevns_pyeft/theory/kinematics.py": "2fcdeae7b83a1183c1215461e8d1f91badda142cb78ba7cb0fbb25367c69bd16",
+    "src/cevns_pyeft/theory/li2026/__init__.py": "62c3b0efd4c52b1a9c1362de1bec3f0426bc8d38463efb480dcd4c747b7e15ef",
+    "src/cevns_pyeft/theory/li2026/amplitude.py": "40a2bbfcb60716da67ff3d5182d5af6dd075bcd7dfccf9a49b9b3b0a8a9b7aed",
+    "src/cevns_pyeft/theory/li2026/cross_section.py": "adc13f3e1acc9b88b85fc033a6117cc2f99a77d1bc88e66368e416e4f5304393",
+    "src/cevns_pyeft/theory/li2026/flavor.py": "66c84c2f2dad58ebba132cb768db36c8661a3e053b8cb74900d47df6cffa48c4",
+    "src/cevns_pyeft/theory/li2026/form_factors.py": "30cdddc17904416ccdb31b4e84ed2ba883d192ef15196cb52d7b25cb2822eb2f",
+    "src/cevns_pyeft/theory/li2026/lec.py": "9c981d8705ba6a17829c75e81b93ce6f85fdbcc290faf5bf64edde9dc8867691",
+    "src/cevns_pyeft/theory/li2026/left_to_ci.py": "56027d356737d85de4ae22ba3b303ade16e1c0163887bbedbc53ac2f0d46ae48",
+    "src/cevns_pyeft/theory/li2026/operators.py": "c1932f6de64333b3a344fc84b7f5ec19efddbbf9a33db2aa9e245df702609ff4",
+    "src/cevns_pyeft/theory/li2026/responses.py": "25d63e8c923d900a42c67f43ab0fcef40bf39e528767c949a114b37d02135dbe",
+    "data/datafiles/8Bflux_eff.txt": "30b32bef97a79c4fe20e05983809fbf364013d99baa6dc427aac48774f644c78",
+    "data/datafiles/8Bflux_Eff_XENONnT.txt": "ebdef83d6f724a8bcdd5770b788a19ae08811862d7b976b84cdbd536874302f6",
+    "data/datafiles/8Bflux_effpaired.txt": "6f8ddf945d8768dcb566019a758ee0978ee595e695fb16a1cf49701ac8f563c1",
+    "data/datafiles/8Bflux_nu.txt": "e22b4c2cbed155b59828531ef9834100642fbc7c842c29615796dbe8b97ecef4",
+    "data/datafiles/8Bflux_Ortiz.txt": "3278373769c8537f9ed1e199c01adef9365704b04a689d971a614b3515beab4a",
+    "data/datafiles/8Bflux_Paired.txt": "b5bad3809a068559dee7c4737c165e63de0a15c50ceaedd04d15f26cd833f784",
+    "data/datafiles/Ar_eff.txt": "ec2160475789858af23cb3270c6c3fc958f33fe2b7a090fcef3ecd9fb55d9091",
+    "data/datafiles/CENNS10AnlAEfficiency.txt": "f74f92bfdd116bcb2e14f31e3e98a24fb6a7e68458c4f647ca72357c78e55dd3",
+    "data/datafiles/cevnspdf.txt": "447c12b1be676247f7e49eaf4ce71606939cf4239c19d1fe3704125e28a0ce3d",
+    "data/datafiles/COHERENT_data.txt": "f764accdd388bd161d6d53d3e7a01ff484c13d3dfc0fc1f61cc7fcb40f72cbd0",
+    "data/datafiles/COHERENT_eff.txt": "ca1f47b5cdfb01fa87a323cf3ee4ee8245488b2e5b0529ecb0863d5bf09a9a7c",
+    "data/datafiles/COHERENT_lower.txt": "c802772432ddd5288df5bb316d70a9736ec5b80c79d337ed050fa42d62c097bb",
+    "data/datafiles/COHERENT_spectrum.txt": "1584411458e0d48ebb9afb0400bd51e19a0e0208857b96edbea0d59aff710f95",
+    "data/datafiles/COHERENT_upper.txt": "db03d10cc5997f4b08948d71f04c72c88fd48365dc5cedae3b494b04f5853ad5",
+    "data/datafiles/neutrino_spectrum.txt": "eac411f7f23105d1d0f3720306a6756fce5d24b8b6a35719b76c6de9f443feab",
+    "data/datafiles/NeutrinoList.txt": "cab57328564b9a52556d9990be24f612242808b4feb018bcf6742edf573001a7",
+    "data/datafiles/ScaleConstants.txt": "c6747c3d6da180b6c137c1916edddc95ced9e91df017e2c926c7d6c687713f7d",
+    "data/datafiles/SNSflux_nue.txt": "11821f664bf381400a87da8e06bd0ae9439fb9c5d9a327e6b9ff439ece9641dc",
+    "data/datafiles/SNSflux_numu.txt": "e21ec3715ef4d3e68bdb2c07b0f33f066c766a39561e25e4a87497852a888bae",
+    "data/datafiles/SNSflux_numub.txt": "305aca6683d02353af74d98a70dc09b7237ec1a635211272fd6c1f69c79c01c2",
+    "data/datafiles/Xenon_8B_2024_spectrum_w_acceptance.txt": "4c625bd92911c2652a98bda71192a08c5ce8f2c894c00364d06c16f7dd710032",
+    "data/experiments/Ar2020/statistics/provenance.yaml": "6720f1dd9921857119900e7fc9cabd3aad8924ecba9efcea5d0817a27a2a1b46",
+    "data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/experiment.yaml": "04dc7d44fda077fcd545eef492ee4b87ef10fc34b439938959a7c73459ee32c6",
+    "data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/fast/conus_plus_detector_response_matrix_v1.json": "eb66dbfe22c8982f2d070b41986fc93ad77579030abbea6c1e9d709e30121ff2",
+    "data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/statistics/approximate_paper_benchmark/benchmark_manifest.json": "3274e79e92e898e44ebd8e503f87e516e15175a5efc0950de2698f5350d5f260",
+    "data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/statistics/approximate_paper_benchmark/benchmark_metrics.json": "a5d17240625496ea7fd9b090fdb78e69a3a5a54bb4120fd8669d7636d34ecf94",
+    "data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/statistics/approximate_paper_benchmark/fig4_full_nsi_metrics.json": "a998056e561649a70c060217d1772af765af440a69cd9c14505ab2a6d4430fbf",
+    "data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/statistics/approximate_paper_benchmark/paper_reference_targets.json": "e6254a374b212bb863da3541a7a8ab75e95bf5683ab7b9187563310e5dad05b1",
+    "data/experiments/CsI2017/experiment.yaml": "0838889e15a888cd6249b5e3fc913c676a0b963d6bc2fdc31e7058afa6726817",
+    "data/experiments/CsI2017/statistics/provenance.yaml": "c8d126501aa99decec91b7fd859ae45035d29ec6f6bab2d63b39c16329b17940",
+    "data/experiments/CsI2021/experiment.yaml": "3f494f4319aa8f0c189b1875b42b1cd5ad3c65d5bc5944cd71a3b83ff0a05622",
+    "data/experiments/CsI2021/statistics/provenance.yaml": "6def82c1188dd1a1ead8bd0aca9f1dbd24bac4b7f59b78f96c0a559408a6146f",
+    "data/responses/responses_all.json": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+    "tests/test_conus_plus_detector_response.py": "8d0af35f32fff2bbfa1e3ea98574e47a4d35933401f96a92fe6bf0ff0248b972",
+    "tests/test_conus_plus_eft_kernel.py": "3b22eb9ab20b8a487db7e4443f02f5cf1735eca1ff340c21dd993e30b381f197",
+    "tests/test_conus_plus_fast_kernel.py": "85a35c5c8c9b8c46d94a4f98a060dfc7c3f80f1ee3066a07dcfdb3d1e8fc735b",
+    "tests/test_conus_plus_kinematics_cross_section.py": "8b8390716ec99fc8efe429714a49ee5e2d1e49f2180c40f69b14aad416c087cc",
+    "tests/test_conus_plus_paper_config_guard.py": "1b6321072f0bd0d4b743ed0d9c19cf13f8a0769587b419196cd2bd7e569bbcd9",
+    "tests/test_conus_plus_slow_counts.py": "b4d9a6ce64b67ba7740555ca5794fd6ecb69dd547eccb6c63334752bcf23c6ca",
+    "tests/test_conus_plus_source.py": "e1636777bbf15cb989a52590c0d9c805fa85e7cd372653e969a3403b357b8dec",
+    "tests/test_conus_plus_statistics.py": "a4bb82300f91801306db471448942a48be5a7a6e30b29ccecb93e6b06d8c8a17",
+    "tests/test_conus_plus_theory_response.py": "e85709bc4cffa9d07fcb33d81610f6697e316ea3019ae5c50de9239df9ff1be5",
+    "tests/test_experiment_specs.py": "0cee22e047549e7a758cf7b7b17460e3338e098f68829893b4dc33257dc95d56",
+    "tests/test_legacy_coherent_scalar_regression.py": "0772afb1cd7d0a7d1fb2791104aa8aa6029c05253e874f036c843f831fed32e6",
+    "tests/test_li2026_amplitude_flavor.py": "774fff2266bca6d1fe74211e63686d8adb37e4e7ea2231b8997b5be6ec581af0",
+    "tests/test_li2026_units_contract.py": "99250f87fd1826c942e6843f55d46c03f71e4b499ebad99fc3fea6ec2cf14e67",
+    "tests/test_nuclear_response_convention.py": "08292127e16a2df037ca7672d534193a2720aa756eae90b8309667d3d788620c",
+    "tests/test_rates_differential_flavor.py": "27ae7e88d506af48175e88e90562a6c2437f1f8feef660bd531cefff34be08bf",
+    "tests/test_source_state_p2.py": "e2f1c39cd64cf9208ae9548de26be85c850ca085450005050e67ab05b82f1bca"
+  },
+  "chi2_small_sm": 12.021755137669238,
+  "document_baseline_differences": [],
+  "points": {
+    "sm": {
+      "include_sm": true,
+      "sin2thetaW": 0.2387,
+      "c10_mass_mode": "quark_mass_resolved",
+      "wc_triplets": []
+    },
+    "np": {
+      "include_sm": false,
+      "sin2thetaW": 0.2387,
+      "c10_mass_mode": "quark_mass_resolved",
+      "wc_triplets": [
+        {
+          "key": [
+            6,
+            1,
+            "u"
+          ],
+          "real": [
+            [
+              1e-06,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ]
+    },
+    "sm_np": {
+      "include_sm": true,
+      "sin2thetaW": 0.2387,
+      "c10_mass_mode": "quark_mass_resolved",
+      "wc_triplets": [
+        {
+          "key": [
+            6,
+            1,
+            "u"
+          ],
+          "real": [
+            [
+              1e-06,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ]
+    },
+    "complex": {
+      "include_sm": true,
+      "sin2thetaW": 0.2387,
+      "c10_mass_mode": "quark_mass_resolved",
+      "wc_triplets": [
+        {
+          "key": [
+            6,
+            1,
+            "u"
+          ],
+          "real": [
+            [
+              1e-06,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              2e-07,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "key": [
+            7,
+            1,
+            "d"
+          ],
+          "real": [
+            [
+              -3e-07,
+              -0.0,
+              -0.0
+            ],
+            [
+              -0.0,
+              -0.0,
+              -0.0
+            ],
+            [
+              -0.0,
+              -0.0,
+              -0.0
+            ]
+          ],
+          "imag": [
+            [
+              1e-07,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ]
+    },
+    "multiflavor": {
+      "include_sm": true,
+      "sin2thetaW": 0.2387,
+      "c10_mass_mode": "quark_mass_resolved",
+      "wc_triplets": [
+        {
+          "key": [
+            6,
+            1,
+            "u"
+          ],
+          "real": [
+            [
+              1e-06,
+              0.0,
+              1e-07
+            ],
+            [
+              1.5e-07,
+              -4e-07,
+              0.0
+            ],
+            [
+              0.0,
+              3e-07,
+              2e-07
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              2e-07
+            ],
+            [
+              5e-08,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "key": [
+            8,
+            1,
+            "d"
+          ],
+          "real": [
+            [
+              -1e-08,
+              -0.0,
+              -1e-09
+            ],
+            [
+              -1.5e-09,
+              4e-09,
+              -0.0
+            ],
+            [
+              -0.0,
+              -3e-09,
+              -2e-09
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              -2e-09,
+              0.0
+            ],
+            [
+              0.0,
+              -0.0,
+              -2e-09
+            ],
+            [
+              -5e-10,
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "provenance_annotation": "Post-capture audit uses the immutable hashes recorded before execution. Explicit point matrices added from the unchanged points() definition. No reference arrays or tolerances changed."
+}

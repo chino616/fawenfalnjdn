@@ -55,7 +55,11 @@ def _make_interp(xp: np.ndarray, fp: np.ndarray) -> Callable[[ArrayLike], ArrayL
 def loadNeutrinoEmpiricalFluxSNS(dataset: str='CsI2017', *, num_points: int=200, use_interpolation: bool=True) -> Dict[str, Any]:
     if dataset not in SNS_DATASETS:
         raise KeyError(f"Unknown dataset '{dataset}'. Available: {list(SNS_DATASETS)}")
-    ds = SNS_DATASETS[dataset]
+    return build_neutrino_empirical_flux_sns(SNS_DATASETS[dataset], num_points=num_points, use_interpolation=use_interpolation)
+
+
+def build_neutrino_empirical_flux_sns(ds: SNSDataset, *, num_points: int=200, use_interpolation: bool=True) -> Dict[str, Any]:
+    """Evaluate the historical spectrum with explicit immutable dataset parameters."""
     NTimeIntFlux = _n_time_integrated_flux_cm2(ds.L_m, ds.N_POT, ds.r)
     m_mu_MeV = float(from_energy_gev(m_mu, 'MeV'))
     Emin = float(ds.EnuMin_MeV)
@@ -153,6 +157,7 @@ __all__ = [
     "SourceSpecies",
     "sns_component_state",
     "loadNeutrinoEmpiricalFluxSNS",
+    "build_neutrino_empirical_flux_sns",
     "load_neutrino_empirical_flux_sns",
     "loadNeutrinoFlux",
 ]

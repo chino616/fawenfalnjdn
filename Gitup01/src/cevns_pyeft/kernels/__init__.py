@@ -3,6 +3,10 @@
 from .basis import *  # noqa: F401,F403
 
 _LAZY_EXPORTS = {
+    "compile_fast": ("cevns_pyeft.kernels.compiler", "compile_fast"),
+    "fast_capability": ("cevns_pyeft.kernels.compiler", "fast_capability"),
+    "save_compiled_kernel": ("cevns_pyeft.kernels.interface_storage", "save_compiled_kernel"),
+    "load_compiled_kernel": ("cevns_pyeft.kernels.interface_storage", "load_compiled_kernel"),
     "build_matrixized_kernel": ("cevns_pyeft.kernels.builder", "build_matrixized_kernel"),
     "save_kernel": ("cevns_pyeft.kernels.builder", "save_kernel"),
     "reconstruct_counts_from_kernel": ("cevns_pyeft.kernels.reconstruction", "reconstruct_counts_from_kernel"),

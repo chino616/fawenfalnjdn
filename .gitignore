@@ -1,0 +1,15 @@
+# Local runtime/build caches; project results and reference data remain tracked.
+**/__pycache__/
+**/*.py[cod]
+**/.pytest_cache/
+**/.pytest-tmp/
+**/.ipynb_checkpoints/
+**/build/
+**/*.egg-info/
+Gitup01/outputs/**/build-temp/
+Gitup01/outputs/refactor/original/
+Gitup01/outputs/refactor_r4/original/
+
+# Local refactor validation/build outputs are not included in this branch commit.
+Gitup01/outputs/refactor/
+Gitup01/outputs/refactor_r4/

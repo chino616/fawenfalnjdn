@@ -1,3 +1,8 @@
+"""Legacy dataset-routed builders; composed models use kernels.compile_fast.
+
+Particle response polynomials are owned by theory.li2026.responses. This
+module retains the historical conversion and array conventions for old APIs.
+"""
 from __future__ import annotations
 
 import json
@@ -229,80 +234,29 @@ def _build_target_static(responses_json: str, *, target: str, pe_bins: np.ndarra
             fold_kernel[ier, ib] = float(_trapz(ys, xs)) * ER_weights[ier]
     return TargetStatic(target=target, A=A, mA_GeV=mA_GeV, nucleus_mass_kg=nucleus_mass_kg, ER_grid_keV=ER_grid, ER_weights_keV=ER_weights, q0_GeV=q0_GeV, q2_GeV2=q2_GeV2, qabs_GeV=qabs_GeV, qabs2_GeV2=qabs2_GeV2, W_by_ER=W_by_ER, fold_kernel=fold_kernel)
 
-def _build_ci_units(basis_elements: Sequence[BasisElement], *, E_nu_GeV: float, q0_GeV: float, q2_GeV2: float, qabs_GeV: float, qabs2_GeV2: float, mA_GeV: float, c10_mass_mode: str) -> np.ndarray:
-    B = len(basis_elements)
-    out = np.zeros((B, 15, 2), dtype=complex)
-    for a, elem in enumerate(basis_elements):
-        template, flavor_index = _left_operator_template(elem.triplet)
-        ci_obj = left_to_ci({elem.triplet: template}, E_nu=float(E_nu_GeV), q0=float(q0_GeV), q2=float(q2_GeV2), qabs=float(qabs_GeV), qabs2=float(qabs2_GeV2), mA=float(mA_GeV), c10_mass_mode=str(c10_mass_mode), lecs=DEFAULT_LECS)
-        for i in _CI_KEYS:
-            out[a, i, 0] = complex(ci_obj.p.get(i, zero_flavor_matrix())[flavor_index])
-            out[a, i, 1] = complex(ci_obj.n.get(i, zero_flavor_matrix())[flavor_index])
-    return out
+def _build_ci_units(basis_elements, **kwargs):
+    from cevns_pyeft.theory.li2026.coefficients import operator_ci_units
+    return operator_ci_units(tuple(item.triplet for item in basis_elements), **kwargs)
 
-def _scan_ord(ci: np.ndarray, i: int, tau: int, j: int, taup: int) -> np.ndarray:
+
+def _amplitude_kernel_by_channel(**kwargs):
+    from cevns_pyeft.theory.li2026.coefficients import amplitude_coefficients_by_channel
+    # Keep the legacy array convention and legacy conversion constant unchanged.
+    return amplitude_coefficients_by_channel(**kwargs, hermitianize=False)
+
+
+def _scan_ord(ci, i, tau, j, taup):
+    """Legacy bilinear helper retained for existing imports."""
     return np.outer(np.conjugate(ci[:, i, tau]), ci[:, j, taup])
 
-def _scan_sym(ci: np.ndarray, i: int, tau: int, j: int, taup: int) -> np.ndarray:
+
+def _scan_sym(ci, i, tau, j, taup):
     return _scan_ord(ci, i, tau, j, taup) + _scan_ord(ci, j, tau, i, taup)
 
-def _scan_anti(ci: np.ndarray, i: int, tau: int, j: int, taup: int) -> np.ndarray:
+
+def _scan_anti(ci, i, tau, j, taup):
     return _scan_ord(ci, i, tau, j, taup) - _scan_ord(ci, j, tau, i, taup)
 
-def _amplitude_kernel_by_channel(*, E_nu_GeV: float, qabs_GeV: float, mA_GeV: float, mN_GeV: float, ci: np.ndarray, W_slice: np.ndarray) -> np.ndarray:
-    B = ci.shape[0]
-    out = np.zeros((len(CHANNELS), B, B), dtype=complex)
-    E = float(E_nu_GeV)
-    q = float(qabs_GeV)
-    q2 = q * q
-    q4 = q2 * q2
-    E2 = E * E
-    E3 = E2 * E
-    E4 = E2 * E2
-    mA = float(mA_GeV)
-    mN = float(mN_GeV)
-    for tau in (0, 1):
-        for taup in (0, 1):
-            b11 = _scan_ord(ci, 1, tau, 1, taup)
-            b1313 = _scan_ord(ci, 13, tau, 13, taup)
-            b33 = _scan_ord(ci, 3, tau, 3, taup)
-            b99 = _scan_ord(ci, 9, tau, 9, taup)
-            s1_13 = _scan_sym(ci, 1, tau, 13, taup)
-            a9_3 = _scan_anti(ci, 9, tau, 3, taup)
-            b1111 = _scan_ord(ci, 11, tau, 11, taup)
-            b1010 = _scan_ord(ci, 10, tau, 10, taup)
-            b44 = _scan_ord(ci, 4, tau, 4, taup)
-            a10_4 = _scan_anti(ci, 10, tau, 4, taup)
-            s11_14 = _scan_sym(ci, 11, tau, 14, taup)
-            s2_11 = _scan_sym(ci, 2, tau, 11, taup)
-            b1414 = _scan_ord(ci, 14, tau, 14, taup)
-            s2_14 = _scan_sym(ci, 2, tau, 14, taup)
-            a6_14 = _scan_anti(ci, 6, tau, 14, taup)
-            b22 = _scan_ord(ci, 2, tau, 2, taup)
-            a6_2 = _scan_anti(ci, 6, tau, 2, taup)
-            b66 = _scan_ord(ci, 6, tau, 6, taup)
-            b88 = _scan_ord(ci, 8, tau, 8, taup)
-            b55 = _scan_ord(ci, 5, tau, 5, taup)
-            b3_8 = _scan_ord(ci, 3, tau, 8, taup)
-            b9_8 = _scan_ord(ci, 9, tau, 8, taup)
-            R_M = (4.0 * E2 - q2 - 2.0 * E * q2 / mA) * b11 + (16.0 * E4 - 4.0 * E2 * q2 - 16.0 * E3 * q2 / mA + 2.0 * E * q4 / mA) * b1313 + q2 * b33 + (8.0 * E3 - 2.0 * E * q2 - 6.0 * E2 * q2 / mA + q4 / (2.0 * mA)) * s1_13 + (2j * E * q2 / mN - 1j * q4 / (2.0 * mA * mN)) * a9_3 + (4.0 * E2 * q2 / (mN * mN) - 2.0 * E * q4 / (mA * mN * mN)) * b99
-            R_SigmaPP = (E2 * q2 / (mN * mN) - E * q4 / (2.0 * mA * mN * mN) - q4 / (4.0 * mN * mN)) * b1111 + q4 / (4.0 * mN * mN) * b1010 + (E2 - E * q2 / (2.0 * mA)) * b44 + (1j * E * q2 / (2.0 * mN) - 1j * q4 / (8.0 * mA * mN)) * a10_4 + (E3 * q2 / (mA * mN) - E * q4 / (4.0 * mA * mN)) * s11_14 + (E2 * q2 / (2.0 * mA * mN) - q4 / (8.0 * mA * mN)) * s2_11
-            R_SigmaP = (2.0 * E4 + 0.5 * E2 * q2 - 2.0 * E3 * q2 / mA - E * q4 / (4.0 * mA)) * b1414 + (E3 + 0.25 * E * q2 - 3.0 * E2 * q2 / (4.0 * mA) - q4 / (16.0 * mA)) * s2_14 + (2j * E2 * q2 / mN - 1j * E * q4 / (mA * mN)) * a6_14 + (0.5 * E2 + 0.125 * q2 - E * q2 / (4.0 * mA)) * b22 + (1j * E * q2 / mN - 1j * q4 / (4.0 * mA * mN)) * a6_2 + (2.0 * E2 * q2 / (mN * mN) + q4 / (2.0 * mN * mN) - E * q4 / (mA * mN * mN)) * b66 + (0.5 * E2 - E * q2 / (4.0 * mA) - 0.125 * q2) * b44
-            R_PhiPP = (4.0 * E2 - 2.0 * E * q2 / mA) * b88
-            R_PhiPT = (2.0 * E2 - 0.5 * q2 - E * q2 / mA) * b88
-            R_Delta = (2.0 * E2 + 0.5 * q2 - E * q2 / mA) * b55
-            R_MPhiPP = (-2.0 * E * q + q * q2 / (2.0 * mA)) * b3_8 + (-4j * E2 * q / mN + 2j * E * q * q2 / (mA * mN)) * b9_8
-            R_SigmaPDelta = np.zeros_like(R_M)
-            Ws = W_slice[:, tau, taup]
-            out[_CHANNEL_INDEX['M']] += Ws[_CHANNEL_INDEX['M']] * R_M
-            out[_CHANNEL_INDEX['SigmaPP']] += Ws[_CHANNEL_INDEX['SigmaPP']] * R_SigmaPP
-            out[_CHANNEL_INDEX['SigmaP']] += Ws[_CHANNEL_INDEX['SigmaP']] * R_SigmaP
-            out[_CHANNEL_INDEX['PhiPP']] += Ws[_CHANNEL_INDEX['PhiPP']] * R_PhiPP
-            out[_CHANNEL_INDEX['PhiPT']] += Ws[_CHANNEL_INDEX['PhiPT']] * R_PhiPT
-            out[_CHANNEL_INDEX['Delta']] += Ws[_CHANNEL_INDEX['Delta']] * R_Delta
-            out[_CHANNEL_INDEX['MPhiPP']] += Ws[_CHANNEL_INDEX['MPhiPP']] * R_MPhiPP
-            out[_CHANNEL_INDEX['SigmaPDelta']] += Ws[_CHANNEL_INDEX['SigmaPDelta']] * R_SigmaPDelta
-    return out
 
 def _build_one_target_kernel(responses_json: str, dataset: str, target: str, basis_elements: Sequence[BasisElement], pe_bins: np.ndarray, ER_min_keV: float, n_ER: int, n_Enu: int, n_PE_sub: int, pe_step: Optional[float], c10_mass_mode: str, flavor_acceptance: Mapping[str, float]) -> Tuple[str, np.ndarray]:
     flux_obj = load_flux(dataset)

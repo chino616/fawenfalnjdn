@@ -90,9 +90,29 @@ def predict_raw_components(
     responses = Path(responses_json) if responses_json is not None else _responses_default()
     if mode == "slow":
         if dataset == "CsI2021":
-            from cevns_pyeft.experiments.coherent.slow_counts_csi2021 import slow_counts_csi2021
+            from cevns_pyeft.contracts import IntegrationSettings, TheoryPoint
+            from cevns_pyeft.core.predict import predict
+            from cevns_pyeft.experiments.coherent.csi2021 import make_csi2021_model
+            from cevns_pyeft.sources.sns import LEGACY_COMPONENT_IDS
+            from .adapters import to_statistical_vector
 
-            result = slow_counts_csi2021(responses, wc, include_sm=include_sm, sin2thetaW=sin2thetaW, **kwargs)
+            unknown = set(kwargs) - {"c10_mass_mode", "n_er", "n_enu", "n_pe_bin", "pe_step"}
+            if unknown:
+                raise TypeError(f"unexpected CsI2021 parameter(s): {sorted(unknown)}")
+            model = make_csi2021_model(responses, c10_mass_mode=str(kwargs.get("c10_mass_mode", "quark_mass_resolved")))
+            settings = IntegrationSettings.legacy_csi2021_v1(
+                n_er=int(kwargs.get("n_er", 21)), n_enu=int(kwargs.get("n_enu", 120)),
+                n_pe_bin=int(kwargs.get("n_pe_bin", 8)), pe_step=float(kwargs.get("pe_step", 3.0)))
+            prediction = predict(model, parameters=TheoryPoint(wc, include_sm=bool(include_sm), sin2thetaW=float(sin2thetaW)), numerics=settings)
+            components = {}
+            for key in ("e", "mu", "mub", "total"):
+                vector = to_statistical_vector(prediction, component_id=None if key == "total" else LEGACY_COMPONENT_IDS[key])
+                components[key] = PredictionVector(vector.values, vector.observable, {
+                    **dict(vector.metadata or {}),
+                    "experiment": dataset, "mode": mode, "include_sm": bool(include_sm),
+                    "source_component": SOURCE_COMPONENT_LABELS[key]})
+            return RawComponentPrediction(dataset, mode, components, prediction.axes[0].edges.copy(), {
+                "experiment": dataset, "mode": mode, "include_sm": bool(include_sm), "source_components": dict(SOURCE_COMPONENT_LABELS)})
         elif dataset == "CsI2017":
             from cevns_pyeft.experiments.coherent.slow_counts_csi2017 import slow_counts_csi2017
 
