@@ -37,7 +37,7 @@ BUILTIN_CATALOG.describe()
 assert 'cevns_pyeft.nuclear.response' not in sys.modules
 assert not any(x.endswith('.slow_counts') for x in sys.modules)
 """
-    result=subprocess.run([sys.executable,'-c',code],cwd=tmp_path,env={**os.environ,'PYTHONPATH':str(ROOT/'src')},capture_output=True,text=True)
+    result=subprocess.run([sys.executable,'-c',code],cwd=tmp_path,env={**os.environ,'PYTHONPATH':str(ROOT)},capture_output=True,text=True)
     assert result.returncode==0,result.stderr
 
 
@@ -132,7 +132,7 @@ def test_disabled_missing_resources_are_never_resolved(tmp_path):
 
 
 def test_missing_statistics_does_not_block_physics(tmp_path):
-    resources=ResourceCatalog(tmp_path,{'responses':ROOT/'data/responses/responses_all.json','efficiency':ROOT/'data/datafiles/COHERENT_eff.txt'})
+    resources=ResourceCatalog(tmp_path,{'responses':ROOT/'data/responses/responses_all.json','efficiency':ROOT/'data/experiments/COHERENT_CsI/CsI2017/detector/COHERENT_eff.txt'})
     exp=load_experiment('CsI2017',resources=resources)
     pred=predict_experiment(exp,numerics={'n_enu':8})
     assert pred.counts.sum()>0
@@ -243,7 +243,7 @@ def test_conus_bound_benchmark_consumes_one_combined_prediction(experiments):
     from cevns_pyeft.experiments.conus_plus.statistics import profile_paper_eq33
     d=experiments[CONUS].definition
     d=replace(d,physical=replace(d.physical,exposures=tuple(MassTimeExposure(n,x) for n,x in zip(d.observation.detector_ids,(0.,119.,0.)))))
-    observations=ROOT/'outputs/conus-plus-completion-20261012/statistics/approximate_paper_benchmark/observations_digitized_approx.csv'
+    observations=ROOT/'data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/statistics/approximate_paper_benchmark/observations_digitized_approx.csv'
     exp=load_experiment(CONUS,resources=ResourceCatalog(ROOT,{'observations':observations}),definition=d)
     p=predict_experiment(exp,numerics={'n_recoil':8,'n_energy':2})
     result=evaluate_experiment(exp,p)

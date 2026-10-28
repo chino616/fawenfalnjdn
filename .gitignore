@@ -17,3 +17,14 @@ Gitup01/outputs/refactor_r4/
 # Refactor-02 local artifacts remain external.
 Gitup01/outputs/experiment_modularization/
 Gitup01/backup/
+
+# Refactor-03 publication: new local artifacts/data stay external.
+Gitup01/outputs/
+Gitup01/backup/
+Gitup01/archives/
+Gitup01/data/**
+!Gitup01/data/README.md
+!Gitup01/data/resource_manifest.json
+Gitup01/**/*.ipynb
+Gitup01/docs/**/*.pdf
+Gitup01/docs/**/*.zip

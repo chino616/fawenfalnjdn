@@ -14,7 +14,7 @@ from cevns_pyeft.sources.sns import LEGACY_COMPONENT_IDS
 from cevns_pyeft.statistics.adapters import to_statistical_vector
 from cevns_pyeft.statistics.datasets import csi2021_dataset
 from cevns_pyeft.statistics.likelihoods import chi2_csi2021
-from tools.refactor.freeze_baseline import points, GRIDS
+from tests.helpers.regression_cases import points, GRIDS
 
 ROOT = Path(__file__).resolve().parents[1]
 REFERENCE = ROOT / "tests/reference/interface_refactor_v1"

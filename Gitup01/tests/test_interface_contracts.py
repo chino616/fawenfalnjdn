@@ -175,7 +175,7 @@ def test_invalid_backends_units_and_unconsumed_configuration_are_rejected():
 def test_generic_modules_do_not_import_concrete_experiments_or_workflow():
     import ast
     from pathlib import Path
-    root = Path(__file__).resolve().parents[1] / "src/cevns_pyeft"
+    root = Path(__file__).resolve().parents[1] / "cevns_pyeft"
     files = list((root / "contracts").glob("*.py")) + [root / name for name in (
         "rates/recoil.py", "rates/folding.py", "core/model.py", "core/predict.py")]
     for path in files:
@@ -198,5 +198,5 @@ from cevns_pyeft.core import engine
 assert callable(engine.slow_counts_csi2021)
 """
     result = subprocess.run([sys.executable, "-c", script], cwd=tmp_path,
-        env={**os.environ, "PYTHONPATH": str(root / "src")}, text=True, capture_output=True)
+        env={**os.environ, "PYTHONPATH": str(root)}, text=True, capture_output=True)
     assert result.returncode == 0, result.stdout + result.stderr

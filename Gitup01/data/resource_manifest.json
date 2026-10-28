@@ -1,0 +1,182 @@
+{
+  "root_contract": "directory containing data/",
+  "resources": [
+    {
+      "dataset_id": "CsI2021",
+      "resource_id": "responses",
+      "role": "physical",
+      "canonical_path": "data/responses/responses_all.json",
+      "legacy_paths": [],
+      "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+      "semantics": "nuclear response database",
+      "coordinate_contract": null
+    },
+    {
+      "dataset_id": "CsI2017",
+      "resource_id": "responses",
+      "role": "physical",
+      "canonical_path": "data/responses/responses_all.json",
+      "legacy_paths": [],
+      "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+      "semantics": "",
+      "coordinate_contract": null
+    },
+    {
+      "dataset_id": "CsI2017",
+      "resource_id": "observation_schema",
+      "role": "statistics",
+      "canonical_path": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json",
+      "legacy_paths": [],
+      "sha256": "0edd4b8cc260781fd83bd7ea2820c98efdde04d3c7cde1584e86b66d46021645",
+      "semantics": "",
+      "coordinate_contract": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json"
+    },
+    {
+      "dataset_id": "CsI2017",
+      "resource_id": "efficiency",
+      "role": "physical",
+      "canonical_path": "data/experiments/COHERENT_CsI/CsI2017/detector/COHERENT_eff.txt",
+      "legacy_paths": [
+        "data/datafiles/COHERENT_eff.txt"
+      ],
+      "sha256": "ca1f47b5cdfb01fa87a323cf3ee4ee8245488b2e5b0529ecb0863d5bf09a9a7c",
+      "semantics": "",
+      "coordinate_contract": null
+    },
+    {
+      "dataset_id": "CsI2017",
+      "resource_id": "data",
+      "role": "statistics",
+      "canonical_path": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_data.txt",
+      "legacy_paths": [
+        "data/datafiles/COHERENT_data.txt"
+      ],
+      "sha256": "f764accdd388bd161d6d53d3e7a01ff484c13d3dfc0fc1f61cc7fcb40f72cbd0",
+      "semantics": "",
+      "coordinate_contract": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json"
+    },
+    {
+      "dataset_id": "CsI2017",
+      "resource_id": "lower",
+      "role": "statistics",
+      "canonical_path": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_lower.txt",
+      "legacy_paths": [
+        "data/datafiles/COHERENT_lower.txt"
+      ],
+      "sha256": "c802772432ddd5288df5bb316d70a9736ec5b80c79d337ed050fa42d62c097bb",
+      "semantics": "",
+      "coordinate_contract": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json"
+    },
+    {
+      "dataset_id": "CsI2017",
+      "resource_id": "upper",
+      "role": "statistics",
+      "canonical_path": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_upper.txt",
+      "legacy_paths": [
+        "data/datafiles/COHERENT_upper.txt"
+      ],
+      "sha256": "db03d10cc5997f4b08948d71f04c72c88fd48365dc5cedae3b494b04f5853ad5",
+      "semantics": "",
+      "coordinate_contract": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json"
+    },
+    {
+      "dataset_id": "CsI2017",
+      "resource_id": "spectrum",
+      "role": "statistics",
+      "canonical_path": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_spectrum.txt",
+      "legacy_paths": [
+        "data/datafiles/COHERENT_spectrum.txt"
+      ],
+      "sha256": "1584411458e0d48ebb9afb0400bd51e19a0e0208857b96edbea0d59aff710f95",
+      "semantics": "",
+      "coordinate_contract": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json"
+    },
+    {
+      "dataset_id": "Ar2020",
+      "resource_id": "responses",
+      "role": "physical",
+      "canonical_path": "data/responses/responses_all.json",
+      "legacy_paths": [],
+      "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+      "semantics": "",
+      "coordinate_contract": null
+    },
+    {
+      "dataset_id": "Ar2020",
+      "resource_id": "efficiency",
+      "role": "physical",
+      "canonical_path": "data/experiments/COHERENT_Ar/Ar2020/detector/CENNS10AnlAEfficiency.txt",
+      "legacy_paths": [
+        "data/datafiles/CENNS10AnlAEfficiency.txt"
+      ],
+      "sha256": "f74f92bfdd116bcb2e14f31e3e98a24fb6a7e68458c4f647ca72357c78e55dd3",
+      "semantics": "",
+      "coordinate_contract": null
+    },
+    {
+      "dataset_id": "conus_plus_2025_c2c3c5_ge73_pyeft",
+      "resource_id": "responses",
+      "role": "physical",
+      "canonical_path": "data/responses/responses_all.json",
+      "legacy_paths": [],
+      "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+      "semantics": "",
+      "coordinate_contract": null
+    },
+    {
+      "dataset_id": "conus_plus_2025_c2c3c5_ge73_pyeft",
+      "resource_id": "kopeikin",
+      "role": "physical",
+      "canonical_path": "data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/source/kopeikin_nodes.csv",
+      "legacy_paths": [],
+      "sha256": "8f9f3d7ba6eb695a92e9e81584987a450896d0a65b2fee79589ae986282b5d56",
+      "semantics": "",
+      "coordinate_contract": null
+    },
+    {
+      "dataset_id": "conus_plus_2025_c2c3c5_ge73_pyeft",
+      "resource_id": "mueller",
+      "role": "physical",
+      "canonical_path": "data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/source/mueller_coefficients.csv",
+      "legacy_paths": [],
+      "sha256": "21cfeb811831656ad1773f2cbcb704ee6fbd99a6d9bb06a9a33ac520d1af7b13",
+      "semantics": "",
+      "coordinate_contract": null
+    },
+    {
+      "dataset_id": "conus_plus_2025_c2c3c5_ge73_pyeft",
+      "resource_id": "observations",
+      "role": "statistics",
+      "canonical_path": "data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/statistics/approximate_paper_benchmark/observations_digitized_approx.csv",
+      "legacy_paths": [],
+      "sha256": "2775ed6c6c02b1db29939d08119626709cf2326d6cff3a7b1acb814e04bcecdc",
+      "semantics": "",
+      "coordinate_contract": "data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/statistics/approximate_paper_benchmark/observation_schema.json"
+    },
+    {
+      "dataset_id": "conus_plus_2025_c2c3c5_ge73_pyeft",
+      "resource_id": "observation_schema",
+      "role": "statistics",
+      "canonical_path": "data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/statistics/approximate_paper_benchmark/observation_schema.json",
+      "legacy_paths": [],
+      "sha256": "48ff0872c5a99c24bf9ad93274d0d1e2c45df5e8cdf55078e54de157f0b7141e",
+      "semantics": "",
+      "coordinate_contract": "data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/statistics/approximate_paper_benchmark/observation_schema.json"
+    }
+  ],
+  "legacy_aliases": {
+    "data/datafiles/COHERENT_eff.txt": "data/experiments/COHERENT_CsI/CsI2017/detector/COHERENT_eff.txt",
+    "data/datafiles/COHERENT_data.txt": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_data.txt",
+    "data/datafiles/COHERENT_lower.txt": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_lower.txt",
+    "data/datafiles/COHERENT_upper.txt": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_upper.txt",
+    "data/datafiles/COHERENT_spectrum.txt": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_spectrum.txt",
+    "data/datafiles/CENNS10AnlAEfficiency.txt": "data/experiments/COHERENT_Ar/Ar2020/detector/CENNS10AnlAEfficiency.txt",
+    "data/experiments/CsI2017/experiment.yaml": "data/experiments/COHERENT_CsI/CsI2017/experiment.yaml",
+    "data/experiments/CsI2017/README.md": "data/experiments/COHERENT_CsI/CsI2017/README.md",
+    "data/experiments/CsI2017/statistics/provenance.yaml": "data/experiments/COHERENT_CsI/CsI2017/statistics/provenance.yaml",
+    "data/experiments/CsI2021/experiment.yaml": "data/experiments/COHERENT_CsI/CsI2021/experiment.yaml",
+    "data/experiments/CsI2021/README.md": "data/experiments/COHERENT_CsI/CsI2021/README.md",
+    "data/experiments/CsI2021/statistics/provenance.yaml": "data/experiments/COHERENT_CsI/CsI2021/statistics/provenance.yaml",
+    "data/experiments/Ar2020/statistics/provenance.yaml": "data/experiments/COHERENT_Ar/Ar2020/statistics/provenance.yaml"
+  }
+}

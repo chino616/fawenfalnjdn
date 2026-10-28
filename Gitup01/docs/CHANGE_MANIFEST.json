@@ -1,0 +1,3910 @@
+{
+  "status": "complete",
+  "refactor": "03",
+  "date": "2026-10-29",
+  "project": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\Gitup01",
+  "review_commit": "bd54dba8835ed245374c5a9d1d113ed20917c33b",
+  "local_git": "no .git in project; exact phased action log and recovery manifest used",
+  "remote_publication": "not performed for Refactor03",
+  "phase_status": {
+    "C0": "complete",
+    "C1": "complete",
+    "C2": "complete",
+    "C3": "complete",
+    "C4": "complete",
+    "C5": "complete",
+    "C6": "complete"
+  },
+  "scope": "engineering refactor only; scientific gates and protected reference arrays unchanged",
+  "baseline_inventory_files": 386,
+  "additional_first_change_hashes": 2,
+  "file_changes": [
+    {
+      "original": "src/cevns_pyeft/2026-10-22 Test.ipynb",
+      "before_sha256": "4ab2a64a9392438981d937e9ff820a1f96546c793bac9562498924aafe7587ad",
+      "action": "move",
+      "current": "cevns_pyeft/2026-10-22 Test.ipynb",
+      "after_sha256": "4ab2a64a9392438981d937e9ff820a1f96546c793bac9562498924aafe7587ad"
+    },
+    {
+      "original": "src/cevns_pyeft/cli.py",
+      "before_sha256": "4f682fdb4fa2cdfb5805c5e0b1063358a473938b46ad7352581552869bb5679f",
+      "action": "move",
+      "current": "cevns_pyeft/cli.py",
+      "after_sha256": "4f682fdb4fa2cdfb5805c5e0b1063358a473938b46ad7352581552869bb5679f"
+    },
+    {
+      "original": "src/cevns_pyeft/__init__.py",
+      "before_sha256": "589b45038aed28c22fd5b4c0b01535b42e8c1377cec81c04ec24261a4663a8b8",
+      "action": "move",
+      "current": "cevns_pyeft/__init__.py",
+      "after_sha256": "589b45038aed28c22fd5b4c0b01535b42e8c1377cec81c04ec24261a4663a8b8"
+    },
+    {
+      "original": "src/cevns_pyeft/contracts/interaction.py",
+      "before_sha256": "44c646caa64700b77c52201ffe526a8e8bca316a77d3f6340731b571340ccc86",
+      "action": "move",
+      "current": "cevns_pyeft/contracts/interaction.py",
+      "after_sha256": "44c646caa64700b77c52201ffe526a8e8bca316a77d3f6340731b571340ccc86"
+    },
+    {
+      "original": "src/cevns_pyeft/contracts/modules.py",
+      "before_sha256": "ac295d326e94998e054b7c3794cbdb4787dfb4df39a00403ed0414813e61c914",
+      "action": "move",
+      "current": "cevns_pyeft/contracts/modules.py",
+      "after_sha256": "ac295d326e94998e054b7c3794cbdb4787dfb4df39a00403ed0414813e61c914"
+    },
+    {
+      "original": "src/cevns_pyeft/contracts/observation.py",
+      "before_sha256": "6a6996223b7bbcb672f054bec085c7fead8a619de38b12608deca27982c0377d",
+      "action": "move",
+      "current": "cevns_pyeft/contracts/observation.py",
+      "after_sha256": "6a6996223b7bbcb672f054bec085c7fead8a619de38b12608deca27982c0377d"
+    },
+    {
+      "original": "src/cevns_pyeft/contracts/parameters.py",
+      "before_sha256": "3d8b55c7ba12cab050637d3a988ba8e8a0316d738cb56e11f024f484253ca45a",
+      "action": "move",
+      "current": "cevns_pyeft/contracts/parameters.py",
+      "after_sha256": "3d8b55c7ba12cab050637d3a988ba8e8a0316d738cb56e11f024f484253ca45a"
+    },
+    {
+      "original": "src/cevns_pyeft/contracts/prediction.py",
+      "before_sha256": "b33b2adb2b850f444ea28acf56a808c70089c53a11683e6feb7d8b55c0577c26",
+      "action": "move",
+      "current": "cevns_pyeft/contracts/prediction.py",
+      "after_sha256": "b33b2adb2b850f444ea28acf56a808c70089c53a11683e6feb7d8b55c0577c26"
+    },
+    {
+      "original": "src/cevns_pyeft/contracts/source.py",
+      "before_sha256": "595b2df21a76323684c23510b2f258bb5d33a68e0f02ef81643b9b6571dbc98f",
+      "action": "move",
+      "current": "cevns_pyeft/contracts/source.py",
+      "after_sha256": "595b2df21a76323684c23510b2f258bb5d33a68e0f02ef81643b9b6571dbc98f"
+    },
+    {
+      "original": "src/cevns_pyeft/contracts/target.py",
+      "before_sha256": "877b277ecb41da141aff014340e428b9575651168c36e9c6c2a60f192d78f498",
+      "action": "move",
+      "current": "cevns_pyeft/contracts/target.py",
+      "after_sha256": "877b277ecb41da141aff014340e428b9575651168c36e9c6c2a60f192d78f498"
+    },
+    {
+      "original": "src/cevns_pyeft/contracts/validation.py",
+      "before_sha256": "0b9922e6298a1a5ebbe87943e422d299616ce9275c72262a4164052173746d9b",
+      "action": "move",
+      "current": "cevns_pyeft/contracts/validation.py",
+      "after_sha256": "0b9922e6298a1a5ebbe87943e422d299616ce9275c72262a4164052173746d9b"
+    },
+    {
+      "original": "src/cevns_pyeft/contracts/__init__.py",
+      "before_sha256": "782ca6c8dee21816a23678f993f1964e3f8272700334acd1eaebfddae97ff257",
+      "action": "move",
+      "current": "cevns_pyeft/contracts/__init__.py",
+      "after_sha256": "782ca6c8dee21816a23678f993f1964e3f8272700334acd1eaebfddae97ff257"
+    },
+    {
+      "original": "src/cevns_pyeft/core/engine.py",
+      "before_sha256": "27562f649baae63081f4563766187daa3553ab53db450741aad7089fc2b45e7f",
+      "action": "move",
+      "current": "cevns_pyeft/core/engine.py",
+      "after_sha256": "27562f649baae63081f4563766187daa3553ab53db450741aad7089fc2b45e7f"
+    },
+    {
+      "original": "src/cevns_pyeft/core/model.py",
+      "before_sha256": "f381279ad6b95c7e6ee40a135f835a2d620529c3251cab7fd537ebcaa8af4cad",
+      "action": "move",
+      "current": "cevns_pyeft/core/model.py",
+      "after_sha256": "f381279ad6b95c7e6ee40a135f835a2d620529c3251cab7fd537ebcaa8af4cad"
+    },
+    {
+      "original": "src/cevns_pyeft/core/predict.py",
+      "before_sha256": "6c35de8c8bc7839daaa05ffd371c5f906c31b0a47b944f7b3f64dd14c1541eff",
+      "action": "move",
+      "current": "cevns_pyeft/core/predict.py",
+      "after_sha256": "6c35de8c8bc7839daaa05ffd371c5f906c31b0a47b944f7b3f64dd14c1541eff"
+    },
+    {
+      "original": "src/cevns_pyeft/core/__init__.py",
+      "before_sha256": "ee5d6fe151359a563a856e2f4306788bdfa19724af6a85aeb4f13979340f8505",
+      "action": "move",
+      "current": "cevns_pyeft/core/__init__.py",
+      "after_sha256": "ee5d6fe151359a563a856e2f4306788bdfa19724af6a85aeb4f13979340f8505"
+    },
+    {
+      "original": "src/cevns_pyeft/detectors/csi2021.py",
+      "before_sha256": "62284716edaa735d7e47e05d5e9c5e64dac2808dadd706688baa57cfbe402491",
+      "action": "move",
+      "current": "cevns_pyeft/detectors/csi2021.py",
+      "after_sha256": "62284716edaa735d7e47e05d5e9c5e64dac2808dadd706688baa57cfbe402491"
+    },
+    {
+      "original": "src/cevns_pyeft/detectors/selection.py",
+      "before_sha256": "32acac6103050d971ca71d955c9034994952ad10b7ace00fca00f89b198edeae",
+      "action": "move",
+      "current": "cevns_pyeft/detectors/selection.py",
+      "after_sha256": "32acac6103050d971ca71d955c9034994952ad10b7ace00fca00f89b198edeae"
+    },
+    {
+      "original": "src/cevns_pyeft/detectors/__init__.py",
+      "before_sha256": "d172171a4a9f1f1d6aacefa17a7a5ae65006272de3775df7160e955732b517b8",
+      "action": "move",
+      "current": "cevns_pyeft/detectors/__init__.py",
+      "after_sha256": "d172171a4a9f1f1d6aacefa17a7a5ae65006272de3775df7160e955732b517b8"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/base.py",
+      "before_sha256": "5e4b6689fcb858b88e0036ce24ee53992760cb70174221a250007c2c1433cef4",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/experiments/base.py",
+      "after_sha256": "5e3d4e0d856869e93ab1baa14274e83ea15347626f2f1bf823c63671161ade8e"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/catalog.py",
+      "before_sha256": "e41e298f50bb06605216c44fd136c34f02fca972345615b3ec8a2feabc8c162a",
+      "action": "move",
+      "current": "cevns_pyeft/experiments/catalog.py",
+      "after_sha256": "e41e298f50bb06605216c44fd136c34f02fca972345615b3ec8a2feabc8c162a"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/definition.py",
+      "before_sha256": "08b0347134107ec7855b3b8b069f5e1e9422adf061e974b1ac1a5e9a47e34ed9",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/experiments/definition.py",
+      "after_sha256": "c3c34075955fa350a93a73c13dddb092772b21ab71e55db0fe14a851f8db8053"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/loader.py",
+      "before_sha256": "16e5154543671b7bfa1420f9c7494dd1b355e1879b9992a1d9ca91b39316675c",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/experiments/loader.py",
+      "after_sha256": "fb7d9f91af744acda9cdf4c768a4c06a5d8cd561692e114837215fa7eb461abe"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/registry.py",
+      "before_sha256": "50b0ea299899cb38a8910d631f174180c97a9dd00de65c0946b50bd711d5b318",
+      "action": "move",
+      "current": "cevns_pyeft/experiments/registry.py",
+      "after_sha256": "50b0ea299899cb38a8910d631f174180c97a9dd00de65c0946b50bd711d5b318"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/runtime.py",
+      "before_sha256": "a5c772f4ab8e95241b07c84289618c357d111a1ccb39829c7d7d423c56050b7c",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/experiments/runtime.py",
+      "after_sha256": "b8d1f02e19cb693adb3bef7707c3e8b81d67cdb2b620449c223b696c74316250"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/selection.py",
+      "before_sha256": "90efe3798980f3f80ffe428701a04f97e58c177e20e307077133e0cda4b852a9",
+      "action": "move",
+      "current": "cevns_pyeft/experiments/selection.py",
+      "after_sha256": "90efe3798980f3f80ffe428701a04f97e58c177e20e307077133e0cda4b852a9"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/specs.py",
+      "before_sha256": "5b0633166370d9ec45d06bc2f9e069a319ebca5a04c6b51c78cf070621dcdac7",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/experiments/specs.py",
+      "after_sha256": "c055349d9f8e3951b2d3241567a7d67fbfb0ccf5041f29b707d9e3e0375575f4"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/__init__.py",
+      "before_sha256": "3c1e78ec41faf6d0a840f0d144df62ad604243fc5adb802cbd579c7e67ae695b",
+      "action": "move",
+      "current": "cevns_pyeft/experiments/__init__.py",
+      "after_sha256": "3c1e78ec41faf6d0a840f0d144df62ad604243fc5adb802cbd579c7e67ae695b"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/coherent/ar2020_definition.py",
+      "before_sha256": "8d61f68a4b3dea4490f0f4a3a81923b877c6882e4cd1478dd74ef4d0a05ec03a",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/experiments/coherent/ar2020_definition.py",
+      "after_sha256": "413f2c5329f85ecb8029dcde7240b240c88b0f5f191779f254429f144d08bc74"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/coherent/csi2017_definition.py",
+      "before_sha256": "d12011fcd81e1f418581a8ead519412c2065a202292b0304895a9cf3287f3737",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/experiments/coherent/csi2017_definition.py",
+      "after_sha256": "3e2d542f29710fbb6856d634a61bd58485c25794cae75112e657e49451278f7a"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/coherent/csi2021.py",
+      "before_sha256": "8e5e2242f67b6bf177ca73ff1ab8a37809c38c93594677fb5d17c7c514869469",
+      "action": "move",
+      "current": "cevns_pyeft/experiments/coherent/csi2021.py",
+      "after_sha256": "8e5e2242f67b6bf177ca73ff1ab8a37809c38c93594677fb5d17c7c514869469"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/coherent/csi2021_definition.py",
+      "before_sha256": "000fce2d62fe22fc2c8d8209dab79d0510838f7de2f1a7e70ec61b3f64a78901",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/experiments/coherent/csi2021_definition.py",
+      "after_sha256": "80139074eac5491ebd8257635c6db46602631bbc74de9e9460b1de18a562eca2"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/coherent/execution.py",
+      "before_sha256": "5d7d5aea8ac5c2ebcfe3422489a38796547454c95bb2804bce64ff01e6656a8c",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/experiments/coherent/execution.py",
+      "after_sha256": "4a05c51c2398463bbd28b64b4d1120f21b0672156908afcefcacd9a936df34d3"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/coherent/fast_kernel_ar2020.py",
+      "before_sha256": "1d94943787f86b367e2622dbb96df61e27a09b2f5da880302e08f8ee4d3b7169",
+      "action": "move",
+      "current": "cevns_pyeft/experiments/coherent/fast_kernel_ar2020.py",
+      "after_sha256": "1d94943787f86b367e2622dbb96df61e27a09b2f5da880302e08f8ee4d3b7169"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/coherent/fast_kernel_csi2017.py",
+      "before_sha256": "0c0e1c2244770208a6b9d5652011e42aa4899552f9f18894a028d579edb34db3",
+      "action": "move",
+      "current": "cevns_pyeft/experiments/coherent/fast_kernel_csi2017.py",
+      "after_sha256": "0c0e1c2244770208a6b9d5652011e42aa4899552f9f18894a028d579edb34db3"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/coherent/fast_kernel_csi2021.py",
+      "before_sha256": "38da6d73254ff2359afcd493197ab85e395eb7a0f97853a442fa2553e4a2a2d3",
+      "action": "move",
+      "current": "cevns_pyeft/experiments/coherent/fast_kernel_csi2021.py",
+      "after_sha256": "38da6d73254ff2359afcd493197ab85e395eb7a0f97853a442fa2553e4a2a2d3"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/coherent/slow_counts_ar2020.py",
+      "before_sha256": "eab6ca19d46e5be3620fa66645568539d13dc796f0688a9335bc161f0fed931e",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/experiments/coherent/slow_counts_ar2020.py",
+      "after_sha256": "d0d17e9eb8ccfc249f0019a2b6f490f1cced7ac6695fa6316f2d49920bf53b14"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/coherent/slow_counts_csi2017.py",
+      "before_sha256": "6140512f44ac72189545891ad5eeffbbc11780070f5176d77ba88835dba6b32d",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/experiments/coherent/slow_counts_csi2017.py",
+      "after_sha256": "e5dd5704e7af9b9b025a9fb248b1c66ea2297d236c9e57d619914814fe5c64ef"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/coherent/slow_counts_csi2021.py",
+      "before_sha256": "f717ca544c74b862de7c63d32c9e6cb90b7038bb60d38df98e54a5492da2513c",
+      "action": "move",
+      "current": "cevns_pyeft/experiments/coherent/slow_counts_csi2021.py",
+      "after_sha256": "f717ca544c74b862de7c63d32c9e6cb90b7038bb60d38df98e54a5492da2513c"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/coherent/sns.py",
+      "before_sha256": "b10bd6a4110d5d13244fc5213da5a636b656f25dd8994d4c69c48c1eb371e7ef",
+      "action": "move",
+      "current": "cevns_pyeft/experiments/coherent/sns.py",
+      "after_sha256": "b10bd6a4110d5d13244fc5213da5a636b656f25dd8994d4c69c48c1eb371e7ef"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/coherent/statistics_binding.py",
+      "before_sha256": "84b5b0b241acb2a1ba77bd0177dbb3b85d78900d2176970fa3ddc3636d6839f7",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/experiments/coherent/statistics_binding.py",
+      "after_sha256": "35a70e08cdf3202304888271fd6708c48ca05d2b949845e0cd91e3955bf00ffd"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/coherent/__init__.py",
+      "before_sha256": "b23433a3630c3f3ede4e38beb05c0623f8cb78bddf5b1f4df243b60db483e8d2",
+      "action": "move",
+      "current": "cevns_pyeft/experiments/coherent/__init__.py",
+      "after_sha256": "b23433a3630c3f3ede4e38beb05c0623f8cb78bddf5b1f4df243b60db483e8d2"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/conus_plus/definition.py",
+      "before_sha256": "9e258b0160424562a06f4720ac6c7272e850e6170c66f2b4659a111ea3a92d22",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/experiments/conus_plus/definition.py",
+      "after_sha256": "b2307fd3d55b659dede45eb0eb88115e75760b219c5cc55db73e9d7793c89787"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/conus_plus/detector_response.py",
+      "before_sha256": "994a88cf23364894df0956f51eaf1fee466c06ffd32ad82f49400de082355e87",
+      "action": "move",
+      "current": "cevns_pyeft/experiments/conus_plus/detector_response.py",
+      "after_sha256": "994a88cf23364894df0956f51eaf1fee466c06ffd32ad82f49400de082355e87"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/conus_plus/eft_kernel.py",
+      "before_sha256": "606c1bbd5692ad22cecdf7d2f458de941e47f86ea16b6549666bdf23108247ab",
+      "action": "move",
+      "current": "cevns_pyeft/experiments/conus_plus/eft_kernel.py",
+      "after_sha256": "606c1bbd5692ad22cecdf7d2f458de941e47f86ea16b6549666bdf23108247ab"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/conus_plus/execution.py",
+      "before_sha256": "2f152815631f77570b830f3c6712f83087c2c369335dd3e0df615ca45a3bfc37",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/experiments/conus_plus/execution.py",
+      "after_sha256": "c8ace6202e78b46c875c3c042d5e02c5c83edb12521b787efe74d79f01221981"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/conus_plus/fast_kernel.py",
+      "before_sha256": "730ee75a8adf2cc1f54b688005f3b7b66efeb542d7994f8c28fb202830e82a48",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/experiments/conus_plus/fast_kernel.py",
+      "after_sha256": "2ee1f7b9ae4b3e866c0887dafc84060b596232736765ef71937ea0448f0d23fc"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/conus_plus/slow_counts.py",
+      "before_sha256": "7d07739098c92cf692cdc5c01b4f0b2c19ca95ccf895fc4b88e1abf2c8298f19",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/experiments/conus_plus/slow_counts.py",
+      "after_sha256": "860a77f460683c68025c004149458067668754e0fb75d5d19fc7d2ece6cbd8db"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/conus_plus/source.py",
+      "before_sha256": "1898fc525b7bb0b107bca9331f15331b6c99ba5fc69005e1e80962dd7dd037d4",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/experiments/conus_plus/source.py",
+      "after_sha256": "6cf62d9385fc2f0c850de8df5ac08457729ad46c1c05f604007da47b2138f4c5"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/conus_plus/statistics.py",
+      "before_sha256": "1084b2228d63603509d3f74a1ed200a87aab1adf9b7a9a5292128efebb9b76b6",
+      "action": "move",
+      "current": "cevns_pyeft/experiments/conus_plus/statistics.py",
+      "after_sha256": "1084b2228d63603509d3f74a1ed200a87aab1adf9b7a9a5292128efebb9b76b6"
+    },
+    {
+      "original": "src/cevns_pyeft/experiments/conus_plus/__init__.py",
+      "before_sha256": "6949384a682adc70526b72aeccfa028515135d604f899c29b6e5eda3425cc7df",
+      "action": "move",
+      "current": "cevns_pyeft/experiments/conus_plus/__init__.py",
+      "after_sha256": "6949384a682adc70526b72aeccfa028515135d604f899c29b6e5eda3425cc7df"
+    },
+    {
+      "original": "src/cevns_pyeft/foundation/constants.py",
+      "before_sha256": "0bb51033d1ca64e18a7a7bb0fd4cce38bc679558dd7392740f72d4683276cd44",
+      "action": "move",
+      "current": "cevns_pyeft/foundation/constants.py",
+      "after_sha256": "0bb51033d1ca64e18a7a7bb0fd4cce38bc679558dd7392740f72d4683276cd44"
+    },
+    {
+      "original": "src/cevns_pyeft/foundation/units.py",
+      "before_sha256": "053e4c8d9e47cd32ba4bacbb33da8367c02a32aca02c16c1d6d4e4a7bba6640a",
+      "action": "move",
+      "current": "cevns_pyeft/foundation/units.py",
+      "after_sha256": "053e4c8d9e47cd32ba4bacbb33da8367c02a32aca02c16c1d6d4e4a7bba6640a"
+    },
+    {
+      "original": "src/cevns_pyeft/foundation/__init__.py",
+      "before_sha256": "747c1b2ae5a59c80a235455feccc5fec27b37827a87a6b94ea2dca5e8ba32411",
+      "action": "move",
+      "current": "cevns_pyeft/foundation/__init__.py",
+      "after_sha256": "747c1b2ae5a59c80a235455feccc5fec27b37827a87a6b94ea2dca5e8ba32411"
+    },
+    {
+      "original": "src/cevns_pyeft/kernels/basis.py",
+      "before_sha256": "053a369aadc49e14f515d5ba0275fe6523390a3f821db66208f329a30dabd991",
+      "action": "move",
+      "current": "cevns_pyeft/kernels/basis.py",
+      "after_sha256": "053a369aadc49e14f515d5ba0275fe6523390a3f821db66208f329a30dabd991"
+    },
+    {
+      "original": "src/cevns_pyeft/kernels/builder.py",
+      "before_sha256": "9d1c1635ee1fce8e261c0574897b457d4e974cbca1ca9419d95d989fda5c2adf",
+      "action": "move",
+      "current": "cevns_pyeft/kernels/builder.py",
+      "after_sha256": "9d1c1635ee1fce8e261c0574897b457d4e974cbca1ca9419d95d989fda5c2adf"
+    },
+    {
+      "original": "src/cevns_pyeft/kernels/compiler.py",
+      "before_sha256": "5a6490f9ea586dd0b262183fa3b0ead6dcc9b393e0eb49ec70d000102d045e8a",
+      "action": "move",
+      "current": "cevns_pyeft/kernels/compiler.py",
+      "after_sha256": "5a6490f9ea586dd0b262183fa3b0ead6dcc9b393e0eb49ec70d000102d045e8a"
+    },
+    {
+      "original": "src/cevns_pyeft/kernels/fingerprint.py",
+      "before_sha256": "0e503f4e197a8fda182b12d9c03e403d91c90b7a51de534469611436df3533f9",
+      "action": "move",
+      "current": "cevns_pyeft/kernels/fingerprint.py",
+      "after_sha256": "0e503f4e197a8fda182b12d9c03e403d91c90b7a51de534469611436df3533f9"
+    },
+    {
+      "original": "src/cevns_pyeft/kernels/interface_storage.py",
+      "before_sha256": "05d653e4117f195ac163978f324a1596782b58e7bf3feb5dfb7be2fc53b61fe2",
+      "action": "move",
+      "current": "cevns_pyeft/kernels/interface_storage.py",
+      "after_sha256": "05d653e4117f195ac163978f324a1596782b58e7bf3feb5dfb7be2fc53b61fe2"
+    },
+    {
+      "original": "src/cevns_pyeft/kernels/reconstruction.py",
+      "before_sha256": "1d3ef686e45cae01f4a481532d7a025358400496e445b9707093a66400cca1ad",
+      "action": "move",
+      "current": "cevns_pyeft/kernels/reconstruction.py",
+      "after_sha256": "1d3ef686e45cae01f4a481532d7a025358400496e445b9707093a66400cca1ad"
+    },
+    {
+      "original": "src/cevns_pyeft/kernels/storage.py",
+      "before_sha256": "86ab01e539701fe496ad937c6f53e4fd5285ba229e93424d778e6ad7c8ccbbaf",
+      "action": "move",
+      "current": "cevns_pyeft/kernels/storage.py",
+      "after_sha256": "86ab01e539701fe496ad937c6f53e4fd5285ba229e93424d778e6ad7c8ccbbaf"
+    },
+    {
+      "original": "src/cevns_pyeft/kernels/__init__.py",
+      "before_sha256": "10af42f5b40b4d3f489e67692985dde7b233f8595b57451cd864b23df6aabb8f",
+      "action": "move",
+      "current": "cevns_pyeft/kernels/__init__.py",
+      "after_sha256": "10af42f5b40b4d3f489e67692985dde7b233f8595b57451cd864b23df6aabb8f"
+    },
+    {
+      "original": "src/cevns_pyeft/nuclear/response.py",
+      "before_sha256": "fc94a1582b11e58113e2f192be9733dfaf5b27b2604fe075da9e9f56b94d776f",
+      "action": "move",
+      "current": "cevns_pyeft/nuclear/response.py",
+      "after_sha256": "fc94a1582b11e58113e2f192be9733dfaf5b27b2604fe075da9e9f56b94d776f"
+    },
+    {
+      "original": "src/cevns_pyeft/nuclear/__init__.py",
+      "before_sha256": "d7869554724a9701a2b7dbe6818db7760317d3607207ae7eb7688d3a1f2d0e3f",
+      "action": "move",
+      "current": "cevns_pyeft/nuclear/__init__.py",
+      "after_sha256": "d7869554724a9701a2b7dbe6818db7760317d3607207ae7eb7688d3a1f2d0e3f"
+    },
+    {
+      "original": "src/cevns_pyeft/propagation/base.py",
+      "before_sha256": "f1e531e91d96ffbc1ae46f855897a5c3793fa280f904d0e61c08e8b4b46eab0a",
+      "action": "move",
+      "current": "cevns_pyeft/propagation/base.py",
+      "after_sha256": "f1e531e91d96ffbc1ae46f855897a5c3793fa280f904d0e61c08e8b4b46eab0a"
+    },
+    {
+      "original": "src/cevns_pyeft/propagation/density.py",
+      "before_sha256": "670b701aae958f66f0588c657e64cc3f1b4d63803d96ae6d14faefd45342f170",
+      "action": "move",
+      "current": "cevns_pyeft/propagation/density.py",
+      "after_sha256": "670b701aae958f66f0588c657e64cc3f1b4d63803d96ae6d14faefd45342f170"
+    },
+    {
+      "original": "src/cevns_pyeft/propagation/__init__.py",
+      "before_sha256": "4f961ad6cb85eea23f6a4484ab2e181117b77a4cdca57e2ac01052eceafc8db2",
+      "action": "move",
+      "current": "cevns_pyeft/propagation/__init__.py",
+      "after_sha256": "4f961ad6cb85eea23f6a4484ab2e181117b77a4cdca57e2ac01052eceafc8db2"
+    },
+    {
+      "original": "src/cevns_pyeft/propagation/backends/snudd.py",
+      "before_sha256": "0a82dabc6be43cb26d8dfec33e382da782bd1ee58890564717e817f74e834e05",
+      "action": "move",
+      "current": "cevns_pyeft/propagation/backends/snudd.py",
+      "after_sha256": "0a82dabc6be43cb26d8dfec33e382da782bd1ee58890564717e817f74e834e05"
+    },
+    {
+      "original": "src/cevns_pyeft/propagation/backends/__init__.py",
+      "before_sha256": "a613261e76cc0d5ccfdb9850386941f5092edbd7a60e74b8e8a8d5e3333f05bd",
+      "action": "move",
+      "current": "cevns_pyeft/propagation/backends/__init__.py",
+      "after_sha256": "a613261e76cc0d5ccfdb9850386941f5092edbd7a60e74b8e8a8d5e3333f05bd"
+    },
+    {
+      "original": "src/cevns_pyeft/rates/counts.py",
+      "before_sha256": "97489d69e40960c3ed11c0f049211728fe137c02650134282c57ab44254dce01",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/rates/counts.py",
+      "after_sha256": "ad397758eba95b3b785ee482d06f120b60349dc8ea1bc7b2a40692d337267c1d"
+    },
+    {
+      "original": "src/cevns_pyeft/rates/differential.py",
+      "before_sha256": "c98637b4aff81dab44c488e804e96066b8d5385382b0a33687144083ad8b6a6c",
+      "action": "move",
+      "current": "cevns_pyeft/rates/differential.py",
+      "after_sha256": "c98637b4aff81dab44c488e804e96066b8d5385382b0a33687144083ad8b6a6c"
+    },
+    {
+      "original": "src/cevns_pyeft/rates/folding.py",
+      "before_sha256": "e1600e659d3dc5816095bdf395b6dc9ab78b57ed345e638c6a95b72eb0e076d1",
+      "action": "move",
+      "current": "cevns_pyeft/rates/folding.py",
+      "after_sha256": "e1600e659d3dc5816095bdf395b6dc9ab78b57ed345e638c6a95b72eb0e076d1"
+    },
+    {
+      "original": "src/cevns_pyeft/rates/recoil.py",
+      "before_sha256": "c300780a0d82fc812af113af27c1ffba52ac52cfce76ed715cb9424050b1251b",
+      "action": "move",
+      "current": "cevns_pyeft/rates/recoil.py",
+      "after_sha256": "c300780a0d82fc812af113af27c1ffba52ac52cfce76ed715cb9424050b1251b"
+    },
+    {
+      "original": "src/cevns_pyeft/rates/__init__.py",
+      "before_sha256": "ea0ff65eb2b2b0932dca0555b158d9b4ba1e3d2e667641fefec02880d7b20b10",
+      "action": "move",
+      "current": "cevns_pyeft/rates/__init__.py",
+      "after_sha256": "ea0ff65eb2b2b0932dca0555b158d9b4ba1e3d2e667641fefec02880d7b20b10"
+    },
+    {
+      "original": "src/cevns_pyeft/sources/composable.py",
+      "before_sha256": "84a4e4bfd34f40ced572b51d6f6f52d5886fa039fc21c728809242c64f876b8f",
+      "action": "move",
+      "current": "cevns_pyeft/sources/composable.py",
+      "after_sha256": "84a4e4bfd34f40ced572b51d6f6f52d5886fa039fc21c728809242c64f876b8f"
+    },
+    {
+      "original": "src/cevns_pyeft/sources/sns.py",
+      "before_sha256": "e2876f74bf9a469f33a5539ac0e197ee345d4dada2a4dc48a1760fd0214a923b",
+      "action": "move",
+      "current": "cevns_pyeft/sources/sns.py",
+      "after_sha256": "e2876f74bf9a469f33a5539ac0e197ee345d4dada2a4dc48a1760fd0214a923b"
+    },
+    {
+      "original": "src/cevns_pyeft/sources/state.py",
+      "before_sha256": "39ae30776f58bb19c15e842317940cb3aece2040eabb19046d01842e55815100",
+      "action": "move",
+      "current": "cevns_pyeft/sources/state.py",
+      "after_sha256": "39ae30776f58bb19c15e842317940cb3aece2040eabb19046d01842e55815100"
+    },
+    {
+      "original": "src/cevns_pyeft/sources/__init__.py",
+      "before_sha256": "479ec238313a0e039ab01ea0e559b6051f1399f524c93599f411cfe2861c1d3b",
+      "action": "move",
+      "current": "cevns_pyeft/sources/__init__.py",
+      "after_sha256": "479ec238313a0e039ab01ea0e559b6051f1399f524c93599f411cfe2861c1d3b"
+    },
+    {
+      "original": "src/cevns_pyeft/statistics/adapters.py",
+      "before_sha256": "547a806ff8a72b29be2b74f888a18901f3d0ad69c11a0fa457e1da6c5df5123c",
+      "action": "move",
+      "current": "cevns_pyeft/statistics/adapters.py",
+      "after_sha256": "547a806ff8a72b29be2b74f888a18901f3d0ad69c11a0fa457e1da6c5df5123c"
+    },
+    {
+      "original": "src/cevns_pyeft/statistics/confidence.py",
+      "before_sha256": "dd9449ed9bda1a2cba959a1afd54bf93e5411dc81595d5b771dfd2094800ded5",
+      "action": "move",
+      "current": "cevns_pyeft/statistics/confidence.py",
+      "after_sha256": "dd9449ed9bda1a2cba959a1afd54bf93e5411dc81595d5b771dfd2094800ded5"
+    },
+    {
+      "original": "src/cevns_pyeft/statistics/datasets.py",
+      "before_sha256": "8e12bcfbce83c68fa9ca33dfc2d449d13bef37d0df1bc7e7f6379eaa0930ef64",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/statistics/datasets.py",
+      "after_sha256": "d1d5bcbe72a3ccb44c6e6210c8290d2e5d83bc4738849af0140f551840a5abec"
+    },
+    {
+      "original": "src/cevns_pyeft/statistics/likelihoods.py",
+      "before_sha256": "9f1e347157cc36cafcb9a6af82aecc46f000d57db3bf9bd7bda8e869820021b6",
+      "action": "move",
+      "current": "cevns_pyeft/statistics/likelihoods.py",
+      "after_sha256": "9f1e347157cc36cafcb9a6af82aecc46f000d57db3bf9bd7bda8e869820021b6"
+    },
+    {
+      "original": "src/cevns_pyeft/statistics/observables.py",
+      "before_sha256": "562a18e77e4b0f75666847d220f785e6c54b99df436f014e203f76ef05109941",
+      "action": "move",
+      "current": "cevns_pyeft/statistics/observables.py",
+      "after_sha256": "562a18e77e4b0f75666847d220f785e6c54b99df436f014e203f76ef05109941"
+    },
+    {
+      "original": "src/cevns_pyeft/statistics/parameters.py",
+      "before_sha256": "654f3d41fea1760fdb0af7c678bf42523c8c359fc1bbac00d045ec0f76eabca6",
+      "action": "move",
+      "current": "cevns_pyeft/statistics/parameters.py",
+      "after_sha256": "654f3d41fea1760fdb0af7c678bf42523c8c359fc1bbac00d045ec0f76eabca6"
+    },
+    {
+      "original": "src/cevns_pyeft/statistics/predictors.py",
+      "before_sha256": "b5544ab74a7079092a7151c11b64955e3c3e5e90aa44a7e7fc67f6d48cff7799",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/statistics/predictors.py",
+      "after_sha256": "dde343bb128790eb19f8e03ee18eb4c6f2ef32d1ab2c27ca185e3841c4c70a36"
+    },
+    {
+      "original": "src/cevns_pyeft/statistics/profiling.py",
+      "before_sha256": "1ff56e0d802ec8b05ac8002633b070d8019e40895569dc083683029d0a26c120",
+      "action": "move",
+      "current": "cevns_pyeft/statistics/profiling.py",
+      "after_sha256": "1ff56e0d802ec8b05ac8002633b070d8019e40895569dc083683029d0a26c120"
+    },
+    {
+      "original": "src/cevns_pyeft/statistics/scans.py",
+      "before_sha256": "0610e0248fa64632c8c8f7c9f8fc3e77b02cd9c3cfa13a85f5adcfa02132bdb0",
+      "action": "move",
+      "current": "cevns_pyeft/statistics/scans.py",
+      "after_sha256": "0610e0248fa64632c8c8f7c9f8fc3e77b02cd9c3cfa13a85f5adcfa02132bdb0"
+    },
+    {
+      "original": "src/cevns_pyeft/statistics/__init__.py",
+      "before_sha256": "ed5a1e1e4915bbe05daedfe46bb558f7a9c69ca215476d5b60bba4e485048167",
+      "action": "move",
+      "current": "cevns_pyeft/statistics/__init__.py",
+      "after_sha256": "ed5a1e1e4915bbe05daedfe46bb558f7a9c69ca215476d5b60bba4e485048167"
+    },
+    {
+      "original": "src/cevns_pyeft/targets/materials.py",
+      "before_sha256": "f335373365126c8848921ec9d20068c807375b77a43cb4e1bc9361c72562ae62",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/targets/materials.py",
+      "after_sha256": "8980b41b4e6af3e93e83c42978a8f90cb82a807dce62ee098038eb593ddf3817"
+    },
+    {
+      "original": "src/cevns_pyeft/targets/__init__.py",
+      "before_sha256": "293d55adbbfc120bfb5212f2511f60228ff1f14f5a60c06c2f107ed6841768ff",
+      "action": "move_and_modify",
+      "current": "cevns_pyeft/targets/__init__.py",
+      "after_sha256": "e3aef6b0ac71044ca8b37efa79a330680a803be495594ad48205badfbf200dc6"
+    },
+    {
+      "original": "src/cevns_pyeft/theory/kinematics.py",
+      "before_sha256": "2fcdeae7b83a1183c1215461e8d1f91badda142cb78ba7cb0fbb25367c69bd16",
+      "action": "move",
+      "current": "cevns_pyeft/theory/kinematics.py",
+      "after_sha256": "2fcdeae7b83a1183c1215461e8d1f91badda142cb78ba7cb0fbb25367c69bd16"
+    },
+    {
+      "original": "src/cevns_pyeft/theory/__init__.py",
+      "before_sha256": "c5f71bea32f72a9c3ddafba06e96a425e9fcd2f47829b9c4683735d5d3840e20",
+      "action": "move",
+      "current": "cevns_pyeft/theory/__init__.py",
+      "after_sha256": "c5f71bea32f72a9c3ddafba06e96a425e9fcd2f47829b9c4683735d5d3840e20"
+    },
+    {
+      "original": "src/cevns_pyeft/theory/helm/cross_section.py",
+      "before_sha256": "816add89966820f38e344174ef90e5e09e262c90bfdb63d7ac11da28ee88101f",
+      "action": "move",
+      "current": "cevns_pyeft/theory/helm/cross_section.py",
+      "after_sha256": "816add89966820f38e344174ef90e5e09e262c90bfdb63d7ac11da28ee88101f"
+    },
+    {
+      "original": "src/cevns_pyeft/theory/helm/form_factor.py",
+      "before_sha256": "fcbcad484f52a5fc4c831a154c156cb5992dcd6d07802eec33e8498cc84882db",
+      "action": "move",
+      "current": "cevns_pyeft/theory/helm/form_factor.py",
+      "after_sha256": "fcbcad484f52a5fc4c831a154c156cb5992dcd6d07802eec33e8498cc84882db"
+    },
+    {
+      "original": "src/cevns_pyeft/theory/helm/__init__.py",
+      "before_sha256": "ac67f2db7e4a3a3270af5b123a1096da200d6f3cb03ce1aeaa58b8b2c4490e34",
+      "action": "move",
+      "current": "cevns_pyeft/theory/helm/__init__.py",
+      "after_sha256": "ac67f2db7e4a3a3270af5b123a1096da200d6f3cb03ce1aeaa58b8b2c4490e34"
+    },
+    {
+      "original": "src/cevns_pyeft/theory/li2026/adapter.py",
+      "before_sha256": "e7e8f2c53d8500999ede7a3ff9a5b1e5a7d735464cb130b19cf35be789951a6f",
+      "action": "move",
+      "current": "cevns_pyeft/theory/li2026/adapter.py",
+      "after_sha256": "e7e8f2c53d8500999ede7a3ff9a5b1e5a7d735464cb130b19cf35be789951a6f"
+    },
+    {
+      "original": "src/cevns_pyeft/theory/li2026/amplitude.py",
+      "before_sha256": "40a2bbfcb60716da67ff3d5182d5af6dd075bcd7dfccf9a49b9b3b0a8a9b7aed",
+      "action": "move",
+      "current": "cevns_pyeft/theory/li2026/amplitude.py",
+      "after_sha256": "40a2bbfcb60716da67ff3d5182d5af6dd075bcd7dfccf9a49b9b3b0a8a9b7aed"
+    },
+    {
+      "original": "src/cevns_pyeft/theory/li2026/coefficients.py",
+      "before_sha256": "c032668684ddc7e854b0fff0c8ec808995c7b2e014d4eea570dffe8053b984b2",
+      "action": "move",
+      "current": "cevns_pyeft/theory/li2026/coefficients.py",
+      "after_sha256": "c032668684ddc7e854b0fff0c8ec808995c7b2e014d4eea570dffe8053b984b2"
+    },
+    {
+      "original": "src/cevns_pyeft/theory/li2026/cross_section.py",
+      "before_sha256": "adc13f3e1acc9b88b85fc033a6117cc2f99a77d1bc88e66368e416e4f5304393",
+      "action": "move",
+      "current": "cevns_pyeft/theory/li2026/cross_section.py",
+      "after_sha256": "adc13f3e1acc9b88b85fc033a6117cc2f99a77d1bc88e66368e416e4f5304393"
+    },
+    {
+      "original": "src/cevns_pyeft/theory/li2026/flavor.py",
+      "before_sha256": "66c84c2f2dad58ebba132cb768db36c8661a3e053b8cb74900d47df6cffa48c4",
+      "action": "move",
+      "current": "cevns_pyeft/theory/li2026/flavor.py",
+      "after_sha256": "66c84c2f2dad58ebba132cb768db36c8661a3e053b8cb74900d47df6cffa48c4"
+    },
+    {
+      "original": "src/cevns_pyeft/theory/li2026/form_factors.py",
+      "before_sha256": "30cdddc17904416ccdb31b4e84ed2ba883d192ef15196cb52d7b25cb2822eb2f",
+      "action": "move",
+      "current": "cevns_pyeft/theory/li2026/form_factors.py",
+      "after_sha256": "30cdddc17904416ccdb31b4e84ed2ba883d192ef15196cb52d7b25cb2822eb2f"
+    },
+    {
+      "original": "src/cevns_pyeft/theory/li2026/lec.py",
+      "before_sha256": "9c981d8705ba6a17829c75e81b93ce6f85fdbcc290faf5bf64edde9dc8867691",
+      "action": "move",
+      "current": "cevns_pyeft/theory/li2026/lec.py",
+      "after_sha256": "9c981d8705ba6a17829c75e81b93ce6f85fdbcc290faf5bf64edde9dc8867691"
+    },
+    {
+      "original": "src/cevns_pyeft/theory/li2026/left_to_ci.py",
+      "before_sha256": "56027d356737d85de4ae22ba3b303ade16e1c0163887bbedbc53ac2f0d46ae48",
+      "action": "move",
+      "current": "cevns_pyeft/theory/li2026/left_to_ci.py",
+      "after_sha256": "56027d356737d85de4ae22ba3b303ade16e1c0163887bbedbc53ac2f0d46ae48"
+    },
+    {
+      "original": "src/cevns_pyeft/theory/li2026/operators.py",
+      "before_sha256": "c1932f6de64333b3a344fc84b7f5ec19efddbbf9a33db2aa9e245df702609ff4",
+      "action": "move",
+      "current": "cevns_pyeft/theory/li2026/operators.py",
+      "after_sha256": "c1932f6de64333b3a344fc84b7f5ec19efddbbf9a33db2aa9e245df702609ff4"
+    },
+    {
+      "original": "src/cevns_pyeft/theory/li2026/responses.py",
+      "before_sha256": "5edb06d4dd7409d0bac8245f9bf25b24f81f9e473e37f5e4f311492e9542f01b",
+      "action": "move",
+      "current": "cevns_pyeft/theory/li2026/responses.py",
+      "after_sha256": "5edb06d4dd7409d0bac8245f9bf25b24f81f9e473e37f5e4f311492e9542f01b"
+    },
+    {
+      "original": "src/cevns_pyeft/theory/li2026/__init__.py",
+      "before_sha256": "62c3b0efd4c52b1a9c1362de1bec3f0426bc8d38463efb480dcd4c747b7e15ef",
+      "action": "move",
+      "current": "cevns_pyeft/theory/li2026/__init__.py",
+      "after_sha256": "62c3b0efd4c52b1a9c1362de1bec3f0426bc8d38463efb480dcd4c747b7e15ef"
+    },
+    {
+      "original": "tests/test_experiment_modularization.py",
+      "before_sha256": "5303fbd437b16b2861856dd9f0b8296fbd677b2d5cc31adfa59486ea40436713",
+      "action": "modify",
+      "current": "tests/test_experiment_modularization.py",
+      "after_sha256": "0fa7ed2e40cbfa279b4701fdb578f9b411bfac33024064e8670e366a718a39f1"
+    },
+    {
+      "original": "tests/test_fast_model_contract.py",
+      "before_sha256": "9b9d5d10a1de46f785615316b4daa48140864531ceefccb5dc924d76eee19c7c",
+      "action": "modify",
+      "current": "tests/test_fast_model_contract.py",
+      "after_sha256": "bd0dcac0505a1e16536bf74e10c719eb0d1829997ac994425d3c8cb6a8efe4ee"
+    },
+    {
+      "original": "tests/test_interface_contracts.py",
+      "before_sha256": "bf8cefe10666ebba68a30c1bde9344306bb572276f3ba33ddb3b90d8553c3ecc",
+      "action": "modify",
+      "current": "tests/test_interface_contracts.py",
+      "after_sha256": "42d61f02971949b552a6973583106cbe053db2261ef5c53ee0631eca73a473f1"
+    },
+    {
+      "original": "tests/test_refactor_csi2021_regression.py",
+      "before_sha256": "232c16f7606ac4ea07efeae265a3cd3e19d6fb33a6edf0786a06e72584a528f8",
+      "action": "modify",
+      "current": "tests/test_refactor_csi2021_regression.py",
+      "after_sha256": "d053278d84a6c8a0ed8a47f5db7b9ad1ebb43ed67f2535fb57db596af4356ed0"
+    },
+    {
+      "original": "tools/build_modularization_wheel.py",
+      "before_sha256": "38fc7263035d47df210e442d39d59a29e3d754224d91776b25ee4abe81bcfb7a",
+      "action": "move_and_modify",
+      "current": "tools/build_wheel.py",
+      "after_sha256": "f2a5f68aa17cf508e9b32392f92d83b3351d685a1771aba174741a527b6f1d40"
+    },
+    {
+      "original": "tools/capture_modularization_baseline.py",
+      "before_sha256": "568b60172212fb7ba3e96b02965b3629f91fa657802c6e68acd93be90406dc94",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "tools/capture_modularization_baseline.py"
+    },
+    {
+      "original": "tools/finalize_modularization_report.py",
+      "before_sha256": "3a0e61fdd9cdd56be98fd7428cb9e50b5385b490b89feb826306a02b0371be1e",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "tools/finalize_modularization_report.py"
+    },
+    {
+      "original": "tools/verify_conus_statistics_migration.py",
+      "before_sha256": "1f1ea74cef553b58fe940e15538b59417bb47e0201cd535da6c89cb378cf2821",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "tools/verify_conus_statistics_migration.py"
+    },
+    {
+      "original": "tools/verify_modularization_baseline.py",
+      "before_sha256": "2e78dd17acd0abdc017581c7e7fe6572faf2902a35135c7c50c219388db7238f",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "tools/verify_modularization_baseline.py"
+    },
+    {
+      "original": "tools/verify_modularization_release.py",
+      "before_sha256": "208f79e879e6984d5542d70f8fe84bd3f971ba77b05dcf1f17f63240c8e29b51",
+      "action": "move_and_modify",
+      "current": "tools/verify_wheel.py",
+      "after_sha256": "fd7608cec563d111676edc1ac0a9921e753eab109fcc827b060995556b20f766"
+    },
+    {
+      "original": "tools/verify_unified_fast.py",
+      "before_sha256": "55a113e356f2309c1a9b35e57447017616966f75474a859d434d733db816ffbb",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "tools/verify_unified_fast.py"
+    },
+    {
+      "original": "tools/_modularization_edit.py",
+      "before_sha256": "24669a1adf32205e3b88e893fba3d65ab8508336a1356477b932e304ef096598",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "tools/_modularization_edit.py"
+    },
+    {
+      "original": "tools/refactor/check_legacy_fast.py",
+      "before_sha256": "aee5db83cd910fbb111e65a11e7d4c9750b598ca7c9da06c07269cd0a009dd65",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "tools/refactor/check_legacy_fast.py"
+    },
+    {
+      "original": "tools/refactor/check_wheel.py",
+      "before_sha256": "a0546659f4f203de762510b26ad109238e342776a6d911e285dd5e9ad82cbbbc",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "tools/refactor/check_wheel.py"
+    },
+    {
+      "original": "tools/refactor/compare_baseline.py",
+      "before_sha256": "3f1ac75983719f1d4795434bb9bc30a00bbeb2d94c91e0a3908382816b3e5fb7",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "tools/refactor/compare_baseline.py"
+    },
+    {
+      "original": "tools/refactor/freeze_baseline.py",
+      "before_sha256": "0821ac85a5e40550d65e0b1fc24a32b30571467b0becc3a0d752387a12363ddd",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "tools/refactor/freeze_baseline.py"
+    },
+    {
+      "original": "tools/refactor/report_r4.py",
+      "before_sha256": "d056991f7b417909ab619e7bd9442a41462dbdd7c840b7b8b8a0767618c5a448",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "tools/refactor/report_r4.py"
+    },
+    {
+      "original": "tools/refactor/validate_interface_fast.py",
+      "before_sha256": "ee8b259e07da47ce97cc7b9a620a9d5541810f92149c00efce08e63c9f61d0c4",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "tools/refactor/validate_interface_fast.py"
+    },
+    {
+      "original": "tools/refactor/write_report.py",
+      "before_sha256": "9026e00cf33288cbe1802a19c23f3549f15603f3312df3904978511da78e8473",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "tools/refactor/write_report.py"
+    },
+    {
+      "original": "tools/refactor/write_review.py",
+      "before_sha256": "e6b1285fcd05ed5e6f12802bb79d51f502205327e6d978bd4e5225b4e4a7c78d",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "tools/refactor/write_review.py"
+    },
+    {
+      "original": "docs/experiment_integration/INTEGRATE_CEVNS_EXPERIMENT_SKILL.md",
+      "before_sha256": "323e634fcb4a4b18a9fc6e4929cef87a245e6d65caba7fb7fa949cd8b17c09a3",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "docs/experiment_integration/INTEGRATE_CEVNS_EXPERIMENT_SKILL.md"
+    },
+    {
+      "original": "docs/experiment_integration/VALIDATION_RESULT.txt",
+      "before_sha256": "b0558f3151c9518b8ca5e7042a3369b6b6fc41e8c385c1fbbe15202bec646717",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "docs/experiment_integration/VALIDATION_RESULT.txt"
+    },
+    {
+      "original": "docs/experiment_modularization/analysis_selection.example.yaml",
+      "before_sha256": "2d98f26c0daf20d191dd45680b38d79457bb6bc2e0ca840f734b6d97c0beb062",
+      "action": "move",
+      "current": "configs/analysis_selection.example.yaml",
+      "after_sha256": "2d98f26c0daf20d191dd45680b38d79457bb6bc2e0ca840f734b6d97c0beb062"
+    },
+    {
+      "original": "docs/experiment_modularization/CAPABILITY_MATRIX.md",
+      "before_sha256": "c4e3b84738532928955d8a108f2c1e5e225f1ca7210eec761430a04deb49cd4b",
+      "action": "move_and_modify",
+      "current": "docs/CAPABILITY_MATRIX.md",
+      "after_sha256": "eef57d2b3ac9782741a2aa4a1b81ea3c2c5efc51e58bd33da93bf96f41a77b3d"
+    },
+    {
+      "original": "docs/experiment_modularization/CHANGE_MANIFEST.json",
+      "before_sha256": "4e2301bae0d52d48b312f337f1f46091fb215d085f9c4650818e0bfdec7e3b33",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "docs/experiment_modularization/CHANGE_MANIFEST.json"
+    },
+    {
+      "original": "docs/experiment_modularization/FILE_CHANGES.md",
+      "before_sha256": "f4306f2f09c748950da3747aa625c940710e2d6fce071c0135bb76056cf67d59",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "docs/experiment_modularization/FILE_CHANGES.md"
+    },
+    {
+      "original": "docs/experiment_modularization/MIGRATION_REPORT.md",
+      "before_sha256": "060bb226cdd693cb1adaa7559a49640bf4237ea196ebfca20298b79ce1081067",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "docs/experiment_modularization/MIGRATION_REPORT.md"
+    },
+    {
+      "original": "docs/experiment_modularization/PARAMETER_OWNERSHIP.md",
+      "before_sha256": "66bd24a669bd048e251a033511928e9dd1bd14a480c1bee27a13061a33717d51",
+      "action": "move_and_modify",
+      "current": "docs/PARAMETER_OWNERSHIP.md",
+      "after_sha256": "a176a0d313d573723e2e64b19da4ccca6e500d1913bb8342ac86c043a2d52b0e"
+    },
+    {
+      "original": "docs/experiment_modularization/resolved_experiments.json",
+      "before_sha256": "b7d8c136086a03caab6ce48a25400a20eb9f335e78f67f17741fd74058ce3aba",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "docs/experiment_modularization/resolved_experiments.json"
+    },
+    {
+      "original": "docs/experiment_modularization/SKILL_OPERATION_GUIDE.md",
+      "before_sha256": "958c02e1f206537e26515a476fed5dadafeb554fae09ecabd4e25edd3c66db59",
+      "action": "move_and_modify",
+      "current": "docs/SKILL_OPERATION_GUIDE.md",
+      "after_sha256": "1d2c8d34f64ac22c717e1b967836165c282334f7bee404380414e4b82d38f3bf"
+    },
+    {
+      "original": "docs/experiment_modularization/USAGE.md",
+      "before_sha256": "96cd04f4aca29504bc16acc43731af281e884acb6929a88168bb660bbd75a6f4",
+      "action": "move_and_modify",
+      "current": "docs/USAGE.md",
+      "after_sha256": "b780bc66716dace27ad7d079133f5ec132654ad3103e33f0cee6ae7818f665ea"
+    },
+    {
+      "original": "docs/interface_refactor/FAST_AND_CACHE.md",
+      "before_sha256": "a03703b1ff014c3c1f7fc896557921b7d592b82574e9fce3d3608099642082bb",
+      "action": "move",
+      "current": "docs/FAST_AND_CACHE.md",
+      "after_sha256": "a03703b1ff014c3c1f7fc896557921b7d592b82574e9fce3d3608099642082bb"
+    },
+    {
+      "original": "docs/interface_refactor/R0_R3_REPORT.md",
+      "before_sha256": "958f236b0aafc4f39ed8c4d9d809e7c3e9110a59e4762b1b4b0102c6a7fcd4a7",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "docs/interface_refactor/R0_R3_REPORT.md"
+    },
+    {
+      "original": "docs/interface_refactor/R4_R6_REPORT.md",
+      "before_sha256": "64158a2f70c514d347b485f285d2dcf97cca30ba2deac417acbd2356db91e835",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "docs/interface_refactor/R4_R6_REPORT.md"
+    },
+    {
+      "original": "docs/interface_refactor/README.md",
+      "before_sha256": "bbcd24757f2a39e588cb3a665dc53dbf1057e4643e2d0be310b1babdd62d8f1a",
+      "action": "move_and_modify",
+      "current": "docs/COMPONENTS.md",
+      "after_sha256": "7ba7685299a5b26fae0549f373a7004ea73955fd6b0babcccfd1994b57039838"
+    },
+    {
+      "original": "data/datafiles/CENNS10AnlAEfficiency.txt",
+      "before_sha256": "f74f92bfdd116bcb2e14f31e3e98a24fb6a7e68458c4f647ca72357c78e55dd3",
+      "action": "move",
+      "current": "data/experiments/COHERENT_Ar/Ar2020/detector/CENNS10AnlAEfficiency.txt",
+      "after_sha256": "f74f92bfdd116bcb2e14f31e3e98a24fb6a7e68458c4f647ca72357c78e55dd3"
+    },
+    {
+      "original": "data/datafiles/COHERENT_data.txt",
+      "before_sha256": "f764accdd388bd161d6d53d3e7a01ff484c13d3dfc0fc1f61cc7fcb40f72cbd0",
+      "action": "move",
+      "current": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_data.txt",
+      "after_sha256": "f764accdd388bd161d6d53d3e7a01ff484c13d3dfc0fc1f61cc7fcb40f72cbd0"
+    },
+    {
+      "original": "data/datafiles/COHERENT_eff.txt",
+      "before_sha256": "ca1f47b5cdfb01fa87a323cf3ee4ee8245488b2e5b0529ecb0863d5bf09a9a7c",
+      "action": "move",
+      "current": "data/experiments/COHERENT_CsI/CsI2017/detector/COHERENT_eff.txt",
+      "after_sha256": "ca1f47b5cdfb01fa87a323cf3ee4ee8245488b2e5b0529ecb0863d5bf09a9a7c"
+    },
+    {
+      "original": "data/datafiles/COHERENT_lower.txt",
+      "before_sha256": "c802772432ddd5288df5bb316d70a9736ec5b80c79d337ed050fa42d62c097bb",
+      "action": "move",
+      "current": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_lower.txt",
+      "after_sha256": "c802772432ddd5288df5bb316d70a9736ec5b80c79d337ed050fa42d62c097bb"
+    },
+    {
+      "original": "data/datafiles/COHERENT_spectrum.txt",
+      "before_sha256": "1584411458e0d48ebb9afb0400bd51e19a0e0208857b96edbea0d59aff710f95",
+      "action": "move",
+      "current": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_spectrum.txt",
+      "after_sha256": "1584411458e0d48ebb9afb0400bd51e19a0e0208857b96edbea0d59aff710f95"
+    },
+    {
+      "original": "data/datafiles/COHERENT_upper.txt",
+      "before_sha256": "db03d10cc5997f4b08948d71f04c72c88fd48365dc5cedae3b494b04f5853ad5",
+      "action": "move",
+      "current": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_upper.txt",
+      "after_sha256": "db03d10cc5997f4b08948d71f04c72c88fd48365dc5cedae3b494b04f5853ad5"
+    },
+    {
+      "original": "data/experiments/Ar2020/statistics/provenance.yaml",
+      "before_sha256": "6720f1dd9921857119900e7fc9cabd3aad8924ecba9efcea5d0817a27a2a1b46",
+      "action": "move",
+      "current": "data/experiments/COHERENT_Ar/Ar2020/statistics/provenance.yaml",
+      "after_sha256": "6720f1dd9921857119900e7fc9cabd3aad8924ecba9efcea5d0817a27a2a1b46"
+    },
+    {
+      "original": "data/experiments/CsI2017/experiment.yaml",
+      "before_sha256": "0838889e15a888cd6249b5e3fc913c676a0b963d6bc2fdc31e7058afa6726817",
+      "action": "move",
+      "current": "data/experiments/COHERENT_CsI/CsI2017/experiment.yaml",
+      "after_sha256": "0838889e15a888cd6249b5e3fc913c676a0b963d6bc2fdc31e7058afa6726817"
+    },
+    {
+      "original": "data/experiments/CsI2017/README.md",
+      "before_sha256": "59c34f66990bcb67f4aaa11188cd0ae94e9080e8a769a669c226d6ba3c228d4b",
+      "action": "move",
+      "current": "data/experiments/COHERENT_CsI/CsI2017/README.md",
+      "after_sha256": "59c34f66990bcb67f4aaa11188cd0ae94e9080e8a769a669c226d6ba3c228d4b"
+    },
+    {
+      "original": "data/experiments/CsI2017/statistics/provenance.yaml",
+      "before_sha256": "c8d126501aa99decec91b7fd859ae45035d29ec6f6bab2d63b39c16329b17940",
+      "action": "move",
+      "current": "data/experiments/COHERENT_CsI/CsI2017/statistics/provenance.yaml",
+      "after_sha256": "c8d126501aa99decec91b7fd859ae45035d29ec6f6bab2d63b39c16329b17940"
+    },
+    {
+      "original": "data/experiments/CsI2021/experiment.yaml",
+      "before_sha256": "3f494f4319aa8f0c189b1875b42b1cd5ad3c65d5bc5944cd71a3b83ff0a05622",
+      "action": "move",
+      "current": "data/experiments/COHERENT_CsI/CsI2021/experiment.yaml",
+      "after_sha256": "3f494f4319aa8f0c189b1875b42b1cd5ad3c65d5bc5944cd71a3b83ff0a05622"
+    },
+    {
+      "original": "data/experiments/CsI2021/README.md",
+      "before_sha256": "958f3e878ba85ada763dde0ba6d5e11eaa2856c43c1873b122529024f3686c6e",
+      "action": "move",
+      "current": "data/experiments/COHERENT_CsI/CsI2021/README.md",
+      "after_sha256": "958f3e878ba85ada763dde0ba6d5e11eaa2856c43c1873b122529024f3686c6e"
+    },
+    {
+      "original": "data/experiments/CsI2021/statistics/provenance.yaml",
+      "before_sha256": "6def82c1188dd1a1ead8bd0aca9f1dbd24bac4b7f59b78f96c0a559408a6146f",
+      "action": "move",
+      "current": "data/experiments/COHERENT_CsI/CsI2021/statistics/provenance.yaml",
+      "after_sha256": "6def82c1188dd1a1ead8bd0aca9f1dbd24bac4b7f59b78f96c0a559408a6146f"
+    },
+    {
+      "original": "README.md",
+      "before_sha256": "f6a3f35d97b6c82b13c96f5e72a75f90e47b3805f8955f04e2eb9d149ea8708b",
+      "action": "modify",
+      "current": "README.md",
+      "after_sha256": "c38d5ba162bf546df79a8d83c32f453fc62a9ad92aac73616f578ae3471038e0"
+    },
+    {
+      "original": "AGENTS.md",
+      "before_sha256": "2ca31e59f1961b838b40e80ca1d0e4b3ff92f0b0e1c61f2b0808aa49b6703a9d",
+      "action": "modify",
+      "current": "AGENTS.md",
+      "after_sha256": "dd364d702e77de09636c44837a4dec6749d355e9ca135e54848152263956e324"
+    },
+    {
+      "original": "pyproject.toml",
+      "before_sha256": "99f17b07b4b428360beeb437b795e74a31fa129491bf1d8e90260ce95f41772f",
+      "action": "modify",
+      "current": "pyproject.toml",
+      "after_sha256": "8933b390820a7f3798255748e8da37e691e74cef9f2b011500633490cbcffea6"
+    },
+    {
+      "original": "README_FINAL.md",
+      "before_sha256": "3f6d13f1198b21ef2a48ca4f10d4876fb4340404398c6b1d33ca83fce18e4840",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "README_FINAL.md"
+    },
+    {
+      "original": "FINAL_STATUS.md",
+      "before_sha256": "c9b84940cdc3fc592b232a4b01566753eef548acc53f06f6ffa5bbab9ec9e2b3",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "FINAL_STATUS.md"
+    },
+    {
+      "original": "KNOWN_LIMITATIONS.md",
+      "before_sha256": "6dbea5b47237499f55ea28b2bd6bffd4a0b2232a755d094e15c65179cf4b0ece",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_entry": "KNOWN_LIMITATIONS.md"
+    },
+    {
+      "original": "outputs/conus-plus-completion-20261012/statistics/approximate_paper_benchmark/observations_digitized_approx.csv",
+      "before_sha256": "2775ed6c6c02b1db29939d08119626709cf2326d6cff3a7b1acb814e04bcecdc",
+      "action": "move",
+      "current": "data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/statistics/approximate_paper_benchmark/observations_digitized_approx.csv",
+      "after_sha256": "2775ed6c6c02b1db29939d08119626709cf2326d6cff3a7b1acb814e04bcecdc"
+    },
+    {
+      "original": "outputs/conus-plus-completion-20261012/statistics/approximate_paper_benchmark/observations_metadata.json",
+      "before_sha256": "2221eabe9959b35e595f7c4d097cbbd078e31e139fc24dccb8c785596cc6eb79",
+      "action": "move",
+      "current": "data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/statistics/approximate_paper_benchmark/observations_metadata.json",
+      "after_sha256": "2221eabe9959b35e595f7c4d097cbbd078e31e139fc24dccb8c785596cc6eb79"
+    },
+    {
+      "action": "create",
+      "current": "cevns_pyeft/foundation/paths.py",
+      "after_sha256": "2dd94d9cb785ab0bc1b96bd5da59cd825f425588abe9d3bfc442318b6202dc83"
+    },
+    {
+      "action": "create",
+      "current": "tests/__init__.py",
+      "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "create",
+      "current": "tests/helpers/__init__.py",
+      "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "action": "create",
+      "current": "tests/helpers/regression_cases.py",
+      "after_sha256": "61d9ea7ce37de6a7c3210689d319784df2f6af903a0d97c02c4618d44167ec79"
+    },
+    {
+      "action": "create",
+      "current": "cevns_pyeft/experiments/assembly.py",
+      "after_sha256": "91607b73d3ccfbb260cb8c9d1d2fe23596029e9dbb4da3044c45ead383f6d6ee"
+    },
+    {
+      "action": "create",
+      "current": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json",
+      "after_sha256": "0edd4b8cc260781fd83bd7ea2820c98efdde04d3c7cde1584e86b66d46021645"
+    },
+    {
+      "action": "create",
+      "current": "data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/statistics/approximate_paper_benchmark/observation_schema.json",
+      "after_sha256": "48ff0872c5a99c24bf9ad93274d0d1e2c45df5e8cdf55078e54de157f0b7141e"
+    },
+    {
+      "action": "create",
+      "current": "cevns_pyeft/foundation/resources.py",
+      "after_sha256": "c13df514dfa746f711699ce61663749d309fe74cf8b4f05c6595165b5dc87123"
+    },
+    {
+      "action": "create",
+      "current": "cevns_pyeft/statistics/tables.py",
+      "after_sha256": "eef6add5b756ba4053da8dc3c5b2e8a024902b47f74ad8ce5c681bf3dba0d41e"
+    },
+    {
+      "action": "create",
+      "current": "tests/test_refactor03_contracts.py",
+      "after_sha256": "cce72db34a901171b8f78dfaa94e2933df0b892209c0d5aec0a06e8c97e68996"
+    },
+    {
+      "action": "create",
+      "current": "cevns_pyeft/targets/recipes.py",
+      "after_sha256": "9d5b126970c773b69385f33a82da93ac3b6c6f5d956ef05cad3e88f35e6f8ad4"
+    },
+    {
+      "action": "create",
+      "current": "cevns_pyeft/detectors/coherent.py",
+      "after_sha256": "90c84191c953291fba6805609c81dfe8b5299214a1aaf00163a48ebdd9324c2a"
+    },
+    {
+      "action": "create",
+      "current": "cevns_pyeft/core/mass_time.py",
+      "after_sha256": "633f904f123d2b71016b48e49f6324e83afe7f6e676ce029e0da575759e14f13"
+    },
+    {
+      "action": "create",
+      "current": "cevns_pyeft/rates/mass_time.py",
+      "after_sha256": "7b3365335f27af94835db00e36ca7ec53c1c9ee760da4fb3bf68cda94a06dab3"
+    },
+    {
+      "action": "create",
+      "current": "cevns_pyeft/experiments/conus_plus/components.py",
+      "after_sha256": "66a38977fe13e6761344e6a52ab96d5b2654a335983fa495b320d98f9b219ae8"
+    },
+    {
+      "action": "create",
+      "current": "docs/README.md",
+      "after_sha256": "2a7d920fcbca88deebb1799719fcbb1d8c207d47eadaa0ad4beb2747f25716e8"
+    },
+    {
+      "action": "create",
+      "current": "docs/LAYOUT.md",
+      "after_sha256": "37c93d14c14d497a5dd7388347530ec140a8de7523dde409cafadbed3ecbaabc"
+    },
+    {
+      "action": "create",
+      "current": "docs/VALIDATION.md",
+      "after_sha256": "7f754dc25709ea4366e4d84bd49d1c9ad2640a52ee3c0e1313818e3d0396379e"
+    },
+    {
+      "action": "create",
+      "current": "tools/README.md",
+      "after_sha256": "fc21ba24b2f61add0b4dcc406880ac2dca0d1211d7c859c248cda79bca8af970"
+    },
+    {
+      "action": "create",
+      "current": "data/README.md",
+      "after_sha256": "a73fa743cbfddf41e112a7c1d8ae316832940727ca71cbe720a566b387de69f9"
+    },
+    {
+      "action": "create",
+      "current": "data/resource_manifest.json",
+      "after_sha256": "d94251e21d8f1988545ebb0055f4bc62903bf73186a54afb8658faf19875bf63"
+    }
+  ],
+  "archives": [
+    {
+      "phase": "C2",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_sha256": "d51a1c6206b44513cda9876e42881a9da09c3308c0396a63aa9196b517069011",
+      "entries": {
+        "build/lib/cevns_pyeft/__init__.py": "589b45038aed28c22fd5b4c0b01535b42e8c1377cec81c04ec24261a4663a8b8",
+        "build/lib/cevns_pyeft/cli.py": "4f682fdb4fa2cdfb5805c5e0b1063358a473938b46ad7352581552869bb5679f",
+        "build/lib/cevns_pyeft/contracts/__init__.py": "782ca6c8dee21816a23678f993f1964e3f8272700334acd1eaebfddae97ff257",
+        "build/lib/cevns_pyeft/contracts/interaction.py": "44c646caa64700b77c52201ffe526a8e8bca316a77d3f6340731b571340ccc86",
+        "build/lib/cevns_pyeft/contracts/modules.py": "ac295d326e94998e054b7c3794cbdb4787dfb4df39a00403ed0414813e61c914",
+        "build/lib/cevns_pyeft/contracts/observation.py": "6a6996223b7bbcb672f054bec085c7fead8a619de38b12608deca27982c0377d",
+        "build/lib/cevns_pyeft/contracts/parameters.py": "3d8b55c7ba12cab050637d3a988ba8e8a0316d738cb56e11f024f484253ca45a",
+        "build/lib/cevns_pyeft/contracts/prediction.py": "b33b2adb2b850f444ea28acf56a808c70089c53a11683e6feb7d8b55c0577c26",
+        "build/lib/cevns_pyeft/contracts/source.py": "595b2df21a76323684c23510b2f258bb5d33a68e0f02ef81643b9b6571dbc98f",
+        "build/lib/cevns_pyeft/contracts/target.py": "877b277ecb41da141aff014340e428b9575651168c36e9c6c2a60f192d78f498",
+        "build/lib/cevns_pyeft/contracts/validation.py": "0b9922e6298a1a5ebbe87943e422d299616ce9275c72262a4164052173746d9b",
+        "build/lib/cevns_pyeft/core/__init__.py": "ee5d6fe151359a563a856e2f4306788bdfa19724af6a85aeb4f13979340f8505",
+        "build/lib/cevns_pyeft/core/engine.py": "27562f649baae63081f4563766187daa3553ab53db450741aad7089fc2b45e7f",
+        "build/lib/cevns_pyeft/core/model.py": "f381279ad6b95c7e6ee40a135f835a2d620529c3251cab7fd537ebcaa8af4cad",
+        "build/lib/cevns_pyeft/core/predict.py": "6c35de8c8bc7839daaa05ffd371c5f906c31b0a47b944f7b3f64dd14c1541eff",
+        "build/lib/cevns_pyeft/detectors/__init__.py": "d172171a4a9f1f1d6aacefa17a7a5ae65006272de3775df7160e955732b517b8",
+        "build/lib/cevns_pyeft/detectors/csi2021.py": "62284716edaa735d7e47e05d5e9c5e64dac2808dadd706688baa57cfbe402491",
+        "build/lib/cevns_pyeft/detectors/selection.py": "32acac6103050d971ca71d955c9034994952ad10b7ace00fca00f89b198edeae",
+        "build/lib/cevns_pyeft/experiments/__init__.py": "3c1e78ec41faf6d0a840f0d144df62ad604243fc5adb802cbd579c7e67ae695b",
+        "build/lib/cevns_pyeft/experiments/base.py": "5e4b6689fcb858b88e0036ce24ee53992760cb70174221a250007c2c1433cef4",
+        "build/lib/cevns_pyeft/experiments/catalog.py": "e41e298f50bb06605216c44fd136c34f02fca972345615b3ec8a2feabc8c162a",
+        "build/lib/cevns_pyeft/experiments/coherent/__init__.py": "b23433a3630c3f3ede4e38beb05c0623f8cb78bddf5b1f4df243b60db483e8d2",
+        "build/lib/cevns_pyeft/experiments/coherent/ar2020_definition.py": "8d61f68a4b3dea4490f0f4a3a81923b877c6882e4cd1478dd74ef4d0a05ec03a",
+        "build/lib/cevns_pyeft/experiments/coherent/csi2017_definition.py": "d12011fcd81e1f418581a8ead519412c2065a202292b0304895a9cf3287f3737",
+        "build/lib/cevns_pyeft/experiments/coherent/csi2021.py": "8e5e2242f67b6bf177ca73ff1ab8a37809c38c93594677fb5d17c7c514869469",
+        "build/lib/cevns_pyeft/experiments/coherent/csi2021_definition.py": "000fce2d62fe22fc2c8d8209dab79d0510838f7de2f1a7e70ec61b3f64a78901",
+        "build/lib/cevns_pyeft/experiments/coherent/execution.py": "5d7d5aea8ac5c2ebcfe3422489a38796547454c95bb2804bce64ff01e6656a8c",
+        "build/lib/cevns_pyeft/experiments/coherent/fast_kernel_ar2020.py": "1d94943787f86b367e2622dbb96df61e27a09b2f5da880302e08f8ee4d3b7169",
+        "build/lib/cevns_pyeft/experiments/coherent/fast_kernel_csi2017.py": "0c0e1c2244770208a6b9d5652011e42aa4899552f9f18894a028d579edb34db3",
+        "build/lib/cevns_pyeft/experiments/coherent/fast_kernel_csi2021.py": "38da6d73254ff2359afcd493197ab85e395eb7a0f97853a442fa2553e4a2a2d3",
+        "build/lib/cevns_pyeft/experiments/coherent/slow_counts_ar2020.py": "eab6ca19d46e5be3620fa66645568539d13dc796f0688a9335bc161f0fed931e",
+        "build/lib/cevns_pyeft/experiments/coherent/slow_counts_csi2017.py": "6140512f44ac72189545891ad5eeffbbc11780070f5176d77ba88835dba6b32d",
+        "build/lib/cevns_pyeft/experiments/coherent/slow_counts_csi2021.py": "f717ca544c74b862de7c63d32c9e6cb90b7038bb60d38df98e54a5492da2513c",
+        "build/lib/cevns_pyeft/experiments/coherent/sns.py": "b10bd6a4110d5d13244fc5213da5a636b656f25dd8994d4c69c48c1eb371e7ef",
+        "build/lib/cevns_pyeft/experiments/coherent/statistics_binding.py": "84b5b0b241acb2a1ba77bd0177dbb3b85d78900d2176970fa3ddc3636d6839f7",
+        "build/lib/cevns_pyeft/experiments/conus_plus/__init__.py": "6949384a682adc70526b72aeccfa028515135d604f899c29b6e5eda3425cc7df",
+        "build/lib/cevns_pyeft/experiments/conus_plus/definition.py": "9e258b0160424562a06f4720ac6c7272e850e6170c66f2b4659a111ea3a92d22",
+        "build/lib/cevns_pyeft/experiments/conus_plus/detector_response.py": "994a88cf23364894df0956f51eaf1fee466c06ffd32ad82f49400de082355e87",
+        "build/lib/cevns_pyeft/experiments/conus_plus/eft_kernel.py": "606c1bbd5692ad22cecdf7d2f458de941e47f86ea16b6549666bdf23108247ab",
+        "build/lib/cevns_pyeft/experiments/conus_plus/execution.py": "2f152815631f77570b830f3c6712f83087c2c369335dd3e0df615ca45a3bfc37",
+        "build/lib/cevns_pyeft/experiments/conus_plus/fast_kernel.py": "730ee75a8adf2cc1f54b688005f3b7b66efeb542d7994f8c28fb202830e82a48",
+        "build/lib/cevns_pyeft/experiments/conus_plus/slow_counts.py": "7d07739098c92cf692cdc5c01b4f0b2c19ca95ccf895fc4b88e1abf2c8298f19",
+        "build/lib/cevns_pyeft/experiments/conus_plus/source.py": "1898fc525b7bb0b107bca9331f15331b6c99ba5fc69005e1e80962dd7dd037d4",
+        "build/lib/cevns_pyeft/experiments/conus_plus/statistics.py": "1084b2228d63603509d3f74a1ed200a87aab1adf9b7a9a5292128efebb9b76b6",
+        "build/lib/cevns_pyeft/experiments/definition.py": "08b0347134107ec7855b3b8b069f5e1e9422adf061e974b1ac1a5e9a47e34ed9",
+        "build/lib/cevns_pyeft/experiments/loader.py": "16e5154543671b7bfa1420f9c7494dd1b355e1879b9992a1d9ca91b39316675c",
+        "build/lib/cevns_pyeft/experiments/registry.py": "50b0ea299899cb38a8910d631f174180c97a9dd00de65c0946b50bd711d5b318",
+        "build/lib/cevns_pyeft/experiments/runtime.py": "a5c772f4ab8e95241b07c84289618c357d111a1ccb39829c7d7d423c56050b7c",
+        "build/lib/cevns_pyeft/experiments/selection.py": "90efe3798980f3f80ffe428701a04f97e58c177e20e307077133e0cda4b852a9",
+        "build/lib/cevns_pyeft/experiments/specs.py": "5b0633166370d9ec45d06bc2f9e069a319ebca5a04c6b51c78cf070621dcdac7",
+        "build/lib/cevns_pyeft/foundation/__init__.py": "747c1b2ae5a59c80a235455feccc5fec27b37827a87a6b94ea2dca5e8ba32411",
+        "build/lib/cevns_pyeft/foundation/constants.py": "0bb51033d1ca64e18a7a7bb0fd4cce38bc679558dd7392740f72d4683276cd44",
+        "build/lib/cevns_pyeft/foundation/units.py": "053e4c8d9e47cd32ba4bacbb33da8367c02a32aca02c16c1d6d4e4a7bba6640a",
+        "build/lib/cevns_pyeft/kernels/__init__.py": "10af42f5b40b4d3f489e67692985dde7b233f8595b57451cd864b23df6aabb8f",
+        "build/lib/cevns_pyeft/kernels/basis.py": "053a369aadc49e14f515d5ba0275fe6523390a3f821db66208f329a30dabd991",
+        "build/lib/cevns_pyeft/kernels/builder.py": "9d1c1635ee1fce8e261c0574897b457d4e974cbca1ca9419d95d989fda5c2adf",
+        "build/lib/cevns_pyeft/kernels/compiler.py": "5a6490f9ea586dd0b262183fa3b0ead6dcc9b393e0eb49ec70d000102d045e8a",
+        "build/lib/cevns_pyeft/kernels/fingerprint.py": "0e503f4e197a8fda182b12d9c03e403d91c90b7a51de534469611436df3533f9",
+        "build/lib/cevns_pyeft/kernels/interface_storage.py": "05d653e4117f195ac163978f324a1596782b58e7bf3feb5dfb7be2fc53b61fe2",
+        "build/lib/cevns_pyeft/kernels/reconstruction.py": "1d3ef686e45cae01f4a481532d7a025358400496e445b9707093a66400cca1ad",
+        "build/lib/cevns_pyeft/kernels/storage.py": "86ab01e539701fe496ad937c6f53e4fd5285ba229e93424d778e6ad7c8ccbbaf",
+        "build/lib/cevns_pyeft/nuclear/__init__.py": "d7869554724a9701a2b7dbe6818db7760317d3607207ae7eb7688d3a1f2d0e3f",
+        "build/lib/cevns_pyeft/nuclear/response.py": "fc94a1582b11e58113e2f192be9733dfaf5b27b2604fe075da9e9f56b94d776f",
+        "build/lib/cevns_pyeft/propagation/__init__.py": "4f961ad6cb85eea23f6a4484ab2e181117b77a4cdca57e2ac01052eceafc8db2",
+        "build/lib/cevns_pyeft/propagation/backends/__init__.py": "a613261e76cc0d5ccfdb9850386941f5092edbd7a60e74b8e8a8d5e3333f05bd",
+        "build/lib/cevns_pyeft/propagation/backends/snudd.py": "0a82dabc6be43cb26d8dfec33e382da782bd1ee58890564717e817f74e834e05",
+        "build/lib/cevns_pyeft/propagation/base.py": "f1e531e91d96ffbc1ae46f855897a5c3793fa280f904d0e61c08e8b4b46eab0a",
+        "build/lib/cevns_pyeft/propagation/density.py": "670b701aae958f66f0588c657e64cc3f1b4d63803d96ae6d14faefd45342f170",
+        "build/lib/cevns_pyeft/rates/__init__.py": "ea0ff65eb2b2b0932dca0555b158d9b4ba1e3d2e667641fefec02880d7b20b10",
+        "build/lib/cevns_pyeft/rates/counts.py": "97489d69e40960c3ed11c0f049211728fe137c02650134282c57ab44254dce01",
+        "build/lib/cevns_pyeft/rates/differential.py": "c98637b4aff81dab44c488e804e96066b8d5385382b0a33687144083ad8b6a6c",
+        "build/lib/cevns_pyeft/rates/folding.py": "e1600e659d3dc5816095bdf395b6dc9ab78b57ed345e638c6a95b72eb0e076d1",
+        "build/lib/cevns_pyeft/rates/recoil.py": "c300780a0d82fc812af113af27c1ffba52ac52cfce76ed715cb9424050b1251b",
+        "build/lib/cevns_pyeft/sources/__init__.py": "479ec238313a0e039ab01ea0e559b6051f1399f524c93599f411cfe2861c1d3b",
+        "build/lib/cevns_pyeft/sources/composable.py": "84a4e4bfd34f40ced572b51d6f6f52d5886fa039fc21c728809242c64f876b8f",
+        "build/lib/cevns_pyeft/sources/sns.py": "e2876f74bf9a469f33a5539ac0e197ee345d4dada2a4dc48a1760fd0214a923b",
+        "build/lib/cevns_pyeft/sources/state.py": "39ae30776f58bb19c15e842317940cb3aece2040eabb19046d01842e55815100",
+        "build/lib/cevns_pyeft/statistics/__init__.py": "ed5a1e1e4915bbe05daedfe46bb558f7a9c69ca215476d5b60bba4e485048167",
+        "build/lib/cevns_pyeft/statistics/adapters.py": "547a806ff8a72b29be2b74f888a18901f3d0ad69c11a0fa457e1da6c5df5123c",
+        "build/lib/cevns_pyeft/statistics/confidence.py": "dd9449ed9bda1a2cba959a1afd54bf93e5411dc81595d5b771dfd2094800ded5",
+        "build/lib/cevns_pyeft/statistics/datasets.py": "8e12bcfbce83c68fa9ca33dfc2d449d13bef37d0df1bc7e7f6379eaa0930ef64",
+        "build/lib/cevns_pyeft/statistics/likelihoods.py": "9f1e347157cc36cafcb9a6af82aecc46f000d57db3bf9bd7bda8e869820021b6",
+        "build/lib/cevns_pyeft/statistics/observables.py": "562a18e77e4b0f75666847d220f785e6c54b99df436f014e203f76ef05109941",
+        "build/lib/cevns_pyeft/statistics/parameters.py": "654f3d41fea1760fdb0af7c678bf42523c8c359fc1bbac00d045ec0f76eabca6",
+        "build/lib/cevns_pyeft/statistics/predictors.py": "b5544ab74a7079092a7151c11b64955e3c3e5e90aa44a7e7fc67f6d48cff7799",
+        "build/lib/cevns_pyeft/statistics/profiling.py": "1ff56e0d802ec8b05ac8002633b070d8019e40895569dc083683029d0a26c120",
+        "build/lib/cevns_pyeft/statistics/scans.py": "0610e0248fa64632c8c8f7c9f8fc3e77b02cd9c3cfa13a85f5adcfa02132bdb0",
+        "build/lib/cevns_pyeft/targets/__init__.py": "293d55adbbfc120bfb5212f2511f60228ff1f14f5a60c06c2f107ed6841768ff",
+        "build/lib/cevns_pyeft/targets/materials.py": "f335373365126c8848921ec9d20068c807375b77a43cb4e1bc9361c72562ae62",
+        "build/lib/cevns_pyeft/theory/__init__.py": "c5f71bea32f72a9c3ddafba06e96a425e9fcd2f47829b9c4683735d5d3840e20",
+        "build/lib/cevns_pyeft/theory/helm/__init__.py": "ac67f2db7e4a3a3270af5b123a1096da200d6f3cb03ce1aeaa58b8b2c4490e34",
+        "build/lib/cevns_pyeft/theory/helm/cross_section.py": "816add89966820f38e344174ef90e5e09e262c90bfdb63d7ac11da28ee88101f",
+        "build/lib/cevns_pyeft/theory/helm/form_factor.py": "fcbcad484f52a5fc4c831a154c156cb5992dcd6d07802eec33e8498cc84882db",
+        "build/lib/cevns_pyeft/theory/kinematics.py": "2fcdeae7b83a1183c1215461e8d1f91badda142cb78ba7cb0fbb25367c69bd16",
+        "build/lib/cevns_pyeft/theory/li2026/__init__.py": "62c3b0efd4c52b1a9c1362de1bec3f0426bc8d38463efb480dcd4c747b7e15ef",
+        "build/lib/cevns_pyeft/theory/li2026/adapter.py": "e7e8f2c53d8500999ede7a3ff9a5b1e5a7d735464cb130b19cf35be789951a6f",
+        "build/lib/cevns_pyeft/theory/li2026/amplitude.py": "40a2bbfcb60716da67ff3d5182d5af6dd075bcd7dfccf9a49b9b3b0a8a9b7aed",
+        "build/lib/cevns_pyeft/theory/li2026/coefficients.py": "c032668684ddc7e854b0fff0c8ec808995c7b2e014d4eea570dffe8053b984b2",
+        "build/lib/cevns_pyeft/theory/li2026/cross_section.py": "adc13f3e1acc9b88b85fc033a6117cc2f99a77d1bc88e66368e416e4f5304393",
+        "build/lib/cevns_pyeft/theory/li2026/flavor.py": "66c84c2f2dad58ebba132cb768db36c8661a3e053b8cb74900d47df6cffa48c4",
+        "build/lib/cevns_pyeft/theory/li2026/form_factors.py": "30cdddc17904416ccdb31b4e84ed2ba883d192ef15196cb52d7b25cb2822eb2f",
+        "build/lib/cevns_pyeft/theory/li2026/lec.py": "9c981d8705ba6a17829c75e81b93ce6f85fdbcc290faf5bf64edde9dc8867691",
+        "build/lib/cevns_pyeft/theory/li2026/left_to_ci.py": "56027d356737d85de4ae22ba3b303ade16e1c0163887bbedbc53ac2f0d46ae48",
+        "build/lib/cevns_pyeft/theory/li2026/operators.py": "c1932f6de64333b3a344fc84b7f5ec19efddbbf9a33db2aa9e245df702609ff4",
+        "build/lib/cevns_pyeft/theory/li2026/responses.py": "5edb06d4dd7409d0bac8245f9bf25b24f81f9e473e37f5e4f311492e9542f01b",
+        "docs/experiment_integration/INTEGRATE_CEVNS_EXPERIMENT_SKILL.md": "323e634fcb4a4b18a9fc6e4929cef87a245e6d65caba7fb7fa949cd8b17c09a3",
+        "docs/experiment_integration/VALIDATION_RESULT.txt": "b0558f3151c9518b8ca5e7042a3369b6b6fc41e8c385c1fbbe15202bec646717",
+        "docs/experiment_modularization/CHANGE_MANIFEST.json": "4e2301bae0d52d48b312f337f1f46091fb215d085f9c4650818e0bfdec7e3b33",
+        "docs/experiment_modularization/FILE_CHANGES.md": "f4306f2f09c748950da3747aa625c940710e2d6fce071c0135bb76056cf67d59",
+        "docs/experiment_modularization/MIGRATION_REPORT.md": "060bb226cdd693cb1adaa7559a49640bf4237ea196ebfca20298b79ce1081067",
+        "docs/experiment_modularization/resolved_experiments.json": "b7d8c136086a03caab6ce48a25400a20eb9f335e78f67f17741fd74058ce3aba",
+        "docs/interface_refactor/R0_R3_REPORT.md": "958f236b0aafc4f39ed8c4d9d809e7c3e9110a59e4762b1b4b0102c6a7fcd4a7",
+        "docs/interface_refactor/R4_R6_REPORT.md": "64158a2f70c514d347b485f285d2dcf97cca30ba2deac417acbd2356db91e835",
+        "FINAL_STATUS.md": "c9b84940cdc3fc592b232a4b01566753eef548acc53f06f6ffa5bbab9ec9e2b3",
+        "KNOWN_LIMITATIONS.md": "6dbea5b47237499f55ea28b2bd6bffd4a0b2232a755d094e15c65179cf4b0ece",
+        "outputs/conus-paper-config-guard-20261002/conus_paper_config_bins.csv": "5581be32074edd72a4ede63c80bdf581608f15498da821bf707ed7168e2b79c4",
+        "outputs/conus-paper-config-guard-20261002/conus_paper_config_guard.json": "8ab8074d4ec5c751bf36c9568d6c47dfe2854ff6beedc38c6b0e65d52d0339a6",
+        "outputs/conus-paper-config-guard-20261002/CONUS_PAPER_CONFIG_GUARD.md": "790f1636b4bfaf1903a1bd6789a5c983cb7dac33ccca80afbac198a6538a53ad",
+        "README_FINAL.md": "3f6d13f1198b21ef2a48ca4f10d4876fb4340404398c6b1d33ca83fce18e4840",
+        "src/CEvNS_pyEFT.egg-info/dependency_links.txt": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "src/CEvNS_pyEFT.egg-info/entry_points.txt": "d4d62e1516214cd71343b0088ade80fb74184ea9e6f8805f474a3e83f2bcaefd",
+        "src/CEvNS_pyEFT.egg-info/PKG-INFO": "2e3849b3c5c3d67b95b5f3aacc421ddc35bacf0c12fa54f96f339adaacde1173",
+        "src/CEvNS_pyEFT.egg-info/requires.txt": "49e655184126a819f561a1deb926ea07e55a831279e8f0c1932565758767fb38",
+        "src/CEvNS_pyEFT.egg-info/SOURCES.txt": "beac254efd877e56d6dd10533d0d6bd66e19537969444130b29a07ac8d09514c",
+        "src/CEvNS_pyEFT.egg-info/top_level.txt": "4e1e4047af50907a5fd0752e356cdcf08ff35df4339985cd4e49ce24fca0f564",
+        "tools/_modularization_edit.py": "24669a1adf32205e3b88e893fba3d65ab8508336a1356477b932e304ef096598",
+        "tools/capture_modularization_baseline.py": "568b60172212fb7ba3e96b02965b3629f91fa657802c6e68acd93be90406dc94",
+        "tools/finalize_modularization_report.py": "3a0e61fdd9cdd56be98fd7428cb9e50b5385b490b89feb826306a02b0371be1e",
+        "tools/refactor/check_legacy_fast.py": "aee5db83cd910fbb111e65a11e7d4c9750b598ca7c9da06c07269cd0a009dd65",
+        "tools/refactor/check_wheel.py": "a0546659f4f203de762510b26ad109238e342776a6d911e285dd5e9ad82cbbbc",
+        "tools/refactor/compare_baseline.py": "3f1ac75983719f1d4795434bb9bc30a00bbeb2d94c91e0a3908382816b3e5fb7",
+        "tools/refactor/freeze_baseline.py": "0821ac85a5e40550d65e0b1fc24a32b30571467b0becc3a0d752387a12363ddd",
+        "tools/refactor/report_r4.py": "d056991f7b417909ab619e7bd9442a41462dbdd7c840b7b8b8a0767618c5a448",
+        "tools/refactor/validate_interface_fast.py": "ee8b259e07da47ce97cc7b9a620a9d5541810f92149c00efce08e63c9f61d0c4",
+        "tools/refactor/write_report.py": "9026e00cf33288cbe1802a19c23f3549f15603f3312df3904978511da78e8473",
+        "tools/refactor/write_review.py": "e6b1285fcd05ed5e6f12802bb79d51f502205327e6d978bd4e5225b4e4a7c78d",
+        "tools/verify_conus_statistics_migration.py": "1f1ea74cef553b58fe940e15538b59417bb47e0201cd535da6c89cb378cf2821",
+        "tools/verify_modularization_baseline.py": "2e78dd17acd0abdc017581c7e7fe6572faf2902a35135c7c50c219388db7238f",
+        "tools/verify_unified_fast.py": "55a113e356f2309c1a9b35e57447017616966f75474a859d434d733db816ffbb"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/2026-10-22 Test.ipynb",
+      "target": "backup/refactor03/src/cevns_pyeft/2026-10-22 Test.ipynb",
+      "sha256": "4ab2a64a9392438981d937e9ff820a1f96546c793bac9562498924aafe7587ad"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/cli.py",
+      "target": "backup/refactor03/src/cevns_pyeft/cli.py",
+      "sha256": "4f682fdb4fa2cdfb5805c5e0b1063358a473938b46ad7352581552869bb5679f"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/__init__.py",
+      "target": "backup/refactor03/src/cevns_pyeft/__init__.py",
+      "sha256": "589b45038aed28c22fd5b4c0b01535b42e8c1377cec81c04ec24261a4663a8b8"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/contracts/interaction.py",
+      "target": "backup/refactor03/src/cevns_pyeft/contracts/interaction.py",
+      "sha256": "44c646caa64700b77c52201ffe526a8e8bca316a77d3f6340731b571340ccc86"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/contracts/modules.py",
+      "target": "backup/refactor03/src/cevns_pyeft/contracts/modules.py",
+      "sha256": "ac295d326e94998e054b7c3794cbdb4787dfb4df39a00403ed0414813e61c914"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/contracts/observation.py",
+      "target": "backup/refactor03/src/cevns_pyeft/contracts/observation.py",
+      "sha256": "6a6996223b7bbcb672f054bec085c7fead8a619de38b12608deca27982c0377d"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/contracts/parameters.py",
+      "target": "backup/refactor03/src/cevns_pyeft/contracts/parameters.py",
+      "sha256": "3d8b55c7ba12cab050637d3a988ba8e8a0316d738cb56e11f024f484253ca45a"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/contracts/prediction.py",
+      "target": "backup/refactor03/src/cevns_pyeft/contracts/prediction.py",
+      "sha256": "b33b2adb2b850f444ea28acf56a808c70089c53a11683e6feb7d8b55c0577c26"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/contracts/source.py",
+      "target": "backup/refactor03/src/cevns_pyeft/contracts/source.py",
+      "sha256": "595b2df21a76323684c23510b2f258bb5d33a68e0f02ef81643b9b6571dbc98f"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/contracts/target.py",
+      "target": "backup/refactor03/src/cevns_pyeft/contracts/target.py",
+      "sha256": "877b277ecb41da141aff014340e428b9575651168c36e9c6c2a60f192d78f498"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/contracts/validation.py",
+      "target": "backup/refactor03/src/cevns_pyeft/contracts/validation.py",
+      "sha256": "0b9922e6298a1a5ebbe87943e422d299616ce9275c72262a4164052173746d9b"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/contracts/__init__.py",
+      "target": "backup/refactor03/src/cevns_pyeft/contracts/__init__.py",
+      "sha256": "782ca6c8dee21816a23678f993f1964e3f8272700334acd1eaebfddae97ff257"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/core/engine.py",
+      "target": "backup/refactor03/src/cevns_pyeft/core/engine.py",
+      "sha256": "27562f649baae63081f4563766187daa3553ab53db450741aad7089fc2b45e7f"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/core/model.py",
+      "target": "backup/refactor03/src/cevns_pyeft/core/model.py",
+      "sha256": "f381279ad6b95c7e6ee40a135f835a2d620529c3251cab7fd537ebcaa8af4cad"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/core/predict.py",
+      "target": "backup/refactor03/src/cevns_pyeft/core/predict.py",
+      "sha256": "6c35de8c8bc7839daaa05ffd371c5f906c31b0a47b944f7b3f64dd14c1541eff"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/core/__init__.py",
+      "target": "backup/refactor03/src/cevns_pyeft/core/__init__.py",
+      "sha256": "ee5d6fe151359a563a856e2f4306788bdfa19724af6a85aeb4f13979340f8505"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/detectors/csi2021.py",
+      "target": "backup/refactor03/src/cevns_pyeft/detectors/csi2021.py",
+      "sha256": "62284716edaa735d7e47e05d5e9c5e64dac2808dadd706688baa57cfbe402491"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/detectors/selection.py",
+      "target": "backup/refactor03/src/cevns_pyeft/detectors/selection.py",
+      "sha256": "32acac6103050d971ca71d955c9034994952ad10b7ace00fca00f89b198edeae"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/detectors/__init__.py",
+      "target": "backup/refactor03/src/cevns_pyeft/detectors/__init__.py",
+      "sha256": "d172171a4a9f1f1d6aacefa17a7a5ae65006272de3775df7160e955732b517b8"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/base.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/base.py",
+      "sha256": "5e4b6689fcb858b88e0036ce24ee53992760cb70174221a250007c2c1433cef4"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/catalog.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/catalog.py",
+      "sha256": "e41e298f50bb06605216c44fd136c34f02fca972345615b3ec8a2feabc8c162a"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/definition.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/definition.py",
+      "sha256": "08b0347134107ec7855b3b8b069f5e1e9422adf061e974b1ac1a5e9a47e34ed9"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/loader.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/loader.py",
+      "sha256": "16e5154543671b7bfa1420f9c7494dd1b355e1879b9992a1d9ca91b39316675c"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/registry.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/registry.py",
+      "sha256": "50b0ea299899cb38a8910d631f174180c97a9dd00de65c0946b50bd711d5b318"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/runtime.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/runtime.py",
+      "sha256": "a5c772f4ab8e95241b07c84289618c357d111a1ccb39829c7d7d423c56050b7c"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/selection.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/selection.py",
+      "sha256": "90efe3798980f3f80ffe428701a04f97e58c177e20e307077133e0cda4b852a9"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/specs.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/specs.py",
+      "sha256": "5b0633166370d9ec45d06bc2f9e069a319ebca5a04c6b51c78cf070621dcdac7"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/__init__.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/__init__.py",
+      "sha256": "3c1e78ec41faf6d0a840f0d144df62ad604243fc5adb802cbd579c7e67ae695b"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/coherent/ar2020_definition.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/coherent/ar2020_definition.py",
+      "sha256": "8d61f68a4b3dea4490f0f4a3a81923b877c6882e4cd1478dd74ef4d0a05ec03a"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/coherent/csi2017_definition.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/coherent/csi2017_definition.py",
+      "sha256": "d12011fcd81e1f418581a8ead519412c2065a202292b0304895a9cf3287f3737"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/coherent/csi2021.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/coherent/csi2021.py",
+      "sha256": "8e5e2242f67b6bf177ca73ff1ab8a37809c38c93594677fb5d17c7c514869469"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/coherent/csi2021_definition.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/coherent/csi2021_definition.py",
+      "sha256": "000fce2d62fe22fc2c8d8209dab79d0510838f7de2f1a7e70ec61b3f64a78901"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/coherent/execution.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/coherent/execution.py",
+      "sha256": "5d7d5aea8ac5c2ebcfe3422489a38796547454c95bb2804bce64ff01e6656a8c"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/coherent/fast_kernel_ar2020.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/coherent/fast_kernel_ar2020.py",
+      "sha256": "1d94943787f86b367e2622dbb96df61e27a09b2f5da880302e08f8ee4d3b7169"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/coherent/fast_kernel_csi2017.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/coherent/fast_kernel_csi2017.py",
+      "sha256": "0c0e1c2244770208a6b9d5652011e42aa4899552f9f18894a028d579edb34db3"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/coherent/fast_kernel_csi2021.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/coherent/fast_kernel_csi2021.py",
+      "sha256": "38da6d73254ff2359afcd493197ab85e395eb7a0f97853a442fa2553e4a2a2d3"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/coherent/slow_counts_ar2020.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/coherent/slow_counts_ar2020.py",
+      "sha256": "eab6ca19d46e5be3620fa66645568539d13dc796f0688a9335bc161f0fed931e"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/coherent/slow_counts_csi2017.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/coherent/slow_counts_csi2017.py",
+      "sha256": "6140512f44ac72189545891ad5eeffbbc11780070f5176d77ba88835dba6b32d"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/coherent/slow_counts_csi2021.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/coherent/slow_counts_csi2021.py",
+      "sha256": "f717ca544c74b862de7c63d32c9e6cb90b7038bb60d38df98e54a5492da2513c"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/coherent/sns.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/coherent/sns.py",
+      "sha256": "b10bd6a4110d5d13244fc5213da5a636b656f25dd8994d4c69c48c1eb371e7ef"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/coherent/statistics_binding.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/coherent/statistics_binding.py",
+      "sha256": "84b5b0b241acb2a1ba77bd0177dbb3b85d78900d2176970fa3ddc3636d6839f7"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/coherent/__init__.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/coherent/__init__.py",
+      "sha256": "b23433a3630c3f3ede4e38beb05c0623f8cb78bddf5b1f4df243b60db483e8d2"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/conus_plus/definition.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/conus_plus/definition.py",
+      "sha256": "9e258b0160424562a06f4720ac6c7272e850e6170c66f2b4659a111ea3a92d22"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/conus_plus/detector_response.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/conus_plus/detector_response.py",
+      "sha256": "994a88cf23364894df0956f51eaf1fee466c06ffd32ad82f49400de082355e87"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/conus_plus/eft_kernel.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/conus_plus/eft_kernel.py",
+      "sha256": "606c1bbd5692ad22cecdf7d2f458de941e47f86ea16b6549666bdf23108247ab"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/conus_plus/execution.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/conus_plus/execution.py",
+      "sha256": "2f152815631f77570b830f3c6712f83087c2c369335dd3e0df615ca45a3bfc37"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/conus_plus/fast_kernel.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/conus_plus/fast_kernel.py",
+      "sha256": "730ee75a8adf2cc1f54b688005f3b7b66efeb542d7994f8c28fb202830e82a48"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/conus_plus/slow_counts.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/conus_plus/slow_counts.py",
+      "sha256": "7d07739098c92cf692cdc5c01b4f0b2c19ca95ccf895fc4b88e1abf2c8298f19"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/conus_plus/source.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/conus_plus/source.py",
+      "sha256": "1898fc525b7bb0b107bca9331f15331b6c99ba5fc69005e1e80962dd7dd037d4"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/conus_plus/statistics.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/conus_plus/statistics.py",
+      "sha256": "1084b2228d63603509d3f74a1ed200a87aab1adf9b7a9a5292128efebb9b76b6"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/experiments/conus_plus/__init__.py",
+      "target": "backup/refactor03/src/cevns_pyeft/experiments/conus_plus/__init__.py",
+      "sha256": "6949384a682adc70526b72aeccfa028515135d604f899c29b6e5eda3425cc7df"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/foundation/constants.py",
+      "target": "backup/refactor03/src/cevns_pyeft/foundation/constants.py",
+      "sha256": "0bb51033d1ca64e18a7a7bb0fd4cce38bc679558dd7392740f72d4683276cd44"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/foundation/units.py",
+      "target": "backup/refactor03/src/cevns_pyeft/foundation/units.py",
+      "sha256": "053e4c8d9e47cd32ba4bacbb33da8367c02a32aca02c16c1d6d4e4a7bba6640a"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/foundation/__init__.py",
+      "target": "backup/refactor03/src/cevns_pyeft/foundation/__init__.py",
+      "sha256": "747c1b2ae5a59c80a235455feccc5fec27b37827a87a6b94ea2dca5e8ba32411"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/kernels/basis.py",
+      "target": "backup/refactor03/src/cevns_pyeft/kernels/basis.py",
+      "sha256": "053a369aadc49e14f515d5ba0275fe6523390a3f821db66208f329a30dabd991"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/kernels/builder.py",
+      "target": "backup/refactor03/src/cevns_pyeft/kernels/builder.py",
+      "sha256": "9d1c1635ee1fce8e261c0574897b457d4e974cbca1ca9419d95d989fda5c2adf"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/kernels/compiler.py",
+      "target": "backup/refactor03/src/cevns_pyeft/kernels/compiler.py",
+      "sha256": "5a6490f9ea586dd0b262183fa3b0ead6dcc9b393e0eb49ec70d000102d045e8a"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/kernels/fingerprint.py",
+      "target": "backup/refactor03/src/cevns_pyeft/kernels/fingerprint.py",
+      "sha256": "0e503f4e197a8fda182b12d9c03e403d91c90b7a51de534469611436df3533f9"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/kernels/interface_storage.py",
+      "target": "backup/refactor03/src/cevns_pyeft/kernels/interface_storage.py",
+      "sha256": "05d653e4117f195ac163978f324a1596782b58e7bf3feb5dfb7be2fc53b61fe2"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/kernels/reconstruction.py",
+      "target": "backup/refactor03/src/cevns_pyeft/kernels/reconstruction.py",
+      "sha256": "1d3ef686e45cae01f4a481532d7a025358400496e445b9707093a66400cca1ad"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/kernels/storage.py",
+      "target": "backup/refactor03/src/cevns_pyeft/kernels/storage.py",
+      "sha256": "86ab01e539701fe496ad937c6f53e4fd5285ba229e93424d778e6ad7c8ccbbaf"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/kernels/__init__.py",
+      "target": "backup/refactor03/src/cevns_pyeft/kernels/__init__.py",
+      "sha256": "10af42f5b40b4d3f489e67692985dde7b233f8595b57451cd864b23df6aabb8f"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/nuclear/response.py",
+      "target": "backup/refactor03/src/cevns_pyeft/nuclear/response.py",
+      "sha256": "fc94a1582b11e58113e2f192be9733dfaf5b27b2604fe075da9e9f56b94d776f"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/nuclear/__init__.py",
+      "target": "backup/refactor03/src/cevns_pyeft/nuclear/__init__.py",
+      "sha256": "d7869554724a9701a2b7dbe6818db7760317d3607207ae7eb7688d3a1f2d0e3f"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/propagation/base.py",
+      "target": "backup/refactor03/src/cevns_pyeft/propagation/base.py",
+      "sha256": "f1e531e91d96ffbc1ae46f855897a5c3793fa280f904d0e61c08e8b4b46eab0a"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/propagation/density.py",
+      "target": "backup/refactor03/src/cevns_pyeft/propagation/density.py",
+      "sha256": "670b701aae958f66f0588c657e64cc3f1b4d63803d96ae6d14faefd45342f170"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/propagation/__init__.py",
+      "target": "backup/refactor03/src/cevns_pyeft/propagation/__init__.py",
+      "sha256": "4f961ad6cb85eea23f6a4484ab2e181117b77a4cdca57e2ac01052eceafc8db2"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/propagation/backends/snudd.py",
+      "target": "backup/refactor03/src/cevns_pyeft/propagation/backends/snudd.py",
+      "sha256": "0a82dabc6be43cb26d8dfec33e382da782bd1ee58890564717e817f74e834e05"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/propagation/backends/__init__.py",
+      "target": "backup/refactor03/src/cevns_pyeft/propagation/backends/__init__.py",
+      "sha256": "a613261e76cc0d5ccfdb9850386941f5092edbd7a60e74b8e8a8d5e3333f05bd"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/rates/counts.py",
+      "target": "backup/refactor03/src/cevns_pyeft/rates/counts.py",
+      "sha256": "97489d69e40960c3ed11c0f049211728fe137c02650134282c57ab44254dce01"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/rates/differential.py",
+      "target": "backup/refactor03/src/cevns_pyeft/rates/differential.py",
+      "sha256": "c98637b4aff81dab44c488e804e96066b8d5385382b0a33687144083ad8b6a6c"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/rates/folding.py",
+      "target": "backup/refactor03/src/cevns_pyeft/rates/folding.py",
+      "sha256": "e1600e659d3dc5816095bdf395b6dc9ab78b57ed345e638c6a95b72eb0e076d1"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/rates/recoil.py",
+      "target": "backup/refactor03/src/cevns_pyeft/rates/recoil.py",
+      "sha256": "c300780a0d82fc812af113af27c1ffba52ac52cfce76ed715cb9424050b1251b"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/rates/__init__.py",
+      "target": "backup/refactor03/src/cevns_pyeft/rates/__init__.py",
+      "sha256": "ea0ff65eb2b2b0932dca0555b158d9b4ba1e3d2e667641fefec02880d7b20b10"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/sources/composable.py",
+      "target": "backup/refactor03/src/cevns_pyeft/sources/composable.py",
+      "sha256": "84a4e4bfd34f40ced572b51d6f6f52d5886fa039fc21c728809242c64f876b8f"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/sources/sns.py",
+      "target": "backup/refactor03/src/cevns_pyeft/sources/sns.py",
+      "sha256": "e2876f74bf9a469f33a5539ac0e197ee345d4dada2a4dc48a1760fd0214a923b"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/sources/state.py",
+      "target": "backup/refactor03/src/cevns_pyeft/sources/state.py",
+      "sha256": "39ae30776f58bb19c15e842317940cb3aece2040eabb19046d01842e55815100"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/sources/__init__.py",
+      "target": "backup/refactor03/src/cevns_pyeft/sources/__init__.py",
+      "sha256": "479ec238313a0e039ab01ea0e559b6051f1399f524c93599f411cfe2861c1d3b"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/statistics/adapters.py",
+      "target": "backup/refactor03/src/cevns_pyeft/statistics/adapters.py",
+      "sha256": "547a806ff8a72b29be2b74f888a18901f3d0ad69c11a0fa457e1da6c5df5123c"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/statistics/confidence.py",
+      "target": "backup/refactor03/src/cevns_pyeft/statistics/confidence.py",
+      "sha256": "dd9449ed9bda1a2cba959a1afd54bf93e5411dc81595d5b771dfd2094800ded5"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/statistics/datasets.py",
+      "target": "backup/refactor03/src/cevns_pyeft/statistics/datasets.py",
+      "sha256": "8e12bcfbce83c68fa9ca33dfc2d449d13bef37d0df1bc7e7f6379eaa0930ef64"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/statistics/likelihoods.py",
+      "target": "backup/refactor03/src/cevns_pyeft/statistics/likelihoods.py",
+      "sha256": "9f1e347157cc36cafcb9a6af82aecc46f000d57db3bf9bd7bda8e869820021b6"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/statistics/observables.py",
+      "target": "backup/refactor03/src/cevns_pyeft/statistics/observables.py",
+      "sha256": "562a18e77e4b0f75666847d220f785e6c54b99df436f014e203f76ef05109941"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/statistics/parameters.py",
+      "target": "backup/refactor03/src/cevns_pyeft/statistics/parameters.py",
+      "sha256": "654f3d41fea1760fdb0af7c678bf42523c8c359fc1bbac00d045ec0f76eabca6"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/statistics/predictors.py",
+      "target": "backup/refactor03/src/cevns_pyeft/statistics/predictors.py",
+      "sha256": "b5544ab74a7079092a7151c11b64955e3c3e5e90aa44a7e7fc67f6d48cff7799"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/statistics/profiling.py",
+      "target": "backup/refactor03/src/cevns_pyeft/statistics/profiling.py",
+      "sha256": "1ff56e0d802ec8b05ac8002633b070d8019e40895569dc083683029d0a26c120"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/statistics/scans.py",
+      "target": "backup/refactor03/src/cevns_pyeft/statistics/scans.py",
+      "sha256": "0610e0248fa64632c8c8f7c9f8fc3e77b02cd9c3cfa13a85f5adcfa02132bdb0"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/statistics/__init__.py",
+      "target": "backup/refactor03/src/cevns_pyeft/statistics/__init__.py",
+      "sha256": "ed5a1e1e4915bbe05daedfe46bb558f7a9c69ca215476d5b60bba4e485048167"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/targets/materials.py",
+      "target": "backup/refactor03/src/cevns_pyeft/targets/materials.py",
+      "sha256": "f335373365126c8848921ec9d20068c807375b77a43cb4e1bc9361c72562ae62"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/targets/__init__.py",
+      "target": "backup/refactor03/src/cevns_pyeft/targets/__init__.py",
+      "sha256": "293d55adbbfc120bfb5212f2511f60228ff1f14f5a60c06c2f107ed6841768ff"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/theory/kinematics.py",
+      "target": "backup/refactor03/src/cevns_pyeft/theory/kinematics.py",
+      "sha256": "2fcdeae7b83a1183c1215461e8d1f91badda142cb78ba7cb0fbb25367c69bd16"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/theory/__init__.py",
+      "target": "backup/refactor03/src/cevns_pyeft/theory/__init__.py",
+      "sha256": "c5f71bea32f72a9c3ddafba06e96a425e9fcd2f47829b9c4683735d5d3840e20"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/theory/helm/cross_section.py",
+      "target": "backup/refactor03/src/cevns_pyeft/theory/helm/cross_section.py",
+      "sha256": "816add89966820f38e344174ef90e5e09e262c90bfdb63d7ac11da28ee88101f"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/theory/helm/form_factor.py",
+      "target": "backup/refactor03/src/cevns_pyeft/theory/helm/form_factor.py",
+      "sha256": "fcbcad484f52a5fc4c831a154c156cb5992dcd6d07802eec33e8498cc84882db"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/theory/helm/__init__.py",
+      "target": "backup/refactor03/src/cevns_pyeft/theory/helm/__init__.py",
+      "sha256": "ac67f2db7e4a3a3270af5b123a1096da200d6f3cb03ce1aeaa58b8b2c4490e34"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/theory/li2026/adapter.py",
+      "target": "backup/refactor03/src/cevns_pyeft/theory/li2026/adapter.py",
+      "sha256": "e7e8f2c53d8500999ede7a3ff9a5b1e5a7d735464cb130b19cf35be789951a6f"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/theory/li2026/amplitude.py",
+      "target": "backup/refactor03/src/cevns_pyeft/theory/li2026/amplitude.py",
+      "sha256": "40a2bbfcb60716da67ff3d5182d5af6dd075bcd7dfccf9a49b9b3b0a8a9b7aed"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/theory/li2026/coefficients.py",
+      "target": "backup/refactor03/src/cevns_pyeft/theory/li2026/coefficients.py",
+      "sha256": "c032668684ddc7e854b0fff0c8ec808995c7b2e014d4eea570dffe8053b984b2"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/theory/li2026/cross_section.py",
+      "target": "backup/refactor03/src/cevns_pyeft/theory/li2026/cross_section.py",
+      "sha256": "adc13f3e1acc9b88b85fc033a6117cc2f99a77d1bc88e66368e416e4f5304393"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/theory/li2026/flavor.py",
+      "target": "backup/refactor03/src/cevns_pyeft/theory/li2026/flavor.py",
+      "sha256": "66c84c2f2dad58ebba132cb768db36c8661a3e053b8cb74900d47df6cffa48c4"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/theory/li2026/form_factors.py",
+      "target": "backup/refactor03/src/cevns_pyeft/theory/li2026/form_factors.py",
+      "sha256": "30cdddc17904416ccdb31b4e84ed2ba883d192ef15196cb52d7b25cb2822eb2f"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/theory/li2026/lec.py",
+      "target": "backup/refactor03/src/cevns_pyeft/theory/li2026/lec.py",
+      "sha256": "9c981d8705ba6a17829c75e81b93ce6f85fdbcc290faf5bf64edde9dc8867691"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/theory/li2026/left_to_ci.py",
+      "target": "backup/refactor03/src/cevns_pyeft/theory/li2026/left_to_ci.py",
+      "sha256": "56027d356737d85de4ae22ba3b303ade16e1c0163887bbedbc53ac2f0d46ae48"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/theory/li2026/operators.py",
+      "target": "backup/refactor03/src/cevns_pyeft/theory/li2026/operators.py",
+      "sha256": "c1932f6de64333b3a344fc84b7f5ec19efddbbf9a33db2aa9e245df702609ff4"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/theory/li2026/responses.py",
+      "target": "backup/refactor03/src/cevns_pyeft/theory/li2026/responses.py",
+      "sha256": "5edb06d4dd7409d0bac8245f9bf25b24f81f9e473e37f5e4f311492e9542f01b"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "src/cevns_pyeft/theory/li2026/__init__.py",
+      "target": "backup/refactor03/src/cevns_pyeft/theory/li2026/__init__.py",
+      "sha256": "62c3b0efd4c52b1a9c1362de1bec3f0426bc8d38463efb480dcd4c747b7e15ef"
+    },
+    {
+      "phase": "C1",
+      "action": "move",
+      "path": "src/cevns_pyeft",
+      "target": "cevns_pyeft",
+      "files": 202
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "pyproject.toml",
+      "target": "backup/refactor03/pyproject.toml",
+      "sha256": "99f17b07b4b428360beeb437b795e74a31fa129491bf1d8e90260ce95f41772f"
+    },
+    {
+      "phase": "C1",
+      "action": "modify",
+      "path": "pyproject.toml",
+      "before_sha256": "99f17b07b4b428360beeb437b795e74a31fa129491bf1d8e90260ce95f41772f",
+      "after_sha256": "530826de31a8fc193d0409ce4d6ff3af6400b518f038291330a10d2021a75b81"
+    },
+    {
+      "phase": "C1",
+      "action": "modify",
+      "path": "pyproject.toml",
+      "before_sha256": "530826de31a8fc193d0409ce4d6ff3af6400b518f038291330a10d2021a75b81",
+      "after_sha256": "32b510b1ff40454e0f4f7e31fadea76e3d5446e336d73a46182c750961df9e77"
+    },
+    {
+      "phase": "C1",
+      "action": "modify",
+      "path": "pyproject.toml",
+      "before_sha256": "32b510b1ff40454e0f4f7e31fadea76e3d5446e336d73a46182c750961df9e77",
+      "after_sha256": "8933b390820a7f3798255748e8da37e691e74cef9f2b011500633490cbcffea6"
+    },
+    {
+      "phase": "C1",
+      "action": "create",
+      "path": "cevns_pyeft/foundation/paths.py",
+      "before_sha256": null,
+      "after_sha256": "2dd94d9cb785ab0bc1b96bd5da59cd825f425588abe9d3bfc442318b6202dc83"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "cevns_pyeft/experiments/loader.py",
+      "target": "backup/refactor03/cevns_pyeft/experiments/loader.py",
+      "sha256": "16e5154543671b7bfa1420f9c7494dd1b355e1879b9992a1d9ca91b39316675c"
+    },
+    {
+      "phase": "C1",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/loader.py",
+      "before_sha256": "16e5154543671b7bfa1420f9c7494dd1b355e1879b9992a1d9ca91b39316675c",
+      "after_sha256": "9ccf29ddec72037fb8d4836fc2a047c0d49410ba26b53605f39eb1305b81a0aa"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "cevns_pyeft/experiments/specs.py",
+      "target": "backup/refactor03/cevns_pyeft/experiments/specs.py",
+      "sha256": "5b0633166370d9ec45d06bc2f9e069a319ebca5a04c6b51c78cf070621dcdac7"
+    },
+    {
+      "phase": "C1",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/specs.py",
+      "before_sha256": "5b0633166370d9ec45d06bc2f9e069a319ebca5a04c6b51c78cf070621dcdac7",
+      "after_sha256": "b5c9fbeadf32c98769c1bf1179963a1d37d9be67822c132d28de5c86fbd1aace"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "cevns_pyeft/statistics/datasets.py",
+      "target": "backup/refactor03/cevns_pyeft/statistics/datasets.py",
+      "sha256": "8e12bcfbce83c68fa9ca33dfc2d449d13bef37d0df1bc7e7f6379eaa0930ef64"
+    },
+    {
+      "phase": "C1",
+      "action": "modify",
+      "path": "cevns_pyeft/statistics/datasets.py",
+      "before_sha256": "8e12bcfbce83c68fa9ca33dfc2d449d13bef37d0df1bc7e7f6379eaa0930ef64",
+      "after_sha256": "ab31bec0d5fd6d6981c260ae8aba334c8d87a6f2d6bdc8dcca332546bf16f845"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "cevns_pyeft/statistics/predictors.py",
+      "target": "backup/refactor03/cevns_pyeft/statistics/predictors.py",
+      "sha256": "b5544ab74a7079092a7151c11b64955e3c3e5e90aa44a7e7fc67f6d48cff7799"
+    },
+    {
+      "phase": "C1",
+      "action": "modify",
+      "path": "cevns_pyeft/statistics/predictors.py",
+      "before_sha256": "b5544ab74a7079092a7151c11b64955e3c3e5e90aa44a7e7fc67f6d48cff7799",
+      "after_sha256": "dde343bb128790eb19f8e03ee18eb4c6f2ef32d1ab2c27ca185e3841c4c70a36"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "cevns_pyeft/experiments/coherent/statistics_binding.py",
+      "target": "backup/refactor03/cevns_pyeft/experiments/coherent/statistics_binding.py",
+      "sha256": "84b5b0b241acb2a1ba77bd0177dbb3b85d78900d2176970fa3ddc3636d6839f7"
+    },
+    {
+      "phase": "C1",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/coherent/statistics_binding.py",
+      "before_sha256": "84b5b0b241acb2a1ba77bd0177dbb3b85d78900d2176970fa3ddc3636d6839f7",
+      "after_sha256": "c261ce473435fd45581665918023d5a85b3747c4c85c3f55a37c51212972b333"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "cevns_pyeft/experiments/conus_plus/source.py",
+      "target": "backup/refactor03/cevns_pyeft/experiments/conus_plus/source.py",
+      "sha256": "1898fc525b7bb0b107bca9331f15331b6c99ba5fc69005e1e80962dd7dd037d4"
+    },
+    {
+      "phase": "C1",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/conus_plus/source.py",
+      "before_sha256": "1898fc525b7bb0b107bca9331f15331b6c99ba5fc69005e1e80962dd7dd037d4",
+      "after_sha256": "6cf62d9385fc2f0c850de8df5ac08457729ad46c1c05f604007da47b2138f4c5"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "cevns_pyeft/experiments/conus_plus/slow_counts.py",
+      "target": "backup/refactor03/cevns_pyeft/experiments/conus_plus/slow_counts.py",
+      "sha256": "7d07739098c92cf692cdc5c01b4f0b2c19ca95ccf895fc4b88e1abf2c8298f19"
+    },
+    {
+      "phase": "C1",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/conus_plus/slow_counts.py",
+      "before_sha256": "7d07739098c92cf692cdc5c01b4f0b2c19ca95ccf895fc4b88e1abf2c8298f19",
+      "after_sha256": "b3552df6eb00f7c0ba00a38559dbcf2a6446857df47ce422c91ae675aa22b4c8"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "tests/test_experiment_modularization.py",
+      "target": "backup/refactor03/tests/test_experiment_modularization.py",
+      "sha256": "5303fbd437b16b2861856dd9f0b8296fbd677b2d5cc31adfa59486ea40436713"
+    },
+    {
+      "phase": "C1",
+      "action": "modify",
+      "path": "tests/test_experiment_modularization.py",
+      "before_sha256": "5303fbd437b16b2861856dd9f0b8296fbd677b2d5cc31adfa59486ea40436713",
+      "after_sha256": "9a3843ac2c66ccfdac4d7cfefd19f6957dc88a114806a3b809d764b8c1530878"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "tests/test_interface_contracts.py",
+      "target": "backup/refactor03/tests/test_interface_contracts.py",
+      "sha256": "bf8cefe10666ebba68a30c1bde9344306bb572276f3ba33ddb3b90d8553c3ecc"
+    },
+    {
+      "phase": "C1",
+      "action": "modify",
+      "path": "tests/test_interface_contracts.py",
+      "before_sha256": "bf8cefe10666ebba68a30c1bde9344306bb572276f3ba33ddb3b90d8553c3ecc",
+      "after_sha256": "42d61f02971949b552a6973583106cbe053db2261ef5c53ee0631eca73a473f1"
+    },
+    {
+      "phase": "C1",
+      "action": "backup",
+      "path": "AGENTS.md",
+      "target": "backup/refactor03/AGENTS.md",
+      "sha256": "2ca31e59f1961b838b40e80ca1d0e4b3ff92f0b0e1c61f2b0808aa49b6703a9d"
+    },
+    {
+      "phase": "C1",
+      "action": "modify",
+      "path": "AGENTS.md",
+      "before_sha256": "2ca31e59f1961b838b40e80ca1d0e4b3ff92f0b0e1c61f2b0808aa49b6703a9d",
+      "after_sha256": "dd364d702e77de09636c44837a4dec6749d355e9ca135e54848152263956e324"
+    },
+    {
+      "phase": "C2",
+      "action": "create",
+      "path": "tests/__init__.py",
+      "before_sha256": null,
+      "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "phase": "C2",
+      "action": "create",
+      "path": "tests/helpers/__init__.py",
+      "before_sha256": null,
+      "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "phase": "C2",
+      "action": "create",
+      "path": "tests/helpers/regression_cases.py",
+      "before_sha256": null,
+      "after_sha256": "61d9ea7ce37de6a7c3210689d319784df2f6af903a0d97c02c4618d44167ec79"
+    },
+    {
+      "phase": "C2",
+      "action": "backup",
+      "path": "tests/test_fast_model_contract.py",
+      "target": "backup/refactor03/tests/test_fast_model_contract.py",
+      "sha256": "9b9d5d10a1de46f785615316b4daa48140864531ceefccb5dc924d76eee19c7c"
+    },
+    {
+      "phase": "C2",
+      "action": "modify",
+      "path": "tests/test_fast_model_contract.py",
+      "before_sha256": "9b9d5d10a1de46f785615316b4daa48140864531ceefccb5dc924d76eee19c7c",
+      "after_sha256": "bd0dcac0505a1e16536bf74e10c719eb0d1829997ac994425d3c8cb6a8efe4ee"
+    },
+    {
+      "phase": "C2",
+      "action": "backup",
+      "path": "tests/test_refactor_csi2021_regression.py",
+      "target": "backup/refactor03/tests/test_refactor_csi2021_regression.py",
+      "sha256": "232c16f7606ac4ea07efeae265a3cd3e19d6fb33a6edf0786a06e72584a528f8"
+    },
+    {
+      "phase": "C2",
+      "action": "modify",
+      "path": "tests/test_refactor_csi2021_regression.py",
+      "before_sha256": "232c16f7606ac4ea07efeae265a3cd3e19d6fb33a6edf0786a06e72584a528f8",
+      "after_sha256": "d053278d84a6c8a0ed8a47f5db7b9ad1ebb43ed67f2535fb57db596af4356ed0"
+    },
+    {
+      "phase": "C2",
+      "action": "backup",
+      "path": "docs/experiment_modularization/USAGE.md",
+      "target": "backup/refactor03/docs/experiment_modularization/USAGE.md",
+      "sha256": "96cd04f4aca29504bc16acc43731af281e884acb6929a88168bb660bbd75a6f4"
+    },
+    {
+      "phase": "C2",
+      "action": "move",
+      "path": "docs/experiment_modularization/USAGE.md",
+      "target": "docs/USAGE.md",
+      "files": 1
+    },
+    {
+      "phase": "C2",
+      "action": "backup",
+      "path": "docs/experiment_modularization/PARAMETER_OWNERSHIP.md",
+      "target": "backup/refactor03/docs/experiment_modularization/PARAMETER_OWNERSHIP.md",
+      "sha256": "66bd24a669bd048e251a033511928e9dd1bd14a480c1bee27a13061a33717d51"
+    },
+    {
+      "phase": "C2",
+      "action": "move",
+      "path": "docs/experiment_modularization/PARAMETER_OWNERSHIP.md",
+      "target": "docs/PARAMETER_OWNERSHIP.md",
+      "files": 1
+    },
+    {
+      "phase": "C2",
+      "action": "backup",
+      "path": "docs/experiment_modularization/CAPABILITY_MATRIX.md",
+      "target": "backup/refactor03/docs/experiment_modularization/CAPABILITY_MATRIX.md",
+      "sha256": "c4e3b84738532928955d8a108f2c1e5e225f1ca7210eec761430a04deb49cd4b"
+    },
+    {
+      "phase": "C2",
+      "action": "move",
+      "path": "docs/experiment_modularization/CAPABILITY_MATRIX.md",
+      "target": "docs/CAPABILITY_MATRIX.md",
+      "files": 1
+    },
+    {
+      "phase": "C2",
+      "action": "backup",
+      "path": "docs/experiment_modularization/SKILL_OPERATION_GUIDE.md",
+      "target": "backup/refactor03/docs/experiment_modularization/SKILL_OPERATION_GUIDE.md",
+      "sha256": "958c02e1f206537e26515a476fed5dadafeb554fae09ecabd4e25edd3c66db59"
+    },
+    {
+      "phase": "C2",
+      "action": "move",
+      "path": "docs/experiment_modularization/SKILL_OPERATION_GUIDE.md",
+      "target": "docs/SKILL_OPERATION_GUIDE.md",
+      "files": 1
+    },
+    {
+      "phase": "C2",
+      "action": "backup",
+      "path": "docs/interface_refactor/README.md",
+      "target": "backup/refactor03/docs/interface_refactor/README.md",
+      "sha256": "bbcd24757f2a39e588cb3a665dc53dbf1057e4643e2d0be310b1babdd62d8f1a"
+    },
+    {
+      "phase": "C2",
+      "action": "move",
+      "path": "docs/interface_refactor/README.md",
+      "target": "docs/COMPONENTS.md",
+      "files": 1
+    },
+    {
+      "phase": "C2",
+      "action": "backup",
+      "path": "docs/interface_refactor/FAST_AND_CACHE.md",
+      "target": "backup/refactor03/docs/interface_refactor/FAST_AND_CACHE.md",
+      "sha256": "a03703b1ff014c3c1f7fc896557921b7d592b82574e9fce3d3608099642082bb"
+    },
+    {
+      "phase": "C2",
+      "action": "move",
+      "path": "docs/interface_refactor/FAST_AND_CACHE.md",
+      "target": "docs/FAST_AND_CACHE.md",
+      "files": 1
+    },
+    {
+      "phase": "C2",
+      "action": "backup",
+      "path": "docs/experiment_modularization/analysis_selection.example.yaml",
+      "target": "backup/refactor03/docs/experiment_modularization/analysis_selection.example.yaml",
+      "sha256": "2d98f26c0daf20d191dd45680b38d79457bb6bc2e0ca840f734b6d97c0beb062"
+    },
+    {
+      "phase": "C2",
+      "action": "move",
+      "path": "docs/experiment_modularization/analysis_selection.example.yaml",
+      "target": "configs/analysis_selection.example.yaml",
+      "files": 1
+    },
+    {
+      "phase": "C2",
+      "action": "backup",
+      "path": "tools/build_modularization_wheel.py",
+      "target": "backup/refactor03/tools/build_modularization_wheel.py",
+      "sha256": "38fc7263035d47df210e442d39d59a29e3d754224d91776b25ee4abe81bcfb7a"
+    },
+    {
+      "phase": "C2",
+      "action": "move",
+      "path": "tools/build_modularization_wheel.py",
+      "target": "tools/build_wheel.py",
+      "files": 1
+    },
+    {
+      "phase": "C2",
+      "action": "backup",
+      "path": "tools/verify_modularization_release.py",
+      "target": "backup/refactor03/tools/verify_modularization_release.py",
+      "sha256": "208f79e879e6984d5542d70f8fe84bd3f971ba77b05dcf1f17f63240c8e29b51"
+    },
+    {
+      "phase": "C2",
+      "action": "move",
+      "path": "tools/verify_modularization_release.py",
+      "target": "tools/verify_wheel.py",
+      "files": 1
+    },
+    {
+      "phase": "C2",
+      "action": "dependency_review",
+      "references": [
+        {
+          "reader": "cevns_pyeft/core/engine.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/core/__init__.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/experiments/coherent/ar2020_definition.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/experiments/coherent/csi2017_definition.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/experiments/coherent/csi2021_definition.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/experiments/coherent/execution.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/experiments/coherent/fast_kernel_ar2020.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/experiments/coherent/fast_kernel_csi2017.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/experiments/coherent/fast_kernel_csi2021.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/experiments/coherent/slow_counts_ar2020.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/experiments/coherent/slow_counts_csi2017.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/experiments/coherent/sns.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/experiments/coherent/__init__.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/experiments/conus_plus/eft_kernel.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/experiments/conus_plus/execution.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/experiments/conus_plus/fast_kernel.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/kernels/builder.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/kernels/fingerprint.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/kernels/interface_storage.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/kernels/storage.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/kernels/__init__.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/rates/differential.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/sources/sns.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/theory/li2026/amplitude.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "cevns_pyeft/theory/li2026/form_factors.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "tests/test_component_replacement.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "tests/test_conus_plus_eft_kernel.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "tests/test_conus_plus_fast_kernel.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "tests/test_conus_plus_paper_config_guard.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "tests/test_experiment_modularization.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "tests/test_fast_model_contract.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "tests/test_rates_differential_flavor.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "tools/build_wheel.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "tools/conus/finalize_delivery.py",
+          "candidate": "README_FINAL.md"
+        },
+        {
+          "reader": "tools/conus/finalize_delivery.py",
+          "candidate": "FINAL_STATUS.md"
+        },
+        {
+          "reader": "tools/conus/finalize_delivery.py",
+          "candidate": "KNOWN_LIMITATIONS.md"
+        },
+        {
+          "reader": "tools/conus/finalize_delivery.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "tools/conus/run_conus_completion.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "tools/experiment_integration/conus_paper_config_guard.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "workflows/experiment-integration/runs/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/00_INPUT_INVENTORY.md",
+          "candidate": "build"
+        },
+        {
+          "reader": "workflows/experiment-integration/runs/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/00_MIGRATION_PROGRESS.md",
+          "candidate": "build"
+        },
+        {
+          "reader": "workflows/experiment-integration/runs/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/07_SLOW_COUNTS.md",
+          "candidate": "build"
+        },
+        {
+          "reader": "workflows/experiment-integration/runs/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/08_FAST_COUNTS.md",
+          "candidate": "build"
+        },
+        {
+          "reader": "workflows/experiment-integration/runs/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/diagnostics/extend_09_fig4_full_nsi.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "workflows/experiment-integration/runs/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/diagnostics/generate_08_fast_response_matrix.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "workflows/experiment-integration/runs/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/diagnostics/generate_09_statistics_benchmark.py",
+          "candidate": "build"
+        },
+        {
+          "reader": "workflows/experiment-integration/skills/cevns-physics-modularity/references/02-current-code-map.md",
+          "candidate": "build"
+        },
+        {
+          "reader": "workflows/experiment-integration/skills/cevns-physics-modularity/references/03-replacement-playbook.md",
+          "candidate": "build"
+        },
+        {
+          "reader": "workflows/experiment-integration/skills/cevns-physics-modularity/references/04-proposed-interfaces.md",
+          "candidate": "build"
+        },
+        {
+          "reader": "workflows/experiment-integration/templates/onboarding/MIGRATION_PROGRESS_TEMPLATE.md",
+          "candidate": "build"
+        },
+        {
+          "reader": "workflows/experiment-integration/templates/phase/CsI2021_CORE_FUNCTION_STRUCTURE.md",
+          "candidate": "build"
+        },
+        {
+          "reader": "workflows/experiment-integration/templates/phase/P01_P10_PHASE_TEMPLATES.md",
+          "candidate": "build"
+        },
+        {
+          "reader": "workflows/experiment-integration/templates/phase/P08_FAST_COUNTS_CODE_REFERENCE.md",
+          "candidate": "build"
+        },
+        {
+          "reader": "workflows/experiment-integration/templates/phase/P08_FAST_COUNTS_TEMPLATE.md",
+          "candidate": "build"
+        }
+      ],
+      "note": "retained conus generator creates old status files in outputs, not project root; current test imports extracted first"
+    },
+    {
+      "phase": "C2",
+      "action": "archive",
+      "archive": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261028Gitup1-CONUS-3\\archives\\refactor03_history_20261029.zip",
+      "archive_sha256": "d51a1c6206b44513cda9876e42881a9da09c3308c0396a63aa9196b517069011",
+      "entries": {
+        "build/lib/cevns_pyeft/__init__.py": "589b45038aed28c22fd5b4c0b01535b42e8c1377cec81c04ec24261a4663a8b8",
+        "build/lib/cevns_pyeft/cli.py": "4f682fdb4fa2cdfb5805c5e0b1063358a473938b46ad7352581552869bb5679f",
+        "build/lib/cevns_pyeft/contracts/__init__.py": "782ca6c8dee21816a23678f993f1964e3f8272700334acd1eaebfddae97ff257",
+        "build/lib/cevns_pyeft/contracts/interaction.py": "44c646caa64700b77c52201ffe526a8e8bca316a77d3f6340731b571340ccc86",
+        "build/lib/cevns_pyeft/contracts/modules.py": "ac295d326e94998e054b7c3794cbdb4787dfb4df39a00403ed0414813e61c914",
+        "build/lib/cevns_pyeft/contracts/observation.py": "6a6996223b7bbcb672f054bec085c7fead8a619de38b12608deca27982c0377d",
+        "build/lib/cevns_pyeft/contracts/parameters.py": "3d8b55c7ba12cab050637d3a988ba8e8a0316d738cb56e11f024f484253ca45a",
+        "build/lib/cevns_pyeft/contracts/prediction.py": "b33b2adb2b850f444ea28acf56a808c70089c53a11683e6feb7d8b55c0577c26",
+        "build/lib/cevns_pyeft/contracts/source.py": "595b2df21a76323684c23510b2f258bb5d33a68e0f02ef81643b9b6571dbc98f",
+        "build/lib/cevns_pyeft/contracts/target.py": "877b277ecb41da141aff014340e428b9575651168c36e9c6c2a60f192d78f498",
+        "build/lib/cevns_pyeft/contracts/validation.py": "0b9922e6298a1a5ebbe87943e422d299616ce9275c72262a4164052173746d9b",
+        "build/lib/cevns_pyeft/core/__init__.py": "ee5d6fe151359a563a856e2f4306788bdfa19724af6a85aeb4f13979340f8505",
+        "build/lib/cevns_pyeft/core/engine.py": "27562f649baae63081f4563766187daa3553ab53db450741aad7089fc2b45e7f",
+        "build/lib/cevns_pyeft/core/model.py": "f381279ad6b95c7e6ee40a135f835a2d620529c3251cab7fd537ebcaa8af4cad",
+        "build/lib/cevns_pyeft/core/predict.py": "6c35de8c8bc7839daaa05ffd371c5f906c31b0a47b944f7b3f64dd14c1541eff",
+        "build/lib/cevns_pyeft/detectors/__init__.py": "d172171a4a9f1f1d6aacefa17a7a5ae65006272de3775df7160e955732b517b8",
+        "build/lib/cevns_pyeft/detectors/csi2021.py": "62284716edaa735d7e47e05d5e9c5e64dac2808dadd706688baa57cfbe402491",
+        "build/lib/cevns_pyeft/detectors/selection.py": "32acac6103050d971ca71d955c9034994952ad10b7ace00fca00f89b198edeae",
+        "build/lib/cevns_pyeft/experiments/__init__.py": "3c1e78ec41faf6d0a840f0d144df62ad604243fc5adb802cbd579c7e67ae695b",
+        "build/lib/cevns_pyeft/experiments/base.py": "5e4b6689fcb858b88e0036ce24ee53992760cb70174221a250007c2c1433cef4",
+        "build/lib/cevns_pyeft/experiments/catalog.py": "e41e298f50bb06605216c44fd136c34f02fca972345615b3ec8a2feabc8c162a",
+        "build/lib/cevns_pyeft/experiments/coherent/__init__.py": "b23433a3630c3f3ede4e38beb05c0623f8cb78bddf5b1f4df243b60db483e8d2",
+        "build/lib/cevns_pyeft/experiments/coherent/ar2020_definition.py": "8d61f68a4b3dea4490f0f4a3a81923b877c6882e4cd1478dd74ef4d0a05ec03a",
+        "build/lib/cevns_pyeft/experiments/coherent/csi2017_definition.py": "d12011fcd81e1f418581a8ead519412c2065a202292b0304895a9cf3287f3737",
+        "build/lib/cevns_pyeft/experiments/coherent/csi2021.py": "8e5e2242f67b6bf177ca73ff1ab8a37809c38c93594677fb5d17c7c514869469",
+        "build/lib/cevns_pyeft/experiments/coherent/csi2021_definition.py": "000fce2d62fe22fc2c8d8209dab79d0510838f7de2f1a7e70ec61b3f64a78901",
+        "build/lib/cevns_pyeft/experiments/coherent/execution.py": "5d7d5aea8ac5c2ebcfe3422489a38796547454c95bb2804bce64ff01e6656a8c",
+        "build/lib/cevns_pyeft/experiments/coherent/fast_kernel_ar2020.py": "1d94943787f86b367e2622dbb96df61e27a09b2f5da880302e08f8ee4d3b7169",
+        "build/lib/cevns_pyeft/experiments/coherent/fast_kernel_csi2017.py": "0c0e1c2244770208a6b9d5652011e42aa4899552f9f18894a028d579edb34db3",
+        "build/lib/cevns_pyeft/experiments/coherent/fast_kernel_csi2021.py": "38da6d73254ff2359afcd493197ab85e395eb7a0f97853a442fa2553e4a2a2d3",
+        "build/lib/cevns_pyeft/experiments/coherent/slow_counts_ar2020.py": "eab6ca19d46e5be3620fa66645568539d13dc796f0688a9335bc161f0fed931e",
+        "build/lib/cevns_pyeft/experiments/coherent/slow_counts_csi2017.py": "6140512f44ac72189545891ad5eeffbbc11780070f5176d77ba88835dba6b32d",
+        "build/lib/cevns_pyeft/experiments/coherent/slow_counts_csi2021.py": "f717ca544c74b862de7c63d32c9e6cb90b7038bb60d38df98e54a5492da2513c",
+        "build/lib/cevns_pyeft/experiments/coherent/sns.py": "b10bd6a4110d5d13244fc5213da5a636b656f25dd8994d4c69c48c1eb371e7ef",
+        "build/lib/cevns_pyeft/experiments/coherent/statistics_binding.py": "84b5b0b241acb2a1ba77bd0177dbb3b85d78900d2176970fa3ddc3636d6839f7",
+        "build/lib/cevns_pyeft/experiments/conus_plus/__init__.py": "6949384a682adc70526b72aeccfa028515135d604f899c29b6e5eda3425cc7df",
+        "build/lib/cevns_pyeft/experiments/conus_plus/definition.py": "9e258b0160424562a06f4720ac6c7272e850e6170c66f2b4659a111ea3a92d22",
+        "build/lib/cevns_pyeft/experiments/conus_plus/detector_response.py": "994a88cf23364894df0956f51eaf1fee466c06ffd32ad82f49400de082355e87",
+        "build/lib/cevns_pyeft/experiments/conus_plus/eft_kernel.py": "606c1bbd5692ad22cecdf7d2f458de941e47f86ea16b6549666bdf23108247ab",
+        "build/lib/cevns_pyeft/experiments/conus_plus/execution.py": "2f152815631f77570b830f3c6712f83087c2c369335dd3e0df615ca45a3bfc37",
+        "build/lib/cevns_pyeft/experiments/conus_plus/fast_kernel.py": "730ee75a8adf2cc1f54b688005f3b7b66efeb542d7994f8c28fb202830e82a48",
+        "build/lib/cevns_pyeft/experiments/conus_plus/slow_counts.py": "7d07739098c92cf692cdc5c01b4f0b2c19ca95ccf895fc4b88e1abf2c8298f19",
+        "build/lib/cevns_pyeft/experiments/conus_plus/source.py": "1898fc525b7bb0b107bca9331f15331b6c99ba5fc69005e1e80962dd7dd037d4",
+        "build/lib/cevns_pyeft/experiments/conus_plus/statistics.py": "1084b2228d63603509d3f74a1ed200a87aab1adf9b7a9a5292128efebb9b76b6",
+        "build/lib/cevns_pyeft/experiments/definition.py": "08b0347134107ec7855b3b8b069f5e1e9422adf061e974b1ac1a5e9a47e34ed9",
+        "build/lib/cevns_pyeft/experiments/loader.py": "16e5154543671b7bfa1420f9c7494dd1b355e1879b9992a1d9ca91b39316675c",
+        "build/lib/cevns_pyeft/experiments/registry.py": "50b0ea299899cb38a8910d631f174180c97a9dd00de65c0946b50bd711d5b318",
+        "build/lib/cevns_pyeft/experiments/runtime.py": "a5c772f4ab8e95241b07c84289618c357d111a1ccb39829c7d7d423c56050b7c",
+        "build/lib/cevns_pyeft/experiments/selection.py": "90efe3798980f3f80ffe428701a04f97e58c177e20e307077133e0cda4b852a9",
+        "build/lib/cevns_pyeft/experiments/specs.py": "5b0633166370d9ec45d06bc2f9e069a319ebca5a04c6b51c78cf070621dcdac7",
+        "build/lib/cevns_pyeft/foundation/__init__.py": "747c1b2ae5a59c80a235455feccc5fec27b37827a87a6b94ea2dca5e8ba32411",
+        "build/lib/cevns_pyeft/foundation/constants.py": "0bb51033d1ca64e18a7a7bb0fd4cce38bc679558dd7392740f72d4683276cd44",
+        "build/lib/cevns_pyeft/foundation/units.py": "053e4c8d9e47cd32ba4bacbb33da8367c02a32aca02c16c1d6d4e4a7bba6640a",
+        "build/lib/cevns_pyeft/kernels/__init__.py": "10af42f5b40b4d3f489e67692985dde7b233f8595b57451cd864b23df6aabb8f",
+        "build/lib/cevns_pyeft/kernels/basis.py": "053a369aadc49e14f515d5ba0275fe6523390a3f821db66208f329a30dabd991",
+        "build/lib/cevns_pyeft/kernels/builder.py": "9d1c1635ee1fce8e261c0574897b457d4e974cbca1ca9419d95d989fda5c2adf",
+        "build/lib/cevns_pyeft/kernels/compiler.py": "5a6490f9ea586dd0b262183fa3b0ead6dcc9b393e0eb49ec70d000102d045e8a",
+        "build/lib/cevns_pyeft/kernels/fingerprint.py": "0e503f4e197a8fda182b12d9c03e403d91c90b7a51de534469611436df3533f9",
+        "build/lib/cevns_pyeft/kernels/interface_storage.py": "05d653e4117f195ac163978f324a1596782b58e7bf3feb5dfb7be2fc53b61fe2",
+        "build/lib/cevns_pyeft/kernels/reconstruction.py": "1d3ef686e45cae01f4a481532d7a025358400496e445b9707093a66400cca1ad",
+        "build/lib/cevns_pyeft/kernels/storage.py": "86ab01e539701fe496ad937c6f53e4fd5285ba229e93424d778e6ad7c8ccbbaf",
+        "build/lib/cevns_pyeft/nuclear/__init__.py": "d7869554724a9701a2b7dbe6818db7760317d3607207ae7eb7688d3a1f2d0e3f",
+        "build/lib/cevns_pyeft/nuclear/response.py": "fc94a1582b11e58113e2f192be9733dfaf5b27b2604fe075da9e9f56b94d776f",
+        "build/lib/cevns_pyeft/propagation/__init__.py": "4f961ad6cb85eea23f6a4484ab2e181117b77a4cdca57e2ac01052eceafc8db2",
+        "build/lib/cevns_pyeft/propagation/backends/__init__.py": "a613261e76cc0d5ccfdb9850386941f5092edbd7a60e74b8e8a8d5e3333f05bd",
+        "build/lib/cevns_pyeft/propagation/backends/snudd.py": "0a82dabc6be43cb26d8dfec33e382da782bd1ee58890564717e817f74e834e05",
+        "build/lib/cevns_pyeft/propagation/base.py": "f1e531e91d96ffbc1ae46f855897a5c3793fa280f904d0e61c08e8b4b46eab0a",
+        "build/lib/cevns_pyeft/propagation/density.py": "670b701aae958f66f0588c657e64cc3f1b4d63803d96ae6d14faefd45342f170",
+        "build/lib/cevns_pyeft/rates/__init__.py": "ea0ff65eb2b2b0932dca0555b158d9b4ba1e3d2e667641fefec02880d7b20b10",
+        "build/lib/cevns_pyeft/rates/counts.py": "97489d69e40960c3ed11c0f049211728fe137c02650134282c57ab44254dce01",
+        "build/lib/cevns_pyeft/rates/differential.py": "c98637b4aff81dab44c488e804e96066b8d5385382b0a33687144083ad8b6a6c",
+        "build/lib/cevns_pyeft/rates/folding.py": "e1600e659d3dc5816095bdf395b6dc9ab78b57ed345e638c6a95b72eb0e076d1",
+        "build/lib/cevns_pyeft/rates/recoil.py": "c300780a0d82fc812af113af27c1ffba52ac52cfce76ed715cb9424050b1251b",
+        "build/lib/cevns_pyeft/sources/__init__.py": "479ec238313a0e039ab01ea0e559b6051f1399f524c93599f411cfe2861c1d3b",
+        "build/lib/cevns_pyeft/sources/composable.py": "84a4e4bfd34f40ced572b51d6f6f52d5886fa039fc21c728809242c64f876b8f",
+        "build/lib/cevns_pyeft/sources/sns.py": "e2876f74bf9a469f33a5539ac0e197ee345d4dada2a4dc48a1760fd0214a923b",
+        "build/lib/cevns_pyeft/sources/state.py": "39ae30776f58bb19c15e842317940cb3aece2040eabb19046d01842e55815100",
+        "build/lib/cevns_pyeft/statistics/__init__.py": "ed5a1e1e4915bbe05daedfe46bb558f7a9c69ca215476d5b60bba4e485048167",
+        "build/lib/cevns_pyeft/statistics/adapters.py": "547a806ff8a72b29be2b74f888a18901f3d0ad69c11a0fa457e1da6c5df5123c",
+        "build/lib/cevns_pyeft/statistics/confidence.py": "dd9449ed9bda1a2cba959a1afd54bf93e5411dc81595d5b771dfd2094800ded5",
+        "build/lib/cevns_pyeft/statistics/datasets.py": "8e12bcfbce83c68fa9ca33dfc2d449d13bef37d0df1bc7e7f6379eaa0930ef64",
+        "build/lib/cevns_pyeft/statistics/likelihoods.py": "9f1e347157cc36cafcb9a6af82aecc46f000d57db3bf9bd7bda8e869820021b6",
+        "build/lib/cevns_pyeft/statistics/observables.py": "562a18e77e4b0f75666847d220f785e6c54b99df436f014e203f76ef05109941",
+        "build/lib/cevns_pyeft/statistics/parameters.py": "654f3d41fea1760fdb0af7c678bf42523c8c359fc1bbac00d045ec0f76eabca6",
+        "build/lib/cevns_pyeft/statistics/predictors.py": "b5544ab74a7079092a7151c11b64955e3c3e5e90aa44a7e7fc67f6d48cff7799",
+        "build/lib/cevns_pyeft/statistics/profiling.py": "1ff56e0d802ec8b05ac8002633b070d8019e40895569dc083683029d0a26c120",
+        "build/lib/cevns_pyeft/statistics/scans.py": "0610e0248fa64632c8c8f7c9f8fc3e77b02cd9c3cfa13a85f5adcfa02132bdb0",
+        "build/lib/cevns_pyeft/targets/__init__.py": "293d55adbbfc120bfb5212f2511f60228ff1f14f5a60c06c2f107ed6841768ff",
+        "build/lib/cevns_pyeft/targets/materials.py": "f335373365126c8848921ec9d20068c807375b77a43cb4e1bc9361c72562ae62",
+        "build/lib/cevns_pyeft/theory/__init__.py": "c5f71bea32f72a9c3ddafba06e96a425e9fcd2f47829b9c4683735d5d3840e20",
+        "build/lib/cevns_pyeft/theory/helm/__init__.py": "ac67f2db7e4a3a3270af5b123a1096da200d6f3cb03ce1aeaa58b8b2c4490e34",
+        "build/lib/cevns_pyeft/theory/helm/cross_section.py": "816add89966820f38e344174ef90e5e09e262c90bfdb63d7ac11da28ee88101f",
+        "build/lib/cevns_pyeft/theory/helm/form_factor.py": "fcbcad484f52a5fc4c831a154c156cb5992dcd6d07802eec33e8498cc84882db",
+        "build/lib/cevns_pyeft/theory/kinematics.py": "2fcdeae7b83a1183c1215461e8d1f91badda142cb78ba7cb0fbb25367c69bd16",
+        "build/lib/cevns_pyeft/theory/li2026/__init__.py": "62c3b0efd4c52b1a9c1362de1bec3f0426bc8d38463efb480dcd4c747b7e15ef",
+        "build/lib/cevns_pyeft/theory/li2026/adapter.py": "e7e8f2c53d8500999ede7a3ff9a5b1e5a7d735464cb130b19cf35be789951a6f",
+        "build/lib/cevns_pyeft/theory/li2026/amplitude.py": "40a2bbfcb60716da67ff3d5182d5af6dd075bcd7dfccf9a49b9b3b0a8a9b7aed",
+        "build/lib/cevns_pyeft/theory/li2026/coefficients.py": "c032668684ddc7e854b0fff0c8ec808995c7b2e014d4eea570dffe8053b984b2",
+        "build/lib/cevns_pyeft/theory/li2026/cross_section.py": "adc13f3e1acc9b88b85fc033a6117cc2f99a77d1bc88e66368e416e4f5304393",
+        "build/lib/cevns_pyeft/theory/li2026/flavor.py": "66c84c2f2dad58ebba132cb768db36c8661a3e053b8cb74900d47df6cffa48c4",
+        "build/lib/cevns_pyeft/theory/li2026/form_factors.py": "30cdddc17904416ccdb31b4e84ed2ba883d192ef15196cb52d7b25cb2822eb2f",
+        "build/lib/cevns_pyeft/theory/li2026/lec.py": "9c981d8705ba6a17829c75e81b93ce6f85fdbcc290faf5bf64edde9dc8867691",
+        "build/lib/cevns_pyeft/theory/li2026/left_to_ci.py": "56027d356737d85de4ae22ba3b303ade16e1c0163887bbedbc53ac2f0d46ae48",
+        "build/lib/cevns_pyeft/theory/li2026/operators.py": "c1932f6de64333b3a344fc84b7f5ec19efddbbf9a33db2aa9e245df702609ff4",
+        "build/lib/cevns_pyeft/theory/li2026/responses.py": "5edb06d4dd7409d0bac8245f9bf25b24f81f9e473e37f5e4f311492e9542f01b",
+        "docs/experiment_integration/INTEGRATE_CEVNS_EXPERIMENT_SKILL.md": "323e634fcb4a4b18a9fc6e4929cef87a245e6d65caba7fb7fa949cd8b17c09a3",
+        "docs/experiment_integration/VALIDATION_RESULT.txt": "b0558f3151c9518b8ca5e7042a3369b6b6fc41e8c385c1fbbe15202bec646717",
+        "docs/experiment_modularization/CHANGE_MANIFEST.json": "4e2301bae0d52d48b312f337f1f46091fb215d085f9c4650818e0bfdec7e3b33",
+        "docs/experiment_modularization/FILE_CHANGES.md": "f4306f2f09c748950da3747aa625c940710e2d6fce071c0135bb76056cf67d59",
+        "docs/experiment_modularization/MIGRATION_REPORT.md": "060bb226cdd693cb1adaa7559a49640bf4237ea196ebfca20298b79ce1081067",
+        "docs/experiment_modularization/resolved_experiments.json": "b7d8c136086a03caab6ce48a25400a20eb9f335e78f67f17741fd74058ce3aba",
+        "docs/interface_refactor/R0_R3_REPORT.md": "958f236b0aafc4f39ed8c4d9d809e7c3e9110a59e4762b1b4b0102c6a7fcd4a7",
+        "docs/interface_refactor/R4_R6_REPORT.md": "64158a2f70c514d347b485f285d2dcf97cca30ba2deac417acbd2356db91e835",
+        "FINAL_STATUS.md": "c9b84940cdc3fc592b232a4b01566753eef548acc53f06f6ffa5bbab9ec9e2b3",
+        "KNOWN_LIMITATIONS.md": "6dbea5b47237499f55ea28b2bd6bffd4a0b2232a755d094e15c65179cf4b0ece",
+        "outputs/conus-paper-config-guard-20261002/conus_paper_config_bins.csv": "5581be32074edd72a4ede63c80bdf581608f15498da821bf707ed7168e2b79c4",
+        "outputs/conus-paper-config-guard-20261002/conus_paper_config_guard.json": "8ab8074d4ec5c751bf36c9568d6c47dfe2854ff6beedc38c6b0e65d52d0339a6",
+        "outputs/conus-paper-config-guard-20261002/CONUS_PAPER_CONFIG_GUARD.md": "790f1636b4bfaf1903a1bd6789a5c983cb7dac33ccca80afbac198a6538a53ad",
+        "README_FINAL.md": "3f6d13f1198b21ef2a48ca4f10d4876fb4340404398c6b1d33ca83fce18e4840",
+        "src/CEvNS_pyEFT.egg-info/dependency_links.txt": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "src/CEvNS_pyEFT.egg-info/entry_points.txt": "d4d62e1516214cd71343b0088ade80fb74184ea9e6f8805f474a3e83f2bcaefd",
+        "src/CEvNS_pyEFT.egg-info/PKG-INFO": "2e3849b3c5c3d67b95b5f3aacc421ddc35bacf0c12fa54f96f339adaacde1173",
+        "src/CEvNS_pyEFT.egg-info/requires.txt": "49e655184126a819f561a1deb926ea07e55a831279e8f0c1932565758767fb38",
+        "src/CEvNS_pyEFT.egg-info/SOURCES.txt": "beac254efd877e56d6dd10533d0d6bd66e19537969444130b29a07ac8d09514c",
+        "src/CEvNS_pyEFT.egg-info/top_level.txt": "4e1e4047af50907a5fd0752e356cdcf08ff35df4339985cd4e49ce24fca0f564",
+        "tools/_modularization_edit.py": "24669a1adf32205e3b88e893fba3d65ab8508336a1356477b932e304ef096598",
+        "tools/capture_modularization_baseline.py": "568b60172212fb7ba3e96b02965b3629f91fa657802c6e68acd93be90406dc94",
+        "tools/finalize_modularization_report.py": "3a0e61fdd9cdd56be98fd7428cb9e50b5385b490b89feb826306a02b0371be1e",
+        "tools/refactor/check_legacy_fast.py": "aee5db83cd910fbb111e65a11e7d4c9750b598ca7c9da06c07269cd0a009dd65",
+        "tools/refactor/check_wheel.py": "a0546659f4f203de762510b26ad109238e342776a6d911e285dd5e9ad82cbbbc",
+        "tools/refactor/compare_baseline.py": "3f1ac75983719f1d4795434bb9bc30a00bbeb2d94c91e0a3908382816b3e5fb7",
+        "tools/refactor/freeze_baseline.py": "0821ac85a5e40550d65e0b1fc24a32b30571467b0becc3a0d752387a12363ddd",
+        "tools/refactor/report_r4.py": "d056991f7b417909ab619e7bd9442a41462dbdd7c840b7b8b8a0767618c5a448",
+        "tools/refactor/validate_interface_fast.py": "ee8b259e07da47ce97cc7b9a620a9d5541810f92149c00efce08e63c9f61d0c4",
+        "tools/refactor/write_report.py": "9026e00cf33288cbe1802a19c23f3549f15603f3312df3904978511da78e8473",
+        "tools/refactor/write_review.py": "e6b1285fcd05ed5e6f12802bb79d51f502205327e6d978bd4e5225b4e4a7c78d",
+        "tools/verify_conus_statistics_migration.py": "1f1ea74cef553b58fe940e15538b59417bb47e0201cd535da6c89cb378cf2821",
+        "tools/verify_modularization_baseline.py": "2e78dd17acd0abdc017581c7e7fe6572faf2902a35135c7c50c219388db7238f",
+        "tools/verify_unified_fast.py": "55a113e356f2309c1a9b35e57447017616966f75474a859d434d733db816ffbb"
+      }
+    },
+    {
+      "phase": "C2",
+      "action": "backup",
+      "path": "tools/build_wheel.py",
+      "target": "backup/refactor03/tools/build_wheel.py",
+      "sha256": "38fc7263035d47df210e442d39d59a29e3d754224d91776b25ee4abe81bcfb7a"
+    },
+    {
+      "phase": "C2",
+      "action": "modify",
+      "path": "tools/build_wheel.py",
+      "before_sha256": "38fc7263035d47df210e442d39d59a29e3d754224d91776b25ee4abe81bcfb7a",
+      "after_sha256": "f2a5f68aa17cf508e9b32392f92d83b3351d685a1771aba174741a527b6f1d40"
+    },
+    {
+      "phase": "C2",
+      "action": "backup",
+      "path": "tools/verify_wheel.py",
+      "target": "backup/refactor03/tools/verify_wheel.py",
+      "sha256": "208f79e879e6984d5542d70f8fe84bd3f971ba77b05dcf1f17f63240c8e29b51"
+    },
+    {
+      "phase": "C2",
+      "action": "modify",
+      "path": "tools/verify_wheel.py",
+      "before_sha256": "208f79e879e6984d5542d70f8fe84bd3f971ba77b05dcf1f17f63240c8e29b51",
+      "after_sha256": "fd7608cec563d111676edc1ac0a9921e753eab109fcc827b060995556b20f766"
+    },
+    {
+      "phase": "C3",
+      "action": "backup",
+      "path": "cevns_pyeft/experiments/definition.py",
+      "target": "backup/refactor03/cevns_pyeft/experiments/definition.py",
+      "sha256": "08b0347134107ec7855b3b8b069f5e1e9422adf061e974b1ac1a5e9a47e34ed9"
+    },
+    {
+      "phase": "C3",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/definition.py",
+      "before_sha256": "08b0347134107ec7855b3b8b069f5e1e9422adf061e974b1ac1a5e9a47e34ed9",
+      "after_sha256": "c3c34075955fa350a93a73c13dddb092772b21ab71e55db0fe14a851f8db8053"
+    },
+    {
+      "phase": "C3",
+      "action": "create",
+      "path": "cevns_pyeft/experiments/assembly.py",
+      "before_sha256": null,
+      "after_sha256": "c09d226554ee8853d52c84adb42ec035f2c0f829434deae877b7ed396eead43f"
+    },
+    {
+      "phase": "C3",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/loader.py",
+      "before_sha256": "9ccf29ddec72037fb8d4836fc2a047c0d49410ba26b53605f39eb1305b81a0aa",
+      "after_sha256": "ba4809cf5c5c5ebde9be9eb5c68ac054c280a0e85106266fea1ebd7046a64acb"
+    },
+    {
+      "phase": "C3",
+      "action": "backup",
+      "path": "cevns_pyeft/experiments/coherent/execution.py",
+      "target": "backup/refactor03/cevns_pyeft/experiments/coherent/execution.py",
+      "sha256": "5d7d5aea8ac5c2ebcfe3422489a38796547454c95bb2804bce64ff01e6656a8c"
+    },
+    {
+      "phase": "C3",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/coherent/execution.py",
+      "before_sha256": "5d7d5aea8ac5c2ebcfe3422489a38796547454c95bb2804bce64ff01e6656a8c",
+      "after_sha256": "ba1ce75d0975c78851b71b036aab2dffa00ab0d90c5e3a70b1fb6bc53fbeb95f"
+    },
+    {
+      "phase": "C3",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/coherent/execution.py",
+      "before_sha256": "ba1ce75d0975c78851b71b036aab2dffa00ab0d90c5e3a70b1fb6bc53fbeb95f",
+      "after_sha256": "439ca830401d79587f058ac133db29e9c6e957b4029103351bea6be2bd5e0391"
+    },
+    {
+      "phase": "C3",
+      "action": "backup",
+      "path": "cevns_pyeft/experiments/conus_plus/execution.py",
+      "target": "backup/refactor03/cevns_pyeft/experiments/conus_plus/execution.py",
+      "sha256": "2f152815631f77570b830f3c6712f83087c2c369335dd3e0df615ca45a3bfc37"
+    },
+    {
+      "phase": "C3",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/conus_plus/execution.py",
+      "before_sha256": "2f152815631f77570b830f3c6712f83087c2c369335dd3e0df615ca45a3bfc37",
+      "after_sha256": "62d3150ee00bd7fb74d6e8758f19653a8ff9a8a4800084add5a276bd7efbcc2b"
+    },
+    {
+      "phase": "C3",
+      "action": "backup",
+      "path": "cevns_pyeft/experiments/runtime.py",
+      "target": "backup/refactor03/cevns_pyeft/experiments/runtime.py",
+      "sha256": "a5c772f4ab8e95241b07c84289618c357d111a1ccb39829c7d7d423c56050b7c"
+    },
+    {
+      "phase": "C3",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/runtime.py",
+      "before_sha256": "a5c772f4ab8e95241b07c84289618c357d111a1ccb39829c7d7d423c56050b7c",
+      "after_sha256": "8a5abe90144b53f343e9a1fa9556afd459bb939f240a3bca0e6ae523d5c948fa"
+    },
+    {
+      "phase": "C3",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/runtime.py",
+      "before_sha256": "8a5abe90144b53f343e9a1fa9556afd459bb939f240a3bca0e6ae523d5c948fa",
+      "after_sha256": "9fce15cb22e9babcdf1787a8351b9d74166284a4775ca421779c0c2a3b00ddb2"
+    },
+    {
+      "phase": "C3",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/runtime.py",
+      "before_sha256": "9fce15cb22e9babcdf1787a8351b9d74166284a4775ca421779c0c2a3b00ddb2",
+      "after_sha256": "5fa52793b6b97d01248776c495ec6bb7d302d492ab4d330d68e99f27519c4930"
+    },
+    {
+      "phase": "C3",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/runtime.py",
+      "before_sha256": "5fa52793b6b97d01248776c495ec6bb7d302d492ab4d330d68e99f27519c4930",
+      "after_sha256": "a5551401fe91486ad8871417bec63c1098481eb5672fe5c1b965c55c3b3643d1"
+    },
+    {
+      "phase": "C3",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/runtime.py",
+      "before_sha256": "a5551401fe91486ad8871417bec63c1098481eb5672fe5c1b965c55c3b3643d1",
+      "after_sha256": "53d6aae73da9dca4415ddc9a73e6307ea929d556d47dcdb9294b38ee528a3087"
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "data/experiments/CsI2017/experiment.yaml",
+      "target": "backup/refactor03/data/experiments/CsI2017/experiment.yaml",
+      "sha256": "0838889e15a888cd6249b5e3fc913c676a0b963d6bc2fdc31e7058afa6726817"
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "data/experiments/CsI2017/README.md",
+      "target": "backup/refactor03/data/experiments/CsI2017/README.md",
+      "sha256": "59c34f66990bcb67f4aaa11188cd0ae94e9080e8a769a669c226d6ba3c228d4b"
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "data/experiments/CsI2017/statistics/provenance.yaml",
+      "target": "backup/refactor03/data/experiments/CsI2017/statistics/provenance.yaml",
+      "sha256": "c8d126501aa99decec91b7fd859ae45035d29ec6f6bab2d63b39c16329b17940"
+    },
+    {
+      "phase": "C4",
+      "action": "move",
+      "path": "data/experiments/CsI2017",
+      "target": "data/experiments/COHERENT_CsI/CsI2017",
+      "files": 3
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "data/experiments/CsI2021/experiment.yaml",
+      "target": "backup/refactor03/data/experiments/CsI2021/experiment.yaml",
+      "sha256": "3f494f4319aa8f0c189b1875b42b1cd5ad3c65d5bc5944cd71a3b83ff0a05622"
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "data/experiments/CsI2021/README.md",
+      "target": "backup/refactor03/data/experiments/CsI2021/README.md",
+      "sha256": "958f3e878ba85ada763dde0ba6d5e11eaa2856c43c1873b122529024f3686c6e"
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "data/experiments/CsI2021/statistics/provenance.yaml",
+      "target": "backup/refactor03/data/experiments/CsI2021/statistics/provenance.yaml",
+      "sha256": "6def82c1188dd1a1ead8bd0aca9f1dbd24bac4b7f59b78f96c0a559408a6146f"
+    },
+    {
+      "phase": "C4",
+      "action": "move",
+      "path": "data/experiments/CsI2021",
+      "target": "data/experiments/COHERENT_CsI/CsI2021",
+      "files": 3
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "data/experiments/Ar2020/statistics/provenance.yaml",
+      "target": "backup/refactor03/data/experiments/Ar2020/statistics/provenance.yaml",
+      "sha256": "6720f1dd9921857119900e7fc9cabd3aad8924ecba9efcea5d0817a27a2a1b46"
+    },
+    {
+      "phase": "C4",
+      "action": "move",
+      "path": "data/experiments/Ar2020",
+      "target": "data/experiments/COHERENT_Ar/Ar2020",
+      "files": 1
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "data/datafiles/COHERENT_eff.txt",
+      "target": "backup/refactor03/data/datafiles/COHERENT_eff.txt",
+      "sha256": "ca1f47b5cdfb01fa87a323cf3ee4ee8245488b2e5b0529ecb0863d5bf09a9a7c"
+    },
+    {
+      "phase": "C4",
+      "action": "move",
+      "path": "data/datafiles/COHERENT_eff.txt",
+      "target": "data/experiments/COHERENT_CsI/CsI2017/detector/COHERENT_eff.txt",
+      "files": 1
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "data/datafiles/COHERENT_data.txt",
+      "target": "backup/refactor03/data/datafiles/COHERENT_data.txt",
+      "sha256": "f764accdd388bd161d6d53d3e7a01ff484c13d3dfc0fc1f61cc7fcb40f72cbd0"
+    },
+    {
+      "phase": "C4",
+      "action": "move",
+      "path": "data/datafiles/COHERENT_data.txt",
+      "target": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_data.txt",
+      "files": 1
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "data/datafiles/COHERENT_lower.txt",
+      "target": "backup/refactor03/data/datafiles/COHERENT_lower.txt",
+      "sha256": "c802772432ddd5288df5bb316d70a9736ec5b80c79d337ed050fa42d62c097bb"
+    },
+    {
+      "phase": "C4",
+      "action": "move",
+      "path": "data/datafiles/COHERENT_lower.txt",
+      "target": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_lower.txt",
+      "files": 1
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "data/datafiles/COHERENT_upper.txt",
+      "target": "backup/refactor03/data/datafiles/COHERENT_upper.txt",
+      "sha256": "db03d10cc5997f4b08948d71f04c72c88fd48365dc5cedae3b494b04f5853ad5"
+    },
+    {
+      "phase": "C4",
+      "action": "move",
+      "path": "data/datafiles/COHERENT_upper.txt",
+      "target": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_upper.txt",
+      "files": 1
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "data/datafiles/COHERENT_spectrum.txt",
+      "target": "backup/refactor03/data/datafiles/COHERENT_spectrum.txt",
+      "sha256": "1584411458e0d48ebb9afb0400bd51e19a0e0208857b96edbea0d59aff710f95"
+    },
+    {
+      "phase": "C4",
+      "action": "move",
+      "path": "data/datafiles/COHERENT_spectrum.txt",
+      "target": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_spectrum.txt",
+      "files": 1
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "data/datafiles/CENNS10AnlAEfficiency.txt",
+      "target": "backup/refactor03/data/datafiles/CENNS10AnlAEfficiency.txt",
+      "sha256": "f74f92bfdd116bcb2e14f31e3e98a24fb6a7e68458c4f647ca72357c78e55dd3"
+    },
+    {
+      "phase": "C4",
+      "action": "move",
+      "path": "data/datafiles/CENNS10AnlAEfficiency.txt",
+      "target": "data/experiments/COHERENT_Ar/Ar2020/detector/CENNS10AnlAEfficiency.txt",
+      "files": 1
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "outputs/conus-plus-completion-20261012/statistics/approximate_paper_benchmark/observations_digitized_approx.csv",
+      "target": "backup/refactor03/outputs/conus-plus-completion-20261012/statistics/approximate_paper_benchmark/observations_digitized_approx.csv",
+      "sha256": "2775ed6c6c02b1db29939d08119626709cf2326d6cff3a7b1acb814e04bcecdc"
+    },
+    {
+      "phase": "C4",
+      "action": "move",
+      "path": "outputs/conus-plus-completion-20261012/statistics/approximate_paper_benchmark/observations_digitized_approx.csv",
+      "target": "data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/statistics/approximate_paper_benchmark/observations_digitized_approx.csv",
+      "files": 1
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "outputs/conus-plus-completion-20261012/statistics/approximate_paper_benchmark/observations_metadata.json",
+      "target": "backup/refactor03/outputs/conus-plus-completion-20261012/statistics/approximate_paper_benchmark/observations_metadata.json",
+      "sha256": "2221eabe9959b35e595f7c4d097cbbd078e31e139fc24dccb8c785596cc6eb79"
+    },
+    {
+      "phase": "C4",
+      "action": "move",
+      "path": "outputs/conus-plus-completion-20261012/statistics/approximate_paper_benchmark/observations_metadata.json",
+      "target": "data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/statistics/approximate_paper_benchmark/observations_metadata.json",
+      "files": 1
+    },
+    {
+      "phase": "C4",
+      "action": "create",
+      "path": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json",
+      "before_sha256": null,
+      "after_sha256": "cfd40448acb6eec2907b0be95bf94803612d85c430f282e59ee187b2a66b69ad"
+    },
+    {
+      "phase": "C4",
+      "action": "create",
+      "path": "data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/statistics/approximate_paper_benchmark/observation_schema.json",
+      "before_sha256": null,
+      "after_sha256": "1cba9c7fcde4d86c6b2eed548824ba2e2ff550675816e65682214f6c44f1ebf1"
+    },
+    {
+      "phase": "C4",
+      "action": "create",
+      "path": "cevns_pyeft/foundation/resources.py",
+      "before_sha256": null,
+      "after_sha256": "e2e6fc5cb65d66b705abd3d4160812be009dae280310b043838ca14082f0c25d"
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "cevns_pyeft/experiments/coherent/csi2017_definition.py",
+      "target": "backup/refactor03/cevns_pyeft/experiments/coherent/csi2017_definition.py",
+      "sha256": "d12011fcd81e1f418581a8ead519412c2065a202292b0304895a9cf3287f3737"
+    },
+    {
+      "phase": "C4",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/coherent/csi2017_definition.py",
+      "before_sha256": "d12011fcd81e1f418581a8ead519412c2065a202292b0304895a9cf3287f3737",
+      "after_sha256": "464c106781d25aad4f088623b7ce628e9a1c4ad8a1d35b4c52c5fab5f17d804c"
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "cevns_pyeft/experiments/coherent/ar2020_definition.py",
+      "target": "backup/refactor03/cevns_pyeft/experiments/coherent/ar2020_definition.py",
+      "sha256": "8d61f68a4b3dea4490f0f4a3a81923b877c6882e4cd1478dd74ef4d0a05ec03a"
+    },
+    {
+      "phase": "C4",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/coherent/ar2020_definition.py",
+      "before_sha256": "8d61f68a4b3dea4490f0f4a3a81923b877c6882e4cd1478dd74ef4d0a05ec03a",
+      "after_sha256": "413f2c5329f85ecb8029dcde7240b240c88b0f5f191779f254429f144d08bc74"
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "cevns_pyeft/experiments/conus_plus/definition.py",
+      "target": "backup/refactor03/cevns_pyeft/experiments/conus_plus/definition.py",
+      "sha256": "9e258b0160424562a06f4720ac6c7272e850e6170c66f2b4659a111ea3a92d22"
+    },
+    {
+      "phase": "C4",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/conus_plus/definition.py",
+      "before_sha256": "9e258b0160424562a06f4720ac6c7272e850e6170c66f2b4659a111ea3a92d22",
+      "after_sha256": "2cddf1bdb3887a18dbea963571b1fcc8bba1f264a00d60fbdd10e5db8aaa7ad4"
+    },
+    {
+      "phase": "C4",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/loader.py",
+      "before_sha256": "ba4809cf5c5c5ebde9be9eb5c68ac054c280a0e85106266fea1ebd7046a64acb",
+      "after_sha256": "8ef66cde7757510aca90e3c267e1f2954a80e64f396a29c50be2b6404c81ff04"
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "cevns_pyeft/experiments/base.py",
+      "target": "backup/refactor03/cevns_pyeft/experiments/base.py",
+      "sha256": "5e4b6689fcb858b88e0036ce24ee53992760cb70174221a250007c2c1433cef4"
+    },
+    {
+      "phase": "C4",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/base.py",
+      "before_sha256": "5e4b6689fcb858b88e0036ce24ee53992760cb70174221a250007c2c1433cef4",
+      "after_sha256": "5e3d4e0d856869e93ab1baa14274e83ea15347626f2f1bf823c63671161ade8e"
+    },
+    {
+      "phase": "C4",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/specs.py",
+      "before_sha256": "b5c9fbeadf32c98769c1bf1179963a1d37d9be67822c132d28de5c86fbd1aace",
+      "after_sha256": "0154b23ce231397c3d51190f70c3cb0214ba981dc08b060b6a38fb94e14c90cb"
+    },
+    {
+      "phase": "C4",
+      "action": "modify",
+      "path": "tests/test_experiment_modularization.py",
+      "before_sha256": "9a3843ac2c66ccfdac4d7cfefd19f6957dc88a114806a3b809d764b8c1530878",
+      "after_sha256": "0fa7ed2e40cbfa279b4701fdb578f9b411bfac33024064e8670e366a718a39f1"
+    },
+    {
+      "phase": "C4",
+      "action": "data_mapping",
+      "legacy_aliases": {
+        "data/datafiles/COHERENT_eff.txt": "data/experiments/COHERENT_CsI/CsI2017/detector/COHERENT_eff.txt",
+        "data/datafiles/COHERENT_data.txt": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_data.txt",
+        "data/datafiles/COHERENT_lower.txt": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_lower.txt",
+        "data/datafiles/COHERENT_upper.txt": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_upper.txt",
+        "data/datafiles/COHERENT_spectrum.txt": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_spectrum.txt",
+        "data/datafiles/CENNS10AnlAEfficiency.txt": "data/experiments/COHERENT_Ar/Ar2020/detector/CENNS10AnlAEfficiency.txt"
+      },
+      "conus_observation_hash_verified": "2775ed6c6c02b1db29939d08119626709cf2326d6cff3a7b1acb814e04bcecdc"
+    },
+    {
+      "phase": "C3",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/loader.py",
+      "before_sha256": "8ef66cde7757510aca90e3c267e1f2954a80e64f396a29c50be2b6404c81ff04",
+      "after_sha256": "95fbfb50c255a35ef885e3911a2c17d38dfa12cfad64c06321c964c3d184aae1"
+    },
+    {
+      "phase": "C3",
+      "action": "backup",
+      "path": "cevns_pyeft/foundation/resources.py",
+      "target": "backup/refactor03/cevns_pyeft/foundation/resources.py",
+      "sha256": "e2e6fc5cb65d66b705abd3d4160812be009dae280310b043838ca14082f0c25d"
+    },
+    {
+      "phase": "C3",
+      "action": "modify",
+      "path": "cevns_pyeft/foundation/resources.py",
+      "before_sha256": "e2e6fc5cb65d66b705abd3d4160812be009dae280310b043838ca14082f0c25d",
+      "after_sha256": "983c2e3cafa8ddf8f26d3103df25b3c647140500f32ec19319b47c2517451627"
+    },
+    {
+      "phase": "C3",
+      "action": "create",
+      "path": "cevns_pyeft/statistics/tables.py",
+      "before_sha256": null,
+      "after_sha256": "2452a5634e46259a365e7488f1ce63aa0a895189c2eb5443af685b0f75d28d7e"
+    },
+    {
+      "phase": "C3",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/coherent/statistics_binding.py",
+      "before_sha256": "c261ce473435fd45581665918023d5a85b3747c4c85c3f55a37c51212972b333",
+      "after_sha256": "34ef5aef38d806ec96068012373e8799a742959e37e776aeda640257ecb4287d"
+    },
+    {
+      "phase": "C3",
+      "action": "modify",
+      "path": "cevns_pyeft/statistics/datasets.py",
+      "before_sha256": "ab31bec0d5fd6d6981c260ae8aba334c8d87a6f2d6bdc8dcca332546bf16f845",
+      "after_sha256": "d1d5bcbe72a3ccb44c6e6210c8290d2e5d83bc4738849af0140f551840a5abec"
+    },
+    {
+      "phase": "C3",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/conus_plus/execution.py",
+      "before_sha256": "62d3150ee00bd7fb74d6e8758f19653a8ff9a8a4800084add5a276bd7efbcc2b",
+      "after_sha256": "3f1a31796bc2baa225bb99746787a3285c07d304b7a33849a22c004953df9c8d"
+    },
+    {
+      "phase": "C3",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/conus_plus/definition.py",
+      "before_sha256": "2cddf1bdb3887a18dbea963571b1fcc8bba1f264a00d60fbdd10e5db8aaa7ad4",
+      "after_sha256": "b2307fd3d55b659dede45eb0eb88115e75760b219c5cc55db73e9d7793c89787"
+    },
+    {
+      "phase": "C3",
+      "action": "create",
+      "path": "tests/test_refactor03_contracts.py",
+      "before_sha256": null,
+      "after_sha256": "cabb000c25c2411dbb56f6c5680974a63c6eb4d44a3323d5cd1fb818c5a5ccfd"
+    },
+    {
+      "phase": "C5",
+      "action": "create",
+      "path": "cevns_pyeft/targets/recipes.py",
+      "before_sha256": null,
+      "after_sha256": "9d5b126970c773b69385f33a82da93ac3b6c6f5d956ef05cad3e88f35e6f8ad4"
+    },
+    {
+      "phase": "C5",
+      "action": "backup",
+      "path": "cevns_pyeft/experiments/coherent/csi2021_definition.py",
+      "target": "backup/refactor03/cevns_pyeft/experiments/coherent/csi2021_definition.py",
+      "sha256": "000fce2d62fe22fc2c8d8209dab79d0510838f7de2f1a7e70ec61b3f64a78901"
+    },
+    {
+      "phase": "C5",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/coherent/csi2021_definition.py",
+      "before_sha256": "000fce2d62fe22fc2c8d8209dab79d0510838f7de2f1a7e70ec61b3f64a78901",
+      "after_sha256": "80139074eac5491ebd8257635c6db46602631bbc74de9e9460b1de18a562eca2"
+    },
+    {
+      "phase": "C5",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/coherent/csi2017_definition.py",
+      "before_sha256": "464c106781d25aad4f088623b7ce628e9a1c4ad8a1d35b4c52c5fab5f17d804c",
+      "after_sha256": "3e2d542f29710fbb6856d634a61bd58485c25794cae75112e657e49451278f7a"
+    },
+    {
+      "phase": "C5",
+      "action": "create",
+      "path": "cevns_pyeft/detectors/coherent.py",
+      "before_sha256": null,
+      "after_sha256": "90c84191c953291fba6805609c81dfe8b5299214a1aaf00163a48ebdd9324c2a"
+    },
+    {
+      "phase": "C5",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/coherent/execution.py",
+      "before_sha256": "439ca830401d79587f058ac133db29e9c6e957b4029103351bea6be2bd5e0391",
+      "after_sha256": "4a05c51c2398463bbd28b64b4d1120f21b0672156908afcefcacd9a936df34d3"
+    },
+    {
+      "phase": "C5",
+      "action": "backup",
+      "path": "cevns_pyeft/rates/counts.py",
+      "target": "backup/refactor03/cevns_pyeft/rates/counts.py",
+      "sha256": "97489d69e40960c3ed11c0f049211728fe137c02650134282c57ab44254dce01"
+    },
+    {
+      "phase": "C5",
+      "action": "modify",
+      "path": "cevns_pyeft/rates/counts.py",
+      "before_sha256": "97489d69e40960c3ed11c0f049211728fe137c02650134282c57ab44254dce01",
+      "after_sha256": "ad397758eba95b3b785ee482d06f120b60349dc8ea1bc7b2a40692d337267c1d"
+    },
+    {
+      "phase": "C5",
+      "action": "backup",
+      "path": "cevns_pyeft/experiments/coherent/slow_counts_csi2017.py",
+      "target": "backup/refactor03/cevns_pyeft/experiments/coherent/slow_counts_csi2017.py",
+      "sha256": "6140512f44ac72189545891ad5eeffbbc11780070f5176d77ba88835dba6b32d"
+    },
+    {
+      "phase": "C5",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/coherent/slow_counts_csi2017.py",
+      "before_sha256": "6140512f44ac72189545891ad5eeffbbc11780070f5176d77ba88835dba6b32d",
+      "after_sha256": "af1eafb6fa8ad9d6a537943fe9972ae3fe42abe60d5c75332badfba1f328e0eb"
+    },
+    {
+      "phase": "C5",
+      "action": "backup",
+      "path": "cevns_pyeft/experiments/coherent/slow_counts_ar2020.py",
+      "target": "backup/refactor03/cevns_pyeft/experiments/coherent/slow_counts_ar2020.py",
+      "sha256": "eab6ca19d46e5be3620fa66645568539d13dc796f0688a9335bc161f0fed931e"
+    },
+    {
+      "phase": "C5",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/coherent/slow_counts_ar2020.py",
+      "before_sha256": "eab6ca19d46e5be3620fa66645568539d13dc796f0688a9335bc161f0fed931e",
+      "after_sha256": "ef9f6ea01ba0a7608062c57064a2e7c3b6ff68ed832fe097fd44bfb83b18656a"
+    },
+    {
+      "phase": "C5",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/loader.py",
+      "before_sha256": "95fbfb50c255a35ef885e3911a2c17d38dfa12cfad64c06321c964c3d184aae1",
+      "after_sha256": "02b97fe2f91cfd06bce4d8a00e8de91c9f8f2498260fcfdd5ead6feeb622af53"
+    },
+    {
+      "phase": "C5",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/coherent/slow_counts_csi2017.py",
+      "before_sha256": "af1eafb6fa8ad9d6a537943fe9972ae3fe42abe60d5c75332badfba1f328e0eb",
+      "after_sha256": "70ec7dddd58798010b5cc405a87d2b214df96046d563c926daf05949568b62c4"
+    },
+    {
+      "phase": "C5",
+      "action": "create",
+      "path": "cevns_pyeft/core/mass_time.py",
+      "before_sha256": null,
+      "after_sha256": "633f904f123d2b71016b48e49f6324e83afe7f6e676ce029e0da575759e14f13"
+    },
+    {
+      "phase": "C5",
+      "action": "create",
+      "path": "cevns_pyeft/rates/mass_time.py",
+      "before_sha256": null,
+      "after_sha256": "7b3365335f27af94835db00e36ca7ec53c1c9ee760da4fb3bf68cda94a06dab3"
+    },
+    {
+      "phase": "C5",
+      "action": "create",
+      "path": "cevns_pyeft/experiments/conus_plus/components.py",
+      "before_sha256": null,
+      "after_sha256": "66a38977fe13e6761344e6a52ab96d5b2654a335983fa495b320d98f9b219ae8"
+    },
+    {
+      "phase": "C5",
+      "action": "backup",
+      "path": "cevns_pyeft/experiments/assembly.py",
+      "target": "backup/refactor03/cevns_pyeft/experiments/assembly.py",
+      "sha256": "c09d226554ee8853d52c84adb42ec035f2c0f829434deae877b7ed396eead43f"
+    },
+    {
+      "phase": "C5",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/assembly.py",
+      "before_sha256": "c09d226554ee8853d52c84adb42ec035f2c0f829434deae877b7ed396eead43f",
+      "after_sha256": "91607b73d3ccfbb260cb8c9d1d2fe23596029e9dbb4da3044c45ead383f6d6ee"
+    },
+    {
+      "phase": "C5",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/conus_plus/slow_counts.py",
+      "before_sha256": "b3552df6eb00f7c0ba00a38559dbcf2a6446857df47ce422c91ae675aa22b4c8",
+      "after_sha256": "866c60a7adb95c8a73f9643bf15b24f4878c17fa700ea71e32d8eaa944380ca1"
+    },
+    {
+      "phase": "C5",
+      "action": "backup",
+      "path": "cevns_pyeft/experiments/conus_plus/fast_kernel.py",
+      "target": "backup/refactor03/cevns_pyeft/experiments/conus_plus/fast_kernel.py",
+      "sha256": "730ee75a8adf2cc1f54b688005f3b7b66efeb542d7994f8c28fb202830e82a48"
+    },
+    {
+      "phase": "C5",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/conus_plus/fast_kernel.py",
+      "before_sha256": "730ee75a8adf2cc1f54b688005f3b7b66efeb542d7994f8c28fb202830e82a48",
+      "after_sha256": "2ee1f7b9ae4b3e866c0887dafc84060b596232736765ef71937ea0448f0d23fc"
+    },
+    {
+      "phase": "C5",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/conus_plus/execution.py",
+      "before_sha256": "3f1a31796bc2baa225bb99746787a3285c07d304b7a33849a22c004953df9c8d",
+      "after_sha256": "b123e4bf4fffe3f3891e3e99bf02e0a936ef70b4e8e9cb913c9bf3abd1e4505b"
+    },
+    {
+      "phase": "C5",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/coherent/slow_counts_csi2017.py",
+      "before_sha256": "70ec7dddd58798010b5cc405a87d2b214df96046d563c926daf05949568b62c4",
+      "after_sha256": "e5dd5704e7af9b9b025a9fb248b1c66ea2297d236c9e57d619914814fe5c64ef"
+    },
+    {
+      "phase": "C5",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/coherent/slow_counts_ar2020.py",
+      "before_sha256": "ef9f6ea01ba0a7608062c57064a2e7c3b6ff68ed832fe097fd44bfb83b18656a",
+      "after_sha256": "d0d17e9eb8ccfc249f0019a2b6f490f1cced7ac6695fa6316f2d49920bf53b14"
+    },
+    {
+      "phase": "C5",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/conus_plus/execution.py",
+      "before_sha256": "b123e4bf4fffe3f3891e3e99bf02e0a936ef70b4e8e9cb913c9bf3abd1e4505b",
+      "after_sha256": "c8ace6202e78b46c875c3c042d5e02c5c83edb12521b787efe74d79f01221981"
+    },
+    {
+      "phase": "C5",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/loader.py",
+      "before_sha256": "02b97fe2f91cfd06bce4d8a00e8de91c9f8f2498260fcfdd5ead6feeb622af53",
+      "after_sha256": "fb7d9f91af744acda9cdf4c768a4c06a5d8cd561692e114837215fa7eb461abe"
+    },
+    {
+      "phase": "C5",
+      "action": "backup",
+      "path": "tests/test_refactor03_contracts.py",
+      "target": "backup/refactor03/tests/test_refactor03_contracts.py",
+      "sha256": "cabb000c25c2411dbb56f6c5680974a63c6eb4d44a3323d5cd1fb818c5a5ccfd"
+    },
+    {
+      "phase": "C5",
+      "action": "modify",
+      "path": "tests/test_refactor03_contracts.py",
+      "before_sha256": "cabb000c25c2411dbb56f6c5680974a63c6eb4d44a3323d5cd1fb818c5a5ccfd",
+      "after_sha256": "cce72db34a901171b8f78dfaa94e2933df0b892209c0d5aec0a06e8c97e68996"
+    },
+    {
+      "phase": "C6",
+      "action": "backup",
+      "path": "README.md",
+      "target": "backup/refactor03/README.md",
+      "sha256": "f6a3f35d97b6c82b13c96f5e72a75f90e47b3805f8955f04e2eb9d149ea8708b"
+    },
+    {
+      "phase": "C6",
+      "action": "modify",
+      "path": "README.md",
+      "before_sha256": "f6a3f35d97b6c82b13c96f5e72a75f90e47b3805f8955f04e2eb9d149ea8708b",
+      "after_sha256": "c38d5ba162bf546df79a8d83c32f453fc62a9ad92aac73616f578ae3471038e0"
+    },
+    {
+      "phase": "C6",
+      "action": "create",
+      "path": "docs/README.md",
+      "before_sha256": null,
+      "after_sha256": "2a7d920fcbca88deebb1799719fcbb1d8c207d47eadaa0ad4beb2747f25716e8"
+    },
+    {
+      "phase": "C6",
+      "action": "create",
+      "path": "docs/LAYOUT.md",
+      "before_sha256": null,
+      "after_sha256": "37c93d14c14d497a5dd7388347530ec140a8de7523dde409cafadbed3ecbaabc"
+    },
+    {
+      "phase": "C6",
+      "action": "backup",
+      "path": "docs/USAGE.md",
+      "target": "backup/refactor03/docs/USAGE.md",
+      "sha256": "96cd04f4aca29504bc16acc43731af281e884acb6929a88168bb660bbd75a6f4"
+    },
+    {
+      "phase": "C6",
+      "action": "modify",
+      "path": "docs/USAGE.md",
+      "before_sha256": "96cd04f4aca29504bc16acc43731af281e884acb6929a88168bb660bbd75a6f4",
+      "after_sha256": "7b64e258a117978a880121dd2ca4823e184f3bd795427b656ea5708893bc77ab"
+    },
+    {
+      "phase": "C6",
+      "action": "create",
+      "path": "docs/VALIDATION.md",
+      "before_sha256": null,
+      "after_sha256": "f9e7f969b7e0ded43b308692368d1492914603af331b7e619433bfcd1abafe4b"
+    },
+    {
+      "phase": "C6",
+      "action": "create",
+      "path": "tools/README.md",
+      "before_sha256": null,
+      "after_sha256": "fc21ba24b2f61add0b4dcc406880ac2dca0d1211d7c859c248cda79bca8af970"
+    },
+    {
+      "phase": "C6",
+      "action": "backup",
+      "path": "docs/COMPONENTS.md",
+      "target": "backup/refactor03/docs/COMPONENTS.md",
+      "sha256": "bbcd24757f2a39e588cb3a665dc53dbf1057e4643e2d0be310b1babdd62d8f1a"
+    },
+    {
+      "phase": "C6",
+      "action": "modify",
+      "path": "docs/COMPONENTS.md",
+      "before_sha256": "bbcd24757f2a39e588cb3a665dc53dbf1057e4643e2d0be310b1babdd62d8f1a",
+      "after_sha256": "a87d6d65d58a7ca10eb9d72c8df635dd890d1249073934bf43a85aec5da69d2b"
+    },
+    {
+      "phase": "C6",
+      "action": "backup",
+      "path": "docs/FAST_AND_CACHE.md",
+      "target": "backup/refactor03/docs/FAST_AND_CACHE.md",
+      "sha256": "a03703b1ff014c3c1f7fc896557921b7d592b82574e9fce3d3608099642082bb"
+    },
+    {
+      "phase": "C6",
+      "action": "modify",
+      "path": "docs/FAST_AND_CACHE.md",
+      "before_sha256": "a03703b1ff014c3c1f7fc896557921b7d592b82574e9fce3d3608099642082bb",
+      "after_sha256": "a03703b1ff014c3c1f7fc896557921b7d592b82574e9fce3d3608099642082bb"
+    },
+    {
+      "phase": "C6",
+      "action": "backup",
+      "path": "docs/PARAMETER_OWNERSHIP.md",
+      "target": "backup/refactor03/docs/PARAMETER_OWNERSHIP.md",
+      "sha256": "66bd24a669bd048e251a033511928e9dd1bd14a480c1bee27a13061a33717d51"
+    },
+    {
+      "phase": "C6",
+      "action": "modify",
+      "path": "docs/PARAMETER_OWNERSHIP.md",
+      "before_sha256": "66bd24a669bd048e251a033511928e9dd1bd14a480c1bee27a13061a33717d51",
+      "after_sha256": "5c809d5670e368fb54d67ab52d12d18a1c97bb7b04198a2259ba91e125a973ca"
+    },
+    {
+      "phase": "C6",
+      "action": "backup",
+      "path": "docs/SKILL_OPERATION_GUIDE.md",
+      "target": "backup/refactor03/docs/SKILL_OPERATION_GUIDE.md",
+      "sha256": "958c02e1f206537e26515a476fed5dadafeb554fae09ecabd4e25edd3c66db59"
+    },
+    {
+      "phase": "C6",
+      "action": "modify",
+      "path": "docs/SKILL_OPERATION_GUIDE.md",
+      "before_sha256": "958c02e1f206537e26515a476fed5dadafeb554fae09ecabd4e25edd3c66db59",
+      "after_sha256": "1d2c8d34f64ac22c717e1b967836165c282334f7bee404380414e4b82d38f3bf"
+    },
+    {
+      "phase": "C6",
+      "action": "backup",
+      "path": "docs/CAPABILITY_MATRIX.md",
+      "target": "backup/refactor03/docs/CAPABILITY_MATRIX.md",
+      "sha256": "c4e3b84738532928955d8a108f2c1e5e225f1ca7210eec761430a04deb49cd4b"
+    },
+    {
+      "phase": "C6",
+      "action": "modify",
+      "path": "docs/CAPABILITY_MATRIX.md",
+      "before_sha256": "c4e3b84738532928955d8a108f2c1e5e225f1ca7210eec761430a04deb49cd4b",
+      "after_sha256": "eef57d2b3ac9782741a2aa4a1b81ea3c2c5efc51e58bd33da93bf96f41a77b3d"
+    },
+    {
+      "phase": "C4",
+      "action": "modify",
+      "path": "cevns_pyeft/foundation/resources.py",
+      "before_sha256": "983c2e3cafa8ddf8f26d3103df25b3c647140500f32ec19319b47c2517451627",
+      "after_sha256": "c13df514dfa746f711699ce61663749d309fe74cf8b4f05c6595165b5dc87123"
+    },
+    {
+      "phase": "C4",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/specs.py",
+      "before_sha256": "0154b23ce231397c3d51190f70c3cb0214ba981dc08b060b6a38fb94e14c90cb",
+      "after_sha256": "c055349d9f8e3951b2d3241567a7d67fbfb0ccf5041f29b707d9e3e0375575f4"
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json",
+      "target": "backup/refactor03/data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json",
+      "sha256": "cfd40448acb6eec2907b0be95bf94803612d85c430f282e59ee187b2a66b69ad"
+    },
+    {
+      "phase": "C4",
+      "action": "modify",
+      "path": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json",
+      "before_sha256": "cfd40448acb6eec2907b0be95bf94803612d85c430f282e59ee187b2a66b69ad",
+      "after_sha256": "0edd4b8cc260781fd83bd7ea2820c98efdde04d3c7cde1584e86b66d46021645"
+    },
+    {
+      "phase": "C4",
+      "action": "backup",
+      "path": "data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/statistics/approximate_paper_benchmark/observation_schema.json",
+      "target": "backup/refactor03/data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/statistics/approximate_paper_benchmark/observation_schema.json",
+      "sha256": "1cba9c7fcde4d86c6b2eed548824ba2e2ff550675816e65682214f6c44f1ebf1"
+    },
+    {
+      "phase": "C4",
+      "action": "modify",
+      "path": "data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/statistics/approximate_paper_benchmark/observation_schema.json",
+      "before_sha256": "1cba9c7fcde4d86c6b2eed548824ba2e2ff550675816e65682214f6c44f1ebf1",
+      "after_sha256": "48ff0872c5a99c24bf9ad93274d0d1e2c45df5e8cdf55078e54de157f0b7141e"
+    },
+    {
+      "phase": "C3",
+      "action": "backup",
+      "path": "cevns_pyeft/statistics/tables.py",
+      "target": "backup/refactor03/cevns_pyeft/statistics/tables.py",
+      "sha256": "2452a5634e46259a365e7488f1ce63aa0a895189c2eb5443af685b0f75d28d7e"
+    },
+    {
+      "phase": "C3",
+      "action": "modify",
+      "path": "cevns_pyeft/statistics/tables.py",
+      "before_sha256": "2452a5634e46259a365e7488f1ce63aa0a895189c2eb5443af685b0f75d28d7e",
+      "after_sha256": "eef6add5b756ba4053da8dc3c5b2e8a024902b47f74ad8ce5c681bf3dba0d41e"
+    },
+    {
+      "phase": "C3",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/coherent/statistics_binding.py",
+      "before_sha256": "34ef5aef38d806ec96068012373e8799a742959e37e776aeda640257ecb4287d",
+      "after_sha256": "35a70e08cdf3202304888271fd6708c48ca05d2b949845e0cd91e3955bf00ffd"
+    },
+    {
+      "phase": "C5",
+      "action": "backup",
+      "path": "cevns_pyeft/targets/materials.py",
+      "target": "backup/refactor03/cevns_pyeft/targets/materials.py",
+      "sha256": "f335373365126c8848921ec9d20068c807375b77a43cb4e1bc9361c72562ae62"
+    },
+    {
+      "phase": "C5",
+      "action": "modify",
+      "path": "cevns_pyeft/targets/materials.py",
+      "before_sha256": "f335373365126c8848921ec9d20068c807375b77a43cb4e1bc9361c72562ae62",
+      "after_sha256": "8980b41b4e6af3e93e83c42978a8f90cb82a807dce62ee098038eb593ddf3817"
+    },
+    {
+      "phase": "C5",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/conus_plus/slow_counts.py",
+      "before_sha256": "866c60a7adb95c8a73f9643bf15b24f4878c17fa700ea71e32d8eaa944380ca1",
+      "after_sha256": "860a77f460683c68025c004149458067668754e0fb75d5d19fc7d2ece6cbd8db"
+    },
+    {
+      "phase": "C6",
+      "action": "create",
+      "path": "data/README.md",
+      "before_sha256": null,
+      "after_sha256": "a73fa743cbfddf41e112a7c1d8ae316832940727ca71cbe720a566b387de69f9"
+    },
+    {
+      "phase": "C6",
+      "action": "create",
+      "path": "data/resource_manifest.json",
+      "before_sha256": null,
+      "after_sha256": "d94251e21d8f1988545ebb0055f4bc62903bf73186a54afb8658faf19875bf63"
+    },
+    {
+      "phase": "C6",
+      "action": "backup",
+      "path": "cevns_pyeft/targets/__init__.py",
+      "target": "backup/refactor03/cevns_pyeft/targets/__init__.py",
+      "sha256": "293d55adbbfc120bfb5212f2511f60228ff1f14f5a60c06c2f107ed6841768ff"
+    },
+    {
+      "phase": "C6",
+      "action": "modify",
+      "path": "cevns_pyeft/targets/__init__.py",
+      "before_sha256": "293d55adbbfc120bfb5212f2511f60228ff1f14f5a60c06c2f107ed6841768ff",
+      "after_sha256": "e3aef6b0ac71044ca8b37efa79a330680a803be495594ad48205badfbf200dc6"
+    },
+    {
+      "phase": "C6",
+      "action": "modify",
+      "path": "cevns_pyeft/experiments/runtime.py",
+      "before_sha256": "53d6aae73da9dca4415ddc9a73e6307ea929d556d47dcdb9294b38ee528a3087",
+      "after_sha256": "b8d1f02e19cb693adb3bef7707c3e8b81d67cdb2b620449c223b696c74316250"
+    },
+    {
+      "phase": "C6",
+      "action": "modify",
+      "path": "docs/COMPONENTS.md",
+      "before_sha256": "a87d6d65d58a7ca10eb9d72c8df635dd890d1249073934bf43a85aec5da69d2b",
+      "after_sha256": "0a85349be589a9080bb4930c2531cf9588336d1fe94286d6b94f7f4ec37b2944"
+    },
+    {
+      "phase": "C6",
+      "action": "modify",
+      "path": "docs/COMPONENTS.md",
+      "before_sha256": "0a85349be589a9080bb4930c2531cf9588336d1fe94286d6b94f7f4ec37b2944",
+      "after_sha256": "e4b19b6cb1ed9d966029faa144d2b997be4d7ddc86c5bef0d60b703e37c3874d"
+    },
+    {
+      "phase": "C6",
+      "action": "modify",
+      "path": "docs/COMPONENTS.md",
+      "before_sha256": "e4b19b6cb1ed9d966029faa144d2b997be4d7ddc86c5bef0d60b703e37c3874d",
+      "after_sha256": "9655b1ae0fc81f510f58e82c161b5de7ea5f186c5f13cc013b7d9064b46cf568"
+    },
+    {
+      "phase": "C6",
+      "action": "modify",
+      "path": "docs/PARAMETER_OWNERSHIP.md",
+      "before_sha256": "5c809d5670e368fb54d67ab52d12d18a1c97bb7b04198a2259ba91e125a973ca",
+      "after_sha256": "b53f46a4dfc390e20df25713bd036bfa5f3117a10dc15636c9adcd55cf342f10"
+    },
+    {
+      "phase": "C6",
+      "action": "modify",
+      "path": "docs/PARAMETER_OWNERSHIP.md",
+      "before_sha256": "b53f46a4dfc390e20df25713bd036bfa5f3117a10dc15636c9adcd55cf342f10",
+      "after_sha256": "40fdee326efc4548a7cffa525b54935c01982768f7cdcf745b8ac562804c4712"
+    },
+    {
+      "phase": "C6",
+      "action": "create",
+      "path": "docs/CHANGE_MANIFEST.json",
+      "before_sha256": null,
+      "after_sha256": "1c0b1391d88c213cc29de644f46b279c2b05f78a182c856a9c1b67bb726c2f8c"
+    },
+    {
+      "phase": "C6",
+      "action": "modify",
+      "path": "docs/COMPONENTS.md",
+      "before_sha256": "9655b1ae0fc81f510f58e82c161b5de7ea5f186c5f13cc013b7d9064b46cf568",
+      "after_sha256": "7ba7685299a5b26fae0549f373a7004ea73955fd6b0babcccfd1994b57039838"
+    },
+    {
+      "phase": "C6",
+      "action": "modify",
+      "path": "docs/USAGE.md",
+      "before_sha256": "7b64e258a117978a880121dd2ca4823e184f3bd795427b656ea5708893bc77ab",
+      "after_sha256": "b780bc66716dace27ad7d079133f5ec132654ad3103e33f0cee6ae7818f665ea"
+    },
+    {
+      "phase": "C6",
+      "action": "modify",
+      "path": "docs/PARAMETER_OWNERSHIP.md",
+      "before_sha256": "40fdee326efc4548a7cffa525b54935c01982768f7cdcf745b8ac562804c4712",
+      "after_sha256": "a176a0d313d573723e2e64b19da4ccca6e500d1913bb8342ac86c043a2d52b0e"
+    },
+    {
+      "phase": "C6",
+      "action": "backup",
+      "path": "docs/VALIDATION.md",
+      "target": "backup/refactor03/docs/VALIDATION.md",
+      "sha256": "f9e7f969b7e0ded43b308692368d1492914603af331b7e619433bfcd1abafe4b"
+    },
+    {
+      "phase": "C6",
+      "action": "modify",
+      "path": "docs/VALIDATION.md",
+      "before_sha256": "f9e7f969b7e0ded43b308692368d1492914603af331b7e619433bfcd1abafe4b",
+      "after_sha256": "7f754dc25709ea4366e4d84bd49d1c9ad2640a52ee3c0e1313818e3d0396379e"
+    }
+  ],
+  "recovery": {
+    "backup_root": "backup/refactor03/",
+    "backup_ledger": "backup/BACKUP_MANIFEST.md",
+    "steps": [
+      "Preserve current work before recovery; choose the exact phase/path entries from this manifest.",
+      "Validate archive SHA256, ZIP CRC and the requested entry hashes using REF03_ARCHIVE_MANIFEST.json.",
+      "Restore selected archived files to their recorded original project-relative paths without overwriting current work.",
+      "For changed or moved files, use the recorded backup target and SHA256; reverse path moves in reverse phase order.",
+      "For the pre-flat layout, restore src/cevns_pyeft together with the matching pyproject, tools and test paths.",
+      "Recovery material is not an authorized physics data source; do not scan it for analysis inputs."
+    ]
+  },
+  "hash_binding": "The final receipt hashes this manifest; the manifest excludes its own current hash to avoid a self-reference.",
+  "action_log_cutoff": "Actions through the final VALIDATION.md write; the manifest write itself is bound by the final receipt."
+}

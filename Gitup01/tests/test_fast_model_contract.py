@@ -20,7 +20,7 @@ from cevns_pyeft.theory.li2026.coefficients import differential_coefficients, CH
 from cevns_pyeft.theory.li2026.operators import LI2026_OPERATOR_SPECS
 from cevns_pyeft.foundation.constants import GEV_INV2_TO_CM2, AMU_GEV
 from cevns_pyeft.nuclear.response import ResponseDB
-from tools.refactor.freeze_baseline import points, GRIDS
+from tests.helpers.regression_cases import points, GRIDS
 
 ROOT = Path(__file__).resolve().parents[1]
 RESPONSE = ROOT / "data/responses/responses_all.json"

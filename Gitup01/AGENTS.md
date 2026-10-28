@@ -91,7 +91,7 @@ workflows/experiment-integration/
 must not be imported by:
 
 ```text
-src/cevns_pyeft/
+cevns_pyeft/
 ```
 
 They must not be added as runtime package dependencies.
