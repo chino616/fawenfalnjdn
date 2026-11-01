@@ -14,10 +14,8 @@ from cevns_pyeft.experiments.catalog import ExperimentCatalog, BUILTIN_CATALOG
 from cevns_pyeft.experiments.loader import load_experiment, ResourceCatalog, PreparedExperiment
 from cevns_pyeft.experiments.runtime import predict_experiment, evaluate_experiment, predict_selection, compile_experiment
 from cevns_pyeft.experiments.selection import AnalysisSelection, parse_selection_yaml
-from cevns_pyeft.experiments.definition import MassTimeExposure
 
 ROOT=Path(__file__).resolve().parents[1]
-CONUS='conus_plus_2025_c2c3c5_ge73_pyeft'
 SMALL={'n_er':5,'n_enu':12,'n_pe_bin':3}
 
 @pytest.fixture(scope='module')
@@ -29,10 +27,10 @@ def csi_prediction(experiments):
     return predict_experiment(experiments['CsI2021'],numerics=SMALL)
 
 
-def test_catalog_is_lazy_and_has_four_exact_ids(tmp_path):
+def test_catalog_is_lazy_and_has_three_exact_ids(tmp_path):
     code="""import sys
 from cevns_pyeft.experiments.catalog import BUILTIN_CATALOG
-assert BUILTIN_CATALOG.ids() == ('CsI2021','CsI2017','Ar2020','conus_plus_2025_c2c3c5_ge73_pyeft')
+assert BUILTIN_CATALOG.ids() == ('CsI2021','CsI2017','Ar2020')
 BUILTIN_CATALOG.describe()
 assert 'cevns_pyeft.nuclear.response' not in sys.modules
 assert not any(x.endswith('.slow_counts') for x in sys.modules)
@@ -123,7 +121,7 @@ def test_disabled_missing_resources_are_never_resolved(tmp_path):
             return super().resolve(ref)
     resources=Tracked(tmp_path,{'responses':tmp_path/'responses.json'})
     selection=AnalysisSelection.from_mapping({'datasets':[{'id':'CsI2021','numerics':SMALL},
-        {'id':'CsI2017','enabled':False},{'id':CONUS,'enabled':False}]})
+        {'id':'CsI2017','enabled':False},{'id':'Ar2020','enabled':False}]})
     result=predict_selection(selection,resources=resources)
     assert list(result)==['CsI2021']
     assert resources.seen==['responses']
@@ -212,47 +210,8 @@ def test_legacy_fast_new_binding_save_load_and_invalidation(experiments,tmp_path
         predict_experiment(changed,backend='fast',kernel=loaded,numerics=ns)
 
 
-def test_conus_named_results_exposure_and_response_cache(experiments,tmp_path):
-    from cevns_pyeft.experiments.conus_plus.fast_kernel import save_detector_response_matrix,load_detector_response_matrix,StaleConusResponseMatrixError
-    exp=experiments[CONUS];d=exp.definition;ns={'n_recoil':8,'n_energy':2}
-    slow=predict_experiment(exp,numerics=ns)
-    assert tuple(slow.detector_predictions)==('C2','C3','C5')
-    np.testing.assert_allclose(slow.counts,sum(p.counts for p in slow.detector_predictions.values()),rtol=1e-14)
-    cache=compile_experiment(exp,numerics=ns)
-    path=tmp_path/'response.npz';save_detector_response_matrix(path,cache)
-    loaded=load_detector_response_matrix(path)
-    fast=predict_experiment(exp,backend='fast',kernel=loaded,numerics=ns)
-    np.testing.assert_allclose(fast.counts,slow.counts,rtol=1e-10,atol=1e-12)
-    doubled=replace(d,physical=replace(d.physical,exposures=(MassTimeExposure('C2',238.),*d.physical.exposures[1:])))
-    changed=load_experiment(CONUS,resources=ROOT,definition=doubled)
-    q=predict_experiment(changed,numerics=ns)
-    np.testing.assert_allclose(q.detector_predictions['C2'].counts,slow.detector_predictions['C2'].counts*2,rtol=1e-14)
-    np.testing.assert_array_equal(q.detector_predictions['C3'].counts,slow.detector_predictions['C3'].counts)
-    with pytest.raises(ValueError,match='exposure mismatch'):predict_experiment(changed,backend='fast',kernel=loaded,numerics=ns)
-    response=replace(d,physical=replace(d.physical,detector=replace(d.physical.detector,sigma0_evee=23.)))
-    altered=load_experiment(CONUS,resources=ROOT,definition=response)
-    with pytest.raises(StaleConusResponseMatrixError):predict_experiment(altered,backend='fast',kernel=loaded,numerics=ns)
-    custom=compile_experiment(altered,numerics=ns)
-    save_detector_response_matrix(path,custom,settings=response.physical)
-    restored=load_detector_response_matrix(path,settings=response.physical)
-    assert custom['metadata']['cache_key_sha256']==restored['metadata']['cache_key_sha256']
-    with pytest.raises(ValueError,match='effective119'):evaluate_experiment(exp,slow)
 
 
-def test_conus_bound_benchmark_consumes_one_combined_prediction(experiments):
-    from cevns_pyeft.experiments.conus_plus.statistics import profile_paper_eq33
-    d=experiments[CONUS].definition
-    d=replace(d,physical=replace(d.physical,exposures=tuple(MassTimeExposure(n,x) for n,x in zip(d.observation.detector_ids,(0.,119.,0.)))))
-    observations=ROOT/'data/experiments/CONUS_Plus/conus_plus_2025_c2c3c5_ge73_pyeft/statistics/approximate_paper_benchmark/observations_digitized_approx.csv'
-    exp=load_experiment(CONUS,resources=ResourceCatalog(ROOT,{'observations':observations}),definition=d)
-    p=predict_experiment(exp,numerics={'n_recoil':8,'n_energy':2})
-    result=evaluate_experiment(exp,p)
-    rows=np.genfromtxt(exp.resource_catalog.resolve(next(r for r in d.resources if r.id=='observations')),delimiter=',',names=True)
-    direct=profile_paper_eq33(p.detector_predictions['C3'].counts,rows['observed_excess_per_kg_10eVee'],rows['sigma_used_half_span'])
-    assert result.chi2==direct.chi2
-    assert p.combined_prediction.axes[0].unit=='eVee'
-    assert p.record['sin2thetaW']==.23857
-    assert predict_experiment(exp,parameters=TheoryPoint(sin2thetaW=.239),numerics={'n_recoil':8,'n_energy':2}).record['sin2thetaW']==.239
 
 
 def test_different_resource_roots_and_content_changes_are_isolated(tmp_path,experiments):
@@ -279,7 +238,6 @@ def test_unconsumed_backend_and_numerical_values_rejected(experiments):
 def test_legacy_get_experiment_preserves_dict_return():
     from cevns_pyeft.experiments.registry import get_experiment
     assert isinstance(get_experiment('CsI2021'),dict)
-    assert isinstance(get_experiment(CONUS),dict)
 
 
 def test_synthetic_extension_uses_public_catalog_and_common_algorithms(tmp_path):
@@ -332,7 +290,7 @@ def test_statistical_mapping_rejects_same_size_different_bin_edges(experiments,c
     p=predict_experiment(changed,numerics=SMALL)
     with pytest.raises(ValueError,match='statistical observation mapping'):evaluate_experiment(changed,p)
 
-@pytest.mark.parametrize('dataset',['CsI2017','Ar2020',CONUS])
+@pytest.mark.parametrize('dataset',['CsI2017','Ar2020'])
 def test_executor_rejects_relabeling_observable_units(experiments,dataset):
     d=experiments[dataset].definition
     with pytest.raises(ValueError,match='axis'):
@@ -348,22 +306,3 @@ def test_legacy_csi_mass_convention_is_consumed_by_both_backends(experiments):
         np.testing.assert_allclose(changed.counts,base.counts*.5,rtol=1e-14)
 
 
-def test_conus_consumes_exact_overridden_table_paths(experiments,tmp_path):
-    from cevns_pyeft.experiments.conus_plus.source import differential_flux
-    base=experiments[CONUS]
-    node=tmp_path/'renamed-nodes.csv'
-    coeff=tmp_path/'other-directory'/'renamed-coefficients.csv'
-    coeff.parent.mkdir()
-    shutil.copy2(base.resolved_resources['kopeikin'],node)
-    shutil.copy2(base.resolved_resources['mueller'],coeff)
-    exp=load_experiment(CONUS,resources=ResourceCatalog(ROOT,{'kopeikin':node,'mueller':coeff}))
-    assert exp.physics_fingerprint==base.physics_fingerprint
-    p=predict_experiment(exp,numerics={'n_recoil':8,'n_energy':2})
-    q=predict_experiment(base,numerics={'n_recoil':8,'n_energy':2})
-    np.testing.assert_array_equal(p.counts,q.counts)
-    rows=node.read_text().splitlines();cells=rows[1].split(',');cells[1]=str(float(cells[1])*1.3);rows[1]=','.join(cells)
-    node.write_text('\n'.join(rows)+'\n')
-    changed=differential_flux('total',np.array([.01,.02,.1,1.]),data_dir={'kopeikin':node,'mueller':coeff})
-    original=differential_flux('total',np.array([.01,.02,.1,1.]),data_dir={'kopeikin':base.resolved_resources['kopeikin'],'mueller':base.resolved_resources['mueller']})
-    assert not np.array_equal(changed,original)
-    with pytest.raises(ValueError,match='resource.*changed'):predict_experiment(exp,numerics={'n_recoil':8,'n_energy':2})

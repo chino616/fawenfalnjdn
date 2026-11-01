@@ -1,0 +1,5 @@
+﻿plane,x_parameter,y_parameter,bestfit_x,bestfit_y,chi2_min,scan_x_min,scan_x_max,scan_y_min,scan_y_max,grid_n,min_edge_delta_chi2,contour_closed_in_frame,emu_reflection_max_abs_chi2
+ee_mumu_uV,epsilon_ee_uV,epsilon_mumu_uV,0.1782581754434596,-0.03420166600533815,3.862193619615657,-0.2,0.7,-0.2,0.7,161,4.959401871520371,True,
+ee_mumu_dV,epsilon_ee_dV,epsilon_mumu_dV,0.16902905250748235,-0.03119022936478696,3.8530470842945146,-0.2,0.7,-0.2,0.7,161,7.2146219340208475,True,
+ee_emu_uV,epsilon_ee_uV,epsilon_emu_uV,0.1691336109932458,-0.0974980047041743,3.936826657458207,-0.2,0.7,-0.4,0.4,161,15.146803312848034,True,1.4210854715202004e-14
+ee_emu_dV,epsilon_ee_dV,epsilon_emu_dV,0.1654928406883413,0.08913810523011058,3.919426916595191,-0.2,0.7,-0.4,0.4,161,17.400290661463153,True,1.4210854715202004e-14

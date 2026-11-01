@@ -1,0 +1,66 @@
+manifest_version: 1
+experiment_name: XENONnT solar CEvNS public data release
+experiment_slug: Solar_B8
+dataset_id: xenonnt_2026_sr0_sr1_sr2_public_templates
+scope_gate: APPROVED
+scientific_claim: public_template_reconstruction
+source_root: docs/8B/cevns_data_release-sr0_sr1_sr2/XENONnT-cevns_data_release-6c82981
+status: RELEASE_PRESENT_AUDIT_PENDING
+
+release:
+  archive: docs/8B/cevns_data_release-sr0_sr1_sr2.zip
+  official_md5: e0d740c3347fe13061e9cff576775632
+  release_tag: sr0_sr1_sr2
+  zenodo_record: https://zenodo.org/records/20576156
+  github_release: https://github.com/XENONnT/cevns_data_release/tree/sr0_sr1_sr2
+
+inputs:
+  - path: binning/sr0.yaml
+    role: SR0 four-dimensional bin edges
+    evidence_status: SOURCE_EXTRACTED
+  - path: binning/sr1.yaml
+    role: SR1 four-dimensional bin edges
+    evidence_status: SOURCE_EXTRACTED
+  - path: binning/sr2.yaml
+    role: SR2 four-dimensional bin edges
+    evidence_status: SOURCE_EXTRACTED
+  - path: data/sr0.csv
+    role: SR0 post-selection observations
+    evidence_status: SOURCE_EXTRACTED
+  - path: data/sr1.csv
+    role: SR1 post-selection observations
+    evidence_status: SOURCE_EXTRACTED
+  - path: data/sr2.csv
+    role: SR2 post-selection observations
+    evidence_status: SOURCE_EXTRACTED
+  - path: templates/sr*/ac/*.h5
+    role: accidental-coincidence background templates
+    evidence_status: SOURCE_EXTRACTED
+  - path: templates/sr*/er/*.h5
+    role: electronic-recoil background templates
+    evidence_status: SOURCE_EXTRACTED
+  - path: templates/sr*/rg/*.h5
+    role: neutron background templates
+    evidence_status: SOURCE_EXTRACTED
+  - path: templates/sr*/mono/*.h5
+    role: monoenergetic nuclear-recoil detector templates
+    evidence_status: SOURCE_EXTRACTED
+  - path: limits/sr2/*.csv
+    role: published limit reference curves
+    evidence_status: REFERENCE_ONLY
+
+audit_items:
+  - hdf5_keys_and_shapes
+  - four_dimensional_axis_order
+  - mono_template_dimensionless_efficiency
+  - background_template_rate_units
+  - science_run_exposure_mapping
+  - nuisance_priors_and_correlations
+  - masks_and_unobservable_bins
+  - interpolation_and_truncation
+
+restrictions:
+  - Do not label the result official_likelihood before the audit passes.
+  - Do not use this release as the XENONnT 2024 efficiency input.
+  - Do not add SR0/SR1/SR2 to the 2024 paper-approximate sample.
+

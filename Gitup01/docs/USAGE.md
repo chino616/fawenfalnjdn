@@ -41,27 +41,13 @@ changed = load_experiment("Ar2020", resources=resources,
     components={"source":ScaledSource(exp.model.source,2)})
 ```
 
-四个实验公开source/interaction/observation槽位。COHERENT使用ExperimentModel，
+三个实验公开source/interaction/observation槽位。COHERENT使用ExperimentModel，
 还可替换run与已支持核素范围内的targets。CsI2017/Ar2020保持专用折叠策略，
 其旧Fast不支持任意新组件时明确拒绝；默认设定改变仍可重建已有Fast。
-CONUS+使用MassTimeModel：source、target身份、nuclei_per_kg、interaction、observation、exposures分别显式保存。
-其源可用 `experiments.conus_plus.components.ScaledFluxSource` 包装；响应矩阵不含源/截面，
-若网格不变可复用，理论率仍逐点重算。候选仍限Ge73；替换新科学靶材须另走项目流程。
 
 相互作用复用InteractionModel.dsigma_dT，响应分别消费真实概率/效率；不复制EFT公式。
 组件提供稳定describe、资源及实现记录；实际装配改变会改变外层物理身份，原实验不能评价变化后的结果。
 调用方list/dict/ndarray会防御性快照；加载后实际依赖变化会要求重新加载。
-
-```python
-from cevns_pyeft.experiments.conus_plus.definition import make_effective119_benchmark_definition
-benchmark = load_experiment("conus_plus_2025_c2c3c5_ge73_pyeft", resources=resources,
-    definition=make_effective119_benchmark_definition())
-fit = evaluate_experiment(benchmark, predict_experiment(benchmark))
-```
-
-此构造器仅选择既有effective119 C3类近似统计配置，不新增官方dataset ID。
-默认357kg·day预测拒绝使用这些观测。统计加载检查schema、单位、顺序、坐标、箱宽、profile及归一化；
-同样19行也可能被拒绝。缺失真实资源只阻断统计，不以synthetic值补齐。
 
 源码例子：[单实验/切换](../examples/experiment_modularization/run_experiments.py)、
 [synthetic扩展](../examples/experiment_modularization/synthetic_dataset.py)。后者只在显式registry注入，不注册为真实实验。

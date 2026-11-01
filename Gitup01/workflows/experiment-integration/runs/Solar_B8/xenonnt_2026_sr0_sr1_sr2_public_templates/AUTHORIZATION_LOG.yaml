@@ -1,0 +1,25 @@
+schema_version: 1
+experiment_slug: Solar_B8
+dataset_id: xenonnt_2026_sr0_sr1_sr2_public_templates
+authorization_records:
+  - authorization_id: W20261013B8INPUTS
+    user_approval: APPROVE WRITE
+    scope: create_and_register_approved_input_inventory
+    approved_paths:
+      - docs/experiment_integration/experiment_inputs/Solar_B8/xenonnt_2026_sr0_sr1_sr2_public_templates/EXPERIMENT_USER_INPUT.md
+      - docs/experiment_integration/experiment_inputs/Solar_B8/xenonnt_2026_sr0_sr1_sr2_public_templates/INPUT_MANIFEST.yaml
+      - docs/experiment_integration/experiment_inputs/Solar_B8/xenonnt_2026_sr0_sr1_sr2_public_templates/provenance/release_manifest.yaml
+      - workflows/experiment-integration/runs/Solar_B8/xenonnt_2026_sr0_sr1_sr2_public_templates/00_INPUT_INVENTORY.md
+      - workflows/experiment-integration/runs/Solar_B8/xenonnt_2026_sr0_sr1_sr2_public_templates/00_IMPLEMENTATION_MANIFEST.yaml
+      - workflows/experiment-integration/runs/Solar_B8/xenonnt_2026_sr0_sr1_sr2_public_templates/00_MIGRATION_PROGRESS.md
+      - workflows/experiment-integration/runs/Solar_B8/xenonnt_2026_sr0_sr1_sr2_public_templates/AUTHORIZATION_LOG.yaml
+      - workflows/experiment-integration/runs/Solar_B8/xenonnt_2026_sr0_sr1_sr2_public_templates/P00_SOURCE_REGISTER.yaml
+      - workflows/experiment-integration/runs/Solar_B8/xenonnt_2026_sr0_sr1_sr2_public_templates/P01_EVIDENCE_LEDGER.yaml
+      - workflows/experiment-integration/runs/Solar_B8/xenonnt_2026_sr0_sr1_sr2_public_templates/P02_MISSING_AND_CONFLICTS.md
+      - workflows/experiment-integration/runs/Solar_B8/xenonnt_2026_sr0_sr1_sr2_public_templates/P03_PHYSICS_CONTRACT.yaml
+    production_code_changes: false
+    existing_conus_dataset_changes: false
+    raw_external_archive_copied: false
+    status: APPLIED
+    date: 2026-10-13
+

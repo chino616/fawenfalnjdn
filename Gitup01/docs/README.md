@@ -15,5 +15,6 @@
 [nuclear responses](nuclear_response_convention_audit.md)、
 [antineutrino treatment](antineutrino_sign_helicity_audit.md)、
 [legacy operator coverage](legacy_operator_coverage.md)。
-`CONUS_docs/`、`experiment_integration/experiment_inputs/` 与现行 workflows 保留科学来源和决策。
+`experiment_integration/experiment_inputs/` 与现行 workflows 保留其他实验的科学来源和决策。
+CONUS 资料已移到 CONUS-Backup（本地 CONUS-Backup/README.md，未随分支上传）。
 历史报告和一次性阶段脚本已按字节校验后移出主项目；恢复方法见LAYOUT。

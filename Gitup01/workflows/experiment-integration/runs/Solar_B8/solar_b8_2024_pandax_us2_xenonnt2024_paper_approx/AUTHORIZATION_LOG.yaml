@@ -1,0 +1,26 @@
+schema_version: 1
+experiment_slug: Solar_B8
+dataset_id: solar_b8_2024_pandax_us2_xenonnt2024_paper_approx
+authorization_records:
+  - authorization_id: W20261013B8INPUTS
+    user_approval: APPROVE WRITE
+    scope: create_and_register_approved_input_inventory
+    approved_paths:
+      - docs/experiment_integration/experiment_inputs/Solar_B8/solar_b8_2024_pandax_us2_xenonnt2024_paper_approx/EXPERIMENT_USER_INPUT.md
+      - docs/experiment_integration/experiment_inputs/Solar_B8/solar_b8_2024_pandax_us2_xenonnt2024_paper_approx/INPUT_MANIFEST.yaml
+      - docs/experiment_integration/experiment_inputs/Solar_B8/solar_b8_2024_pandax_us2_xenonnt2024_paper_approx/reference/P05B_REFERENCE_VALUES.yaml
+      - docs/experiment_integration/experiment_inputs/Solar_B8/solar_b8_2024_pandax_us2_xenonnt2024_paper_approx/reference/P05B_P06_REQUIRED_INPUTS.md
+      - workflows/experiment-integration/runs/Solar_B8/solar_b8_2024_pandax_us2_xenonnt2024_paper_approx/00_INPUT_INVENTORY.md
+      - workflows/experiment-integration/runs/Solar_B8/solar_b8_2024_pandax_us2_xenonnt2024_paper_approx/00_IMPLEMENTATION_MANIFEST.yaml
+      - workflows/experiment-integration/runs/Solar_B8/solar_b8_2024_pandax_us2_xenonnt2024_paper_approx/00_MIGRATION_PROGRESS.md
+      - workflows/experiment-integration/runs/Solar_B8/solar_b8_2024_pandax_us2_xenonnt2024_paper_approx/AUTHORIZATION_LOG.yaml
+      - workflows/experiment-integration/runs/Solar_B8/solar_b8_2024_pandax_us2_xenonnt2024_paper_approx/P00_SOURCE_REGISTER.yaml
+      - workflows/experiment-integration/runs/Solar_B8/solar_b8_2024_pandax_us2_xenonnt2024_paper_approx/P01_EVIDENCE_LEDGER.yaml
+      - workflows/experiment-integration/runs/Solar_B8/solar_b8_2024_pandax_us2_xenonnt2024_paper_approx/P02_MISSING_AND_CONFLICTS.md
+      - workflows/experiment-integration/runs/Solar_B8/solar_b8_2024_pandax_us2_xenonnt2024_paper_approx/P03_PHYSICS_CONTRACT.yaml
+    production_code_changes: false
+    existing_conus_dataset_changes: false
+    raw_external_archive_copied: false
+    status: APPLIED
+    date: 2026-10-13
+

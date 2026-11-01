@@ -1,0 +1,25 @@
+schema_version: 1
+experiment_slug: Solar_B8
+dataset_id: xenonnt_2026_sr0_sr1_sr2_public_templates
+claims:
+  - claim_id: C001
+    statement: The fixed SR0/SR1/SR2 archive is locally present.
+    status: SOURCE_EXTRACTED
+    evidence: [XNT-ARCHIVE, XNT-RAW]
+  - claim_id: C002
+    statement: The release contains four-dimensional data, binning, and signal/background templates.
+    status: SOURCE_EXTRACTED
+    evidence: [XNT-README, XNT-RAW]
+  - claim_id: C003
+    statement: Mono-NR templates are detector response templates and must be audited for units.
+    status: SOURCE_EXTRACTED
+    evidence: [XNT-README]
+  - claim_id: C004
+    statement: The result is a public-template reconstruction rather than an official likelihood.
+    status: USER_CONFIRMED
+    evidence: [XNT-README, B8-MIGRATION-DESIGN]
+  - claim_id: C005
+    statement: HDF5 keys, axes, exposure mapping, masks, and nuisance correlations remain to be audited.
+    status: MISSING
+    evidence: [XNT-RAW]
+

@@ -10,7 +10,10 @@ from cevns_pyeft.experiments.specs import (
 def test_bundled_experiment_specs_are_discoverable():
     names = list_experiments()
     assert "CsI2021" in names
-    assert len(discover_experiment_spec_paths()) >= 3
+    assert {
+        load_experiment_spec(path).dataset_name
+        for path in discover_experiment_spec_paths()
+    } == {"CsI2017", "CsI2021"}
 
 
 def test_flat_and_nested_experiment_specs_are_discoverable(tmp_path):
@@ -33,19 +36,3 @@ def test_flat_and_nested_experiment_specs_are_discoverable(tmp_path):
     assert discovered == (flat, nested)
     assert load_experiment_spec("FlatDataset", tmp_path).path == flat.resolve()
     assert load_experiment_spec("nested_dataset", tmp_path).path == nested.resolve()
-
-
-def test_conus_plus_nested_spec_is_discoverable_and_loadable():
-    paths = discover_experiment_spec_paths()
-    conus_paths = [
-        path
-        for path in paths
-        if path.parent.name == "conus_plus_2025_c2c3c5_ge73_pyeft"
-    ]
-
-    assert len(conus_paths) == 1
-    spec = load_experiment_spec("conus_plus_2025_c2c3c5_ge73_pyeft")
-    assert spec.source_type == "reactor"
-    assert spec.target_mode == "Ge73_only"
-    assert spec.data["binning"]["number_of_bins"] == 19
-    assert spec.data["expected_output"]["shape"] == [3, 19]

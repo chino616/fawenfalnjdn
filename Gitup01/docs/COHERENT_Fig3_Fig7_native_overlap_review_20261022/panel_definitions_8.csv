@@ -1,0 +1,9 @@
+﻿figure,panel,x_parameter,y_parameter,x_min,x_max,y_min,y_max,n_x,n_y,threshold_2d
+3,top,eps_ee_dV,eps_ee_uV,-1.0,1.0,-1.0,1.0,101,101,4.605170185988092
+3,bottom,eps_mumu_dV,eps_mumu_uV,-1.0,1.0,-1.0,1.0,101,101,4.605170185988092
+4,top,eps_ee_uV,eps_mumu_uV,-0.4,0.8,-0.3,0.6,101,101,4.605170185988092
+4,bottom,eps_ee_dV,eps_mumu_dV,-0.4,0.8,-0.3,0.6,101,101,4.605170185988092
+5,top,eps_ee_dV,eps_etau_dV,-0.4,0.6,-0.6,0.6,101,101,4.605170185988092
+5,bottom,eps_mumu_dV,eps_mutau_dV,-0.4,0.6,-0.6,0.6,101,101,4.605170185988092
+6,top,eps_ee_dV,eps_emu_dV,-0.4,0.6,-0.3,0.3,101,101,4.605170185988092
+6,bottom,eps_mumu_dV,eps_emu_dV,-0.4,0.6,-0.3,0.3,101,101,4.605170185988092

@@ -12,7 +12,7 @@ prediction = predict_experiment(experiment)
 fit = evaluate_experiment(experiment, prediction)
 ```
 
-已有ID：`CsI2021`、`CsI2017`、`Ar2020`、`conus_plus_2025_c2c3c5_ge73_pyeft`。
+已有ID：`CsI2021`、`CsI2017`、`Ar2020`。
 `parameters=None` 使用各自标记的复现默认值，显式 TheoryPoint 优先。
 统计数据延迟加载；物理预测不要求先具备统计输入。
 
@@ -37,5 +37,5 @@ wheel只含运行时包；安装后必须通过 ResourceCatalog 指定外部数�
 
 每个实验的定义决定默认源、曝光、靶材、响应、分箱与数值策略；共用材料属于中立模块。
 不同算法保留各自网格和物理约定，不把接口统一解释为全部后端具有相同能力。
-CONUS+默认357kg·day预测与effective119数字化统计配置严格区分；后者是近似Gaussian，
-不是官方on/off likelihood。本轮未更改科学Gate、天然/单核素假设或任何受保护参考。
+CONUS 专属实现和资料已归档到项目旁的 ../CONUS-Backup/；当前内置实验为上述三个 COHERENT 数据集。
+本次归档记录及恢复说明见 归档说明（本地 CONUS-Backup/README.md，未随分支上传）。共享理论与受保护参考保持原内容。

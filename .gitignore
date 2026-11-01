@@ -28,3 +28,7 @@ Gitup01/data/**
 Gitup01/**/*.ipynb
 Gitup01/docs/**/*.pdf
 Gitup01/docs/**/*.zip
+
+# Local CONUS archival and isolated publication workspaces.
+CONUS-Backup/
+.github-publish/

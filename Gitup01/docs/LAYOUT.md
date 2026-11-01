@@ -8,7 +8,7 @@
 | examples/ | 可运行用户例子及明确标记的synthetic扩展 |
 | tests/ | 行为/单元/集成检查；helpers保存等值提取的测试参数 |
 | docs/ | 当前说明与仍有效物理依据 |
-| tools/ | 当前发行和已有CONUS复现/核查工具 |
+| tools/ | 当前发行工具 |
 | schemas/ | 现有契约 |
 | workflows/ | 接入流程和科学决策；不进入runtime或wheel |
 | outputs/ | 本地结果、诊断和核缓存；不作为隐式实验输入 |
@@ -25,4 +25,5 @@
 
 `论文图NoteBook/` 和旧科学审查资产仍有研究/绘图用途，保留其内容，不按名称或年代删除。
 现行Master工作流、论文依据、原始data、tests/reference均保留；数据迁移只改变明确记录的路径。
-tools/conus依赖历史复现输入/输出，见 [工具说明](../tools/README.md)；它们不是新的运行时默认入口。
+CONUS 专属源码、数据、工具、测试、论文和工作流记录已移至 CONUS-Backup（本地 CONUS-Backup/README.md，未随分支上传）。
+旧构建产物也已隔离；共享历史验收与冻结参考保留原件，归档清单逐项标注其用途。

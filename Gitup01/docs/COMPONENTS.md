@@ -1,6 +1,6 @@
 # CsI2021 组合式接口
 
-当前实现覆盖组合式一维 Slow/Fast、组件替换、内容缓存及发行验证。保留现有 CsI2021 9 个 PE 箱的物理约定与离散算法；源、运行期、靶核、相互作用与观测由实例组装。四实验能力见 [能力矩阵](CAPABILITY_MATRIX.md)，实际验收见 [验证记录](VALIDATION.md)，Fast 接口见 [Fast 与缓存](FAST_AND_CACHE.md)。
+当前实现覆盖组合式一维 Slow/Fast、组件替换、内容缓存及发行验证。保留现有 CsI2021 9 个 PE 箱的物理约定与离散算法；源、运行期、靶核、相互作用与观测由实例组装。三实验能力见 [能力矩阵](CAPABILITY_MATRIX.md)，实际验收见 [验证记录](VALIDATION.md)，Fast 接口见 [Fast 与缓存](FAST_AND_CACHE.md)。
 
 ```python
 from dataclasses import replace

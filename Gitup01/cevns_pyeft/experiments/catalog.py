@@ -8,8 +8,7 @@ class ExperimentCatalog:
             for dataset, module in (
                 ('CsI2021', 'coherent.csi2021_definition'),
                 ('CsI2017', 'coherent.csi2017_definition'),
-                ('Ar2020', 'coherent.ar2020_definition'),
-                ('conus_plus_2025_c2c3c5_ge73_pyeft', 'conus_plus.definition')):
+                ('Ar2020', 'coherent.ar2020_definition')):
                 self.register(dataset, module, aliases=(dataset.lower(),) if dataset.lower() != dataset else ())
 
     def register(self, dataset_id, definition, *, aliases=()):

@@ -26,7 +26,7 @@ else:
     first=predict_experiment(exp,numerics=ns)
     fit=evaluate_experiment(exp,first)
     print('CsI2021',first.counts.tolist(),'approximate chi2',fit.chi2)
-    for key,ns2 in [('Ar2020',ns),('CsI2017',{'n_enu':12}),('conus_plus_2025_c2c3c5_ge73_pyeft',{'n_recoil':8,'n_energy':2})]:
+    for key,ns2 in [('Ar2020',ns),('CsI2017',{'n_enu':12})]:
         p=predict_experiment(load_experiment(key,resources=resources),numerics=ns2)
         print(key,p.counts.tolist(),'detectors',list(p.detector_predictions))
     # Override one immutable instance; the built-in definition stays unchanged.

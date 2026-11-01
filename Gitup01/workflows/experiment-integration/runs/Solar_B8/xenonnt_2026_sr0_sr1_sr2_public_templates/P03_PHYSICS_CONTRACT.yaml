@@ -1,0 +1,31 @@
+schema_version: 1
+experiment_slug: Solar_B8
+dataset_id: xenonnt_2026_sr0_sr1_sr2_public_templates
+physics_contract_status: PARTIAL
+scientific_claim: public_template_reconstruction
+source:
+  type: solar_8B
+  flux_normalization: MISSING
+  propagation_backend: MISSING
+target:
+  material: natural_xenon
+  isotope_response: MISSING
+  evidence_status: MISSING
+detector:
+  experiment: XENONnT
+  science_runs: [SR0, SR1, SR2]
+  observables: [cS2, s2pre_dtpre_quantile, s1_bdt, s2_bdt]
+  release_archive_md5: e0d740c3347fe13061e9cff576775632
+response:
+  mono_nr_templates: SOURCE_EXTRACTED
+  template_units: MISSING
+  four_dimensional_binning: SOURCE_EXTRACTED
+statistics:
+  type: public_template_reconstruction
+  official_likelihood: false
+blockers:
+  - verified_b8_source_and_propagation_input
+  - hdf5_and_binning_audit
+  - exposure_mapping
+  - nuisance_priors_and_correlations
+

@@ -1,0 +1,83 @@
+manifest_version: 1
+experiment_name: XENONnT solar CEvNS public data release
+experiment_slug: Solar_B8
+dataset_id: xenonnt_2026_sr0_sr1_sr2_public_templates
+task_scope: physics_onboarding
+execution_mode: stepwise
+scope_gate: APPROVED
+input_inventory_write_authorized: true
+production_code_write_authorized: false
+current_state: P00_INPUTS_REGISTERED
+backup_quarantine_applied: true
+
+approved_scope:
+  source: solar_8B
+  target: natural_xenon_pending_response_audit
+  channels: [CEvNS]
+  detector: XENONnT
+  science_runs: [SR0, SR1, SR2]
+  likelihood: public_template_reconstruction
+  official_likelihood: false
+
+phases:
+  - phase: 1
+    name: Dataset
+    status: COMPLETE
+    machine_gate: NOT_RUN
+    human_gate: NOT_REVIEWED
+  - phase: 2
+    name: Target_Exposure
+    status: DRAFT
+    machine_gate: NOT_RUN
+    human_gate: NOT_REVIEWED
+  - phase: 3
+    name: Source
+    status: BLOCKED
+    machine_gate: NOT_RUN
+    human_gate: NOT_REVIEWED
+    blockers: [b8_flux_and_propagation_input_missing]
+  - phase: 4
+    name: Theory_Response
+    status: DRAFT
+    machine_gate: NOT_RUN
+    human_gate: NOT_REVIEWED
+  - phase: 5
+    name: Kinematics_Cross_section
+    status: DRAFT
+    machine_gate: NOT_RUN
+    human_gate: NOT_REVIEWED
+  - phase: 6
+    name: Detector_response
+    status: BLOCKED
+    machine_gate: NOT_RUN
+    human_gate: NOT_REVIEWED
+    blockers: [hdf5_units_shapes_axes_and_exposure_audit_pending]
+  - phase: 7
+    name: Slow
+    status: BLOCKED
+    machine_gate: NOT_RUN
+    human_gate: NOT_REVIEWED
+    blockers: [phase_3_and_phase_6_audits_pending]
+  - phase: 8
+    name: Fast
+    status: NOT_REQUESTED
+    machine_gate: NOT_RUN
+    human_gate: NOT_REVIEWED
+  - phase: 9
+    name: Statistics
+    status: BLOCKED
+    machine_gate: NOT_RUN
+    human_gate: NOT_REVIEWED
+    blockers: [public_template_likelihood_contract_pending]
+  - phase: 10
+    name: Validation_Release
+    status: BLOCKED
+    machine_gate: NOT_RUN
+    human_gate: NOT_REVIEWED
+    blockers: [upstream_phases_not_validated]
+
+next_action:
+  phase: 6
+  step: release_template_audit
+  do_not_auto_continue: true
+

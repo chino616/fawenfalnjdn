@@ -1,0 +1,101 @@
+metadata:
+  document: P05-B legacy B8 reference values, not reproduction outputs
+  paper: Li, Song, Tang, Yu, Phys. Rev. D 111, 035002 (2025)
+  arxiv_version: 2409.04703v2
+  source_url: https://arxiv.org/html/2409.04703v2
+  reference_status: PUBLISHED_NUMBERS_ONLY
+  computed_reproduction_status: NOT_VERIFIED
+  date_compiled: '2026-10-13'
+common:
+  solar_8B_flux_cm2_s: 5460000.0
+  solar_flux_rel_uncertainty: 0.12
+  paper_approx_response_isotope: 131
+  paper_number_normalization_molar_mass_g_mol: 131.29
+  recoil_endpoint_neutrino_energy_MeV_approx: 16.0
+  paper_stat_model: single_bin_gaussian_profiled
+  chi2_90pct_one_parameter: 2.71
+  chi2_90pct_two_parameters: 4.61
+experiments:
+  pandax4t_us2_2024:
+    exposure_ton_year: 1.04
+    threshold_keVnr: 0.33
+    N_meas: 69.1
+    N_SM_reference: 44.9
+    sigma_stat: 25.566999999999997
+    sigma_stat_definition: 0.37*N_meas
+    sigma_alpha: 0.245
+    source_section: IV.2.1
+    response_efficiency_required: digitize/check signal efficiency from original PandaX 2024 Fig.1
+    response_efficiency_status: MISSING
+    paired_exposure_in_phenomenology_table_ton_year: 1.25
+    paired_exposure_in_experiment_abstract_ton_year: 1.2
+    paired_exposure_note: Not part of paper US2 single-bin benchmark; do not mix sources.
+    reference_lambda_GeV:
+      C1u:
+        e: 287.46
+        mu: 289.61
+        tau: 286.7
+      C1d:
+        e: 304.61
+        mu: 306.88
+        tau: 303.8
+      C2u:
+        e: 14.7
+        mu: 14.81
+        tau: 14.6
+      C2d:
+        e: 23.32
+        mu: 23.48
+        tau: 23.15
+  xenonnt_2024:
+    exposure_ton_year: 3.51
+    threshold_keVnr: 0.5
+    N_meas: 10.7
+    N_SM_reference: 11.15
+    sigma_stat: 3.95
+    sigma_alpha: 0.13
+    source_section: IV.2.2
+    response_efficiency_required: 2024 NR total selection efficiency at 0.5 keVnr threshold; provenance
+      matching paper
+    response_efficiency_status: MISSING
+    reference_lambda_GeV:
+      C1u:
+        e: 342.2
+        mu: 344.97
+        tau: 342.5
+      C1d:
+        e: 388.46
+        mu: 393.08
+        tau: 388.95
+      C2u:
+        e: 19.67
+        mu: 20.05
+        tau: 19.69
+      C2d:
+        e: 31.19
+        mu: 31.8
+        tau: 31.23
+missing_inputs:
+  P05B:
+  - PandaX-4T 2024 US2 signal efficiency as a digitized table, verified against Fig.1
+  - XENONnT 2024 detector NR efficiency corresponding to 2024 analysis
+  - Xe-131 response numerical data and exact older calculation conventions
+  - PEANUTS exposure-averaged probability arrays for Fig.2 and NSI Fig.3 comparison
+  - quantitative contours/reference curves for Fig.4-6 (original data preferred, transparently digitized
+    fallback)
+  P06:
+  - Pinned XENONnT SR0+SR1+SR2 release ZIP from Zenodo 20576156; local presence not verified
+xenonnt_2026_release:
+  zenodo_url: https://zenodo.org/records/20576156
+  github_release_url: https://github.com/XENONnT/cevns_data_release/tree/sr0_sr1_sr2
+  archive_name: cevns_data_release-sr0_sr1_sr2.zip
+  official_md5: e0d740c3347fe13061e9cff576775632
+  published_version: sr0_sr1_sr2
+  source: XENONnT Zenodo
+  archive_local_status: NOT_DOWNLOADED_IN_THIS_SESSION
+restrictions:
+- Do not modify source project or SNuDD original; isolate edits
+- Do not normalize to 44.9 or 11.15 empirically
+- No synthetic efficiencies or guessed nuisance priors
+- Paper approximate one-bin and official experimental likelihood have distinct labels
+- Do not use XENONnT 2026 templates as verified 2024 detector response

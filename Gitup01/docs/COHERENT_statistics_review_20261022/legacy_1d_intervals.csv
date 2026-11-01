@@ -1,0 +1,9 @@
+﻿parameter,interval_index,left,right,closed_left,closed_right,threshold,scan_open_edge
+epsilon_ee_uV,1,-0.06527331881083034,0.45370604765832356,True,True,2.71,False
+epsilon_mumu_uV,1,-0.03664763948899019,0.05434321814554695,True,True,2.71,False
+epsilon_mumu_uV,2,0.3383087734386552,0.42519883241094625,True,True,2.71,False
+epsilon_emu_uV,1,-0.10321993821979736,0.10321993821979736,True,True,2.71,False
+epsilon_ee_dV,1,-0.059196860755348704,0.41147152710373525,True,True,2.71,False
+epsilon_mumu_dV,1,-0.0332224375633384,0.04901268366835991,True,True,2.71,False
+epsilon_mumu_dV,2,0.30502306167925264,0.3855919165849365,True,True,2.71,False
+epsilon_emu_dV,1,-0.0935411829549436,0.0935411829549436,True,True,2.71,False

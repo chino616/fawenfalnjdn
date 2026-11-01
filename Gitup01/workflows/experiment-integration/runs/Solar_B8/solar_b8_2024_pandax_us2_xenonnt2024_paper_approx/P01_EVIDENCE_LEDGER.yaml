@@ -1,0 +1,25 @@
+schema_version: 1
+experiment_slug: Solar_B8
+dataset_id: solar_b8_2024_pandax_us2_xenonnt2024_paper_approx
+claims:
+  - claim_id: C001
+    statement: The dataset is the arXiv:2409.04703v2 single-bin phenomenological benchmark.
+    status: SOURCE_EXTRACTED
+    evidence: [B8-PAPER-INSTRUCTIONS]
+  - claim_id: C002
+    statement: PandaX US2 uses 1.04 t yr and 0.33 keVnr in the benchmark.
+    status: REFERENCE_ONLY
+    evidence: [B8-PUBLISHED-VALUES]
+  - claim_id: C003
+    statement: XENONnT 2024 uses 3.51 t yr and 0.50 keVnr in the benchmark.
+    status: REFERENCE_ONLY
+    evidence: [B8-PUBLISHED-VALUES]
+  - claim_id: C004
+    statement: The benchmark is not an official multidimensional likelihood.
+    status: USER_CONFIRMED
+    evidence: [B8-PAPER-INSTRUCTIONS]
+  - claim_id: C005
+    statement: Detector efficiencies and Xe-131 response conventions are missing.
+    status: MISSING
+    evidence: [B8-PAPER-INSTRUCTIONS]
+
