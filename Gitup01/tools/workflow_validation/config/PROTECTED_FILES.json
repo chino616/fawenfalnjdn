@@ -141,9 +141,6 @@
     "data/experiments/COHERENT_CsI/CsI2017/statistics/provenance.yaml": "c8d126501aa99decec91b7fd859ae45035d29ec6f6bab2d63b39c16329b17940",
     "data/experiments/COHERENT_CsI/CsI2021/statistics/provenance.yaml": "6def82c1188dd1a1ead8bd0aca9f1dbd24bac4b7f59b78f96c0a559408a6146f",
     "configs/analysis_selection.example.yaml": "5c1be221f3b452fce1a307e11f9b27705d704f5a5dd7b2b683a39dea861454b1",
-    "schemas/csv_contracts.json": "5d89ba194e0db93f7c85ffd8a47d783493894184c5a1f020d3ba230f876d5bd6",
-    "schemas/experiment.schema.json": "86863330b1b5d2ea1186db9ef826187c454501e4e933c78488d9d9f6d0fcb29d",
-    "schemas/README.md": "5bc04d644fb6777cb5c6a7ba8fc5f5474b17c876d72b9008251244ca6494364c",
     "tests/test_component_replacement.py": "1ef8645d19de956fd06487e2a7d5f12fff9789bf82cb8a8a59a82ad9bf357014",
     "tests/test_experiment_archive_isolation.py": "d2a34999e159016375d388dc1db068221189a2d91897d9cf979abf880e15b147",
     "tests/test_experiment_modularization.py": "a17078f902f836c335aaf231da58aba1b2f10e3a4d35f3a4fcad64640449214a",
@@ -188,7 +185,7 @@
     "workflows/experiment-integration/runs/Solar_B8/xenonnt_2026_sr0_sr1_sr2_public_templates/P01_EVIDENCE_LEDGER.yaml": "1ea5c59eeb3104cacfbe077f9b90dffd68e1618db5ae6646c06ea184e03cb9eb",
     "workflows/experiment-integration/runs/Solar_B8/xenonnt_2026_sr0_sr1_sr2_public_templates/P02_MISSING_AND_CONFLICTS.md": "5ce7337a502246e8e8cc7e38dd6fc8653af8c34ea9496aa92758949b628248f7",
     "workflows/experiment-integration/runs/Solar_B8/xenonnt_2026_sr0_sr1_sr2_public_templates/P03_PHYSICS_CONTRACT.yaml": "40d62047cea5a41b4f5a77bd6edbf9db5887c77efc5dc775ab78d4a73e1bdc8a",
-    "cevns_pyeft/README.md": "4ffde1d931516d148df18db14452890153e730067b878d085098dbb72540b8cc",
+    "cevns_pyeft/README.md": "8477086f9cedae28fbb554cd1eec8cdcc080efe4a589f9fd8e91a4f0f25c2ad7",
     "cevns_pyeft/contracts/README.md": "4c8785e3cacd25d72cfa0f4d7f029f6ed7a3c60dded8d6e8d81865440f360aca",
     "cevns_pyeft/core/README.md": "33271d043bbb5afe1697b7dba8ee57404630dce89dc59baacc950a3028e13d18",
     "cevns_pyeft/experiments/README.md": "e55714dc3a33087d5151943fcfe8ff2e350d146b4f7fc274505a08b327d1d722",
@@ -207,6 +204,10 @@
     "data/experiments/README.md": "ff693c0bb05e816bf48ca5be986f4bba133f378f939457dcb8579d5cccbd8b9a",
     "data/responses/README.md": "84b4fbef79af4b5179703b005af3e4258e3c52dddb60b0b5c17199ad6e05cf87",
     "examples/README.md": "7d9b8a0f085dfea23a18da26b4370727e7aa0918e8d91d6211ea760e9eefeabe",
-    "examples/experiment_modularization/README.md": "ad80da6c2e9109f72dcb16da5d86aac3e73be45e0e9db487806e3c3987846674"
+    "examples/experiment_modularization/README.md": "ad80da6c2e9109f72dcb16da5d86aac3e73be45e0e9db487806e3c3987846674",
+    "workflows/_shared/schemas/experiment-input/experiment.schema.json": "86863330b1b5d2ea1186db9ef826187c454501e4e933c78488d9d9f6d0fcb29d",
+    "workflows/_shared/schemas/experiment-input/csv_contracts.json": "5d89ba194e0db93f7c85ffd8a47d783493894184c5a1f020d3ba230f876d5bd6",
+    "workflows/_shared/schemas/experiment-input/README.md": "4f5fa45a2d952a02b7acbdcc7f96324ca15aa519a4698a125977f29ddb0b07f7",
+    "cevns_pyeft/SKILLS.md": "abeb7ba4f43f1c82c3508f52c3cd9c17d79109e5157932ccff4eb18848654e01"
   }
 }

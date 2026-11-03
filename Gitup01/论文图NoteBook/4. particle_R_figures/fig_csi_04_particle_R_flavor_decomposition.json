@@ -1,0 +1,101 @@
+{
+  "reference_notebook": "SM_NP_flavor_particle_R_curves.ipynb",
+  "observable": "real particle-response entries; no nuclear W contraction",
+  "R_axes": [
+    "recoil",
+    "incoming_flavor_beta",
+    "incoming_flavor_beta_prime",
+    "nucleon",
+    "nucleon_prime"
+  ],
+  "flavor_order": [
+    "e",
+    "mu",
+    "tau"
+  ],
+  "nucleon_order": [
+    "p",
+    "n"
+  ],
+  "response_unit": "GeV^-2",
+  "recoil_unit": "keV",
+  "E_nu_GeV": 0.03,
+  "mass_number": 133,
+  "mA_GeV": 123.88871579475999,
+  "elastic_endpoint_keV": 14.522135130310854,
+  "recoil_points": 160,
+  "recoil_range_keV": [
+    0.05,
+    13.79602837379531
+  ],
+  "C6u1_emu_GeV_minus2": 1e-05,
+  "C6u1_mue_GeV_minus2": 1e-05,
+  "sin2thetaW": 0.23873,
+  "sin2thetaW_argument": null,
+  "interference_definition": "R(SM+NP) - R(SM) - R(NP)",
+  "zero_interference_display": "Diagonal zero is annotated in log-scale panel; stored raw arrays retain rounding residuals.",
+  "checks": {
+    "MM": {
+      "max_abs_R_GeV_minus2": 1.4355379827783289e-12,
+      "max_abs_diagonal_interference": 2.0194839173657902e-28,
+      "max_abs_SM_emu": 0.0,
+      "max_abs_NP_emu": 0.0
+    },
+    "SSPP": {
+      "max_abs_R_GeV_minus2": 1e-300,
+      "max_abs_diagonal_interference": 0.0,
+      "max_abs_SM_emu": 0.0,
+      "max_abs_NP_emu": 0.0
+    },
+    "SSP": {
+      "max_abs_R_GeV_minus2": 1.1928388132099629e-13,
+      "max_abs_diagonal_interference": 1.5777218104420236e-29,
+      "max_abs_SM_emu": 0.0,
+      "max_abs_NP_emu": 0.0
+    },
+    "PhiPP": {
+      "max_abs_R_GeV_minus2": 1e-300,
+      "max_abs_diagonal_interference": 0.0,
+      "max_abs_SM_emu": 0.0,
+      "max_abs_NP_emu": 0.0
+    },
+    "PhiPT": {
+      "max_abs_R_GeV_minus2": 1e-300,
+      "max_abs_diagonal_interference": 0.0,
+      "max_abs_SM_emu": 0.0,
+      "max_abs_NP_emu": 0.0
+    },
+    "DD": {
+      "max_abs_R_GeV_minus2": 1.4038227654781478e-12,
+      "max_abs_diagonal_interference": 2.0194839173657902e-28,
+      "max_abs_SM_emu": 0.0,
+      "max_abs_NP_emu": 0.0
+    },
+    "MPhiPP": {
+      "max_abs_R_GeV_minus2": 1e-300,
+      "max_abs_diagonal_interference": 0.0,
+      "max_abs_SM_emu": 0.0,
+      "max_abs_NP_emu": 0.0
+    },
+    "SigmaPDelta": {
+      "max_abs_R_GeV_minus2": 1e-300,
+      "max_abs_diagonal_interference": 0.0,
+      "max_abs_SM_emu": 0.0,
+      "max_abs_NP_emu": 0.0
+    }
+  },
+  "versions": {
+    "numpy": "2.4.6",
+    "matplotlib": "3.11.0"
+  },
+  "source_sha256": {
+    "src/cevns_pyeft/theory/kinematics.py": "2fcdeae7b83a1183c1215461e8d1f91badda142cb78ba7cb0fbb25367c69bd16",
+    "src/cevns_pyeft/foundation/constants.py": "0bb51033d1ca64e18a7a7bb0fd4cce38bc679558dd7392740f72d4683276cd44",
+    "src/cevns_pyeft/theory/li2026/flavor.py": "66c84c2f2dad58ebba132cb768db36c8661a3e053b8cb74900d47df6cffa48c4",
+    "src/cevns_pyeft/theory/li2026/operators.py": "c1932f6de64333b3a344fc84b7f5ec19efddbbf9a33db2aa9e245df702609ff4",
+    "src/cevns_pyeft/theory/li2026/lec.py": "9c981d8705ba6a17829c75e81b93ce6f85fdbcc290faf5bf64edde9dc8867691",
+    "src/cevns_pyeft/theory/li2026/left_to_ci.py": "56027d356737d85de4ae22ba3b303ade16e1c0163887bbedbc53ac2f0d46ae48",
+    "src/cevns_pyeft/theory/li2026/responses.py": "25d63e8c923d900a42c67f43ab0fcef40bf39e528767c949a114b37d02135dbe",
+    "src/cevns_pyeft/rates/differential.py": "d7e7c42c6eb92202e52524447328521c71c3a1050b4e93b6acc5adf9a16a85ce"
+  }
+}

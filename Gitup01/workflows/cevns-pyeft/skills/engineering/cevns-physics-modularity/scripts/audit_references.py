@@ -1,4 +1,4 @@
-"""Read-only audit of this skill's source-symbol anchors and local links.
+"""Read-only audit of modularity and shared phase source anchors and links.
 
 This does not import the physics package or execute its models. It cannot
 validate physical correctness, convergence, or external provenance.
@@ -92,6 +92,7 @@ def audit_frontmatter(skill: Path) -> list[str]:
 def audit(repo: Path, skill: Path, verbose: bool = False) -> list[str]:
     errors: list[str] = []
     documents = [skill / "SKILL.md"] + sorted((skill / "references").glob("*.md"))
+    documents += sorted((repo / "workflows/_shared/references/phase").glob("*.md"))
     for filename in REQUIRED_REFERENCES:
         if not (skill / "references" / filename).is_file():
             errors.append("Missing reference: " + filename)

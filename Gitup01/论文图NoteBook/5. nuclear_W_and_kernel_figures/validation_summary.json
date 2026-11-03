@@ -1,0 +1,9 @@
+{
+  "nucleon_contraction_max_scaled_error": 3.199444225276816e-15,
+  "all_channel_sum_max_scaled_error": 1.7077858681272634e-15,
+  "cross_section_conversion_max_relative_error": 2.1653779823006618e-16,
+  "kernel_hermiticity_max_scaled_error": 1.287791713982698e-16,
+  "pure_mu_cross_section_interference_max_relative": 4.905745854469513e-16,
+  "pure_mu_kernel_interference_max_relative": 3.8195503902329317e-16,
+  "pure_mu_cross_section_interference_max_abs_cm2_per_keV": 1.044048714879764e-53
+}

@@ -1,0 +1,1331 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "P04-P10 phase result (structure, not scientific approval)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "phase",
+    "capability_id",
+    "workspace",
+    "plan_status",
+    "machine_gate",
+    "human_gate",
+    "scope_ref",
+    "input_refs",
+    "input_fingerprint",
+    "evidence_refs",
+    "decision_refs",
+    "approval_refs",
+    "artifacts",
+    "checks",
+    "handoff"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "phase": {
+      "enum": [
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10"
+      ]
+    },
+    "capability_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "workspace": {
+      "enum": [
+        "canonical",
+        "isolated_candidate"
+      ]
+    },
+    "plan_status": {
+      "enum": [
+        "READY",
+        "DRAFT",
+        "BLOCKED",
+        "NOT_REQUESTED"
+      ]
+    },
+    "machine_gate": {
+      "enum": [
+        "NOT_RUN",
+        "PASS",
+        "BLOCKED"
+      ]
+    },
+    "human_gate": {
+      "enum": [
+        "NOT_REVIEWED",
+        "APPROVED",
+        "REVISE",
+        "BLOCKED"
+      ]
+    },
+    "scope_ref": {
+      "type": "string"
+    },
+    "input_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "uniqueItems": true
+    },
+    "input_fingerprint": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "uniqueItems": true
+    },
+    "decision_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "uniqueItems": true
+    },
+    "approval_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "uniqueItems": true
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "sha256",
+          "role"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "role": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        }
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "status",
+          "command",
+          "result_ref"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "status": {
+            "enum": [
+              "NOT_RUN",
+              "PASS",
+              "BLOCKED"
+            ]
+          },
+          "command": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "result_ref": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        }
+      }
+    },
+    "handoff": {
+      "type": "object"
+    }
+  },
+  "$defs": {
+    "nonempty": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        {
+          "type": "object",
+          "minProperties": 1
+        },
+        {
+          "type": "array",
+          "minItems": 1
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "plan_status": {
+            "const": "NOT_REQUESTED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "machine_gate": {
+            "const": "NOT_RUN"
+          },
+          "human_gate": {
+            "const": "NOT_REVIEWED"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "workspace": {
+            "const": "isolated_candidate"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "human_gate": {
+            "not": {
+              "const": "APPROVED"
+            }
+          },
+          "approval_refs": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "human_gate": {
+            "const": "APPROVED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "workspace": {
+            "const": "canonical"
+          },
+          "machine_gate": {
+            "const": "PASS"
+          },
+          "approval_refs": {
+            "minItems": 1
+          },
+          "decision_refs": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "machine_gate": {
+            "const": "PASS"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "scope_ref": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "input_refs": {
+            "minItems": 1
+          },
+          "input_fingerprint": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "evidence_refs": {
+            "minItems": 1
+          },
+          "artifacts": {
+            "minItems": 1
+          },
+          "checks": {
+            "minItems": 1,
+            "items": {
+              "properties": {
+                "status": {
+                  "const": "PASS"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "const": "P04"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "handoff": {
+            "properties": {
+              "theory_scope": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "coefficient_convention": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "nuclear_responses": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "coverage": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "runtime_binding": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "external_evidence_limits": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "const": "P04"
+          },
+          "machine_gate": {
+            "const": "PASS"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "handoff": {
+            "required": [
+              "theory_scope",
+              "coefficient_convention",
+              "nuclear_responses",
+              "coverage",
+              "runtime_binding",
+              "external_evidence_limits"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "const": "P05"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "handoff": {
+            "properties": {
+              "process_and_mass": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "kinematics": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "cross_section_api": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "units_and_axes": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "support_and_limits": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "benchmark": {
+                "$ref": "#/$defs/nonempty"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "const": "P05"
+          },
+          "machine_gate": {
+            "const": "PASS"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "handoff": {
+            "required": [
+              "process_and_mass",
+              "kinematics",
+              "cross_section_api",
+              "units_and_axes",
+              "support_and_limits",
+              "benchmark"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "const": "P06"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "handoff": {
+            "properties": {
+              "representation": {
+                "enum": [
+                  "conditional_density",
+                  "bin_probability",
+                  "migration_matrix",
+                  "deterministic"
+                ]
+              },
+              "unit": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "normalization": {
+                "enum": [
+                  "integral_one",
+                  "sum_at_most_one",
+                  "explicit_rule"
+                ]
+              },
+              "included_selections": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "uniqueItems": true
+              },
+              "axes": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "response_definition": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "selection_ownership": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "validity_domain": {
+                "$ref": "#/$defs/nonempty"
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "required": [
+                    "representation"
+                  ],
+                  "properties": {
+                    "representation": {
+                      "const": "bin_probability"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "unit": {
+                      "const": "1"
+                    },
+                    "normalization": {
+                      "const": "sum_at_most_one"
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "required": [
+                    "representation"
+                  ],
+                  "properties": {
+                    "representation": {
+                      "const": "conditional_density"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "normalization": {
+                      "const": "integral_one"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "const": "P06"
+          },
+          "machine_gate": {
+            "const": "PASS"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "handoff": {
+            "required": [
+              "representation",
+              "unit",
+              "normalization",
+              "included_selections",
+              "axes",
+              "response_definition",
+              "selection_ownership",
+              "validity_domain"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "const": "P07"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "handoff": {
+            "properties": {
+              "normalization_ledger": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "output_contract": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "numerics_and_convergence": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "reference_comparison": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "freeze_scope": {
+                "$ref": "#/$defs/nonempty"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "const": "P07"
+          },
+          "machine_gate": {
+            "const": "PASS"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "handoff": {
+            "required": [
+              "normalization_ledger",
+              "output_contract",
+              "numerics_and_convergence",
+              "reference_comparison",
+              "freeze_scope"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "const": "P08"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "handoff": {
+            "properties": {
+              "representation": {
+                "enum": [
+                  "reconstructed_spectrum_cumulative",
+                  "detector_response_matrix",
+                  "eft_quadratic_coefficient_kernel",
+                  "other_surrogate"
+                ]
+              },
+              "backend": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "basis_scope": {
+                "enum": [
+                  "full_model",
+                  "declared_subspace",
+                  "not_applicable"
+                ]
+              },
+              "parameter_domain": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "state_treatment": {
+                "enum": [
+                  "fixed_parameter_independent",
+                  "energy_dependent",
+                  "parameter_dependent",
+                  "not_applicable"
+                ]
+              },
+              "slow_reference": {
+                "type": "object",
+                "required": [
+                  "report_ref",
+                  "sha256",
+                  "approval_ref"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "report_ref": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "approval_ref": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              },
+              "cache_dependencies": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "validation_summary": {
+                "$ref": "#/$defs/nonempty"
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "required": [
+                    "backend"
+                  ],
+                  "properties": {
+                    "backend": {
+                      "const": "interface_kernel_v1"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "state_treatment": {
+                      "const": "fixed_parameter_independent"
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "required": [
+                    "representation"
+                  ],
+                  "properties": {
+                    "representation": {
+                      "const": "eft_quadratic_coefficient_kernel"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "basis_scope": {
+                      "enum": [
+                        "full_model",
+                        "declared_subspace"
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "const": "P08"
+          },
+          "machine_gate": {
+            "const": "PASS"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "handoff": {
+            "required": [
+              "representation",
+              "backend",
+              "basis_scope",
+              "parameter_domain",
+              "state_treatment",
+              "slow_reference",
+              "cache_dependencies",
+              "validation_summary"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "const": "P09"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "handoff": {
+            "properties": {
+              "channels": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "representation",
+                    "processing",
+                    "design",
+                    "likelihood",
+                    "requires_covariance"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "representation": {
+                      "enum": [
+                        "binned_counts",
+                        "binned_density",
+                        "unbinned_events"
+                      ]
+                    },
+                    "processing": {
+                      "enum": [
+                        "raw",
+                        "background_subtracted",
+                        "other"
+                      ]
+                    },
+                    "design": {
+                      "enum": [
+                        "single_sample",
+                        "on_off",
+                        "control_region",
+                        "joint"
+                      ]
+                    },
+                    "likelihood": {
+                      "enum": [
+                        "poisson",
+                        "gaussian",
+                        "other"
+                      ]
+                    },
+                    "requires_covariance": {
+                      "type": "boolean"
+                    },
+                    "covariance_ref": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "allOf": [
+                    {
+                      "if": {
+                        "properties": {
+                          "requires_covariance": {
+                            "const": true
+                          }
+                        }
+                      },
+                      "then": {
+                        "required": [
+                          "covariance_ref"
+                        ]
+                      }
+                    },
+                    {
+                      "if": {
+                        "properties": {
+                          "processing": {
+                            "const": "background_subtracted"
+                          }
+                        }
+                      },
+                      "then": {
+                        "properties": {
+                          "likelihood": {
+                            "not": {
+                              "const": "poisson"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "prediction_binding": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "required_inputs": {
+                "type": "object",
+                "required": [
+                  "available",
+                  "sources",
+                  "missing"
+                ],
+                "properties": {
+                  "available": {
+                    "type": "boolean"
+                  },
+                  "sources": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "uniqueItems": true
+                  },
+                  "missing": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "uniqueItems": true
+                  }
+                }
+              },
+              "nuisance_model": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "inference": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "claim_level": {
+                "enum": [
+                  "internal",
+                  "legacy_regression",
+                  "approximate",
+                  "official_likelihood"
+                ]
+              },
+              "benchmark": {
+                "$ref": "#/$defs/nonempty"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "const": "P09"
+          },
+          "machine_gate": {
+            "const": "PASS"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "handoff": {
+            "required": [
+              "channels",
+              "prediction_binding",
+              "required_inputs",
+              "nuisance_model",
+              "inference",
+              "claim_level",
+              "benchmark"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "const": "P10"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "handoff": {
+            "properties": {
+              "delivery_scope": {
+                "type": "object",
+                "required": [
+                  "mode",
+                  "target",
+                  "completion"
+                ],
+                "properties": {
+                  "mode": {
+                    "enum": [
+                      "dataset_onboarding",
+                      "theory_audit",
+                      "theory_change",
+                      "capability_change"
+                    ]
+                  },
+                  "target": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "completion": {
+                    "enum": [
+                      "complete",
+                      "partial"
+                    ]
+                  }
+                }
+              },
+              "capability_matrix": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "requested",
+                    "required_for_claim",
+                    "machine_gate",
+                    "human_gate",
+                    "result_ref"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "requested": {
+                      "type": "boolean"
+                    },
+                    "required_for_claim": {
+                      "type": "boolean"
+                    },
+                    "machine_gate": {
+                      "enum": [
+                        "NOT_RUN",
+                        "PASS",
+                        "BLOCKED"
+                      ]
+                    },
+                    "human_gate": {
+                      "enum": [
+                        "NOT_REVIEWED",
+                        "APPROVED",
+                        "REVISE",
+                        "BLOCKED"
+                      ]
+                    },
+                    "result_ref": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "minLength": 1,
+                          "pattern": "\\S"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "allOf": [
+                    {
+                      "if": {
+                        "properties": {
+                          "requested": {
+                            "const": false
+                          }
+                        }
+                      },
+                      "then": {
+                        "properties": {
+                          "required_for_claim": {
+                            "const": false
+                          },
+                          "machine_gate": {
+                            "const": "NOT_RUN"
+                          },
+                          "human_gate": {
+                            "const": "NOT_REVIEWED"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "validation_levels": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "runtime_integration": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "final_claim": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "limitations": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "const": "P10"
+          },
+          "machine_gate": {
+            "const": "PASS"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "handoff": {
+            "required": [
+              "delivery_scope",
+              "capability_matrix",
+              "validation_levels",
+              "runtime_integration",
+              "final_claim",
+              "limitations"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "const": "P08"
+          },
+          "workspace": {
+            "const": "canonical"
+          },
+          "machine_gate": {
+            "const": "PASS"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "handoff": {
+            "properties": {
+              "slow_reference": {
+                "properties": {
+                  "approval_ref": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "const": "P09"
+          },
+          "machine_gate": {
+            "const": "PASS"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "handoff": {
+            "properties": {
+              "required_inputs": {
+                "properties": {
+                  "available": {
+                    "const": true
+                  },
+                  "sources": {
+                    "minItems": 1
+                  },
+                  "missing": {
+                    "maxItems": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "const": "P10"
+          },
+          "machine_gate": {
+            "const": "PASS"
+          },
+          "handoff": {
+            "required": [
+              "delivery_scope"
+            ],
+            "properties": {
+              "delivery_scope": {
+                "required": [
+                  "completion"
+                ],
+                "properties": {
+                  "completion": {
+                    "const": "complete"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "handoff": {
+            "properties": {
+              "capability_matrix": {
+                "items": {
+                  "if": {
+                    "properties": {
+                      "required_for_claim": {
+                        "const": true
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "requested": {
+                        "const": true
+                      },
+                      "machine_gate": {
+                        "const": "PASS"
+                      },
+                      "result_ref": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "const": "P10"
+          },
+          "workspace": {
+            "const": "canonical"
+          },
+          "machine_gate": {
+            "const": "PASS"
+          },
+          "handoff": {
+            "required": [
+              "delivery_scope"
+            ],
+            "properties": {
+              "delivery_scope": {
+                "required": [
+                  "completion"
+                ],
+                "properties": {
+                  "completion": {
+                    "const": "complete"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "handoff": {
+            "properties": {
+              "capability_matrix": {
+                "items": {
+                  "if": {
+                    "properties": {
+                      "required_for_claim": {
+                        "const": true
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "human_gate": {
+                        "const": "APPROVED"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

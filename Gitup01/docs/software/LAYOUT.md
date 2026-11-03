@@ -12,7 +12,7 @@ Scope: 当前运行程序、资源、工具和文档的职责。
 | tests/ | 行为/单元/集成检查；helpers保存等值提取的测试参数 |
 | docs/ | 当前说明与仍有效物理依据 |
 | tools/ | 构建、资源管理、文档检查与脚手架工具 |
-| schemas/ | 现有契约 |
+| workflows/_shared/ | [共同输入规范](../../workflows/_shared/INPUT_STANDARD.md)、实验输入与工作记录格式、模板及审核规则 |
 | workflows/ | 接入流程和科学决策；不进入runtime或wheel |
 | outputs/ | 本地结果、诊断和核缓存；不作为隐式实验输入 |
 

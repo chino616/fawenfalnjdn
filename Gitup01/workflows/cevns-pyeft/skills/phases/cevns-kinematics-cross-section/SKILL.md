@@ -1,67 +1,53 @@
 ---
 name: cevns-kinematics-cross-section
-description: Phase 5 elastic kinematics and differential-cross-section routing with explicit units, support, endpoint tests and model validity.
+description: Establish P05 elastic kinematics and differential-cross-section contracts with explicit masses, state coordinates, units, support and model validity.
 ---
 
-# Phase 5 — Kinematics / Cross Section
+# P05 — 运动学与微分截面合同
 
-用户可见回复执行 `workflows/_shared/policies/interaction.md`：先回答本轮问题；仅在相关时说明实际结果、影响、停下原因和下一步。下方字段用于核对，不是回复模板。
-隔离自动运行执行 `workflows/_shared/policies/automation.md`：本阶段产物只是候选；下方人工批准要求约束正式导入，不得在候选目录内写成正式 Human Gate。
+从 Master 或相关理论变更流程进入。遵循
+[阶段交接合同](../../../../_shared/references/phase/PHASE_EXECUTION_CONTRACT.md)，
+使用 [P05 表单](../../../../_shared/templates/phase/P05_KINEMATICS_CROSS_SECTION_TEMPLATE.md)
+和 [当前 API 参考](../../../../_shared/references/phase/P05_KINEMATICS_CROSS_SECTION_CODE_REFERENCE.md)。
 
-## Ownership
+## 目标与输入
 
-```text
-E_nu_min(T)
-T_max(E_nu)
-physical support
-dsigma/dT routing
-unit conversion
-comparison model validity
-```
+把 P04 已明确的理论路线落实为 P07 可消费的截面接口。
+所需输入是过程、靶核质量约定、能量/反冲变量、系数参数与入射态合同。
+不重复批准未改变的 P04 内容，不加载通量或乘曝光、核数、效率。
 
-不做 source normalization、exposure 或 detector folding。
+## 1. 固定物理与接口
 
-## Step 1 — Pre-code review
+展示 Eν_min(T)、T_max(Eν)、支撑条件、截面公式及来源。
+将精确运动学支撑与允许域内截面公式的近似分别记录。
+核对同一个质量定义是否用于运动学、核响应和相空间因子。
+明确：
+- Eν/T/核质量单位、单次单位转换 owner、输出 dσ/dT 单位。
+- incident_state 的能量坐标、particle_kind、flavor 轴、末态求和。
+- 标量/数组形状、非法输入与合法但域外输入的区别。
+- T=0/小反冲是否存在模型本身的奇异性及积分 cutoff；不强求所有模型在零点有限。
+- full-response 与 SM 比较分支的参数范围。
 
-展示实际公式/公共 API，并固定：
+存在新选择时取得 Physics Decision（已有入口为 `APPROVE KINEMATICS/CROSS-SECTION ROUTE`）。
 
-```text
-E_nu unit
-T unit
-target mass convention
-dsigma/dT output unit
-support condition
-full_response vs comparison model
-```
+## 2. 绑定现有实现
 
-如果存在多个 kinematic conventions/approximations，列出选项。
+优先核对 InteractionModel.dsigma_dT、DifferentialCrossSection 与 ElasticKinematics。
+Li2026LegacyInteraction 只在其实际核质量、响应与粒子处理约定适用时复用。
+薄 adapter 可桥接单位、靶 key 和调用形状；不得在 adapter 内重定义共享物理或加入归一化。
+非弹性过程、不同核质量或新理论若当前接口不能表达，列为扩展或 BLOCKED。
 
-### ⛔ Physics Decision
+## 3. 验证
 
-```text
-1 批准当前运动学与截面路线（回复 APPROVE KINEMATICS/CROSS-SECTION ROUTE）
-2 修改模型或单位约定
-3 查看共用截面代码
-4 暂停本阶段
-```
+至少提供一个可独立复算的端点及逆关系；检查端点两侧、负/零能量、
+小反冲、数组坐标与单位 Jacobian。用匹配的积分变量检查单位转换只发生一次。
+按声明范围验证 SM、非零 EFT、复数/非对角 flavor 点和模型拒绝行为。
+物理总截面在适用域应满足相应实数性/非负性；保留干涉分项的符号。
 
-## Step 2 — Implement/route
+## 4. 交付
 
-优先复用 shared differential cross-section。实验 adapter 只负责 target/source-compatible wrapper、kinematic bounds 和单位桥接。
-
-## Tests
-
-```text
-T=0 / small recoil behavior
-endpoint Tmax
-inverse relation Enu_min
-below/above support -> zero/error per contract
-unit conversion
-finite/nonnegative SM where appropriate
-full_response with EFT coefficients
-SM-only comparison rejects unsupported EFT
-```
-
-## Gate P05 + Post review
-
-展示至少一个可复算 endpoint 数值和代码 symbol，Machine PASS 后再让用户 APPROVE。
+handoff：
+`process_and_mass`、`kinematics`、`cross_section_api`、`units_and_axes`、
+`support_and_limits`、`benchmark`。
+提交公式—symbol—数值的对应关系及检查结果，完成 P05 结果审核后返回 Master。
+P07 使用同一截面合同；P08 不得为了加速另换截面定义。

@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "slow-only-completion",
+      "input": "只接入逐箱前向预测，本次不做 Fast 或统计。Slow 已验证并获得当前版本接受。",
+      "expected_behaviors": [
+        "skip_unrequested_fast_statistics_without_fake_pass",
+        "validate_requested_forward_at_p10"
+      ]
+    },
+    {
+      "id": "slow-statistics-no-fast",
+      "input": "直接用已验证的 Slow 做统计，Fast 因入射态依赖能量而不可用。",
+      "expected_behaviors": [
+        "p09_uses_slow_without_p08",
+        "preserve_fast_blocker_and_original_scope"
+      ]
+    },
+    {
+      "id": "accepted-response-probabilities",
+      "input": "官方迁移矩阵每行和为 0.6，文档说明已包含效率与窗外损失。",
+      "expected_behaviors": [
+        "interpret_matrix_units_axes_and_selection_provenance",
+        "do_not_renormalize_loss_or_duplicate_efficiency"
+      ]
+    },
+    {
+      "id": "deterministic-response",
+      "input": "目标明确采用理想无展宽映射，请处理 P06。",
+      "expected_behaviors": [
+        "verify_approved_approximation",
+        "do_not_require_positive_artificial_width"
+      ]
+    },
+    {
+      "id": "required-covariance-only",
+      "input": "采用来源明确的独立 Poisson ON/OFF 计数模型，没有提供协方差文件。",
+      "expected_behaviors": [
+        "separate_processing_design_and_likelihood",
+        "require_only_model_necessary_inputs",
+        "do_not_invent_covariance"
+      ]
+    },
+    {
+      "id": "official-input-gap",
+      "input": "我要复现官方 likelihood，目前只有论文总事件数和显著性。",
+      "expected_behaviors": [
+        "official_likelihood_remains_blocked",
+        "no_silent_approximate_substitution"
+      ]
+    },
+    {
+      "id": "complex-restricted-fast",
+      "input": "只扫描已声明的两个复 Wilson 系数，其他系数固定；希望建立该子空间的 Fast。",
+      "expected_behaviors": [
+        "verify_complete_declared_subspace_and_interferences",
+        "reject_out_of_domain_coefficients",
+        "compare_each_bin_with_frozen_slow"
+      ]
+    },
+    {
+      "id": "statistics-only-resource-change",
+      "input": "仅更新观测值和误差文件，源、靶、响应和模型不变。",
+      "expected_behaviors": [
+        "invalidate_affected_statistics_and_claim",
+        "preserve_independent_physical_kernel"
+      ]
+    },
+    {
+      "id": "physical-nuisance-change",
+      "input": "统计拟合需要扫描会改变淬火形状的 nuisance。",
+      "expected_behaviors": [
+        "map_forward_response_dependency",
+        "validate_recomputation_or_fast_domain",
+        "do_not_replace_shape_with_unjustified_normalization_pull"
+      ]
+    },
+    {
+      "id": "candidate-is-not-approval",
+      "input": "隔离候选的所有数值测试都通过，用户还没有审查。",
+      "expected_behaviors": [
+        "candidate_human_gate_not_approved",
+        "no_canonical_promotion"
+      ]
+    },
+    {
+      "id": "missing-required-fast",
+      "input": "原目标明确需要 Fast 扫描，目前只有 Slow 已完成。请给最终状态。",
+      "expected_behaviors": [
+        "report_partial_for_original_goal",
+        "do_not_silently_drop_required_fast"
+      ]
+    },
+    {
+      "id": "theory-only-scope",
+      "input": "只核查共享核响应的基底约定，不新增任何数据集。",
+      "expected_behaviors": [
+        "route_theory_extension",
+        "use_relevant_p04_p05_p10_scope",
+        "do_not_require_unrelated_onboarding"
+      ]
+    }
+  ]
+}

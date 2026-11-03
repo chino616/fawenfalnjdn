@@ -4,7 +4,7 @@
 
 | 文件 | 检查器怎样使用 |
 |---|---|
-| [config/PROTECTED_FILES.json](config/PROTECTED_FILES.json) | `protected_errors` 逐项核对 SHA256，并枚举 `cevns_pyeft/data/configs/schemas/examples` 的文件，报告未登记新增项 |
+| [config/PROTECTED_FILES.json](config/PROTECTED_FILES.json) | `protected_errors` 逐项核对 SHA256，并枚举 `cevns_pyeft/data/configs/examples` 与 `workflows/_shared/schemas/experiment-input`，报告未登记新增项 |
 | [config/HISTORICAL_PATH_EXCEPTIONS.json](config/HISTORICAL_PATH_EXCEPTIONS.json) | 识别允许保留的历史定位符，不把它们误认成新的活动路径 |
 | [config/README.md](config/README.md) | 配置格式、来源及消费者说明 |
 

@@ -20,7 +20,7 @@ concerns experiment integration.
 For workflow-assisted work, the task-intent mapping is owned by
 `workflows/cevns-pyeft/router/routes.yaml`. New/redefined dataset onboarding uses
 the physics phase workflow; ordinary maintenance, theory/resource/capability changes,
-archive lifecycle and Skill QA follow the selected definition and its relevant gates.
+archive lifecycle, repository/README maintenance and Skill QA follow the selected definition and its relevant gates.
 An experiment name alone does not select onboarding.
 
 Read the following files before any phase workflow or Skill:
@@ -29,6 +29,7 @@ Read the following files before any phase workflow or Skill:
 workflows/AGENTS.md
 workflows/cevns-pyeft/AGENTS.md
 workflows/_shared/README.md
+workflows/_shared/INPUT_STANDARD.md
 ```
 
 Then start only through the Master Skill:
@@ -41,6 +42,11 @@ The Master Skill owns task scope, dataset/material ambiguity handling, input
 mode, phase transitions, and the gate state. Do not bypass it by directly
 entering an individual phase Skill or by treating local papers, placeholder
 directories, or old code as user-approved physics scope.
+
+For tasks that inspect or prepare experiment inputs, the shared input standard
+is the common review basis. Identify applicable formats, units, coordinates,
+normalization and provenance, then record which checks the actual reader ran
+and which require scientific review. Shared templates contain no dataset values.
 
 During physics onboarding, do not create or modify production experiment code before the Master Skill has
 cleared the relevant physics gates and the current phase explicitly allows the
@@ -74,6 +80,36 @@ workflows/cevns-pyeft/
 ```
 
 as documentation-only material and leave it isolated from the runtime package.
+
+## File changes and README synchronization
+
+The user-facing [Skill library](cevns_pyeft/SKILLS.md) lists every catalog entry
+and owns the add/edit/move/deprecate/remove checklist. Skill changes must update
+the catalog, actual consumers, owning READMEs and its generated table in the
+same task. Use `python -B tools/update_skill_library.py --write` explicitly;
+the default/`--check` is read-only and is included in Skill-pack validation.
+Do not count WORKFLOW definitions, shared templates or backup files as Skills.
+
+All repository work follows
+[file lifecycle](workflows/_shared/policies/file-lifecycle.md): create, delete,
+move, rename or repurpose files together with their owning README, parent
+navigation and actual consumers/registrations. Maintain these descriptions in
+the same authorized task without waiting for a separate documentation request.
+Remove or replace a deleted file's entry; retain a README while its directory
+still has active contents. Record the file-to-README mapping and check affected
+links before reporting completion. This is an executor responsibility; the
+repository does not run an automatic README-editing filesystem watcher.
+
+For bulk cleanup or a Git-based README review, use the explicit repository
+maintenance route in routes.yaml and its workflow definition. Plan from a
+verified Git revision or a saved file snapshot, group tasks by directory, and
+sync only explicitly selected managed inventory blocks. Preserve manual prose
+and report remaining references; do not initialize Git or stage/commit/push as
+an implicit consequence of documentation maintenance.
+
+This rule also applies to ordinary maintenance without activating experiment
+onboarding. Existing physics/write authorization and historical evidence
+boundaries remain in effect.
 
 ## Runtime isolation
 

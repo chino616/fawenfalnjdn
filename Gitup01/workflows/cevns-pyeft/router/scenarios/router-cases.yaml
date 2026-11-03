@@ -84,6 +84,30 @@
       "input": "继续唯一已批准 dataset_id=CsI2021 的 P06，从现有有效记录恢复。",
       "expected_request_kind": "existing_dataset",
       "expected_action": "route"
+    },
+    {
+      "id": "theory-readonly-audit",
+      "input": "仅审核共享核响应的基底约定，不新增数据集，不改变公式；外部源表暂不可用。",
+      "expected_request_kind": "theory_extension",
+      "expected_action": "route"
+    },
+    {
+      "id": "bulk-delete-readmes",
+      "input": "大量删减和移动文件后，按 Git 差异维护目录 README 与导航，保持实验语义不变。",
+      "expected_request_kind": "repository_maintenance",
+      "expected_action": "route"
+    },
+    {
+      "id": "snapshot-readme-maintenance",
+      "input": "这个文件夹没有 Git，请先保存文件快照，再检查删减后的 README 和所属目录说明。",
+      "expected_request_kind": "repository_maintenance",
+      "expected_action": "route"
+    },
+    {
+      "id": "deactivate-is-scientific-lifecycle",
+      "input": "把 Ar2020 从默认可加载实验中归档，保留历史记录，并同步 README。",
+      "expected_request_kind": "archive_maintenance",
+      "expected_action": "route"
     }
   ]
 }

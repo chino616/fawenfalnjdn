@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "comparison": "bitwise equal public Slow outputs",
+  "grid": {
+    "wc_triplets": "same FV benchmark",
+    "include_sm": true,
+    "sin2thetaW": 0.23873,
+    "n_er": 5,
+    "n_enu": 8,
+    "n_pe_bin": 4,
+    "pe_step": 3.0
+  },
+  "elapsed_seconds": 16.83996969999862,
+  "stats": {
+    "kernel_hits": 18,
+    "kernel_misses": 18,
+    "sigma_hits": 720,
+    "sigma_misses": 36
+  },
+  "source_sha256": {
+    "experiments/registry.py": "50b0ea299899cb38a8910d631f174180c97a9dd00de65c0946b50bd711d5b318",
+    "experiments/coherent/sns.py": "9ea97baf50e46a158680b556f9fe514502fd8ca7386d8e9ea36ed07681e7a764",
+    "experiments/coherent/slow_counts_csi2021.py": "73d793e61dfa190af26ca01b1381ba4b019da07b0b95f25a5a09a99f595773c9",
+    "rates/counts.py": "776630b714f3cc0b03fab897a4b4a34d25812744728654f38c4ab8ad2ea17733",
+    "rates/differential.py": "d7e7c42c6eb92202e52524447328521c71c3a1050b4e93b6acc5adf9a16a85ce",
+    "foundation/constants.py": "0bb51033d1ca64e18a7a7bb0fd4cce38bc679558dd7392740f72d4683276cd44",
+    "foundation/units.py": "053e4c8d9e47cd32ba4bacbb33da8367c02a32aca02c16c1d6d4e4a7bba6640a",
+    "sources/state.py": "39ae30776f58bb19c15e842317940cb3aece2040eabb19046d01842e55815100",
+    "theory/kinematics.py": "2fcdeae7b83a1183c1215461e8d1f91badda142cb78ba7cb0fbb25367c69bd16",
+    "nuclear/response.py": "fc94a1582b11e58113e2f192be9733dfaf5b27b2604fe075da9e9f56b94d776f",
+    "theory/li2026/amplitude.py": "40a2bbfcb60716da67ff3d5182d5af6dd075bcd7dfccf9a49b9b3b0a8a9b7aed",
+    "theory/li2026/cross_section.py": "adc13f3e1acc9b88b85fc033a6117cc2f99a77d1bc88e66368e416e4f5304393",
+    "theory/li2026/flavor.py": "66c84c2f2dad58ebba132cb768db36c8661a3e053b8cb74900d47df6cffa48c4",
+    "theory/li2026/left_to_ci.py": "56027d356737d85de4ae22ba3b303ade16e1c0163887bbedbc53ac2f0d46ae48",
+    "theory/li2026/responses.py": "25d63e8c923d900a42c67f43ab0fcef40bf39e528767c949a114b37d02135dbe",
+    "theory/li2026/lec.py": "9c981d8705ba6a17829c75e81b93ce6f85fdbcc290faf5bf64edde9dc8867691",
+    "theory/li2026/operators.py": "c1932f6de64333b3a344fc84b7f5ec19efddbbf9a33db2aa9e245df702609ff4"
+  }
+}

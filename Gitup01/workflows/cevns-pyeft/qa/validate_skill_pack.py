@@ -6,6 +6,7 @@ router nor a physics validator. It does not import runtime code or grant approva
 from __future__ import annotations
 import argparse
 import hashlib
+import importlib.util
 import json
 import re
 from pathlib import Path
@@ -205,7 +206,7 @@ def check_links(repo, documents, historical):
             target = unquote(target.split('#', 1)[0])
             if target and not (path.parent / target).resolve().exists():
                 errors.append(f'link: {rel} -> {target}')
-        if 'src/cevns_pyeft' in text:
+        if 'src/cevns_pyeft' in text or 'PYTHONPATH=src' in text:
             errors.append(f'path: stale src layout in {rel}')
         if 'workflows/experiment-integration/' in text and rel not in historical_paths:
             errors.append(f'path: stale active workflow path in {rel}')
@@ -226,11 +227,19 @@ def protected_errors(repo):
             actual = hashlib.file_digest(handle, 'sha256').hexdigest()
         if actual != expected:
             errors.append(f'protected: changed {relative}')
-    for area in ['cevns_pyeft', 'data', 'configs', 'schemas', 'examples']:
+    for area in ['cevns_pyeft', 'data', 'configs', 'examples', 'workflows/_shared/schemas/experiment-input']:
         for path in (repo / area).rglob('*'):
             if path.is_file() and '__pycache__' not in path.parts and path.relative_to(repo).as_posix() not in payload['files']:
                 errors.append(f'protected: unexpected addition {path.relative_to(repo)}')
     return errors
+
+
+def skill_library_errors(repo, catalog, routes, definitions):
+    tool = repo / 'tools/update_skill_library.py'
+    spec = importlib.util.spec_from_file_location('skill_library_validator', tool)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.check_library(repo, catalog=catalog, routes=routes, definitions=definitions)
 
 
 def validate(repo):
@@ -248,7 +257,9 @@ def validate(repo):
         except (ValueError, KeyError) as exc:
             errors.append(f'workflow: {path}: {exc}')
     errors.extend(check_routes(repo, catalog, routes, definitions))
+    errors.extend(skill_library_errors(repo, catalog, routes, definitions))
     documents = [repo / 'AGENTS.md', repo / 'workflows/AGENTS.md', repo / 'workflows/README.md']
+    documents.append(repo / 'cevns_pyeft/SKILLS.md')
     documents += list((repo / PROJECT).rglob('*.md')) + list((repo / 'workflows/_shared').rglob('*.md'))
     errors.extend(check_links(repo, documents, historical))
     ids = {entry['id'] for entry in catalog['skills']}
@@ -257,15 +268,28 @@ def validate(repo):
             if sid not in ids:
                 errors.append(f'workflow: unresolved Skill ID {sid} in {path.relative_to(repo)}')
     for name in ['scientific-integrity', 'write-authorization', 'evidence-and-approval', 'archive-isolation',
-                 'automation', 'interaction', 'dataset-layout', 'progress-continuity']:
+                 'automation', 'interaction', 'dataset-layout', 'progress-continuity', 'file-lifecycle']:
         if not (repo / 'workflows/_shared/policies' / (name + '.md')).is_file():
             errors.append(f'policy: missing owner {name}')
-    for path in (repo / 'workflows/_shared/schemas').glob('*.yaml'):
+    schema_root = repo / 'workflows/_shared/schemas'
+    schema_paths = list(schema_root.glob('*.yaml')) + list(schema_root.rglob('*.schema.json'))
+    for path in sorted(schema_paths):
         schema = read_json(path)
         if schema.get('$schema') != 'https://json-schema.org/draft/2020-12/schema' or schema.get('type') != 'object':
-            errors.append(f'schema: invalid schema declaration {path.name}')
+            errors.append(f'schema: invalid schema declaration {path.relative_to(schema_root)}')
+    # Named CSV contracts are a format registry, not JSON Schema documents.
+    csv_formats = read_json(schema_root / 'experiment-input/csv_contracts.json')
+    for name, rules in csv_formats.items():
+        columns = rules.get('required_columns', [])
+        if not columns or any(not isinstance(column, str) or not column for column in columns) or len(columns) != len(set(columns)):
+            errors.append(f'schema: invalid named CSV format columns {name}')
     cases = read_json(repo / PROJECT / 'router/scenarios/router-cases.yaml')['cases']
     kinds = {route['request_kind'] for route in routes['routes']}
+    request_schema = read_json(schema_root / 'request.schema.yaml')
+    declared_kinds = set(request_schema['properties']['request_kind']['enum'])
+    supporting_kinds = set(request_schema['properties']['supporting_routes']['items']['enum'])
+    if declared_kinds != kinds or supporting_kinds != kinds:
+        errors.append('request-schema: route enums differ from the authoritative route table')
     for case in cases:
         if case['expected_request_kind'] is not None and case['expected_request_kind'] not in kinds:
             errors.append(f'fixture: unresolved expected route {case["id"]}')

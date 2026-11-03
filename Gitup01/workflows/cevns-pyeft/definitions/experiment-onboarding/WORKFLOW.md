@@ -1,5 +1,7 @@
 # experiment-onboarding
 
+材料与文件检查以[共同输入规范](../../../_shared/INPUT_STANDARD.md)为依据，按本次目标选择适用字段、格式和真实消费者；填写件与审核结果按 dataset 保存。
+
 <!-- workflow-metadata: orchestration, not Skill frontmatter -->
 ```json
 {
@@ -50,12 +52,16 @@ does not require a complete contract. Keep evidence, semantic approval and write
    This handoff may be in conversation or an already authorized temporary directory; formal P00–P05
    and run directories are persisted only after Phase 0 scope and exact write authorization,
    with authority records written before the progress index. No formal-file prerequisite cycle exists.
-8. Execute only the required phase Skills in catalog phase order. P08/P09 are optional according
+8. Use catalog phase order for the default review sequence and the
+   [phase execution contract](../../../_shared/references/phase/PHASE_EXECUTION_CONTRACT.md)
+   for actual dependencies. P06 analysis can start when its own inputs are ready. P08/P09 are optional according
    to the accepted claim. Each phase: review required evidence -> pre-code physics decision ->
    authorized implementation -> machine checks -> human review -> authoritative records -> checkpoint.
    Missing inputs return to targeted intake and then the same phase; do not restart unrelated phases.
 9. P07 establishes a direct-integral Slow reference and requires its explicit human freeze before
-   P08. Each Fast representation has its own gate. P09 must honor actual statistical data semantics.
+   P08. Each Fast representation has its own gate. P09 can use validated, accepted Slow directly;
+    only a chosen Fast prediction adds its P08 dependency. P09 distinguishes data representation,
+    processing, measurement design and likelihood; missing inputs block only models that require them.
 10. P10 records validated capabilities, limitations and final scientific claim; a requested packaging
     check may hand off to release-validation. FULLY_INTEGRATED requires final human acceptance and
     actual canonical validation, never just a progress-index value.
@@ -67,7 +73,8 @@ contract; it neither recollects evidence nor implements physics. It records:
 
 - component classifications: REUSE / CONFIG_ONLY / ADAPTER / SHARED_EXTENSION / CORE_EXTENSION / BLOCKED;
 - reuse map and adapter map, existing functions to reuse and expected functions/interfaces;
-- requested/optional capability plan and affected-input dependency map;
+- requested/optional capability plan and affected-input dependency map, including the actual executor,
+  observation dimensions, detector aggregation, response/selection ownership and Slow/Fast choice;
 - validation plan, exact allowed files/actions and forbidden modifications;
 - current blockers, human scope approval, separate write authorization, and rollback plan.
 

@@ -2,6 +2,8 @@
 
 本表用于**一个独立的数据集或运行配置**。若运行期、探测器配置、源、靶材或统计数据定义不同，请复制本表分别填写。它是资料接收表，不是程序的 `experiment.yaml`，也不是要求用户编写物理推导或 Python 代码。
 
+填写和检查输入时以[共同输入规范](../../INPUT_STANDARD.md)为依据。该规范说明所有实验共用的检查项、按目标启用的字段和实际校验覆盖；逐文件核对可用[检查记录模板](INPUT_FILE_REVIEW_TEMPLATE.md)。本表保存收集内容，检查记录说明依据、过程和结果。
+
 参考：[CsI2021 按本表填写的示例](EXPERIMENT_USER_INPUT_CsI2021_EXAMPLE.md)；[P01–P10 阶段填写模板](../phase/P01_P10_PHASE_TEMPLATES.md)；[从 CsI2021 提炼的核心函数结构](../../references/phase/CsI2021_CORE_FUNCTION_STRUCTURE.md)。用户用本表提供资料，AI 用阶段模板记录函数映射、复用判断和 Gate；CsI 数值不是其他实验的默认值。
 
 ## 两种使用方式

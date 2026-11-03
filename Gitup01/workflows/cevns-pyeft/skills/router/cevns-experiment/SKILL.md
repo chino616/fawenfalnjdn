@@ -1,21 +1,36 @@
 ---
 name: cevns-experiment
-description: Single master workflow for CEvNS physics onboarding, runtime migration, archive/resource audits, and release validation. Owns routing, user-visible state, hard ambiguity gates, and phase transitions.
+description: Single master workflow for CEvNS onboarding, runtime migration, repository and README maintenance, archive/resource audits, and release validation. Owns routing, user-visible state, ambiguity gates, and phase transitions.
 ---
 
 # cevns-experiment — 唯一 Master Skill
 
 ## Purpose
 
-所有“新增实验 / 从论文接入 / 继续已有 dataset / Skill 调试”都从本 Skill 开始。
+所有“新增实验 / 从论文接入 / 继续已有 dataset / 仓库与 README 维护 / Skill 调试”都从本 Skill 开始。
 
 本 Skill **只负责状态机和阶段路由**，不亲自实现 source、detector、Slow 等物理代码。
+
+涉及接收、整理或修改实验输入时，先读[共同输入规范](../../../../_shared/INPUT_STANDARD.md)，
+选定适用规则/schema，并让材料、合同、data 与实际消费者可以逐项对应。onboarding/P01
+及后续使用相关字段的 Phase 都引用该依据；格式检查和科学接受仍按各自既有 Gate 执行。
 
 先读取 [唯一任务路由表](../../../router/routes.yaml)，按用户要改变的内容和科学含义
 选择一个 primary route，必要时显式列 supporting routes。实验名称本身不能决定路由。
 通过 [catalog](../../../../catalog.yaml) 解析稳定 Skill ID，再读取路由指定的 WORKFLOW.md。
 非 onboarding 路由执行其工作流后返回结果，不进入下方物理 intake/Phase 状态机。
 源码根为 `cevns_pyeft/`；P01–P10 只属于物理接入。路由别名以 routes.yaml 为准。
+
+## 仓库维护选项
+
+“维护目录和 README”“大幅删减后配合 Git 同步说明”等请求按 routes.yaml 的
+repository_maintenance 进入[维护流程](../../../definitions/repository-maintenance/WORKFLOW.md)，
+可执行只读检查、范围内同步、维护验收。用户已明确目标时直接执行，不重复模式确认。
+维护以实际 Git revision 或文件快照为比较依据，按目录合并 README/导航任务；
+生成区可显式自动同步，人工说明与残留引用由执行者核对。没有 Git 时不初始化；
+不因维护文档而隐式授权源码/数据删减、科学改变或 Git 提交/推送。
+
+## 正式物理接入的默认写入状态
 
 正式物理接入原项目默认执行状态是 `read_only`。在用户明确批准原项目 `[WRITE PLAN]` 前，
 只能读取文件、扫描候选、展示菜单和给出下一步建议；不得创建 `.onboarding_tmp`、
@@ -361,7 +376,11 @@ implementation manifest，并通过新的路径级 Write Approval Gate。
 
 ## Step 4 — Phase Execution State Machine
 
-阶段顺序与 Skill：
+阶段编号与默认审查顺序如下。P04–P10 的实际前置条件、记录字段和交接统一使用
+[阶段执行合同](../../../../_shared/references/phase/PHASE_EXECUTION_CONTRACT.md)。
+编号不要求每项能力都执行；Theory/Capability 等独立流程只调用其相关部分。
+
+阶段与 Skill：
 
 ```text
 1 -> cevns-dataset -> Machine Gate P01
@@ -381,10 +400,17 @@ implementation manifest，并通过新的路径级 Write Approval Gate。
 两套编号用途不同。Fast 和 statistics 若未请求，在 Phase 0 总表中分别记为
 `NOT_REQUESTED`；这不是 `machine_gate` 的状态值。
 
-每个 Phase 固定执行：
+Master 在 Phase 0 的 capability 依赖中明确：P06 可在自身输入就绪后分析；P07 消费本次输出所需的 P01–P06；
+P08 要求当前 P07 PASS 和有效 Slow 冻结；P09 采用 Slow 时不依赖 P08，采用 Fast 时依赖指定表示。
+P10 验收原目标要求的能力。未请求的可选能力不阻断交付；已请求但受阻时保留部分状态，
+不得自动缩小目标。每种 Fast/独立统计模型使用独立 capability_id，不能互相借用 PASS。
+
+每个 Phase 执行：
 
 执行时用 `workflows/_shared/templates/phase/P01_P10_PHASE_TEMPLATES.md` 核对该阶段待填项，
 并用 `workflows/_shared/templates/phase/PHASE_REPORT_TEMPLATE.md` 记录实际实现、验证和 Gate。
+P04–P10 在同一报告的 `json phase-result` 块保存结构化交接，按 phase-result schema 检查；
+这不是新增的批准权威，也不要求另建重复状态文件。旧报告恢复时显式补齐，不自动迁移历史批准。
 进入 P01–P10 的具体阶段时，向用户给出索引中**该阶段独立模板**的可打开链接：
 用户可自行填写，或提供材料由 AI 按相同栏目预填；不要要求用户自行设计函数。
 用户填写区与 AI 函数/复用核对区分开处理，任何预填都不自动构成物理批准。
@@ -471,7 +497,7 @@ Master 分别记录该回复中的科学接受和写入授权，不把自动检�
 
 Fast 或 statistics 缺关键输入时：
 
-- 只 BLOCK 对应 capability；
+- 只 BLOCK 对应 capability；P08 受阻时可继续已获批准范围内的 Slow 或采用 Slow 的 P09；
 - 不得把 `official likelihood` 静默降级为 `approximate chi2`；
 - 可提出 narrowed claim，但必须由用户批准。
 
@@ -484,6 +510,8 @@ Fast 或 statistics 缺关键输入时：
 FULLY_INTEGRATED
 ```
 
+完成是相对于已接受的精确目标，而不是“所有十阶段都有 PASS”。P08/P09 计划未请求时，
+其本次记录保持 NOT_RUN/NOT_REVIEWED；原目标要求的能力仍受阻时不得记完成。
 否则保持最准确的部分状态。Final claim 的权威记录和 Phase 10 报告写入成功后，Master
 才可把正式进度索引更新到 completed checkpoint；进度索引本身不能授予
 `FULLY_INTEGRATED`。

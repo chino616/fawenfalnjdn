@@ -22,12 +22,16 @@
 
 ## B. AI 核对：配置与代码契约（用户可核对）
 
+检查依据：[共同输入规范](../../INPUT_STANDARD.md)；必要时引用[逐文件检查记录](../onboarding/INPUT_FILE_REVIEW_TEMPLATE.md)，不重复创建阶段批准。
+
 | 检查项 | 本次填写 |
 | --- | --- |
 | 已批准的 `dataset_id` / scientific claim / decision ID | ____ / ____ / ____ |
+| 共同规范与适用 schema/profile 的版本/哈希、适用规则 | ____；不适用项及理由：____ |
 | `contract 字段 → experiment.yaml key` 逐项映射 | ____；未被 schema 表达的字段：____ |
 | 候选函数 | `experiments.specs.load_experiment_spec(name_or_path) → ExperimentSpec`；实际文件/签名/错误行为：____ |
 | 输出契约 | 轴顺序：____；shape：____；dtype：____；unit：____；各探测器组合规则：____ |
+| 实际读取检查与声明尚未覆盖项 | 命令/真实消费者：____；实际结果：____；人工核对：____；未执行或缺失项：____ |
 | 复用判断 | □ REUSE □ CONFIG_ONLY □ ADAPTER □ SHARED_EXTENSION □ CORE_EXTENSION □ BLOCKED；逐项理由及受影响实验：____ |
 | 计划文件 | `data/experiments/<experiment_slug>/<dataset_id>/experiment.yaml`、`README.md`、`runs/<experiment_slug>/<dataset_id>/01_DATASET.md`；增改列表：____ |
 | 缺失回填 | 字段：____；取得途径：____；最迟 P__ 需要；阻断能力：____ |

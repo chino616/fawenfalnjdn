@@ -31,14 +31,17 @@ contracts and an existing baseline. No new physics meaning is approved by this w
    callers and contracts. For new definition scaffolding use `cevns.engineering.experiment_migration`
    and a custom catalog before any proposed active-manifest change.
 3. Form a minimal file/change/test/rollback plan, preserve existing authorization, and implement
-   only that scope. No standing milestone numbering is imposed on ordinary maintenance.
+   only that scope. Apply [file lifecycle](../../../_shared/policies/file-lifecycle.md): map file
+   operations to owning READMEs, parent navigation and actual consumers, and synchronize them
+   in this change. No standing milestone numbering is imposed on ordinary maintenance.
 4. If resource references change, use `cevns.engineering.resource_manifest_auditor`.
 5. Check the affected runtime contracts and existing experiment behavior; use
    `cevns.engineering.experiment_release_validator` only when release/install scope is requested.
 6. Report changes, resource audit (or explicit not applicable), contract test plan and actual results.
 
 Documentation-only branch: read the target and callers, edit the authorized text, check links and
-claims, report the diff. No physics gate or runtime test is implied by a spelling/layout change.
+claims (use `tools/validate_docs.py --files` for the affected Markdown), report the diff.
+No physics gate or runtime test is implied by a spelling/layout change.
 Changed scientific claims require reclassification before they are adopted.
 
 ## Gates, artifacts and exit

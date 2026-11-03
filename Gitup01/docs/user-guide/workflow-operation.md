@@ -7,6 +7,8 @@ Scope: 既有内容的目录与引用整理；公式、数据、单位和科学�
 历史工程 M0–M7 仅用于当时迁移记录。当前从 [workflow 入口](../../workflows/README.md)
 进入，任务分类以 [唯一路由表](../../workflows/cevns-pyeft/router/routes.yaml) 为准。
 
+检查输入文件时，先按[共同输入规范](../../workflows/_shared/INPUT_STANDARD.md)选择适用规则和格式，核对来源、单位、坐标与归一化，再记录实际读取检查的覆盖及尚需审核的解释。可用[逐文件检查表](../../workflows/_shared/templates/onboarding/INPUT_FILE_REVIEW_TEMPLATE.md)保存原文件到合同、data 和消费者的映射；填写件归各 dataset 管理。
+
 1. 从 catalog 识别准确 dataset_id 与 analysis_revision。实际变更真实实验时仍从项目 Master Skill 进入。
 2. 使用 load_experiment(...,resources=...) 查看 describe，确认实际源、曝光、材料、观测轴、统计状态和资源哈希。
 3. 区分实验设定与理论参数、数值参数。前者修改本实验不可变 definition 实例；后两者使用 TheoryPoint / numerics。

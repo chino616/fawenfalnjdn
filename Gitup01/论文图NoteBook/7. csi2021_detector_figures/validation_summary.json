@@ -1,0 +1,50 @@
+{
+  "selected_grid": {
+    "n_er": 128,
+    "n_enu": 192,
+    "n_pe_bin": 96,
+    "pe_step": 0.75
+  },
+  "convergence_passed": true,
+  "algebra_and_unit_checks": {
+    "source_sum_max_relative_error": 0.0,
+    "target_sum_max_relative_error": 3.183964677927718e-16,
+    "counts_density_max_relative_error": 0.0,
+    "total_density_max_relative_error": 0.0,
+    "saved_recoil_to_PE_fold_max_relative_error": 3.1406643966575347e-16,
+    "FV_additivity_max_relative_error": 3.183964677927718e-16,
+    "FV_additivity_target_max_relative_error": 3.1406643966575347e-16,
+    "true_recoil_FV_additivity_max_relative_error": 3.90780502461971e-16,
+    "equal_Cs_I_nucleus_numbers_relative_error": 1.2726903610446914e-16,
+    "fluence_normalization_relative_error": 4.315093187427217e-16
+  },
+  "last_grid_comparison": {
+    "previous_grid": {
+      "n_er": 64,
+      "n_enu": 96,
+      "n_pe_bin": 48,
+      "pe_step": 1.5
+    },
+    "current_grid": {
+      "n_er": 128,
+      "n_enu": 192,
+      "n_pe_bin": 96,
+      "pe_step": 0.75
+    },
+    "max_significant_bin_relative_change": 0.009784933569904461,
+    "max_small_bin_absolute_change_events": 0.00805669347881477,
+    "inclusive_total_relative_changes": {
+      "SM": 0.0016228852283273305,
+      "FV_NP": 0.0015192468562848695,
+      "SMplusFV": 0.0015289495906243913
+    },
+    "passed": true,
+    "criterion": {
+      "significant_bin_events": 1.0,
+      "max_bin_relative_change": 0.01,
+      "max_small_bin_absolute_change_events": 0.02,
+      "max_total_relative_change": 0.002
+    }
+  },
+  "exact_memoization_validated": true
+}

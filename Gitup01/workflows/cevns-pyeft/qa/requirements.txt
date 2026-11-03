@@ -1,0 +1,2 @@
+# Tool-only dependencies; never imported by cevns_pyeft.
+jsonschema>=4.18

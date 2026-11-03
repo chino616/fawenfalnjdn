@@ -1,0 +1,160 @@
+{
+  "config": {
+    "coefficient_gev_minus2": 1e-05,
+    "sin2theta_w": 0.23873,
+    "significant_bin_events": 1.0,
+    "max_bin_relative_change": 0.01,
+    "max_small_bin_absolute_change": 0.02,
+    "max_total_relative_change": 0.002
+  },
+  "grid": {
+    "n_er": 128,
+    "n_enu": 192,
+    "n_pe_bin": 96,
+    "pe_step": 0.75
+  },
+  "scenarios": [
+    "SM",
+    "FV_NP",
+    "SMplusFV"
+  ],
+  "sources": [
+    "mu",
+    "e",
+    "mub"
+  ],
+  "targets": [
+    "Cs133",
+    "I127"
+  ],
+  "source_basic": {
+    "name": "CsI2021",
+    "detectorMassKg": 14.57,
+    "baseline_m": 19.3,
+    "N_POT": 3.198e+23,
+    "r": 0.0848,
+    "EnuRangeMeV": [
+      0.001,
+      300.0
+    ],
+    "globalEnuRangeMeV": [
+      0.001,
+      56.0
+    ],
+    "NTimeIntegratedFlux_cm^-2": 579361763793233.6
+  },
+  "mass_fractions": [
+    0.5115384615384615,
+    0.48846153846153845
+  ],
+  "target_numbers": [
+    3.3747150347508443e+25,
+    3.374715034750844e+25
+  ],
+  "time_acceptance": {
+    "mu": 0.997,
+    "e": 0.848,
+    "mub": 0.848
+  },
+  "source_sha256": {
+    "experiments/registry.py": "50b0ea299899cb38a8910d631f174180c97a9dd00de65c0946b50bd711d5b318",
+    "experiments/coherent/sns.py": "9ea97baf50e46a158680b556f9fe514502fd8ca7386d8e9ea36ed07681e7a764",
+    "experiments/coherent/slow_counts_csi2021.py": "73d793e61dfa190af26ca01b1381ba4b019da07b0b95f25a5a09a99f595773c9",
+    "rates/counts.py": "776630b714f3cc0b03fab897a4b4a34d25812744728654f38c4ab8ad2ea17733",
+    "rates/differential.py": "d7e7c42c6eb92202e52524447328521c71c3a1050b4e93b6acc5adf9a16a85ce",
+    "foundation/constants.py": "0bb51033d1ca64e18a7a7bb0fd4cce38bc679558dd7392740f72d4683276cd44",
+    "foundation/units.py": "053e4c8d9e47cd32ba4bacbb33da8367c02a32aca02c16c1d6d4e4a7bba6640a",
+    "sources/state.py": "39ae30776f58bb19c15e842317940cb3aece2040eabb19046d01842e55815100",
+    "theory/kinematics.py": "2fcdeae7b83a1183c1215461e8d1f91badda142cb78ba7cb0fbb25367c69bd16",
+    "nuclear/response.py": "fc94a1582b11e58113e2f192be9733dfaf5b27b2604fe075da9e9f56b94d776f",
+    "theory/li2026/amplitude.py": "40a2bbfcb60716da67ff3d5182d5af6dd075bcd7dfccf9a49b9b3b0a8a9b7aed",
+    "theory/li2026/cross_section.py": "adc13f3e1acc9b88b85fc033a6117cc2f99a77d1bc88e66368e416e4f5304393",
+    "theory/li2026/flavor.py": "66c84c2f2dad58ebba132cb768db36c8661a3e053b8cb74900d47df6cffa48c4",
+    "theory/li2026/left_to_ci.py": "56027d356737d85de4ae22ba3b303ade16e1c0163887bbedbc53ac2f0d46ae48",
+    "theory/li2026/responses.py": "25d63e8c923d900a42c67f43ab0fcef40bf39e528767c949a114b37d02135dbe",
+    "theory/li2026/lec.py": "9c981d8705ba6a17829c75e81b93ce6f85fdbcc290faf5bf64edde9dc8867691",
+    "theory/li2026/operators.py": "c1932f6de64333b3a344fc84b7f5ec19efddbbf9a33db2aa9e245df702609ff4"
+  },
+  "response_json_sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+  "generator_sha256": "4a03ba040667b4feaac8f2e8081dc843cf508ebd287474a18606eeb2ee720b9f",
+  "axes": {
+    "counts_per_bin": [
+      "scenario",
+      "source",
+      "PE_bin"
+    ],
+    "target_flavor_raw": [
+      "scenario",
+      "source",
+      "target",
+      "PE_bin"
+    ],
+    "target_flavor_weighted": [
+      "scenario",
+      "source",
+      "target",
+      "PE_bin"
+    ],
+    "true_recoil_pre_time_acceptance": [
+      "scenario",
+      "source",
+      "target",
+      "recoil_node"
+    ]
+  },
+  "raw_target_semantics": "hypothetical full detector mass pure-isotope yield before time acceptance; not the physical Cs/I contribution",
+  "physical_target_semantics": "raw times A/(133+127) times the source time acceptance",
+  "fluence_semantics": "POT-integrated cm^-2 MeV^-1; no extra exposure or seconds/day conversion",
+  "antineutrino_convention": "mub is a mu-flavor antinu source state; interaction follows the current shared kernel, without a separately audited antineutrino dynamical change",
+  "statistics": "signal-only expected events; no backgrounds, likelihood or fit",
+  "checks": {
+    "selected_grid": {
+      "n_er": 128,
+      "n_enu": 192,
+      "n_pe_bin": 96,
+      "pe_step": 0.75
+    },
+    "convergence_passed": true,
+    "algebra_and_unit_checks": {
+      "source_sum_max_relative_error": 0.0,
+      "target_sum_max_relative_error": 3.183964677927718e-16,
+      "counts_density_max_relative_error": 0.0,
+      "total_density_max_relative_error": 0.0,
+      "saved_recoil_to_PE_fold_max_relative_error": 3.1406643966575347e-16,
+      "FV_additivity_max_relative_error": 3.183964677927718e-16,
+      "FV_additivity_target_max_relative_error": 3.1406643966575347e-16,
+      "true_recoil_FV_additivity_max_relative_error": 3.90780502461971e-16,
+      "equal_Cs_I_nucleus_numbers_relative_error": 1.2726903610446914e-16,
+      "fluence_normalization_relative_error": 4.315093187427217e-16
+    },
+    "last_grid_comparison": {
+      "previous_grid": {
+        "n_er": 64,
+        "n_enu": 96,
+        "n_pe_bin": 48,
+        "pe_step": 1.5
+      },
+      "current_grid": {
+        "n_er": 128,
+        "n_enu": 192,
+        "n_pe_bin": 96,
+        "pe_step": 0.75
+      },
+      "max_significant_bin_relative_change": 0.009784933569904461,
+      "max_small_bin_absolute_change_events": 0.00805669347881477,
+      "inclusive_total_relative_changes": {
+        "SM": 0.0016228852283273305,
+        "FV_NP": 0.0015192468562848695,
+        "SMplusFV": 0.0015289495906243913
+      },
+      "passed": true,
+      "criterion": {
+        "significant_bin_events": 1.0,
+        "max_bin_relative_change": 0.01,
+        "max_small_bin_absolute_change_events": 0.02,
+        "max_total_relative_change": 0.002
+      }
+    },
+    "exact_memoization_validated": true
+  }
+}

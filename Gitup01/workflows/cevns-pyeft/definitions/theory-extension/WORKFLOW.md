@@ -20,20 +20,27 @@ Task triggers are assigned only by [routes.yaml](../../router/routes.yaml). Reso
 
 ## Entry and inputs
 
-An explicit change of common theory/operator/matching/response conventions, its evidence,
-units/basis/validity domain, existing implementations and affected datasets.
+An explicit read-only review or scientific change of common theory/operator/matching/response
+conventions, with the requested conclusion, evidence, units/basis/validity domain and existing
+implementations. Determine audit-only versus semantic-change intent before selecting actions.
 
 ## Sequence and handoffs
 
 1. Use `cevns.engineering.physics_modularity` to map implementation owners, callers and caches.
-2. Use `cevns.phase.p04.theory_response` and, if kinematics/cross-section boundaries change,
+   For audit-only intent, inspect the selected scope and run only relevant authorized read-only checks;
+   no dataset, production changes or implementation approvals are implied.
+2. Use `cevns.phase.p04.theory_response` and, only if the requested review/change includes kinematics or cross-section boundaries,
    `cevns.phase.p05.kinematics_cross_section` for the focused physics review. This does not
    create a dataset or require unrelated P01–P03 intake.
-3. Record CORE_EXTENSION/SHARED_EXTENSION scope, human physics approval, allowed files,
+3. In audit-only mode, report verified internal conventions, existing regression evidence and
+   external-source gaps. Return the requested audit result; use P10 only when a scoped final
+   capability/claim review is requested. Missing external source tables do not imply failure of
+   unrelated historical regressions. Do not continue to implementation or invent human approval.
+4. For a semantic change, record CORE_EXTENSION/SHARED_EXTENSION scope, human physics approval, allowed files,
    write authorization, regression plan for affected experiments and rollback.
-4. Implement the approved change in the existing runtime owners. Check basis/complex
+5. Implement the approved change in the existing runtime owners. Check basis/complex
    coefficients/response conventions/units, independent benchmarks and affected regressions.
-5. `cevns.phase.p10.validation` reviews only the resulting supported capability/claim.
+6. `cevns.phase.p10.validation` reviews only the resulting supported capability/claim.
    Release packaging, if requested, hands off to release-validation.
 
 ## Records, gates, blocks and exit

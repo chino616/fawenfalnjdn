@@ -10,6 +10,10 @@ evidence/approval, write authorization, archive isolation, automation, interacti
 layout and progress continuity. Active experiment migration uses the interaction policy;
 ordinary engineering/documentation work answers the actual request without artificial physics gates.
 
+All file operations also follow [file lifecycle](./_shared/policies/file-lifecycle.md):
+synchronize owning READMEs, parent navigation and consumer references within the
+same authorized change, record the mapping, and check the affected links.
+
 Workflow definitions orchestrate stable Skill IDs. Skill packages preserve focused responsibility.
 Schemas, templates, references and QA fixtures are distinct. Never discover backup/**, generated
 output or historical run records as active Skills or user-selected physics material. Historical

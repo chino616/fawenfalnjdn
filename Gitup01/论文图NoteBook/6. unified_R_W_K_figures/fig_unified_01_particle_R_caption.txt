@@ -1,0 +1,3 @@
+Particle responses in the pp nucleon entry for the common Cs133, 30 MeV, flavor-changing vector benchmark. Panels (a,b) compare M, Sigma-prime and Delta in the mu-mu and real e-mu entries of SM+NP. Panels (c,d) decompose R_MM into SM, FC NP, interference and total contributions. Panel (c) uses a log scale, with its vanishing interference indicated separately. Off-diagonal R describes incoming-flavor coherence and is not an exclusive transition cross section.
+
+Common numerical inputs: E_nu=30 MeV; C6u1[e,mu]=C6u1[mu,e]*=1e-05 GeV^-2; sin^2(theta_W)=0.23873; Tnr=0.05-13 keV; 160 identical nodes in all figures.

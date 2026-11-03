@@ -2,6 +2,8 @@
 
 这里保存计算实现。用户入口是 `experiments.loader.load_experiment` 和 `experiments.runtime`；根 [__init__.py](__init__.py) 仅导出版本，[cli.py](cli.py) 仅打印版本。包内的研究 Notebook 不是初始化步骤。
 
+**查看完整 [Skill 库总表与增减规则](SKILLS.md)。** 表中列出仓库内全部 Skill 的职责、产物、调用流程和文件入口，并说明新增、修改、移动、停用、删除及同步检查。本页与总表供用户导航，实际 Skill 指令仍由 `workflows/` 管理。
+
 ## 运行时职责分工
 
 | 子目录 | 真实对象或函数 | 输入 → 输出 |

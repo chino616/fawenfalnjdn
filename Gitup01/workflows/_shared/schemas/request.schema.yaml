@@ -23,6 +23,7 @@
         "fast_or_statistics_change",
         "skill_qa",
         "validation_only",
+        "repository_maintenance",
         "documentation_only"
       ]
     },
@@ -46,6 +47,7 @@
           "fast_or_statistics_change",
           "skill_qa",
           "validation_only",
+          "repository_maintenance",
           "documentation_only"
         ]
       }

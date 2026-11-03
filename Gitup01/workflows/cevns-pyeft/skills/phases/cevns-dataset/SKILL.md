@@ -18,10 +18,11 @@ description: Phase 1 dataset contract and runtime-spec implementation with manda
 
 ```text
 workflows/_shared/README.md
+workflows/_shared/INPUT_STANDARD.md
 P01_EVIDENCE_LEDGER.yaml
 P03_PHYSICS_CONTRACT.yaml
 00_IMPLEMENTATION_MANIFEST.yaml
-schemas/experiment.schema.json
+workflows/_shared/schemas/experiment-input/experiment.schema.json
 cevns_pyeft/experiments/base.py
 cevns_pyeft/experiments/specs.py
 data/experiments/*/*/experiment.yaml
@@ -78,6 +79,10 @@ runs/<experiment_slug>/<dataset_id>/01_DATASET.md
 ## Step 3 — Machine Gate P01
 
 验证：unique ID、schema、loader、repository-relative paths、bin edges、bin count/shape、data mode、pending callables。
+
+按共同输入规范注明所选格式、字段到文件列的映射、适用规则和真实检查范围。
+现有 spec loader 只检查部分必填字段；其通过不能代替完整 schema、坐标、单位或物理含义的核对。
+缺少当前必需检查时，记录未执行项及对应 blocker，不把整个输入标为已验证。
 
 ## Step 4 — Post-code Review
 

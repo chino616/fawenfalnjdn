@@ -1,70 +1,44 @@
-# P09 统计：旧 CsI2021 代码示例与数据语义边界
+# P09 当前统计绑定与观测映射
 
-配合 [P09 填写模板](../../templates/phase/P09_STATISTICS_TEMPLATE.md) 使用。本例展示当前项目如何把逐箱预测转换为统计观测量，并计算**旧程序近似 Gaussian 双 pull χ²**。它不是 COHERENT 官方 likelihood 的实现，也不是新实验统计模型的默认值。
+配合 [P09 模板](../../templates/phase/P09_STATISTICS_TEMPLATE.md)。
 
-## 1. 当前代码框架
+| 可审计锚点 | 当前职责 |
+|---|---|
+| `cevns_pyeft/experiments/definition.py::StatisticsDefinition` | evaluator、观测映射、统计数据/资源与状态 |
+| `cevns_pyeft/experiments/runtime.py::evaluate_experiment` | 核对预测 dataset/analysis/physics 身份、轴和统计绑定 |
+| `cevns_pyeft/experiments/coherent/statistics_binding.py::dataset` | 根据实验定义和资源装配统计数据 |
+| `cevns_pyeft/experiments/coherent/statistics_binding.py::evaluate` | 现有 Gaussian/IRLS 路由和单位变换 |
+| `cevns_pyeft/statistics/observables.py::convert_prediction_to_dataset_observable` | 旧公共观测单位转换 |
+| `cevns_pyeft/statistics/profiling.py::profile_gaussian_two_pull` | 现有双 pull Gaussian 计算 |
 
-| 层 | 文件.symbol | 输入与输出 |
-| --- | --- | --- |
-| 旧统计数据 | [`statistics/datasets.py`](../../../../cevns_pyeft/statistics/datasets.py) 的 `csi2021_dataset` | `BinnedDataset`：9 箱观测值、背景、逐箱对称误差和 pull 宽度 |
-| 观测量契约 | [`statistics/observables.py`](../../../../cevns_pyeft/statistics/observables.py) 的 `StatisticalObservable`、`PredictionVector` | 名称、单位、bin edges 与长度必须相容 |
-| 单位映射 | 同文件的 `convert_prediction_to_dataset_observable` | `events/bin → counts/PE` 时除以每箱 PE 宽度 |
-| χ² 路由 | [`statistics/likelihoods.py`](../../../../cevns_pyeft/statistics/likelihoods.py) 的 `chi2_csi2021` | 先验证观测量，再调用 `profile_gaussian_two_pull` |
-| nuisance profile | [`statistics/profiling.py`](../../../../cevns_pyeft/statistics/profiling.py) | 解析求解信号/背景两个 pull，返回 `ProfileResult` |
+源码：[runtime](../../../../cevns_pyeft/experiments/runtime.py)、
+[统计绑定](../../../../cevns_pyeft/experiments/coherent/statistics_binding.py)。
 
-当前实现的结构可写为：
+CsI2021 的当前定义是 legacy approximate Gaussian，evaluate 将 events/bin 除一次箱宽
+映射到 counts/PE。不得先手动转换后再次交给会转换的 evaluator。
+CsI2017/Ar2020 有各自数据和统计模型；新实验不能仅改 ID 来复用旧 χ²。
+统计资源在评价时独立记录哈希；仅更新 observed/error 不意味着重建物理 Fast。
 
-```text
-s_i = 已匹配 bin 与单位的信号预测
-d_i = 项目旧数据 observed；b_i = 旧背景；σ_i = 对称逐箱误差
-model_i = (1+α)s_i + (1+β)b_i
-χ² = Σ_i[(d_i-model_i)/σ_i]² + (α/σ_α)² + (β/σ_β)²
-```
+## 只读接口示例
 
-`csi2021_dataset()` 的 metadata 明确标为 `legacy approximate statistics`。最后一个观测箱为负数，说明不能直接把该数组解释为原始 Poisson 计数。是否与官方数据相同，必须由 P09 的来源审计决定。
-
-## 2. 可运行的观测量转换与 profile 示例
-
-在仓库根目录、已安装项目或设置 `PYTHONPATH=src` 后执行。这里用**人为设定的每箱 1 event** 作为接口演示，不是实验预测。
+从项目根目录运行。人为小网格预测只用于检查身份与调用，不构成科学拟合。
 
 ```python
+from pathlib import Path
 import numpy as np
+from cevns_pyeft.experiments.loader import ResourceCatalog, load_experiment
+from cevns_pyeft.experiments.runtime import predict_experiment, evaluate_experiment
 
-from cevns_pyeft.statistics.datasets import csi2021_dataset
-from cevns_pyeft.statistics.observables import (
-    convert_prediction_to_dataset_observable,
-    observable,
-    prediction_vector,
-)
-from cevns_pyeft.statistics.likelihoods import chi2_csi2021
-
-dataset = csi2021_dataset()
-signal_per_bin = prediction_vector(
-    np.ones(dataset.n_bins),
-    observable("PE signal", "events/bin", dataset.observable.bin_edges),
-)
-signal_per_pe = convert_prediction_to_dataset_observable(
-    signal_per_bin, dataset.observable
-)
-profile = chi2_csi2021(signal_per_pe, dataset)
-
-assert dataset.n_bins == 9
-assert signal_per_pe.observable.unit == "counts/PE"
-assert np.isfinite(profile.chi2) and profile.success
-print("bins =", dataset.n_bins)
-print("last observed =", dataset.observed[-1])
-print("toy chi2 =", profile.chi2)
+experiment = load_experiment("CsI2021", resources=ResourceCatalog(Path.cwd()))
+prediction = predict_experiment(experiment, numerics={"n_er": 3, "n_enu": 6, "n_pe_bin": 3})
+evaluation = evaluate_experiment(experiment, prediction)
+assert np.isfinite(evaluation.chi2)
+print(evaluation.record["statistics"]["status"])
 ```
 
-本次运行得到 `9` 箱、最后一箱 `-0.831`、玩具输入 `χ²=51.16748557415769`。该数值仅证明旧接口可运行；不证明任何物理参数点、论文结果或官方 likelihood。
-
-## 3. 新实验如何复用
-
-| 所需内容 | 可复用部分 | 何时阻断 |
-| --- | --- | --- |
-| bin、单位和预测长度核对 | `StatisticalObservable`、`PredictionVector`、相容性检查 | 观测量语义或 bin 对不齐 |
-| 已批准的 `events/bin → counts/PE` 变换 | `convert_prediction_to_dataset_observable` | 新实验的单位不同或背景扣除定义不同 |
-| Gaussian 双 pull | `profile_gaussian_two_pull` 候选 | 没有明确的误差、背景、pull 先验/相关性证据 |
-| 官方 ON/OFF、Poisson、协方差模型 | 不从 `chi2_csi2021` 推断 | 官方输入/公式缺失时 P09 `BLOCKED`；只做 forward model 可 `NOT_REQUESTED` |
-
-用户在 P09 表中提供**观测数据语义、背景、协方差、nuisance 和推断规则的来源**。AI 才能决定使用公共统计 API、写薄适配层或保持阻断；不能只替换 `dataset_id` 即复用旧 χ²。
+数据 representation、processing、design 和 likelihood 分开审查。
+负 excess 不能当 raw Poisson，但统计分类来自来源而不是“是否出现负数”。
+是否需要 covariance 由模型和目标决定；官方复现缺必要输入时保持受阻。
+当前统一内建绑定不自动实现任意联合/非分箱官方模型。
+相关测试：[组件与单位变换](../../../../tests/test_component_replacement.py)、
+[实验模块化](../../../../tests/test_experiment_modularization.py)。

@@ -1,0 +1,40 @@
+{
+  "reactor_spectrum": {
+    "required_columns": [
+      "energy_mev",
+      "U235_per_fission_per_mev",
+      "U238_per_fission_per_mev",
+      "Pu239_per_fission_per_mev",
+      "Pu241_per_fission_per_mev"
+    ],
+    "energy_strictly_increasing": true,
+    "spectra_nonnegative": true
+  },
+  "efficiency": {
+    "required_columns": [
+      "energy_evee",
+      "efficiency"
+    ],
+    "energy_strictly_increasing": true,
+    "efficiency_range": [
+      0.0,
+      1.0
+    ]
+  },
+  "bin_edges": {
+    "required_columns": [
+      "edge_evee"
+    ],
+    "strictly_increasing": true
+  },
+  "isotopes": {
+    "required_columns": [
+      "isotope",
+      "Z",
+      "A",
+      "number_fraction",
+      "response_key"
+    ],
+    "fraction_sum": 1.0
+  }
+}

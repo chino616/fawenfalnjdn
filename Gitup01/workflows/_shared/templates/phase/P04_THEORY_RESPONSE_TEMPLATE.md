@@ -1,37 +1,39 @@
-# P04｜Theory / Nuclear Response：可填写模板
+# P04｜理论与核响应适用性
 
-对应 [cevns-theory-response Skill](../../../cevns-pyeft/skills/phases/cevns-theory-response/SKILL.md)。本阶段决定**共享理论链**是否覆盖新实验。用户说明需要的物理模型或给出处；AI 核对代码。核 Response 与探测器 Response 是不同对象。真实函数、精简核心代码和可运行调用见 [P04 核响应代码参考](../../references/phase/P04_NUCLEAR_RESPONSE_CODE_REFERENCE.md)。
+配合 [P04 Skill](../../../cevns-pyeft/skills/phases/cevns-theory-response/SKILL.md)、
+[执行合同](../../references/phase/PHASE_EXECUTION_CONTRACT.md)与
+[代码参考](../../references/phase/P04_NUCLEAR_RESPONSE_CODE_REFERENCE.md)使用。
+用户提供模型和来源，AI 填写实现与验证；不要求用户设计函数。
 
-## A. 用户填写：模型范围
+## A. 用户材料与科学范围
 
-| 必要信息 | 请填写；值/定义 + 来源定位 |
-| --- | --- |
-| dataset_id；要计算的模型 | □ SM □ EFT □ 指定比较模型；目标参数域和科学声明：____ |
-| Wilson 系数 | 基底名称与版本 ____；系数顺序 ____；单位 ____；实数/复数 ____；SM 项是否包含：____ |
-| flavor 结构 | 入射与末态 flavor 约定 ____；ν/反ν 适用性 ____；纯态或密度矩阵：____ |
-| nucleon matching | 使用的约定/参数/文献定位：____；如沿用项目共享实现，请写“按项目共享实现” |
-| 靶核 Response | 每个同位素的文件、key、版本、有效动量域：____ |
-| 需要的通道 | 保留 ____；明确省略 ____；省略理由和影响：____ |
-| SM 对照模型 | □ 完整 nuclear response □ Helm/其他仅作比较 □ 无；适用参数域：____ |
-| 参考点 | 能量、靶、系数和可对照的截面/响应值：____；无外部点填“缺失” |
+| 内容 | 定义、单位、版本与来源定位 |
+|---|---|
+| dataset 或明确的理论变更范围；目标声明 | ____ |
+| SM/EFT/比较模型及参数域 | ____ |
+| Wilson 基底、单位、复数/flavor、SM 是否包含 | ____ |
+| matching/LEC 与采用文献 | ____ |
+| 靶核、响应表、基底、b 单位和有效动量域 | ____ |
+| 所需核响应通道、LNC/LNV 与干涉约定 | ____ |
+| ν/反ν及入射态需求 | ____ |
+| 独立参考点、源表证据或缺失项 | ____ |
 
-## B. AI 核对：共享链与复用
+## B. AI 覆盖与实现判断
 
-| 步骤 | 当前文件.symbol | 输入→输出、单位/轴 | 是否覆盖本实验/证据 |
-| --- | --- | --- | --- |
-| Wilson → nucleon matching | ____ | ____ | ____ |
-| nucleon → particle/nuclear response | ____ | ____ | ____ |
-| ResponseDB key 与通道 | ____ | ____ | ____ |
-| flavor/复数收缩 → differential API | ____ | ____ | ____ |
+| 同位素/算符/通道 | 所需含义 | 实现 symbol、资源与版本 | 覆盖/取零/省略/缺失 | 证据与声明限制 |
+|---|---|---|---|---|
+| ____ | ____ | ____ | ____ | ____ |
 
-逐函数分类：`REUSE / CONFIG_ONLY / ADAPTER / SHARED_EXTENSION / CORE_EXTENSION / BLOCKED`；不适用原因或扩展对 CsI2017、CsI2021、Ar2020 的影响：____。完整核 Response 后不能再乘 Helm；仅 SM 有效的比较模型不得悄悄接受一般 EFT。
+逐函数分类：REUSE / CONFIG_ONLY / ADAPTER / SHARED_EXTENSION / CORE_EXTENSION / BLOCKED。
+说明内部基底一致性和外部源表审计分别完成到哪里；Helm-only 时明确响应表不适用的原因。
+需要改变的物理选择及有效 decision refs：____；受影响实验：____。
 
-## C. 物理决定与 Gate
+## C. 验收与交接
 
-- 待批准的共享路线、系数约定和 Response key：____；冲突候选：____；decision ID：____。
-- [ ] 共享理论回归、Response key/通道、复数系数、flavor 轴和 SM benchmark 已检查。
-- [ ] ν/反ν kernel 适用性有证据；若未审计，明确限制可宣称的能力。
-- Machine Gate P04：`NOT_RUN / PASS / BLOCKED`；检查命令及结果：____。
-- Human Gate：`NOT_REVIEWED / APPROVED / REVISE / BLOCKED`；受影响的共享代码：____。
-
-**CsI2021 结构参考**：`rates.differential.differential_flavor_kernel_nn` 提供共享 flavor kernel 的候选入口；`ResponseDB.get` 选择核响应。新实验要核对基底、通道、单位和反中微子适用域，不能因为函数已存在就直接判定 `REUSE`。
+检查：key/通道、单位、基底、复数共轭/flavor 轴、SM 加入、适用的独立 benchmark；
+记录命令、数值、差异及来源。ν/反ν标签不能代替相互作用审计。
+handoff 字段：theory_scope、coefficient_convention、nuclear_responses、coverage、
+runtime_binding、external_evidence_limits。
+结果写入 [阶段报告](PHASE_REPORT_TEMPLATE.md)，返回 Master。
+新实验按依赖进入 P05；只读理论审核可在本次范围完成后交付，
+仅当运动学或截面边界属于审核/变更范围时才安排 P05，不自动扩展任务。

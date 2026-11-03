@@ -1,5 +1,11 @@
 请读取 workflows/cevns-pyeft/AGENTS.md，然后只通过
-workflows/cevns-pyeft/skills/router/cevns-experiment/SKILL.md 启动实验接入。
+workflows/cevns-pyeft/skills/router/cevns-experiment/SKILL.md 启动并按实际任务路由。
+
+如果我要求维护文件架构、批量删减后的 README 或 Git 变更说明，请进入
+repository_maintenance：先以 Git revision 或文件快照生成目录分组计划，再在已授权范围
+同步 README 与导航，最后检查自动清单区、链接、旧路径和实际消费者。可选择检查、
+同步或验收；我已明确目标时直接执行。不自动初始化 Git、不顺带提交或推送，
+不把文档维护转成新的实验物理接入。
 
 先回答我这轮实际提出的问题。报告进度时说明已核实的结果、对实验的影响和
 下一步；需要我选择或授权时，才说明我具体要决定什么。不要把内部状态、文件
@@ -8,7 +14,7 @@ workflows/cevns-pyeft/skills/router/cevns-experiment/SKILL.md 启动实验接入
 和操作供我核对。内部读取记录、规则编号和完整 Gate 值只在审计或确有必要时展开。
 
 不要用本地论文、placeholder、旧代码自动替代用户对 dataset identity 和 scientific claim 的选择。
-不要在显示 `[WRITE PLAN]` 并获得我明确回复 `APPROVE WRITE` 前创建或修改原项目
+正式物理接入时，不要在显示 `[WRITE PLAN]` 并获得我明确回复 `APPROVE WRITE` 前创建或修改原项目
 文件，包括 `.onboarding_tmp` 和 mock 文件。候选导入另按已展示的导入计划与
 准确的“批准导入”口令执行。
 

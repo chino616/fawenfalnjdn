@@ -22,7 +22,14 @@ definitions, policies, templates and realistic requests. This is workflow QA, no
    routing or procedure. Preserve existing authorization for engineering edits.
 2. Run the existing structural validator and reference auditor; make only authorized workflow changes.
 3. Check catalog uniqueness/discovery, route/Skill references, phase mappings, policy links,
-   invocation cycles, historical exceptions and backup isolation.
+   invocation cycles, historical exceptions and backup isolation. Apply
+   [file lifecycle](../../../_shared/policies/file-lifecycle.md) to changed files and their
+   owning READMEs/navigation; check that the current indexes describe the final paths.
+   Follow the [Skill-library lifecycle rules](../../../../cevns_pyeft/SKILLS.md)
+   for add/edit/move/deprecate/remove operations. Its table is generated from the
+   catalog and actual workflow references; explicitly sync with
+   `python -B tools/update_skill_library.py --write`, then check it read-only as
+   part of the structural validator. This does not refresh protected baselines.
 4. Evaluate realistic natural-language requests separately from fixture structure. Store raw
    inputs, expected routes, actual agent outputs, reviewer verdicts and unresolved failures in
    separate records. Static fixture checks do not establish natural-language behavior.

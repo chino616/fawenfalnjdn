@@ -55,6 +55,11 @@ Dataset/Scientific Claim Gate、blocker、授权、暂停/恢复或关键输入�
 
 读取用户明确提供的：paper/PDF/arXiv/DOI/supplement/data/old code。
 
+以[共同输入规范](../../../../_shared/INPUT_STANDARD.md)作为文件检查与摘录依据，
+按资料角色和本次目标选择适用规则。逐文件核对身份、列/单位、坐标、归一化与来源，
+记录规范/schema 版本、未检查项及实际消费者；用[检查表](../../../../_shared/templates/onboarding/INPUT_FILE_REVIEW_TEMPLATE.md)
+或已有报告保存“原文件 → claim → 合同字段 → data → 消费者”的映射，避免把结构通过写成物理批准。
+
 材料登记时即开始 Evidence Ledger；以下解释与澄清期间持续更新，Step 4 汇总而非首次取证。
 
 使用 `workflows/_shared/templates/onboarding/EXPERIMENT_USER_INPUT_TEMPLATE.md` 作为两条

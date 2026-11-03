@@ -6,14 +6,18 @@
       "name": "cevns-experiment",
       "kind": "router",
       "path": "cevns-pyeft/skills/router/cevns-experiment/SKILL.md",
-      "status": "active"
+      "status": "active",
+      "summary_zh": "识别任务意图，处理 dataset 歧义，管理审核与阶段切换",
+      "outputs_zh": "路由结果、范围和 Gate 状态、阶段交接"
     },
     {
       "id": "cevns.onboarding.experiment",
       "name": "cevns-onboarding",
       "kind": "onboarding",
       "path": "cevns-pyeft/skills/onboarding/cevns-onboarding/SKILL.md",
-      "status": "active"
+      "status": "active",
+      "summary_zh": "登记论文/表格/旧程序，提取候选事实与来源，核对缺失和冲突",
+      "outputs_zh": "材料登记、证据台账、缺失/冲突矩阵、partial Physics Contract"
     },
     {
       "id": "cevns.phase.p01.dataset",
@@ -21,7 +25,9 @@
       "kind": "phase",
       "path": "cevns-pyeft/skills/phases/cevns-dataset/SKILL.md",
       "status": "active",
-      "phase": "P01"
+      "phase": "P01",
+      "summary_zh": "明确数据集身份、run/探测器范围、观测量、分箱与数据语义",
+      "outputs_zh": "dataset 合同、观测轴/单位、分箱与数据身份记录"
     },
     {
       "id": "cevns.phase.p02.target_exposure",
@@ -29,7 +35,9 @@
       "kind": "phase",
       "path": "cevns-pyeft/skills/phases/cevns-target/SKILL.md",
       "status": "active",
-      "phase": "P02"
+      "phase": "P02",
+      "summary_zh": "核对核素组成、核响应键、真实核数及曝光/归一化归属",
+      "outputs_zh": "靶核清单、核数、曝光合同与归一化归属"
     },
     {
       "id": "cevns.phase.p03.source",
@@ -37,7 +45,9 @@
       "kind": "phase",
       "path": "cevns-pyeft/skills/phases/cevns-source/SKILL.md",
       "status": "active",
-      "phase": "P03"
+      "phase": "P03",
+      "summary_zh": "核对源分量、ν/反ν与味态、谱支持域/插值、绝对归一化和时间基准",
+      "outputs_zh": "源合同、注量/谱/入射态接口与检查证据"
     },
     {
       "id": "cevns.phase.p04.theory_response",
@@ -45,7 +55,9 @@
       "kind": "phase",
       "path": "cevns-pyeft/skills/phases/cevns-theory-response/SKILL.md",
       "status": "active",
-      "phase": "P04"
+      "phase": "P04",
+      "summary_zh": "审查理论、算符/匹配与核响应覆盖，明确约定和适用范围",
+      "outputs_zh": "理论与核响应合同、覆盖矩阵、证据与限制"
     },
     {
       "id": "cevns.phase.p05.kinematics_cross_section",
@@ -53,7 +65,9 @@
       "kind": "phase",
       "path": "cevns-pyeft/skills/phases/cevns-kinematics-cross-section/SKILL.md",
       "status": "active",
-      "phase": "P05"
+      "phase": "P05",
+      "summary_zh": "建立弹性运动学与微分截面合同，核对质量、入射态、单位和支持域",
+      "outputs_zh": "运动学/截面合同、物理边界与核验结果"
     },
     {
       "id": "cevns.phase.p06.detector_response",
@@ -61,7 +75,9 @@
       "kind": "phase",
       "path": "cevns-pyeft/skills/phases/cevns-detector-response/SKILL.md",
       "status": "active",
-      "phase": "P06"
+      "phase": "P06",
+      "summary_zh": "区分响应密度与接受后箱概率，核对效率/选择归属和观测轴",
+      "outputs_zh": "探测器观测算子合同、效率归属、轴与概率检查"
     },
     {
       "id": "cevns.phase.p07.slow_counts",
@@ -69,7 +85,9 @@
       "kind": "phase",
       "path": "cevns-pyeft/skills/phases/cevns-slow-counts/SKILL.md",
       "status": "active",
-      "phase": "P07"
+      "phase": "P07",
+      "summary_zh": "计算直接事件数，验证归一化和数值收敛，提交 Slow 参考供审核",
+      "outputs_zh": "Slow 预测、收敛证据；实际接受后冻结的版本化参考"
     },
     {
       "id": "cevns.phase.p08.fast_counts",
@@ -77,7 +95,9 @@
       "kind": "phase",
       "path": "cevns-pyeft/skills/phases/cevns-fast-counts/SKILL.md",
       "status": "active",
-      "phase": "P08"
+      "phase": "P08",
+      "summary_zh": "将加速表示与已接受 Slow 比较，限定参数域、缓存依赖及逐箱误差",
+      "outputs_zh": "Fast 能力记录、误差报告、缓存/适用域合同"
     },
     {
       "id": "cevns.phase.p09.statistics",
@@ -85,7 +105,9 @@
       "kind": "phase",
       "path": "cevns-pyeft/skills/phases/cevns-statistics/SKILL.md",
       "status": "active",
-      "phase": "P09"
+      "phase": "P09",
+      "summary_zh": "核对观测数据语义、似然、nuisance/covariance 和推断范围",
+      "outputs_zh": "统计合同与推断验证；标明近似模型或官方模型边界"
     },
     {
       "id": "cevns.phase.p10.validation",
@@ -93,42 +115,54 @@
       "kind": "phase",
       "path": "cevns-pyeft/skills/phases/cevns-validation/SKILL.md",
       "status": "active",
-      "phase": "P10"
+      "phase": "P10",
+      "summary_zh": "核验目标所需能力、实际 runtime 接入与科学结论的证据范围",
+      "outputs_zh": "能力矩阵、验证/发布证据、待用户审核的最终结论"
     },
     {
       "id": "cevns.engineering.physics_modularity",
       "name": "cevns-physics-modularity",
       "kind": "engineering",
       "path": "cevns-pyeft/skills/engineering/cevns-physics-modularity/SKILL.md",
-      "status": "active"
+      "status": "active",
+      "summary_zh": "按物理职责定位文件/函数与替换点，判断复用、适配或扩展",
+      "outputs_zh": "模块分类、最小改动清单、失效影响与验证计划"
     },
     {
       "id": "cevns.engineering.experiment_migration",
       "name": "experiment-migration",
       "kind": "engineering",
       "path": "cevns-pyeft/skills/engineering/experiment-migration/SKILL.md",
-      "status": "active"
+      "status": "active",
+      "summary_zh": "先用 custom catalog 和 Slow 最小合同接入工程骨架，再核对激活条件",
+      "outputs_zh": "迁移清单、资源审计、合同测试计划与验证结果"
     },
     {
       "id": "cevns.engineering.experiment_archive",
       "name": "experiment-archive",
       "kind": "engineering",
       "path": "cevns-pyeft/skills/engineering/experiment-archive/SKILL.md",
-      "status": "active"
+      "status": "active",
+      "summary_zh": "将 archived/spec_only 从默认 runtime 发现中分离，保留历史",
+      "outputs_zh": "归档/隔离变更记录及未受影响实验的验证"
     },
     {
       "id": "cevns.engineering.resource_manifest_auditor",
       "name": "resource-manifest-auditor",
       "kind": "engineering",
       "path": "cevns-pyeft/skills/engineering/resource-manifest-auditor/SKILL.md",
-      "status": "active"
+      "status": "active",
+      "summary_zh": "审计资源 ID、路径/根、别名、哈希、覆盖作用域与统计延迟加载",
+      "outputs_zh": "资源审计报告、缺失/冲突项与修复验证"
     },
     {
       "id": "cevns.engineering.experiment_release_validator",
       "name": "experiment-release-validator",
       "kind": "engineering",
       "path": "cevns-pyeft/skills/engineering/experiment-release-validator/SKILL.md",
-      "status": "active"
+      "status": "active",
+      "summary_zh": "检查 manifest/catalog/runtime 一致性、隔离导入、外部资源与 wheel",
+      "outputs_zh": "发布/隔离环境验证结果及限制"
     }
   ]
 }

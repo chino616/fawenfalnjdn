@@ -1,0 +1,124 @@
+{
+  "config": {
+    "energy_mev": 30.0,
+    "coefficient_gev_minus2": 1e-05,
+    "sin2theta_w": 0.23873,
+    "recoil_min_kev": 0.05,
+    "recoil_max_kev": 13.0,
+    "n_recoil": 160
+  },
+  "target": "Cs133",
+  "mass_GeV": 123.88871579475999,
+  "b_GeV_minus1": 11.644334960750054,
+  "elastic_endpoint_keV": 14.522135130310854,
+  "flavor_order": [
+    "e",
+    "mu",
+    "tau"
+  ],
+  "nucleon_order": [
+    "p",
+    "n"
+  ],
+  "Wilson_axes": [
+    "final",
+    "initial"
+  ],
+  "kernel_axes": [
+    "incoming_beta",
+    "incoming_beta_prime"
+  ],
+  "final_kernel_axes": [
+    "recoil",
+    "resolved_final_flavor",
+    "incoming_beta",
+    "incoming_beta_prime"
+  ],
+  "displayed_channels": [
+    {
+      "r": "MM",
+      "w": "M",
+      "label": "$M$",
+      "color": "#0072B2",
+      "ls": "-"
+    },
+    {
+      "r": "SSP",
+      "w": "SigmaP",
+      "label": "$\\Sigma'$",
+      "color": "#D55E00",
+      "ls": "--"
+    },
+    {
+      "r": "DD",
+      "w": "Delta",
+      "label": "$\\Delta$",
+      "color": "#009E73",
+      "ls": "-."
+    }
+  ],
+  "all_implemented_channels": [
+    "M",
+    "SigmaPP",
+    "SigmaP",
+    "PhiPP",
+    "PhiPT",
+    "Delta",
+    "MPhiPP",
+    "SigmaPDelta"
+  ],
+  "pn_equals_np": {
+    "M": true,
+    "SigmaP": true,
+    "Delta": true
+  },
+  "other_channel_max_abs_GeV_minus2": {
+    "SigmaPP": 0.0,
+    "PhiPP": 0.0,
+    "PhiPT": 0.0,
+    "MPhiPP": 0.0,
+    "SigmaPDelta": 0.0
+  },
+  "R_and_K_units": "GeV^-2",
+  "W_units": "dimensionless stored-table convention",
+  "cross_section_units": "cm^2/keV",
+  "no_extra_normalization_or_momentum_factors": true,
+  "final_flavor_resolution": "P_alpha c_i applied before particle-response bilinears; all final projectors sum to identity",
+  "cross_section_by_response_scenario": "SM+NP, pure incoming nu_mu",
+  "checks": {
+    "manual_nucleon_contraction_max_scaled_error": 3.199444225276816e-15,
+    "all_channel_sum_max_scaled_error": 1.7077858681272634e-15,
+    "final_flavor_sum_max_scaled_error": 1.7077858681272634e-15,
+    "final_projection_matches_projected_LEFT_max_scaled_error": 0.0,
+    "cross_section_unit_conversion_max_relative_error": 2.1653779823006618e-16,
+    "kernel_hermiticity_max_scaled_error": 1.287791713982698e-16,
+    "all_response_cross_sections_sum_max_relative_error": 3.8881545848131566e-16,
+    "SM_mu_to_mu_matches_SM_inclusive_max_relative_error": 1.6243738585440252e-15,
+    "FC_mu_to_e_matches_NP_inclusive_max_relative_error": 1.6606555929698095e-15,
+    "SM_plus_FC_matches_total_max_relative_error": 1.5034583844961773e-15,
+    "total_mu_to_e_matches_FC_max_relative_error": 0.0,
+    "total_mu_to_mu_matches_SM_max_relative_error": 0.0,
+    "total_mu_to_tau_max_abs_cm2_per_keV": 0.0,
+    "pure_mu_interference_max_relative": 4.905745854469513e-16,
+    "pure_mu_interference_max_abs_cm2_per_keV": 1.044048714879764e-53
+  },
+  "versions": {
+    "numpy": "2.4.6",
+    "matplotlib": "3.11.0"
+  },
+  "response_json_sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+  "source_sha256": {
+    "foundation/constants.py": "0bb51033d1ca64e18a7a7bb0fd4cce38bc679558dd7392740f72d4683276cd44",
+    "foundation/units.py": "053e4c8d9e47cd32ba4bacbb33da8367c02a32aca02c16c1d6d4e4a7bba6640a",
+    "nuclear/response.py": "fc94a1582b11e58113e2f192be9733dfaf5b27b2604fe075da9e9f56b94d776f",
+    "rates/differential.py": "d7e7c42c6eb92202e52524447328521c71c3a1050b4e93b6acc5adf9a16a85ce",
+    "theory/kinematics.py": "2fcdeae7b83a1183c1215461e8d1f91badda142cb78ba7cb0fbb25367c69bd16",
+    "theory/li2026/amplitude.py": "40a2bbfcb60716da67ff3d5182d5af6dd075bcd7dfccf9a49b9b3b0a8a9b7aed",
+    "theory/li2026/responses.py": "25d63e8c923d900a42c67f43ab0fcef40bf39e528767c949a114b37d02135dbe",
+    "theory/li2026/left_to_ci.py": "56027d356737d85de4ae22ba3b303ade16e1c0163887bbedbc53ac2f0d46ae48",
+    "theory/li2026/lec.py": "9c981d8705ba6a17829c75e81b93ce6f85fdbcc290faf5bf64edde9dc8867691",
+    "theory/li2026/operators.py": "c1932f6de64333b3a344fc84b7f5ec19efddbbf9a33db2aa9e245df702609ff4",
+    "theory/li2026/flavor.py": "66c84c2f2dad58ebba132cb768db36c8661a3e053b8cb74900d47df6cffa48c4"
+  },
+  "generator_sha256": "c0c140d75ebce76f4b8f608d05e3a9c904c8ae7f4d940d7cb7d09cd9859c13c7"
+}

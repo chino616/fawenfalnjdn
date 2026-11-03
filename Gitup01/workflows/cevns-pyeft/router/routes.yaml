@@ -44,8 +44,8 @@
       "aliases": [],
       "workflow": "cevns.theory_extension",
       "definition": "definitions/theory-extension/WORKFLOW.md",
-      "when": "Add/change a common theory, LEFT operator, matching or nuclear-response convention.",
-      "boundary": "Explicit human physics decision and affected-experiment regression; no automatic new dataset."
+      "when": "Review the applicability/conventions of shared theory, matching or nuclear responses without changing them, or explicitly add/change that scientific meaning.",
+      "boundary": "Read-only theory audits report evidence and limitations without creating a dataset or implying implementation. Scientific changes require the relevant human decision and affected-experiment regression."
     },
     {
       "request_kind": "resource_audit",
@@ -127,6 +127,16 @@
       "definition": "definitions/release-validation/WORKFLOW.md",
       "when": "Re-run requested existing benchmarks or verify a release/installation.",
       "boundary": "Check only the requested capability; numerical PASS is not a new scientific claim."
+    },
+    {
+      "request_kind": "repository_maintenance",
+      "aliases": [
+        "readme_maintenance"
+      ],
+      "workflow": "cevns.repository_maintenance",
+      "definition": "definitions/repository-maintenance/WORKFLOW.md",
+      "when": "Maintain repository structure and README/navigation after bulk additions, deletions, moves or renames, using Git or an explicit file snapshot.",
+      "boundary": "Read-only impact plan first; sync only authorized documentation and explicit managed inventories. File deletion, scientific meaning, activation and Git commit/push remain separately scoped. Ordinary prose-only edits use documentation_only; workflow behavior changes use skill_qa."
     },
     {
       "request_kind": "documentation_only",
