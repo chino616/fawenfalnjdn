@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "bug-csi",
+      "input": "修复现有 CsI2021 的计数返回数组形状错误，保持物理公式和数值定义不变。",
+      "expected_request_kind": "existing_code_maintenance",
+      "expected_action": "route"
+    },
+    {
+      "id": "new-reactor",
+      "input": "根据我提供的新反应堆论文接入一个新的 CEvNS 数据集。",
+      "expected_request_kind": "new_experiment_onboarding",
+      "expected_action": "route"
+    },
+    {
+      "id": "response-resource",
+      "input": "核对核响应资源文件的新路径、哈希和来源，物理约定保持原样。",
+      "expected_request_kind": "resource_audit",
+      "expected_action": "route"
+    },
+    {
+      "id": "archive-recover",
+      "input": "从我指定的 CONUS 归档目录恢复这个历史数据集，最终需要可运行的物理预测。",
+      "expected_request_kind": "archive_recovery",
+      "expected_action": "route"
+    },
+    {
+      "id": "fast-math",
+      "input": "改变 Fast 的二次系数核表示并扩大适用参数域。",
+      "expected_request_kind": "fast_semantics_change",
+      "expected_action": "route"
+    },
+    {
+      "id": "fast-cache",
+      "input": "修复 Fast 缓存遗漏 bin edges 指纹的问题，不改变数学表示。",
+      "expected_request_kind": "existing_code_maintenance",
+      "expected_action": "route"
+    },
+    {
+      "id": "stats-meaning",
+      "input": "将统计模型改为背景扣除 excess 的协方差拟合，并重新审查科学结论。",
+      "expected_request_kind": "statistics_semantics_change",
+      "expected_action": "route"
+    },
+    {
+      "id": "legacy-import",
+      "input": "修复旧版导入别名导致的 ImportError，保持计算结果不变。",
+      "expected_request_kind": "existing_code_maintenance",
+      "expected_action": "route"
+    },
+    {
+      "id": "left-operator",
+      "input": "在共享 LEFT 理论中加入一个新的算符，并检查受影响实验。",
+      "expected_request_kind": "theory_extension",
+      "expected_action": "route"
+    },
+    {
+      "id": "skill-test",
+      "input": "测试这些 Skill 的路由和目录结构，不进行实验接入。",
+      "expected_request_kind": "skill_qa",
+      "expected_action": "route"
+    },
+    {
+      "id": "benchmark",
+      "input": "用既定配置重新运行 CsI2021 的现有 benchmark，只检查 Slow。",
+      "expected_request_kind": "validation_only",
+      "expected_action": "route"
+    },
+    {
+      "id": "docs",
+      "input": "修正文档拼写和失效链接，不改变科学声明。",
+      "expected_request_kind": "documentation_only",
+      "expected_action": "route"
+    },
+    {
+      "id": "name-only",
+      "input": "CONUS+",
+      "expected_request_kind": null,
+      "expected_action": "clarify_request_without_creating_artifacts"
+    },
+    {
+      "id": "resume",
+      "input": "继续唯一已批准 dataset_id=CsI2021 的 P06，从现有有效记录恢复。",
+      "expected_request_kind": "existing_dataset",
+      "expected_action": "route"
+    }
+  ]
+}

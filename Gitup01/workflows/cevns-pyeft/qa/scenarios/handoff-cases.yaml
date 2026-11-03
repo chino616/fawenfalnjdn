@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "stale-input",
+      "input": "恢复 P08 时发现 source 指纹相对批准版本已改变。",
+      "expected_behaviors": [
+        "invalidate_affected_machine_and_human_gates",
+        "mark_dependent_cache_stale",
+        "preserve_unrelated_approvals",
+        "verify_slow_freeze"
+      ]
+    },
+    {
+      "id": "archive-to-runtime",
+      "input": "已恢复归档文件，用户希望重新激活真实预测。",
+      "expected_behaviors": [
+        "recovery_not_activation",
+        "exact_identity_and_claim",
+        "handoff_to_onboarding",
+        "separate_write_and_physics_decisions"
+      ]
+    },
+    {
+      "id": "candidate-review",
+      "input": "高自动候选正在运行，用户说审查当前物理内容，然后说返回主线。",
+      "expected_behaviors": [
+        "pause_at_safe_point",
+        "show_evidence_and_assumptions",
+        "return_to_mainline_does_not_resume_auto",
+        "canonical_gates_unchanged"
+      ]
+    }
+  ]
+}

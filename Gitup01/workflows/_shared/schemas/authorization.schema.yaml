@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "authorization",
+  "required": [
+    "schema_version",
+    "entries"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "authorization_id",
+          "status",
+          "approval_message_ref",
+          "allowed_actions"
+        ],
+        "properties": {
+          "authorization_id": {
+            "type": "string",
+            "pattern": "^W[0-9]+$"
+          },
+          "status": {
+            "enum": [
+              "ACTIVE",
+              "EXHAUSTED",
+              "REVOKED",
+              "SUPERSEDED"
+            ]
+          },
+          "allowed_actions": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "create",
+                "modify",
+                "delete"
+              ]
+            }
+          },
+          "create_paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "modify_paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "delete_paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

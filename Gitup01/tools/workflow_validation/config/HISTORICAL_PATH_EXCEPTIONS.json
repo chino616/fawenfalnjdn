@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "retained_paths": [
+    {
+      "prefix": "workflows/experiment-integration/runs/",
+      "reason": "Immutable historical evidence and authorization; no active Skill discovery."
+    },
+    {
+      "prefix": "data/experiments/",
+      "reason": "Protected dataset provenance; historical missing CsI run records were already absent."
+    },
+    {
+      "path": "workflows/_shared/templates/onboarding/EXPERIMENT_USER_INPUT_CsI2021_EXAMPLE.md",
+      "reason": "Explicitly reports missing historical run evidence; not an invocation path."
+    },
+    {
+      "prefix": "tests/reference/",
+      "reason": "Protected frozen reference metadata records original src-layout source hashes."
+    },
+    {
+      "path": "docs/software/LAYOUT.md",
+      "reason": "Explicitly explains historical src layout versus current flat layout."
+    },
+    {
+      "path": "docs/physics/physics-audits/antineutrino_sign_helicity_audit.md",
+      "reason": "Physics audit of the flavor-refactor baseline; scientific review remains incomplete, outside workflow restructure."
+    },
+    {
+      "path": "docs/physics/nuclear-responses/nuclear_response_convention_audit.md",
+      "reason": "Physics/source-table audit of the flavor-refactor baseline; not reauthored or accepted by directory work."
+    },
+    {
+      "prefix": "docs/experiments/COHERENT/reviews/2026-10-22-statistics-review/",
+      "reason": "Dated review retains external baseline file links and indices."
+    },
+    {
+      "prefix": "docs/experiments/COHERENT/reviews/2026-10-22-fig3-fig7-overlap-review/",
+      "reason": "Dated review retains external baseline file links and indices."
+    },
+    {
+      "path": "workflows/cevns-pyeft/qa/validate_skill_pack.py",
+      "reason": "Old path literals occur only as rejected-pattern checks."
+    },
+    {
+      "path": "tests/workflows/test_workflow_structure.py",
+      "reason": "Old path literals are intentional negative test input."
+    }
+  ],
+  "excluded_snapshot_roots": [
+    "backup/",
+    "build/",
+    "outputs/",
+    ".pytest_cache/",
+    ".pytest-tmp/"
+  ],
+  "external_dependencies": [],
+  "external_dependency_check": "No hardcoded caller found in inspected repository or empty parent .agents/.codex; sibling archived/publish snapshots are not current instructions."
+}

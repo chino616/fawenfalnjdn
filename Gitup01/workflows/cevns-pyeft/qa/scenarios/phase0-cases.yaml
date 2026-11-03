@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "core-extension",
+      "input": "已确认数据集，需要扩展共用核响应通道。",
+      "expected_behaviors": [
+        "component_classification",
+        "human_core_physics_approval",
+        "affected_experiment_regression_plan",
+        "separate_write_scope",
+        "no_code_before_plan"
+      ]
+    },
+    {
+      "id": "partial-contract",
+      "input": "源参数已明确，后续 Fast 可选细节尚缺。",
+      "expected_behaviors": [
+        "reuse_map",
+        "adapter_map",
+        "capability_plan",
+        "allowed_files",
+        "expected_interfaces",
+        "forbidden_modifications",
+        "rollback",
+        "targeted_detail_backlog"
+      ]
+    },
+    {
+      "id": "first-phase0-complete-plan",
+      "input": "正在为首次新数据集接入制定 Phase 0 计划，源参数已明确，后续 Fast 可选细节尚缺。请说明需要形成的计划和开始生产代码的条件。",
+      "expected_behaviors": [
+        "component_classification",
+        "reuse_and_adapter_maps",
+        "capability_and_validation_plans",
+        "allowed_files_and_interfaces",
+        "forbidden_modifications",
+        "rollback",
+        "separate_scope_physics_write_approvals",
+        "missing_optional_fast_not_global_blocker",
+        "candidate_handoff_before_formal_persistence"
+      ]
+    }
+  ]
+}

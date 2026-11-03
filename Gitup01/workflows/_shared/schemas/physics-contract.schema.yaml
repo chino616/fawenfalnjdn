@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "physics-contract",
+  "required": [
+    "contract_version",
+    "dataset_id",
+    "sections"
+  ],
+  "properties": {
+    "contract_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "dataset_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "scientific_claim": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sections": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "decision_status": {
+            "enum": [
+              "DRAFT",
+              "APPROVED",
+              "BLOCKED",
+              "NOT_APPLICABLE"
+            ]
+          },
+          "fields": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

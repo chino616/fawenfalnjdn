@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "evidence-ledger",
+  "required": [
+    "sources",
+    "claims"
+  ],
+  "properties": {
+    "sources": {
+      "type": "array"
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "claim_id",
+          "field",
+          "status"
+        ],
+        "properties": {
+          "claim_id": {
+            "type": "string"
+          },
+          "field": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "SOURCE_EXTRACTED",
+              "PROJECT_DERIVED",
+              "USER_CONFIRMED",
+              "REFERENCE_ONLY",
+              "MISSING",
+              "CONFLICT"
+            ]
+          },
+          "evidence_claims": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "conflict_group": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

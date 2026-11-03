@@ -78,8 +78,19 @@ class PreparedExperiment:
 
 def load_experiment(dataset_id, *, resources=None, registry=None, definition=None, components=None):
     catalog = registry if registry is not None else BUILTIN_CATALOG
-    canonical = catalog.canonical_id(dataset_id) if definition is None else dataset_id
-    definition = definition or catalog.definition(canonical)
+    # Always consult the catalog when an ID is known so archived/spec-only entries
+    # cannot be reintroduced by passing a definition directly.  Preserve the
+    # historical escape hatch for an entirely unregistered explicit definition.
+    if definition is None:
+        canonical = catalog.canonical_id(dataset_id)
+        definition = catalog.definition(canonical)
+    else:
+        try:
+            canonical = catalog.canonical_id(dataset_id)
+        except KeyError:
+            canonical = str(dataset_id)
+        else:
+            catalog.ensure_loadable(canonical)
     if canonical != definition.dataset_id:
         raise ValueError('requested dataset and definition identity differ')
     if resources is None:

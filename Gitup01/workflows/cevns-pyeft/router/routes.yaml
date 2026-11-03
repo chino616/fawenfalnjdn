@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "entry_skill": "cevns.router.experiment",
+  "intent_contract": {
+    "experiment_name_alone_selects_onboarding": false,
+    "missing_intent_action": "clarify_request_without_creating_artifacts",
+    "classification": "Interpret requested change and semantic impact; never keyword-match an experiment name.",
+    "one_primary_route": true,
+    "supporting_routes": "List independent concerns explicitly; execute only their authorized scope.",
+    "semantic_change_precedence": "Theory/Fast/statistical meaning outranks an engineering file location.",
+    "archive_isolation": "Only explicitly selected archive sources may be inspected for recovery; no automatic backup discovery.",
+    "machine_pass_is_human_approval": false,
+    "software_defect_precedence": "A narrowly scoped defect fix preserving existing behavior, including import aliases or Fast cache keys, uses existing_code_maintenance. runtime_migration is for deliberate catalog/loader/adapter/scaffold/packaging architecture or contract migration. File location alone cannot override that distinction."
+  },
+  "routes": [
+    {
+      "request_kind": "existing_code_maintenance",
+      "aliases": [],
+      "workflow": "cevns.runtime_maintenance",
+      "definition": "definitions/runtime-maintenance/WORKFLOW.md",
+      "when": "Repair an existing code defect while preserving approved physical and statistical meaning.",
+      "boundary": "No experiment onboarding; select affected contract/regression tests."
+    },
+    {
+      "request_kind": "new_experiment_onboarding",
+      "aliases": [
+        "physics_onboarding"
+      ],
+      "workflow": "cevns.experiment_onboarding",
+      "definition": "definitions/experiment-onboarding/WORKFLOW.md",
+      "when": "Explicit request to add a new dataset or redefine a dataset from new physics materials.",
+      "boundary": "Material identity, scientific claim and Phase 0 precede production code."
+    },
+    {
+      "request_kind": "existing_dataset",
+      "aliases": [],
+      "workflow": "cevns.experiment_onboarding",
+      "definition": "definitions/experiment-onboarding/WORKFLOW.md",
+      "when": "Continue an explicitly identified dataset and phase with existing evidence/approvals.",
+      "boundary": "Resume the verified checkpoint; do not restart intake or infer approval from an index."
+    },
+    {
+      "request_kind": "theory_extension",
+      "aliases": [],
+      "workflow": "cevns.theory_extension",
+      "definition": "definitions/theory-extension/WORKFLOW.md",
+      "when": "Add/change a common theory, LEFT operator, matching or nuclear-response convention.",
+      "boundary": "Explicit human physics decision and affected-experiment regression; no automatic new dataset."
+    },
+    {
+      "request_kind": "resource_audit",
+      "aliases": [],
+      "workflow": "cevns.resource_maintenance",
+      "definition": "definitions/resource-maintenance/WORKFLOW.md",
+      "when": "Audit/update resource paths, hashes, content or provenance without an already approved change of physics meaning.",
+      "boundary": "Conflicting normalization, units or nuclear conventions require clarification and a supporting theory/capability route."
+    },
+    {
+      "request_kind": "runtime_migration",
+      "aliases": [
+        "runtime_existing",
+        "new_experiment"
+      ],
+      "workflow": "cevns.runtime_maintenance",
+      "definition": "definitions/runtime-maintenance/WORKFLOW.md",
+      "when": "Change catalog, loader, definition adapters, selection, compatibility, scaffolding or packaging.",
+      "boundary": "new_experiment is a legacy scaffold alias only; scientific dataset creation uses new_experiment_onboarding."
+    },
+    {
+      "request_kind": "archive_recovery",
+      "aliases": [],
+      "workflow": "cevns.archive_lifecycle",
+      "definition": "definitions/archive-lifecycle/WORKFLOW.md",
+      "when": "Explicit request to inspect/recover a specified archived source or dataset.",
+      "boundary": "Recovery is not activation; runnable physics recovery hands off to onboarding with exact identity."
+    },
+    {
+      "request_kind": "archive_maintenance",
+      "aliases": [
+        "archive_experiment"
+      ],
+      "workflow": "cevns.archive_lifecycle",
+      "definition": "definitions/archive-lifecycle/WORKFLOW.md",
+      "when": "Change archived/spec-only runtime status with history preserved.",
+      "boundary": "Verify exclusion from default load, selection, registry and statistics."
+    },
+    {
+      "request_kind": "fast_semantics_change",
+      "aliases": [],
+      "workflow": "cevns.capability_maintenance",
+      "definition": "definitions/capability-maintenance/WORKFLOW.md",
+      "when": "Change Fast mathematics, coefficient basis, approximation or parameter validity domain.",
+      "boundary": "Use P08 and a valid authoritative Slow; pure cache/software defects use existing_code_maintenance."
+    },
+    {
+      "request_kind": "statistics_semantics_change",
+      "aliases": [],
+      "workflow": "cevns.capability_maintenance",
+      "definition": "definitions/capability-maintenance/WORKFLOW.md",
+      "when": "Change observed-data meaning, likelihood, covariance, priors or inference definition.",
+      "boundary": "Use P09 and human review of the resulting scientific claim."
+    },
+    {
+      "request_kind": "fast_or_statistics_change",
+      "aliases": [],
+      "workflow": "cevns.capability_maintenance",
+      "definition": "definitions/capability-maintenance/WORKFLOW.md",
+      "when": "Request explicitly spans Fast/statistical meaning or requires clarifying which meaning changes.",
+      "boundary": "Resolve the affected capability before implementation; do not assume ordinary packaging."
+    },
+    {
+      "request_kind": "skill_qa",
+      "aliases": [
+        "skill_debug"
+      ],
+      "workflow": "cevns.skill_qa",
+      "definition": "definitions/skill-qa/WORKFLOW.md",
+      "when": "Inspect, test or restructure workflow/Skill routing, governance, templates and references.",
+      "boundary": "No real dataset, physics implementation or approval from simulated choices."
+    },
+    {
+      "request_kind": "validation_only",
+      "aliases": [
+        "release_validation"
+      ],
+      "workflow": "cevns.release_validation",
+      "definition": "definitions/release-validation/WORKFLOW.md",
+      "when": "Re-run requested existing benchmarks or verify a release/installation.",
+      "boundary": "Check only the requested capability; numerical PASS is not a new scientific claim."
+    },
+    {
+      "request_kind": "documentation_only",
+      "aliases": [],
+      "workflow": "cevns.runtime_maintenance",
+      "definition": "definitions/runtime-maintenance/WORKFLOW.md",
+      "when": "Edit documentation without changing scientific claims or runtime behavior.",
+      "boundary": "Use the documentation-only branch; no physics gates or runtime rebuild for prose-only changes."
+    }
+  ]
+}

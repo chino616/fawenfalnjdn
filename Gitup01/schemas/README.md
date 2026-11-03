@@ -1,11 +1,24 @@
-# 数据契约
+# schemas：数据文件的声明式格式约定
 
-`experiment.schema.json` 给出通用实验配置的最小 JSON Schema。
+本目录使数据结构可独立查阅。它不负责选择实验，也不是当前 runtime 自动执行的一套通用验证器。
 
-CSV 契约集中在 `csv_contracts.json`。验证脚本主要检查：
+| 文件 | 实际声明内容 |
+|---|---|
+| [experiment.schema.json](experiment.schema.json) | 实验说明最少需要 `dataset_name`、`source_type`、`target_mode`；另外描述 source 类型和部分可选字段 |
+| [csv_contracts.json](csv_contracts.json) | reactor spectrum、efficiency、bin edges、isotopes 的列名、递增/范围/分数和等约定 |
 
-- 文件是否存在；
-- 列名；
-- 分箱递增；
-- 丰度与裂变份额和；
-- publication 核心表是否仍有空单元格或 `REQUIRES_INPUT`。
+## 与实际代码的边界
+
+[experiments/specs.py](../cevns_pyeft/experiments/specs.py) 用自己的小型 YAML 解析器和 `validate_experiment_spec_data` 检查必需字段，没有加载这里的 JSON Schema。`load_experiment` 也不因新增 schema 自动获得新输入格式。
+
+当前 CsI2017 的实际坐标绑定由 [statistics/tables.py](../cevns_pyeft/statistics/tables.py) 读取该数据集的 `observation_schema.json` 完成；资源完整性由 [validate_resource_manifest.py](../tools/validate_resource_manifest.py) 检查。两者职责不同，不能把声明文件存在理解为所有科学语义已验证。
+
+## 管理与新增文件
+
+多个数据集共用的新格式可以在这里新增 `<格式名>.schema.json`，或在 CSV 合同中增加明确条目。只属于一个数据集的坐标/列映射放在其 `data/experiments/.../statistics/`。
+
+每次新增必须说明字段、单位、必填项及版本，并确定由哪个工具或 loader 实际加载验证；若没有消费者，标明它只是格式声明。需要自动验证时同时实现调用、失败信息和有效/无效样例测试。schema 变动不能替代修改具体 definition 和读取器，也不能自动激活新实验。
+
+---
+
+[上一级](../README.md)

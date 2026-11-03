@@ -30,3 +30,29 @@ from cevns_pyeft.kernels.builder import *  # noqa: F401,F403
 from cevns_pyeft.kernels.reconstruction import *  # noqa: F401,F403
 from cevns_pyeft.kernels.storage import *  # noqa: F401,F403
 
+
+
+# Preserve historical call signatures while enforcing manifest lifecycle at the
+# public compatibility boundary. Numerical implementations remain unchanged.
+def _lifecycle_adapter(function, dataset_id):
+    from functools import wraps
+
+    @wraps(function)
+    def checked(*args, **kwargs):
+        from cevns_pyeft.experiments.catalog import BUILTIN_CATALOG
+        BUILTIN_CATALOG.ensure_loadable(dataset_id)
+        return function(*args, **kwargs)
+    return checked
+
+
+def _install_lifecycle_adapters():
+    from cevns_pyeft.experiments.registry import _LEGACY_SLOW_COUNT_FUNCTIONS
+
+    for dataset_id, function in _LEGACY_SLOW_COUNT_FUNCTIONS.items():
+        name = function.__name__
+        globals()[name] = _lifecycle_adapter(function, dataset_id)
+        fast_name = "build_fast_kernel_" + name.removeprefix("slow_counts_")
+        globals()[fast_name] = _lifecycle_adapter(globals()[fast_name], dataset_id)
+
+
+_install_lifecycle_adapters()

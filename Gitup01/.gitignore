@@ -5,3 +5,16 @@ __pycache__/
 .pytest_cache/
 .pytest-tmp/
 
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Generated Python packaging files
+/build/
+/dist/
+*.egg-info/
+*.whl
+
+# Temporary wheel build and isolated installation
+/outputs/release/build-temp/
+/outputs/release/final-validation/
+

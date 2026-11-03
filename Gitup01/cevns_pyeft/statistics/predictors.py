@@ -84,10 +84,13 @@ def predict_raw_components(
     fast_kernel_path: str | Path | None = None,
     include_sm: bool = True,
     sin2thetaW: float = 0.2387,
+    registry=None,
     **kwargs,
 ) -> RawComponentPrediction:
     from cevns_pyeft.experiments.catalog import BUILTIN_CATALOG
-    dataset = BUILTIN_CATALOG.canonical_id(str(experiment))
+    catalog = BUILTIN_CATALOG if registry is None else registry
+    dataset = catalog.canonical_id(str(experiment))
+    catalog.ensure_loadable(dataset)
     if dataset not in ("CsI2021", "CsI2017", "Ar2020"):
         raise ValueError(f"legacy statistical predictor does not support {dataset!r}")
     wc = dict(wilson_np or {})
@@ -139,7 +142,7 @@ def predict_raw_components(
         actual_id = _kernel["metadata"].get("dataset")
         if actual_id != dataset:
             raise ValueError(f"requested dataset {dataset!r} differs from kernel dataset {actual_id!r}")
-        expected = BUILTIN_CATALOG.definition(dataset).observation.edges
+        expected = catalog.definition(dataset).observation.edges
         if not np.array_equal(_kernel["metadata"].get("pe_bins"), _kernel["pe_bins"]) or not np.array_equal(_kernel["pe_bins"], expected):
             raise ValueError(f"{dataset}: saved kernel observation/binning mismatch")
         targets = tuple(_kernel['targets'])
@@ -172,6 +175,7 @@ def predict_raw_counts(
     fast_kernel_path: str | Path | None = None,
     include_sm: bool = True,
     sin2thetaW: float = 0.2387,
+    registry=None,
     **kwargs,
 ) -> PredictionVector:
     return predict_raw_components(
@@ -182,6 +186,7 @@ def predict_raw_counts(
         fast_kernel_path=fast_kernel_path,
         include_sm=include_sm,
         sin2thetaW=sin2thetaW,
+        registry=registry,
         **kwargs,
     ).total
 

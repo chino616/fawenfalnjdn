@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "request",
+  "required": [
+    "request_kind",
+    "request_text",
+    "supporting_routes"
+  ],
+  "properties": {
+    "request_kind": {
+      "enum": [
+        "existing_code_maintenance",
+        "new_experiment_onboarding",
+        "existing_dataset",
+        "theory_extension",
+        "resource_audit",
+        "runtime_migration",
+        "archive_recovery",
+        "archive_maintenance",
+        "fast_semantics_change",
+        "statistics_semantics_change",
+        "fast_or_statistics_change",
+        "skill_qa",
+        "validation_only",
+        "documentation_only"
+      ]
+    },
+    "request_text": {
+      "type": "string"
+    },
+    "supporting_routes": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "existing_code_maintenance",
+          "new_experiment_onboarding",
+          "existing_dataset",
+          "theory_extension",
+          "resource_audit",
+          "runtime_migration",
+          "archive_recovery",
+          "archive_maintenance",
+          "fast_semantics_change",
+          "statistics_semantics_change",
+          "fast_or_statistics_change",
+          "skill_qa",
+          "validation_only",
+          "documentation_only"
+        ]
+      }
+    },
+    "dataset_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "semantic_change": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    }
+  }
+}

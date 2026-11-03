@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "two-datasets",
+      "input": "同一实验有两次运行期材料，用户尚未指定数据集。",
+      "expected_behaviors": [
+        "show_all_dataset_candidates",
+        "wait_for_identity_decision",
+        "no_formal_dataset_write"
+      ]
+    },
+    {
+      "id": "interpretation",
+      "input": "论文和旧程序对效率作用域存在冲突。",
+      "expected_behaviors": [
+        "ledger_begins_at_material_registration",
+        "ai_physics_interpretation",
+        "human_physics_clarification",
+        "preserve_conflicting_claims"
+      ]
+    },
+    {
+      "id": "missing-statistics",
+      "input": "目标只要求信号 Slow，缺少官方 covariance。",
+      "expected_behaviors": [
+        "do_not_block_valid_signal_only_slow",
+        "statistics_not_requested_or_blocked",
+        "no_official_likelihood_claim"
+      ]
+    }
+  ]
+}

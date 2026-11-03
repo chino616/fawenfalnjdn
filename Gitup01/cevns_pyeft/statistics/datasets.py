@@ -60,7 +60,27 @@ def _datafiles_dir(data_dir: str | Path | None = None) -> Path:
     return _repo_root() / "data" / "datafiles"
 
 
+def _ensure_statistics_loadable(dataset_id: str) -> str:
+    """Reject archived/spec-only IDs before legacy statistics are loaded.
+
+    The legacy dataset functions intentionally keep their historical numerical
+    implementations. Their lifecycle boundary belongs to the experiment
+    Catalog so an archived definition cannot be reintroduced by a fixed-name
+    statistics branch.
+    """
+    from cevns_pyeft.experiments.catalog import BUILTIN_CATALOG
+
+    try:
+        canonical = BUILTIN_CATALOG.canonical_id(dataset_id)
+    except KeyError:
+        # Preserve the historical unknown-name behavior of each caller.
+        return str(dataset_id)
+    BUILTIN_CATALOG.ensure_loadable(canonical)
+    return canonical
+
+
 def csi2021_dataset() -> BinnedDataset:
+    _ensure_statistics_loadable("CsI2021")
     return BinnedDataset(
         name="CsI2021",
         observed=CSI2021_OBSERVED_OVER_BIN_WIDTH.copy(),
@@ -78,6 +98,7 @@ def csi2021_dataset() -> BinnedDataset:
 
 
 def load_csi2017_reference_data(data_dir: str | Path | None = None) -> dict[str, np.ndarray]:
+    _ensure_statistics_loadable("CsI2017")
     from cevns_pyeft.foundation.resources import resolve_resource
     from .tables import csi2017_tables
     root=_repo_root()
@@ -89,6 +110,7 @@ def load_csi2017_reference_data(data_dir: str | Path | None = None) -> dict[str,
 
 
 def csi2017_dataset(data_dir: str | Path | None = None) -> BinnedDataset:
+    _ensure_statistics_loadable("CsI2017")
     ref = load_csi2017_reference_data(data_dir)
     return BinnedDataset(
         name="CsI2017",
@@ -108,6 +130,7 @@ def csi2017_dataset(data_dir: str | Path | None = None) -> BinnedDataset:
 
 
 def ar2020_dataset() -> BinnedDataset:
+    _ensure_statistics_loadable("Ar2020")
     return BinnedDataset(
         name="Ar2020",
         observed=AR_OBSERVED.copy(),
@@ -127,7 +150,8 @@ def ar2020_dataset() -> BinnedDataset:
 
 
 def load_dataset(name: str, *, data_dir: str | Path | None = None) -> BinnedDataset:
-    key = str(name).strip().lower()
+    canonical = _ensure_statistics_loadable(str(name).strip())
+    key = canonical.lower()
     if key == "csi2021":
         return csi2021_dataset()
     if key == "csi2017":

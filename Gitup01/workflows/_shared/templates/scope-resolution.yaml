@@ -1,0 +1,8 @@
+{
+  "request_kind": null,
+  "request_text": "",
+  "supporting_routes": [],
+  "dataset_id": null,
+  "semantic_change": null,
+  "note": "Resolve ambiguous intent before treating this draft as a valid request record."
+}
