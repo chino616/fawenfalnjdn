@@ -20,6 +20,10 @@ CsI2021 的 Slow 保留“响应积分 → 非负截断 → PE 插值 → 效率
 
 在实验 `prepare` 中装配，或通过 `load_experiment(..., components={"observation": ...})` 替换；仅新增类不会改变计算。若对象依赖新的折叠算法，还需在对应 executor 明确接入。检查概率范围、箱闭合、效率和接受率只施加一次；现有例子见 [test_component_replacement.py](../../tests/test_component_replacement.py)。新响应不能自动承诺 legacy Fast 可用。
 
+## 与dataset安装状态分离的默认响应
+
+[legacy_parameters.py](legacy_parameters.py)集中保存原有CsI淬火、Gamma、效率、PE边界与分量接受率默认值；具体definition引用这些公共默认值，也可在已批准范围内显式装配其他参数。公共响应不再为了获得默认数值导入CsI2021的专用definition，卸载该dataset时保留这项共享能力。
+
 ---
 
 [上一级](../README.md) · [项目总览](../../README.md)

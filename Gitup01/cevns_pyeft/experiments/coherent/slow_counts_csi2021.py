@@ -29,7 +29,8 @@ def _scalar_or_array(x: np.ndarray, like: ArrayLike):
 
 
 def combine_equal_stoichiometry(cs: np.ndarray, i: np.ndarray) -> np.ndarray:
-    return (A_TARGET["Cs133"] * cs + A_TARGET["I127"] * i) / (A_TARGET["Cs133"] + A_TARGET["I127"])
+    from cevns_pyeft.targets.materials import combine_equal_stoichiometry as shared_combine
+    return shared_combine(cs, i)
 
 
 def slow_counts_csi2021(

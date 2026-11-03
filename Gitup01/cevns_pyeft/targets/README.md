@@ -20,6 +20,10 @@
 
 由实验 `prepare` 调用库存构造器，或在已支持核素范围内用 `components={"targets": ...}` 替换。检查分数非负且和为一、核数单位、总质量缩放和每核产额不变，参考 [test_interface_contracts.py](../../tests/test_interface_contracts.py) 与 [test_component_replacement.py](../../tests/test_component_replacement.py)。
 
+## 化学计量组合的共享归属
+
+`materials.combine_equal_stoichiometry`保存原有Cs:I=1:1的质量加权组合，供多个实验与kernel共同调用。旧CsI2021入口保留同名兼容转发，公共算法不再依赖这个dataset必须安装；数值公式保持原样。
+
 ---
 
 [上一级](../README.md) · [项目总览](../../README.md)

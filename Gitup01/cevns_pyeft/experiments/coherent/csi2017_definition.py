@@ -16,7 +16,7 @@ class CsI2017Settings:
     efficiency_low: float = 1e-10
     efficiency_threshold: float = 4.9
     c10_mass_mode: str = 'quark_mass_resolved'
-    implementation_modules: tuple = ('cevns_pyeft.experiments.coherent.execution', 'cevns_pyeft.experiments.coherent.sns', 'cevns_pyeft.rates.counts', 'cevns_pyeft.rates.differential', 'cevns_pyeft.nuclear.response', 'cevns_pyeft.theory.li2026.responses', 'cevns_pyeft.theory.li2026.amplitude', 'cevns_pyeft.theory.li2026.operators', 'cevns_pyeft.kernels.builder', 'cevns_pyeft.kernels.reconstruction', 'cevns_pyeft.experiments.coherent.slow_counts_csi2017', 'cevns_pyeft.experiments.coherent.fast_kernel_csi2017')
+    implementation_modules: tuple = ('cevns_pyeft.targets.materials', 'cevns_pyeft.detectors.legacy_parameters', 'cevns_pyeft.sources.legacy_parameters', 'cevns_pyeft.experiments.coherent.execution', 'cevns_pyeft.experiments.coherent.sns', 'cevns_pyeft.rates.counts', 'cevns_pyeft.rates.differential', 'cevns_pyeft.nuclear.response', 'cevns_pyeft.theory.li2026.responses', 'cevns_pyeft.theory.li2026.amplitude', 'cevns_pyeft.theory.li2026.operators', 'cevns_pyeft.kernels.builder', 'cevns_pyeft.kernels.reconstruction', 'cevns_pyeft.experiments.coherent.slow_counts_csi2017', 'cevns_pyeft.experiments.coherent.fast_kernel_csi2017')
 
     def __post_init__(self):
         if self.targets != CSI_RECIPE:

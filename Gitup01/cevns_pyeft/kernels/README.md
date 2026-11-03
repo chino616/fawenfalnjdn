@@ -24,6 +24,10 @@ Fast 把源、靶核、探测器和积分网格固定后，预先积分与 Wilso
 
 核文件由 `save_compiled_kernel` 或旧格式保存函数生成，放在调用方指定的 `outputs/<运行>/`；不要手改 NPZ 或放入 `data/` 冒充输入。新格式/新依赖需检查逐分量 Fast–Slow 一致性、保存加载、过期拒绝和数组损坏，参考 [test_fast_model_contract.py](../../tests/test_fast_model_contract.py)。可运行用法见 [FAST_AND_CACHE.md](../../docs/user-guide/FAST_AND_CACHE.md)。
 
+## 卸载与共享kernel
+
+公共builder/reconstruction直接使用targets的化学计量组合和detectors的公共响应；专用Fast构建器只在对应dataset分支导入。公共kernel保留于核心库，专用Slow/Fast文件按[文件归属表](../experiments/DATASETS.md)管理；实现依赖指纹包含新公共参数模块，旧缓存应按现有规则重建。
+
 ---
 
 [上一级](../README.md) · [项目总览](../../README.md)

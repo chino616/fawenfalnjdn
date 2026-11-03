@@ -18,6 +18,10 @@
 
 如果新增数值策略，需同时更新 `IntegrationSettings` 的合法值、能力检查和实际消费分支；仅增加一个配置键会被统一入口拒绝。检查运动学支撑、连续谱与谱线、箱边界、接受率一次性应用及三个实验回归；参考 [test_rates_differential_flavor.py](../../tests/test_rates_differential_flavor.py) 和 [test_refactor_csi2021_regression.py](../../tests/test_refactor_csi2021_regression.py)。
 
+## 共享响应默认值
+
+CsI淬火/Gamma微分率在未显式传参时读取detectors/legacy_parameters.py的原有默认值，避免通用率函数依赖某个dataset的专用文件。参数值、公式、积分端点与单位未改变；可拆装状态由实验Catalog和管理器负责。
+
 ---
 
 [上一级](../README.md) · [项目总览](../../README.md)

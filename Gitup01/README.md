@@ -1,10 +1,12 @@
 # CEvNS-pyEFT：从实验定义到事件数
 
-本项目用 Python 计算相干弹性中微子–原子核散射（CEvNS）。当前可通过统一接口加载的实验是 **CsI2021、CsI2017、Ar2020**；活动清单由 [manifest.py](cevns_pyeft/experiments/manifest.py) 管理。实验文档集中介绍这三个 COHERENT 数据集。
+本项目用 Python 计算相干弹性中微子–原子核散射（CEvNS）。发行包提供 CsI2021、CsI2017、Ar2020 的计算定义；本地已安装和可默认加载的状态见 [Dataset 注册与安装清单](cevns_pyeft/experiments/DATASETS.md)。唯一登记数据在 [dataset_registry.json](cevns_pyeft/experiments/dataset_registry.json)，[manifest.py](cevns_pyeft/experiments/manifest.py)提供运行时兼容视图。
 
 **检查、整理或接入实验输入，先读[共同输入规范](workflows/_shared/INPUT_STANDARD.md)。** 所有实验以此核对文件身份、字段/单位、坐标、归一化、来源与实际读取结果；具体资料、数据和审核结论按 dataset 独立保存。
 
 仓库有哪些 Skill、各自产出什么、由哪个流程调用，以及怎样增减维护，统一查看 [Skill 库总表与增减规则](cevns_pyeft/SKILLS.md)。总表由 catalog 和实际流程引用生成，结构检查会发现遗漏或过期。
+
+**安装、卸载、归档、恢复和回滚实验，使用 [Dataset 管理命令](cevns_pyeft/experiments/MANAGEMENT.md)。** 默认先展示计划，显式 `--apply` 执行；事务同步文件、登记、资源、README 与备份，保留共享物理库。下面的示例需要所用 dataset 已安装且为 active。
 
 ## 先跑通一次计算
 

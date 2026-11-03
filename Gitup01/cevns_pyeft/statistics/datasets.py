@@ -9,9 +9,6 @@ import numpy as np
 
 from .observables import StatisticalObservable, observable
 
-from cevns_pyeft.experiments.coherent.csi2021_definition import DEFINITION as D21
-from cevns_pyeft.experiments.coherent.csi2017_definition import DEFINITION as D17
-from cevns_pyeft.experiments.coherent.ar2020_definition import DEFINITION as DAR
 
 UncertaintyKind = Literal["symmetric", "asymmetric"]
 
@@ -36,18 +33,36 @@ class BinnedDataset:
         return int(self.observed.size)
 
 
-PE_BINS_9 = np.asarray(D21.observation.edges, dtype=float)
-CSI2021_OBSERVED_OVER_BIN_WIDTH = np.asarray(D21.statistics.observed, dtype=float)
-CSI2021_BACKGROUND_OVER_BIN_WIDTH = np.asarray(D21.statistics.background, dtype=float)
-CSI2021_UNCERTAINTY_OVER_BIN_WIDTH = np.asarray(D21.statistics.uncertainty, dtype=float)
+_CONSTANTS = {
+    'PE_BINS_9': ('CsI2021','observation','edges'),
+    'CSI2021_OBSERVED_OVER_BIN_WIDTH': ('CsI2021','statistics','observed'),
+    'CSI2021_BACKGROUND_OVER_BIN_WIDTH': ('CsI2021','statistics','background'),
+    'CSI2021_UNCERTAINTY_OVER_BIN_WIDTH': ('CsI2021','statistics','uncertainty'),
+    'CSI2017_BINS_25': ('CsI2017','observation','edges'),
+    'AR_BINS_12': ('Ar2020','observation','edges'),
+    'AR_OBSERVED': ('Ar2020','statistics','observed'),
+    'AR_BACKGROUND': ('Ar2020','statistics','background'),
+    'AR_LOWER': ('Ar2020','statistics','lower'),
+    'AR_UPPER': ('Ar2020','statistics','upper'),
+}
 
-CSI2017_BINS_25 = np.asarray(D17.observation.edges, dtype=float)
+def _definition(sid):
+    from importlib import import_module
+    from cevns_pyeft.experiments.catalog import BUILTIN_CATALOG, UninstalledExperimentError
+    entry=BUILTIN_CATALOG.manifest_entry(sid)
+    if not entry.installed:raise UninstalledExperimentError(sid)
+    return import_module('.'+entry.definition,'cevns_pyeft.experiments').DEFINITION
 
-AR_BINS_12 = np.asarray(DAR.observation.edges, dtype=float)
-AR_OBSERVED = np.asarray(DAR.statistics.observed, dtype=float)
-AR_BACKGROUND = np.asarray(DAR.statistics.background, dtype=float)
-AR_LOWER = np.asarray(DAR.statistics.lower, dtype=float)
-AR_UPPER = np.asarray(DAR.statistics.upper, dtype=float)
+def _constant(name):
+    sid,section,field=_CONSTANTS[name]
+    return np.asarray(getattr(getattr(_definition(sid),section),field),dtype=float)
+
+def __getattr__(name):
+    if name in _CONSTANTS:return _constant(name)
+    aliases={'D21':'CsI2021','D17':'CsI2017','DAR':'Ar2020'}
+    if name in aliases:return _definition(aliases[name])
+    raise AttributeError(name)
+
 
 
 def _repo_root() -> Path:
@@ -81,6 +96,11 @@ def _ensure_statistics_loadable(dataset_id: str) -> str:
 
 def csi2021_dataset() -> BinnedDataset:
     _ensure_statistics_loadable("CsI2021")
+    D21 = _definition("CsI2021")
+    PE_BINS_9 = _constant("PE_BINS_9")
+    CSI2021_OBSERVED_OVER_BIN_WIDTH = _constant("CSI2021_OBSERVED_OVER_BIN_WIDTH")
+    CSI2021_BACKGROUND_OVER_BIN_WIDTH = _constant("CSI2021_BACKGROUND_OVER_BIN_WIDTH")
+    CSI2021_UNCERTAINTY_OVER_BIN_WIDTH = _constant("CSI2021_UNCERTAINTY_OVER_BIN_WIDTH")
     return BinnedDataset(
         name="CsI2021",
         observed=CSI2021_OBSERVED_OVER_BIN_WIDTH.copy(),
@@ -99,6 +119,7 @@ def csi2021_dataset() -> BinnedDataset:
 
 def load_csi2017_reference_data(data_dir: str | Path | None = None) -> dict[str, np.ndarray]:
     _ensure_statistics_loadable("CsI2017")
+    CSI2017_BINS_25 = _constant("CSI2017_BINS_25")
     from cevns_pyeft.foundation.resources import resolve_resource
     from .tables import csi2017_tables
     root=_repo_root()
@@ -111,6 +132,8 @@ def load_csi2017_reference_data(data_dir: str | Path | None = None) -> dict[str,
 
 def csi2017_dataset(data_dir: str | Path | None = None) -> BinnedDataset:
     _ensure_statistics_loadable("CsI2017")
+    D17 = _definition("CsI2017")
+    CSI2017_BINS_25 = _constant("CSI2017_BINS_25")
     ref = load_csi2017_reference_data(data_dir)
     return BinnedDataset(
         name="CsI2017",
@@ -131,6 +154,12 @@ def csi2017_dataset(data_dir: str | Path | None = None) -> BinnedDataset:
 
 def ar2020_dataset() -> BinnedDataset:
     _ensure_statistics_loadable("Ar2020")
+    DAR = _definition("Ar2020")
+    AR_BINS_12 = _constant("AR_BINS_12")
+    AR_OBSERVED = _constant("AR_OBSERVED")
+    AR_BACKGROUND = _constant("AR_BACKGROUND")
+    AR_LOWER = _constant("AR_LOWER")
+    AR_UPPER = _constant("AR_UPPER")
     return BinnedDataset(
         name="Ar2020",
         observed=AR_OBSERVED.copy(),
@@ -179,3 +208,12 @@ __all__ = [
     "load_csi2017_reference_data",
     "load_dataset",
 ]
+
+
+def _installed_constant(name):
+    if name not in _CONSTANTS:return True
+    from cevns_pyeft.experiments.catalog import BUILTIN_CATALOG
+    try:return BUILTIN_CATALOG.manifest_entry(_CONSTANTS[name][0]).installed
+    except KeyError:return False
+
+__all__ = [name for name in __all__ if _installed_constant(name)]

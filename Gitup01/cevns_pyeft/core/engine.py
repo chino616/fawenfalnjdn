@@ -1,4 +1,4 @@
-﻿"""Compatibility re-exports for the phase-1 split modules.
+"""Compatibility re-exports for the phase-1 split modules.
 
 This minimal copy does not include the original monolithic fast-kernel,
 statistics, plotting, or Streamlit application code. It keeps the old
@@ -17,12 +17,17 @@ from cevns_pyeft.experiments.base import *  # noqa: F401,F403
 from cevns_pyeft.experiments.registry import *  # noqa: F401,F403
 from cevns_pyeft.experiments.specs import *  # noqa: F401,F403
 from cevns_pyeft.experiments.coherent.sns import *  # noqa: F401,F403
-from cevns_pyeft.experiments.coherent.slow_counts_csi2017 import *  # noqa: F401,F403
-from cevns_pyeft.experiments.coherent.slow_counts_csi2021 import *  # noqa: F401,F403
-from cevns_pyeft.experiments.coherent.slow_counts_ar2020 import *  # noqa: F401,F403
-from cevns_pyeft.experiments.coherent.fast_kernel_csi2017 import *  # noqa: F401,F403
-from cevns_pyeft.experiments.coherent.fast_kernel_csi2021 import *  # noqa: F401,F403
-from cevns_pyeft.experiments.coherent.fast_kernel_ar2020 import *  # noqa: F401,F403
+from importlib import import_module as _import_dataset_module
+from cevns_pyeft.experiments.registry import _LEGACY_MODULES as _legacy_modules
+from cevns_pyeft.experiments.catalog import BUILTIN_CATALOG as _dataset_catalog
+for _sid, _tag in _legacy_modules.items():
+    if _sid not in _dataset_catalog.ids():
+        continue
+    for _stem in ('slow_counts_', 'fast_kernel_'):
+        _module = _import_dataset_module('cevns_pyeft.experiments.coherent.'+_stem+_tag)
+        for _name in _module.__all__:
+            globals()[_name] = getattr(_module, _name)
+
 from cevns_pyeft.rates.differential import *  # noqa: F401,F403
 from cevns_pyeft.rates.counts import *  # noqa: F401,F403
 from cevns_pyeft.kernels.basis import *  # noqa: F401,F403

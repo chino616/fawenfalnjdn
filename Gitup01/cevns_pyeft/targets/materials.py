@@ -5,6 +5,12 @@ from cevns_pyeft.foundation.constants import AMU_GEV
 from .recipes import CSI_RECIPE,LEGACY_ATOMIC_MASS_KG
 
 
+def combine_equal_stoichiometry(cs, i):
+    """Historical Cs:I=1:1 combination of full-mass single-isotope yields."""
+    masses = {name:a for name,key,a in CSI_RECIPE}
+    return (masses["Cs133"] * cs + masses["I127"] * i) / (masses["Cs133"] + masses["I127"])
+
+
 def _fractions(isotopes, fractions):
     parts = tuple(isotopes)
     values = np.asarray(fractions, dtype=float)

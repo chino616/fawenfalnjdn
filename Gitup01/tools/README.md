@@ -35,6 +35,10 @@ python tools/scaffold_experiment.py --dataset-id DemoReadme --module-name demo_r
 
 新增工具后在此登记命令和副作用；文件解析、身份或迁移工具应有成功与错误输入检查，参考 [test_manifest_and_migration_tools.py](../tests/test_manifest_and_migration_tools.py) 和 [test_runtime_migration_contracts.py](../tests/test_runtime_migration_contracts.py)。机器配置放明确目录并由消费者直接读取，不能隐藏在历史说明副本中。
 
+## Dataset 拆装工具入口
+
+Dataset完整管理由运行包CLI提供：`python -m cevns_pyeft.cli datasets --help`。命令、文件归属、计划、安装/卸载与回滚见[管理说明](../cevns_pyeft/experiments/MANAGEMENT.md)；不在tools再维护第二套活动ID或另一个安装器。
+
 ---
 
 [上一级](../README.md)

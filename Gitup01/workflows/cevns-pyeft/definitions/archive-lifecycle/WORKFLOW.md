@@ -40,3 +40,7 @@ Source/destination inventory and hashes, status/change manifest, resource audit,
 rollback. Human identity/physics/write decisions apply to their actual scope. Ambiguous source,
 identity or meaning blocks activation. Exit with preserved history and verified isolation, or
 an explicit downstream handoff. No default archive material discovery occurs.
+
+## Reversible execution entry
+
+[Dataset management](../../../../cevns_pyeft/experiments/MANAGEMENT.md) provides explicit archive/activate and physical install/uninstall as distinct operations. Start with its read-only plan; execute only the authorized dataset/action. Backups are read only for the exact transaction's rollback/recover. The registry distinguishes installed from active; remaining experiments must pass fresh-process validation. Exporting or reinstalling files does not upgrade historical scientific acceptance.

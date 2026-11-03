@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from ..definition import ExperimentDefinition, SNSRun, ResourceRef, ObservationDefinition, StatisticsDefinition
 
 from cevns_pyeft.targets.recipes import CSI_RECIPE as CSI_TARGET_RECIPE, LEGACY_ATOMIC_MASS_KG
+from cevns_pyeft.detectors.legacy_parameters import CSI_RESPONSE_DEFAULTS, CSI_PE_EDGES, CSI_COMPONENT_ACCEPTANCE
 
 @dataclass(frozen=True)
 class CsI2021Settings:
@@ -10,13 +11,13 @@ class CsI2021Settings:
     mass_kg: float = 14.57
     targets: tuple = CSI_TARGET_RECIPE
     atomic_mass_kg: float = LEGACY_ATOMIC_MASS_KG
-    quenching: tuple = (.0554628, 4.30681, -111.707, 840.384)
-    gamma_a: float = .0749
-    gamma_b: float = 9.56
-    efficiency: tuple = (1.32045, .285979, 10.8646, -.3333)
-    acceptance: tuple = (('e', .848), ('mu', .997), ('mub', .848))
+    quenching: tuple = CSI_RESPONSE_DEFAULTS.quenching
+    gamma_a: float = CSI_RESPONSE_DEFAULTS.gamma_a
+    gamma_b: float = CSI_RESPONSE_DEFAULTS.gamma_b
+    efficiency: tuple = CSI_RESPONSE_DEFAULTS.efficiency
+    acceptance: tuple = CSI_COMPONENT_ACCEPTANCE
     c10_mass_mode: str = 'quark_mass_resolved'
-    implementation_modules: tuple = ('cevns_pyeft.experiments.coherent.execution', 'cevns_pyeft.experiments.coherent.sns', 'cevns_pyeft.rates.counts', 'cevns_pyeft.rates.differential', 'cevns_pyeft.nuclear.response', 'cevns_pyeft.theory.li2026.responses', 'cevns_pyeft.theory.li2026.amplitude', 'cevns_pyeft.theory.li2026.operators', 'cevns_pyeft.kernels.builder', 'cevns_pyeft.kernels.reconstruction', 'cevns_pyeft.detectors.csi2021', 'cevns_pyeft.sources.sns', 'cevns_pyeft.kernels.compiler', 'cevns_pyeft.rates.folding')
+    implementation_modules: tuple = ('cevns_pyeft.targets.materials', 'cevns_pyeft.detectors.legacy_parameters', 'cevns_pyeft.sources.legacy_parameters', 'cevns_pyeft.experiments.coherent.execution', 'cevns_pyeft.experiments.coherent.sns', 'cevns_pyeft.rates.counts', 'cevns_pyeft.rates.differential', 'cevns_pyeft.nuclear.response', 'cevns_pyeft.theory.li2026.responses', 'cevns_pyeft.theory.li2026.amplitude', 'cevns_pyeft.theory.li2026.operators', 'cevns_pyeft.kernels.builder', 'cevns_pyeft.kernels.reconstruction', 'cevns_pyeft.detectors.csi2021', 'cevns_pyeft.sources.sns', 'cevns_pyeft.kernels.compiler', 'cevns_pyeft.rates.folding')
 
     def __post_init__(self):
         if self.targets != CSI_TARGET_RECIPE:
@@ -28,7 +29,7 @@ def prepare(definition, resources):
 
 DEFINITION = ExperimentDefinition('CsI2021', 'COHERENT_CsI', 'legacy_9bin_modular_v1', ('legacy_CsI2021_run',),
     CsI2021Settings(), ObservationDefinition('reconstructed PE spectrum', 'PE',
-        (.001,8.001,12.001,16.001,20.001,24.001,32.001,40.001,48.001,60.001)),
+        CSI_PE_EDGES),
     (ResourceRef('responses', 'data/responses/responses_all.json', semantic='nuclear response database'),),
     {'slow': {'n_er':21,'n_enu':120,'n_pe_bin':8,'pe_step':3.},
      'fast': {'n_er':21,'n_enu':120,'n_pe_bin':8,'pe_step':3.}}, prepare,

@@ -137,8 +137,8 @@ def enr_max_keV(A: int, *, Emax_MeV: Optional[float]=None) -> float:
 
 def eee_quenching_csi(enr_keV: ArrayLike, *, quenching=None) -> ArrayLike:
     if quenching is None:
-        from cevns_pyeft.experiments.coherent.csi2021_definition import DEFINITION
-        quenching = DEFINITION.physical.quenching
+        from cevns_pyeft.detectors.legacy_parameters import CSI_RESPONSE_DEFAULTS
+        quenching = CSI_RESPONSE_DEFAULTS.quenching
     a, b, c3, d4 = quenching
     x = _asarray(enr_keV)
     y = x * 0.001
@@ -146,8 +146,8 @@ def eee_quenching_csi(enr_keV: ArrayLike, *, quenching=None) -> ArrayLike:
     return _scalar_or_array(out, enr_keV)
 
 def p_smearing_csi(pe: ArrayLike, enr_keV: float, *, quenching=None, gamma_a=None, gamma_b=None) -> ArrayLike:
-    from cevns_pyeft.experiments.coherent.csi2021_definition import DEFINITION
-    params = DEFINITION.physical
+    from cevns_pyeft.detectors.legacy_parameters import CSI_RESPONSE_DEFAULTS
+    params = CSI_RESPONSE_DEFAULTS
     gamma_a = params.gamma_a if gamma_a is None else gamma_a
     gamma_b = params.gamma_b if gamma_b is None else gamma_b
     Eee = float(eee_quenching_csi(enr_keV, quenching=quenching))

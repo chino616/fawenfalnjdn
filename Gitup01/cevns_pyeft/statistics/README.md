@@ -20,6 +20,10 @@
 
 新增 evaluator 必须实际把 `Prediction` 转换成该观测的向量，并保留身份/轴验证。仅增加函数不会被 `evaluate_experiment` 自动调用。统计组合也需显式定义，`predict_selection` 不自动相加不同实验的 χ²。检查单位转换一次、同长度不同边界被拒绝、统计变化不使物理核失效，参考 [test_experiment_modularization.py](../../tests/test_experiment_modularization.py)。
 
+## 统计入口与dataset生命周期
+
+旧数据常量按需从已安装definition读取，包级导出排除未安装数据集的常量；具体load/evaluate入口仍先核对Catalog状态。某项物理卸载后，其他实验的统计模块仍可导入和评价。归档/卸载同步当前活动资源清单，保留该实验资源声明用于恢复。
+
 ---
 
 [上一级](../README.md) · [项目总览](../../README.md)

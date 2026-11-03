@@ -12,9 +12,6 @@ from cevns_pyeft.experiments.catalog import (
     list_spec_only_experiments,
 )
 from cevns_pyeft.experiments.coherent.sns import loadNeutrinoEmpiricalFluxSNS
-from cevns_pyeft.experiments.coherent.slow_counts_ar2020 import slow_counts_ar2020
-from cevns_pyeft.experiments.coherent.slow_counts_csi2017 import slow_counts_csi2017
-from cevns_pyeft.experiments.coherent.slow_counts_csi2021 import slow_counts_csi2021
 from cevns_pyeft.experiments.specs import list_spec_experiment_names, load_experiment_spec
 
 
@@ -26,11 +23,19 @@ def _legacy_loader(dataset_id: str) -> Callable[[], dict]:
 
 
 # These are legacy callable adapters, not a second active-ID registry.
-_LEGACY_SLOW_COUNT_FUNCTIONS: dict[str, Callable] = {
-    "CsI2017": slow_counts_csi2017,
-    "CsI2021": slow_counts_csi2021,
-    "Ar2020": slow_counts_ar2020,
-}
+_LEGACY_MODULES = {"CsI2017": "csi2017", "CsI2021": "csi2021", "Ar2020": "ar2020"}
+
+class _LegacyFunctions(Mapping):
+    def __iter__(self):
+        return (sid for sid in BUILTIN_CATALOG.ids() if sid in _LEGACY_MODULES)
+    def __len__(self):return sum(1 for _ in self)
+    def __getitem__(self, name):
+        from importlib import import_module
+        sid=BUILTIN_CATALOG.ensure_loadable(name)
+        tag=_LEGACY_MODULES[sid]
+        return getattr(import_module('.coherent.slow_counts_'+tag,__package__),'slow_counts_'+tag)
+
+_LEGACY_SLOW_COUNT_FUNCTIONS = _LegacyFunctions()
 
 
 class _ActiveLegacyView(Mapping):

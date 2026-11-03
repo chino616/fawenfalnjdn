@@ -25,6 +25,10 @@
 
 接入新协调器要修改调用它的 executor；创建模块不会替换现有 `predict`。旧导入兼容由 `engine.py` 管理，不应在那里复制新公式。改动后检查 [接口测试](../../tests/test_interface_contracts.py)、[单点合同](../../tests/test_physics_core_step1.py)及[冻结回归](../../tests/test_refactor_csi2021_regression.py)，特别是曝光、选择和核数各应用一次。
 
+## 可拆装实验的兼容导入
+
+engine兼容入口按Catalog当前active条目延迟导出已安装的Slow/Fast；某个dataset的专用文件被管理器卸载后，不再从这里顶层导入它。共享预测和理论模块继续保留，完整管理方式见[Dataset管理](../experiments/MANAGEMENT.md)。
+
 ---
 
 [上一级](../README.md) · [项目总览](../../README.md)

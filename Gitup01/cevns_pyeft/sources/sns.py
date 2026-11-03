@@ -28,13 +28,13 @@ class ConstantSNSState:
 
 @dataclass(frozen=True)
 class SNSLegacySource:
-    from cevns_pyeft.experiments.coherent.csi2021_definition import DEFINITION as _D
-    baseline_m: float = _D.physical.run.baseline_m
-    yield_per_pot: float = _D.physical.run.yield_per_pot
-    energy_tabulation: tuple = _D.physical.run.energy_tabulation
-    node_support: tuple = _D.physical.run.node_support
-    num_points: int = _D.physical.run.num_points
-    interpolation: bool = _D.physical.run.interpolation
+    from .legacy_parameters import SNS_COMPONENT_DEFAULTS as _D
+    baseline_m: float = _D.baseline_m
+    yield_per_pot: float = _D.yield_per_pot
+    energy_tabulation: tuple = _D.energy_tabulation
+    node_support: tuple = _D.node_support
+    num_points: int = _D.num_points
+    interpolation: bool = _D.interpolation
 
     def __post_init__(self):
         positive(self.baseline_m, "baseline_m")

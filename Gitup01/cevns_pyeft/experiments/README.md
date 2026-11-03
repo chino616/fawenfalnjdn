@@ -31,6 +31,12 @@
 
 已知实验的默认参数在自己的 definition 维护；单次变化使用 `dataclasses.replace` 或 `components` 覆盖。不要另建活动 ID 列表或用 `experiment.yaml` 的存在代替注册。相关检查见 [test_experiment_modularization.py](../../tests/test_experiment_modularization.py) 和 [test_runtime_migration_contracts.py](../../tests/test_runtime_migration_contracts.py)。
 
+## Dataset 管理入口
+
+[DATASETS.md](DATASETS.md)是用户可见的动态注册/安装/文件归属表；[MANAGEMENT.md](MANAGEMENT.md)给出实际可执行命令。[dataset_registry.json](dataset_registry.json)集中保存唯一身份、installed/status、版本、definition、文件归属、依赖和资源声明；manifest.py读取它生成兼容条目，Catalog和兼容视图继续共用同一活动身份。
+
+[management.py](management.py)实现包哈希、只读计划、事务备份、文件操作、README/资源同步、新进程验证与回滚/中断恢复；[registry_io.py](registry_io.py)用标准库约束登记结构、唯一路径和安全边界。需要维护新安装单元时更新准确归属和依赖，不能把实现指纹依赖直接视为独占文件。
+
 ---
 
 [上一级](../README.md) · [项目总览](../../README.md)

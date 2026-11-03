@@ -214,12 +214,10 @@ def build_fastscan_template(
     n_csi2017_er: int = 251,
     n_obs_sub: int = 8,
 ) -> dict[str, Any]:
-    from cevns_pyeft.experiments.coherent.fast_kernel_ar2020 import build_fast_kernel_ar2020
-    from cevns_pyeft.experiments.coherent.fast_kernel_csi2017 import build_fast_kernel_csi2017
-    from cevns_pyeft.experiments.coherent.fast_kernel_csi2021 import build_fast_kernel_csi2021
 
     basis = list(basis or li2026_left_basis_current())
     if dataset == "CsI2021":
+        from cevns_pyeft.experiments.coherent.fast_kernel_csi2021 import build_fast_kernel_csi2021
         return build_fast_kernel_csi2021(
             responses_json,
             basis=basis,
@@ -231,6 +229,7 @@ def build_fastscan_template(
             pe_step=pe_step,
         )
     if dataset == "CsI2017":
+        from cevns_pyeft.experiments.coherent.fast_kernel_csi2017 import build_fast_kernel_csi2017
         return build_fast_kernel_csi2017(
             responses_json,
             basis=basis,
@@ -240,6 +239,7 @@ def build_fastscan_template(
             n_enu=n_enu,
         )
     if dataset == "Ar2020":
+        from cevns_pyeft.experiments.coherent.fast_kernel_ar2020 import build_fast_kernel_ar2020
         return build_fast_kernel_ar2020(
             responses_json,
             basis=basis,

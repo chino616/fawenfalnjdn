@@ -1,0 +1,341 @@
+{
+  "schema_version": 1,
+  "core_api_version": 1,
+  "datasets": [
+    {
+      "dataset_id": "CsI2021",
+      "definition": "coherent.csi2021_definition",
+      "aliases": [
+        "csi2021"
+      ],
+      "status": "active",
+      "capabilities": [
+        "slow",
+        "fast",
+        "statistics"
+      ],
+      "resource_manifest": "data/resource_manifest.json",
+      "installed": true,
+      "package_version": "1.0.0",
+      "experiment_slug": "COHERENT_CsI",
+      "owned_files": [
+        {
+          "path": "cevns_pyeft/experiments/coherent/csi2021_definition.py",
+          "role": "code"
+        },
+        {
+          "path": "cevns_pyeft/experiments/coherent/slow_counts_csi2021.py",
+          "role": "code"
+        },
+        {
+          "path": "cevns_pyeft/experiments/coherent/fast_kernel_csi2021.py",
+          "role": "code"
+        },
+        {
+          "path": "cevns_pyeft/experiments/coherent/csi2021.py",
+          "role": "code"
+        },
+        {
+          "path": "data/experiments/COHERENT_CsI/CsI2021/experiment.yaml",
+          "role": "data"
+        },
+        {
+          "path": "data/experiments/COHERENT_CsI/CsI2021/README.md",
+          "role": "documentation"
+        },
+        {
+          "path": "data/experiments/COHERENT_CsI/CsI2021/statistics/provenance.yaml",
+          "role": "data"
+        }
+      ],
+      "shared_dependencies": [
+        "cevns_pyeft/detectors/csi2021.py",
+        "cevns_pyeft/detectors/legacy_parameters.py",
+        "cevns_pyeft/experiments/coherent/execution.py",
+        "cevns_pyeft/experiments/coherent/sns.py",
+        "cevns_pyeft/kernels/builder.py",
+        "cevns_pyeft/kernels/compiler.py",
+        "cevns_pyeft/kernels/reconstruction.py",
+        "cevns_pyeft/nuclear/response.py",
+        "cevns_pyeft/rates/counts.py",
+        "cevns_pyeft/rates/differential.py",
+        "cevns_pyeft/rates/folding.py",
+        "cevns_pyeft/sources/legacy_parameters.py",
+        "cevns_pyeft/sources/sns.py",
+        "cevns_pyeft/targets/materials.py",
+        "cevns_pyeft/theory/li2026/amplitude.py",
+        "cevns_pyeft/theory/li2026/operators.py",
+        "cevns_pyeft/theory/li2026/responses.py",
+        "data/responses/responses_all.json"
+      ],
+      "requires_datasets": [],
+      "validation_tests": [
+        "tests/test_experiment_modularization.py"
+      ],
+      "resource_entries": [
+        {
+          "dataset_id": "CsI2021",
+          "resource_id": "responses",
+          "role": "physical",
+          "canonical_path": "data/responses/responses_all.json",
+          "legacy_paths": [],
+          "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+          "semantics": "nuclear response database",
+          "coordinate_contract": null
+        }
+      ]
+    },
+    {
+      "dataset_id": "CsI2017",
+      "definition": "coherent.csi2017_definition",
+      "aliases": [
+        "csi2017"
+      ],
+      "status": "active",
+      "capabilities": [
+        "slow",
+        "fast",
+        "statistics"
+      ],
+      "resource_manifest": "data/resource_manifest.json",
+      "installed": true,
+      "package_version": "1.0.0",
+      "experiment_slug": "COHERENT_CsI",
+      "owned_files": [
+        {
+          "path": "cevns_pyeft/experiments/coherent/csi2017_definition.py",
+          "role": "code"
+        },
+        {
+          "path": "cevns_pyeft/experiments/coherent/slow_counts_csi2017.py",
+          "role": "code"
+        },
+        {
+          "path": "cevns_pyeft/experiments/coherent/fast_kernel_csi2017.py",
+          "role": "code"
+        },
+        {
+          "path": "data/experiments/COHERENT_CsI/CsI2017/detector/COHERENT_eff.txt",
+          "role": "data"
+        },
+        {
+          "path": "data/experiments/COHERENT_CsI/CsI2017/experiment.yaml",
+          "role": "data"
+        },
+        {
+          "path": "data/experiments/COHERENT_CsI/CsI2017/README.md",
+          "role": "documentation"
+        },
+        {
+          "path": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_data.txt",
+          "role": "data"
+        },
+        {
+          "path": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_lower.txt",
+          "role": "data"
+        },
+        {
+          "path": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_spectrum.txt",
+          "role": "data"
+        },
+        {
+          "path": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_upper.txt",
+          "role": "data"
+        },
+        {
+          "path": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json",
+          "role": "data"
+        },
+        {
+          "path": "data/experiments/COHERENT_CsI/CsI2017/statistics/provenance.yaml",
+          "role": "data"
+        }
+      ],
+      "shared_dependencies": [
+        "cevns_pyeft/detectors/legacy_parameters.py",
+        "cevns_pyeft/experiments/coherent/execution.py",
+        "cevns_pyeft/experiments/coherent/sns.py",
+        "cevns_pyeft/kernels/builder.py",
+        "cevns_pyeft/kernels/reconstruction.py",
+        "cevns_pyeft/nuclear/response.py",
+        "cevns_pyeft/rates/counts.py",
+        "cevns_pyeft/rates/differential.py",
+        "cevns_pyeft/sources/legacy_parameters.py",
+        "cevns_pyeft/targets/materials.py",
+        "cevns_pyeft/theory/li2026/amplitude.py",
+        "cevns_pyeft/theory/li2026/operators.py",
+        "cevns_pyeft/theory/li2026/responses.py",
+        "data/responses/responses_all.json"
+      ],
+      "requires_datasets": [],
+      "validation_tests": [
+        "tests/test_experiment_modularization.py"
+      ],
+      "resource_entries": [
+        {
+          "dataset_id": "CsI2017",
+          "resource_id": "responses",
+          "role": "physical",
+          "canonical_path": "data/responses/responses_all.json",
+          "legacy_paths": [],
+          "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+          "semantics": "",
+          "coordinate_contract": null
+        },
+        {
+          "dataset_id": "CsI2017",
+          "resource_id": "observation_schema",
+          "role": "statistics",
+          "canonical_path": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json",
+          "legacy_paths": [],
+          "sha256": "0edd4b8cc260781fd83bd7ea2820c98efdde04d3c7cde1584e86b66d46021645",
+          "semantics": "",
+          "coordinate_contract": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json"
+        },
+        {
+          "dataset_id": "CsI2017",
+          "resource_id": "efficiency",
+          "role": "physical",
+          "canonical_path": "data/experiments/COHERENT_CsI/CsI2017/detector/COHERENT_eff.txt",
+          "legacy_paths": [
+            "data/datafiles/COHERENT_eff.txt"
+          ],
+          "sha256": "ca1f47b5cdfb01fa87a323cf3ee4ee8245488b2e5b0529ecb0863d5bf09a9a7c",
+          "semantics": "",
+          "coordinate_contract": null
+        },
+        {
+          "dataset_id": "CsI2017",
+          "resource_id": "data",
+          "role": "statistics",
+          "canonical_path": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_data.txt",
+          "legacy_paths": [
+            "data/datafiles/COHERENT_data.txt"
+          ],
+          "sha256": "f764accdd388bd161d6d53d3e7a01ff484c13d3dfc0fc1f61cc7fcb40f72cbd0",
+          "semantics": "",
+          "coordinate_contract": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json"
+        },
+        {
+          "dataset_id": "CsI2017",
+          "resource_id": "lower",
+          "role": "statistics",
+          "canonical_path": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_lower.txt",
+          "legacy_paths": [
+            "data/datafiles/COHERENT_lower.txt"
+          ],
+          "sha256": "c802772432ddd5288df5bb316d70a9736ec5b80c79d337ed050fa42d62c097bb",
+          "semantics": "",
+          "coordinate_contract": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json"
+        },
+        {
+          "dataset_id": "CsI2017",
+          "resource_id": "upper",
+          "role": "statistics",
+          "canonical_path": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_upper.txt",
+          "legacy_paths": [
+            "data/datafiles/COHERENT_upper.txt"
+          ],
+          "sha256": "db03d10cc5997f4b08948d71f04c72c88fd48365dc5cedae3b494b04f5853ad5",
+          "semantics": "",
+          "coordinate_contract": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json"
+        },
+        {
+          "dataset_id": "CsI2017",
+          "resource_id": "spectrum",
+          "role": "statistics",
+          "canonical_path": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_spectrum.txt",
+          "legacy_paths": [
+            "data/datafiles/COHERENT_spectrum.txt"
+          ],
+          "sha256": "1584411458e0d48ebb9afb0400bd51e19a0e0208857b96edbea0d59aff710f95",
+          "semantics": "",
+          "coordinate_contract": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json"
+        }
+      ]
+    },
+    {
+      "dataset_id": "Ar2020",
+      "definition": "coherent.ar2020_definition",
+      "aliases": [
+        "ar2020"
+      ],
+      "status": "active",
+      "capabilities": [
+        "slow",
+        "fast",
+        "statistics"
+      ],
+      "resource_manifest": "data/resource_manifest.json",
+      "installed": true,
+      "package_version": "1.0.0",
+      "experiment_slug": "COHERENT_Ar",
+      "owned_files": [
+        {
+          "path": "cevns_pyeft/experiments/coherent/ar2020_definition.py",
+          "role": "code"
+        },
+        {
+          "path": "cevns_pyeft/experiments/coherent/slow_counts_ar2020.py",
+          "role": "code"
+        },
+        {
+          "path": "cevns_pyeft/experiments/coherent/fast_kernel_ar2020.py",
+          "role": "code"
+        },
+        {
+          "path": "data/experiments/COHERENT_Ar/Ar2020/detector/CENNS10AnlAEfficiency.txt",
+          "role": "data"
+        },
+        {
+          "path": "data/experiments/COHERENT_Ar/Ar2020/statistics/provenance.yaml",
+          "role": "data"
+        }
+      ],
+      "shared_dependencies": [
+        "cevns_pyeft/detectors/legacy_parameters.py",
+        "cevns_pyeft/experiments/coherent/execution.py",
+        "cevns_pyeft/experiments/coherent/sns.py",
+        "cevns_pyeft/kernels/builder.py",
+        "cevns_pyeft/kernels/reconstruction.py",
+        "cevns_pyeft/nuclear/response.py",
+        "cevns_pyeft/rates/counts.py",
+        "cevns_pyeft/rates/differential.py",
+        "cevns_pyeft/sources/legacy_parameters.py",
+        "cevns_pyeft/targets/materials.py",
+        "cevns_pyeft/theory/li2026/amplitude.py",
+        "cevns_pyeft/theory/li2026/operators.py",
+        "cevns_pyeft/theory/li2026/responses.py",
+        "data/responses/responses_all.json"
+      ],
+      "requires_datasets": [],
+      "validation_tests": [
+        "tests/test_experiment_modularization.py"
+      ],
+      "resource_entries": [
+        {
+          "dataset_id": "Ar2020",
+          "resource_id": "responses",
+          "role": "physical",
+          "canonical_path": "data/responses/responses_all.json",
+          "legacy_paths": [],
+          "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+          "semantics": "",
+          "coordinate_contract": null
+        },
+        {
+          "dataset_id": "Ar2020",
+          "resource_id": "efficiency",
+          "role": "physical",
+          "canonical_path": "data/experiments/COHERENT_Ar/Ar2020/detector/CENNS10AnlAEfficiency.txt",
+          "legacy_paths": [
+            "data/datafiles/CENNS10AnlAEfficiency.txt"
+          ],
+          "sha256": "f74f92bfdd116bcb2e14f31e3e98a24fb6a7e68458c4f647ca72357c78e55dd3",
+          "semantics": "",
+          "coordinate_contract": null
+        }
+      ]
+    }
+  ]
+}

@@ -52,3 +52,7 @@ routine engineering work. Stop and reclassify if semantics cannot be preserved; 
 P01–P10 just because an experiment ID occurs. Artifacts use the shared run-report where needed.
 Exit with reviewed scope and verified behavior, or requested release-validation handoff; never
 claim a new scientific result from an engineering PASS.
+
+## Dataset package management option
+
+For the complete engineering lifecycle use the [dataset manager](../../../../cevns_pyeft/experiments/MANAGEMENT.md): list/show/audit, export, install/uninstall plans, explicit apply, archive/activate, transaction history, rollback and interrupted-operation recovery. Ownership and dependencies extend the existing single registry; do not create another active-ID list. Engineering implementation and isolated lifecycle tests are covered by the user's management-chain request; do not remove a particular production dataset without that exact requested action. Package transfer and machine PASS do not grant new scientific meaning. File/resource/README changes and precise protected fingerprints are one transaction; preserve shared dependencies and test the remaining experiments. New scientific datasets still use onboarding before canonical activation.

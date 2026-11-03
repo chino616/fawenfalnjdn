@@ -4,7 +4,7 @@ from typing import Any, Dict, Mapping, Sequence
 
 import numpy as np
 
-from cevns_pyeft.experiments.coherent.slow_counts_csi2021 import combine_equal_stoichiometry
+from cevns_pyeft.targets.materials import combine_equal_stoichiometry
 from cevns_pyeft.sources.state import pure_flavor_density
 from cevns_pyeft.theory.li2026.flavor import FLAVOR_ORDER, validate_density_matrix
 

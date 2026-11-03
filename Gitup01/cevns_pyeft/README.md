@@ -34,6 +34,10 @@
 
 新增实验使用 `experiments/` 的 custom catalog 路径；新增理论、源或响应实现相应合同后，通过 `load_experiment(..., components=...)` 或新的 definition 接入。数据表放项目外置 `data/`，测试放根 `tests/`，运行产物放 `outputs/`。公共物理行为变化需检查已有实验回归和 Fast 失效规则。
 
+## Dataset 安装与生命周期
+
+[实验注册和文件归属](experiments/DATASETS.md)汇总每个dataset的安装状态、版本、独占代码/data和共享依赖。[完整管理命令](experiments/MANAGEMENT.md)通过现有CLI完成计划、导出、拆装、归档、启用、验证与回滚；正常预测仍走原接口，管理模块只在显式调用时导入。
+
 ---
 
 [上一级](../README.md)

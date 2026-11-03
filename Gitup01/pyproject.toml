@@ -34,3 +34,6 @@ include = ["cevns_pyeft*"]
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
+
+[tool.setuptools.package-data]
+"cevns_pyeft.experiments" = ["dataset_registry.json"]

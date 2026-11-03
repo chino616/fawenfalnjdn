@@ -20,6 +20,10 @@ SNS 要求 `POTExposure`；每秒通量适配器要求 `LiveTimeExposure` 并乘
 
 若需要组合式 Fast，状态 provider 还需提供 `fixed_state_for_fast()`，且与实际网格上的状态一致；不能用虚假的固定态声明绕过检查。验证曝光换算、源缩放、谱线积分和态坐标，见 [test_interface_contracts.py](../../tests/test_interface_contracts.py) 与 [test_source_state_p2.py](../../tests/test_source_state_p2.py)。默认 SNS 谱由代码构造，当前没有直接读取 `data/datafiles/SNSflux_*.txt`。
 
+## 可独立使用的SNS组件
+
+[legacy_parameters.py](legacy_parameters.py)保存SNS组件原有默认设置，供SNSLegacySource使用；实际运行仍由definition传入明确run参数。coherent.sns的SNS_DATASETS是Catalog活动条目的只读视图，不在模块导入时加载全部实验definition，避免已卸载实验破坏其他源的导入。
+
 ---
 
 [上一级](../README.md) · [项目总览](../../README.md)

@@ -15,7 +15,7 @@ class Ar2020Settings:
     efficiency_columns: tuple = (0,2)
     efficiency_low: float = 0.
     c10_mass_mode: str = 'quark_mass_resolved'
-    implementation_modules: tuple = ('cevns_pyeft.experiments.coherent.execution', 'cevns_pyeft.experiments.coherent.sns', 'cevns_pyeft.rates.counts', 'cevns_pyeft.rates.differential', 'cevns_pyeft.nuclear.response', 'cevns_pyeft.theory.li2026.responses', 'cevns_pyeft.theory.li2026.amplitude', 'cevns_pyeft.theory.li2026.operators', 'cevns_pyeft.kernels.builder', 'cevns_pyeft.kernels.reconstruction', 'cevns_pyeft.experiments.coherent.slow_counts_ar2020', 'cevns_pyeft.experiments.coherent.fast_kernel_ar2020')
+    implementation_modules: tuple = ('cevns_pyeft.targets.materials', 'cevns_pyeft.detectors.legacy_parameters', 'cevns_pyeft.sources.legacy_parameters', 'cevns_pyeft.experiments.coherent.execution', 'cevns_pyeft.experiments.coherent.sns', 'cevns_pyeft.rates.counts', 'cevns_pyeft.rates.differential', 'cevns_pyeft.nuclear.response', 'cevns_pyeft.theory.li2026.responses', 'cevns_pyeft.theory.li2026.amplitude', 'cevns_pyeft.theory.li2026.operators', 'cevns_pyeft.kernels.builder', 'cevns_pyeft.kernels.reconstruction', 'cevns_pyeft.experiments.coherent.slow_counts_ar2020', 'cevns_pyeft.experiments.coherent.fast_kernel_ar2020')
 
 def prepare(definition, resources):
     from .execution import prepare_ar2020

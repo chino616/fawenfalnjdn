@@ -18,22 +18,8 @@ from cevns_pyeft.foundation import constants as c
 from cevns_pyeft.foundation.constants import AMU_GEV, from_energy_gev, to_energy_gev
 from cevns_pyeft.experiments.base import _data_path, _interp_eff
 from cevns_pyeft.experiments.coherent.sns import loadNeutrinoEmpiricalFluxSNS as load_flux
-from cevns_pyeft.experiments.coherent.slow_counts_csi2021 import (
-    A_TARGET,
-    DEFAULT_ACCEPTANCE,
-    PE_BINS_9,
-    combine_equal_stoichiometry,
-    efficiency as csi_efficiency,
-)
-from cevns_pyeft.experiments.coherent.slow_counts_csi2017 import (
-    CSI2017_BINS_25,
-    CSI2017_DEFAULT_EFFICIENCY_RELATIVE_PATH,
-    CSI2017_PE_PER_KEV,
-)
-from cevns_pyeft.experiments.coherent.slow_counts_ar2020 import (
-    AR_BINS_12,
-    AR_DEFAULT_EFFICIENCY_RELATIVE_PATH,
-)
+from cevns_pyeft.targets.materials import combine_equal_stoichiometry
+from cevns_pyeft.detectors.csi2021 import DEFAULT_ACCEPTANCE, PE_BINS_9, efficiency as csi_efficiency
 from cevns_pyeft.nuclear.response import ResponseDB
 from cevns_pyeft.rates.counts import _er_grid
 from cevns_pyeft.rates.differential import (

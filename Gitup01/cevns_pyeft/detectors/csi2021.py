@@ -6,13 +6,13 @@ from cevns_pyeft.contracts.observation import BinProbabilities
 from cevns_pyeft.rates.differential import p_smearing_csi
 from .selection import LegacyComponentAcceptance
 
-from cevns_pyeft.experiments.coherent.csi2021_definition import DEFINITION
-_DEFAULT = DEFINITION.physical
-PE_BINS_9 = np.asarray(DEFINITION.observation.edges)
+from .legacy_parameters import CSI_RESPONSE_DEFAULTS, CSI_PE_EDGES, CSI_COMPONENT_ACCEPTANCE
+_DEFAULT = CSI_RESPONSE_DEFAULTS
+PE_BINS_9 = np.asarray(CSI_PE_EDGES)
 PE_BINS_9.setflags(write=False)
 PE_WIDTHS_9 = np.diff(PE_BINS_9)
 PE_WIDTHS_9.setflags(write=False)
-DEFAULT_ACCEPTANCE = dict(_DEFAULT.acceptance)
+DEFAULT_ACCEPTANCE = dict(CSI_COMPONENT_ACCEPTANCE)
 ArrayLike = Union[float, int, np.ndarray]
 EfficiencyModel = Literal["CsI2021"]
 

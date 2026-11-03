@@ -30,13 +30,26 @@ class SNSDataset:
     EnuMax_MeV: float
     globalEnuMin_MeV: float
     globalEnuMax_MeV: float
-def _compatibility_datasets():
-    from .csi2021_definition import DEFINITION as d21
-    from .csi2017_definition import DEFINITION as d17
-    from .ar2020_definition import DEFINITION as dar
-    return {d.dataset_id: d.physical.run.legacy_dataset(d.dataset_id) for d in (d17,d21,dar)}
+from collections.abc import Mapping
 
-SNS_DATASETS = _compatibility_datasets()
+class _CompatibilityDatasets(Mapping):
+    """Live SNS view of the single Catalog; never imports removed definitions."""
+    def __iter__(self):
+        from ..catalog import BUILTIN_CATALOG
+        for sid in BUILTIN_CATALOG.ids():
+            if hasattr(getattr(BUILTIN_CATALOG.definition(sid).physical, 'run', None), 'legacy_dataset'):
+                yield sid
+    def __len__(self):
+        return sum(1 for _ in self)
+    def __getitem__(self, name):
+        from ..catalog import BUILTIN_CATALOG
+        sid=BUILTIN_CATALOG.ensure_loadable(name)
+        run=getattr(BUILTIN_CATALOG.definition(sid).physical,'run',None)
+        if not hasattr(run,'legacy_dataset'):raise KeyError(name)
+        return run.legacy_dataset(sid)
+
+SNS_DATASETS = _CompatibilityDatasets()
+
 
 def _n_time_integrated_flux_cm2(L_m: float, N_POT: float, r: float) -> float:
     L_cm = float(from_length_invgev(to_length_invgev(L_m, 'm'), 'cm'))

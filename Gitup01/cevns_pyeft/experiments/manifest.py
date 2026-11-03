@@ -1,7 +1,7 @@
-"""Single source of truth for built-in experiment registration metadata.
+"""Runtime dataclass view of the single persistent dataset_registry.json.
 
-The first migration stage deliberately keeps this as a small Python manifest.  It
-can later be serialized without changing the public Catalog API.
+The registry owns identity, lifecycle, version and file/dependency declarations.
+This module preserves the existing Python manifest and Catalog API.
 """
 from __future__ import annotations
 
@@ -20,6 +20,7 @@ class ExperimentManifestEntry:
     status: str = "active"
     capabilities: tuple[str, ...] = ()
     resource_manifest: str | None = None
+    installed: bool = True
 
     def __post_init__(self) -> None:
         dataset_id = str(self.dataset_id).strip()
@@ -27,6 +28,8 @@ class ExperimentManifestEntry:
             raise ValueError("manifest dataset_id must be non-empty")
         if self.status not in VALID_STATUSES:
             raise ValueError(f"unsupported manifest status {self.status!r}")
+        if type(self.installed) is not bool or (not self.installed and self.status == "active"):
+            raise ValueError("an uninstalled dataset cannot be active")
         aliases = tuple(str(alias).strip() for alias in self.aliases)
         if any(not alias for alias in aliases):
             raise ValueError(f"manifest aliases must be non-empty: {self.dataset_id!r}")
@@ -42,30 +45,17 @@ class ExperimentManifestEntry:
             object.__setattr__(self, "resource_manifest", str(self.resource_manifest))
 
 
-# Keep the existing IDs, aliases, and definition modules exactly as they were.
-BUILTIN_MANIFEST: tuple[ExperimentManifestEntry, ...] = (
-    ExperimentManifestEntry(
-        "CsI2021",
-        "coherent.csi2021_definition",
-        aliases=("csi2021",),
-        capabilities=("slow", "fast", "statistics"),
-        resource_manifest="data/resource_manifest.json",
-    ),
-    ExperimentManifestEntry(
-        "CsI2017",
-        "coherent.csi2017_definition",
-        aliases=("csi2017",),
-        capabilities=("slow", "fast", "statistics"),
-        resource_manifest="data/resource_manifest.json",
-    ),
-    ExperimentManifestEntry(
-        "Ar2020",
-        "coherent.ar2020_definition",
-        aliases=("ar2020",),
-        capabilities=("slow", "fast", "statistics"),
-        resource_manifest="data/resource_manifest.json",
-    ),
-)
+from pathlib import Path
+from .registry_io import read_registry
+
+# Identity and lifecycle have one authority: this installed registry resource.
+# Ownership metadata in the same entries is consumed only by explicit management.
+_REGISTRY = read_registry(Path(__file__).resolve().parents[2])
+BUILTIN_MANIFEST = tuple(ExperimentManifestEntry(
+    dataset_id=e['dataset_id'], definition=e['definition'], aliases=tuple(e.get('aliases',())),
+    status=e['status'], capabilities=tuple(e.get('capabilities',())),
+    resource_manifest=e.get('resource_manifest'), installed=e['installed'])
+    for e in _REGISTRY['datasets'])
 
 
 def manifest_entries(*, status: str | None = None) -> tuple[ExperimentManifestEntry, ...]:

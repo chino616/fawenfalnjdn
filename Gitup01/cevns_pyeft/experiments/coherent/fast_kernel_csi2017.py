@@ -8,7 +8,7 @@ from dataclasses import asdict
 from .csi2017_definition import DEFINITION
 
 from cevns_pyeft.experiments.coherent.slow_counts_csi2017 import CSI2017_BINS_25, CSI2017_DEFAULT_EFFICIENCY_RELATIVE_PATH, CSI2017_PE_PER_KEV
-from cevns_pyeft.experiments.coherent.slow_counts_csi2021 import combine_equal_stoichiometry
+from cevns_pyeft.targets.materials import combine_equal_stoichiometry
 from cevns_pyeft.experiments.base import _data_path, _interp_eff
 from cevns_pyeft.kernels.basis import BasisElement, li2026_left_basis_current
 from cevns_pyeft.kernels.builder import FLAVOR_ACCEPTANCE_ONE, FLAVORS, CHANNELS, KernelPayload, _build_one_target_kernel_csi2017_ar, _kernel_to_diag_pair_templates, _make_payload, _target_static, _trapz_weights
