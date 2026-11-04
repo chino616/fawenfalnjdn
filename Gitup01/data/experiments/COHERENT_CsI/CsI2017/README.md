@@ -49,3 +49,18 @@ ANTI-NU AUDIT is required before changing interaction-kernel physics.
 The 14.57/14.6 kg and physical/legacy prompt-energy differences remain explicit
 reproduction conventions and are not resolved in Phase 1.
 
+# Canonical package authority
+
+The registered runtime now reads [experiment.input.yaml](experiment.input.yaml)
+and [experiment.resources.npz](experiment.resources.npz). The deterministic
+[experiment.physics.md](experiment.physics.md) is the human review view, not a
+runtime input. The older spec, detector and statistics files below are retained
+for historical provenance and explicit table audits; they no longer provide
+default runtime parameters.
+
+The package preserves the original fixed 251-node Slow PE grid, deterministic
+PE mapping, bin-edge interpolation and approximate one-pull Gaussian statistics.
+Its values are legacy-derived, DRAFT, human NOT_REVIEWED. Official likelihood,
+general antineutrino EFT and scientific release remain BLOCKED. See the
+[project migration report](../../../../docs/PROJECT_WIDE_PACKAGE_MIGRATION_REPORT.md).
+

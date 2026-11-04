@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "authorizations": [
+    {
+      "id": "W0001",
+      "status": "effective",
+      "source": "current user goal",
+      "scope": [
+        "CsI2021 package adapter and binding metadata",
+        "package-driven tests",
+        "reproduction/audit tool",
+        "phase reports and run records",
+        "necessary README/Skill reference synchronization",
+        "packaging/ownership declarations if tests require them"
+      ],
+      "scientific_approval_granted": false,
+      "continuous_technical_execution": true
+    }
+  ]
+}

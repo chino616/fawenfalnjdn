@@ -1,0 +1,947 @@
+{
+  "schema_version": "csi2021-pilot-binding/1",
+  "input_schema": "cevns-experiment-input/1",
+  "parameter_units": {
+    "source.baseline_m": "m",
+    "source.total_pot": "POT",
+    "source.yield_per_pot": "neutrinos/species/POT",
+    "source.tabulation_min": "MeV",
+    "source.tabulation_max": "MeV",
+    "source.mask_min": "MeV",
+    "source.mask_max": "MeV",
+    "source.tabulation_nodes": "1",
+    "source.interpolation": "boolean",
+    "source.fluence_per_species": "cm^-2",
+    "source.prompt_energy": "MeV",
+    "source.integration_min": "MeV",
+    "source.integration_max": "MeV",
+    "target.detector_mass": "kg",
+    "target.run_mass_metadata": "kg",
+    "target.atomic_mass_kg": "kg",
+    "target.Cs133.A": "1",
+    "target.Cs133.Z": "1",
+    "target.Cs133.N": "1",
+    "target.Cs133.J": "1",
+    "target.Cs133.T": "1",
+    "target.Cs133.b": "GeV^-1",
+    "target.Cs133.isotopic_fraction": "1",
+    "target.Cs133.mass_fraction": "1",
+    "target.Cs133.mass_GeV": "GeV",
+    "target.Cs133.mass_kg": "kg",
+    "target.Cs133.nuclei": "nuclei",
+    "nuclear.Cs133.exp_factor": "1",
+    "target.I127.A": "1",
+    "target.I127.Z": "1",
+    "target.I127.N": "1",
+    "target.I127.J": "1",
+    "target.I127.T": "1",
+    "target.I127.b": "GeV^-1",
+    "target.I127.isotopic_fraction": "1",
+    "target.I127.mass_fraction": "1",
+    "target.I127.mass_GeV": "GeV",
+    "target.I127.mass_kg": "kg",
+    "target.I127.nuclei": "nuclei",
+    "nuclear.I127.exp_factor": "1",
+    "interaction.include_sm": "boolean",
+    "interaction.sin2thetaW": "1",
+    "constants.G_F": "GeV^-2",
+    "constants.alpha_em": "1",
+    "constants.m_mu": "GeV",
+    "constants.m_e": "GeV",
+    "constants.m_pi_charged": "GeV",
+    "constants.AMU_GEV": "GeV",
+    "constants.GEV_INV2_TO_CM2": "cm^2/GeV^-2",
+    "lecs.g_A": "1",
+    "lecs.Sigma_ud": "1",
+    "lecs.B0_m_u": "GeV^2",
+    "lecs.B0_m_d": "GeV^2",
+    "lecs.L1": "1",
+    "lecs.L2": "1",
+    "lecs.L3": "1",
+    "lecs.L4": "1",
+    "lecs.L5": "GeV",
+    "lecs.L6": "GeV",
+    "lecs.L7": "GeV",
+    "lecs.L8": "GeV",
+    "lecs.L9": "GeV",
+    "lecs.L10": "GeV",
+    "lecs.L11": "GeV",
+    "lecs.L12": "GeV",
+    "lecs.L13": "GeV",
+    "lecs.L14": "GeV",
+    "lecs.sigma_u_p": "GeV",
+    "lecs.sigma_d_p": "GeV",
+    "lecs.sigma_u_n": "GeV",
+    "lecs.sigma_d_n": "GeV",
+    "lecs.g1": "GeV",
+    "lecs.g2": "GeV",
+    "lecs.g3": "GeV",
+    "lecs.g4": "GeV",
+    "lecs.g5": "1",
+    "lecs.g6": "1",
+    "lecs.g7": "1",
+    "lecs.g8": "1",
+    "lecs.g9": "1",
+    "lecs.m_u": "GeV",
+    "lecs.m_d": "GeV",
+    "lecs.m_pi": "GeV",
+    "lecs.m_N": "GeV",
+    "detector.quenching_q1": "1",
+    "detector.quenching_q2": "MeV^-1",
+    "detector.quenching_q3": "MeV^-2",
+    "detector.quenching_q4": "MeV^-3",
+    "detector.gamma_a": "keVee/PE",
+    "detector.gamma_b": "keVee^-1",
+    "detector.efficiency_a": "1",
+    "detector.efficiency_b": "PE^-1",
+    "detector.efficiency_c": "PE",
+    "detector.efficiency_d": "1",
+    "detector.acceptance_e": "1",
+    "detector.acceptance_mu": "1",
+    "detector.acceptance_mub": "1",
+    "numerics.n_er": "1",
+    "numerics.n_enu": "1",
+    "numerics.n_observed_bin": "1",
+    "numerics.observed_step": "PE",
+    "numerics.recoil_min_keV": "keV",
+    "statistics.sigma_alpha": "1",
+    "statistics.sigma_beta": "1",
+    "statistics.sigma_floor": "counts/PE"
+  },
+  "model_bindings": {
+    "sns_fluence_legacy_v1": {
+      "mathematics_sha256": "9e4d8bb51f59bd78cfe9215c855336e07f5dab840711f84402bb3c7b10906aef",
+      "parameter_refs": [
+        "source.baseline_m",
+        "source.total_pot",
+        "source.yield_per_pot"
+      ],
+      "depends_on": []
+    },
+    "sns_michel_tabulation_legacy_v1": {
+      "mathematics_sha256": "8a13695de868430d6bcfa041c78a6de21ba180ac954c5f77f141b5d4ac232377",
+      "parameter_refs": [
+        "source.tabulation_min",
+        "source.tabulation_max",
+        "source.mask_min",
+        "source.mask_max",
+        "source.tabulation_nodes",
+        "source.interpolation",
+        "source.fluence_per_species",
+        "constants.m_mu"
+      ],
+      "depends_on": [
+        "sns_fluence_legacy_v1"
+      ]
+    },
+    "sns_prompt_line_v1": {
+      "mathematics_sha256": "d06ed41069ea0678c16224c035594ed69928fa7377db0268a794a86950a5749c",
+      "parameter_refs": [
+        "source.fluence_per_species",
+        "source.prompt_energy",
+        "constants.m_mu",
+        "constants.m_pi_charged"
+      ],
+      "depends_on": [
+        "sns_fluence_legacy_v1"
+      ]
+    },
+    "sns_fixed_state_v1": {
+      "mathematics_sha256": "eddb2f27e37bcaf4a4d08768c78d0b2e12614dfd0d06cfdc7315fccab42d51f9",
+      "parameter_refs": [],
+      "depends_on": []
+    },
+    "csi_target_inventory_v1": {
+      "mathematics_sha256": "6798801354dba6918361111a3c418e43e6238544d512c350caca9905bb93cee3",
+      "parameter_refs": [
+        "target.detector_mass",
+        "target.atomic_mass_kg",
+        "target.Cs133.A",
+        "target.Cs133.mass_fraction",
+        "target.Cs133.mass_GeV",
+        "target.Cs133.mass_kg",
+        "target.I127.A",
+        "target.I127.mass_fraction",
+        "target.I127.mass_GeV",
+        "target.I127.mass_kg",
+        "constants.AMU_GEV"
+      ],
+      "depends_on": []
+    },
+    "li2026_sm_left_v1": {
+      "mathematics_sha256": "4a0992e6782a515b9d4690127e33c6f15c4110cd354e5bbc39819c204cafc8a6",
+      "parameter_refs": [
+        "interaction.include_sm",
+        "interaction.sin2thetaW",
+        "constants.G_F"
+      ],
+      "depends_on": []
+    },
+    "li2026_matching_v1": {
+      "mathematics_sha256": "5187969de70247a167a68a7bcf86aa07b65a8c4123f4e8d51af1ddcb49c5a9c2",
+      "parameter_refs": [
+        "constants.alpha_em",
+        "lecs.g_A",
+        "lecs.B0_m_u",
+        "lecs.B0_m_d",
+        "lecs.L1",
+        "lecs.L2",
+        "lecs.L3",
+        "lecs.L4",
+        "lecs.L5",
+        "lecs.L6",
+        "lecs.L7",
+        "lecs.L8",
+        "lecs.L11",
+        "lecs.L12",
+        "lecs.L13",
+        "lecs.L14",
+        "lecs.sigma_u_p",
+        "lecs.sigma_d_p",
+        "lecs.sigma_u_n",
+        "lecs.sigma_d_n",
+        "lecs.g1",
+        "lecs.g2",
+        "lecs.g3",
+        "lecs.g4",
+        "lecs.g5",
+        "lecs.g6",
+        "lecs.g7",
+        "lecs.g8",
+        "lecs.g9",
+        "lecs.m_pi",
+        "lecs.m_N"
+      ],
+      "depends_on": [
+        "li2026_sm_left_v1",
+        "elastic_kinematics_v1"
+      ]
+    },
+    "elastic_kinematics_v1": {
+      "mathematics_sha256": "824f9d63b3658daff1da198fbe762e2c5355f0184ff81e247e55a03d8c35089c",
+      "parameter_refs": [
+        "target.Cs133.mass_GeV",
+        "target.I127.mass_GeV"
+      ],
+      "depends_on": []
+    },
+    "nuclear_np_polynomial_v1": {
+      "mathematics_sha256": "d3e3eb6bc5d03b820595a40f0f84428d02dd1ff6b6626889c17f374087e76bff",
+      "parameter_refs": [
+        "target.Cs133.b",
+        "nuclear.Cs133.exp_factor",
+        "target.I127.b",
+        "nuclear.I127.exp_factor"
+      ],
+      "depends_on": [
+        "elastic_kinematics_v1"
+      ]
+    },
+    "li2026_R_W_kernel_v1": {
+      "mathematics_sha256": "eceaa8a4f107c3ade10c3337128ee09eef3b0680c19b0c7005b6842f85b6cae7",
+      "parameter_refs": [
+        "lecs.m_N"
+      ],
+      "depends_on": [
+        "li2026_matching_v1",
+        "nuclear_np_polynomial_v1"
+      ]
+    },
+    "li2026_dsigma_v1": {
+      "mathematics_sha256": "89e3385c531e7f0a6fce0fc4fef7f856c1b67d24d9aeb35b8ae237118e16c395",
+      "parameter_refs": [
+        "target.Cs133.mass_GeV",
+        "target.I127.mass_GeV",
+        "constants.GEV_INV2_TO_CM2"
+      ],
+      "depends_on": [
+        "li2026_R_W_kernel_v1",
+        "sns_fixed_state_v1"
+      ]
+    },
+    "csi_quenching_legacy_v1": {
+      "mathematics_sha256": "4821e7ab18285a6f81dd15a0d9858ea72bc585357fca2e6df4ab92aaa42b3837",
+      "parameter_refs": [
+        "detector.quenching_q1",
+        "detector.quenching_q2",
+        "detector.quenching_q3",
+        "detector.quenching_q4"
+      ],
+      "depends_on": []
+    },
+    "legacy_csi_gamma": {
+      "mathematics_sha256": "90a6d53d6a5567db9963b8d34f490327d9274f4823c26da53d1e2266669e15bb",
+      "parameter_refs": [
+        "detector.gamma_a",
+        "detector.gamma_b"
+      ],
+      "depends_on": [
+        "csi_quenching_legacy_v1"
+      ]
+    },
+    "csi2021_logistic_legacy": {
+      "mathematics_sha256": "72bacfb4d57556fd83d728cf4d1afbcfa5cb2626e90d3c7e7ed32e64d64131b7",
+      "parameter_refs": [
+        "detector.efficiency_a",
+        "detector.efficiency_b",
+        "detector.efficiency_c",
+        "detector.efficiency_d"
+      ],
+      "depends_on": []
+    },
+    "legacy_component_acceptance": {
+      "mathematics_sha256": "41cc049e9d8605d8a77efedffbffb8488c3a8e1aba08f98b788b85b340785b69",
+      "parameter_refs": [
+        "target.Cs133.nuclei",
+        "target.I127.nuclei",
+        "detector.acceptance_e",
+        "detector.acceptance_mu",
+        "detector.acceptance_mub"
+      ],
+      "depends_on": []
+    },
+    "legacy_csi2021_v1": {
+      "mathematics_sha256": "5d30769f9b6a918010179a8e93f80a1357f76c7b9730b78742aef5edb61007ae",
+      "parameter_refs": [
+        "source.integration_min",
+        "source.integration_max",
+        "target.Cs133.mass_kg",
+        "target.I127.mass_kg",
+        "constants.m_e",
+        "numerics.n_er",
+        "numerics.n_enu",
+        "numerics.n_observed_bin",
+        "numerics.observed_step",
+        "numerics.recoil_min_keV"
+      ],
+      "depends_on": [
+        "sns_michel_tabulation_legacy_v1",
+        "sns_prompt_line_v1",
+        "li2026_dsigma_v1",
+        "legacy_csi_gamma",
+        "csi2021_logistic_legacy",
+        "csi_target_inventory_v1",
+        "legacy_component_acceptance"
+      ]
+    },
+    "gaussian_two_pull_legacy_v1": {
+      "mathematics_sha256": "a5be3bc5d177ac043e4d84b1e3a8a5ab20caa2d264bb4b674cf3ef6c91ac4ed0",
+      "parameter_refs": [
+        "statistics.sigma_alpha",
+        "statistics.sigma_beta",
+        "statistics.sigma_floor"
+      ],
+      "depends_on": [
+        "legacy_csi2021_v1"
+      ]
+    }
+  },
+  "array_contracts": {
+    "nuclear_Cs133_M": {
+      "unit": "1",
+      "axes": [
+        {
+          "name": "nucleon_left",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "nucleon_right",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "polynomial_power",
+          "rule": "0..shape[-1]-1",
+          "unit": "1"
+        }
+      ],
+      "shape": [
+        2,
+        2,
+        11
+      ],
+      "dtype": "float64"
+    },
+    "nuclear_Cs133_SigmaPP": {
+      "unit": "1",
+      "axes": [
+        {
+          "name": "nucleon_left",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "nucleon_right",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "polynomial_power",
+          "rule": "0..shape[-1]-1",
+          "unit": "1"
+        }
+      ],
+      "shape": [
+        2,
+        2,
+        11
+      ],
+      "dtype": "float64"
+    },
+    "nuclear_Cs133_SigmaP": {
+      "unit": "1",
+      "axes": [
+        {
+          "name": "nucleon_left",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "nucleon_right",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "polynomial_power",
+          "rule": "0..shape[-1]-1",
+          "unit": "1"
+        }
+      ],
+      "shape": [
+        2,
+        2,
+        11
+      ],
+      "dtype": "float64"
+    },
+    "nuclear_Cs133_PhiPP": {
+      "unit": "1",
+      "axes": [
+        {
+          "name": "nucleon_left",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "nucleon_right",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "polynomial_power",
+          "rule": "0..shape[-1]-1",
+          "unit": "1"
+        }
+      ],
+      "shape": [
+        2,
+        2,
+        9
+      ],
+      "dtype": "float64"
+    },
+    "nuclear_Cs133_PhiPT": {
+      "unit": "1",
+      "axes": [
+        {
+          "name": "nucleon_left",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "nucleon_right",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "polynomial_power",
+          "rule": "0..shape[-1]-1",
+          "unit": "1"
+        }
+      ],
+      "shape": [
+        2,
+        2,
+        9
+      ],
+      "dtype": "float64"
+    },
+    "nuclear_Cs133_Delta": {
+      "unit": "1",
+      "axes": [
+        {
+          "name": "nucleon_left",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "nucleon_right",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "polynomial_power",
+          "rule": "0..shape[-1]-1",
+          "unit": "1"
+        }
+      ],
+      "shape": [
+        2,
+        2,
+        9
+      ],
+      "dtype": "float64"
+    },
+    "nuclear_Cs133_MPhiPP": {
+      "unit": "1",
+      "axes": [
+        {
+          "name": "nucleon_left",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "nucleon_right",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "polynomial_power",
+          "rule": "0..shape[-1]-1",
+          "unit": "1"
+        }
+      ],
+      "shape": [
+        2,
+        2,
+        10
+      ],
+      "dtype": "float64"
+    },
+    "nuclear_I127_M": {
+      "unit": "1",
+      "axes": [
+        {
+          "name": "nucleon_left",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "nucleon_right",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "polynomial_power",
+          "rule": "0..shape[-1]-1",
+          "unit": "1"
+        }
+      ],
+      "shape": [
+        2,
+        2,
+        11
+      ],
+      "dtype": "float64"
+    },
+    "nuclear_I127_SigmaPP": {
+      "unit": "1",
+      "axes": [
+        {
+          "name": "nucleon_left",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "nucleon_right",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "polynomial_power",
+          "rule": "0..shape[-1]-1",
+          "unit": "1"
+        }
+      ],
+      "shape": [
+        2,
+        2,
+        11
+      ],
+      "dtype": "float64"
+    },
+    "nuclear_I127_SigmaP": {
+      "unit": "1",
+      "axes": [
+        {
+          "name": "nucleon_left",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "nucleon_right",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "polynomial_power",
+          "rule": "0..shape[-1]-1",
+          "unit": "1"
+        }
+      ],
+      "shape": [
+        2,
+        2,
+        11
+      ],
+      "dtype": "float64"
+    },
+    "nuclear_I127_PhiPP": {
+      "unit": "1",
+      "axes": [
+        {
+          "name": "nucleon_left",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "nucleon_right",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "polynomial_power",
+          "rule": "0..shape[-1]-1",
+          "unit": "1"
+        }
+      ],
+      "shape": [
+        2,
+        2,
+        9
+      ],
+      "dtype": "float64"
+    },
+    "nuclear_I127_PhiPT": {
+      "unit": "1",
+      "axes": [
+        {
+          "name": "nucleon_left",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "nucleon_right",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "polynomial_power",
+          "rule": "0..shape[-1]-1",
+          "unit": "1"
+        }
+      ],
+      "shape": [
+        2,
+        2,
+        9
+      ],
+      "dtype": "float64"
+    },
+    "nuclear_I127_Delta": {
+      "unit": "1",
+      "axes": [
+        {
+          "name": "nucleon_left",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "nucleon_right",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "polynomial_power",
+          "rule": "0..shape[-1]-1",
+          "unit": "1"
+        }
+      ],
+      "shape": [
+        2,
+        2,
+        9
+      ],
+      "dtype": "float64"
+    },
+    "nuclear_I127_MPhiPP": {
+      "unit": "1",
+      "axes": [
+        {
+          "name": "nucleon_left",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "nucleon_right",
+          "values": [
+            "p",
+            "n"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "polynomial_power",
+          "rule": "0..shape[-1]-1",
+          "unit": "1"
+        }
+      ],
+      "shape": [
+        2,
+        2,
+        10
+      ],
+      "dtype": "float64"
+    },
+    "source_energy_MeV": {
+      "unit": "MeV",
+      "axes": [
+        {
+          "name": "source_table_node",
+          "rule": "increasing; includes both endpoints",
+          "unit": "1"
+        }
+      ],
+      "shape": [
+        200
+      ],
+      "dtype": "float64"
+    },
+    "source_fluence_e": {
+      "unit": "cm^-2 MeV^-1",
+      "axes": [
+        {
+          "name": "source_table_node",
+          "coordinate_ref": "source_energy_MeV",
+          "unit": "MeV"
+        }
+      ],
+      "shape": [
+        200
+      ],
+      "dtype": "float64"
+    },
+    "source_fluence_mub": {
+      "unit": "cm^-2 MeV^-1",
+      "axes": [
+        {
+          "name": "source_table_node",
+          "coordinate_ref": "source_energy_MeV",
+          "unit": "MeV"
+        }
+      ],
+      "shape": [
+        200
+      ],
+      "dtype": "float64"
+    },
+    "state_rho_e": {
+      "unit": "1",
+      "axes": [
+        {
+          "name": "flavor_row",
+          "values": [
+            "e",
+            "mu",
+            "tau"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "flavor_column",
+          "values": [
+            "e",
+            "mu",
+            "tau"
+          ],
+          "unit": "1"
+        }
+      ],
+      "shape": [
+        3,
+        3
+      ],
+      "dtype": "complex128"
+    },
+    "state_rho_mu": {
+      "unit": "1",
+      "axes": [
+        {
+          "name": "flavor_row",
+          "values": [
+            "e",
+            "mu",
+            "tau"
+          ],
+          "unit": "1"
+        },
+        {
+          "name": "flavor_column",
+          "values": [
+            "e",
+            "mu",
+            "tau"
+          ],
+          "unit": "1"
+        }
+      ],
+      "shape": [
+        3,
+        3
+      ],
+      "dtype": "complex128"
+    },
+    "observable_pe_edges": {
+      "unit": "PE",
+      "axes": [
+        {
+          "name": "edge_index",
+          "rule": "ascending edge order",
+          "unit": "1"
+        }
+      ],
+      "shape": [
+        10
+      ],
+      "dtype": "float64"
+    },
+    "statistics_observed": {
+      "unit": "counts/PE",
+      "axes": [
+        {
+          "name": "pe_bin",
+          "edges_ref": "observable_pe_edges",
+          "order": "ascending PE",
+          "unit": "PE"
+        }
+      ],
+      "shape": [
+        9
+      ],
+      "dtype": "float64"
+    },
+    "statistics_background": {
+      "unit": "counts/PE",
+      "axes": [
+        {
+          "name": "pe_bin",
+          "edges_ref": "observable_pe_edges",
+          "order": "ascending PE",
+          "unit": "PE"
+        }
+      ],
+      "shape": [
+        9
+      ],
+      "dtype": "float64"
+    },
+    "statistics_uncertainty": {
+      "unit": "counts/PE",
+      "axes": [
+        {
+          "name": "pe_bin",
+          "edges_ref": "observable_pe_edges",
+          "order": "ascending PE",
+          "unit": "PE"
+        }
+      ],
+      "shape": [
+        9
+      ],
+      "dtype": "float64"
+    }
+  },
+  "implementation_note": "Binding metadata only. Numerical values come from the selected package. Fixed engine constants/LECs are checked for compatibility."
+}

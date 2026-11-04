@@ -27,3 +27,8 @@
 ---
 
 [上一级](../README.md) · [项目总览](../../README.md)
+
+
+## CsI2021 输入包的独立统计入口
+
+包级 [__init__.py](__init__.py) 延迟解析旧 dataset 常量，单独导入 profiler 不加载旧实验 definition。[evaluate_package](../experiments/coherent/csi2021_package.py) 消费同一包的统计数组，events/bin 只除一次 PE 箱宽；[P09 报告](../../workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/09_STATISTICS_REPORT.md) 记录独立正规方程与 Asimov 检查。该能力保持 legacy approximate。

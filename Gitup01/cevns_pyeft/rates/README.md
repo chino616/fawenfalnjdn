@@ -7,6 +7,7 @@
 | [differential.py](differential.py) | 将 Wilson/SM 输入、核响应和入射态接到 Li2026；公共能量边界使用 MeV/keV，输出 cm²/keV |
 | [recoil.py](recoil.py) | `integrate_recoil_yield` 对连续谱做梯形积分、另加离散谱线；查询实际能量处的 rho，返回每核、每 keV 产额 |
 | [folding.py](folding.py) | `legacy_density_fold`、`probability_fold` 与 Fast 使用的线性权重；区分响应概率和求积权重 |
+| [legacy_observables.py](legacy_observables.py) | 包内 profile 共用的确定性 PE 和观测值相关 Gaussian 求积/折叠；保留 CsI2017 固定节点与原 bin-edge 插值，参数由 YAML/NPZ 装配 |
 | [counts.py](counts.py) | 旧计数路径共用的反冲率/积分辅助，包含 `_rate_per_kg` |
 | [mass_time.py](mass_time.py) | `segmented_recoil_rate` 用分段 Gauss–Legendre 求积，将每秒通量归一为 events/(kg day keVnr) |
 

@@ -19,7 +19,14 @@ from cevns_pyeft.foundation.constants import AMU_GEV, from_energy_gev, to_energy
 from cevns_pyeft.experiments.base import _data_path, _interp_eff
 from cevns_pyeft.experiments.coherent.sns import loadNeutrinoEmpiricalFluxSNS as load_flux
 from cevns_pyeft.targets.materials import combine_equal_stoichiometry
-from cevns_pyeft.detectors.csi2021 import DEFAULT_ACCEPTANCE, PE_BINS_9, efficiency as csi_efficiency
+from cevns_pyeft.detectors.csi2021 import efficiency as csi_efficiency
+
+
+def __getattr__(name):
+    if name in ('DEFAULT_ACCEPTANCE', 'PE_BINS_9'):
+        from cevns_pyeft.detectors import csi2021
+        return getattr(csi2021, name)
+    raise AttributeError(name)
 from cevns_pyeft.nuclear.response import ResponseDB
 from cevns_pyeft.rates.counts import _er_grid
 from cevns_pyeft.rates.differential import (
@@ -157,15 +164,14 @@ class KernelPayload:
     pair_im: np.ndarray
     pair_index: np.ndarray
 
-def _build_target_static(responses_json: str, *, target: str, pe_bins: np.ndarray, ER_min_keV: float, n_ER: int, n_PE_sub: int, pe_step: Optional[float]=None, basis: Literal['np', 'iso']='np') -> TargetStatic:
+def _build_target_static(responses_json: str, *, target: str, pe_bins: np.ndarray, ER_min_keV: float, n_ER: int, n_PE_sub: int, pe_step: Optional[float]=None, basis: Literal['np', 'iso']='np', response=None, observation=None, nucleus_mass_kg=None) -> TargetStatic:
     if basis != 'np':
         raise NotImplementedError("The matrixized scan currently supports basis='np' only")
-    resp_db = ResponseDB(str(responses_json))
-    resp = resp_db.get(TARGET_KEY_MAP[target])
+    resp = ResponseDB(str(responses_json)).get(TARGET_KEY_MAP[target]) if response is None else response
     A = int(resp.get_basic('A'))
     mA_GeV = A * float(c.AMU_GEV)
     amu_kg = 1.6605390666e-27
-    nucleus_mass_kg = A * amu_kg
+    nucleus_mass_kg = A * amu_kg if nucleus_mass_kg is None else nucleus_mass_kg
     ER_max_keV = enr_max_keV(A, Emax_MeV=emax_muon_dar_mev())
     ER_grid = np.linspace(float(ER_min_keV), float(ER_max_keV), int(n_ER), dtype=float)
     ER_weights = _trapz_weights(ER_grid)
@@ -202,7 +208,7 @@ def _build_target_static(responses_json: str, *, target: str, pe_bins: np.ndarra
         smear_grid = None
         if pe_eval_grid is not None:
             smear_grid = np.asarray(
-                [float(p_smearing_csi(float(x), float(ER))) for x in pe_eval_grid],
+                [float(p_smearing_csi(float(x), float(ER)) if observation is None else observation.response.density(float(x),float(ER),target=None)) for x in pe_eval_grid],
                 dtype=float,
             )
         for ib in range(M):
@@ -211,12 +217,12 @@ def _build_target_static(responses_json: str, *, target: str, pe_bins: np.ndarra
             xs = np.linspace(left, right, int(n_PE_sub), dtype=float)
             if smear_grid is None:
                 smear = np.asarray(
-                    [float(p_smearing_csi(float(x), float(ER))) for x in xs],
+                    [float(p_smearing_csi(float(x), float(ER)) if observation is None else observation.response.density(float(x),float(ER),target=None)) for x in xs],
                     dtype=float,
                 )
             else:
                 smear = np.interp(xs, pe_eval_grid, smear_grid, left=0.0, right=0.0)
-            ys = np.asarray([float(csi_efficiency(float(x))) for x in xs], dtype=float) * smear
+            ys = np.asarray([float(csi_efficiency(float(x)) if observation is None else observation.efficiency(float(x))) for x in xs], dtype=float) * smear
             fold_kernel[ier, ib] = float(_trapz(ys, xs)) * ER_weights[ier]
     return TargetStatic(target=target, A=A, mA_GeV=mA_GeV, nucleus_mass_kg=nucleus_mass_kg, ER_grid_keV=ER_grid, ER_weights_keV=ER_weights, q0_GeV=q0_GeV, q2_GeV2=q2_GeV2, qabs_GeV=qabs_GeV, qabs2_GeV2=qabs2_GeV2, W_by_ER=W_by_ER, fold_kernel=fold_kernel)
 
@@ -244,10 +250,10 @@ def _scan_anti(ci, i, tau, j, taup):
     return _scan_ord(ci, i, tau, j, taup) - _scan_ord(ci, j, tau, i, taup)
 
 
-def _build_one_target_kernel(responses_json: str, dataset: str, target: str, basis_elements: Sequence[BasisElement], pe_bins: np.ndarray, ER_min_keV: float, n_ER: int, n_Enu: int, n_PE_sub: int, pe_step: Optional[float], c10_mass_mode: str, flavor_acceptance: Mapping[str, float]) -> Tuple[str, np.ndarray]:
-    flux_obj = load_flux(dataset)
+def _build_one_target_kernel(responses_json: str, dataset: str, target: str, basis_elements: Sequence[BasisElement], pe_bins: np.ndarray, ER_min_keV: float, n_ER: int, n_Enu: int, n_PE_sub: int, pe_step: Optional[float], c10_mass_mode: str, flavor_acceptance: Mapping[str, float], *, flux_obj=None, static=None) -> Tuple[str, np.ndarray]:
+    flux_obj = load_flux(dataset) if flux_obj is None else flux_obj
     detector_mass_kg = float(flux_obj['basic'].get('detectorMassKg', 14.57))
-    static = _build_target_static(responses_json, target=target, pe_bins=pe_bins, ER_min_keV=ER_min_keV, n_ER=n_ER, n_PE_sub=n_PE_sub, pe_step=pe_step, basis='np')
+    static = _build_target_static(responses_json, target=target, pe_bins=pe_bins, ER_min_keV=ER_min_keV, n_ER=n_ER, n_PE_sub=n_PE_sub, pe_step=pe_step, basis='np') if static is None else static
     B = len(basis_elements)
     F = len(FLAVORS)
     H = len(CHANNELS)
@@ -370,10 +376,10 @@ def build_matrixized_kernel(*, responses_json: str, dataset: str='CsI2021', basi
     if basis_elements is None:
         basis_elements = li2026_left_basis()
     if pe_bins is None:
-        pe_bins = PE_BINS_9
+        pe_bins = __getattr__('PE_BINS_9')
     pe_bins = np.asarray(pe_bins, dtype=float)
     if flavor_acceptance is None:
-        flavor_acceptance = DEFAULT_ACCEPTANCE
+        flavor_acceptance = __getattr__('DEFAULT_ACCEPTANCE')
     raw = _parallel_target_build(responses_json=responses_json, dataset=dataset, raw_targets=RAW_TARGETS, basis_elements=basis_elements, pe_bins=pe_bins, ER_min_keV=ER_min_keV, n_ER=n_ER, n_Enu=n_Enu, n_PE_sub=n_PE_sub, pe_step=pe_step, c10_mass_mode=c10_mass_mode, flavor_acceptance=flavor_acceptance, n_jobs=n_jobs)
     full_kernel = _select_target_arrays(raw, target_mode)
     diag, pair_re, pair_im, pair_index = _kernel_to_diag_pair_templates(full_kernel)
@@ -389,7 +395,7 @@ def _target_static(
     fold_kernel: np.ndarray,
     nucleus_mass_kg=None,
 ) -> TargetStatic:
-    resp = ResponseDB(str(responses_json)).get(TARGET_KEY_MAP.get(target, target))
+    resp = responses_json if hasattr(responses_json,'W_np') else ResponseDB(str(responses_json)).get(TARGET_KEY_MAP.get(target, target))
     A = int(resp.get_basic("A"))
     mA_GeV = A * float(AMU_GEV)
     q0 = np.asarray(er_grid_keV, dtype=float) * 1.0e-6

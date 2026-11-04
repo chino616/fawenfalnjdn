@@ -1,0 +1,99 @@
+{
+  "dataset_id": "CsI2021",
+  "analysis_revision": "legacy_9bin_modular_v1",
+  "scope": "package-driven execution audit of the existing full seven-response, 22-key legacy engine",
+  "entry_phase": "P04",
+  "inherited_P01_P03": "Inputs inherited by explicit user instruction. No new onboarding or scientific approval.",
+  "user_authorization": "Complete 261194_CODEX_CSI2021_P04_P10_SKILL_EXECUTION.md continuously in the explicitly selected publication worktree, beginning at P04.",
+  "change_class": [
+    "REUSE",
+    "CONFIG_ONLY",
+    "ADAPTER",
+    "SHARED_EXTENSION"
+  ],
+  "scientific_approval": "NOT_REVIEWED",
+  "source_inputs": {
+    "revision": 2,
+    "reason": "Concurrent upstream input-contract update observed during initial binding. NPZ unchanged; YAML/MD advanced from pilot/1 to experiment-input/1.",
+    "files": {
+      "experiment.input.yaml": "7aa8ed1f59cada6db7e949fcba5dae5ea546989bb99480009fb172a1c25f992c",
+      "experiment.resources.npz": "25043e6f510f0ae643a532c53cec2c4b0dad1f2af7172247add5fdc99adc827a",
+      "experiment.physics.md": "beb4c4033b62312a19603f1b0bf46d1a0623cc20a76a805c13f828c777746291"
+    }
+  },
+  "allowed_changes": [
+    "CsI2021 package adapter and binding metadata",
+    "package-driven tests",
+    "reproduction/audit tool",
+    "phase reports and run records",
+    "necessary README/Skill reference synchronization",
+    "packaging/ownership declarations if tests require them"
+  ],
+  "unchanged_science": [
+    "theory/nuclear/rates formulas",
+    "existing experimental parameters",
+    "existing frozen arrays and tolerances"
+  ],
+  "requested_capabilities": [
+    "P04-P07 full legacy-engine input binding and numerical validation",
+    "P08 EFT coefficient-template evaluation audit",
+    "P09 legacy approximate Gaussian",
+    "P10 integration/lifecycle/packaging/regression audit"
+  ],
+  "numerical_tolerances": {
+    "same_grid_rtol": 1e-11,
+    "same_grid_atol_events": 1e-10,
+    "convergence_rtol": 0.005,
+    "convergence_atol_events": 0.01
+  },
+  "slow_freeze": "Only after convergence, with current physical/code/input/profile fingerprints. Human scientific acceptance remains separately recorded.",
+  "dag": {
+    "P04": [
+      "inherited target/source contract"
+    ],
+    "P05": [
+      "P04"
+    ],
+    "P06": [
+      "inherited observable/target contract"
+    ],
+    "P07": [
+      "P05",
+      "P06",
+      "inherited source/target"
+    ],
+    "P08": [
+      "P07 technical freeze; formal approval status explicit"
+    ],
+    "P09": [
+      "P07"
+    ],
+    "P10": [
+      "all requested capability evidence"
+    ]
+  },
+  "shared_extension_justification": {
+    "files": [
+      "cevns_pyeft/statistics/__init__.py",
+      "cevns_pyeft/detectors/__init__.py"
+    ],
+    "reason": "Reproducible eager-import failures in independent package-only/catalog tests; lazy exports retain old semantics; no formula change."
+  },
+  "numerical_implementation_root": "outputs/csi2021_package_execution_20261104/wheel_validation_01/installed_wheel",
+  "mutable_worktree_policy": "Separate current-worktree validation; never promote pinned references across different fingerprints.",
+  "implementation_hashes": {
+    "cevns_pyeft.experiments.coherent.csi2021_package": "8d4b78db6c6253c710865f59a45055ba9ffc175595de5d1326dc717b81da30ee",
+    "cevns_pyeft.experiments.input_package": "db9d8d167623b27048404eba1a9fa693f3268aca7146b9d898fafd71bf45398d",
+    "cevns_pyeft.core.predict": "6c35de8c8bc7839daaa05ffd371c5f906c31b0a47b944f7b3f64dd14c1541eff",
+    "cevns_pyeft.rates.recoil": "c300780a0d82fc812af113af27c1ffba52ac52cfce76ed715cb9424050b1251b",
+    "cevns_pyeft.rates.folding": "e1600e659d3dc5816095bdf395b6dc9ab78b57ed345e638c6a95b72eb0e076d1",
+    "cevns_pyeft.rates.differential": "b6df0f0f6818afbc18dbc63d0edbedde041c891aaf219c40dc5c7014994482b9",
+    "cevns_pyeft.nuclear.response": "fc94a1582b11e58113e2f192be9733dfaf5b27b2604fe075da9e9f56b94d776f",
+    "cevns_pyeft.theory.li2026.adapter": "e7e8f2c53d8500999ede7a3ff9a5b1e5a7d735464cb130b19cf35be789951a6f",
+    "cevns_pyeft.theory.li2026.amplitude": "40a2bbfcb60716da67ff3d5182d5af6dd075bcd7dfccf9a49b9b3b0a8a9b7aed",
+    "cevns_pyeft.theory.li2026.left_to_ci": "56027d356737d85de4ae22ba3b303ade16e1c0163887bbedbc53ac2f0d46ae48",
+    "cevns_pyeft.theory.li2026.responses": "5edb06d4dd7409d0bac8245f9bf25b24f81f9e473e37f5e4f311492e9542f01b",
+    "cevns_pyeft.theory.li2026.coefficients": "c032668684ddc7e854b0fff0c8ec808995c7b2e014d4eea570dffe8053b984b2",
+    "cevns_pyeft.detectors.csi2021": "d842e806c76deb4ca26af5345eaec7a2e331e2709b1aaa453c6ecff70e89f98b"
+  }
+}

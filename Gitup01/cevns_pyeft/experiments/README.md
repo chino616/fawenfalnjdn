@@ -1,6 +1,10 @@
 # experiments：实验身份、装配与统一运行入口
 
-本目录回答“给定 dataset ID，到底运行哪套模型、用哪些数据”。内置活动 ID 的唯一清单是 [manifest.py](manifest.py)，目前为 CsI2021、CsI2017、Ar2020。
+[package_compiler.py](package_compiler.py) 从通用IR生成三文件；
+[generic_input.py](generic_input.py)、[v2 Schema](generic_input.schema.json)、
+[component_bindings.json](component_bindings.json)提供跨实验合同；[用法](../../docs/software/onboarding-package-compiler.md)。
+
+本目录回答“给定 dataset ID，到底运行哪套模型、用哪些数据”。持久身份清单由 [dataset_registry.json](dataset_registry.json) 管理，[manifest.py](manifest.py) 提供 Python 视图，目前为 CsI2021、CsI2017、Ar2020。
 
 ## 从 ID 到结果
 
@@ -10,9 +14,14 @@
 | [definition.py](definition.py) | `ExperimentDefinition` 绑定物理设置、资源、观测轴、统计、数值配置和 `prepare` |
 | [loader.py](loader.py) | `ResourceCatalog` 解析路径；`load_experiment` 调用 `prepare`，应用组件覆盖、快照与指纹，返回 `PreparedExperiment`；统计文件延迟读取 |
 | [assembly.py](assembly.py) | 记录实际组件与执行器身份，防止只改实例却沿用旧缓存身份 |
+| [input_package.py](input_package.py)、[input_package.schema.json](input_package.schema.json) | 正式三文件合同的只读结构/语义/资源校验与 MD 渲染；没有绑定或装配运行对象，详见[合同说明](../../docs/software/experiment-input-package.md) |
+| [model_registry.py](model_registry.py)、[model_bindings.json](model_bindings.json)、[package_components.py](package_components.py) | 受控物理模型绑定、公式/单位合同、参数消费记录与 NPZ 数组适配；[逐模型审计](../../docs/PHYSICS_MODEL_BINDING_REPORT.md) |
+| [package_loader.py](package_loader.py) | 显式两文件 `load_experiment_package` → 现有 Definition/Catalog/loader/PreparedExperiment；物理/统计内容投影分离；[验证报告](../../docs/EXPERIMENT_PACKAGE_LOADER_REPORT.md) |
 | [runtime.py](runtime.py) | `predict_experiment`、`compile_experiment`、`evaluate_experiment`、`predict_selection`；校验数值键、输出轴与身份 |
 | [selection.py](selection.py) | 严格读取本次运行选择；禁用项不解析资源或执行预测，各实验结果分别返回 |
-| [coherent/](coherent/) | 三份 `*_definition.py` 与 `execution.py`；CsI2021 绑定通用 `core.predict`，另外两者绑定 legacy executor |
+| [coherent/](coherent/README.md) | 三个活动实验的 definition/旧 API 均为正式 YAML/NPZ 的兼容适配层；没有独立实验参数权威 |
+| [package_profiles.py](package_profiles.py) | v2 的显式装配与现有 Runtime executor；保留确定性 PE 与观测值相关 Gaussian 的不同语义，Fast 使用公共微分系数和同一折叠权重 |
+| [package_compatibility.py](package_compatibility.py) | 旧字典/工厂接口；从包内资源调用原有 legacy builder 算术以保留冻结 Fast 数组，与 interface Fast 分别验证 |
 | [specs.py](specs.py)、[registry.py](registry.py)、[base.py](base.py) | 外置说明 YAML 读取、旧 API 分派与效率等兼容实现；不是第二份活动清单 |
 
 这种分工让“哪个实验可运行”“实验用什么输入”“算法如何执行”分别有明确入口。例如改变观测误差只影响评价，改变物理响应会使对应物理身份和缓存失效。
@@ -21,15 +30,15 @@
 
 真实新数据集先从[Master 工作流](../../workflows/cevns-pyeft/skills/router/cevns-experiment/SKILL.md)确定物理范围和数据证据。获得对应范围的实现授权后：
 
-1. 在 `cevns_pyeft/experiments/<实验族>/` 建立定义与执行模块。现有 COHERENT 用 `<dataset>_definition.py`；一个独立小包也可用 `definition.py`、`execution.py`。
-2. 定义 `ExperimentDefinition`，给出唯一 ID、观测轴、资源 role、合法数值键及 `prepare(definition, resources)`。`prepare` 返回模型和 callable executor。
+1. 按[统一编译合同](../../docs/software/onboarding-package-compiler.md)整理人填、AI 摘录或混合资料，形成同一 IR，记录模型、参数角色、单位、归一化、来源和缺失能力。
+2. 使用 `package_compiler` 生成唯一三文件。先通过结构、绑定和资源检查；缺模型语义时新增经审查的公共 binding/profile，不能仅按 dataset 名复制物理代码。
 3. executor 接收 `(experiment, point, backend, numerics, kernel)`，返回 `(combined_prediction, detector_predictions, raw_result, execution_record)`；总数、分量、轴必须满足 `runtime.py` 的检查。
-4. 数据放入根 `data/experiments/<实验族>/<dataset_id>/`，经 `ResourceRef` 显式绑定；测试放 `tests/test_<模块名>_contract.py`。声明 Fast 或统计能力前实现对应 compiler/evaluator。
-5. 先用 `ExperimentCatalog(builtins=False).register(...)` 运行隔离实例。正式激活时只在 `manifest.py` 增加活动 entry，字符串模块路径相对于本包，最终导出 `DEFINITION`。
+4. 正式三文件放入根 `data/experiments/<实验族>/<dataset_id>/`，经 `definition_from_package` 接入已有 Definition/loader；测试放 `tests/test_<模块名>_contract.py`。声明 Fast 或统计能力前实跑对应验证。
+5. 先用 `ExperimentCatalog(builtins=False).register(...)` 运行隔离实例。正式激活时在 `dataset_registry.json` 维护活动 entry，`manifest.py` 读取其 Python 视图，字符串模块路径相对于本包，最终导出 `DEFINITION`。
 
 可参考 [synthetic_dataset.py](../../examples/experiment_modularization/synthetic_dataset.py)。[scaffold_experiment.py](../../tools/scaffold_experiment.py) 能创建 definition/execution、资源与能力说明及合同测试，但生成的是演示骨架，不会更新 manifest，也不产生真实物理模型。
 
-已知实验的默认参数在自己的 definition 维护；单次变化使用 `dataclasses.replace` 或 `components` 覆盖。不要另建活动 ID 列表或用 `experiment.yaml` 的存在代替注册。相关检查见 [test_experiment_modularization.py](../../tests/test_experiment_modularization.py) 和 [test_runtime_migration_contracts.py](../../tests/test_runtime_migration_contracts.py)。
+三个活动实验的默认参数只在正式 YAML/NPZ 维护；definition 只做兼容适配。单次 what-if 使用受支持的 `dataclasses.replace` 或 `components` 覆盖；物化源谱的生成依赖改变时必须显式再生成，不能只刷新指纹。不要另建活动 ID 列表或用 `experiment.yaml` 的存在代替注册。相关检查见[迁移合同](../../tests/test_project_package_migration.py)、[统一运行测试](../../tests/test_experiment_modularization.py) 和[资源合同](../../tests/test_runtime_migration_contracts.py)。
 
 ## Dataset 管理入口
 
@@ -40,3 +49,8 @@
 ---
 
 [上一级](../README.md) · [项目总览](../../README.md)
+
+
+## CsI2021 P04–P10 package 执行审计
+
+[coherent/csi2021_package.py](coherent/csi2021_package.py) 是本次 revision-2 三文件审计的局部适配器，显式绑定现有 typed 组件；[csi2021_package_contract.json](coherent/csi2021_package_contract.json) 只约束模型/单位/轴，不保存第二套物理数值。同期通用 package_loader 的默认迁移独立保留。阶段证据、当前与固定版本差异见[执行报告](../../workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/11_FINAL_EXECUTION_REPORT.md)。

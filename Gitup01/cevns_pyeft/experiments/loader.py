@@ -117,8 +117,19 @@ def load_experiment(dataset_id, *, resources=None, registry=None, definition=Non
         model=replace(model,**components)
     model = snapshot(model)
     assembly = actual_assembly(model,executor)
-    physics = {'actual_assembly':assembly, 'implementation': implementation, 'actual_assembly':assembly, 'physical': definition.describe()['physical'], 'observation': definition.describe()['observation'],
-               'resources': {k:v['sha256'] for k,v in resource_record.items()}}
+    resource_identity = {k:v['sha256'] for k,v in resource_record.items()}
+    # A multi-purpose archive can contain both physical and statistical arrays.
+    # Its adapter supplies content projections while raw hashes still enforce
+    # the immutable on-disk snapshot in validate_snapshot().
+    identity_provider = getattr(definition.prepare, 'physics_resource_identity', None)
+    if identity_provider is not None:
+        resource_identity = dict(identity_provider(definition, MappingProxyType(resolved)))
+        if set(resource_identity) != set(resource_record) or any(
+            not isinstance(v, str) or len(v) != 64 or any(c not in '0123456789abcdef' for c in v)
+            for v in resource_identity.values()):
+            raise ValueError('invalid adapter physical-resource identity')
+    physics = {'actual_assembly':assembly, 'implementation': implementation, 'physical': definition.describe()['physical'], 'observation': definition.describe()['observation'],
+               'resources': resource_identity}
     # Statistics are lazy: neither resolving nor reading these files occurs here.
     analysis = {'dataset_id': definition.dataset_id, 'analysis_revision': definition.analysis_revision,
                 'observation': definition.describe()['observation'], 'statistics': definition.describe()['statistics'],

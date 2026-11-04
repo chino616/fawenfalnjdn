@@ -97,6 +97,8 @@ def audit(root, payload=None):
         if entry['installed']:
             for record in entry['owned_files']:
                 if not safe_path(root,record['path']).is_file():errors.append('missing owned file: '+record['path'])
+                elif record.get('sha256') and _hash(root,record['path']) != record['sha256']:
+                    errors.append('owned file hash mismatch: '+record['path'])
             for name in entry.get('shared_dependencies',[]):
                 if not safe_path(root,name).is_file():errors.append('missing shared dependency: '+name)
                 if name in owners:errors.append('shared dependency is owned by another package: '+name)

@@ -7,6 +7,10 @@ description: Single master workflow for CEvNS onboarding, runtime migration, rep
 
 ## Purpose
 
+正式数据交付按[通用 package 编译合同](../../../../../docs/software/onboarding-package-compiler.md)：
+用户填写、AI 摘录或混合资料形成同一 IR，之后由确定性 compiler 生成 YAML/NPZ/Physics MD。
+Master 只路由，不理解或执行公式；机器检查与人工 Physics Review 独立，Runtime 不读中间台账。
+
 所有“新增实验 / 从论文接入 / 继续已有 dataset / 仓库与 README 维护 / Skill 调试”都从本 Skill 开始。
 
 本 Skill **只负责状态机和阶段路由**，不亲自实现 source、detector、Slow 等物理代码。

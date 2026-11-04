@@ -36,6 +36,11 @@ does not require a complete contract. Keep evidence, semantic approval and write
 
 ## Ordered steps and handoffs
 
+正式输入包交接：Scope → Source Register → Evidence Extraction → Semantic Normalization →
+Model Reconstruction → Missing/Conflict Audit → 同一 IR/确定性 compiler → Physics MD 人工 Review →
+独立 Machine Gate/科学决定 → 通用 Runtime。三文件为 YAML、NPZ、Physics MD；台账/IR 非运行依赖。
+参见[编译合同](../../../../docs/software/onboarding-package-compiler.md)，缺失只阻断依赖它的能力。
+
 1. Material registration starts the Evidence Ledger immediately, with independent source IDs,
    version/locator, units and status. Use `cevns.onboarding.experiment`.
 2. Build dataset candidates, distinguish supporting files from different datasets, and obtain

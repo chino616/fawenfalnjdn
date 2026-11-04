@@ -1,0 +1,68 @@
+{
+  "constant_v1": {
+    "contract": "constant.v1",
+    "formula": "y = c",
+    "state": "BOUND_UNVERIFIED",
+    "implementation": "code-owned assembly profile or reference-only compiler fixture"
+  },
+  "tabulated_curve_v1": {
+    "contract": "tabulated_curve.v1",
+    "formula": "y = linear_interp(x, xp, fp); outside=0",
+    "state": "BOUND_UNVERIFIED",
+    "implementation": "code-owned assembly profile or reference-only compiler fixture"
+  },
+  "legacy_efficiency_curve_v1": {
+    "contract": "legacy_efficiency_curve.v1",
+    "formula": "eff(x)=linear_interp(x,xp,fp); left=low; right=fp[-1]; x<=threshold gives low when declared",
+    "state": "BOUND_UNVERIFIED",
+    "implementation": "package_profiles.ArrayEfficiency; legacy sorted/deduplicated coordinates"
+  },
+  "integrated_fluence_components_v1": {
+    "contract": "integrated_fluence_components.v1",
+    "formula": "fluence = declared continuum arrays + declared lines; no extra POT factor",
+    "state": "BOUND_UNVERIFIED",
+    "implementation": "code-owned assembly profile or reference-only compiler fixture"
+  },
+  "explicit_target_inventory_v1": {
+    "contract": "explicit_target_inventory.v1",
+    "formula": "sum_i(nuclei_i * mass_i_kg) = detector_mass_kg",
+    "state": "BOUND_UNVERIFIED",
+    "implementation": "code-owned assembly profile or reference-only compiler fixture"
+  },
+  "nuclear_polynomial_arrays_v1": {
+    "contract": "nuclear_polynomial_arrays.v1",
+    "formula": "W_ab(y)=exp(exp_factor*y)*sum_k coeff_abk*y**k",
+    "state": "BOUND_UNVERIFIED",
+    "implementation": "code-owned assembly profile or reference-only compiler fixture"
+  },
+  "li2026_package_interaction_v1": {
+    "contract": "li2026_package_interaction.v1",
+    "formula": "dsigma=Tr(rho*K)*mA/(8*pi*E**2)*GeV_to_cm2*1e-6",
+    "state": "BOUND_UNVERIFIED",
+    "implementation": "code-owned assembly profile or reference-only compiler fixture"
+  },
+  "deterministic_pe_legacy_v1": {
+    "contract": "deterministic_pe.v1",
+    "formula": "PE = pe_per_keV*T; sampled dN/dPE folded by bin-edge interpolation",
+    "state": "BOUND_UNVERIFIED",
+    "implementation": "code-owned assembly profile or reference-only compiler fixture"
+  },
+  "observed_gaussian_legacy_v1": {
+    "contract": "observed_gaussian.v1",
+    "formula": "mean=(linear+quadratic*T)*T; sigma=coefficient*sqrt(observed)",
+    "state": "BOUND_UNVERIFIED",
+    "implementation": "code-owned assembly profile or reference-only compiler fixture"
+  },
+  "gaussian_one_pull_legacy_v1": {
+    "contract": "gaussian_one_pull.v1",
+    "formula": "chi2=sum((d-(1+a)*s)**2/sigma**2)+(a/sa)**2",
+    "state": "BOUND_UNVERIFIED",
+    "implementation": "code-owned assembly profile or reference-only compiler fixture"
+  },
+  "asymmetric_irls_legacy_v1": {
+    "contract": "asymmetric_irls.v1",
+    "formula": "legacy asymmetric Gaussian IRLS; side selected from model residual",
+    "state": "BOUND_UNVERIFIED",
+    "implementation": "code-owned assembly profile or reference-only compiler fixture"
+  }
+}

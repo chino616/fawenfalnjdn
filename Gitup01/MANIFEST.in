@@ -1,0 +1,4 @@
+include tools/package_build.py
+recursive-include data/experiments experiment.input.yaml experiment.resources.npz experiment.physics.md
+prune data/experiments/*/*/compiler-backup-*
+recursive-include cevns_pyeft/experiments *.json

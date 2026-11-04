@@ -4,7 +4,8 @@
 
 | 可审计锚点 | 验收对象 |
 |---|---|
-| `cevns_pyeft/experiments/manifest.py::BUILTIN_MANIFEST` | 内建活动/spec_only/archived 身份权威 |
+| `cevns_pyeft/experiments/dataset_registry.json` | 持久登记身份、生命周期、版本和文件归属 |
+| `cevns_pyeft/experiments/manifest.py::BUILTIN_MANIFEST` | 从唯一登记生成的 Python 视图 |
 | `cevns_pyeft/experiments/catalog.py::ExperimentCatalog` | 自定义与内建 definition 查找、别名、生命周期 |
 | `cevns_pyeft/experiments/loader.py::ResourceCatalog` | 明确的 data 根、资源作用域与解析 |
 | `cevns_pyeft/experiments/loader.py::load_experiment` | 装配 definition、model/executor 与快照 |
@@ -17,7 +18,7 @@
 [runtime](../../../../cevns_pyeft/experiments/runtime.py)。
 
 新实验先用 ExperimentCatalog(builtins=False) 注册候选 definition 并显式传入 loader。
-完成实际能力验证后，再在有效科学接受和写入授权下处理正式 manifest。
+完成实际能力验证后，在有效科学接受和写入授权下处理正式登记及其 Manifest/Catalog 视图。
 旧 registry 的默认 metadata discovery 可包含 spec；有 YAML 或 callable 不等于科学验收通过。
 新 runtime definition 不必实现旧 SNS 兼容接口。
 

@@ -33,7 +33,8 @@ P08/P09 未请求不阻断已满足目标的 Slow 交付；已请求但缺失则
 新实验先在 ExperimentCatalog(builtins=False) 验证 Definition、ResourceCatalog、
 load_experiment、predict_experiment，以及已请求的 compile/evaluate。
 检验 unsupported capability 会明确拒绝，不能靠 metadata 宣称实现。
-Manifest/Catalog 是活动身份权威，旧 registry 是兼容视图；
+dataset_registry.json 保存持久身份、生命周期和文件归属，manifest.py 提供 Python 视图，
+Catalog 执行活动身份查找；registry.py 保留旧 callable 兼容接口。
 spec_only/archived 不能进入默认计算。核对 selection 与资源作用域。
 
 先完成候选接入验证和可审核差异，再处理正式激活。
@@ -43,7 +44,9 @@ spec_only/archived 不能进入默认计算。核对 selection 与资源作用�
 
 向用户展示：已验证能力、未满足目标、已知近似、论文差异、实际验证等级、
 允许与不允许的科学声明，以及拟暴露的接口和正式变更。
-取得 `APPROVE FINAL STATUS` 对精确范围的接受；它不替代另有要求的写入授权。
+新增 dataset 或改变科学含义时，取得 `APPROVE FINAL STATUS` 对精确范围的接受；
+它不替代另有要求的写入授权。既有科学定义下的 loader、输入适配、alias、import 或打包
+修复按 runtime/release Gate 与相应回归验收，保留原有物理审核状态。
 在有效授权内执行必要接入，再验证正式状态；失败则报告未完成，不写 FULLY_INTEGRATED。
 
 handoff：

@@ -23,3 +23,15 @@
 ---
 
 [上一级](../README.md)
+
+
+## CsI2021 package 执行（2026-11-04）
+
+[csi2021_package_execution_20261104/](csi2021_package_execution_20261104/README.md) 保存实际网格预测、P04–P09 机器结果、JUnit、打包/拆装证据和固定输入版本。正式阶段 Gate 见该目录链接的 canonical run reports。
+# Task10 package migration evidence
+
+`onboarding/task10/` retains the Ar2020/CsI2017 acquisition IR, declared arrays,
+compiler/validation reports, regression logs, project installation report and
+resource audit. They are engineering evidence, not a second runtime input
+authority or human physics decision. Build/install logs and restricted engine
+copies stay in the fresh external directory recorded in the report.

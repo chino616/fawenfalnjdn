@@ -14,6 +14,7 @@ authors = [
 ]
 dependencies = [
   "numpy>=2.0",
+  "jsonschema>=4.18",
   "pandas",
   "matplotlib",
   "scipy",
@@ -24,6 +25,9 @@ dependencies = [
 [project.scripts]
 cevns-pyeft = "cevns_pyeft.cli:main"
 
+[project.optional-dependencies]
+validation = ["jsonschema>=4.18"]
+
 [tool.setuptools]
 package-dir = { "" = "." }
 
@@ -31,9 +35,13 @@ package-dir = { "" = "." }
 where = ["."]
 include = ["cevns_pyeft*"]
 
+[tool.setuptools.cmdclass]
+build_py = "tools.package_build.BuildWithDatasetPackages"
+
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
 
 [tool.setuptools.package-data]
-"cevns_pyeft.experiments" = ["dataset_registry.json"]
+"cevns_pyeft.experiments" = ["dataset_registry.json", "input_package.schema.json", "model_bindings.json", "generic_input.schema.json", "component_bindings.json"]
+"cevns_pyeft.experiments.coherent" = ["csi2021_package_contract.json"]

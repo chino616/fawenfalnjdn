@@ -113,28 +113,41 @@ def test_yaml_nested_numerics_and_rejected_structures():
 
 
 def test_disabled_missing_resources_are_never_resolved(tmp_path):
-    shutil.copy2(ROOT/'data/responses/responses_all.json',tmp_path/'responses.json')
+    directory=ROOT/'data/experiments/COHERENT_CsI/CsI2021'
+    for name in ('experiment.input.yaml','experiment.resources.npz'):
+        shutil.copy2(directory/name,tmp_path/name)
     class Tracked(ResourceCatalog):
         seen=[]
         def resolve(self,ref):
             self.seen.append(ref.id)
             return super().resolve(ref)
-    resources=Tracked(tmp_path,{'responses':tmp_path/'responses.json'})
+    resources=Tracked(tmp_path,{('CsI2021','package_input'):tmp_path/'experiment.input.yaml',
+                               ('CsI2021','package_arrays'):tmp_path/'experiment.resources.npz'})
     selection=AnalysisSelection.from_mapping({'datasets':[{'id':'CsI2021','numerics':SMALL},
         {'id':'CsI2017','enabled':False},{'id':'Ar2020','enabled':False}]})
     result=predict_selection(selection,resources=resources)
     assert list(result)==['CsI2021']
-    assert resources.seen==['responses']
-    with pytest.raises(FileNotFoundError,match='efficiency'):
-        load_experiment('CsI2017',resources=resources)
+    assert resources.seen==['package_input','package_arrays']
+    with pytest.raises(FileNotFoundError,match='package_input'):
+        load_experiment('CsI2017',resources=tmp_path)
 
 
 def test_missing_statistics_does_not_block_physics(tmp_path):
-    resources=ResourceCatalog(tmp_path,{'responses':ROOT/'data/responses/responses_all.json','efficiency':ROOT/'data/experiments/COHERENT_CsI/CsI2017/detector/COHERENT_eff.txt'})
-    exp=load_experiment('CsI2017',resources=resources)
+    from cevns_pyeft.experiments.package_loader import read_package,load_experiment_package
+    from cevns_pyeft.experiments.package_compiler import write_package
+    data,arrays=read_package(ROOT/'data/experiments/COHERENT_CsI/CsI2017')
+    statistical=data['models'].pop(data['assembly']['statistics']['model_id'])
+    for key in statistical['parameter_refs']:data['parameters'].pop(key)
+    for key in statistical['resource_refs']:
+        data['resources']['arrays'].pop(key);arrays.pop(key)
+    data['assembly']['statistics']={}
+    data['capabilities']['legacy_statistics'].update(status='BLOCKED',blockers=['statistics deliberately absent'])
+    write_package({'ir_version':'cevns-onboarding-draft/1','acquisition':{'mode':'human','evidence_claims':[]},
+        'requested_capabilities':['signal'],'document':data},arrays,tmp_path/'prediction-only')
+    exp=load_experiment_package(tmp_path/'prediction-only')
     pred=predict_experiment(exp,numerics={'n_enu':8})
     assert pred.counts.sum()>0
-    with pytest.raises(FileNotFoundError,match='statistics resource'):
+    with pytest.raises(ValueError,match='statistics unavailable'):
         evaluate_experiment(exp,pred)
 
 
@@ -215,15 +228,19 @@ def test_legacy_fast_new_binding_save_load_and_invalidation(experiments,tmp_path
 
 
 def test_different_resource_roots_and_content_changes_are_isolated(tmp_path,experiments):
-    ref=next(r for r in experiments['Ar2020'].definition.resources if r.id=='efficiency')
-    local=tmp_path/'eff.txt';shutil.copy2(ROOT/ref.path,local)
-    exp=load_experiment('Ar2020',resources=ResourceCatalog(ROOT,{'efficiency':local}))
+    from cevns_pyeft.experiments.package_loader import load_experiment_package
+    directory=ROOT/'data/experiments/COHERENT_Ar/Ar2020'
+    for name in ('experiment.input.yaml','experiment.resources.npz'):shutil.copy2(directory/name,tmp_path/name)
+    local=tmp_path/'experiment.input.yaml'
+    exp=load_experiment_package(tmp_path)
     base=predict_experiment(exp,numerics=SMALL)
     np.testing.assert_array_equal(base.counts,predict_experiment(experiments['Ar2020'],numerics=SMALL).counts)
-    rows=local.read_text();local.write_text(rows.replace('0.0','0.00',1)+'\n')
+    local.write_bytes(local.read_bytes()+b'\n')
     with pytest.raises(ValueError,match='resource.*changed'):predict_experiment(exp,numerics=SMALL)
-    fresh=load_experiment('Ar2020',resources=ResourceCatalog(ROOT,{'efficiency':local}))
-    assert fresh.physics_fingerprint!=exp.physics_fingerprint
+    fresh=load_experiment_package(tmp_path)
+    # Raw snapshot changes, while parsed physical content is identical.
+    assert fresh.record['resources']['package_input']['sha256']!=exp.record['resources']['package_input']['sha256']
+    assert fresh.physics_fingerprint==exp.physics_fingerprint
     np.testing.assert_allclose(predict_experiment(fresh,numerics=SMALL).counts,base.counts,rtol=1e-14)
 
 

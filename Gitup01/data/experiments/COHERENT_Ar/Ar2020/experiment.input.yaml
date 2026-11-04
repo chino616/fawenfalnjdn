@@ -1,0 +1,2378 @@
+{
+  "package": {
+    "schema_version": "cevns-experiment-input/2",
+    "dataset_id": "Ar2020",
+    "experiment_slug": "COHERENT_Ar",
+    "analysis_revision": "legacy_12bin_modular_v1",
+    "scientific_claim": "legacy implementation compatibility only; no new scientific confirmation",
+    "status": "DRAFT",
+    "human_approval": "NOT_REVIEWED"
+  },
+  "parameters": {
+    "source.baseline_m": {
+      "value": 27.5,
+      "unit": "m",
+      "role": "direct_input",
+      "meaning": "source.baseline_m; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "integrated_fluence_components_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "source.total_pot": {
+      "value": 1.38e+23,
+      "unit": "POT",
+      "role": "direct_input",
+      "meaning": "source.total_pot; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "integrated_fluence_components_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "source.yield_per_pot": {
+      "value": 0.09,
+      "unit": "neutrinos/species/POT",
+      "role": "direct_input",
+      "meaning": "source.yield_per_pot; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "integrated_fluence_components_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "source.tabulation_min": {
+      "value": 0.001,
+      "unit": "MeV",
+      "role": "runtime_control",
+      "meaning": "source.tabulation_min; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "integrated_fluence_components_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "source.tabulation_max": {
+      "value": 300.0,
+      "unit": "MeV",
+      "role": "runtime_control",
+      "meaning": "source.tabulation_max; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "integrated_fluence_components_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "source.mask_min": {
+      "value": 0.001,
+      "unit": "MeV",
+      "role": "runtime_control",
+      "meaning": "source.mask_min; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "integrated_fluence_components_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "source.mask_max": {
+      "value": 56.0,
+      "unit": "MeV",
+      "role": "runtime_control",
+      "meaning": "source.mask_max; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "integrated_fluence_components_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "source.tabulation_nodes": {
+      "value": 200,
+      "unit": "1",
+      "role": "runtime_control",
+      "meaning": "source.tabulation_nodes; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "integrated_fluence_components_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "source.interpolation": {
+      "value": true,
+      "unit": "boolean",
+      "role": "runtime_control",
+      "meaning": "source.interpolation; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "integrated_fluence_components_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "target.run_mass_metadata": {
+      "value": 24.0,
+      "unit": "kg",
+      "role": "reference_only",
+      "meaning": "target.run_mass_metadata; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [],
+      "status": "LEGACY_ONLY"
+    },
+    "target.detector_mass": {
+      "value": 24.0,
+      "unit": "kg",
+      "role": "direct_input",
+      "meaning": "target.detector_mass; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "explicit_target_inventory_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "constants.G_F": {
+      "value": 1.1663787e-05,
+      "unit": "GeV^-2",
+      "role": "direct_input",
+      "meaning": "constants.G_F; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "constants.alpha_em": {
+      "value": 0.0072973525643,
+      "unit": "1",
+      "role": "direct_input",
+      "meaning": "constants.alpha_em; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "constants.m_mu": {
+      "value": 0.10565837550000001,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "constants.m_mu; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "constants.m_e": {
+      "value": 0.0005109989506900001,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "constants.m_e; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "constants.m_pi_charged": {
+      "value": 0.13957039000000002,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "constants.m_pi_charged; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "constants.AMU_GEV": {
+      "value": 0.93149410372,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "constants.AMU_GEV; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "constants.GEV_INV2_TO_CM2": {
+      "value": 3.893793721e-28,
+      "unit": "cm^2/GeV^-2",
+      "role": "direct_input",
+      "meaning": "constants.GEV_INV2_TO_CM2; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.g_A": {
+      "value": 1.2754,
+      "unit": "1",
+      "role": "direct_input",
+      "meaning": "lecs.g_A; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.Sigma_ud": {
+      "value": 0.397,
+      "unit": "1",
+      "role": "unused_snapshot",
+      "meaning": "lecs.Sigma_ud; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.B0_m_u": {
+      "value": 0.0062,
+      "unit": "GeV^2",
+      "role": "direct_input",
+      "meaning": "lecs.B0_m_u; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.B0_m_d": {
+      "value": 0.0133,
+      "unit": "GeV^2",
+      "role": "direct_input",
+      "meaning": "lecs.B0_m_d; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.L1": {
+      "value": 1.855,
+      "unit": "1",
+      "role": "direct_input",
+      "meaning": "lecs.L1; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.L2": {
+      "value": -1.017,
+      "unit": "1",
+      "role": "direct_input",
+      "meaning": "lecs.L2; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.L3": {
+      "value": 0.6377,
+      "unit": "1",
+      "role": "direct_input",
+      "meaning": "lecs.L3; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.L4": {
+      "value": -0.22,
+      "unit": "1",
+      "role": "direct_input",
+      "meaning": "lecs.L4; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.L5": {
+      "value": 0.00138,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "lecs.L5; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.L6": {
+      "value": -0.00049,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "lecs.L6; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.L7": {
+      "value": -0.0067599999999999995,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "lecs.L7; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.L8": {
+      "value": 0.00265,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "lecs.L8; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.L9": {
+      "value": 0.011519999999999999,
+      "unit": "GeV",
+      "role": "unused_snapshot",
+      "meaning": "lecs.L9; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.L10": {
+      "value": 0.024050000000000002,
+      "unit": "GeV",
+      "role": "unused_snapshot",
+      "meaning": "lecs.L10; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.L11": {
+      "value": -0.0177,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "lecs.L11; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.L12": {
+      "value": -0.013900000000000001,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "lecs.L12; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.L13": {
+      "value": -0.0504,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "lecs.L13; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.L14": {
+      "value": -0.306,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "lecs.L14; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.sigma_u_p": {
+      "value": 0.0185,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "lecs.sigma_u_p; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.sigma_d_p": {
+      "value": 0.036000000000000004,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "lecs.sigma_d_p; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.sigma_u_n": {
+      "value": 0.0167,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "lecs.sigma_u_n; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.sigma_d_n": {
+      "value": 0.039700000000000006,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "lecs.sigma_d_n; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.g1": {
+      "value": 1.0,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "lecs.g1; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.g2": {
+      "value": 1.0,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "lecs.g2; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.g3": {
+      "value": 1.0,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "lecs.g3; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.g4": {
+      "value": 1.0,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "lecs.g4; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.g5": {
+      "value": 1.0,
+      "unit": "1",
+      "role": "direct_input",
+      "meaning": "lecs.g5; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.g6": {
+      "value": 1.0,
+      "unit": "1",
+      "role": "direct_input",
+      "meaning": "lecs.g6; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.g7": {
+      "value": 1.0,
+      "unit": "1",
+      "role": "direct_input",
+      "meaning": "lecs.g7; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.g8": {
+      "value": 1.0,
+      "unit": "1",
+      "role": "direct_input",
+      "meaning": "lecs.g8; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.g9": {
+      "value": 1.0,
+      "unit": "1",
+      "role": "direct_input",
+      "meaning": "lecs.g9; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.m_u": {
+      "value": 0.00216,
+      "unit": "GeV",
+      "role": "unused_snapshot",
+      "meaning": "lecs.m_u; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.m_d": {
+      "value": 0.00467,
+      "unit": "GeV",
+      "role": "unused_snapshot",
+      "meaning": "lecs.m_d; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.m_pi": {
+      "value": 0.13957039000000002,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "lecs.m_pi; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "lecs.m_N": {
+      "value": 0.938918755685,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "lecs.m_N; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "target.atomic_mass_kg": {
+      "value": 1.6605390666e-27,
+      "unit": "kg",
+      "role": "direct_input",
+      "meaning": "target.atomic_mass_kg; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "explicit_target_inventory_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "source.integration_min": {
+      "value": 0.0,
+      "unit": "MeV",
+      "role": "runtime_control",
+      "meaning": "source.integration_min; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "integrated_fluence_components_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "source.integration_max": {
+      "value": 52.827952069788324,
+      "unit": "MeV",
+      "role": "derived",
+      "meaning": "source.integration_max; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "integrated_fluence_components_v1"
+      ],
+      "status": "PROJECT_DERIVED",
+      "derivation": {
+        "formula_id": "muon_dar_endpoint.v1",
+        "input_refs": [
+          "constants.m_mu",
+          "constants.m_e"
+        ],
+        "dependency_fingerprint": "6478a71b920e00ef0843959dbcf196c2eb208543accbb30167a7fcb258acf089"
+      }
+    },
+    "source.line_energy": {
+      "value": 29.792140909877446,
+      "unit": "MeV",
+      "role": "derived",
+      "meaning": "source.line_energy; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "integrated_fluence_components_v1"
+      ],
+      "status": "PROJECT_DERIVED",
+      "derivation": {
+        "formula_id": "pion_line_energy.v1",
+        "input_refs": [
+          "constants.m_pi_charged",
+          "constants.m_mu"
+        ],
+        "dependency_fingerprint": "ebd99e5b9be89984a55eb1634ed4892ecf05d644c7093137b59f24be2928279d"
+      }
+    },
+    "source.line_fluence": {
+      "value": 130691199550501.83,
+      "unit": "cm^-2",
+      "role": "derived",
+      "meaning": "source.line_fluence; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "integrated_fluence_components_v1"
+      ],
+      "status": "PROJECT_DERIVED",
+      "derivation": {
+        "formula_id": "spherical_fluence.v1",
+        "input_refs": [
+          "source.yield_per_pot",
+          "source.total_pot",
+          "source.baseline_m"
+        ],
+        "dependency_fingerprint": "804ae1d181703bfb42bfd8e33e76c91362d3d6e73cb071ecf63b918f5bafe233"
+      }
+    },
+    "target.Ar40.A": {
+      "value": 40,
+      "unit": "1",
+      "role": "direct_input",
+      "meaning": "target.Ar40.A; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "explicit_target_inventory_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "target.Ar40.b": {
+      "value": 9.831536784009149,
+      "unit": "GeV^-1",
+      "role": "direct_input",
+      "meaning": "target.Ar40.b; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "nuclear_polynomial_arrays_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "nuclear.Ar40.exp_factor": {
+      "value": -2.0,
+      "unit": "1",
+      "role": "direct_input",
+      "meaning": "nuclear.Ar40.exp_factor; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "nuclear_polynomial_arrays_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "target.Ar40.mass_GeV": {
+      "value": 37.2597641488,
+      "unit": "GeV",
+      "role": "derived",
+      "meaning": "target.Ar40.mass_GeV; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "explicit_target_inventory_v1"
+      ],
+      "status": "PROJECT_DERIVED",
+      "derivation": {
+        "formula_id": "product.v1",
+        "input_refs": [
+          "target.Ar40.A",
+          "constants.AMU_GEV"
+        ],
+        "dependency_fingerprint": "a186b2ad3656a212d3977b9162b24b0261400fa9a88da9505e653db4a2b868f0"
+      }
+    },
+    "target.Ar40.mass_kg": {
+      "value": 6.6421562664e-26,
+      "unit": "kg",
+      "role": "derived",
+      "meaning": "target.Ar40.mass_kg; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "explicit_target_inventory_v1"
+      ],
+      "status": "PROJECT_DERIVED",
+      "derivation": {
+        "formula_id": "product.v1",
+        "input_refs": [
+          "target.Ar40.A",
+          "target.atomic_mass_kg"
+        ],
+        "dependency_fingerprint": "2ace47de7cc30117cd752ef1804bfbd439647d8f003579dfe258766cac1d21e6"
+      }
+    },
+    "target.Ar40.mass_fraction": {
+      "value": 1.0,
+      "unit": "1",
+      "role": "derived",
+      "meaning": "target.Ar40.mass_fraction; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "explicit_target_inventory_v1"
+      ],
+      "status": "PROJECT_DERIVED",
+      "derivation": {
+        "formula_id": "mass_fraction.v1",
+        "input_refs": [
+          "target.Ar40.A",
+          "target.Ar40.A"
+        ],
+        "dependency_fingerprint": "585688035121611329db1ea1e30f0033f1bdee6a2abacbbdac9b974e2024f7ea"
+      }
+    },
+    "target.Ar40.nuclei": {
+      "value": 3.613284457248674e+26,
+      "unit": "nuclei",
+      "role": "derived",
+      "meaning": "target.Ar40.nuclei; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "explicit_target_inventory_v1"
+      ],
+      "status": "PROJECT_DERIVED",
+      "derivation": {
+        "formula_id": "nucleus_inventory.v1",
+        "input_refs": [
+          "target.detector_mass",
+          "target.Ar40.mass_fraction",
+          "target.Ar40.mass_kg"
+        ],
+        "dependency_fingerprint": "f02186a537f7781527d486d4b9833466f5d6abe7cbf5c624f5c45f5b07a44ade"
+      }
+    },
+    "detector.efficiency_low": {
+      "value": 0.0,
+      "unit": "1",
+      "role": "direct_input",
+      "meaning": "detector.efficiency_low; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "legacy_efficiency_curve_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "detector.mean_linear": {
+      "value": 0.246,
+      "unit": "PE/keV",
+      "role": "direct_input",
+      "meaning": "detector.mean_linear; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "observed_gaussian_legacy_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "detector.mean_quadratic": {
+      "value": 0.00078,
+      "unit": "PE/keV^2",
+      "role": "direct_input",
+      "meaning": "detector.mean_quadratic; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "observed_gaussian_legacy_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "detector.sigma_coefficient": {
+      "value": 0.58,
+      "unit": "PE^0.5",
+      "role": "direct_input",
+      "meaning": "detector.sigma_coefficient; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "observed_gaussian_legacy_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "statistics.sigma_alpha": {
+      "value": 0.12,
+      "unit": "1",
+      "role": "direct_input",
+      "meaning": "statistics.sigma_alpha; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "asymmetric_irls_legacy_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "statistics.sigma_beta": {
+      "value": 0.146,
+      "unit": "1",
+      "role": "direct_input",
+      "meaning": "statistics.sigma_beta; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "asymmetric_irls_legacy_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "interaction.include_sm": {
+      "value": true,
+      "unit": "boolean",
+      "role": "direct_input",
+      "meaning": "interaction.include_sm; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "interaction.sin2thetaW": {
+      "value": 0.2387,
+      "unit": "1",
+      "role": "direct_input",
+      "meaning": "interaction.sin2thetaW; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "li2026_package_interaction_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "numerics.slow.n_er": {
+      "value": 21,
+      "unit": "1",
+      "role": "runtime_control",
+      "meaning": "numerics.slow.n_er; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "observed_gaussian_legacy_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "numerics.slow.n_enu": {
+      "value": 120,
+      "unit": "1",
+      "role": "runtime_control",
+      "meaning": "numerics.slow.n_enu; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "observed_gaussian_legacy_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "numerics.slow.n_pe_bin": {
+      "value": 8,
+      "unit": "1",
+      "role": "runtime_control",
+      "meaning": "numerics.slow.n_pe_bin; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "observed_gaussian_legacy_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "numerics.fast.n_er": {
+      "value": 21,
+      "unit": "1",
+      "role": "runtime_control",
+      "meaning": "numerics.fast.n_er; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "observed_gaussian_legacy_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "numerics.fast.n_enu": {
+      "value": 120,
+      "unit": "1",
+      "role": "runtime_control",
+      "meaning": "numerics.fast.n_enu; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "observed_gaussian_legacy_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "numerics.fast.n_obs_sub": {
+      "value": 8,
+      "unit": "1",
+      "role": "runtime_control",
+      "meaning": "numerics.fast.n_obs_sub; legacy-code-derived",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "observed_gaussian_legacy_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    },
+    "numerics.recoil_min_keV": {
+      "value": 0.1,
+      "unit": "keV",
+      "role": "runtime_control",
+      "meaning": "original recoil lower integration bound",
+      "source_refs": [
+        "legacy"
+      ],
+      "consumers": [
+        "observed_gaussian_legacy_v1"
+      ],
+      "status": "LEGACY_ONLY"
+    }
+  },
+  "models": {
+    "integrated_fluence_components_v1": {
+      "model_type": "integrated_fluence_components_v1",
+      "model_revision": "1",
+      "formula": "fluence = declared continuum arrays + declared lines; no extra POT factor",
+      "formula_purpose": "audit_only",
+      "variables": {
+        "E": "MeV",
+        "fluence": "cm^-2 MeV^-1",
+        "line_weight": "cm^-2"
+      },
+      "parameter_refs": [
+        "source.baseline_m",
+        "source.total_pot",
+        "source.yield_per_pot",
+        "source.tabulation_min",
+        "source.tabulation_max",
+        "source.mask_min",
+        "source.mask_max",
+        "source.tabulation_nodes",
+        "source.interpolation",
+        "source.integration_min",
+        "source.integration_max",
+        "source.line_energy",
+        "source.line_fluence"
+      ],
+      "resource_refs": [
+        "source_energy_MeV",
+        "rho_0",
+        "rho_1",
+        "source_fluence_1",
+        "rho_2",
+        "source_fluence_2"
+      ],
+      "depends_on": [],
+      "source_refs": [
+        "legacy"
+      ],
+      "locator": "current registered definition + existing numerical consumers",
+      "meaning": "preserve current integrated_fluence_components_v1",
+      "domain": "legacy sampled domain only; official validity not independently confirmed",
+      "boundary": "preserve existing interpolation, support and clipping; no scientific correction",
+      "binding_status": "BOUND_UNVERIFIED",
+      "implementation_contract": "integrated_fluence_components.v1"
+    },
+    "explicit_target_inventory_v1": {
+      "model_type": "explicit_target_inventory_v1",
+      "model_revision": "1",
+      "formula": "sum_i(nuclei_i * mass_i_kg) = detector_mass_kg",
+      "formula_purpose": "audit_only",
+      "variables": {
+        "nuclei": "nuclei",
+        "mass_i": "kg",
+        "detector_mass": "kg"
+      },
+      "parameter_refs": [
+        "target.detector_mass",
+        "target.atomic_mass_kg",
+        "target.Ar40.A",
+        "target.Ar40.mass_GeV",
+        "target.Ar40.mass_kg",
+        "target.Ar40.mass_fraction",
+        "target.Ar40.nuclei"
+      ],
+      "resource_refs": [],
+      "depends_on": [],
+      "source_refs": [
+        "legacy"
+      ],
+      "locator": "current registered definition + existing numerical consumers",
+      "meaning": "preserve current explicit_target_inventory_v1",
+      "domain": "legacy sampled domain only; official validity not independently confirmed",
+      "boundary": "preserve existing interpolation, support and clipping; no scientific correction",
+      "binding_status": "BOUND_UNVERIFIED",
+      "implementation_contract": "explicit_target_inventory.v1"
+    },
+    "nuclear_polynomial_arrays_v1": {
+      "model_type": "nuclear_polynomial_arrays_v1",
+      "model_revision": "1",
+      "formula": "W_ab(y)=exp(exp_factor*y)*sum_k coeff_abk*y**k",
+      "formula_purpose": "audit_only",
+      "variables": {
+        "W": "1",
+        "y": "1",
+        "coeff": "1",
+        "b": "GeV^-1"
+      },
+      "parameter_refs": [
+        "target.Ar40.b",
+        "nuclear.Ar40.exp_factor"
+      ],
+      "resource_refs": [
+        "nuclear_Ar40_M",
+        "nuclear_Ar40_SigmaPP",
+        "nuclear_Ar40_SigmaP",
+        "nuclear_Ar40_PhiPP",
+        "nuclear_Ar40_PhiPT",
+        "nuclear_Ar40_Delta",
+        "nuclear_Ar40_MPhiPP"
+      ],
+      "depends_on": [],
+      "source_refs": [
+        "legacy"
+      ],
+      "locator": "current registered definition + existing numerical consumers",
+      "meaning": "preserve current nuclear_polynomial_arrays_v1",
+      "domain": "legacy sampled domain only; official validity not independently confirmed",
+      "boundary": "preserve existing interpolation, support and clipping; no scientific correction",
+      "binding_status": "BOUND_UNVERIFIED",
+      "implementation_contract": "nuclear_polynomial_arrays.v1"
+    },
+    "li2026_package_interaction_v1": {
+      "model_type": "li2026_package_interaction_v1",
+      "model_revision": "1",
+      "formula": "dsigma=Tr(rho*K)*mA/(8*pi*E**2)*GeV_to_cm2*1e-6",
+      "formula_purpose": "audit_only",
+      "variables": {
+        "dsigma": "cm^2/keV",
+        "rho": "1",
+        "K": "GeV^-2",
+        "mass": "GeV",
+        "E": "GeV"
+      },
+      "parameter_refs": [
+        "constants.G_F",
+        "constants.alpha_em",
+        "constants.m_mu",
+        "constants.m_e",
+        "constants.m_pi_charged",
+        "constants.AMU_GEV",
+        "constants.GEV_INV2_TO_CM2",
+        "lecs.g_A",
+        "lecs.B0_m_u",
+        "lecs.B0_m_d",
+        "lecs.L1",
+        "lecs.L2",
+        "lecs.L3",
+        "lecs.L4",
+        "lecs.L5",
+        "lecs.L6",
+        "lecs.L7",
+        "lecs.L8",
+        "lecs.L11",
+        "lecs.L12",
+        "lecs.L13",
+        "lecs.L14",
+        "lecs.sigma_u_p",
+        "lecs.sigma_d_p",
+        "lecs.sigma_u_n",
+        "lecs.sigma_d_n",
+        "lecs.g1",
+        "lecs.g2",
+        "lecs.g3",
+        "lecs.g4",
+        "lecs.g5",
+        "lecs.g6",
+        "lecs.g7",
+        "lecs.g8",
+        "lecs.g9",
+        "lecs.m_pi",
+        "lecs.m_N",
+        "interaction.include_sm",
+        "interaction.sin2thetaW"
+      ],
+      "resource_refs": [],
+      "depends_on": [
+        "nuclear_polynomial_arrays_v1"
+      ],
+      "source_refs": [
+        "legacy"
+      ],
+      "locator": "current registered definition + existing numerical consumers",
+      "meaning": "preserve current li2026_package_interaction_v1",
+      "domain": "legacy sampled domain only; official validity not independently confirmed",
+      "boundary": "preserve existing interpolation, support and clipping; no scientific correction",
+      "binding_status": "BOUND_UNVERIFIED",
+      "implementation_contract": "li2026_package_interaction.v1"
+    },
+    "observed_gaussian_legacy_v1": {
+      "model_type": "observed_gaussian_legacy_v1",
+      "model_revision": "1",
+      "formula": "mean=(linear+quadratic*T)*T; sigma=coefficient*sqrt(observed)",
+      "formula_purpose": "audit_only",
+      "variables": {
+        "T": "keV",
+        "PE": "PE",
+        "density": "events/PE",
+        "counts": "events/bin"
+      },
+      "parameter_refs": [
+        "detector.mean_linear",
+        "detector.mean_quadratic",
+        "detector.sigma_coefficient",
+        "numerics.slow.n_er",
+        "numerics.slow.n_enu",
+        "numerics.slow.n_pe_bin",
+        "numerics.fast.n_er",
+        "numerics.fast.n_enu",
+        "numerics.fast.n_obs_sub",
+        "numerics.recoil_min_keV"
+      ],
+      "resource_refs": [
+        "observable_edges"
+      ],
+      "depends_on": [
+        "integrated_fluence_components_v1",
+        "explicit_target_inventory_v1",
+        "li2026_package_interaction_v1",
+        "legacy_efficiency_curve_v1"
+      ],
+      "source_refs": [
+        "legacy"
+      ],
+      "locator": "current registered definition + existing numerical consumers",
+      "meaning": "preserve current observed_gaussian_legacy_v1",
+      "domain": "legacy sampled domain only; official validity not independently confirmed",
+      "boundary": "preserve existing interpolation, support and clipping; no scientific correction",
+      "binding_status": "BOUND_UNVERIFIED",
+      "implementation_contract": "observed_gaussian.v1"
+    },
+    "asymmetric_irls_legacy_v1": {
+      "model_type": "asymmetric_irls_legacy_v1",
+      "model_revision": "1",
+      "formula": "legacy asymmetric Gaussian IRLS; side selected from model residual",
+      "formula_purpose": "audit_only",
+      "variables": {
+        "signal": "counts/bin",
+        "data": "counts/bin",
+        "chi2": "1",
+        "alpha": "1",
+        "beta": "1"
+      },
+      "parameter_refs": [
+        "statistics.sigma_alpha",
+        "statistics.sigma_beta"
+      ],
+      "resource_refs": [
+        "statistics_observed",
+        "statistics_background",
+        "statistics_lower",
+        "statistics_upper"
+      ],
+      "depends_on": [
+        "observed_gaussian_legacy_v1"
+      ],
+      "source_refs": [
+        "legacy"
+      ],
+      "locator": "current registered definition + existing numerical consumers",
+      "meaning": "preserve current asymmetric_irls_legacy_v1",
+      "domain": "legacy sampled domain only; official validity not independently confirmed",
+      "boundary": "preserve existing interpolation, support and clipping; no scientific correction",
+      "binding_status": "BOUND_UNVERIFIED",
+      "implementation_contract": "asymmetric_irls.v1"
+    },
+    "legacy_efficiency_curve_v1": {
+      "model_type": "legacy_efficiency_curve_v1",
+      "model_revision": "1",
+      "formula": "eff(x)=linear_interp(x,xp,fp); left=low; right=fp[-1]; x<=threshold gives low when declared",
+      "formula_purpose": "audit_only",
+      "variables": {
+        "x": "PE",
+        "y": "1"
+      },
+      "parameter_refs": [
+        "detector.efficiency_low"
+      ],
+      "resource_refs": [
+        "efficiency_energy",
+        "efficiency_values"
+      ],
+      "depends_on": [],
+      "source_refs": [
+        "legacy"
+      ],
+      "locator": "current registered definition + existing numerical consumers",
+      "meaning": "legacy efficiency: sorted unique PE, explicit left low/right last, strict threshold",
+      "domain": "legacy sampled domain only; official validity not independently confirmed",
+      "boundary": "preserve existing interpolation, support and clipping; no scientific correction",
+      "binding_status": "BOUND_UNVERIFIED",
+      "implementation_contract": "legacy_efficiency_curve.v1"
+    }
+  },
+  "resources": {
+    "archive": "experiment.resources.npz",
+    "sha256": "2c44f2f9040472cfaffea6166cd178a239762e08813076de4ef2dd0c51a99244",
+    "arrays": {
+      "source_energy_MeV": {
+        "key": "source_energy_MeV",
+        "shape": [
+          200
+        ],
+        "dtype": "float64",
+        "unit": "MeV",
+        "axes": [
+          {
+            "name": "energy",
+            "unit": "MeV",
+            "rule": "declared tabulation"
+          }
+        ],
+        "meaning": "source_energy_MeV; legacy data snapshot",
+        "source_refs": [
+          "legacy"
+        ],
+        "role": "materialized_derived_resource",
+        "normalization": {
+          "quantity_kind": "coordinate",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "2725a0489524f57c25b709d07fc6abc58fed19f32f3edeeda58041bf61419e56",
+        "generation": {
+          "parameter_refs": [
+            "source.total_pot",
+            "source.yield_per_pot",
+            "source.tabulation_min",
+            "source.tabulation_max",
+            "source.mask_min",
+            "source.mask_max",
+            "source.tabulation_nodes",
+            "source.interpolation",
+            "source.integration_min",
+            "source.integration_max",
+            "constants.m_mu"
+          ],
+          "model_refs": [
+            "integrated_fluence_components_v1"
+          ],
+          "resource_refs": [],
+          "dependency_fingerprint": "0518c505e6c117773d4786375590fee3a5a7b2c4c2f03ec66f8480189da2f91d"
+        }
+      },
+      "rho_0": {
+        "key": "rho_0",
+        "shape": [
+          3,
+          3
+        ],
+        "dtype": "complex128",
+        "unit": "1",
+        "axes": [
+          {
+            "name": "flavor_row",
+            "unit": "1",
+            "values": [
+              "e",
+              "mu",
+              "tau"
+            ]
+          },
+          {
+            "name": "flavor_column",
+            "unit": "1",
+            "values": [
+              "e",
+              "mu",
+              "tau"
+            ]
+          }
+        ],
+        "meaning": "rho_0; legacy data snapshot",
+        "source_refs": [
+          "legacy"
+        ],
+        "role": "direct_input",
+        "normalization": {
+          "quantity_kind": "density",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "5261df4870b6c2c76f3e705d27fe3739aac1799d8689b16288771f91369aa9ec",
+        "generation": null,
+        "semantic": "density_matrix"
+      },
+      "rho_1": {
+        "key": "rho_1",
+        "shape": [
+          3,
+          3
+        ],
+        "dtype": "complex128",
+        "unit": "1",
+        "axes": [
+          {
+            "name": "flavor_row",
+            "unit": "1",
+            "values": [
+              "e",
+              "mu",
+              "tau"
+            ]
+          },
+          {
+            "name": "flavor_column",
+            "unit": "1",
+            "values": [
+              "e",
+              "mu",
+              "tau"
+            ]
+          }
+        ],
+        "meaning": "rho_1; legacy data snapshot",
+        "source_refs": [
+          "legacy"
+        ],
+        "role": "direct_input",
+        "normalization": {
+          "quantity_kind": "density",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "34508bf5f58e2486bf1ecbd3c8a5bdbbf7fe665c1d146a6d346ce6e467451b1a",
+        "generation": null,
+        "semantic": "density_matrix"
+      },
+      "source_fluence_1": {
+        "key": "source_fluence_1",
+        "shape": [
+          200
+        ],
+        "dtype": "float64",
+        "unit": "cm^-2 MeV^-1",
+        "axes": [
+          {
+            "name": "energy",
+            "unit": "MeV",
+            "coordinate_ref": "source_energy_MeV"
+          }
+        ],
+        "meaning": "source_fluence_1; legacy data snapshot",
+        "source_refs": [
+          "legacy"
+        ],
+        "role": "materialized_derived_resource",
+        "normalization": {
+          "quantity_kind": "integrated_detector_fluence_density",
+          "runtime_authority": "array",
+          "included_factors": [
+            "POT",
+            "yield",
+            "geometry"
+          ],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "59dcb57ec4f565374749d6d8873acb5bf2cbb8baa5a9e7e23cdf69fe46779683",
+        "generation": {
+          "parameter_refs": [
+            "source.total_pot",
+            "source.yield_per_pot",
+            "source.tabulation_min",
+            "source.tabulation_max",
+            "source.mask_min",
+            "source.mask_max",
+            "source.tabulation_nodes",
+            "source.interpolation",
+            "source.integration_min",
+            "source.integration_max",
+            "constants.m_mu"
+          ],
+          "model_refs": [
+            "integrated_fluence_components_v1"
+          ],
+          "resource_refs": [
+            "source_energy_MeV"
+          ],
+          "dependency_fingerprint": "4feac4aa9b12a40807dd217b80a186e53e4c3e23893d6cc3633dd40b7b2b38b6"
+        }
+      },
+      "rho_2": {
+        "key": "rho_2",
+        "shape": [
+          3,
+          3
+        ],
+        "dtype": "complex128",
+        "unit": "1",
+        "axes": [
+          {
+            "name": "flavor_row",
+            "unit": "1",
+            "values": [
+              "e",
+              "mu",
+              "tau"
+            ]
+          },
+          {
+            "name": "flavor_column",
+            "unit": "1",
+            "values": [
+              "e",
+              "mu",
+              "tau"
+            ]
+          }
+        ],
+        "meaning": "rho_2; legacy data snapshot",
+        "source_refs": [
+          "legacy"
+        ],
+        "role": "direct_input",
+        "normalization": {
+          "quantity_kind": "density",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "5261df4870b6c2c76f3e705d27fe3739aac1799d8689b16288771f91369aa9ec",
+        "generation": null,
+        "semantic": "density_matrix"
+      },
+      "source_fluence_2": {
+        "key": "source_fluence_2",
+        "shape": [
+          200
+        ],
+        "dtype": "float64",
+        "unit": "cm^-2 MeV^-1",
+        "axes": [
+          {
+            "name": "energy",
+            "unit": "MeV",
+            "coordinate_ref": "source_energy_MeV"
+          }
+        ],
+        "meaning": "source_fluence_2; legacy data snapshot",
+        "source_refs": [
+          "legacy"
+        ],
+        "role": "materialized_derived_resource",
+        "normalization": {
+          "quantity_kind": "integrated_detector_fluence_density",
+          "runtime_authority": "array",
+          "included_factors": [
+            "POT",
+            "yield",
+            "geometry"
+          ],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "ebce31325b741c2393d97650c42d5c64c5659f8f00fc1686c322119b18bfc969",
+        "generation": {
+          "parameter_refs": [
+            "source.total_pot",
+            "source.yield_per_pot",
+            "source.tabulation_min",
+            "source.tabulation_max",
+            "source.mask_min",
+            "source.mask_max",
+            "source.tabulation_nodes",
+            "source.interpolation",
+            "source.integration_min",
+            "source.integration_max",
+            "constants.m_mu"
+          ],
+          "model_refs": [
+            "integrated_fluence_components_v1"
+          ],
+          "resource_refs": [
+            "source_energy_MeV"
+          ],
+          "dependency_fingerprint": "4feac4aa9b12a40807dd217b80a186e53e4c3e23893d6cc3633dd40b7b2b38b6"
+        }
+      },
+      "nuclear_Ar40_M": {
+        "key": "nuclear_Ar40_M",
+        "shape": [
+          2,
+          2,
+          7
+        ],
+        "dtype": "float64",
+        "unit": "1",
+        "axes": [
+          {
+            "name": "nucleon_left",
+            "unit": "1",
+            "values": [
+              "p",
+              "n"
+            ]
+          },
+          {
+            "name": "nucleon_right",
+            "unit": "1",
+            "values": [
+              "p",
+              "n"
+            ]
+          },
+          {
+            "name": "polynomial_power",
+            "unit": "1",
+            "rule": "ascending coefficient power"
+          }
+        ],
+        "meaning": "nuclear_Ar40_M; legacy data snapshot",
+        "source_refs": [
+          "legacy"
+        ],
+        "role": "direct_input",
+        "normalization": {
+          "quantity_kind": "table",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "8329c898f14d892f5f1eb8e2039c584d94b9027ab8cf3e5c598920d281dfe3dd",
+        "generation": null
+      },
+      "nuclear_Ar40_SigmaPP": {
+        "key": "nuclear_Ar40_SigmaPP",
+        "shape": [
+          2,
+          2,
+          0
+        ],
+        "dtype": "float64",
+        "unit": "1",
+        "axes": [
+          {
+            "name": "nucleon_left",
+            "unit": "1",
+            "values": [
+              "p",
+              "n"
+            ]
+          },
+          {
+            "name": "nucleon_right",
+            "unit": "1",
+            "values": [
+              "p",
+              "n"
+            ]
+          },
+          {
+            "name": "polynomial_power",
+            "unit": "1",
+            "rule": "ascending coefficient power"
+          }
+        ],
+        "meaning": "nuclear_Ar40_SigmaPP; legacy data snapshot",
+        "source_refs": [
+          "legacy"
+        ],
+        "role": "direct_input",
+        "normalization": {
+          "quantity_kind": "table",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "generation": null
+      },
+      "nuclear_Ar40_SigmaP": {
+        "key": "nuclear_Ar40_SigmaP",
+        "shape": [
+          2,
+          2,
+          0
+        ],
+        "dtype": "float64",
+        "unit": "1",
+        "axes": [
+          {
+            "name": "nucleon_left",
+            "unit": "1",
+            "values": [
+              "p",
+              "n"
+            ]
+          },
+          {
+            "name": "nucleon_right",
+            "unit": "1",
+            "values": [
+              "p",
+              "n"
+            ]
+          },
+          {
+            "name": "polynomial_power",
+            "unit": "1",
+            "rule": "ascending coefficient power"
+          }
+        ],
+        "meaning": "nuclear_Ar40_SigmaP; legacy data snapshot",
+        "source_refs": [
+          "legacy"
+        ],
+        "role": "direct_input",
+        "normalization": {
+          "quantity_kind": "table",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "generation": null
+      },
+      "nuclear_Ar40_PhiPP": {
+        "key": "nuclear_Ar40_PhiPP",
+        "shape": [
+          2,
+          2,
+          5
+        ],
+        "dtype": "float64",
+        "unit": "1",
+        "axes": [
+          {
+            "name": "nucleon_left",
+            "unit": "1",
+            "values": [
+              "p",
+              "n"
+            ]
+          },
+          {
+            "name": "nucleon_right",
+            "unit": "1",
+            "values": [
+              "p",
+              "n"
+            ]
+          },
+          {
+            "name": "polynomial_power",
+            "unit": "1",
+            "rule": "ascending coefficient power"
+          }
+        ],
+        "meaning": "nuclear_Ar40_PhiPP; legacy data snapshot",
+        "source_refs": [
+          "legacy"
+        ],
+        "role": "direct_input",
+        "normalization": {
+          "quantity_kind": "table",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "885c6a34db850781b827078c132dc6b74aa78cbaca21bbe5b9b176346aaeca1f",
+        "generation": null
+      },
+      "nuclear_Ar40_PhiPT": {
+        "key": "nuclear_Ar40_PhiPT",
+        "shape": [
+          2,
+          2,
+          0
+        ],
+        "dtype": "float64",
+        "unit": "1",
+        "axes": [
+          {
+            "name": "nucleon_left",
+            "unit": "1",
+            "values": [
+              "p",
+              "n"
+            ]
+          },
+          {
+            "name": "nucleon_right",
+            "unit": "1",
+            "values": [
+              "p",
+              "n"
+            ]
+          },
+          {
+            "name": "polynomial_power",
+            "unit": "1",
+            "rule": "ascending coefficient power"
+          }
+        ],
+        "meaning": "nuclear_Ar40_PhiPT; legacy data snapshot",
+        "source_refs": [
+          "legacy"
+        ],
+        "role": "direct_input",
+        "normalization": {
+          "quantity_kind": "table",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "generation": null
+      },
+      "nuclear_Ar40_Delta": {
+        "key": "nuclear_Ar40_Delta",
+        "shape": [
+          2,
+          2,
+          0
+        ],
+        "dtype": "float64",
+        "unit": "1",
+        "axes": [
+          {
+            "name": "nucleon_left",
+            "unit": "1",
+            "values": [
+              "p",
+              "n"
+            ]
+          },
+          {
+            "name": "nucleon_right",
+            "unit": "1",
+            "values": [
+              "p",
+              "n"
+            ]
+          },
+          {
+            "name": "polynomial_power",
+            "unit": "1",
+            "rule": "ascending coefficient power"
+          }
+        ],
+        "meaning": "nuclear_Ar40_Delta; legacy data snapshot",
+        "source_refs": [
+          "legacy"
+        ],
+        "role": "direct_input",
+        "normalization": {
+          "quantity_kind": "table",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "generation": null
+      },
+      "nuclear_Ar40_MPhiPP": {
+        "key": "nuclear_Ar40_MPhiPP",
+        "shape": [
+          2,
+          2,
+          6
+        ],
+        "dtype": "float64",
+        "unit": "1",
+        "axes": [
+          {
+            "name": "nucleon_left",
+            "unit": "1",
+            "values": [
+              "p",
+              "n"
+            ]
+          },
+          {
+            "name": "nucleon_right",
+            "unit": "1",
+            "values": [
+              "p",
+              "n"
+            ]
+          },
+          {
+            "name": "polynomial_power",
+            "unit": "1",
+            "rule": "ascending coefficient power"
+          }
+        ],
+        "meaning": "nuclear_Ar40_MPhiPP; legacy data snapshot",
+        "source_refs": [
+          "legacy"
+        ],
+        "role": "direct_input",
+        "normalization": {
+          "quantity_kind": "table",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "31a794cf1bfc0f580ea966c4c4f20f8b2edc8dddd86509f0c4193dcdf512a474",
+        "generation": null
+      },
+      "efficiency_energy": {
+        "key": "efficiency_energy",
+        "shape": [
+          80
+        ],
+        "dtype": "float64",
+        "unit": "PE",
+        "axes": [
+          {
+            "name": "PE",
+            "unit": "PE",
+            "rule": "legacy sorted/deduplicated"
+          }
+        ],
+        "meaning": "efficiency_energy; legacy data snapshot",
+        "source_refs": [
+          "legacy"
+        ],
+        "role": "direct_input",
+        "normalization": {
+          "quantity_kind": "coordinate",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "14b3a6d2f19aea1cde38596c027e550272178035f62489d4d07eb274afa832fb",
+        "generation": null
+      },
+      "efficiency_values": {
+        "key": "efficiency_values",
+        "shape": [
+          80
+        ],
+        "dtype": "float64",
+        "unit": "1",
+        "axes": [
+          {
+            "name": "PE",
+            "unit": "PE",
+            "coordinate_ref": "efficiency_energy"
+          }
+        ],
+        "meaning": "efficiency_values; legacy data snapshot",
+        "source_refs": [
+          "legacy"
+        ],
+        "role": "direct_input",
+        "normalization": {
+          "quantity_kind": "table",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "3bc67467feec0f30041dc113fcefa97551bfd503d1a9142410572734b6492c80",
+        "generation": null
+      },
+      "observable_edges": {
+        "key": "observable_edges",
+        "shape": [
+          13
+        ],
+        "dtype": "float64",
+        "unit": "PE",
+        "axes": [
+          {
+            "name": "edges",
+            "unit": "PE",
+            "rule": "exact legacy edges"
+          }
+        ],
+        "meaning": "observable_edges; legacy data snapshot",
+        "source_refs": [
+          "legacy"
+        ],
+        "role": "direct_input",
+        "normalization": {
+          "quantity_kind": "coordinate",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "a1d2bbdebcb86673f98924d4348a7e72fff982680c6a5e70d645a5339637556f",
+        "generation": null
+      },
+      "statistics_observed": {
+        "key": "statistics_observed",
+        "shape": [
+          12
+        ],
+        "dtype": "float64",
+        "unit": "counts/bin",
+        "axes": [
+          {
+            "name": "bin",
+            "unit": "PE",
+            "edges_ref": "observable_edges"
+          }
+        ],
+        "meaning": "statistics_observed; legacy data snapshot",
+        "source_refs": [
+          "legacy"
+        ],
+        "role": "direct_input",
+        "normalization": {
+          "quantity_kind": "table",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "3c6c552f79a90b4013c255585dd125474d60c30358c35bf591110e27b7aaf81a",
+        "generation": null
+      },
+      "statistics_background": {
+        "key": "statistics_background",
+        "shape": [
+          12
+        ],
+        "dtype": "float64",
+        "unit": "counts/bin",
+        "axes": [
+          {
+            "name": "bin",
+            "unit": "PE",
+            "edges_ref": "observable_edges"
+          }
+        ],
+        "meaning": "statistics_background; legacy data snapshot",
+        "source_refs": [
+          "legacy"
+        ],
+        "role": "direct_input",
+        "normalization": {
+          "quantity_kind": "table",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "251e5f4e152f3ec60fddcd0886d3901683177be2cd421846665f8e8469ae360a",
+        "generation": null
+      },
+      "statistics_lower": {
+        "key": "statistics_lower",
+        "shape": [
+          12
+        ],
+        "dtype": "float64",
+        "unit": "counts/bin",
+        "axes": [
+          {
+            "name": "bin",
+            "unit": "PE",
+            "edges_ref": "observable_edges"
+          }
+        ],
+        "meaning": "statistics_lower; legacy data snapshot",
+        "source_refs": [
+          "legacy"
+        ],
+        "role": "direct_input",
+        "normalization": {
+          "quantity_kind": "table",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "fd24c4927acac76c15974a4c80935f831fc7f5a509469ae8eec6b6a61f5a89e8",
+        "generation": null
+      },
+      "statistics_upper": {
+        "key": "statistics_upper",
+        "shape": [
+          12
+        ],
+        "dtype": "float64",
+        "unit": "counts/bin",
+        "axes": [
+          {
+            "name": "bin",
+            "unit": "PE",
+            "edges_ref": "observable_edges"
+          }
+        ],
+        "meaning": "statistics_upper; legacy data snapshot",
+        "source_refs": [
+          "legacy"
+        ],
+        "role": "direct_input",
+        "normalization": {
+          "quantity_kind": "table",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "723ab01c01aea45f9c94bb1887b3f0737f274b08581326accc5df55a03afd801",
+        "generation": null
+      }
+    }
+  },
+  "observable": {
+    "name": "reconstructed PE spectrum",
+    "unit": "PE",
+    "edges_ref": "observable_edges",
+    "bin_count": 12
+  },
+  "assembly": {
+    "profile": "observed_gaussian_legacy_v1",
+    "source": {
+      "energy_ref": "source_energy_MeV",
+      "components": [
+        {
+          "id": "prompt_numu",
+          "legacy_label": "mu",
+          "particle_kind": "nu",
+          "rho_ref": "rho_0",
+          "continuum_ref": null,
+          "lines": [
+            {
+              "id": "pion_DAR",
+              "energy_ref": "source.line_energy",
+              "fluence_ref": "source.line_fluence"
+            }
+          ]
+        },
+        {
+          "id": "delayed_nue",
+          "legacy_label": "e",
+          "particle_kind": "nu",
+          "rho_ref": "rho_1",
+          "continuum_ref": "source_fluence_1",
+          "lines": []
+        },
+        {
+          "id": "delayed_numubar",
+          "legacy_label": "mub",
+          "particle_kind": "antinu",
+          "rho_ref": "rho_2",
+          "continuum_ref": "source_fluence_2",
+          "lines": []
+        }
+      ],
+      "integration_min_ref": "source.integration_min",
+      "integration_max_ref": "source.integration_max",
+      "baseline_ref": "source.baseline_m",
+      "pot_ref": "source.total_pot",
+      "yield_ref": "source.yield_per_pot"
+    },
+    "target": {
+      "isotopes": [
+        {
+          "id": "Ar40",
+          "responses": {
+            "M": "nuclear_Ar40_M",
+            "SigmaPP": "nuclear_Ar40_SigmaPP",
+            "SigmaP": "nuclear_Ar40_SigmaP",
+            "PhiPP": "nuclear_Ar40_PhiPP",
+            "PhiPT": "nuclear_Ar40_PhiPT",
+            "Delta": "nuclear_Ar40_Delta",
+            "MPhiPP": "nuclear_Ar40_MPhiPP"
+          }
+        }
+      ],
+      "mass_ref": "target.detector_mass"
+    },
+    "interaction": {
+      "model_id": "li2026_package_interaction_v1",
+      "c10_mass_mode": "quark_mass_resolved"
+    },
+    "detector": {
+      "profile": "observed_gaussian_legacy_v1",
+      "efficiency_energy_ref": "efficiency_energy",
+      "efficiency_values_ref": "efficiency_values",
+      "efficiency_low_ref": "detector.efficiency_low",
+      "efficiency_threshold_ref": null,
+      "mean_linear_ref": "detector.mean_linear",
+      "mean_quadratic_ref": "detector.mean_quadratic",
+      "sigma_coefficient_ref": "detector.sigma_coefficient"
+    },
+    "statistics": {
+      "model_id": "asymmetric_irls_legacy_v1",
+      "observable_unit": "counts/bin",
+      "observed_ref": "statistics_observed",
+      "background_ref": "statistics_background",
+      "lower_ref": "statistics_lower",
+      "upper_ref": "statistics_upper",
+      "sigma_alpha_ref": "statistics.sigma_alpha",
+      "sigma_beta_ref": "statistics.sigma_beta"
+    },
+    "numerics": {
+      "slow": {
+        "n_er": "numerics.slow.n_er",
+        "n_enu": "numerics.slow.n_enu",
+        "n_pe_bin": "numerics.slow.n_pe_bin"
+      },
+      "fast": {
+        "n_er": "numerics.fast.n_er",
+        "n_enu": "numerics.fast.n_enu",
+        "n_obs_sub": "numerics.fast.n_obs_sub"
+      }
+    }
+  },
+  "capabilities": {
+    "signal": {
+      "status": "PASS",
+      "evidence": [
+        "docs/PROJECT_WIDE_PACKAGE_MIGRATION_REPORT.md: Task10 numerical regression and two-file tests; legacy compatibility scope only",
+        "outputs/onboarding/task10/final-physics-junit.xml: numerical cases PASS; catalog import failure tracked and fixed separately"
+      ],
+      "blockers": [],
+      "human_approval": "NOT_REVIEWED"
+    },
+    "fast": {
+      "status": "PASS",
+      "evidence": [
+        "docs/PROJECT_WIDE_PACKAGE_MIGRATION_REPORT.md: Task10 numerical regression and two-file tests; legacy compatibility scope only",
+        "outputs/onboarding/task10/final-physics-junit.xml: numerical cases PASS; catalog import failure tracked and fixed separately"
+      ],
+      "blockers": [],
+      "human_approval": "NOT_REVIEWED"
+    },
+    "legacy_statistics": {
+      "status": "PASS",
+      "evidence": [
+        "docs/PROJECT_WIDE_PACKAGE_MIGRATION_REPORT.md: Task10 numerical regression and two-file tests; legacy compatibility scope only",
+        "outputs/onboarding/task10/final-physics-junit.xml: numerical cases PASS; catalog import failure tracked and fixed separately"
+      ],
+      "blockers": [],
+      "human_approval": "NOT_REVIEWED"
+    },
+    "official_likelihood": {
+      "status": "BLOCKED",
+      "evidence": [],
+      "blockers": [
+        "scientific source/convention review incomplete"
+      ],
+      "human_approval": "NOT_REVIEWED"
+    },
+    "general_antineutrino_EFT": {
+      "status": "BLOCKED",
+      "evidence": [],
+      "blockers": [
+        "scientific source/convention review incomplete"
+      ],
+      "human_approval": "NOT_REVIEWED"
+    },
+    "scientific_release": {
+      "status": "BLOCKED",
+      "evidence": [],
+      "blockers": [
+        "scientific source/convention review incomplete"
+      ],
+      "human_approval": "NOT_REVIEWED"
+    }
+  },
+  "provenance": {
+    "sources": {
+      "legacy": {
+        "kind": "legacy_implementation",
+        "version": "legacy_12bin_modular_v1",
+        "definition_source_sha256": "38fcb00d763e98cb7be980554d5dc3922d3662d082256a924e4d1489760953f0",
+        "locator": "current registered definition, response JSON, declared detector/statistical files; not official primary confirmation",
+        "declared_materials": [
+          {
+            "resource_id": "responses",
+            "canonical_path": "data/responses/responses_all.json",
+            "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+            "coordinate_contract": null
+          },
+          {
+            "resource_id": "efficiency",
+            "canonical_path": "data/experiments/COHERENT_Ar/Ar2020/detector/CENNS10AnlAEfficiency.txt",
+            "sha256": "f74f92bfdd116bcb2e14f31e3e98a24fb6a7e68458c4f647ca72357c78e55dd3",
+            "coordinate_contract": null
+          }
+        ]
+      }
+    },
+    "issues": [
+      {
+        "id": "science_review",
+        "status": "MISSING",
+        "detail": "external nuclear source, antinu convention, official statistics and detector validity not fully reviewed",
+        "blocks": [
+          "scientific_release",
+          "official_likelihood"
+        ]
+      }
+    ]
+  }
+}

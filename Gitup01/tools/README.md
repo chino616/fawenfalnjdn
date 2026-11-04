@@ -1,9 +1,21 @@
 # tools：显式执行的构建、审计和创建工具
 
+[package_build.py](package_build.py)由setuptools显式构建调用，仅将registry声明的正式三文件复制到构建产物；
+源码data仍为唯一权威，不导入工作流或复制论文/台账。
+
+[compile_experiment_package.py](compile_experiment_package.py) 将显式IR和声明数组编译为三文件，
+支持只读check、默认create-only及显式覆盖备份，不负责论文理解或人工科学批准。
+
+[validate_package_standalone.py](validate_package_standalone.py) 离线构建/安装隔离引擎，以 import/file guard
+验证两文件独立运行、默认网格、扰动及十种篡改拒绝；输出目录必须全新，原源码不删改。
+
 这里的脚本由维护者从项目根目录运行，不由 `predict_experiment` 自动调用。物理算法仍在 `cevns_pyeft/`；把管理工具分开，可以看清每个操作读取或生成什么文件。
 
 | 脚本 | 实际输入、操作和输出 |
 |---|---|
+| [validate_experiment_input.py](validate_experiment_input.py) | 只读校验正式 package v1 的 JSON Schema、参数角色/消费者、派生与物化资源指纹、NPZ 和 Physics MD；`--check-schema` 校验 schema 自身；不装配 Runtime |
+| [csi2021_input_contract.py](csi2021_input_contract.py) | 由 CsI2021 builder 调用的 Pilot/1→正式/1 元数据迁移适配；105 项数值和 NPZ 保持不变；不是通用生成器 |
+| [build_csi2021_onboarding_pilot.py](build_csi2021_onboarding_pilot.py) | 仅为旧九箱 CsI2021 从当前 definition/实际模型和资源提取三文件试点；默认/`--check` 只读核对模型/参数/数组/MD 和当前源码，`--write` 只创建三份正式输入及审计报告并拒绝覆盖，`--render-md` 从已有 YAML/NPZ 渲染 MD 到 stdout；不是 Runtime Loader |
 | [validate_resource_manifest.py](validate_resource_manifest.py) | 用 `--root` 指定包含 data/ 的目录，结合 Catalog/definition 与资源清单检查 ID、路径、覆盖作用域和 SHA256；`--json-out` 可保存报告 |
 | [validate_docs.py](validate_docs.py) | 只读检查 Markdown 本地文件链接；`--files` 精确检查受影响 README/文档，优先于 `--scope docs/all`；默认跳过 backup、outputs 与缓存，`--json-report` 保存结果；不自动改写内容 |
 | [readme_maintenance.py](readme_maintenance.py) | `plan` 按 Git/快照生成目录分组影响清单；`snapshot` 保存当前文件基线；`sync/check --readmes` 同步/检查明确选定的 README 自动清单区，保留人工说明并备份；不删除文件或提交 Git |
@@ -37,6 +49,12 @@ python tools/scaffold_experiment.py --dataset-id DemoReadme --module-name demo_r
 
 ## Dataset 拆装工具入口
 
+CsI2021 三文件试点的使用环境需要项目依赖；本次使用
+`F:/Work/.codex_conda_envs/codex-py311/python.exe`（系统默认 Python 缺 SciPy）。
+例如从项目根运行 `python -B tools/build_csi2021_onboarding_pilot.py --check`。
+输入包与缺失项见[审计报告](../docs/CSI2021_ONBOARDING_PILOT_REPORT.md)。
+它仅覆盖旧九箱数据集，没有给通用 Loader、安装器或 registry 添加新格式。
+
 Dataset完整管理由运行包CLI提供：`python -m cevns_pyeft.cli datasets --help`。命令、文件归属、计划、安装/卸载与回滚见[管理说明](../cevns_pyeft/experiments/MANAGEMENT.md)；不在tools再维护第二套活动ID或另一个安装器。
 
 ---
@@ -51,11 +69,40 @@ Dataset完整管理由运行包CLI提供：`python -m cevns_pyeft.cli datasets -
 | 路径 | 类型 |
 |---|---|
 | [workflow_validation/](workflow_validation/README.md) | 目录 |
+| [build_csi2021_onboarding_pilot.py](build_csi2021_onboarding_pilot.py) | 文件 |
 | [build_wheel.py](build_wheel.py) | 文件 |
+| [csi2021_input_contract.py](csi2021_input_contract.py) | 文件 |
 | [readme_maintenance.py](readme_maintenance.py) | 文件 |
+| [run_csi2021_package_phases.py](run_csi2021_package_phases.py) | 文件 |
 | [scaffold_experiment.py](scaffold_experiment.py) | 文件 |
 | [update_skill_library.py](update_skill_library.py) | 文件 |
 | [validate_docs.py](validate_docs.py) | 文件 |
+| [validate_experiment_input.py](validate_experiment_input.py) | 文件 |
+| [validate_package_standalone.py](validate_package_standalone.py) | 文件 |
 | [validate_resource_manifest.py](validate_resource_manifest.py) | 文件 |
+| [verify_csi2021_package_release.py](verify_csi2021_package_release.py) | 文件 |
 | [verify_wheel.py](verify_wheel.py) | 文件 |
 <!-- readme-inventory:end -->
+
+
+## CsI2021 P04–P10 可复现执行
+
+[run_csi2021_package_phases.py](run_csi2021_package_phases.py) 读取指定三文件包，调用现有全物理 Runtime，保存阶段 JSON、逐源/核素/bin 数组、实际网格与统计；--profile 可单独计算收敛网格，--implementation-root 可固定已审计实现。默认输出本次 run 目录，同身份结果校验后复用；不修改输入。
+
+[verify_csi2021_package_release.py](verify_csi2021_package_release.py) 用 --mode wheel 或 lifecycle 和一个新的 --output 目录执行离线构建/本地 target 安装、外部 cwd 或隔离拆装；拒绝已存在输出目录，不改变全局 Python 或 canonical dataset 安装状态。
+# Active dataset package migration tools
+
+[migrate_legacy_input_packages.py](migrate_legacy_input_packages.py) is an explicit,
+one-dataset acquisition adapter for a definition that has not yet been migrated.
+It writes an annotated IR and delegates three-file generation to the common
+[compiler](compile_experiment_package.py). Already migrated datasets use their
+saved IR and compiler `--check`.
+
+[validate_project_packages.py](validate_project_packages.py) builds an sdist and
+wheel with the existing [build hook](package_build.py), verifies all registered
+formal files and runs installed datasets from an external cwd. It also tests
+editable installation and a temporary engine with old definitions, legacy
+defaults and bundled data removed. Run with a fresh output directory:
+`python -B tools/validate_project_packages.py --output <fresh-directory>`.
+Source files and global Python are not removed or installed into. Reports
+distinguish approximate statistics, frozen compatibility and scientific approval.

@@ -119,6 +119,15 @@ def csi2021_dataset() -> BinnedDataset:
 
 def load_csi2017_reference_data(data_dir: str | Path | None = None) -> dict[str, np.ndarray]:
     _ensure_statistics_loadable("CsI2017")
+    if data_dir is None:
+        definition=_definition('CsI2017')
+        if definition.statistics.observed:
+            from cevns_pyeft.experiments.package_loader import read_package
+            from cevns_pyeft.foundation.paths import resource_root
+            data,arrays=read_package(resource_root()/'data/experiments/COHERENT_CsI/CsI2017')
+            s=data['assembly']['statistics']
+            return {key:np.array(arrays[s[field+'_ref']],copy=True) for key,field in
+                [('data','observed'),('lower','lower'),('upper','upper'),('sigma','uncertainty'),('spectrum','spectrum')]}
     CSI2017_BINS_25 = _constant("CSI2017_BINS_25")
     from cevns_pyeft.foundation.resources import resolve_resource
     from .tables import csi2017_tables

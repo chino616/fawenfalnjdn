@@ -1,5 +1,10 @@
 # software：代码、数据与工具怎样组织
 
+[Onboarding编译合同](onboarding-package-compiler.md)：资料提取、IR、确定性三文件和人工/机器交接。
+
+三个活动实验的默认入口及分发验收见[项目迁移报告](../PROJECT_WIDE_PACKAGE_MIGRATION_REPORT.md)。
+v1/v2 均通过现有 Catalog/loader/Runtime，实验专用 definition 只保留身份适配。
+
 本目录解释工程结构，供维护者定位修改入口。工程事实以当前源码和配置为准，文档应指出具体消费者，不能只按理想分层描述。
 
 | 文档 | 实际实现入口 |
@@ -8,6 +13,7 @@
 | [runtime-architecture.md](runtime-architecture.md) | `load_experiment → PreparedExperiment → executor → ExperimentPrediction → evaluate_experiment` |
 | [experiment-catalog.md](experiment-catalog.md) | `manifest.py` 的活动身份，Catalog 的延迟导入和生命周期检查，旧兼容分派 |
 | [resource-management.md](resource-management.md) | `ResourceCatalog`、有限路径别名、作用域和资源清单 |
+| [experiment-input-package.md](experiment-input-package.md) | 三文件 v1 Schema、参数角色、消费者、归一化、失效指纹和只读验证；当前尚不负责 Runtime 加载 |
 | [packaging.md](packaging.md) | `pyproject.toml` 的包发现、外置数据、构建与隔离导入 |
 
 ## 为什么单独维护

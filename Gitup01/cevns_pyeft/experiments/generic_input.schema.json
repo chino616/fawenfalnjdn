@@ -1,0 +1,593 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:cevns-pyeft:experiment-input:2",
+  "title": "Generic Experiment Package v2",
+  "type": "object",
+  "properties": {
+    "package": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "cevns-experiment-input/2"
+        },
+        "dataset_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+        },
+        "experiment_slug": {
+          "type": "string",
+          "minLength": 1
+        },
+        "analysis_revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scientific_claim": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "DRAFT",
+            "REVIEW",
+            "RELEASED"
+          ]
+        },
+        "human_approval": {
+          "enum": [
+            "NOT_REVIEWED",
+            "APPROVED"
+          ]
+        }
+      },
+      "required": [
+        "schema_version",
+        "dataset_id",
+        "experiment_slug",
+        "analysis_revision",
+        "scientific_claim",
+        "status",
+        "human_approval"
+      ],
+      "additionalProperties": false
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": [
+              "number",
+              "boolean",
+              "null"
+            ]
+          },
+          "unit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "enum": [
+              "direct_input",
+              "derived",
+              "runtime_control",
+              "reference_only",
+              "unused_snapshot"
+            ]
+          },
+          "meaning": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "consumers": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "status": {
+            "enum": [
+              "LEGACY_ONLY",
+              "SOURCE_EXTRACTED",
+              "PROJECT_DERIVED",
+              "MISSING",
+              "CONFLICT",
+              "SYNTHETIC"
+            ]
+          },
+          "derivation": {
+            "type": "object",
+            "properties": {
+              "formula_id": {"type": "string", "minLength": 1},
+              "input_refs": {"type": "array", "items": {"type": "string"}},
+              "dependency_fingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            },
+            "required": ["formula_id", "input_refs", "dependency_fingerprint"],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "value",
+          "unit",
+          "role",
+          "meaning",
+          "source_refs",
+          "consumers",
+          "status"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "models": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "model_type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "model_revision": {
+            "type": "string",
+            "minLength": 1
+          },
+          "formula": {
+            "type": "string",
+            "minLength": 1
+          },
+          "formula_purpose": {
+            "const": "audit_only"
+          },
+          "variables": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "parameter_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "resource_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "depends_on": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "meaning": {
+            "type": "string",
+            "minLength": 1
+          },
+          "domain": {
+            "type": "string",
+            "minLength": 1
+          },
+          "boundary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "binding_status": {
+            "enum": [
+              "BOUND_AND_TESTED",
+              "BOUND_UNVERIFIED",
+              "SPECIFICATION_ONLY",
+              "REFERENCE_ONLY",
+              "BLOCKED"
+            ]
+          },
+          "implementation_contract": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "model_type",
+          "model_revision",
+          "formula",
+          "formula_purpose",
+          "variables",
+          "parameter_refs",
+          "resource_refs",
+          "depends_on",
+          "source_refs",
+          "locator",
+          "meaning",
+          "domain",
+          "boundary",
+          "binding_status",
+          "implementation_contract"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "resources": {
+      "type": "object",
+      "properties": {
+        "archive": {
+          "const": "experiment.resources.npz"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "arrays": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string",
+                "minLength": 1
+              },
+              "unit": {
+                "type": "string",
+                "minLength": 1
+              },
+              "shape": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "dtype": {
+                "type": "string",
+                "minLength": 1
+              },
+              "axes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "unit": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "values": {
+                      "type": "array"
+                    },
+                    "coordinate_ref": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "edges_ref": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "rule": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "unit"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "meaning": {
+                "type": "string",
+                "minLength": 1
+              },
+              "semantic": {
+                "type": "string",
+                "minLength": 1
+              },
+              "role": {
+                "enum": [
+                  "direct_input",
+                  "materialized_derived_resource"
+                ]
+              },
+              "normalization": {
+                "type": "object",
+                "properties": {
+                  "quantity_kind": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "runtime_authority": {
+                    "const": "array"
+                  },
+                  "included_factors": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "uniqueItems": true
+                  },
+                  "runtime_factors": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "uniqueItems": true
+                  }
+                },
+                "required": [
+                  "quantity_kind",
+                  "runtime_authority",
+                  "included_factors",
+                  "runtime_factors"
+                ],
+                "additionalProperties": false
+              },
+              "source_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "uniqueItems": true
+              },
+              "sha256_raw_c_order": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "generation": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "parameter_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+                  "model_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+                  "resource_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+                  "dependency_fingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+                },
+                "required": ["parameter_refs", "model_refs", "resource_refs", "dependency_fingerprint"],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "key",
+              "unit",
+              "shape",
+              "dtype",
+              "axes",
+              "meaning",
+              "role",
+              "normalization",
+              "source_refs",
+              "sha256_raw_c_order",
+              "generation"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "archive",
+        "sha256",
+        "arrays"
+      ],
+      "additionalProperties": false
+    },
+    "observable": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "edges_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bin_count": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "name",
+        "unit",
+        "edges_ref",
+        "bin_count"
+      ],
+      "additionalProperties": false
+    },
+    "assembly": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "object"
+        },
+        "target": {
+          "type": "object"
+        },
+        "interaction": {
+          "type": "object"
+        },
+        "detector": {
+          "type": "object"
+        },
+        "statistics": {
+          "type": "object"
+        },
+        "numerics": {
+          "type": "object"
+        },
+        "profile": {
+          "enum": [
+            "specification_only",
+            "deterministic_pe_legacy_v1",
+            "observed_gaussian_legacy_v1"
+          ]
+        }
+      },
+      "required": [
+        "source",
+        "target",
+        "interaction",
+        "detector",
+        "statistics",
+        "numerics",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "enum": [
+              "PASS",
+              "PARTIAL",
+              "BLOCKED",
+              "NOT_RUN",
+              "NOT_APPLICABLE"
+            ]
+          },
+          "blockers": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "human_approval": {
+            "const": "NOT_REVIEWED"
+          }
+        },
+        "required": [
+          "status",
+          "blockers",
+          "evidence",
+          "human_approval"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "sources": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status": {
+                "type": "string",
+                "minLength": 1
+              },
+              "detail": {
+                "type": "string",
+                "minLength": 1
+              },
+              "blocks": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "id",
+              "status",
+              "detail",
+              "blocks"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "sources",
+        "issues"
+      ],
+      "additionalProperties": false
+    },
+    "extensions": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[a-z][a-z0-9_-]*\\.[a-z][a-z0-9_.-]*$"
+      }
+    }
+  },
+  "required": [
+    "package",
+    "parameters",
+    "models",
+    "resources",
+    "observable",
+    "assembly",
+    "capabilities",
+    "provenance"
+  ],
+  "additionalProperties": false
+}

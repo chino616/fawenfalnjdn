@@ -5,6 +5,7 @@
 | 文件 | 谁在使用，具体做什么 |
 |---|---|
 | [csi2021.py](csi2021.py) | `assemble_csi2021` 装配 `CsIGammaResponse`、`CsI2021Efficiency`、`CsI2021Observation`；提供 PE 密度或箱概率 |
+| [legacy_parameters.py](legacy_parameters.py) | 历史缺省值名称的延迟兼容视图；数值从 CsI2021 YAML/NPZ 读取，显式参数的算法路径不导入此模块 |
 | [selection.py](selection.py) | `LegacyComponentAcceptance` 提供各源分量的接受率，在折叠路径中施加一次 |
 | [coherent.py](coherent.py) | `TabulatedEfficiency` 读取外部效率表；`DeterministicPEObservation` 和 `ObservedGaussianObservation` 保存 CsI2017/Ar2020 专用折叠参数 |
 
@@ -22,8 +23,13 @@ CsI2021 的 Slow 保留“响应积分 → 非负截断 → PE 插值 → 效率
 
 ## 与dataset安装状态分离的默认响应
 
-[legacy_parameters.py](legacy_parameters.py)集中保存原有CsI淬火、Gamma、效率、PE边界与分量接受率默认值；具体definition引用这些公共默认值，也可在已批准范围内显式装配其他参数。公共响应不再为了获得默认数值导入CsI2021的专用definition，卸载该dataset时保留这项共享能力。
+[legacy_parameters.py](legacy_parameters.py) 是从 CsI2021 输入包读取缺省参数的兼容视图，未保存独立数值。显式传参的通用算法可独立使用；省略参数或依赖旧默认导出的消费者，仍须在卸载测试中核对其数据依赖。
 
 ---
 
 [上一级](../README.md) · [项目总览](../../README.md)
+
+
+## 输入包执行与延迟导出
+
+[__init__.py](__init__.py) 按需导出具体探测器对象，使 Catalog 的身份查询不因模块导入而装配核响应。CsI2021 audit adapter 从 YAML 显式传入 quenching、Gamma、效率和选择；[P06 报告](../../workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/06_DETECTOR_RESPONSE_REPORT.md) 区分密度归一化与分析窗损失。卸载兼容性需按当前版本另验，不能由延迟导出推断。

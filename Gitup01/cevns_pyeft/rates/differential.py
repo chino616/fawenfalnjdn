@@ -146,10 +146,10 @@ def eee_quenching_csi(enr_keV: ArrayLike, *, quenching=None) -> ArrayLike:
     return _scalar_or_array(out, enr_keV)
 
 def p_smearing_csi(pe: ArrayLike, enr_keV: float, *, quenching=None, gamma_a=None, gamma_b=None) -> ArrayLike:
-    from cevns_pyeft.detectors.legacy_parameters import CSI_RESPONSE_DEFAULTS
-    params = CSI_RESPONSE_DEFAULTS
-    gamma_a = params.gamma_a if gamma_a is None else gamma_a
-    gamma_b = params.gamma_b if gamma_b is None else gamma_b
+    if gamma_a is None or gamma_b is None:
+        from cevns_pyeft.detectors.legacy_parameters import CSI_RESPONSE_DEFAULTS
+        gamma_a = CSI_RESPONSE_DEFAULTS.gamma_a if gamma_a is None else gamma_a
+        gamma_b = CSI_RESPONSE_DEFAULTS.gamma_b if gamma_b is None else gamma_b
     Eee = float(eee_quenching_csi(enr_keV, quenching=quenching))
     if not Eee > 0.0:
         xx = _asarray(pe)

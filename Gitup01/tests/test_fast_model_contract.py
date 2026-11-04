@@ -201,7 +201,9 @@ def test_saved_array_corruption_is_rejected(compiled, tmp_path):
 def test_resource_edit_invalidates_existing_model_snapshot_and_missing_basis_is_rejected(tmp_path):
     path = tmp_path/"responses.json"
     path.write_bytes(RESPONSE.read_bytes())
-    model = make_csi2021_model(path)
+    # An external resource is an explicit component, separate from canonical inputs.
+    from cevns_pyeft.theory.li2026.adapter import Li2026LegacyInteraction
+    model = replace(make_csi2021_model(), interaction=Li2026LegacyInteraction(path))
     kernel = compile_fast(model, numerics=IntegrationSettings(n_er=3,n_enu=6),
                            basis_keys=[(6,1,"u"),(6,1,"d"),(6,2,"u"),(6,2,"d")])
     with pytest.raises(UnsupportedCapabilityError, match="outside compiled basis"):

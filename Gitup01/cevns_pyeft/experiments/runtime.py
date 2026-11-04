@@ -36,7 +36,11 @@ def predict_experiment(experiment, *, parameters=None, backend='slow', numerics=
     if backend not in definition.numerical_profiles:
         raise ValueError(f'{definition.dataset_id}: unsupported backend {backend!r}')
     actual = resolve_numerics(definition, backend, numerics)
-    point = TheoryPoint(sin2thetaW=definition.reproduction_sin2thetaW) if parameters is None else parameters
+    if parameters is None:
+        provider = getattr(experiment.executor, 'default_point', None)
+        point = provider() if provider is not None else TheoryPoint(sin2thetaW=definition.reproduction_sin2thetaW)
+    else:
+        point = parameters
     if not isinstance(point, TheoryPoint):
         raise TypeError('parameters must be TheoryPoint or None')
     if point.state.values and not getattr(experiment.executor, 'supports_state_parameters', False):

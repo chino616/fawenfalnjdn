@@ -14,6 +14,24 @@ __pycache__/
 *.egg-info/
 *.whl
 
+# Formal input packages only; keep every other data file under parent policy.
+!/data/experiments/
+!/data/experiments/COHERENT_CsI/
+!/data/experiments/COHERENT_CsI/CsI2021/
+!/data/experiments/COHERENT_CsI/CsI2021/experiment.input.yaml
+!/data/experiments/COHERENT_CsI/CsI2021/experiment.resources.npz
+!/data/experiments/COHERENT_CsI/CsI2021/experiment.physics.md
+!/data/experiments/COHERENT_CsI/CsI2017/
+!/data/experiments/COHERENT_CsI/CsI2017/experiment.input.yaml
+!/data/experiments/COHERENT_CsI/CsI2017/experiment.resources.npz
+!/data/experiments/COHERENT_CsI/CsI2017/experiment.physics.md
+!/data/experiments/COHERENT_Ar/
+!/data/experiments/COHERENT_Ar/Ar2020/
+!/data/experiments/COHERENT_Ar/Ar2020/experiment.input.yaml
+!/data/experiments/COHERENT_Ar/Ar2020/experiment.resources.npz
+!/data/experiments/COHERENT_Ar/Ar2020/experiment.physics.md
+!/data/experiments/COHERENT_Ar/Ar2020/README.md
+
 # Temporary wheel build and isolated installation
 /outputs/release/build-temp/
 /outputs/release/final-validation/

@@ -6,30 +6,45 @@ from cevns_pyeft.contracts.observation import BinProbabilities
 from cevns_pyeft.rates.differential import p_smearing_csi
 from .selection import LegacyComponentAcceptance
 
-from .legacy_parameters import CSI_RESPONSE_DEFAULTS, CSI_PE_EDGES, CSI_COMPONENT_ACCEPTANCE
-_DEFAULT = CSI_RESPONSE_DEFAULTS
-PE_BINS_9 = np.asarray(CSI_PE_EDGES)
-PE_BINS_9.setflags(write=False)
-PE_WIDTHS_9 = np.diff(PE_BINS_9)
-PE_WIDTHS_9.setflags(write=False)
-DEFAULT_ACCEPTANCE = dict(CSI_COMPONENT_ACCEPTANCE)
+def _defaults():
+    from .legacy_parameters import CSI_RESPONSE_DEFAULTS
+    return CSI_RESPONSE_DEFAULTS
+
+
+def __getattr__(name):
+    if name in ('PE_BINS_9', 'PE_WIDTHS_9', 'DEFAULT_ACCEPTANCE'):
+        from .legacy_parameters import CSI_PE_EDGES, CSI_COMPONENT_ACCEPTANCE
+        if name == 'DEFAULT_ACCEPTANCE':
+            return dict(CSI_COMPONENT_ACCEPTANCE)
+        result = np.asarray(CSI_PE_EDGES, dtype=float)
+        if name == 'PE_WIDTHS_9':
+            result = np.diff(result)
+        result.setflags(write=False)
+        return result
+    raise AttributeError(name)
 ArrayLike = Union[float, int, np.ndarray]
 EfficiencyModel = Literal["CsI2021"]
 
 
 @dataclass(frozen=True)
 class CsI2021EfficiencyParams:
-    a: float = _DEFAULT.efficiency[0]
-    b: float = _DEFAULT.efficiency[1]
-    c: float = _DEFAULT.efficiency[2]
-    d: float = _DEFAULT.efficiency[3]
+    a: float | None = None
+    b: float | None = None
+    c: float | None = None
+    d: float | None = None
 
     def __post_init__(self):
+        if any(getattr(self, key) is None for key in 'abcd'):
+            values = _defaults().efficiency
+            for index, key in enumerate('abcd'):
+                if getattr(self, key) is None:
+                    object.__setattr__(self, key, values[index])
         if not all(np.isfinite(value) for value in asdict(self).values()):
             raise ValueError("efficiency parameters must be finite")
 
 
-def efficiency_csi2021(pe: ArrayLike, *, params: CsI2021EfficiencyParams = CsI2021EfficiencyParams()) -> ArrayLike:
+def efficiency_csi2021(pe: ArrayLike, *, params: CsI2021EfficiencyParams | None = None) -> ArrayLike:
+    params = CsI2021EfficiencyParams() if params is None else params
     x = np.asarray(pe, dtype=float)
     eff = params.a / (1.0 + np.exp(-params.b * (x - params.c))) + params.d
     eff = np.maximum(eff, 0.0)
@@ -70,11 +85,16 @@ class ConstantEfficiency:
 
 @dataclass(frozen=True)
 class CsIGammaResponse:
-    quenching: tuple = _DEFAULT.quenching
-    gamma_a: float = _DEFAULT.gamma_a
-    gamma_b: float = _DEFAULT.gamma_b
+    quenching: tuple | None = None
+    gamma_a: float | None = None
+    gamma_b: float | None = None
 
     def __post_init__(self):
+        if any(getattr(self, key) is None for key in ('quenching', 'gamma_a', 'gamma_b')):
+            defaults = _defaults()
+            for key in ('quenching', 'gamma_a', 'gamma_b'):
+                if getattr(self, key) is None:
+                    object.__setattr__(self, key, getattr(defaults, key))
         if len(self.quenching) != 4 or not all(np.isfinite(x) for x in self.quenching) or self.gamma_a <= 0 or self.gamma_b <= 0:
             raise ValueError('invalid CsI gamma response parameters')
     def density(self, observed, recoil_keV, *, target):

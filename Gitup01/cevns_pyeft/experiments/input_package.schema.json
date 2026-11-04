@@ -1,0 +1,2551 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:cevns-pyeft:experiment-input:1",
+  "title": "CEvNS-pyEFT Experiment Input Package v1",
+  "description": "Contract and validation metadata only. JSON-compatible YAML 1.2; no formula execution, imports or model bindings.",
+  "type": "object",
+  "properties": {
+    "dataset_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_type": {
+      "enum": [
+        "stopped_pion",
+        "reactor",
+        "solar",
+        "accelerator_continuous",
+        "custom_tabulated"
+      ]
+    },
+    "target_mode": {
+      "type": "string",
+      "minLength": 1
+    },
+    "package": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "cevns-experiment-input/1"
+        },
+        "dataset_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "experiment": {
+          "type": "string",
+          "minLength": 1
+        },
+        "experiment_slug": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "analysis_revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scientific_claim": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "DRAFT",
+            "REVIEW",
+            "RELEASED"
+          ]
+        },
+        "completeness": {
+          "enum": [
+            "PARTIAL",
+            "COMPLETE"
+          ]
+        },
+        "human_physics_approval": {
+          "enum": [
+            "NOT_REVIEWED",
+            "APPROVED",
+            "REVISE"
+          ]
+        },
+        "formal_files": {
+          "const": [
+            "experiment.input.yaml",
+            "experiment.resources.npz",
+            "experiment.physics.md"
+          ]
+        },
+        "machine_authority": {
+          "type": "string",
+          "minLength": 1
+        },
+        "runtime_ready": {
+          "type": "boolean"
+        },
+        "external_runtime_data_dependencies": {
+          "const": []
+        },
+        "excluded_datasets": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "schema_version",
+        "dataset_id",
+        "experiment",
+        "experiment_slug",
+        "analysis_revision",
+        "scientific_claim",
+        "status",
+        "completeness",
+        "human_physics_approval",
+        "formal_files",
+        "machine_authority",
+        "runtime_ready",
+        "external_runtime_data_dependencies",
+        "excluded_datasets"
+      ],
+      "additionalProperties": false
+    },
+    "engine_compatibility": {
+      "type": "object",
+      "properties": {
+        "engine_id": {
+          "const": "CEvNS-pyEFT"
+        },
+        "core_api_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "contract_versions": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": "string",
+              "minLength": 1
+            },
+            "interaction": {
+              "type": "string",
+              "minLength": 1
+            },
+            "observation": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "source",
+            "interaction",
+            "observation"
+          ],
+          "additionalProperties": false
+        },
+        "binding_task": {
+          "const": "Task03"
+        },
+        "status": {
+          "enum": [
+            "DECLARED_NOT_BOUND",
+            "BOUND_NOT_RUN",
+            "BOUND_AND_TESTED"
+          ]
+        }
+      },
+      "required": [
+        "engine_id",
+        "core_api_version",
+        "contract_versions",
+        "binding_task",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "capabilities": {
+      "type": "object",
+      "properties": {
+        "legacy_prediction": {
+          "$ref": "#/$defs/capability"
+        },
+        "package_backed_prediction": {
+          "$ref": "#/$defs/capability"
+        },
+        "fast": {
+          "$ref": "#/$defs/capability"
+        },
+        "legacy_approximate_statistics": {
+          "$ref": "#/$defs/capability"
+        },
+        "official_likelihood": {
+          "$ref": "#/$defs/capability"
+        },
+        "general_antineutrino_EFT": {
+          "$ref": "#/$defs/capability"
+        },
+        "scientific_release": {
+          "$ref": "#/$defs/capability"
+        }
+      },
+      "required": [
+        "legacy_prediction",
+        "package_backed_prediction",
+        "fast",
+        "legacy_approximate_statistics",
+        "official_likelihood",
+        "general_antineutrino_EFT",
+        "scientific_release"
+      ],
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "model_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "sns_fluence_legacy_v1",
+              "sns_michel_tabulation_legacy_v1",
+              "sns_prompt_line_v1",
+              "sns_fixed_state_v1",
+              "csi_target_inventory_v1",
+              "li2026_sm_left_v1",
+              "li2026_matching_v1",
+              "elastic_kinematics_v1",
+              "nuclear_np_polynomial_v1",
+              "li2026_R_W_kernel_v1",
+              "li2026_dsigma_v1",
+              "csi_quenching_legacy_v1",
+              "legacy_csi_gamma",
+              "csi2021_logistic_legacy",
+              "legacy_component_acceptance",
+              "legacy_csi2021_v1",
+              "gaussian_two_pull_legacy_v1"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "component_order": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "components": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sourceComponent"
+          }
+        },
+        "normalization": {
+          "type": "object",
+          "properties": {
+            "route": {
+              "const": "materialized_continuum_derived_prompt"
+            },
+            "continuum_authority": {
+              "const": "npz"
+            },
+            "prompt_weight_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "runtime_continuum_factors": {
+              "const": []
+            },
+            "included_factors": {
+              "const": [
+                "POT",
+                "yield",
+                "geometry"
+              ]
+            },
+            "notes": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "route",
+            "continuum_authority",
+            "prompt_weight_ref",
+            "runtime_continuum_factors",
+            "included_factors",
+            "notes"
+          ],
+          "additionalProperties": false
+        },
+        "time_coordinate": {
+          "type": "null"
+        },
+        "time_support": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "model_refs",
+        "component_order",
+        "components",
+        "normalization",
+        "time_coordinate",
+        "time_support"
+      ],
+      "additionalProperties": false
+    },
+    "target": {
+      "type": "object",
+      "properties": {
+        "model_ref": {
+          "type": "string",
+          "enum": [
+            "sns_fluence_legacy_v1",
+            "sns_michel_tabulation_legacy_v1",
+            "sns_prompt_line_v1",
+            "sns_fixed_state_v1",
+            "csi_target_inventory_v1",
+            "li2026_sm_left_v1",
+            "li2026_matching_v1",
+            "elastic_kinematics_v1",
+            "nuclear_np_polynomial_v1",
+            "li2026_R_W_kernel_v1",
+            "li2026_dsigma_v1",
+            "csi_quenching_legacy_v1",
+            "legacy_csi_gamma",
+            "csi2021_logistic_legacy",
+            "legacy_component_acceptance",
+            "legacy_csi2021_v1",
+            "gaussian_two_pull_legacy_v1"
+          ]
+        },
+        "isotope_order": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "response_keys": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "exposure": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "model_ref",
+        "isotope_order",
+        "response_keys",
+        "exposure"
+      ],
+      "additionalProperties": false
+    },
+    "interaction": {
+      "type": "object",
+      "properties": {
+        "model_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "sns_fluence_legacy_v1",
+              "sns_michel_tabulation_legacy_v1",
+              "sns_prompt_line_v1",
+              "sns_fixed_state_v1",
+              "csi_target_inventory_v1",
+              "li2026_sm_left_v1",
+              "li2026_matching_v1",
+              "elastic_kinematics_v1",
+              "nuclear_np_polynomial_v1",
+              "li2026_R_W_kernel_v1",
+              "li2026_dsigma_v1",
+              "csi_quenching_legacy_v1",
+              "legacy_csi_gamma",
+              "csi2021_logistic_legacy",
+              "legacy_component_acceptance",
+              "legacy_csi2021_v1",
+              "gaussian_two_pull_legacy_v1"
+            ]
+          }
+        },
+        "theory_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "theory_revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "basis": {
+          "enum": [
+            "np",
+            "iso"
+          ]
+        },
+        "c10_mass_mode": {
+          "enum": [
+            "quark_mass_resolved",
+            "legacy_equal_light_quark_mass"
+          ]
+        },
+        "flavor_order": {
+          "const": [
+            "e",
+            "mu",
+            "tau"
+          ]
+        },
+        "coefficient_axes": {
+          "type": "object",
+          "properties": {
+            "row": {
+              "type": "string",
+              "minLength": 1
+            },
+            "column": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "row",
+            "column"
+          ],
+          "additionalProperties": false
+        },
+        "default_bsm_coefficients": {
+          "type": "object",
+          "maxProperties": 0
+        },
+        "supported_operators": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/operator"
+          }
+        },
+        "symbolic_equations": {
+          "type": "object",
+          "properties": {
+            "matching": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/equation"
+              }
+            },
+            "particle_response": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/equation"
+              }
+            }
+          },
+          "required": [
+            "matching",
+            "particle_response"
+          ],
+          "additionalProperties": false
+        },
+        "symbolic_notation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nuclear_channels": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "excluded_nuclear_channel": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "engine_dependency": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "model_refs",
+        "theory_id",
+        "theory_revision",
+        "basis",
+        "c10_mass_mode",
+        "flavor_order",
+        "coefficient_axes",
+        "default_bsm_coefficients",
+        "supported_operators",
+        "symbolic_equations",
+        "symbolic_notation",
+        "nuclear_channels",
+        "excluded_nuclear_channel",
+        "engine_dependency"
+      ],
+      "additionalProperties": false
+    },
+    "detector": {
+      "type": "object",
+      "properties": {
+        "model_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "sns_fluence_legacy_v1",
+              "sns_michel_tabulation_legacy_v1",
+              "sns_prompt_line_v1",
+              "sns_fixed_state_v1",
+              "csi_target_inventory_v1",
+              "li2026_sm_left_v1",
+              "li2026_matching_v1",
+              "elastic_kinematics_v1",
+              "nuclear_np_polynomial_v1",
+              "li2026_R_W_kernel_v1",
+              "li2026_dsigma_v1",
+              "csi_quenching_legacy_v1",
+              "legacy_csi_gamma",
+              "csi2021_logistic_legacy",
+              "legacy_component_acceptance",
+              "legacy_csi2021_v1",
+              "gaussian_two_pull_legacy_v1"
+            ]
+          }
+        },
+        "parameter_order": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        },
+        "gamma_convention": {
+          "enum": [
+            "shape-rate",
+            "shape-scale"
+          ]
+        },
+        "separate_light_yield": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "model_refs",
+        "parameter_order",
+        "gamma_convention",
+        "separate_light_yield"
+      ],
+      "additionalProperties": false
+    },
+    "observable": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "edges_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bin_order": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bin_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "boundary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "prediction_unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "statistics_unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "prediction_content": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "name",
+        "unit",
+        "edges_ref",
+        "bin_order",
+        "bin_count",
+        "boundary",
+        "prediction_unit",
+        "statistics_unit",
+        "prediction_content"
+      ],
+      "additionalProperties": false
+    },
+    "prediction": {
+      "type": "object",
+      "properties": {
+        "model_ref": {
+          "type": "string",
+          "enum": [
+            "sns_fluence_legacy_v1",
+            "sns_michel_tabulation_legacy_v1",
+            "sns_prompt_line_v1",
+            "sns_fixed_state_v1",
+            "csi_target_inventory_v1",
+            "li2026_sm_left_v1",
+            "li2026_matching_v1",
+            "elastic_kinematics_v1",
+            "nuclear_np_polynomial_v1",
+            "li2026_R_W_kernel_v1",
+            "li2026_dsigma_v1",
+            "csi_quenching_legacy_v1",
+            "legacy_csi_gamma",
+            "csi2021_logistic_legacy",
+            "legacy_component_acceptance",
+            "legacy_csi2021_v1",
+            "gaussian_two_pull_legacy_v1"
+          ]
+        },
+        "runtime_model_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "numerical_strategy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "slow_fast_profiles_equal": {
+          "type": "boolean"
+        },
+        "error_control": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alternative_bin_probability_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_graph": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "model_ref",
+        "runtime_model_id",
+        "numerical_strategy",
+        "slow_fast_profiles_equal",
+        "error_control",
+        "alternative_bin_probability_path",
+        "model_graph"
+      ],
+      "additionalProperties": false
+    },
+    "statistics": {
+      "type": "object",
+      "properties": {
+        "model_ref": {
+          "type": "string",
+          "enum": [
+            "sns_fluence_legacy_v1",
+            "sns_michel_tabulation_legacy_v1",
+            "sns_prompt_line_v1",
+            "sns_fixed_state_v1",
+            "csi_target_inventory_v1",
+            "li2026_sm_left_v1",
+            "li2026_matching_v1",
+            "elastic_kinematics_v1",
+            "nuclear_np_polynomial_v1",
+            "li2026_R_W_kernel_v1",
+            "li2026_dsigma_v1",
+            "csi_quenching_legacy_v1",
+            "legacy_csi_gamma",
+            "csi2021_logistic_legacy",
+            "legacy_component_acceptance",
+            "legacy_csi2021_v1",
+            "gaussian_two_pull_legacy_v1"
+          ]
+        },
+        "observed_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "background_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "uncertainty_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "covariance_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "covariance_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nuisance_names": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "nuisance_prior": {
+          "type": "string",
+          "minLength": 1
+        },
+        "profiling": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observed_semantics": {
+          "type": "string",
+          "minLength": 1
+        },
+        "inference_claim": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "model_ref",
+        "observed_ref",
+        "background_ref",
+        "uncertainty_ref",
+        "covariance_ref",
+        "covariance_status",
+        "nuisance_names",
+        "nuisance_prior",
+        "profiling",
+        "observed_semantics",
+        "inference_claim"
+      ],
+      "additionalProperties": false
+    },
+    "parameters": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "pattern": "^[a-z][A-Za-z0-9_]*(\\.[A-Za-z0-9_]+)+$"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/parameter"
+      }
+    },
+    "models": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "type": "string",
+        "enum": [
+          "sns_fluence_legacy_v1",
+          "sns_michel_tabulation_legacy_v1",
+          "sns_prompt_line_v1",
+          "sns_fixed_state_v1",
+          "csi_target_inventory_v1",
+          "li2026_sm_left_v1",
+          "li2026_matching_v1",
+          "elastic_kinematics_v1",
+          "nuclear_np_polynomial_v1",
+          "li2026_R_W_kernel_v1",
+          "li2026_dsigma_v1",
+          "csi_quenching_legacy_v1",
+          "legacy_csi_gamma",
+          "csi2021_logistic_legacy",
+          "legacy_component_acceptance",
+          "legacy_csi2021_v1",
+          "gaussian_two_pull_legacy_v1"
+        ]
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/model"
+      }
+    },
+    "resources": {
+      "type": "object",
+      "properties": {
+        "archive": {
+          "const": "experiment.resources.npz"
+        },
+        "archive_format": {
+          "type": "string",
+          "minLength": 1
+        },
+        "allow_pickle": {
+          "const": false
+        },
+        "arrays": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "$ref": "#/$defs/resource"
+          }
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "undeclared_external_data_allowed": {
+          "const": false
+        }
+      },
+      "required": [
+        "archive",
+        "archive_format",
+        "allow_pickle",
+        "arrays",
+        "sha256",
+        "undeclared_external_data_allowed"
+      ],
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "branch": {
+          "type": "string",
+          "minLength": 1
+        },
+        "audited_head": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "audit_date": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "sources": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/sourceRecord"
+          }
+        },
+        "official_primary_materials": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "official_primary_status": {
+          "enum": [
+            "MISSING",
+            "PARTIAL",
+            "VERIFIED"
+          ]
+        },
+        "decisions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status": {
+                "type": "string",
+                "minLength": 1
+              },
+              "meaning": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "id",
+              "status",
+              "meaning"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "standards": {
+          "type": "object",
+          "properties": {
+            "input_standard_version": {
+              "type": "integer"
+            },
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            },
+            "actual_schema_check": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "input_standard_version",
+            "schema",
+            "actual_schema_check"
+          ],
+          "additionalProperties": false
+        },
+        "environment": {
+          "type": "object",
+          "properties": {
+            "python": {
+              "type": "string",
+              "minLength": 1
+            },
+            "numpy": {
+              "type": "string",
+              "minLength": 1
+            },
+            "scipy": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "python",
+            "numpy",
+            "scipy"
+          ],
+          "additionalProperties": false
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/issue"
+          }
+        },
+        "migration": {
+          "type": "object",
+          "properties": {
+            "from_version": {
+              "const": "cevns-experiment-input-pilot/1"
+            },
+            "to_version": {
+              "const": "cevns-experiment-input/1"
+            },
+            "numeric_values_changed": {
+              "const": false
+            },
+            "npz_bytes_changed": {
+              "const": false
+            },
+            "machine_authority_decision": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "from_version",
+            "to_version",
+            "numeric_values_changed",
+            "npz_bytes_changed",
+            "machine_authority_decision"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "branch",
+        "audited_head",
+        "audit_date",
+        "sources",
+        "official_primary_materials",
+        "official_primary_status",
+        "decisions",
+        "standards",
+        "environment",
+        "issues",
+        "migration"
+      ],
+      "additionalProperties": false
+    },
+    "legacy_spec": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "const": "experiment.yaml"
+        },
+        "status": {
+          "const": "legacy_compatibility"
+        },
+        "package_authority": {
+          "const": "experiment.input.yaml"
+        },
+        "runtime_authority": {
+          "enum": [
+            "existing_python_definition",
+            "package_yaml_npz"
+          ]
+        },
+        "conflicts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "retirement_task": {
+          "const": "Task09"
+        }
+      },
+      "required": [
+        "path",
+        "status",
+        "package_authority",
+        "runtime_authority",
+        "conflicts",
+        "retirement_task"
+      ],
+      "additionalProperties": false
+    },
+    "extensions": {
+      "$ref": "#/$defs/extensions"
+    }
+  },
+  "required": [
+    "dataset_name",
+    "source_type",
+    "target_mode",
+    "package",
+    "engine_compatibility",
+    "capabilities",
+    "source",
+    "target",
+    "interaction",
+    "detector",
+    "observable",
+    "prediction",
+    "statistics",
+    "parameters",
+    "models",
+    "resources",
+    "provenance",
+    "legacy_spec"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "unit": {
+      "type": "string",
+      "enum": [
+        "1",
+        "boolean",
+        "m",
+        "POT",
+        "neutrinos/species/POT",
+        "cm^-2",
+        "MeV",
+        "kg",
+        "GeV",
+        "nuclei",
+        "GeV^-1",
+        "GeV^-2",
+        "GeV^2",
+        "cm^2/GeV^-2",
+        "keV",
+        "PE",
+        "PE^-1",
+        "keVee",
+        "keVnr",
+        "MeVnr",
+        "keVee/PE",
+        "keVee^-1",
+        "MeV^-1",
+        "MeV^-2",
+        "MeV^-3",
+        "counts/PE",
+        "cm^-2 MeV^-1",
+        "cm^2/keV",
+        "events/bin",
+        "PE^-2",
+        "PE^2",
+        "GeV^-3",
+        "GeV^(4-d)",
+        "GeV^(d-6)|GeV^(d-7)",
+        "GeV^-2|GeV^-3",
+        "GeV^(p_i+p_j)",
+        "inverse_energy",
+        "not_scalar",
+        "events/nucleus/keV",
+        "events/kg/PE",
+        "events/nucleus/bin",
+        "cm",
+        "kg/nucleus"
+      ]
+    },
+    "extensions": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z][a-z0-9_-]*\\.[a-zA-Z0-9_.-]+$": {}
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "source_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "symbol": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "source_ref",
+        "symbol"
+      ],
+      "additionalProperties": false
+    },
+    "consumer": {
+      "type": "object",
+      "properties": {
+        "model_id": {
+          "type": "string",
+          "enum": [
+            "sns_fluence_legacy_v1",
+            "sns_michel_tabulation_legacy_v1",
+            "sns_prompt_line_v1",
+            "sns_fixed_state_v1",
+            "csi_target_inventory_v1",
+            "li2026_sm_left_v1",
+            "li2026_matching_v1",
+            "elastic_kinematics_v1",
+            "nuclear_np_polynomial_v1",
+            "li2026_R_W_kernel_v1",
+            "li2026_dsigma_v1",
+            "csi_quenching_legacy_v1",
+            "legacy_csi_gamma",
+            "csi2021_logistic_legacy",
+            "legacy_component_acceptance",
+            "legacy_csi2021_v1",
+            "gaussian_two_pull_legacy_v1"
+          ]
+        },
+        "slot": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stage": {
+          "enum": [
+            "runtime",
+            "resource_generation",
+            "derivation"
+          ]
+        },
+        "code_evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        }
+      },
+      "required": [
+        "model_id",
+        "slot",
+        "stage",
+        "code_evidence"
+      ],
+      "additionalProperties": false
+    },
+    "derivation": {
+      "type": "object",
+      "properties": {
+        "formula_id": {
+          "enum": [
+            "spherical_fluence.v1",
+            "pion_line_energy.v1",
+            "muon_dar_endpoint.v1",
+            "mass_fraction.v1",
+            "product.v1",
+            "nucleus_inventory.v1",
+            "identity.v1"
+          ]
+        },
+        "formula": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "read_only": {
+          "const": true
+        },
+        "dependency_fingerprint": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "formula_id",
+        "formula",
+        "input_refs",
+        "read_only",
+        "dependency_fingerprint"
+      ],
+      "additionalProperties": false
+    },
+    "parameter": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": [
+            "number",
+            "boolean"
+          ]
+        },
+        "unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "meaning": {
+          "type": "string",
+          "minLength": 1
+        },
+        "original_source_value": {
+          "type": [
+            "number",
+            "boolean",
+            "null"
+          ]
+        },
+        "adopted_value": {
+          "type": [
+            "number",
+            "boolean"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "extraction_method": {
+          "enum": [
+            "legacy-code-derived",
+            "project-derived"
+          ]
+        },
+        "provenance_status": {
+          "enum": [
+            "SOURCE_EXTRACTED",
+            "PROJECT_DERIVED",
+            "REFERENCE_ONLY",
+            "USER_CONFIRMED",
+            "MISSING",
+            "CONFLICT"
+          ]
+        },
+        "source_kind": {
+          "enum": [
+            "project_derivation",
+            "current_project_implementation",
+            "official_primary"
+          ]
+        },
+        "converted": {
+          "type": "boolean"
+        },
+        "derivation": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/derivation"
+            }
+          ]
+        },
+        "human_confirmed": {
+          "type": "boolean"
+        },
+        "decision_status": {
+          "enum": [
+            "DRAFT",
+            "APPROVED",
+            "BLOCKED",
+            "NOT_APPLICABLE"
+          ]
+        },
+        "conflict_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "role": {
+          "enum": [
+            "direct_input",
+            "derived",
+            "materialized_derived_resource",
+            "reference_only",
+            "unused_snapshot",
+            "runtime_control"
+          ]
+        },
+        "consumers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/consumer"
+          }
+        },
+        "editable": {
+          "type": "boolean"
+        },
+        "affects_fingerprint": {
+          "type": "boolean"
+        },
+        "fingerprint_scope": {
+          "enum": [
+            "physical",
+            "analysis",
+            "numerics",
+            "materialization",
+            "none"
+          ]
+        },
+        "legacy_fingerprint_effect": {
+          "type": "string",
+          "minLength": 1
+        },
+        "package_consumption_status": {
+          "enum": [
+            "NOT_RUN",
+            "CONSUMED"
+          ]
+        }
+      },
+      "required": [
+        "value",
+        "unit",
+        "meaning",
+        "original_source_value",
+        "adopted_value",
+        "source_refs",
+        "locator",
+        "extraction_method",
+        "provenance_status",
+        "source_kind",
+        "converted",
+        "derivation",
+        "human_confirmed",
+        "decision_status",
+        "conflict_refs",
+        "role",
+        "consumers",
+        "editable",
+        "affects_fingerprint",
+        "fingerprint_scope",
+        "legacy_fingerprint_effect",
+        "package_consumption_status"
+      ],
+      "additionalProperties": false
+    },
+    "bound": {
+      "type": "object",
+      "properties": {
+        "variable": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "lower": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "upper": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "lower_inclusive": {
+          "type": "boolean"
+        },
+        "upper_inclusive": {
+          "type": "boolean"
+        },
+        "parameter_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "variable",
+        "unit",
+        "lower",
+        "upper",
+        "lower_inclusive",
+        "upper_inclusive",
+        "parameter_ref"
+      ],
+      "additionalProperties": false
+    },
+    "contract": {
+      "type": "object",
+      "properties": {
+        "binding_status": {
+          "enum": [
+            "NOT_IMPLEMENTED",
+            "BOUND_AND_TESTED",
+            "BOUND_UNVERIFIED",
+            "SPECIFICATION_ONLY",
+            "REFERENCE_ONLY",
+            "BLOCKED"
+          ]
+        },
+        "variable_units": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/unit"
+          }
+        },
+        "output_unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "domain": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "LEGACY_CODE_DERIVED",
+                "MISSING"
+              ]
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1
+            },
+            "bounds": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/bound"
+              }
+            }
+          },
+          "required": [
+            "status",
+            "description",
+            "bounds"
+          ],
+          "additionalProperties": false
+        },
+        "normalization": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string",
+              "minLength": 1
+            },
+            "additional_runtime_factors": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "description",
+            "additional_runtime_factors"
+          ],
+          "additionalProperties": false
+        },
+        "boundary": {
+          "type": "object",
+          "properties": {
+            "policy_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "policy_id",
+            "description"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "binding_status",
+        "variable_units",
+        "output_unit",
+        "domain",
+        "normalization",
+        "boundary"
+      ],
+      "additionalProperties": false
+    },
+    "model": {
+      "type": "object",
+      "properties": {
+        "model_id": {
+          "type": "string",
+          "enum": [
+            "sns_fluence_legacy_v1",
+            "sns_michel_tabulation_legacy_v1",
+            "sns_prompt_line_v1",
+            "sns_fixed_state_v1",
+            "csi_target_inventory_v1",
+            "li2026_sm_left_v1",
+            "li2026_matching_v1",
+            "elastic_kinematics_v1",
+            "nuclear_np_polynomial_v1",
+            "li2026_R_W_kernel_v1",
+            "li2026_dsigma_v1",
+            "csi_quenching_legacy_v1",
+            "legacy_csi_gamma",
+            "csi2021_logistic_legacy",
+            "legacy_component_acceptance",
+            "legacy_csi2021_v1",
+            "gaussian_two_pull_legacy_v1"
+          ]
+        },
+        "model_type": {
+          "enum": [
+            "source",
+            "target",
+            "interaction",
+            "detector",
+            "prediction",
+            "statistics"
+          ]
+        },
+        "mathematical_definition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "physical_explanation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "variables": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "inputs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "output": {
+          "type": "string",
+          "minLength": 1
+        },
+        "parameter_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "depends_on": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "sns_fluence_legacy_v1",
+              "sns_michel_tabulation_legacy_v1",
+              "sns_prompt_line_v1",
+              "sns_fixed_state_v1",
+              "csi_target_inventory_v1",
+              "li2026_sm_left_v1",
+              "li2026_matching_v1",
+              "elastic_kinematics_v1",
+              "nuclear_np_polynomial_v1",
+              "li2026_R_W_kernel_v1",
+              "li2026_dsigma_v1",
+              "csi_quenching_legacy_v1",
+              "legacy_csi_gamma",
+              "csi2021_logistic_legacy",
+              "legacy_component_acceptance",
+              "legacy_csi2021_v1",
+              "gaussian_two_pull_legacy_v1"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "domain": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalization": {
+          "type": "string",
+          "minLength": 1
+        },
+        "boundary_behavior": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance_status": {
+          "enum": [
+            "SOURCE_EXTRACTED",
+            "PROJECT_DERIVED",
+            "MISSING",
+            "CONFLICT"
+          ]
+        },
+        "extraction_method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision_status": {
+          "enum": [
+            "DRAFT",
+            "APPROVED",
+            "BLOCKED"
+          ]
+        },
+        "human_confirmed": {
+          "type": "boolean"
+        },
+        "implementation_owner": {
+          "const": "existing_engine"
+        },
+        "model_revision": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        },
+        "formula_purpose": {
+          "const": "audit_only"
+        },
+        "contract": {
+          "$ref": "#/$defs/contract"
+        }
+      },
+      "required": [
+        "model_id",
+        "model_type",
+        "mathematical_definition",
+        "physical_explanation",
+        "variables",
+        "inputs",
+        "output",
+        "parameter_refs",
+        "depends_on",
+        "source_refs",
+        "locator",
+        "domain",
+        "normalization",
+        "boundary_behavior",
+        "provenance_status",
+        "extraction_method",
+        "decision_status",
+        "human_confirmed",
+        "implementation_owner",
+        "model_revision",
+        "formula_purpose",
+        "contract"
+      ],
+      "additionalProperties": false
+    },
+    "axis": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "rule": {
+          "type": "string",
+          "minLength": 1
+        },
+        "coordinate_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "edges_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "order": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "name",
+        "unit"
+      ],
+      "additionalProperties": false
+    },
+    "resourceNormalization": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "quantity_kind": {
+          "enum": [
+            "coordinate",
+            "density_matrix",
+            "nuclear_coefficient",
+            "integrated_detector_fluence_density",
+            "statistic_density"
+          ]
+        },
+        "included_factors": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "runtime_factors": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "runtime_authority": {
+          "const": "array"
+        }
+      },
+      "required": [
+        "description",
+        "quantity_kind",
+        "included_factors",
+        "runtime_factors",
+        "runtime_authority"
+      ],
+      "additionalProperties": false
+    },
+    "generation": {
+      "type": "object",
+      "properties": {
+        "parameter_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "model_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "sns_fluence_legacy_v1",
+              "sns_michel_tabulation_legacy_v1",
+              "sns_prompt_line_v1",
+              "sns_fixed_state_v1",
+              "csi_target_inventory_v1",
+              "li2026_sm_left_v1",
+              "li2026_matching_v1",
+              "elastic_kinematics_v1",
+              "nuclear_np_polynomial_v1",
+              "li2026_R_W_kernel_v1",
+              "li2026_dsigma_v1",
+              "csi_quenching_legacy_v1",
+              "legacy_csi_gamma",
+              "csi2021_logistic_legacy",
+              "legacy_component_acceptance",
+              "legacy_csi2021_v1",
+              "gaussian_two_pull_legacy_v1"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "resource_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "dependency_fingerprint": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "method": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "parameter_refs",
+        "model_refs",
+        "resource_refs",
+        "dependency_fingerprint",
+        "method"
+      ],
+      "additionalProperties": false
+    },
+    "resourceConsumer": {
+      "type": "object",
+      "properties": {
+        "model_id": {
+          "type": "string",
+          "enum": [
+            "sns_fluence_legacy_v1",
+            "sns_michel_tabulation_legacy_v1",
+            "sns_prompt_line_v1",
+            "sns_fixed_state_v1",
+            "csi_target_inventory_v1",
+            "li2026_sm_left_v1",
+            "li2026_matching_v1",
+            "elastic_kinematics_v1",
+            "nuclear_np_polynomial_v1",
+            "li2026_R_W_kernel_v1",
+            "li2026_dsigma_v1",
+            "csi_quenching_legacy_v1",
+            "legacy_csi_gamma",
+            "csi2021_logistic_legacy",
+            "legacy_component_acceptance",
+            "legacy_csi2021_v1",
+            "gaussian_two_pull_legacy_v1"
+          ]
+        },
+        "slot": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "model_id",
+        "slot"
+      ],
+      "additionalProperties": false
+    },
+    "resource": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+        },
+        "meaning": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "shape": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "dtype": {
+          "enum": [
+            "float32",
+            "float64",
+            "complex64",
+            "complex128",
+            "int32",
+            "int64",
+            "bool"
+          ]
+        },
+        "axes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/axis"
+          }
+        },
+        "coordinate_convention": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalization": {
+          "$ref": "#/$defs/resourceNormalization"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance_status": {
+          "enum": [
+            "SOURCE_EXTRACTED",
+            "PROJECT_DERIVED",
+            "MISSING",
+            "CONFLICT"
+          ]
+        },
+        "extraction_method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision_status": {
+          "enum": [
+            "DRAFT",
+            "APPROVED",
+            "BLOCKED"
+          ]
+        },
+        "human_confirmed": {
+          "type": "boolean"
+        },
+        "sha256_raw_c_order": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "role": {
+          "enum": [
+            "direct_input",
+            "materialized_derived_resource"
+          ]
+        },
+        "generation": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/generation"
+            }
+          ]
+        },
+        "consumers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/resourceConsumer"
+          }
+        }
+      },
+      "required": [
+        "key",
+        "meaning",
+        "unit",
+        "shape",
+        "dtype",
+        "axes",
+        "coordinate_convention",
+        "normalization",
+        "source_refs",
+        "locator",
+        "provenance_status",
+        "extraction_method",
+        "decision_status",
+        "human_confirmed",
+        "sha256_raw_c_order",
+        "role",
+        "generation",
+        "consumers"
+      ],
+      "additionalProperties": false
+    },
+    "capability": {
+      "type": "object",
+      "properties": {
+        "engine_support": {
+          "enum": [
+            "AVAILABLE",
+            "RESTRICTED",
+            "NOT_IMPLEMENTED"
+          ]
+        },
+        "readiness": {
+          "enum": [
+            "LEGACY_ONLY",
+            "NOT_IMPLEMENTED",
+            "BLOCKED",
+            "NOT_REQUESTED",
+            "PACKAGE_VERIFIED",
+            "NOT_SUPPORTED"
+          ]
+        },
+        "legacy_evidence": {
+          "enum": [
+            "INTERNAL_REGRESSION_PASSED",
+            "INTERFACE_EXISTS",
+            "NOT_RUN"
+          ]
+        },
+        "package_runtime_validation": {
+          "enum": [
+            "NOT_RUN",
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "scientific_validation": {
+          "enum": [
+            "DRAFT",
+            "BLOCKED",
+            "NOT_REVIEWED"
+          ]
+        },
+        "human_approval": {
+          "enum": [
+            "NOT_REVIEWED",
+            "APPROVED",
+            "REVISE"
+          ]
+        },
+        "blocker_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "engine_support",
+        "readiness",
+        "legacy_evidence",
+        "package_runtime_validation",
+        "scientific_validation",
+        "human_approval",
+        "blocker_refs",
+        "notes"
+      ],
+      "additionalProperties": false
+    },
+    "sourceRecord": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "role": {
+          "const": "audit_source_only"
+        },
+        "kind": {
+          "enum": [
+            "project_data",
+            "project_document",
+            "project_code",
+            "official_primary"
+          ]
+        },
+        "independently_officially_verified": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "path",
+        "sha256",
+        "role",
+        "kind",
+        "independently_officially_verified"
+      ],
+      "additionalProperties": false
+    },
+    "issue": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "MISSING",
+            "CONFLICT",
+            "SOURCE_EXTRACTED",
+            "PROJECT_DERIVED",
+            "REFERENCE_ONLY",
+            "USER_CONFIRMED"
+          ]
+        },
+        "detail": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "needed": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "status",
+        "detail",
+        "blocks",
+        "needed"
+      ],
+      "additionalProperties": false
+    },
+    "sourceComponent": {
+      "type": "object",
+      "properties": {
+        "component_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "legacy_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "particle_kind": {
+          "enum": [
+            "nu",
+            "antinu"
+          ]
+        },
+        "flavor": {
+          "enum": [
+            "e",
+            "mu",
+            "tau"
+          ]
+        },
+        "rho_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "continuum_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "line_model_ref": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "sns_fluence_legacy_v1",
+                "sns_michel_tabulation_legacy_v1",
+                "sns_prompt_line_v1",
+                "sns_fixed_state_v1",
+                "csi_target_inventory_v1",
+                "li2026_sm_left_v1",
+                "li2026_matching_v1",
+                "elastic_kinematics_v1",
+                "nuclear_np_polynomial_v1",
+                "li2026_R_W_kernel_v1",
+                "li2026_dsigma_v1",
+                "csi_quenching_legacy_v1",
+                "legacy_csi_gamma",
+                "csi2021_logistic_legacy",
+                "legacy_component_acceptance",
+                "legacy_csi2021_v1",
+                "gaussian_two_pull_legacy_v1"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "component_id",
+        "legacy_label",
+        "particle_kind",
+        "flavor",
+        "rho_ref",
+        "continuum_ref",
+        "line_model_ref"
+      ],
+      "additionalProperties": false
+    },
+    "operator": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "items": false,
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dimension": {
+          "enum": [
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        "lepton_number": {
+          "enum": [
+            "LNC",
+            "LNV"
+          ]
+        },
+        "unit_power_GeV": {
+          "type": "integer"
+        },
+        "lnv_diagonal_must_vanish": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "key",
+        "name",
+        "dimension",
+        "lepton_number",
+        "unit_power_GeV",
+        "lnv_diagonal_must_vanish"
+      ],
+      "additionalProperties": false
+    },
+    "equation": {
+      "type": "object",
+      "properties": {
+        "lhs": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rhs": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_line": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "lhs",
+        "rhs",
+        "source_line"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "x-model-contracts": {
+    "sns_fluence_legacy_v1": {
+      "parameter_units": {
+        "baseline_m": "m",
+        "total_pot": "POT",
+        "yield_per_pot": "neutrinos/species/POT"
+      },
+      "resource_units": {},
+      "binding_status": "NOT_IMPLEMENTED"
+    },
+    "sns_michel_tabulation_legacy_v1": {
+      "parameter_units": {
+        "tabulation_min": "MeV",
+        "tabulation_max": "MeV",
+        "mask_min": "MeV",
+        "mask_max": "MeV",
+        "tabulation_nodes": "1",
+        "interpolation": "boolean",
+        "muon_mass": "GeV",
+        "fluence": "cm^-2"
+      },
+      "resource_units": {
+        "energy": "MeV",
+        "continuum": "cm^-2 MeV^-1"
+      },
+      "binding_status": "NOT_IMPLEMENTED"
+    },
+    "sns_prompt_line_v1": {
+      "parameter_units": {
+        "energy": "MeV",
+        "fluence": "cm^-2",
+        "pion_mass": "GeV",
+        "muon_mass": "GeV"
+      },
+      "resource_units": {},
+      "binding_status": "NOT_IMPLEMENTED"
+    },
+    "sns_fixed_state_v1": {
+      "parameter_units": {},
+      "resource_units": {
+        "density": "1"
+      },
+      "binding_status": "NOT_IMPLEMENTED"
+    },
+    "csi_target_inventory_v1": {
+      "parameter_units": {
+        "detector_mass": "kg",
+        "atomic_mass": "kg",
+        "amu": "GeV",
+        "mass_number": "1",
+        "mass_fraction": "1",
+        "mass_kg": "kg",
+        "mass_GeV": "GeV"
+      },
+      "resource_units": {},
+      "binding_status": "NOT_IMPLEMENTED"
+    },
+    "li2026_sm_left_v1": {
+      "parameter_units": {
+        "include_sm": "boolean",
+        "sin2thetaW": "1",
+        "G_F": "GeV^-2"
+      },
+      "resource_units": {},
+      "binding_status": "NOT_IMPLEMENTED"
+    },
+    "li2026_matching_v1": {
+      "parameter_units": {
+        "alpha_em": "1",
+        "g_A": "1",
+        "B0_m_u": "GeV^2",
+        "B0_m_d": "GeV^2",
+        "L1": "1",
+        "L2": "1",
+        "L3": "1",
+        "L4": "1",
+        "L5": "GeV",
+        "L6": "GeV",
+        "L7": "GeV",
+        "L8": "GeV",
+        "L11": "GeV",
+        "L12": "GeV",
+        "L13": "GeV",
+        "L14": "GeV",
+        "g1": "GeV",
+        "g2": "GeV",
+        "g3": "GeV",
+        "g4": "GeV",
+        "g5": "1",
+        "g6": "1",
+        "g7": "1",
+        "g8": "1",
+        "g9": "1",
+        "sigma_u_p": "GeV",
+        "sigma_d_p": "GeV",
+        "sigma_u_n": "GeV",
+        "sigma_d_n": "GeV",
+        "m_pi": "GeV",
+        "m_N": "GeV"
+      },
+      "resource_units": {},
+      "binding_status": "NOT_IMPLEMENTED"
+    },
+    "elastic_kinematics_v1": {
+      "parameter_units": {
+        "mass_GeV": "GeV",
+        "oscillator_length": "GeV^-1"
+      },
+      "resource_units": {},
+      "binding_status": "NOT_IMPLEMENTED"
+    },
+    "nuclear_np_polynomial_v1": {
+      "parameter_units": {
+        "oscillator_length": "GeV^-1",
+        "exp_factor": "1"
+      },
+      "resource_units": {
+        "coefficient": "1"
+      },
+      "binding_status": "NOT_IMPLEMENTED"
+    },
+    "li2026_R_W_kernel_v1": {
+      "parameter_units": {
+        "m_N": "GeV"
+      },
+      "resource_units": {},
+      "binding_status": "NOT_IMPLEMENTED"
+    },
+    "li2026_dsigma_v1": {
+      "parameter_units": {
+        "conversion": "cm^2/GeV^-2",
+        "mass_GeV": "GeV"
+      },
+      "resource_units": {},
+      "binding_status": "NOT_IMPLEMENTED"
+    },
+    "csi_quenching_legacy_v1": {
+      "parameter_units": {
+        "q1": "1",
+        "q2": "MeV^-1",
+        "q3": "MeV^-2",
+        "q4": "MeV^-3"
+      },
+      "resource_units": {},
+      "binding_status": "NOT_IMPLEMENTED"
+    },
+    "legacy_csi_gamma": {
+      "parameter_units": {
+        "a0": "keVee/PE",
+        "b0": "keVee^-1"
+      },
+      "resource_units": {},
+      "binding_status": "NOT_IMPLEMENTED"
+    },
+    "csi2021_logistic_legacy": {
+      "parameter_units": {
+        "a": "1",
+        "b": "PE^-1",
+        "c": "PE",
+        "d": "1"
+      },
+      "resource_units": {},
+      "binding_status": "NOT_IMPLEMENTED"
+    },
+    "legacy_component_acceptance": {
+      "parameter_units": {
+        "mu": "1",
+        "e": "1",
+        "mub": "1",
+        "nuclei": "nuclei"
+      },
+      "resource_units": {},
+      "binding_status": "NOT_IMPLEMENTED"
+    },
+    "legacy_csi2021_v1": {
+      "parameter_units": {
+        "n_er": "1",
+        "n_enu": "1",
+        "n_observed_bin": "1",
+        "observed_step": "PE",
+        "recoil_min_keV": "keV",
+        "energy_min": "MeV",
+        "energy_max": "MeV",
+        "isotope_mass_kg": "kg",
+        "electron_mass": "GeV"
+      },
+      "resource_units": {
+        "edges": "PE"
+      },
+      "binding_status": "NOT_IMPLEMENTED"
+    },
+    "gaussian_two_pull_legacy_v1": {
+      "parameter_units": {
+        "sigma_alpha": "1",
+        "sigma_beta": "1",
+        "sigma_floor": "counts/PE"
+      },
+      "resource_units": {
+        "observed": "counts/PE",
+        "background": "counts/PE",
+        "uncertainty": "counts/PE",
+        "edges": "PE"
+      },
+      "binding_status": "NOT_IMPLEMENTED"
+    }
+  }
+}

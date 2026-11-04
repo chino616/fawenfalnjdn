@@ -17,9 +17,9 @@ def test_explicit_definition_cannot_bypass_lifecycle_and_custom_aliases_work():
     catalog = ExperimentCatalog(builtins=False)
     for name, status in [("Archived", "archived"), ("Spec", "spec_only")]:
         catalog.register(name, replace(base, dataset_id=name), status=status)
-    catalog.register("Live", replace(base, dataset_id="Live"), aliases=("live",))
+    catalog.register(base.dataset_id, base, aliases=("live",))
     assert load_experiment("live", registry=catalog, resources=ROOT,
-                           definition=catalog.definition("Live")).dataset_id == "Live"
+                           definition=catalog.definition("live")).dataset_id == base.dataset_id
     for name, error in [("Archived", ArchivedExperimentError), ("Spec", SpecOnlyExperimentError)]:
         with pytest.raises(error):
             load_experiment(name, registry=catalog, resources=ROOT,
@@ -64,9 +64,10 @@ def test_all_resource_hashes_and_override_scopes_are_audited():
     result = audit(ROOT, ROOT / "data/resource_manifest.json")
     assert result["status"] == "PASS", result["errors"]
     assert result["unknown_or_unused_manifest_entries"] == []
-    assert result["ambiguous_override_resource_ids"] == ["efficiency"]
+    assert result["ambiguous_override_resource_ids"] == ["package_arrays", "package_input"]
     assert result["override_scope_checks"] == [
-        {"resource_id": "efficiency", "unscoped_rejected": True, "scoped_accepted": True}
+        {"resource_id": resource, "unscoped_rejected": True, "scoped_accepted": True}
+        for resource in ("package_arrays", "package_input")
     ]
     assert all(item["hash_match"] for item in result["resources"])
 
@@ -86,9 +87,9 @@ def test_resource_audit_unknown_id_unused_entry_and_alias_conflict_block(tmp_pat
     new = tmp_path / "data/experiments/COHERENT_CsI/CsI2017/detector/COHERENT_eff.txt"
     old.parent.mkdir(parents=True); new.parent.mkdir(parents=True)
     old.write_text("1 2"); new.write_text("1 3")
-    result = audit(tmp_path, manifest, ["CsI2017"])
-    assert result["status"] == "BLOCKED"
-    assert any("conflicting" in error for error in result["errors"])
+    from cevns_pyeft.foundation.resources import resolve_resource
+    with pytest.raises(ValueError, match="conflicting"):
+        resolve_resource(tmp_path, "data/datafiles/COHERENT_eff.txt")
 
 
 def test_audit_cli_uses_own_package_with_external_data_root(tmp_path):

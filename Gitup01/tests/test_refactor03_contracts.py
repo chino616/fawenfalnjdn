@@ -14,10 +14,10 @@ def test_i01_unknown_and_ambiguous_resource_keys_rejected(tmp_path):
         load_experiment('CsI2021',resources=ResourceCatalog(ROOT,{'respones':tmp_path/'missing'}))
     selection=AnalysisSelection.from_mapping({'datasets':[{'id':'CsI2017','enabled':False},{'id':'Ar2020','enabled':False}]})
     with pytest.raises(KeyError,match='ambiguous'):
-        predict_selection(selection,resources=ResourceCatalog(ROOT,{'efficiency':tmp_path/'missing'}))
-    assert predict_selection(selection,resources=ResourceCatalog(ROOT,{('CsI2017','efficiency'):tmp_path/'missing'}))=={}
+        predict_selection(selection,resources=ResourceCatalog(ROOT,{'package_input':tmp_path/'missing'}))
+    assert predict_selection(selection,resources=ResourceCatalog(ROOT,{('CsI2017','package_input'):tmp_path/'missing'}))=={}
     with pytest.raises(KeyError,match='scoped'):
-        predict_selection(selection,resources=ResourceCatalog(ROOT,{('CsI2021','efficiency'):tmp_path/'missing'}))
+        predict_selection(selection,resources=ResourceCatalog(ROOT,{('CsI2021','package_input'):tmp_path/'missing'}))
 
 
 
@@ -38,12 +38,14 @@ def test_i03_prepare_changes_actual_identity_and_rejects_cross_evaluation():
 
 
 def test_csi2017_coordinate_mismatch(tmp_path):
-    base=load_experiment('CsI2017',resources=ROOT)
-    ref=next(r for r in base.definition.resources if r.id=='data')
-    path=tmp_path/'wrong_data.txt';arr=np.loadtxt(ROOT/ref.path);arr[:,0]+=100;np.savetxt(path,arr)
-    exp=load_experiment('CsI2017',resources=ResourceCatalog(ROOT,{'data':path}))
-    from cevns_pyeft.experiments.coherent.statistics_binding import dataset
-    with pytest.raises(ValueError,match='coordinate'):dataset(exp.definition,exp.resource_catalog)
+    # Explicit historical-table audit retains the coordinate rejection contract.
+    import shutil
+    source=ROOT/'data/experiments/COHERENT_CsI/CsI2017/statistics'
+    for file in source.iterdir():
+        if file.is_file():shutil.copy2(file,tmp_path/file.name)
+    path=tmp_path/'COHERENT_data.txt';arr=np.loadtxt(path);arr[:,0]+=100;np.savetxt(path,arr)
+    from cevns_pyeft.statistics.datasets import load_csi2017_reference_data
+    with pytest.raises(ValueError,match='coordinate'):load_csi2017_reference_data(data_dir=tmp_path)
 
 
 def test_data_alias_conflicts_and_duplicate_specs_rejected(tmp_path):

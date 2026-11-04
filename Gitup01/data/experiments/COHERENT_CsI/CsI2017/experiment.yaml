@@ -1,3 +1,5 @@
+# Historical spec snapshot; superseded for runtime by experiment.input.yaml/NPZ.
+# Its old validation labels are provenance, not current human scientific approval.
 dataset_id: CsI2017
 dataset_name: CsI2017
 family: COHERENT_CsI

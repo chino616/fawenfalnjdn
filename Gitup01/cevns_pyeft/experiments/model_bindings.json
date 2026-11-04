@@ -1,0 +1,504 @@
+{
+  "sns_fluence_legacy_v1": {
+    "parameter_units": {
+      "baseline_m": "m",
+      "total_pot": "POT",
+      "yield_per_pot": "neutrinos/species/POT"
+    },
+    "resource_units": {},
+    "category": "source",
+    "output_unit": "cm^-2",
+    "variable_units": {
+      "F": "cm^-2",
+      "r": "neutrinos/species/POT",
+      "N_POT": "POT",
+      "L_m": "m",
+      "L_cm": "cm"
+    },
+    "depends_on": [],
+    "capabilities": [
+      "legacy_signal_prediction"
+    ],
+    "numerical_behavior": "no live-time or target-mass multiplier",
+    "specification_fingerprint": "f76c74f2a909a64f0d175a8087a6077e424dc98c9b5feba29eb746d843a1840d"
+  },
+  "sns_michel_tabulation_legacy_v1": {
+    "parameter_units": {
+      "tabulation_min": "MeV",
+      "tabulation_max": "MeV",
+      "mask_min": "MeV",
+      "mask_max": "MeV",
+      "tabulation_nodes": "1",
+      "interpolation": "boolean",
+      "muon_mass": "GeV",
+      "fluence": "cm^-2"
+    },
+    "resource_units": {
+      "energy": "MeV",
+      "continuum": "cm^-2 MeV^-1"
+    },
+    "category": "source",
+    "output_unit": "cm^-2 MeV^-1",
+    "variable_units": {
+      "E": "MeV",
+      "m_mu": "MeV",
+      "E_j": "MeV",
+      "F": "cm^-2",
+      "phi_l": "cm^-2 MeV^-1",
+      "f_l": "MeV^-1",
+      "mask": "1"
+    },
+    "depends_on": [
+      "sns_fluence_legacy_v1"
+    ],
+    "capabilities": [
+      "legacy_signal_prediction"
+    ],
+    "numerical_behavior": "linear interpolation; table-outside zero; final interpolation cell taper preserved",
+    "specification_fingerprint": "021a0ffa192ba9ff2c285814de394dc4c1bd7d66ca9336e0de5f34708184c432"
+  },
+  "sns_prompt_line_v1": {
+    "parameter_units": {
+      "energy": "MeV",
+      "fluence": "cm^-2",
+      "pion_mass": "GeV",
+      "muon_mass": "GeV"
+    },
+    "resource_units": {},
+    "category": "source",
+    "output_unit": "not_scalar",
+    "variable_units": {
+      "E0": "GeV",
+      "m_pi": "GeV",
+      "m_mu": "GeV",
+      "F": "cm^-2",
+      "delta": "inverse_energy"
+    },
+    "depends_on": [
+      "sns_fluence_legacy_v1"
+    ],
+    "capabilities": [
+      "legacy_signal_prediction"
+    ],
+    "numerical_behavior": "contributes iff E0 >= E_min(T)",
+    "specification_fingerprint": "e05294f2cbddc3b7dfd2d3c5fe416fda91393d67bbbf1a007585db93b1b6a68b"
+  },
+  "sns_fixed_state_v1": {
+    "parameter_units": {},
+    "resource_units": {
+      "density": "1"
+    },
+    "category": "source",
+    "output_unit": "not_scalar",
+    "variable_units": {
+      "rho_e": "1",
+      "rho_mu": "1",
+      "flavor_order": "not_scalar"
+    },
+    "depends_on": [],
+    "capabilities": [
+      "legacy_signal_prediction"
+    ],
+    "numerical_behavior": "state parameters rejected; antinu tag does not alter current kernel",
+    "specification_fingerprint": "4e1494302aff62dd24e86c5d17fe1c050b0474c11567ce1b6358d0952ad03b33"
+  },
+  "csi_target_inventory_v1": {
+    "parameter_units": {
+      "detector_mass": "kg",
+      "atomic_mass": "kg",
+      "amu": "GeV",
+      "mass_number": "1",
+      "mass_fraction": "1",
+      "mass_kg": "kg",
+      "mass_GeV": "GeV"
+    },
+    "resource_units": {},
+    "category": "target",
+    "output_unit": "not_scalar",
+    "variable_units": {
+      "w_i": "1",
+      "A_i": "1",
+      "u_kg": "kg",
+      "u_GeV": "GeV",
+      "Mdet": "kg",
+      "m_i_kg": "kg",
+      "m_i_GeV": "GeV",
+      "N_i": "nuclei"
+    },
+    "depends_on": [],
+    "capabilities": [
+      "legacy_signal_prediction"
+    ],
+    "numerical_behavior": "zero detector mass gives zero counts",
+    "specification_fingerprint": "bb804eb2ad76ad60779ed37f24f392f41c09e3a74c03528a54a90ed503d78763"
+  },
+  "li2026_sm_left_v1": {
+    "parameter_units": {
+      "include_sm": "boolean",
+      "sin2thetaW": "1",
+      "G_F": "GeV^-2"
+    },
+    "resource_units": {},
+    "category": "interaction",
+    "output_unit": "GeV^(4-d)",
+    "variable_units": {
+      "P": "GeV^-2",
+      "G_F": "GeV^-2",
+      "s2": "1",
+      "I3": "1",
+      "C_BSM": "GeV^(4-d)"
+    },
+    "depends_on": [],
+    "capabilities": [
+      "legacy_signal_prediction"
+    ],
+    "numerical_behavior": "unknown operators rejected; LNV diagonal constrained to zero by engine",
+    "specification_fingerprint": "c843be4f531a4996027cce07c5a4619a61bbfa2c082ec8945a46dbe6dab56ef6"
+  },
+  "li2026_matching_v1": {
+    "parameter_units": {
+      "alpha_em": "1",
+      "g_A": "1",
+      "B0_m_u": "GeV^2",
+      "B0_m_d": "GeV^2",
+      "L1": "1",
+      "L2": "1",
+      "L3": "1",
+      "L4": "1",
+      "L5": "GeV",
+      "L6": "GeV",
+      "L7": "GeV",
+      "L8": "GeV",
+      "L11": "GeV",
+      "L12": "GeV",
+      "L13": "GeV",
+      "L14": "GeV",
+      "g1": "GeV",
+      "g2": "GeV",
+      "g3": "GeV",
+      "g4": "GeV",
+      "g5": "1",
+      "g6": "1",
+      "g7": "1",
+      "g8": "1",
+      "g9": "1",
+      "sigma_u_p": "GeV",
+      "sigma_d_p": "GeV",
+      "sigma_u_n": "GeV",
+      "sigma_d_n": "GeV",
+      "m_pi": "GeV",
+      "m_N": "GeV"
+    },
+    "resource_units": {},
+    "category": "interaction",
+    "output_unit": "not_scalar",
+    "variable_units": {
+      "c_i^N": "GeV^-2|GeV^-3",
+      "C_o": "GeV^(4-d)",
+      "M_io^N": "GeV^(d-6)|GeV^(d-7)",
+      "Ebar": "GeV",
+      "q0": "GeV",
+      "q2": "GeV^2",
+      "LECs": "not_scalar"
+    },
+    "depends_on": [
+      "li2026_sm_left_v1",
+      "elastic_kinematics_v1"
+    ],
+    "capabilities": [
+      "legacy_signal_prediction"
+    ],
+    "numerical_behavior": "safe_ratio(n,q2)=0 when abs(q2)<=1e-30; safe_pion(n)=0 when abs(m_pi^2-q2)<=1e-30; this is a legacy numerical prescription",
+    "specification_fingerprint": "161c4746e007e219d71f8eadf9aa1847a4e8cbd9b845363246d15f06af99845a"
+  },
+  "elastic_kinematics_v1": {
+    "parameter_units": {
+      "mass_GeV": "GeV",
+      "oscillator_length": "GeV^-1"
+    },
+    "resource_units": {},
+    "category": "interaction",
+    "output_unit": "not_scalar",
+    "variable_units": {
+      "T": "GeV",
+      "E": "GeV",
+      "mA": "GeV",
+      "q0": "GeV",
+      "qabs": "GeV",
+      "q2": "GeV^2",
+      "b": "GeV^-1",
+      "y": "1"
+    },
+    "depends_on": [],
+    "capabilities": [
+      "legacy_signal_prediction"
+    ],
+    "numerical_behavior": "T>Tmax gives zero; negative recoil/nonfinite inputs rejected",
+    "specification_fingerprint": "1999e12fc449680f2a50e9bd3aea647b1a1aaa63aab9c19f34cf4ebb867718ee"
+  },
+  "nuclear_np_polynomial_v1": {
+    "parameter_units": {
+      "oscillator_length": "GeV^-1",
+      "exp_factor": "1"
+    },
+    "resource_units": {
+      "coefficient": "1"
+    },
+    "category": "interaction",
+    "output_unit": "1",
+    "variable_units": {
+      "W_X": "1",
+      "w_X,ab,k": "1",
+      "e_i": "1",
+      "y": "1",
+      "k": "1"
+    },
+    "depends_on": [
+      "elastic_kinematics_v1"
+    ],
+    "capabilities": [
+      "legacy_signal_prediction"
+    ],
+    "numerical_behavior": "SigmaPDelta table excluded: corresponding particle response is identically zero",
+    "specification_fingerprint": "91f23cae78c8349a8d12b6081f352cf62b24cb3d29713312e554d5fdb2068e09"
+  },
+  "li2026_R_W_kernel_v1": {
+    "parameter_units": {
+      "m_N": "GeV"
+    },
+    "resource_units": {},
+    "category": "interaction",
+    "output_unit": "GeV^-2",
+    "variable_units": {
+      "B_ij": "GeV^(p_i+p_j)",
+      "S_ij": "GeV^(p_i+p_j)",
+      "A_ij": "GeV^(p_i+p_j)",
+      "c_i^a": "GeV^-2|GeV^-3",
+      "R_X": "GeV^-2",
+      "W_X": "1",
+      "K": "GeV^-2",
+      "V": "GeV^-2"
+    },
+    "depends_on": [
+      "li2026_matching_v1",
+      "nuclear_np_polynomial_v1"
+    ],
+    "capabilities": [
+      "legacy_signal_prediction"
+    ],
+    "numerical_behavior": "Hermiticity/positivity checked by engine; antinu uses same kernel, audit open",
+    "specification_fingerprint": "44d43d591d69ebf2aaf8ede4202f68c8b9da69320fb12aded4f8834f722511ea"
+  },
+  "li2026_dsigma_v1": {
+    "parameter_units": {
+      "conversion": "cm^2/GeV^-2",
+      "mass_GeV": "GeV"
+    },
+    "resource_units": {},
+    "category": "interaction",
+    "output_unit": "cm^2/keV",
+    "variable_units": {
+      "rho": "1",
+      "K": "GeV^-2",
+      "mA": "GeV",
+      "E": "GeV",
+      "GEV_INV2_TO_CM2": "cm^2/GeV^-2",
+      "T_keV": "keV"
+    },
+    "depends_on": [
+      "li2026_R_W_kernel_v1",
+      "sns_fixed_state_v1"
+    ],
+    "capabilities": [
+      "legacy_signal_prediction"
+    ],
+    "numerical_behavior": "zero outside elastic support or at rates-grid E=0",
+    "specification_fingerprint": "949a267cce6cb5abd708c0ee1ebd14afd9a88069a6806ef3101eae7951b1d19c"
+  },
+  "csi_quenching_legacy_v1": {
+    "parameter_units": {
+      "q1": "1",
+      "q2": "MeV^-1",
+      "q3": "MeV^-2",
+      "q4": "MeV^-3"
+    },
+    "resource_units": {},
+    "category": "detector",
+    "output_unit": "keVee",
+    "variable_units": {
+      "T_keV": "keVnr",
+      "t": "MeVnr",
+      "Eee_keV": "keVee",
+      "q1": "1",
+      "q2": "MeV^-1",
+      "q3": "MeV^-2",
+      "q4": "MeV^-3"
+    },
+    "depends_on": [],
+    "capabilities": [
+      "legacy_signal_prediction"
+    ],
+    "numerical_behavior": "nonpositive Eee causes response density zero",
+    "specification_fingerprint": "388762f67fe49830019311c8f4cae0783753f0bc879d504f0efcf30b33424a5b"
+  },
+  "legacy_csi_gamma": {
+    "parameter_units": {
+      "a0": "keVee/PE",
+      "b0": "keVee^-1"
+    },
+    "resource_units": {},
+    "category": "detector",
+    "output_unit": "PE^-1",
+    "variable_units": {
+      "Eee": "keVee",
+      "a0": "keVee/PE",
+      "b0": "keVee^-1",
+      "a": "PE^-1",
+      "b": "1",
+      "k": "1",
+      "lambda": "PE^-1",
+      "x": "PE",
+      "p": "PE^-1",
+      "mean": "PE",
+      "variance": "PE^2"
+    },
+    "depends_on": [
+      "csi_quenching_legacy_v1"
+    ],
+    "capabilities": [
+      "legacy_signal_prediction"
+    ],
+    "numerical_behavior": "x<=0 or Eee<=0 gives zero; log evaluation uses max(x,1e-300)",
+    "specification_fingerprint": "1fe3428512ec9c57e9497a3aa14364bf09d459e7e5dfeb5cc7922e7e714042d7"
+  },
+  "csi2021_logistic_legacy": {
+    "parameter_units": {
+      "a": "1",
+      "b": "PE^-1",
+      "c": "PE",
+      "d": "1"
+    },
+    "resource_units": {},
+    "category": "detector",
+    "output_unit": "1",
+    "variable_units": {
+      "x": "PE",
+      "a": "1",
+      "b": "PE^-1",
+      "c": "PE",
+      "d": "1",
+      "epsilon": "1"
+    },
+    "depends_on": [],
+    "capabilities": [
+      "legacy_signal_prediction"
+    ],
+    "numerical_behavior": "lower-clamped at zero; folding rejects efficiency outside [0,1] on queried grid",
+    "specification_fingerprint": "56024ee8424a9d4b91b739111e4904d0cd174070b8559e701e762a742724083c"
+  },
+  "legacy_component_acceptance": {
+    "parameter_units": {
+      "mu": "1",
+      "e": "1",
+      "mub": "1",
+      "nuclei": "nuclei"
+    },
+    "resource_units": {},
+    "category": "detector",
+    "output_unit": "events/bin",
+    "variable_units": {
+      "acceptance_l": "1",
+      "N_pre": "events/nucleus/bin",
+      "N_i": "nuclei",
+      "N_b": "events/bin"
+    },
+    "depends_on": [],
+    "capabilities": [
+      "legacy_signal_prediction"
+    ],
+    "numerical_behavior": "analysis-window losses are excluded, not redistributed",
+    "specification_fingerprint": "43bf218b7736f307a6b1c1bcf111621592af2262884fd68451f3a7e282134049"
+  },
+  "legacy_csi2021_v1": {
+    "parameter_units": {
+      "n_er": "1",
+      "n_enu": "1",
+      "n_observed_bin": "1",
+      "observed_step": "PE",
+      "recoil_min_keV": "keV",
+      "energy_min": "MeV",
+      "energy_max": "MeV",
+      "isotope_mass_kg": "kg",
+      "electron_mass": "GeV"
+    },
+    "resource_units": {
+      "edges": "PE"
+    },
+    "category": "prediction",
+    "output_unit": "events/bin",
+    "variable_units": {
+      "Y_li": "events/nucleus/keV",
+      "phi_l": "cm^-2 MeV^-1",
+      "dsigma_li": "cm^2/keV",
+      "F_line": "cm^-2",
+      "T": "keVnr",
+      "x_j": "PE",
+      "m_i_kg": "kg/nucleus",
+      "h_li": "events/kg/PE",
+      "N_pre_li,b": "events/nucleus/bin",
+      "N_i": "nuclei",
+      "N_b": "events/bin",
+      "Trapz": "not_scalar"
+    },
+    "depends_on": [
+      "sns_michel_tabulation_legacy_v1",
+      "sns_prompt_line_v1",
+      "li2026_dsigma_v1",
+      "legacy_csi_gamma",
+      "csi2021_logistic_legacy",
+      "csi_target_inventory_v1",
+      "legacy_component_acceptance"
+    ],
+    "capabilities": [
+      "legacy_signal_prediction"
+    ],
+    "numerical_behavior": "PE density interpolation outside sampled domain zero; negative density nodes clipped; endpoints shared by quadrature have measure zero; nine half-open bins and final upper edge retained by observation convention",
+    "specification_fingerprint": "988113bbf9ba7bcc934b1179fdfacad76fdec2d8f46febc86925afd6c84762af"
+  },
+  "gaussian_two_pull_legacy_v1": {
+    "parameter_units": {
+      "sigma_alpha": "1",
+      "sigma_beta": "1",
+      "sigma_floor": "counts/PE"
+    },
+    "resource_units": {
+      "observed": "counts/PE",
+      "background": "counts/PE",
+      "uncertainty": "counts/PE",
+      "edges": "PE"
+    },
+    "category": "statistics",
+    "output_unit": "1",
+    "variable_units": {
+      "N_b": "events/bin",
+      "edge": "PE",
+      "s_b": "counts/PE",
+      "observed_b": "counts/PE",
+      "background_b": "counts/PE",
+      "sigma_b": "counts/PE",
+      "alpha": "1",
+      "beta": "1",
+      "sigma_alpha": "1",
+      "sigma_beta": "1",
+      "chi2": "1"
+    },
+    "depends_on": [
+      "legacy_csi2021_v1"
+    ],
+    "capabilities": [
+      "legacy_approximate_statistics"
+    ],
+    "numerical_behavior": "sigma=max(sigma,sigma_floor); solve 2x2 normal equations; singular solve returns alpha=beta=0,success=False; no clip_bounds in actual binding",
+    "specification_fingerprint": "bbc921302d817b63302bbf27f08ace77ad4109ea4de4f9589e0c3275c4494bbd"
+  }
+}

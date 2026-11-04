@@ -3,114 +3,62 @@
   "resources": [
     {
       "dataset_id": "CsI2021",
-      "resource_id": "responses",
+      "resource_id": "package_input",
       "role": "physical",
-      "canonical_path": "data/responses/responses_all.json",
+      "canonical_path": "data/experiments/COHERENT_CsI/CsI2021/experiment.input.yaml",
       "legacy_paths": [],
-      "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
-      "semantics": "nuclear response database",
+      "sha256": "c30986c20fd4b8b446713626dca37b196b2b379066e012fb976d168092b66e9d",
+      "semantics": "canonical two-file package input",
+      "coordinate_contract": null
+    },
+    {
+      "dataset_id": "CsI2021",
+      "resource_id": "package_arrays",
+      "role": "physical",
+      "canonical_path": "data/experiments/COHERENT_CsI/CsI2021/experiment.resources.npz",
+      "legacy_paths": [],
+      "sha256": "25043e6f510f0ae643a532c53cec2c4b0dad1f2af7172247add5fdc99adc827a",
+      "semantics": "canonical two-file package input",
       "coordinate_contract": null
     },
     {
       "dataset_id": "CsI2017",
-      "resource_id": "responses",
+      "resource_id": "package_input",
       "role": "physical",
-      "canonical_path": "data/responses/responses_all.json",
+      "canonical_path": "data/experiments/COHERENT_CsI/CsI2017/experiment.input.yaml",
       "legacy_paths": [],
-      "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
-      "semantics": "",
+      "sha256": "626dcd4bbb2e5603c41be6a9ae09d302368a9b1bc8fdfacc44dd7666367ecc7f",
+      "semantics": "canonical YAML/NPZ; includes separately fingerprinted statistics",
       "coordinate_contract": null
     },
     {
       "dataset_id": "CsI2017",
-      "resource_id": "observation_schema",
-      "role": "statistics",
-      "canonical_path": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json",
-      "legacy_paths": [],
-      "sha256": "0edd4b8cc260781fd83bd7ea2820c98efdde04d3c7cde1584e86b66d46021645",
-      "semantics": "",
-      "coordinate_contract": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json"
-    },
-    {
-      "dataset_id": "CsI2017",
-      "resource_id": "efficiency",
+      "resource_id": "package_arrays",
       "role": "physical",
-      "canonical_path": "data/experiments/COHERENT_CsI/CsI2017/detector/COHERENT_eff.txt",
-      "legacy_paths": [
-        "data/datafiles/COHERENT_eff.txt"
-      ],
-      "sha256": "ca1f47b5cdfb01fa87a323cf3ee4ee8245488b2e5b0529ecb0863d5bf09a9a7c",
-      "semantics": "",
-      "coordinate_contract": null
-    },
-    {
-      "dataset_id": "CsI2017",
-      "resource_id": "data",
-      "role": "statistics",
-      "canonical_path": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_data.txt",
-      "legacy_paths": [
-        "data/datafiles/COHERENT_data.txt"
-      ],
-      "sha256": "f764accdd388bd161d6d53d3e7a01ff484c13d3dfc0fc1f61cc7fcb40f72cbd0",
-      "semantics": "",
-      "coordinate_contract": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json"
-    },
-    {
-      "dataset_id": "CsI2017",
-      "resource_id": "lower",
-      "role": "statistics",
-      "canonical_path": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_lower.txt",
-      "legacy_paths": [
-        "data/datafiles/COHERENT_lower.txt"
-      ],
-      "sha256": "c802772432ddd5288df5bb316d70a9736ec5b80c79d337ed050fa42d62c097bb",
-      "semantics": "",
-      "coordinate_contract": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json"
-    },
-    {
-      "dataset_id": "CsI2017",
-      "resource_id": "upper",
-      "role": "statistics",
-      "canonical_path": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_upper.txt",
-      "legacy_paths": [
-        "data/datafiles/COHERENT_upper.txt"
-      ],
-      "sha256": "db03d10cc5997f4b08948d71f04c72c88fd48365dc5cedae3b494b04f5853ad5",
-      "semantics": "",
-      "coordinate_contract": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json"
-    },
-    {
-      "dataset_id": "CsI2017",
-      "resource_id": "spectrum",
-      "role": "statistics",
-      "canonical_path": "data/experiments/COHERENT_CsI/CsI2017/statistics/COHERENT_spectrum.txt",
-      "legacy_paths": [
-        "data/datafiles/COHERENT_spectrum.txt"
-      ],
-      "sha256": "1584411458e0d48ebb9afb0400bd51e19a0e0208857b96edbea0d59aff710f95",
-      "semantics": "",
-      "coordinate_contract": "data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json"
-    },
-    {
-      "dataset_id": "Ar2020",
-      "resource_id": "responses",
-      "role": "physical",
-      "canonical_path": "data/responses/responses_all.json",
+      "canonical_path": "data/experiments/COHERENT_CsI/CsI2017/experiment.resources.npz",
       "legacy_paths": [],
-      "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
-      "semantics": "",
+      "sha256": "0e8c86d5e3a3b4989778cfe80bb18efff0d739e68f0845a4a25bbd5c7b56a657",
+      "semantics": "canonical YAML/NPZ; includes separately fingerprinted statistics",
       "coordinate_contract": null
     },
     {
       "dataset_id": "Ar2020",
-      "resource_id": "efficiency",
+      "resource_id": "package_input",
       "role": "physical",
-      "canonical_path": "data/experiments/COHERENT_Ar/Ar2020/detector/CENNS10AnlAEfficiency.txt",
-      "legacy_paths": [
-        "data/datafiles/CENNS10AnlAEfficiency.txt"
-      ],
-      "sha256": "f74f92bfdd116bcb2e14f31e3e98a24fb6a7e68458c4f647ca72357c78e55dd3",
-      "semantics": "",
+      "canonical_path": "data/experiments/COHERENT_Ar/Ar2020/experiment.input.yaml",
+      "legacy_paths": [],
+      "sha256": "c80bd3eb5e520e21988bf1dab7b967f21206d2c4252b7b08fce3af002710230f",
+      "semantics": "canonical YAML/NPZ; includes separately fingerprinted statistics",
+      "coordinate_contract": null
+    },
+    {
+      "dataset_id": "Ar2020",
+      "resource_id": "package_arrays",
+      "role": "physical",
+      "canonical_path": "data/experiments/COHERENT_Ar/Ar2020/experiment.resources.npz",
+      "legacy_paths": [],
+      "sha256": "2c44f2f9040472cfaffea6166cd178a239762e08813076de4ef2dd0c51a99244",
+      "semantics": "canonical YAML/NPZ; includes separately fingerprinted statistics",
       "coordinate_contract": null
     }
   ],

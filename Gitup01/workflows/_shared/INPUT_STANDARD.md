@@ -55,6 +55,7 @@
 
 | 对象 | 格式或填写依据 | 当前实际检查方式与覆盖范围 |
 |---|---|---|
+| 三文件 Experiment Input Package v1 | [正式 schema](../../cevns_pyeft/experiments/input_package.schema.json) 与[格式/权威说明](../../docs/software/experiment-input-package.md) | [input_package.py](../../cevns_pyeft/experiments/input_package.py) 以严格 JSON-compatible YAML、Draft202012Validator 及跨字段/NPZ/指纹/MD 校验执行；不绑定模型、不等于 Runtime 或科学批准 |
 | 实验说明 `experiment.yaml` | [experiment.schema.json](schemas/experiment-input/experiment.schema.json) | [specs.py](../../cevns_pyeft/experiments/specs.py) 的 `validate_experiment_spec_data` 只检查必填字段；没有自动执行完整 JSON Schema 或全部科学要求 |
 | 约定的 reactor spectrum、efficiency、bin edges、isotopes 表 | [csv_contracts.json](schemas/experiment-input/csv_contracts.json) 与[格式说明](schemas/experiment-input/README.md) | 这是命名格式约定表；按已选 profile 核对列及数值要求，当前没有覆盖所有 CSV 的通用执行器；`energy_evee` 列约定不强加给 PE 等其他数据 |
 | 用户资料表 | [统一输入模板](templates/onboarding/EXPERIMENT_USER_INPUT_TEMPLATE.md) | 人填和 AI 摘录共用栏目；每个 dataset 独立填写，数值须附来源 |

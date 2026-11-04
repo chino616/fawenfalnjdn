@@ -9,6 +9,11 @@ description: DrSai-style paper/material onboarding that merges paper intake, evi
 
 ## Ownership
 
+结构化交接按[package compiler](../../../../../docs/software/onboarding-package-compiler.md)：
+登记来源与逐字段 evidence、单位/轴/归一化、模型依赖、缺失/冲突，再形成 `cevns-onboarding-draft/1`。
+AI 不自动理解任意论文；用户手填和 AI 提取走同一确定性编译入口。Physics MD 由同源数据渲染，
+人工评审意见先回填 IR，不在 MD 维护第二份数值。三文件 Schema PASS 不通过任何科学 Gate。
+
 本 Skill 只负责：
 
 ```text

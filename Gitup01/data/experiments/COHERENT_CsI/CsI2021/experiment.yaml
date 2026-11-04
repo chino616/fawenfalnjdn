@@ -1,7 +1,12 @@
 dataset_id: CsI2021
 dataset_name: CsI2021
 family: COHERENT_CsI
-spec_status: fast_validated
+spec_status: legacy_compatibility
+historical_spec_status: fast_validated
+package_authority: experiment.input.yaml
+runtime_authority: experiment.input.yaml_and_experiment.resources.npz
+historical_phase_claims_not_current_approval: true
+statistics_authority_note: legacy_Gaussian_available_official_likelihood_blocked
 source_type: stopped_pion
 flavor: mixed_sns_components
 target_mode: CsI_equal_stoichiometry

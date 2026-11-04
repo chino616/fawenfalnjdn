@@ -1,4 +1,20 @@
-from .csi2021 import CsI2021Observation, CsI2021Efficiency, CsI2021EfficiencyParams, CsIGammaResponse, ConstantEfficiency
-from .selection import LegacyComponentAcceptance
+"""Load observation implementations when requested by an actual calculation."""
+from importlib import import_module
 
-__all__ = ["CsI2021Observation", "CsI2021Efficiency", "CsI2021EfficiencyParams", "CsIGammaResponse", "ConstantEfficiency", "LegacyComponentAcceptance"]
+_EXPORTS = {
+    "CsI2021Observation": "csi2021",
+    "CsI2021Efficiency": "csi2021",
+    "CsI2021EfficiencyParams": "csi2021",
+    "CsIGammaResponse": "csi2021",
+    "ConstantEfficiency": "csi2021",
+    "LegacyComponentAcceptance": "selection",
+}
+__all__ = list(_EXPORTS)
+
+
+def __getattr__(name):
+    if name not in _EXPORTS:
+        raise AttributeError(name)
+    value = getattr(import_module("."+_EXPORTS[name], __name__), name)
+    globals()[name] = value
+    return value
