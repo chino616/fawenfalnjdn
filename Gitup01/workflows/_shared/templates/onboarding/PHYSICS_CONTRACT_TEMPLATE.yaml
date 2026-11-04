@@ -17,37 +17,115 @@
     },
     "target_and_exposure": {
       "decision_status": "DRAFT",
-      "fields": {},
+      "fields": {
+        "target_inventory_model_id": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
       "decision_refs": [],
       "evidence_refs": []
     },
     "source": {
       "decision_status": "DRAFT",
-      "fields": {},
+      "fields": {
+        "source_model_ids": {
+          "value": [],
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
       "decision_refs": [],
       "evidence_refs": []
     },
     "theory_response": {
       "decision_status": "DRAFT",
-      "fields": {},
+      "fields": {
+        "interaction_module": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "nuclear_structure_module": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
       "decision_refs": [],
       "evidence_refs": []
     },
     "kinematics_cross_section": {
       "decision_status": "DRAFT",
-      "fields": {},
+      "fields": {
+        "kinematics_module": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "cross_section_module": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
       "decision_refs": [],
       "evidence_refs": []
     },
     "detector_response": {
       "decision_status": "DRAFT",
-      "fields": {},
+      "fields": {
+        "detector_model_ids": {
+          "value": [],
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
       "decision_refs": [],
       "evidence_refs": []
     },
     "slow_counts": {
       "decision_status": "DRAFT",
-      "fields": {},
+      "fields": {
+        "observable_definition": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "binning_definition": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
       "decision_refs": [],
       "evidence_refs": []
     },
@@ -59,13 +137,35 @@
     },
     "statistics": {
       "decision_status": "DRAFT",
-      "fields": {},
+      "fields": {
+        "statistics_model_id": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
       "decision_refs": [],
       "evidence_refs": []
     },
     "validation_claim": {
       "decision_status": "DRAFT",
-      "fields": {},
+      "fields": {
+        "physics_report": {
+          "value": {
+            "models": {}
+          },
+          "unit": "1",
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": [
+            "human_physics_report_review"
+          ]
+        }
+      },
       "decision_refs": [],
       "evidence_refs": []
     }

@@ -58,7 +58,7 @@ dataset_id + ResourceCatalog
 | CsI2017 | 25 个箱；固定 251 个 PE 节点的确定性映射 | legacy Fast；Slow 仅接受 `n_enu`；外部观测表、近似 Gaussian |
 | Ar2020 | 12 个箱；sigma 依赖观测值的专用 Gaussian 折叠 | legacy Fast；Slow 不接受 `pe_step`；非对称 IRLS |
 
-统一入口保留了这些算法差异。CsI2017/Ar2020 的 legacy Fast 不支持任意组件替换；CsI2021 的组合式 Fast 要求可用的双线性系数表示和固定、与扫描参数无关的入射态。详见[能力矩阵](docs/user-guide/capability-matrix.md)。
+统一入口保留了这些算法差异。CsI2017/Ar2020 的 legacy Fast 不支持任意组件替换；CsI2021 的组合式 Fast 要求可用的双线性系数表示和固定、与扫描参数无关的入射态。对应实现见 [package_profiles.py](cevns_pyeft/experiments/package_profiles.py)。
 
 ## 为什么分成这些目录
 
@@ -70,7 +70,7 @@ dataset_id + ResourceCatalog
 | [examples/](examples/README.md) | 调用公共接口的运行脚本与 synthetic 扩展示例 | 用户从最小调用学习，不必从旧兼容接口拼接流程 |
 | [tests/](tests/README.md) | 核对接口、单位、组件替换、冻结数值和缓存失效 | 工程重构需要证明旧结果没有被意外改写 |
 | [tools/](tools/README.md) | 构建、资源审计、文档检查和实验脚手架 | 这些操作有文件读写或管理职责，不进入每次物理预测 |
-| [docs/](docs/README.md) | 使用方法、物理约定、架构和 COHERENT 科学审查 | 当前接口说明、科学待核实问题和实验研究结果分开管理 |
+| [docs/](docs/README.md) | 论文文献库及具体实验／数据集的身份说明 | 文献按主要研究对象保存一份 PDF，数据集说明链接真实代码与输入 |
 | [workflows/](workflows/README.md) | 共同输入规范、[实验输入格式](workflows/_shared/schemas/experiment-input/README.md)、接入流程、授权记录和结构 QA | 使用者与执行者共用检查依据；运行时读取显式 data，不导入工作流 |
 | [outputs/](outputs/README.md) | 本地运行报告、缓存、构建记录和历史重构证据 | 结果与输入分开，loader 不会把旧输出当成当前实验数据 |
 | [论文图NoteBook/](论文图NoteBook/README.md) | 调用现有计算接口生成论文图、表格和数值检查 | 绘图风格、展示网格和研究输出不混入物理公式 |
@@ -90,7 +90,7 @@ dataset_id + ResourceCatalog
 | 新的真实数据集 | 先按[实验接入入口](workflows/cevns-pyeft/skills/router/cevns-experiment/SKILL.md)明确数据和物理范围；代码、数据、说明、测试分别进入对应目录。先用 custom catalog 验证，正式激活时维护 `experiments/manifest.py` |
 | 新数据文件 | 先按共同输入规范核对适用格式、单位、坐标、归一化和证据，再放入 `data/experiments/<实验族>/<dataset_id>/` 的相应子目录；声明资源 ID、role、路径和真实消费者，维护资源清单；单放一个 CSV 不会被加载 |
 | 新运行组合 | 参照 `configs/analysis_selection.example.yaml` 创建配置，显式传给 `load_selection` 或示例脚本的 `--selection` |
-| 新使用示例、测试或说明 | 分别放入 `examples/`、`tests/test_*.py`、`docs/` 对应分类，并从该目录 README 增加入口 |
+| 新使用示例、测试或说明 | 示例放 `examples/`、测试放 `tests/test_*.py`；代码用法和职责更新所属目录 README。论文与具体数据集说明分别放 `docs/references/`、`docs/experiments/`，同步其索引 |
 | 新报告、缓存或图表 | 放入新的 `outputs/<任务或运行>/`，或绘图脚本指定的输出目录，记录生成入口和参数，不覆盖历史验收证据 |
 
 每个一级、二级目录的 README 进一步说明文件归属、真实消费者、创建步骤及应检查的行为。新增模块若需要包级导出，还需维护相应 `__init__.py`；并不存在“扫描所有新文件自动启用”的插件机制。
@@ -107,7 +107,7 @@ python tools/validate_docs.py --scope docs
 
 共享理论、核响应、积分或 Fast 的改动需要覆盖三个已有实验的回归；不能通过改写冻结数组或放宽容差获得通过。新增 README 也属于历史工作流保护清单的文件管理范围，具体见 [tools/workflow_validation](tools/workflow_validation/README.md)。
 
-当前保留的[反中微子审计](docs/physics/physics-audits/antineutrino_sign_helicity_audit.md)和[核响应源表审计](docs/physics/nuclear-responses/nuclear_response_convention_audit.md)仍有未闭合问题。COHERENT 科学审查中的历史结果按报告当时的代码和环境解释。
+通用反中微子处理及核响应外部源表的科学核验仍有未闭合问题；整理文档不改变现有输入的审查状态。论文和数据集身份见[资料目录](docs/README.md)。
 
 <!-- readme-inventory:start -->
 **当前活动目录内容（自动维护区）**
@@ -130,3 +130,14 @@ python tools/validate_docs.py --scope docs
 | [pyproject.toml](pyproject.toml) | 文件 |
 | [requirements.txt](requirements.txt) | 文件 |
 <!-- readme-inventory:end -->
+
+## Onboarding 与两份 Physics MD
+
+前期 H0–H3 分别审阅身份/目标、材料、证据及实验配置。Interaction 与 Nuclear Structure
+独立记录，P00–P03 模板位于 workflows/_shared/templates/onboarding/。
+报告遵循唯一的[共享规范](workflows/_shared/references/onboarding/experiment-physics-report-contract.md)，
+现有[编译入口](docs/software/onboarding-package-compiler.md)生成精简版与详细版。
+
+CsI2021：[快速阅读](data/experiments/COHERENT_CsI/CsI2021/experiment.physics.summary.md) ·
+[详细实现](data/experiments/COHERENT_CsI/CsI2021/experiment.physics.md)。
+本次集成范围见[任务说明](CODEX_ONBOARDING_REPORT_INTEGRATION.md)。

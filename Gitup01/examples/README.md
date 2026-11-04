@@ -26,3 +26,6 @@ python examples/experiment_modularization/synthetic_dataset.py
 ---
 
 [上一级](../README.md)
+
+[COHERENT CsI 示例](COHERENT_CsI/README.md)提供 CsI2021 精简/详细 Physics MD 的可读示例。
+示例不参与 Runtime 或材料发现；实际权威输入仍在 data/experiments/COHERENT_CsI/CsI2021。

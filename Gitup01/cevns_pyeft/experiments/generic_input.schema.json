@@ -109,11 +109,26 @@
           "derivation": {
             "type": "object",
             "properties": {
-              "formula_id": {"type": "string", "minLength": 1},
-              "input_refs": {"type": "array", "items": {"type": "string"}},
-              "dependency_fingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+              "formula_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "input_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "dependency_fingerprint": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
             },
-            "required": ["formula_id", "input_refs", "dependency_fingerprint"],
+            "required": [
+              "formula_id",
+              "input_refs",
+              "dependency_fingerprint"
+            ],
             "additionalProperties": false
           }
         },
@@ -377,12 +392,38 @@
                   "null"
                 ],
                 "properties": {
-                  "parameter_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
-                  "model_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
-                  "resource_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
-                  "dependency_fingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+                  "parameter_refs": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "uniqueItems": true
+                  },
+                  "model_refs": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "uniqueItems": true
+                  },
+                  "resource_refs": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "uniqueItems": true
+                  },
+                  "dependency_fingerprint": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
                 },
-                "required": ["parameter_refs", "model_refs", "resource_refs", "dependency_fingerprint"],
+                "required": [
+                  "parameter_refs",
+                  "model_refs",
+                  "resource_refs",
+                  "dependency_fingerprint"
+                ],
                 "additionalProperties": false
               }
             },
@@ -576,6 +617,11 @@
       "type": "object",
       "propertyNames": {
         "pattern": "^[a-z][a-z0-9_-]*\\.[a-z][a-z0-9_.-]*$"
+      },
+      "properties": {
+        "lab.physics_report": {
+          "$ref": "#/$defs/physics_report"
+        }
       }
     }
   },
@@ -589,5 +635,135 @@
     "capabilities",
     "provenance"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "$defs": {
+    "physics_report": {
+      "type": "object",
+      "required": [
+        "models"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "calculation_steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "models": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": [
+              "group",
+              "content_class",
+              "title",
+              "explanation",
+              "equations"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "group": {
+                "enum": [
+                  "source",
+                  "target",
+                  "theory",
+                  "nuclear",
+                  "kinematics",
+                  "detector",
+                  "prediction",
+                  "statistics"
+                ]
+              },
+              "content_class": {
+                "enum": [
+                  "experiment_specific",
+                  "shared_framework",
+                  "implementation_detail"
+                ]
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "explanation": {
+                "type": "string",
+                "minLength": 1
+              },
+              "equations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "title",
+                    "latex",
+                    "symbols"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9_-]+$"
+                    },
+                    "title": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "latex": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "symbols": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "symbol",
+                          "definition",
+                          "unit",
+                          "parameter_ref"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "symbol": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "definition": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "unit": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "parameter_ref": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "minLength": 1,
+                            "description": "Exact YAML Parameter ID or NPZ key; null for derived/constant. Validated without fuzzy matching."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "description": "Mapping keyed by the exact registered model ID, not a list; model values do not repeat id."
+        }
+      }
+    }
+  }
 }

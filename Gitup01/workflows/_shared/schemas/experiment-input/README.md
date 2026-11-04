@@ -12,7 +12,7 @@
 正式三文件 v1 的[完整 Schema](../../../../cevns_pyeft/experiments/input_package.schema.json)
 位于运行包一侧，由[只读验证器](../../../../cevns_pyeft/experiments/input_package.py)真实加载，
 避免运行包导入 workflow。格式采用严格 JSON-compatible YAML 1.2；详见
-[合同说明](../../../../docs/software/experiment-input-package.md)。这里原有 experiment.schema.json
+[正式输入 schema](../../../../cevns_pyeft/experiments/input_package.schema.json)。这里原有 experiment.schema.json
 仍服务 legacy experiment.yaml，不冒充正式 package schema。
 
 [experiments/specs.py](../../../../cevns_pyeft/experiments/specs.py) 用自己的小型 YAML 解析器和 `validate_experiment_spec_data` 检查必需字段，没有加载这里的 JSON Schema。`load_experiment` 也不因新增 schema 自动获得新输入格式。

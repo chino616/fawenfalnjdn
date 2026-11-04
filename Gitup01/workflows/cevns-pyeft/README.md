@@ -35,3 +35,13 @@ P01–P10 仅属于实验接入流程；历史工程 M0–M7 不是每个任务�
 ## 实际运行记录
 
 [CsI2021 P04–P10](runs/COHERENT_CsI/CsI2021/README.md) 是用户明确授权的既有数据集执行审计；报告与输出按输入/实现版本记录，不属于可发现的 Skill。
+
+Master 与 Onboarding 的前期节点为 H0 身份目标、H1 材料、H2 证据、H3 物理方案；
+P00–P03 权威记录和人工摘要分开，H0–H3 优先在对话展示。
+具体字段及三文件生成入口见[package 编译器入口](../../tools/compile_experiment_package.py)；
+该修正不改变 P04/P05 或后续 Phase。
+
+已合并 ReadyToMerge 的 H0–H3、P00–P03 模板及
+[唯一报告规范](../_shared/references/onboarding/experiment-physics-report-contract.md)：
+实验侧完整记录，Interaction / Nuclear Structure 独立选择；精简/详细两份 MD 共用原有生成链。
+P04/P05 和后续阶段保留。

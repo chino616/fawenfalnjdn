@@ -1,0 +1,17 @@
+# P00 Source Register
+# 只登记材料身份；详细提取结果放在 P01。
+experiment_slug: null
+dataset_id: null
+sources:
+  - source_id: S0001
+    title: null
+    source_type: null  # primary_paper | supplement | official_data | calibration | theory_input | legacy_code | other
+    version: null
+    date: null
+    uri_or_path: null
+    sha256: null
+    readability: null
+    completeness: null
+    material_role: []  # source, target, detector, observed_data, statistics, etc.
+    dataset_scope: null
+    notes: null

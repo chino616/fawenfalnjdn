@@ -12,13 +12,11 @@ the [package loader](../../../../cevns_pyeft/experiments/package_loader.py).
 
 Run `python -B tools/validate_experiment_input.py data/experiments/COHERENT_CsI/CsI2021`
 from the project root with the `validation` optional dependency installed.
-See the [format contract](../../../../docs/software/experiment-input-package.md)
-and [Task 02 report](../../../../docs/EXPERIMENT_INPUT_SCHEMA_REPORT.md).
+See the [formal input schema](../../../../cevns_pyeft/experiments/input_package.schema.json).
 The old `experiment.yaml` is explicitly legacy-compatible; it no longer
 grants a current package Fast/statistics approval. Python definition/default
 modules are compatibility views of the package and contain no independent
-experimental parameter database. The [Task 05 report](../../../../docs/CSI2021_PACKAGE_RUNTIME_MIGRATION_REPORT.md)
-records internal regression and Fast scope; standalone validation is separate.
+experimental parameter database. Internal regression, Fast scope and standalone validation are separate claims.
 
 ## Three-file onboarding pilot (2026-11-04)
 
@@ -35,14 +33,12 @@ input description in exactly three formal files:
 - [experiment.physics.md](experiment.physics.md): the generated physical
   explanation, parameter tables, formulas and complete array inventory.
 
-The [audit report](../../../../docs/CSI2021_ONBOARDING_PILOT_REPORT.md) records
-the actual branch, execution chain, checks and scientific limitations. From
-the project root, use `python -B tools/validate_experiment_input.py data/experiments/COHERENT_CsI/CsI2021`
+From the project root, use `python -B tools/validate_experiment_input.py data/experiments/COHERENT_CsI/CsI2021`
 for the current package. `build_csi2021_onboarding_pilot.py --check` describes
 the historical extraction baseline and does not certify later runtime metadata.
 The tool's `--write` is create-only and refuses existing pilot files;
 `--render-md` renders the stored YAML/NPZ explanation to stdout for review.
-The tool/report are audit aids, not additional formal package inputs.
+The tool is a historical extraction aid, not an additional formal package input.
 
 The current runtime consumes only the two machine files and common model algorithms.
 No external `responses_all.json`, old spec, paper or Physics MD is read by this path.
@@ -53,7 +49,8 @@ does not include ROOTTime, time bins or the 9x11 demo.
 
 The sections below retain the earlier specification's historical state.
 Their Phase/status assertions and old run paths are not current validation
-evidence; see the report for the disagreement with the actual implementation.
+evidence. Dataset identity and related papers are indexed in the
+[CsI2021 overview](../../../../docs/experiments/COHERENT/CsI2021/README.md).
 
 This directory is the Phase 1 runtime dataset specification for the existing
 COHERENT CsI2021 reproduction path. It does not implement new experiment
@@ -110,3 +107,14 @@ physical/legacy prompt-energy difference remains a reproduction convention.
 ## P04–P10 执行证据（2026-11-04）
 
 [本次运行索引](../../../../workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/README.md) 记录完整七响应/22 算符的 package-only 适配、Slow 网格、Fast 工程候选和近似统计。长积分固定 revision-2 输入及 wheel-01；同期输入元数据更新另存版本并桥接核对。技术证据不改变 DRAFT/PARTIAL 或人工 NOT_REVIEWED。
+
+[experiment.physics.md](experiment.physics.md) 使用现有共享 Renderer，
+按本 dataset 输入选择物理说明、必要公式和简明资源索引；公共 matching/粒子响应不逐项展开。
+现有 YAML/NPZ 和权限保持原样，报告可用既有 CLI 的 `--md-only` 只读输入重渲染；
+见[package 编译器入口](../../../../tools/compile_experiment_package.py)。
+
+[experiment.physics.summary.md](experiment.physics.summary.md) 是精简阅读版；
+[experiment.physics.md](experiment.physics.md) 是详细实验适配说明。
+二者由同一 YAML/NPZ 和报告元数据通过现有 --md-only 命令生成，
+完整公式、逐箱统计和数值约定以详细版为阅读入口；两份 MD 都不是 Runtime 输入。
+报告规范只维护在[共享合同](../../../../workflows/_shared/references/onboarding/experiment-physics-report-contract.md)。

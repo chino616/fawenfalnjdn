@@ -1,3 +1,6 @@
+# P00_SOURCE_REGISTER.yaml 是来源身份、版本和路径的唯一登记。
+# P01 只记录 claims；每个 claim 通过 source_id 引用 P00。
+# 保持 sources: [] 为空，不在 P01 重复登记来源。
 sources: []
 claims:
   - claim_id: C0001

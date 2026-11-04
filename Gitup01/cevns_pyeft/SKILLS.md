@@ -21,8 +21,8 @@
 
 | 类别 / 阶段 | Skill（点击查看完整指令） | 稳定 ID | 负责什么 | 主要产物 | 调用它的流程 | 状态 |
 |---|---|---|---|---|---|---|
-| 主路由 | [cevns-experiment](../workflows/cevns-pyeft/skills/router/cevns-experiment/SKILL.md) | `cevns.router.experiment` | 识别任务意图，处理 dataset 歧义，管理审核与阶段切换 | 路由结果、范围和 Gate 状态、阶段交接 | [统一入口 routes.entry_skill](../workflows/cevns-pyeft/router/routes.yaml) | active |
-| 资料接入 | [cevns-onboarding](../workflows/cevns-pyeft/skills/onboarding/cevns-onboarding/SKILL.md) | `cevns.onboarding.experiment` | 登记论文/表格/旧程序，提取候选事实与来源，核对缺失和冲突 | 材料登记、证据台账、缺失/冲突矩阵、partial Physics Contract | [experiment-onboarding](../workflows/cevns-pyeft/definitions/experiment-onboarding/WORKFLOW.md) | active |
+| 主路由 | [cevns-experiment](../workflows/cevns-pyeft/skills/router/cevns-experiment/SKILL.md) | `cevns.router.experiment` | 识别任务与 dataset 歧义，路由 H0–H3 及统一报告规范 | 路由、范围和既有 Gate 状态、前期审阅交接 | [统一入口 routes.entry_skill](../workflows/cevns-pyeft/router/routes.yaml) | active |
+| 资料接入 | [cevns-onboarding](../workflows/cevns-pyeft/skills/onboarding/cevns-onboarding/SKILL.md) | `cevns.onboarding.experiment` | 按 H0–H3 审阅材料、证据和独立模块选择，形成 P00–P03 | 来源/证据/缺失记录、partial contract、两份同源报告的元数据 | [experiment-onboarding](../workflows/cevns-pyeft/definitions/experiment-onboarding/WORKFLOW.md) | active |
 | P01 | [cevns-dataset](../workflows/cevns-pyeft/skills/phases/cevns-dataset/SKILL.md) | `cevns.phase.p01.dataset` | 明确数据集身份、run/探测器范围、观测量、分箱与数据语义 | dataset 合同、观测轴/单位、分箱与数据身份记录 | [experiment-onboarding](../workflows/cevns-pyeft/definitions/experiment-onboarding/WORKFLOW.md) | active |
 | P02 | [cevns-target](../workflows/cevns-pyeft/skills/phases/cevns-target/SKILL.md) | `cevns.phase.p02.target_exposure` | 核对核素组成、核响应键、真实核数及曝光/归一化归属 | 靶核清单、核数、曝光合同与归一化归属 | [experiment-onboarding](../workflows/cevns-pyeft/definitions/experiment-onboarding/WORKFLOW.md) | active |
 | P03 | [cevns-source](../workflows/cevns-pyeft/skills/phases/cevns-source/SKILL.md) | `cevns.phase.p03.source` | 核对源分量、ν/反ν与味态、谱支持域/插值、绝对归一化和时间基准 | 源合同、注量/谱/入射态接口与检查证据 | [experiment-onboarding](../workflows/cevns-pyeft/definitions/experiment-onboarding/WORKFLOW.md) | active |

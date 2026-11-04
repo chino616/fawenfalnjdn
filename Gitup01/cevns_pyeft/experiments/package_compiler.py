@@ -1,4 +1,4 @@
-"""Deterministic compiler from an acquired/annotated IR to three formal files."""
+"""Existing compiler: machine input pair plus detailed and summary Markdown."""
 from copy import deepcopy
 from pathlib import Path
 import hashlib
@@ -6,14 +6,19 @@ import io
 import json
 import os
 import zipfile
+import base64
+import subprocess
+import shutil
+import uuid
 import numpy as np
 
 from .input_package import (strict_json, validate_document, validate_arrays, render_physics,
-                            dependency_fingerprint, derived_value)
+                            dependency_fingerprint, derived_value, read_arrays, validate_package,
+                            _report_selection)
 from . import generic_input
 
 IR_VERSION='cevns-onboarding-draft/1'
-FORMAL_FILES=('experiment.input.yaml','experiment.resources.npz','experiment.physics.md')
+FORMAL_FILES=('experiment.input.yaml','experiment.resources.npz','experiment.physics.md','experiment.physics.summary.md')
 
 
 def archive_bytes(arrays):
@@ -77,41 +82,147 @@ def compile_draft(draft, arrays):
     if errors:raise ValueError('; '.join(errors))
     md=(generic_input.render if generic else render_physics)(data,arrays)
     files={'experiment.input.yaml':(json.dumps(data,ensure_ascii=False,indent=2,allow_nan=False)+'\n').encode('utf8'),
-           'experiment.resources.npz':raw,'experiment.physics.md':md.encode('utf8')}
+           'experiment.resources.npz':raw,'experiment.physics.md':md.encode('utf8'),
+           'experiment.physics.summary.md':render_physics(data,arrays,summary=True).encode('utf8')}
     report={'status':'PASS','ir_version':IR_VERSION,'dataset_id':data['package']['dataset_id'],
             'package_status':data['package']['status'],'human_approval':data['package'].get('human_approval',data['package'].get('human_physics_approval')),
             'models':len(data['models']),'parameters':len(data['parameters']),'arrays':len(arrays),
             'sha256':{k:hashlib.sha256(v).hexdigest() for k,v in files.items()},
-            'scope':'compiler checks only; no physics approval or runtime execution'}
+            'scope':'compiler checks only; no physics approval or runtime execution',
+            'diagnostics':['H3_UNCLASSIFIED_MODEL: '+mid for mid in _report_selection(data)[1]]}
     return files,report
 
 
-def write_package(draft, arrays, output, *, check=False, overwrite=False):
-    files,report=compile_draft(draft,arrays)
-    output=Path(output)
+
+def _check_inherited_acl(paths):
+    """Read-only ACL check; never attach a sandbox/Everyone ACE."""
+    if os.name != 'nt':
+        return 'NOT_APPLICABLE'
+    encoded=base64.b64encode(json.dumps([str(p) for p in paths]).encode('utf8')).decode('ascii')
+    script=r"""
+$ErrorActionPreference='Stop'
+$paths=ConvertFrom-Json ([Text.Encoding]::UTF8.GetString([Convert]::FromBase64String('__PATHS__')))
+foreach ($path in $paths) {
+    $acl=Get-Acl -LiteralPath $path
+    if ($acl.AreAccessRulesProtected -or @($acl.Access).Count -eq 0 -or
+        @($acl.Access | Where-Object { -not $_.IsInherited }).Count -ne 0) {
+        throw ('File does not inherit target directory ACL: '+$path)
+    }
+}
+"""
+    subprocess.run([shutil.which('pwsh') or 'powershell.exe','-NoProfile','-NonInteractive','-Command',
+                    script.replace('__PATHS__',encoded)],check=True,capture_output=True)
+    return 'ACL_INHERITANCE_OK'
+
+
+def write_package(draft, arrays, output, *, check=False, overwrite=False, md_only=False):
+    """Existing writer, including read-only YAML/NPZ -> MD regeneration.
+
+    A replacement inherits ACLs by normal creation beside its destination.
+    Same-directory hard links preserve original bytes AND security for rollback.
+    The three-file set is recoverable, not a cross-file atomic transaction.
+    """
+    output=Path(output).resolve()
+    if md_only:
+        validation=validate_package(output,check_md=False)
+        if validation['status']!='PASS':
+            raise ValueError('; '.join(validation['errors']))
+        data=strict_json((output/FORMAL_FILES[0]).read_text('utf8'))
+        raw=(output/FORMAL_FILES[1]).read_bytes()
+        stored=read_arrays(raw,data['resources']['arrays'])
+        files={FORMAL_FILES[2]:render_physics(data,stored).encode('utf8'),
+               FORMAL_FILES[3]:render_physics(data,stored,summary=True).encode('utf8')}
+        report={'status':'PASS','dataset_id':data['package']['dataset_id'],'mode':'md_only',
+                'scope':'read-only input validation and MD rendering; no runtime/scientific approval',
+                'diagnostics':['H3_UNCLASSIFIED_MODEL: '+mid for mid in _report_selection(data)[1]],
+                'sha256':{n:hashlib.sha256(v).hexdigest() for n,v in files.items()}}
+    else:
+        files,report=compile_draft(draft,arrays)
     if check:
         report['status']='PASS' if all((output/n).is_file() and (output/n).read_bytes()==v for n,v in files.items()) else 'FAIL'
         return report
-    present=[n for n in FORMAL_FILES if (output/n).exists()]
-    if present and not overwrite:raise FileExistsError('create-only package already exists: '+str(present))
+    present=[n for n in files if (output/n).exists()]
+    if present and not overwrite:
+        raise FileExistsError('create-only package already exists: '+str(present))
     output.mkdir(parents=True,exist_ok=True)
+    if not output.is_dir():
+        raise NotADirectoryError(output)
+    # Reject aliases: neither backups nor rollback may follow an escaped target.
+    if any((output/n).is_symlink() or ((output/n).exists() and not (output/n).is_file()) for n in files):
+        raise ValueError('package targets must be regular files')
     if present:
         revision=hashlib.sha256(b''.join((output/n).read_bytes() for n in present)).hexdigest()[:16]
         repository=Path(__file__).resolve().parents[2]
         canonical=(repository/'data/experiments').resolve()
-        formal=output.resolve().is_relative_to(canonical)
-        backup=(repository/'backup/package_compiler'/output.resolve().relative_to(canonical)/revision
+        formal=output.is_relative_to(canonical)
+        backup=(repository/'backup/package_compiler'/output.relative_to(canonical)/revision
                 if formal else output/('compiler-backup-'+revision))
-        backup.mkdir(parents=True,exist_ok=False)
-        for n in present:(backup/n).write_bytes((output/n).read_bytes())
-        if formal:
-            with (repository/'backup/BACKUP_MANIFEST.md').open('a',encoding='utf8') as manifest:
-                for n in present:
-                    manifest.write(f'\n| `{(output/n).resolve().relative_to(repository).as_posix()}` | '
-                                   f'`{(backup/n).relative_to(repository).as_posix()}` | '
-                                   f'{hashlib.sha256((backup/n).read_bytes()).hexdigest()} | compiler overwrite recovery |')
-    for name,value in files.items():
-        temporary=output/(name+'.compiler-tmp')
-        with temporary.open('xb') as handle:handle.write(value)
-        os.replace(temporary,output/name)
+        backup.mkdir(parents=True,exist_ok=True)
+        for n in present:
+            content=(output/n).read_bytes()
+            target=backup/n
+            if target.exists():
+                if target.read_bytes()!=content:
+                    raise FileExistsError('recovery revision collision: '+str(target))
+            else:
+                with target.open('xb') as handle:
+                    handle.write(content)
+                if formal:
+                    with (repository/'backup/BACKUP_MANIFEST.md').open('a',encoding='utf8') as manifest:
+                        manifest.write('\n| '+str((output/n).relative_to(repository))+' | '+
+                                       str(target.relative_to(repository))+' | '+
+                                       hashlib.sha256(content).hexdigest()+' | compiler overwrite recovery |')
+    staged, originals, installed={}, {}, []
+    recovery_failed=False
+    try:
+        for name,value in files.items():
+            temporary=output/('.'+name+'.'+uuid.uuid4().hex+'.compiler-tmp')
+            staged[name]=temporary
+            # Ordinary file creation, not tempfile's private directory/DACL.
+            with temporary.open('xb') as handle:
+                handle.write(value);handle.flush();os.fsync(handle.fileno())
+            if temporary.read_bytes()!=value:
+                raise OSError('temporary content verification failed: '+name)
+            if name.endswith(('.yaml','.md')):
+                text=value.decode('utf8')
+                if text.startswith('\ufeff') or '\r' in text:
+                    raise ValueError('text output must be UTF-8 without BOM and use LF')
+        report['temporary_acl_state']=_check_inherited_acl(list(staged.values()))
+        # Hard links retain original ACLs, including on a post-replacement failure.
+        # If the filesystem cannot provide recovery links, fail before replacing.
+        for name in present:
+            original=output/('.'+name+'.'+uuid.uuid4().hex+'.compiler-rollback')
+            os.link(output/name,original)
+            originals[name]=original
+        for name,temporary in staged.items():
+            os.replace(temporary,output/name)
+            installed.append(name)
+        report['acl_state']=_check_inherited_acl([output/n for n in files])
+        for name,value in files.items():
+            if (output/name).read_bytes()!=value:
+                raise OSError('final readback differs: '+name)
+        principal=(subprocess.check_output(['whoami'],text=True).strip() if os.name=='nt' else None)
+        target=os.environ.get('CEVNS_TARGET_WINDOWS_PRINCIPAL')
+        report.update(write_state='WRITE_OK',execution_user=principal,target_user=target,
+                      execution_user_read_state='READ_OK',
+                      target_user_read_state=('TARGET_USER_READ_OK' if principal and target and
+                                              principal.casefold()==target.casefold() else 'TARGET_USER_READ_PENDING'))
+        if report['target_user_read_state']=='TARGET_USER_READ_PENDING':
+            report['target_user_check']='In the target user PowerShell run whoami and Get-Content -LiteralPath <each final file>; sandbox readback is not target-user verification.'
+    except BaseException as failure:
+        for name in reversed(installed):
+            try:
+                if name in originals:
+                    os.replace(originals[name],output/name)
+                    originals.pop(name)
+                else:
+                    (output/name).unlink()
+            except OSError:
+                recovery_failed=True
+        if recovery_failed:
+            raise OSError('rollback requires recovery from preserved files: '+str(list(originals.values()))) from failure
+        raise
+    finally:
+        for temporary in [*staged.values(),*([] if recovery_failed else originals.values())]:
+            temporary.unlink(missing_ok=True)
     return report

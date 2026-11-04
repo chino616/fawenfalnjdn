@@ -52,7 +52,7 @@ python tools/scaffold_experiment.py --dataset-id DemoReadme --module-name demo_r
 CsI2021 三文件试点的使用环境需要项目依赖；本次使用
 `F:/Work/.codex_conda_envs/codex-py311/python.exe`（系统默认 Python 缺 SciPy）。
 例如从项目根运行 `python -B tools/build_csi2021_onboarding_pilot.py --check`。
-输入包与缺失项见[审计报告](../docs/CSI2021_ONBOARDING_PILOT_REPORT.md)。
+当前输入包见 [CsI2021 输入目录](../data/experiments/COHERENT_CsI/CsI2021/README.md)。该脚本保留历史提取／输入构建用途，不是已删除工程报告的当前检查入口。
 它仅覆盖旧九箱数据集，没有给通用 Loader、安装器或 registry 添加新格式。
 
 Dataset完整管理由运行包CLI提供：`python -m cevns_pyeft.cli datasets --help`。命令、文件归属、计划、安装/卸载与回滚见[管理说明](../cevns_pyeft/experiments/MANAGEMENT.md)；不在tools再维护第二套活动ID或另一个安装器。
@@ -106,3 +106,8 @@ defaults and bundled data removed. Run with a fresh output directory:
 `python -B tools/validate_project_packages.py --output <fresh-directory>`.
 Source files and global Python are not removed or installed into. Reports
 distinguish approximate statistics, frozen compatibility and scientific approval.
+
+现有 `compile_experiment_package.py --output <package> --md-only --overwrite`
+只读现有 YAML/NPZ 并更新详细/精简两份 Physics MD；`--md-only --check` 只读核对。
+完整编译仍用 `--draft/--arrays`。输出与权限状态及恢复行为见
+[package 编译器入口](compile_experiment_package.py)。

@@ -61,6 +61,10 @@ default runtime parameters.
 The package preserves the original fixed 251-node Slow PE grid, deterministic
 PE mapping, bin-edge interpolation and approximate one-pull Gaussian statistics.
 Its values are legacy-derived, DRAFT, human NOT_REVIEWED. Official likelihood,
-general antineutrino EFT and scientific release remain BLOCKED. See the
-[project migration report](../../../../docs/PROJECT_WIDE_PACKAGE_MIGRATION_REPORT.md).
+general antineutrino EFT and scientific release remain BLOCKED. Dataset identity and related papers are indexed in the
+[CsI2017 overview](../../../../docs/experiments/COHERENT/CsI2017/README.md).
 
+[experiment.physics.md](experiment.physics.md) 使用现有共享 Renderer，
+按本 dataset 输入选择物理说明、必要公式和简明资源索引；公共 matching/粒子响应不逐项展开。
+现有 YAML/NPZ 和权限保持原样，报告可用既有 CLI 的 `--md-only` 只读输入重渲染；
+见[package 编译器入口](../../../../tools/compile_experiment_package.py)。

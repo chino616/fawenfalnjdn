@@ -9,10 +9,10 @@ description: DrSai-style paper/material onboarding that merges paper intake, evi
 
 ## Ownership
 
-结构化交接按[package compiler](../../../../../docs/software/onboarding-package-compiler.md)：
+结构化交接按[package 编译器入口](../../../../../tools/compile_experiment_package.py)：
 登记来源与逐字段 evidence、单位/轴/归一化、模型依赖、缺失/冲突，再形成 `cevns-onboarding-draft/1`。
 AI 不自动理解任意论文；用户手填和 AI 提取走同一确定性编译入口。Physics MD 由同源数据渲染，
-人工评审意见先回填 IR，不在 MD 维护第二份数值。三文件 Schema PASS 不通过任何科学 Gate。
+人工评审意见先回填 IR，不在 MD 维护第二份数值。机器输入和两份报告的 Schema/一致性 PASS 不通过任何科学 Gate。
 
 本 Skill 只负责：
 
@@ -55,6 +55,25 @@ physics_docs、data、src、tests 或 registry，也不能把候选变成已批�
 普通材料比较、解释或其他旁支不更新临时进度、不增加 revision。只在材料登记步骤、
 Dataset/Scientific Claim Gate、blocker、授权、暂停/恢复或关键输入指纹确实变化时，先
 更新对应权威记录，再由 Master 核对 `Wxxxx` 和 revision 后更新索引。
+
+## 前期人类节点（H0–H3 / P00–P03）
+
+H0 确认 experiment/dataset/run/release 与目标；H1 审阅材料用途和边界；
+H2 按 Source、Target、Interaction、Nuclear Structure、Detector、Observable、Statistics
+展示有值/单位/locator/证据类别的摘要；H3 先解释实验配置，再分别确认共享模块选择、
+实验专属公式/数据和未决问题。用户不必逐行阅读机器 YAML。
+
+P00 来源身份唯一权威，P01 只用 source_id 引用，不重复维护来源。沿用共享目录中的
+[SOURCE_REGISTER_TEMPLATE.yaml](../../../../_shared/templates/onboarding/SOURCE_REGISTER_TEMPLATE.yaml)、EVIDENCE_LEDGER_TEMPLATE.yaml、
+[MISSING_AND_CONFLICTS_TEMPLATE.md](../../../../_shared/templates/onboarding/MISSING_AND_CONFLICTS_TEMPLATE.md)、PHYSICS_CONTRACT_TEMPLATE.yaml。
+填写记录仍在获准的 runs/<experiment_slug>/<dataset_id>/P00–P03 路径；
+H1 人类填写件仍用 EXPERIMENT_USER_INPUT.md，不新增 H0–H3 摘要文件。
+
+两份派生报告遵循唯一的
+[Experiment Physics Report Contract](../../../../_shared/references/onboarding/experiment-physics-report-contract.md)。
+报告元数据中 models 以 model ID 为键；id 不是额外字段。
+旧包按既有绑定合同提供只读视图，新 P03/IR 按同一 Schema 填写。
+本节不改变 Step 7/8、P04/P05、Phase 0 或后续阶段。
 
 ## Step 1 — Materials
 
@@ -238,6 +257,9 @@ official_likelihood_reproduction = REQUESTED_BUT_BLOCKED
 
 ## Step 4 — Evidence Ledger
 
+使用 `workflows/_shared/templates/onboarding/EVIDENCE_LEDGER_TEMPLATE.yaml`。
+每条 claim 的 `source_id` 必须引用 P00 中已有的来源；不要在 P01 重复建立 source record。
+
 对每个 claim 写：
 
 ```yaml
@@ -256,7 +278,16 @@ downstream_owner: dataset|target|source|theory|kinematics|detector|slow|fast|sta
 
 项目推导必须写 derivation，例如 `nuclei/kg`、uniform bin edges；不能伪装论文值。
 
+### H2 — Evidence review output
+
+Step 4 完成后，向用户展示分模块证据摘要。正文只列关键事实，不复制完整 Ledger。
+对每项关键事实显示：值/候选值、单位、来源定位、证据类别和未决状态。
+P01 是逐项证据的权威记录；H2 是供人审阅的摘要，不是第二份证据台账。
+
 ## Step 5 — Missing/Blocking Matrix
+
+使用 [P02 Missing and Conflicts 模板](../../../../_shared/templates/onboarding/MISSING_AND_CONFLICTS_TEMPLATE.md)
+记录缺失、来源冲突及其对本次目标的影响。
 
 生成：
 
@@ -266,7 +297,58 @@ field | status | blocks dataset | blocks Slow | blocks Fast | blocks statistics 
 
 缺一个统计 covariance 不应阻断 signal-only Slow；缺 source normalization 可以阻断 Slow。
 
+### H3 — Experiment configuration and module-choice review
+
+H3 是物理配置确认节点。AI 必须先给出本实验的可读配置草案，再请用户确认。
+**模块选择必须按独立维度展示，不能把 Interaction 与 Nuclear Structure 混成一个 Response 选项：**
+
+| 选择维度 | 用户需要确认的内容 | 记录原则 |
+|---|---|---|
+| Interaction theory | SM、NSI 或项目已注册的 Full EFT 配置 | 只记录选择的 model ID、参数配置和依据 |
+| Nuclear structure | Helm 或项目已注册的 Nuclear Response 配置 | 独立于 Interaction 记录 model ID 和资源引用 |
+| Kinematics / Cross-section | 项目已注册且兼容的实现 | 记录 model ID；不在实验文档重写公共推导 |
+| Detector response | 与本实验校准/观测量匹配的已注册 detector models | 实验专属公式、参数、单位、定义域和施加顺序必须完整记录 |
+| Statistics | 与论文规定的数据语义、binning 和 likelihood 相符的模型 | 统计定义必须完整记录，不能只写 model ID |
+
+只展示当前项目 Registry 中真实存在的候选。AI 必须说明候选与实验材料的对应依据、
+所需输入和兼容性检查结果；没有注册实现时标记缺失，不得虚构 model ID。
+Helm/Response 与 SM/NSI/Full EFT 是两个不同选择轴，是否兼容由已有模块合同检查，
+不能凭概念上可组合就宣称实现支持。
+
+#### H3 对实验专属内容的完整性要求
+
+实验配置文档必须达到“实现人员可以据此编写实验适配代码”的程度：
+
+- **Source：** 写出实际谱公式、归一化公式、源分量、味态/粒子标签、参数、单位、
+  公式性质（理论衰变谱、几何关系、实验归一化输入或数值表格规则）、端点、mask、
+  插值和归一化约定。不能笼统称整个源模型为经验公式或理论公式。
+- **Target：** 写出核素组成、质量分数、靶质量、核数公式、所用质量常数和单位。
+- **公式参数索引：** 每条实验专属公式后的符号说明必须给出精确 Parameter ID 或 NPZ resource key；不靠名称相似度猜测，确保读者能从公式定位到 YAML/NPZ。
+- **Detector：** 对每个实际使用的 detector response 给出完整函数定义、参数值/单位、
+  输入输出、定义域、边界/裁剪、归一化以及模块施加顺序。只列参数而不写公式不合格。
+- **Observable：** 写出观测量定义、全部 bin edges、单位、边界约定和数据语义。
+- **Prediction folding：** 写出本实验如何把源谱、靶核数、公共截面输出、Detector response
+  和 bin integration 连接起来；不重推公共截面公式。
+- **Statistics：** 写出原文采用的完整 likelihood/χ²、逐 bin 数据、背景、误差/协方差、
+  nuisance、先验、相关性、profiling/marginalization、test statistic 和自由度/显著度方法。
+  若统计语义或原始数据缺失，明确 BLOCKED/PARTIAL，不能猜测。
+
+#### H3 对共享理论模块的限制
+
+Interaction（SM/NSI/Full EFT）、Nuclear Structure（Helm/Nuclear Response）、
+Kinematics 和 Cross-section 属于项目共享模块。实验配置只记录本实验选择的模块 ID、
+必要配置值、资源引用和状态。不得在每个实验的 Physics MD 中重写 matching、
+Particle Response、Nuclear Response 的公共理论公式、模块内部中间变量或源码算法。
+共享模块的原理放在公共模块文档中。
+
+H3 审阅通过只表示用户确认了本次实验配置描述；它不等于后续所有科学结论已批准，
+也不自动升级 package/runtime/statistics 状态。
+
 ## Step 6 — Partial Physics Contract
+
+填写时以 [P03 Physics Contract 模板](../../../../_shared/templates/onboarding/PHYSICS_CONTRACT_TEMPLATE.yaml)
+为基础，保留 `contract_version: 4` 和现有 sections。模块选择按 Interaction 与 Nuclear Structure
+分开记录；Physics MD 内容放入 `validation_claim.fields.physics_report`。
 
 完整 TEX 不是输入要求。
 
@@ -297,15 +379,51 @@ statistics
 validation_claim
 ```
 
-此阶段只强制冻结：
+在不改变 `contract_version: 4` 和既有 section 名称的前提下，P03 的
+`theory_response.fields` 必须把以下选择分开记录：
 
-```text
-identity_and_goal
-dataset identity
-requested scientific claim
+- `interaction_module`：SM / NSI / Full EFT 的实际选择及 model ID；
+- `nuclear_structure_module`：Helm / Nuclear Response 的实际选择及 model ID。
+
+`kinematics_cross_section.fields` 分别记录 `kinematics_module` 和
+`cross_section_module`；`detector_response.fields` 记录本实验使用的 detector model IDs；
+`statistics.fields` 记录与实验论文对应的 statistics model ID。每个字段沿用本合同既有的
+`value/unit/evidence_claims/provenance_status/decision_status/blocking_scope` 结构。
+不要把 Interaction 和 Nuclear Structure 合并成一个字段，也不要在这些选择字段中复制模块理论。
+
+Physics MD 的人类可读内容元数据放在现有合同规定的位置：
+
+```yaml
+sections:
+  validation_claim:
+    fields:
+      physics_report:
+        value:
+          models: {}
 ```
 
-其他 section 可以 DRAFT/MISSING。
+该 `physics_report` value 在 IR 整理时映射到
+`document.extensions["lab.physics_report"]`，并由现有 v1/v2 Schema/Validator 严格校验。
+每个 model 至少使用现有合同要求的 `group/content_class/title/explanation/equations`（model ID 为映射键）；
+每条 equation 使用 `id/title/latex/symbols`，每个 symbol 使用
+`symbol/definition/unit/parameter_ref`。不要在 P03 中增加 Validator 不认识的字段。
+
+`content_class` 只能是：
+
+- `experiment_specific`：Source、Target、Detector、Observable、Prediction folding、
+  Statistics 等实验专属内容；详细报告必须给出可实现的公式、参数、单位和约定。
+- `shared_framework`：Interaction、Nuclear Structure、Kinematics、Cross-section 等共享模块；
+  实验报告只显示所选模块 ID/配置，不展开其公共理论公式。
+- `implementation_detail`：源码内部别名、AST 赋值、内部循环和纯代码审计项；不进入实验正文。
+
+P03 可以先以 DRAFT 形式形成候选，但**只有达到本次目标所需的实验配置完整度，才能 handoff 给 Physical Implementation**：
+
+- 对本次请求涉及的 Source、Target、模块选择、Detector、Observable 和 Prediction folding，必须有足够的公式、参数、单位、资源引用和数值约定。
+- 如果本次目标包含 benchmark/statistics，Statistics 的数据语义、分箱、数据、背景、误差/协方差和统计公式也必须完整。
+- 与本次目标无关的能力字段可以保持 `DRAFT/MISSING`。
+- 任何阻断本次目标的缺失项都留在 P02；未解决时保持 Onboarding `PARTIAL`，不得宣称可以进入对应物理实施。
+
+Dataset identity 和 requested scientific claim 仍是最先必须确认的硬条件。
 
 ### Progressive Detail Backlog
 

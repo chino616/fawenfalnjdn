@@ -5,8 +5,9 @@ loader. Their `*_definition.py` files are identity adapters. Legacy Slow/Fast AP
 retain return containers and frozen arithmetic through
 [package_compatibility](../package_compatibility.py); experiment values are not
 maintained here. The v2 profiles reuse common theory, recoil integration and
-detector contracts. See the [migration report](../../../docs/PROJECT_WIDE_PACKAGE_MIGRATION_REPORT.md)
-for separate runtime, regression, installation and scientific states.
+detector contracts. Dataset identities and input locations are indexed in the
+[COHERENT overview](../../../docs/experiments/COHERENT/README.md); runtime registration
+does not establish scientific acceptance.
 
 `execution.py`, `sns.py` and `statistics_binding.py` retain historical compatibility
 helpers. Default package execution does not recover parameters from those helpers.

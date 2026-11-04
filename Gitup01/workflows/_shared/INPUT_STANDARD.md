@@ -55,13 +55,13 @@
 
 | 对象 | 格式或填写依据 | 当前实际检查方式与覆盖范围 |
 |---|---|---|
-| 三文件 Experiment Input Package v1 | [正式 schema](../../cevns_pyeft/experiments/input_package.schema.json) 与[格式/权威说明](../../docs/software/experiment-input-package.md) | [input_package.py](../../cevns_pyeft/experiments/input_package.py) 以严格 JSON-compatible YAML、Draft202012Validator 及跨字段/NPZ/指纹/MD 校验执行；不绑定模型、不等于 Runtime 或科学批准 |
+| 三文件 Experiment Input Package v1 | [正式 schema](../../cevns_pyeft/experiments/input_package.schema.json) 与[正式输入 schema](../../cevns_pyeft/experiments/input_package.schema.json) | [input_package.py](../../cevns_pyeft/experiments/input_package.py) 以严格 JSON-compatible YAML、Draft202012Validator 及跨字段/NPZ/指纹/MD 校验执行；不绑定模型、不等于 Runtime 或科学批准 |
 | 实验说明 `experiment.yaml` | [experiment.schema.json](schemas/experiment-input/experiment.schema.json) | [specs.py](../../cevns_pyeft/experiments/specs.py) 的 `validate_experiment_spec_data` 只检查必填字段；没有自动执行完整 JSON Schema 或全部科学要求 |
 | 约定的 reactor spectrum、efficiency、bin edges、isotopes 表 | [csv_contracts.json](schemas/experiment-input/csv_contracts.json) 与[格式说明](schemas/experiment-input/README.md) | 这是命名格式约定表；按已选 profile 核对列及数值要求，当前没有覆盖所有 CSV 的通用执行器；`energy_evee` 列约定不强加给 PE 等其他数据 |
 | 用户资料表 | [统一输入模板](templates/onboarding/EXPERIMENT_USER_INPUT_TEMPLATE.md) | 人填和 AI 摘录共用栏目；每个 dataset 独立填写，数值须附来源 |
 | 材料登记 | [input-manifest schema](schemas/input-manifest.schema.yaml) 与[模板](templates/input-manifest.yaml) | 结构检查覆盖登记字段；实际文件存在、哈希和来源真实性仍分别核对 |
 | 证据与物理合同 | [evidence-ledger schema](schemas/evidence-ledger.schema.yaml)、[physics-contract schema](schemas/physics-contract.schema.yaml) 与 [onboarding 模板](templates/onboarding/) | 证据状态与物理决定分开；合同结构可由现有 Phase 校验器检查，不能据此认证外部资料 |
-| dataset 特有观测坐标 | dataset 自己的 schema，例如 [CsI2017 observation_schema.json](../../data/experiments/COHERENT_CsI/CsI2017/statistics/observation_schema.json) | [tables.py](../../cevns_pyeft/statistics/tables.py) 实际核对 bin、原始数字化坐标、顺序与数值 shape |
+| dataset 特有观测坐标 | dataset 自己的坐标合同；当前输入见 [CsI2017 三文件目录](../../data/experiments/COHERENT_CsI/CsI2017/README.md) | [tables.py](../../cevns_pyeft/statistics/tables.py) 实际核对 bin、原始数字化坐标、顺序与数值 shape |
 | 实际运行输入 | [definition/loader](../../cevns_pyeft/experiments/README.md)、[运行接口合同](../../cevns_pyeft/contracts/README.md)、[资源清单](../../data/resource_manifest.json) | loader/runtime 和各组件核对实际资源、轴、形状及其实现支持的单位/归一化；资源审计核对路径与哈希 |
 | 阶段检查与接受 | [Phase 执行合同](references/phase/PHASE_EXECUTION_CONTRACT.md)、[phase-result schema](schemas/phase-result.schema.yaml) | 在已有阶段报告里记录命令、结果、证据、决定和当前版本的实际接受 |
 

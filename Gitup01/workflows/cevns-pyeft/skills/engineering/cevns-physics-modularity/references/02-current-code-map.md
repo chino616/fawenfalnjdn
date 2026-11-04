@@ -86,7 +86,7 @@ P03 当前不会自动接入 COHERENT 的纯态 SNS 循环；调用后端存在�
 - `cevns_pyeft/foundation/constants.py::SMEFT_TO_LEFT_TREE` 和 `cevns_pyeft/foundation/constants.py::LEFT_QCD_RUNNING`：公式/分类元数据，未发现可执行 RG/matching 驱动。
 - `cevns_pyeft/theory/li2026/form_factors.py::build_form_factors`：存在并被兼容重导出，但当前 amplitude→left_to_ci 主链没有调用它；只修改此文件通常不改变 COHERENT 主计算。
 - `cevns_pyeft/core/engine.py`：兼容重导出入口；实施修改应追到真实 owner，避免制造第二份实现。
-- 外部 W 规范未闭合： [核响应审计](../../../../../../docs/physics/nuclear-responses/nuclear_response_convention_audit.md)。
+- 外部 W 规范、源表来源与归一化的核验仍未闭合。
 
 ## 4. D 探测器与 I 计数
 

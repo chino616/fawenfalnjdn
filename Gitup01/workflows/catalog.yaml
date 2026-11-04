@@ -7,8 +7,8 @@
       "kind": "router",
       "path": "cevns-pyeft/skills/router/cevns-experiment/SKILL.md",
       "status": "active",
-      "summary_zh": "识别任务意图，处理 dataset 歧义，管理审核与阶段切换",
-      "outputs_zh": "路由结果、范围和 Gate 状态、阶段交接"
+      "summary_zh": "识别任务与 dataset 歧义，路由 H0–H3 及统一报告规范",
+      "outputs_zh": "路由、范围和既有 Gate 状态、前期审阅交接"
     },
     {
       "id": "cevns.onboarding.experiment",
@@ -16,8 +16,8 @@
       "kind": "onboarding",
       "path": "cevns-pyeft/skills/onboarding/cevns-onboarding/SKILL.md",
       "status": "active",
-      "summary_zh": "登记论文/表格/旧程序，提取候选事实与来源，核对缺失和冲突",
-      "outputs_zh": "材料登记、证据台账、缺失/冲突矩阵、partial Physics Contract"
+      "summary_zh": "按 H0–H3 审阅材料、证据和独立模块选择，形成 P00–P03",
+      "outputs_zh": "来源/证据/缺失记录、partial contract、两份同源报告的元数据"
     },
     {
       "id": "cevns.phase.p01.dataset",

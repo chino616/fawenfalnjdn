@@ -24,7 +24,7 @@ LEFT 匹配、粒子响应与核表来源有不同职责。`li2026/responses.py:
 
 现有理论的扩展放对应子包；独立理论可创建新的子包和 `__init__.py`，提供 `InteractionModel` 适配器并由实验 `prepare`/`components` 明确装配。不要只新增公式文件就修改所有实验的默认理论。
 
-新增算符需一起核对 `operators.py` 的合法性/味规则、`left_to_ci.py` 匹配、R 响应、系数表示和 Fast 能力；某一路径未实现时应明确拒绝。检查单位、密度矩阵、运动学支撑、干涉项、Fast–Slow 及三个实验的冻结回归。现有证据入口见 [物理文档](../../docs/physics/README.md)，共享 nu/antinu 核的限制仍需保留。
+新增算符需一起核对 `operators.py` 的合法性/味规则、`left_to_ci.py` 匹配、R 响应、系数表示和 Fast 能力；某一路径未实现时应明确拒绝。检查单位、密度矩阵、运动学支撑、干涉项、Fast–Slow 及三个实验的冻结回归。相关理论论文见 [通用 CEvNS 文献](../../docs/references/General_CEvNS/README.md)，共享 nu/antinu 核的限制仍需保留。
 
 ---
 

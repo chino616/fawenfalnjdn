@@ -22,7 +22,7 @@ Fast 把源、靶核、探测器和积分网格固定后，预先积分与 Wilso
 
 新的通用编译/重建/存储实现放这里；具体实验的参数与特殊编译入口仍由 executor 绑定。若扩展系数表示，先在 interaction 实现 `coefficient_contract`、`coefficient_dsigma`、`coefficient_values`，再更新能力检查、依赖记录和实际消费者。需要包级导出时维护 [__init__.py](__init__.py) 的延迟导出表。
 
-核文件由 `save_compiled_kernel` 或旧格式保存函数生成，放在调用方指定的 `outputs/<运行>/`；不要手改 NPZ 或放入 `data/` 冒充输入。新格式/新依赖需检查逐分量 Fast–Slow 一致性、保存加载、过期拒绝和数组损坏，参考 [test_fast_model_contract.py](../../tests/test_fast_model_contract.py)。可运行用法见 [FAST_AND_CACHE.md](../../docs/user-guide/FAST_AND_CACHE.md)。
+核文件由 `save_compiled_kernel` 或旧格式保存函数生成，放在调用方指定的 `outputs/<运行>/`；不要手改 NPZ 或放入 `data/` 冒充输入。新格式/新依赖需检查逐分量 Fast–Slow 一致性、保存加载、过期拒绝和数组损坏，参考 [test_fast_model_contract.py](../../tests/test_fast_model_contract.py)。调用示例见 [examples/](../../examples/README.md)。
 
 ## 卸载与共享kernel
 

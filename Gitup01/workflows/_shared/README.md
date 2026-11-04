@@ -42,3 +42,17 @@
 ---
 
 [上一级](../README.md) · [项目总览](../../README.md)
+
+前期模板包括
+[用户入口](templates/onboarding/EXPERIMENT_USER_INPUT_TEMPLATE.md)、
+[H1 材料审阅](templates/onboarding/INPUT_FILE_REVIEW_TEMPLATE.md)、
+[P00 来源](templates/onboarding/SOURCE_REGISTER_TEMPLATE.yaml)、
+[P01 证据](templates/onboarding/EVIDENCE_LEDGER_TEMPLATE.yaml)、
+[P02 缺失/冲突](templates/onboarding/MISSING_AND_CONFLICTS_TEMPLATE.md)、
+[P03 合同](templates/onboarding/PHYSICS_CONTRACT_TEMPLATE.yaml)。
+P00 独占来源身份，P01 的 sources 空兼容字段不另维护来源。
+新 P00/P02 模板由 Onboarding 使用，不声称已有自动转换器。
+
+[Experiment Physics Report Contract](references/onboarding/experiment-physics-report-contract.md)
+是两份报告的唯一内容规范，供 Master/Onboarding/Renderer 集成共同引用。
+字段映射与真实命令见[Compiler 文档](../../docs/software/onboarding-package-compiler.md)。

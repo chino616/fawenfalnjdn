@@ -19,6 +19,8 @@ def validate(data):
               for e in Draft202012Validator(schema()).iter_errors(data)]
     if errors:
         return errors
+    from .input_package import _report_metadata_errors
+    errors += _report_metadata_errors(data)
     def check(ok, text):
         if not ok: errors.append(text)
     params, models, arrays = data['parameters'], data['models'], data['resources']['arrays']
@@ -235,29 +237,7 @@ def binding_contracts():
     return strict_json(Path(__file__).with_name('component_bindings.json').read_text('utf8'))
 
 
-def render(data, arrays):
-    def cell(v):return str(v).replace('|','&#124;').replace('\n',' ')
-    def table(head,rows):
-        return '\n'.join(['| '+' | '.join(head)+' |','| '+' | '.join('---' for _ in head)+' |']+
-                         ['| '+' | '.join(cell(x) for x in row)+' |' for row in rows])
-    p=data['package']
-    lines=['# '+p['dataset_id']+' — Physics Input','',p['scientific_claim'],'',
-        'Status: '+p['status']+'; human: '+p['human_approval']+'. YAML/NPZ are machine authority; this document is a deterministic view.','',
-        '## Parameters','',table(['ID','Value','Unit','Role','Meaning','Consumers','Sources','State'],
-            [(k,v['value'],v['unit'],v['role'],v['meaning'],v['consumers'],v['source_refs'],v['status']) for k,v in data['parameters'].items()]),'',
-        '## Models and audit equations','']
-    for mid,m in data['models'].items():
-        lines += ['### '+mid,'',m['meaning'],'','```text',m['formula'],'```','',
-                  table(['Variable','Unit'],m['variables'].items()),'',
-                  'Inputs: '+str(m['parameter_refs'])+'; resources: '+str(m['resource_refs'])+'; dependencies: '+str(m['depends_on']),
-                  'Contract: '+m['implementation_contract']+'; binding: '+m['binding_status']+'; domain: '+m['domain']+'; boundary: '+m['boundary'],
-                  'Sources: '+str(m['source_refs'])+'; '+m['locator'],'']
-    lines += ['## Resources','',table(['Key','Unit','Shape','Dtype','Axes','Normalization','Meaning','Sources'],
-        [(k,v['unit'],v['shape'],v['dtype'],v['axes'],v['normalization'],v['meaning'],v['source_refs']) for k,v in data['resources']['arrays'].items()]),'',
-        '## Assembly and normalization','', '```json',json.dumps(data['assembly'],ensure_ascii=False,indent=2),'```','',
-        '## Capabilities','',table(['Capability','State','Evidence','Blockers','Human'],
-            [(k,v['status'],v['evidence'],v['blockers'],v['human_approval']) for k,v in data['capabilities'].items()]),'',
-        '## Provenance, missing and conflicts','',table(['Source','Record'],data['provenance']['sources'].items()),'',
-        table(['Issue','State','Description','Blocks'],[(i['id'],i['status'],i['detail'],i['blocks']) for i in data['provenance']['issues']]),'',
-        'Archive SHA256: `'+data['resources']['sha256']+'`. No equation text is executable.','']
-    return '\n'.join(lines)
+def render(data, arrays, *, summary=False):
+    """v2 uses exactly the same report policy as v1."""
+    from .input_package import render_physics
+    return render_physics(data, arrays, summary=summary)

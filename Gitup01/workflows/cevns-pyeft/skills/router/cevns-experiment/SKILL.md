@@ -7,7 +7,7 @@ description: Single master workflow for CEvNS onboarding, runtime migration, rep
 
 ## Purpose
 
-正式数据交付按[通用 package 编译合同](../../../../../docs/software/onboarding-package-compiler.md)：
+正式数据交付按[package 编译器入口](../../../../../tools/compile_experiment_package.py)：
 用户填写、AI 摘录或混合资料形成同一 IR，之后由确定性 compiler 生成 YAML/NPZ/Physics MD。
 Master 只路由，不理解或执行公式；机器检查与人工 Physics Review 独立，Runtime 不读中间台账。
 
@@ -24,6 +24,15 @@ Master 只路由，不理解或执行公式；机器检查与人工 Physics Revi
 通过 [catalog](../../../../catalog.yaml) 解析稳定 Skill ID，再读取路由指定的 WORKFLOW.md。
 非 onboarding 路由执行其工作流后返回结果，不进入下方物理 intake/Phase 状态机。
 源码根为 `cevns_pyeft/`；P01–P10 只属于物理接入。路由别名以 routes.yaml 为准。
+
+## 前期人类审阅（H0–H3）
+
+材料接入在既有 Gate 内使用 H0 身份/目标确认、H1 材料可读摘要、H2 分模块证据摘要、
+H3 自然语言物理方案和公式审阅；职责由
+[onboarding](../../onboarding/cevns-onboarding/SKILL.md) 的前期节点节定义。
+P00 独占来源身份，P01 引用证据，P02 保留缺失/冲突，P03 固化审阅后的 partial contract。
+不以原始 YAML 代替人类解释，不为四个节点新增 Markdown。
+本条仅覆盖 P00–P03，不改变后续阶段或授予新 Gate/写入批准。
 
 ## 仓库维护选项
 
@@ -148,6 +157,14 @@ docs/experiments/<experiment_slug>/datasets/<dataset_id>/EXPERIMENT_USER_INPUT.m
 ```
 
 目录身份和创建条件执行 `workflows/_shared/policies/dataset-layout.md` 的 `PER_EXPERIMENT_DATASET_DIRECTORY`。
+
+Onboarding 完成后生成的实验 Physics 文档遵循
+[Experiment Physics Report Contract](../../../../_shared/references/onboarding/experiment-physics-report-contract.md)：
+`experiment.physics.summary.md` 是精简阅读版，`experiment.physics.md` 是详细实现版。
+精简版不替代详细版；详细版必须完整记录实验专属 Source、Target、Detector、Observable、
+Prediction folding 和 Statistics 的公式与数据。Interaction、Nuclear Structure、
+Kinematics 和 Cross-section 等共享模块在实验文档中只登记实际选择的模块 ID/配置，
+不得复制其公共理论说明或内部公式。
 
 ## Runtime 授权与范围
 

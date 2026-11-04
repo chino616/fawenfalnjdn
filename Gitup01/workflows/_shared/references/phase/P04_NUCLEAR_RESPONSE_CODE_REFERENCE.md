@@ -22,9 +22,7 @@
 - 当前振幅实现令 SigmaPDelta 的粒子响应为零；需要非零贡献的目标须重新判断覆盖。
 - full nuclear response 后不额外乘 Helm；SM Helm 是独立模型。
 - 当前 adapter 描述粒子处理为 legacy_shared_kernel。
-  [反中微子审计](../../../../docs/physics/physics-audits/antineutrino_sign_helicity_audit.md)
-  与 [外部核响应源表审计](../../../../docs/physics/nuclear-responses/nuclear_response_convention_audit.md)
-  仍有未闭合事项。应按目标限定声明，不能把标签/内部回归写成完整外部验证。
+  通用反中微子处理与外部核响应源表的核验仍有未闭合事项。应按目标限定声明，不能把标签/内部回归写成完整外部验证。
 
 ## 只读接口示例
 

@@ -2,7 +2,7 @@
 
 [package_compiler.py](package_compiler.py) 从通用IR生成三文件；
 [generic_input.py](generic_input.py)、[v2 Schema](generic_input.schema.json)、
-[component_bindings.json](component_bindings.json)提供跨实验合同；[用法](../../docs/software/onboarding-package-compiler.md)。
+[component_bindings.json](component_bindings.json)提供跨实验合同；[package 编译器入口](../../tools/compile_experiment_package.py)。
 
 本目录回答“给定 dataset ID，到底运行哪套模型、用哪些数据”。持久身份清单由 [dataset_registry.json](dataset_registry.json) 管理，[manifest.py](manifest.py) 提供 Python 视图，目前为 CsI2021、CsI2017、Ar2020。
 
@@ -14,9 +14,9 @@
 | [definition.py](definition.py) | `ExperimentDefinition` 绑定物理设置、资源、观测轴、统计、数值配置和 `prepare` |
 | [loader.py](loader.py) | `ResourceCatalog` 解析路径；`load_experiment` 调用 `prepare`，应用组件覆盖、快照与指纹，返回 `PreparedExperiment`；统计文件延迟读取 |
 | [assembly.py](assembly.py) | 记录实际组件与执行器身份，防止只改实例却沿用旧缓存身份 |
-| [input_package.py](input_package.py)、[input_package.schema.json](input_package.schema.json) | 正式三文件合同的只读结构/语义/资源校验与 MD 渲染；没有绑定或装配运行对象，详见[合同说明](../../docs/software/experiment-input-package.md) |
-| [model_registry.py](model_registry.py)、[model_bindings.json](model_bindings.json)、[package_components.py](package_components.py) | 受控物理模型绑定、公式/单位合同、参数消费记录与 NPZ 数组适配；[逐模型审计](../../docs/PHYSICS_MODEL_BINDING_REPORT.md) |
-| [package_loader.py](package_loader.py) | 显式两文件 `load_experiment_package` → 现有 Definition/Catalog/loader/PreparedExperiment；物理/统计内容投影分离；[验证报告](../../docs/EXPERIMENT_PACKAGE_LOADER_REPORT.md) |
+| [input_package.py](input_package.py)、[input_package.schema.json](input_package.schema.json) | 正式三文件合同的只读结构/语义/资源校验与 MD 渲染；没有绑定或装配运行对象，详见[正式输入 schema](input_package.schema.json) |
+| [model_registry.py](model_registry.py)、[model_bindings.json](model_bindings.json)、[package_components.py](package_components.py) | 受控物理模型绑定、公式/单位合同、参数消费记录与 NPZ 数组适配 |
+| [package_loader.py](package_loader.py) | 显式两文件 `load_experiment_package` → 现有 Definition/Catalog/loader/PreparedExperiment；物理/统计内容投影分离 |
 | [runtime.py](runtime.py) | `predict_experiment`、`compile_experiment`、`evaluate_experiment`、`predict_selection`；校验数值键、输出轴与身份 |
 | [selection.py](selection.py) | 严格读取本次运行选择；禁用项不解析资源或执行预测，各实验结果分别返回 |
 | [coherent/](coherent/README.md) | 三个活动实验的 definition/旧 API 均为正式 YAML/NPZ 的兼容适配层；没有独立实验参数权威 |
@@ -30,7 +30,7 @@
 
 真实新数据集先从[Master 工作流](../../workflows/cevns-pyeft/skills/router/cevns-experiment/SKILL.md)确定物理范围和数据证据。获得对应范围的实现授权后：
 
-1. 按[统一编译合同](../../docs/software/onboarding-package-compiler.md)整理人填、AI 摘录或混合资料，形成同一 IR，记录模型、参数角色、单位、归一化、来源和缺失能力。
+1. 按[package 编译器入口](../../tools/compile_experiment_package.py)整理人填、AI 摘录或混合资料，形成同一 IR，记录模型、参数角色、单位、归一化、来源和缺失能力。
 2. 使用 `package_compiler` 生成唯一三文件。先通过结构、绑定和资源检查；缺模型语义时新增经审查的公共 binding/profile，不能仅按 dataset 名复制物理代码。
 3. executor 接收 `(experiment, point, backend, numerics, kernel)`，返回 `(combined_prediction, detector_predictions, raw_result, execution_record)`；总数、分量、轴必须满足 `runtime.py` 的检查。
 4. 正式三文件放入根 `data/experiments/<实验族>/<dataset_id>/`，经 `definition_from_package` 接入已有 Definition/loader；测试放 `tests/test_<模块名>_contract.py`。声明 Fast 或统计能力前实跑对应验证。
@@ -54,3 +54,13 @@
 ## CsI2021 P04–P10 package 执行审计
 
 [coherent/csi2021_package.py](coherent/csi2021_package.py) 是本次 revision-2 三文件审计的局部适配器，显式绑定现有 typed 组件；[csi2021_package_contract.json](coherent/csi2021_package_contract.json) 只约束模型/单位/轴，不保存第二套物理数值。同期通用 package_loader 的默认迁移独立保留。阶段证据、当前与固定版本差异见[执行报告](../../workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/11_FINAL_EXECUTION_REPORT.md)。
+
+`input_package.render_physics` 与 `generic_input.render` 共用报告选择和数学格式。
+H3 报告元数据使用受严格校验的 `lab.physics_report` namespace；既有输入沿用显式绑定声明，
+不按模型名猜测公式。`package_compiler.write_package` 在目标目录创建继承 ACL 的临时文件，
+支持失败恢复及只读 YAML/NPZ 的两份 MD 更新，见[package 编译器入口](../../tools/compile_experiment_package.py)。
+
+现有 render_physics / generic_input.render 通过 summary=True 选择精简视图；
+默认详细视图完整记录实验侧公式与数据，共享模块只列实际 ID/配置。
+两视图的单一规范位于 workflows/_shared/references/onboarding/，
+符号引用同时核对精确 Parameter ID 与 NPZ key；运行期仍只读取 YAML/NPZ。

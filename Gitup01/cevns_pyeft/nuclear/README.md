@@ -21,7 +21,7 @@ print(db.get("Cs133").W_np("M", 0.0))
 
 新读取器或核响应表示可在这里建模块，提供清晰的核素、通道、基底和单位接口，并让 interaction 显式选择它。新增核素或修正响应系数应在有来源依据的响应数据中处理，配合资源哈希、靶核映射及相应测试，不能仅添加一个未被读取的 JSON。
 
-基底/归一化改动需检查 [test_nuclear_response_convention.py](../../tests/test_nuclear_response_convention.py) 和既有事件数回归。内部基变换测试不等于外部源表验证；[核响应审计](../../docs/physics/nuclear-responses/nuclear_response_convention_audit.md)仍记录未解决的来源与归一化问题。
+基底/归一化改动需检查 [test_nuclear_response_convention.py](../../tests/test_nuclear_response_convention.py) 和既有事件数回归。内部基变换测试不等于外部源表验证；外部源表的来源与归一化问题仍待核实。
 
 ---
 

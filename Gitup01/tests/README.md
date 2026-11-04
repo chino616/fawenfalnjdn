@@ -61,3 +61,11 @@ identity, two-file prediction/statistics, parameter consumption, stale source
 materialization, strict assembly/units/models and statistical-only cache reuse.
 Original reference values and regression tolerances remain unchanged.
 Distribution and real uninstall/reinstall tests cover all three active datasets.
+
+`test_package_compiler.py` 还覆盖三实验报告内容选择、q²/q₂ 的显式参数引用、
+连续公式编号/内部链接、严格报告元数据、MD-only 和同目录写入/重复覆盖/失败恢复。
+Windows fixture 只在一个任务测试根内恢复测试目录继承，不修改正式数据目录或 YAML/NPZ ACL。
+
+ReadyToMerge 报告回归仍在 `test_package_compiler.py`：
+检查完整 Source/Target/Detector/folding/statistics、逐箱原始数据、两视图同源、
+共享模块仅登记选择、精确 NPZ 引用与摘要失配拒绝。沿用原 Writer 测试，不跑无关物理重提取。
