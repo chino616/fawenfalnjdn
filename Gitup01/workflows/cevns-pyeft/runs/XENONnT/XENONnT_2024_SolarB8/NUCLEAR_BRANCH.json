@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-10",
+  "decision_ref": "D0004",
+  "write_ref": "W0004",
+  "scope": "actual nuclear-table SM only",
+  "current_onboarding": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.1.md",
+  "result": "outputs/solar_b8_sm/20261110_nuclear_response_run2/XENONnT_2024_SolarB8/RESULT.json",
+  "physics_fingerprint": "e9e2818841ea1431a849bf5b7a9a5aab512cb33e8f5f013a8f1bd71d546ecd8e",
+  "resources": {
+    "package_input": {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\data\\experiments\\XENONnT\\XENONnT_2024_SolarB8\\experiment.input.yaml",
+      "sha256": "271e18b89398ed90c29db2f88924a10514125328a7c27f69de49baa33c1111c4",
+      "semantic": ""
+    },
+    "package_arrays": {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\data\\experiments\\XENONnT\\XENONnT_2024_SolarB8\\experiment.resources.npz",
+      "sha256": "39aa001f5c5657ddbb0099f232ee7e2a81f78ff383da3cf43b0dc214b62fdeb2",
+      "semantic": ""
+    },
+    "nuclear_response": {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\data\\responses\\responses_all.json",
+      "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+      "semantic": "existing np nuclear polynomial table; external source unresolved"
+    }
+  },
+  "coverage": {
+    "number_fraction": 0.998158,
+    "missing": [
+      "Xe124",
+      "Xe126"
+    ],
+    "renormalized": false
+  },
+  "detector": "official early YBe recasting basis",
+  "external_nuclear_source_certification": "UNRESOLVED",
+  "human_result_acceptance": "NOT_REVIEWED",
+  "historical_KN_results_and_packages": "preserved; old vector results not relabeled"
+}

@@ -1,0 +1,13 @@
+{
+  "RESPONSE_JHEP2022_4PULL_bins.csv": "PASS_99_BINS_POISSON_COMPONENTS_RESIDUALS",
+  "RESPONSE_JHEP2022_4PULL_probability_candidate_bins.csv": "PASS_99_BINS_POISSON_COMPONENTS_RESIDUALS",
+  "RESPONSE_2211_TIME_bins.csv": "PASS_99_BINS_POISSON_COMPONENTS_RESIDUALS",
+  "RESPONSE_2211_TIME_probability_candidate_bins.csv": "PASS_99_BINS_POISSON_COMPONENTS_RESIDUALS",
+  "public_entry_and_numeric_dependency_hash": "PASS",
+  "signal_grid_cases.npz": "PASS_GRID_DIFFERENCE_BELOW_0p005",
+  "time_fluence_scope_grid.npz": "PASS_GRID_DIFFERENCE_BELOW_0p005",
+  "ROOT_per_flavor_total_closure": "PASS",
+  "ROOT_vs_actual_legacy_decomposition": "PASS",
+  "time_scope_conversion_and_same_eta_difference": "PASS",
+  "original_source_records_verified": 13
+}

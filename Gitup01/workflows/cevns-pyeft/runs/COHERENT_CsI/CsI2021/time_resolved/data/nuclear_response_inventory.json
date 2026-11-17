@@ -1,0 +1,962 @@
+[
+  {
+    "nucleus": "Cs133",
+    "json_key": "nuclei.Cs133.responses.Delta",
+    "array_key": "Cs133_Delta",
+    "shape": [
+      2,
+      2,
+      9
+    ],
+    "coefficient_order": "ascending",
+    "axes": [
+      "outgoing_nucleon(p,n)",
+      "incoming_nucleon(p,n)",
+      "polynomial_power"
+    ],
+    "power_range": [
+      0,
+      8
+    ],
+    "first_three_coefficients": [
+      [
+        [
+          2.777767329081821,
+          -6.672857949038999,
+          6.55129294731681
+        ],
+        [
+          0.1862548867406329,
+          -0.4815181408155617,
+          0.5140682583669228
+        ]
+      ],
+      [
+        [
+          0.1862548867406329,
+          -0.4815181408155617,
+          0.5140682583669228
+        ],
+        [
+          0.012488764797386004,
+          -0.034572535685396394,
+          0.040401935372031676
+        ]
+      ]
+    ],
+    "exp_factor": -2.0,
+    "basic": {
+      "name": "Cs133",
+      "A": 133,
+      "Z": 55,
+      "N": 78,
+      "J": 3.5,
+      "T": 11.5,
+      "b": 11.644334960750054
+    },
+    "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+    "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+    "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+    "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+  },
+  {
+    "nucleus": "Cs133",
+    "json_key": "nuclei.Cs133.responses.M",
+    "array_key": "Cs133_M",
+    "shape": [
+      2,
+      2,
+      11
+    ],
+    "coefficient_order": "ascending",
+    "axes": [
+      "outgoing_nucleon(p,n)",
+      "incoming_nucleon(p,n)",
+      "polynomial_power"
+    ],
+    "power_range": [
+      0,
+      10
+    ],
+    "first_three_coefficients": [
+      [
+        [
+          3024.998274020381,
+          -11027.633404691845,
+          15552.131264975062
+        ],
+        [
+          4289.9996412299715,
+          -17067.907574177727,
+          26578.800788135144
+        ]
+      ],
+      [
+        [
+          4289.9996412299715,
+          -17067.907574177727,
+          26578.800788135144
+        ],
+        [
+          6084.002453757858,
+          -26231.58060212355,
+          44782.86942155816
+        ]
+      ]
+    ],
+    "exp_factor": -2.0,
+    "basic": {
+      "name": "Cs133",
+      "A": 133,
+      "Z": 55,
+      "N": 78,
+      "J": 3.5,
+      "T": 11.5,
+      "b": 11.644334960750054
+    },
+    "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+    "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+    "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+    "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+  },
+  {
+    "nucleus": "Cs133",
+    "json_key": "nuclei.Cs133.responses.MPhiPP",
+    "array_key": "Cs133_MPhiPP",
+    "shape": [
+      2,
+      2,
+      10
+    ],
+    "coefficient_order": "ascending",
+    "axes": [
+      "outgoing_nucleon(p,n)",
+      "incoming_nucleon(p,n)",
+      "polynomial_power"
+    ],
+    "power_range": [
+      0,
+      9
+    ],
+    "first_three_coefficients": [
+      [
+        [
+          -337.2270119061203,
+          1028.1187793706663,
+          -1191.3713542557764
+        ],
+        [
+          -651.971286861826,
+          2209.5134742717923,
+          -2896.119563058932
+        ]
+      ],
+      [
+        [
+          -478.2494497649966,
+          1617.334276920973,
+          -2098.777365437798
+        ],
+        [
+          -924.614275237974,
+          3441.4180966762283,
+          -5003.062046480429
+        ]
+      ]
+    ],
+    "exp_factor": -2.0,
+    "basic": {
+      "name": "Cs133",
+      "A": 133,
+      "Z": 55,
+      "N": 78,
+      "J": 3.5,
+      "T": 11.5,
+      "b": 11.644334960750054
+    },
+    "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+    "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+    "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+    "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+  },
+  {
+    "nucleus": "Cs133",
+    "json_key": "nuclei.Cs133.responses.PhiPP",
+    "array_key": "Cs133_PhiPP",
+    "shape": [
+      2,
+      2,
+      9
+    ],
+    "coefficient_order": "ascending",
+    "axes": [
+      "outgoing_nucleon(p,n)",
+      "incoming_nucleon(p,n)",
+      "polynomial_power"
+    ],
+    "power_range": [
+      0,
+      8
+    ],
+    "first_three_coefficients": [
+      [
+        [
+          92.77117991352004,
+          -227.5432243891409,
+          211.79690175505195
+        ],
+        [
+          179.31768013673852,
+          -500.6524130832624,
+          535.5397429245113
+        ]
+      ],
+      [
+        [
+          179.31768013673852,
+          -500.6524130832624,
+          535.5397429245113
+        ],
+        [
+          346.7407632378248,
+          -1086.1118581504106,
+          1320.5990764588826
+        ]
+      ]
+    ],
+    "exp_factor": -2.0,
+    "basic": {
+      "name": "Cs133",
+      "A": 133,
+      "Z": 55,
+      "N": 78,
+      "J": 3.5,
+      "T": 11.5,
+      "b": 11.644334960750054
+    },
+    "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+    "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+    "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+    "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+  },
+  {
+    "nucleus": "Cs133",
+    "json_key": "nuclei.Cs133.responses.PhiPT",
+    "array_key": "Cs133_PhiPT",
+    "shape": [
+      2,
+      2,
+      9
+    ],
+    "coefficient_order": "ascending",
+    "axes": [
+      "outgoing_nucleon(p,n)",
+      "incoming_nucleon(p,n)",
+      "polynomial_power"
+    ],
+    "power_range": [
+      0,
+      8
+    ],
+    "first_three_coefficients": [
+      [
+        [
+          0.017221086156055408,
+          -0.010712014633078523,
+          0.0029834868952053955
+        ],
+        [
+          -0.026221186833360246,
+          0.039430327637627736,
+          -0.023236015561259964
+        ]
+      ],
+      [
+        [
+          -0.026221186833360246,
+          0.039430327637627736,
+          -0.023236015561259964
+        ],
+        [
+          0.039924928818048044,
+          -0.09524042439526507,
+          0.0949350898827911
+        ]
+      ]
+    ],
+    "exp_factor": -2.0,
+    "basic": {
+      "name": "Cs133",
+      "A": 133,
+      "Z": 55,
+      "N": 78,
+      "J": 3.5,
+      "T": 11.5,
+      "b": 11.644334960750054
+    },
+    "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+    "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+    "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+    "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+  },
+  {
+    "nucleus": "Cs133",
+    "json_key": "nuclei.Cs133.responses.SigmaP",
+    "array_key": "Cs133_SigmaP",
+    "shape": [
+      2,
+      2,
+      11
+    ],
+    "coefficient_order": "ascending",
+    "axes": [
+      "outgoing_nucleon(p,n)",
+      "incoming_nucleon(p,n)",
+      "polynomial_power"
+    ],
+    "power_range": [
+      0,
+      10
+    ],
+    "first_three_coefficients": [
+      [
+        [
+          0.4027959920988274,
+          -3.072499366548158,
+          8.226342731339976
+        ],
+        [
+          -0.0011039931292083404,
+          0.020820041986513098,
+          -0.10211081106891545
+        ]
+      ],
+      [
+        [
+          -0.0011039931292083404,
+          0.020820041986513098,
+          -0.10211081106891545
+        ],
+        [
+          3.0258514316105365e-06,
+          -9.104718199377984e-05,
+          0.0014772017592419675
+        ]
+      ]
+    ],
+    "exp_factor": -2.0,
+    "basic": {
+      "name": "Cs133",
+      "A": 133,
+      "Z": 55,
+      "N": 78,
+      "J": 3.5,
+      "T": 11.5,
+      "b": 11.644334960750054
+    },
+    "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+    "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+    "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+    "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+  },
+  {
+    "nucleus": "Cs133",
+    "json_key": "nuclei.Cs133.responses.SigmaPDelta",
+    "array_key": "Cs133_SigmaPDelta",
+    "shape": [
+      2,
+      2,
+      10
+    ],
+    "coefficient_order": "ascending",
+    "axes": [
+      "outgoing_nucleon(p,n)",
+      "incoming_nucleon(p,n)",
+      "polynomial_power"
+    ],
+    "power_range": [
+      0,
+      9
+    ],
+    "first_three_coefficients": [
+      [
+        [
+          0.6733961453469848,
+          -3.3771379778618753,
+          5.326274178703672
+        ],
+        [
+          0.04515256604470164,
+          -0.23470801367607982,
+          0.3935380785969338
+        ]
+      ],
+      [
+        [
+          -0.0018456606626712669,
+          0.029984612964432725,
+          -0.0839065136762114
+        ],
+        [
+          -0.00012375525987668224,
+          0.002033179112514557,
+          -0.005632474174543013
+        ]
+      ]
+    ],
+    "exp_factor": -2.0,
+    "basic": {
+      "name": "Cs133",
+      "A": 133,
+      "Z": 55,
+      "N": 78,
+      "J": 3.5,
+      "T": 11.5,
+      "b": 11.644334960750054
+    },
+    "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+    "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+    "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+    "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+  },
+  {
+    "nucleus": "Cs133",
+    "json_key": "nuclei.Cs133.responses.SigmaPP",
+    "array_key": "Cs133_SigmaPP",
+    "shape": [
+      2,
+      2,
+      11
+    ],
+    "coefficient_order": "ascending",
+    "axes": [
+      "outgoing_nucleon(p,n)",
+      "incoming_nucleon(p,n)",
+      "polynomial_power"
+    ],
+    "power_range": [
+      0,
+      10
+    ],
+    "first_three_coefficients": [
+      [
+        [
+          0.20139799604941389,
+          -0.14750139319149005,
+          0.04729454446532723
+        ],
+        [
+          -0.0005519965646041798,
+          0.0010692693237293824,
+          -0.0068281163231585515
+        ]
+      ],
+      [
+        [
+          -0.0005519965646041798,
+          0.0010692693237293824,
+          -0.0068281163231585515
+        ],
+        [
+          1.5129257158053197e-06,
+          -4.7533111280765205e-06,
+          0.0004874711824476048
+        ]
+      ]
+    ],
+    "exp_factor": -2.0,
+    "basic": {
+      "name": "Cs133",
+      "A": 133,
+      "Z": 55,
+      "N": 78,
+      "J": 3.5,
+      "T": 11.5,
+      "b": 11.644334960750054
+    },
+    "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+    "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+    "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+    "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+  },
+  {
+    "nucleus": "I127",
+    "json_key": "nuclei.I.responses.Delta",
+    "array_key": "I127_Delta",
+    "shape": [
+      2,
+      2,
+      9
+    ],
+    "coefficient_order": "ascending",
+    "axes": [
+      "outgoing_nucleon(p,n)",
+      "incoming_nucleon(p,n)",
+      "polynomial_power"
+    ],
+    "power_range": [
+      0,
+      8
+    ],
+    "first_three_coefficients": [
+      [
+        [
+          0.5358168796402408,
+          -1.2859608404378045,
+          1.6442979109260578
+        ],
+        [
+          0.23163314424621675,
+          -0.6485716130894684,
+          0.7910001684059156
+        ]
+      ],
+      [
+        [
+          0.23163314424621675,
+          -0.6485716130894684,
+          0.7910001684059156
+        ],
+        [
+          0.10013479521103008,
+          -0.320430253571225,
+          0.3977773344707208
+        ]
+      ]
+    ],
+    "exp_factor": -2.0,
+    "basic": {
+      "name": "I",
+      "A": 127,
+      "Z": 53,
+      "N": 74,
+      "J": 2.5,
+      "T": 10.5,
+      "b": 11.566047952236252
+    },
+    "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+    "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+    "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+    "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+  },
+  {
+    "nucleus": "I127",
+    "json_key": "nuclei.I.responses.M",
+    "array_key": "I127_M",
+    "shape": [
+      2,
+      2,
+      11
+    ],
+    "coefficient_order": "ascending",
+    "axes": [
+      "outgoing_nucleon(p,n)",
+      "incoming_nucleon(p,n)",
+      "polynomial_power"
+    ],
+    "power_range": [
+      0,
+      10
+    ],
+    "first_three_coefficients": [
+      [
+        [
+          2808.9995665607275,
+          -10034.66474862081,
+          13985.083771812386
+        ],
+        [
+          3921.985800775471,
+          -15131.936068913743,
+          23039.49218040387
+        ]
+      ],
+      [
+        [
+          3921.985800775471,
+          -15131.936068913743,
+          23039.49218040387
+        ],
+        [
+          5475.961194368475,
+          -22693.147694980555,
+          37521.4281769301
+        ]
+      ]
+    ],
+    "exp_factor": -2.0,
+    "basic": {
+      "name": "I",
+      "A": 127,
+      "Z": 53,
+      "N": 74,
+      "J": 2.5,
+      "T": 10.5,
+      "b": 11.566047952236252
+    },
+    "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+    "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+    "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+    "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+  },
+  {
+    "nucleus": "I127",
+    "json_key": "nuclei.I.responses.MPhiPP",
+    "array_key": "I127_MPhiPP",
+    "shape": [
+      2,
+      2,
+      10
+    ],
+    "coefficient_order": "ascending",
+    "axes": [
+      "outgoing_nucleon(p,n)",
+      "incoming_nucleon(p,n)",
+      "polynomial_power"
+    ],
+    "power_range": [
+      0,
+      9
+    ],
+    "first_three_coefficients": [
+      [
+        [
+          -358.9434624297877,
+          1071.860847241573,
+          -1226.724001560627
+        ],
+        [
+          -168.70759172914163,
+          571.2775470897285,
+          -748.693222596135
+        ]
+      ],
+      [
+        [
+          -501.1646066768365,
+          1639.8451383342444,
+          -2077.7548199768694
+        ],
+        [
+          -235.5531795452892,
+          864.9665463054715,
+          -1243.7890306149388
+        ]
+      ]
+    ],
+    "exp_factor": -2.0,
+    "basic": {
+      "name": "I",
+      "A": 127,
+      "Z": 53,
+      "N": 74,
+      "J": 2.5,
+      "T": 10.5,
+      "b": 11.566047952236252
+    },
+    "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+    "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+    "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+    "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+  },
+  {
+    "nucleus": "I127",
+    "json_key": "nuclei.I.responses.PhiPP",
+    "array_key": "I127_PhiPP",
+    "shape": [
+      2,
+      2,
+      9
+    ],
+    "coefficient_order": "ascending",
+    "axes": [
+      "outgoing_nucleon(p,n)",
+      "incoming_nucleon(p,n)",
+      "polynomial_power"
+    ],
+    "power_range": [
+      0,
+      8
+    ],
+    "first_three_coefficients": [
+      [
+        [
+          201.1953955323554,
+          -482.868031339836,
+          442.67902718816634
+        ],
+        [
+          94.56362577682016,
+          -264.7780925065691,
+          282.3185712069178
+        ]
+      ],
+      [
+        [
+          94.56362577682016,
+          -264.7780925065691,
+          282.3185712069178
+        ],
+        [
+          44.44739903804423,
+          -142.23242927003102,
+          174.82375219181566
+        ]
+      ]
+    ],
+    "exp_factor": -2.0,
+    "basic": {
+      "name": "I",
+      "A": 127,
+      "Z": 53,
+      "N": 74,
+      "J": 2.5,
+      "T": 10.5,
+      "b": 11.566047952236252
+    },
+    "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+    "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+    "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+    "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+  },
+  {
+    "nucleus": "I127",
+    "json_key": "nuclei.I.responses.PhiPT",
+    "array_key": "I127_PhiPT",
+    "shape": [
+      2,
+      2,
+      9
+    ],
+    "coefficient_order": "ascending",
+    "axes": [
+      "outgoing_nucleon(p,n)",
+      "incoming_nucleon(p,n)",
+      "polynomial_power"
+    ],
+    "power_range": [
+      0,
+      8
+    ],
+    "first_three_coefficients": [
+      [
+        [
+          0.0002687821306724113,
+          -0.0012325808757454723,
+          0.01758896344149697
+        ],
+        [
+          -0.0006901948462545364,
+          0.00237134182929609,
+          -0.04228122100222151
+        ]
+      ],
+      [
+        [
+          -0.0006901948462545364,
+          0.00237134182929609,
+          -0.04228122100222151
+        ],
+        [
+          0.0017723236459380415,
+          -0.004051026696742288,
+          0.10351592957122067
+        ]
+      ]
+    ],
+    "exp_factor": -2.0,
+    "basic": {
+      "name": "I",
+      "A": 127,
+      "Z": 53,
+      "N": 74,
+      "J": 2.5,
+      "T": 10.5,
+      "b": 11.566047952236252
+    },
+    "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+    "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+    "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+    "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+  },
+  {
+    "nucleus": "I127",
+    "json_key": "nuclei.I.responses.SigmaP",
+    "array_key": "I127_SigmaP",
+    "shape": [
+      2,
+      2,
+      11
+    ],
+    "coefficient_order": "ascending",
+    "axes": [
+      "outgoing_nucleon(p,n)",
+      "incoming_nucleon(p,n)",
+      "polynomial_power"
+    ],
+    "power_range": [
+      0,
+      10
+    ],
+    "first_three_coefficients": [
+      [
+        [
+          0.26026299886965265,
+          -1.5935648492504124,
+          5.29611648786122
+        ],
+        [
+          0.06457354625322986,
+          -0.4559822972101023,
+          1.2808706554956186
+        ]
+      ],
+      [
+        [
+          0.06457354625322986,
+          -0.4559822972101023,
+          1.2808706554956186
+        ],
+        [
+          0.016021266541258704,
+          -0.12816981616040665,
+          0.3703059158852223
+        ]
+      ]
+    ],
+    "exp_factor": -2.0,
+    "basic": {
+      "name": "I",
+      "A": 127,
+      "Z": 53,
+      "N": 74,
+      "J": 2.5,
+      "T": 10.5,
+      "b": 11.566047952236252
+    },
+    "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+    "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+    "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+    "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+  },
+  {
+    "nucleus": "I127",
+    "json_key": "nuclei.I.responses.SigmaPDelta",
+    "array_key": "I127_SigmaPDelta",
+    "shape": [
+      2,
+      2,
+      10
+    ],
+    "coefficient_order": "ascending",
+    "axes": [
+      "outgoing_nucleon(p,n)",
+      "incoming_nucleon(p,n)",
+      "polynomial_power"
+    ],
+    "power_range": [
+      0,
+      9
+    ],
+    "first_three_coefficients": [
+      [
+        [
+          -0.1783018283767848,
+          0.7598245640626068,
+          -1.4954404774973509
+        ],
+        [
+          -0.07707971641261865,
+          0.3593029031243831,
+          -0.6993837353763155
+        ]
+      ],
+      [
+        [
+          -0.04423825673156908,
+          0.23003851209093953,
+          -0.4055828371533289
+        ],
+        [
+          -0.01912415769653394,
+          0.10709499020716554,
+          -0.20303695561612226
+        ]
+      ]
+    ],
+    "exp_factor": -2.0,
+    "basic": {
+      "name": "I",
+      "A": 127,
+      "Z": 53,
+      "N": 74,
+      "J": 2.5,
+      "T": 10.5,
+      "b": 11.566047952236252
+    },
+    "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+    "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+    "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+    "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+  },
+  {
+    "nucleus": "I127",
+    "json_key": "nuclei.I.responses.SigmaPP",
+    "array_key": "I127_SigmaPP",
+    "shape": [
+      2,
+      2,
+      11
+    ],
+    "coefficient_order": "ascending",
+    "axes": [
+      "outgoing_nucleon(p,n)",
+      "incoming_nucleon(p,n)",
+      "polynomial_power"
+    ],
+    "power_range": [
+      0,
+      10
+    ],
+    "first_three_coefficients": [
+      [
+        [
+          0.1301314994348263,
+          -0.48853937121139385,
+          1.8336914142506728
+        ],
+        [
+          0.03228677312661495,
+          -0.12517937397772838,
+          0.26444995227503193
+        ]
+      ],
+      [
+        [
+          0.03228677312661495,
+          -0.12517937397772838,
+          0.26444995227503193
+        ],
+        [
+          0.008010633270629362,
+          -0.03204271350574278,
+          0.05343325902839009
+        ]
+      ]
+    ],
+    "exp_factor": -2.0,
+    "basic": {
+      "name": "I",
+      "A": 127,
+      "Z": 53,
+      "N": 74,
+      "J": 2.5,
+      "T": 10.5,
+      "b": 11.566047952236252
+    },
+    "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+    "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+    "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+    "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "reference": "R02",
+  "version": "2407.10892v3",
+  "parameters": [
+    {
+      "name": "signal_selection_Run0",
+      "value": 0.11,
+      "unit": "fractional rate uncertainty",
+      "sigma": null,
+      "uncertainty_minus": null,
+      "uncertainty_plus": null,
+      "locator": "PDF p5 Table IV, US2 Run0"
+    },
+    {
+      "name": "signal_selection_Run1",
+      "value": 0.17,
+      "unit": "fractional rate uncertainty",
+      "sigma": null,
+      "uncertainty_minus": null,
+      "uncertainty_plus": null,
+      "locator": "PDF p5 Table IV, US2 Run1"
+    },
+    {
+      "name": "signal_model_Run0",
+      "value": 0.17,
+      "unit": "fractional rate uncertainty",
+      "sigma": null,
+      "uncertainty_minus": null,
+      "uncertainty_plus": null,
+      "locator": "PDF p5 Table IV, US2 Run0"
+    },
+    {
+      "name": "signal_model_Run1",
+      "value": 0.16,
+      "unit": "fractional rate uncertainty",
+      "sigma": null,
+      "uncertainty_minus": null,
+      "uncertainty_plus": null,
+      "locator": "PDF p5 Table IV, US2 Run1"
+    },
+    {
+      "name": "cathode_model_Run0",
+      "value": 0.24,
+      "unit": "fractional rate uncertainty",
+      "sigma": null,
+      "uncertainty_minus": null,
+      "uncertainty_plus": null,
+      "locator": "PDF p5 Table IV, US2 Run0"
+    },
+    {
+      "name": "cathode_model_Run1",
+      "value": 0.2,
+      "unit": "fractional rate uncertainty",
+      "sigma": null,
+      "uncertainty_minus": null,
+      "uncertainty_plus": null,
+      "locator": "PDF p5 Table IV, US2 Run1"
+    },
+    {
+      "name": "MD_model_Run0",
+      "value": 0.13,
+      "unit": "fractional rate uncertainty",
+      "sigma": null,
+      "uncertainty_minus": null,
+      "uncertainty_plus": null,
+      "locator": "PDF p5 Table IV, US2 Run0"
+    },
+    {
+      "name": "MD_model_Run1",
+      "value": 0.16,
+      "unit": "fractional rate uncertainty",
+      "sigma": null,
+      "uncertainty_minus": null,
+      "uncertainty_plus": null,
+      "locator": "PDF p5 Table IV, US2 Run1"
+    }
+  ],
+  "meaning": "Printed fractional rate changes in the US2 ROI. These are rate effects, not full response probability parameters.",
+  "correlation_locator": "PDF p6 paragraph after the likelihood definition. Joint signal-model effects must be read with p5 and paired-channel anticorrelation."
+}

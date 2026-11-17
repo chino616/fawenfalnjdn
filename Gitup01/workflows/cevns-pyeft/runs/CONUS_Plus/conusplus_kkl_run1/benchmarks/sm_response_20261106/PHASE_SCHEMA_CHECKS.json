@@ -1,0 +1,13 @@
+{
+  "schema": "snapshot/workflows/_shared/schemas/phase-result.schema.yaml",
+  "schema_sha256": "fa858c692344096757cd28293d88f4bcc4c51ff8fa0f304f0cdf786bc4d3ab29",
+  "checked": [
+    "P04",
+    "P05",
+    "P06",
+    "P07",
+    "P10"
+  ],
+  "result": "PASS",
+  "scope": "structure only; no scientific approval"
+}

@@ -4,6 +4,15 @@
 [Experiment Physics Report Contract](../../workflows/_shared/references/onboarding/experiment-physics-report-contract.md)。
 本页只说明真实代码入口、输入映射、输出和兼容行为。
 
+## 逐数据溯源与生成后的执行责任
+
+[数据溯源与补充闭环](../../workflows/_shared/references/onboarding/data-provenance-contract.md)约束材料整理、首次输出后的缺口说明/用户补充，以及终稿逐数据验收。
+输出的每个实际参数、数组范围、公式与处理规则必须能追到具体出处或推导/决定，并按 Physics MD 规范显示；IR 字段或 source ID 不是人类可读的文献定位。
+
+当前代码会检查已声明来源/资源引用及相关结构、一致性和指纹；它不会自动读取 P00–P03、取得原文、核验引用确实支持某个数字，或保证所有输出均已满足新的逐数据展示要求。
+这一规则更新没有修改 Renderer、Schema 或已有实验输出。执行者必须在整理与审阅中补齐来源映射、向用户说明缺口；遇到生成器不能展示的项，要在获准生成链维护范围内修复再重生成，不能用编译 PASS 代替来源完整结论。
+首次候选与最终可用交付分开；旧输出不因本页更新而自动合格。
+
 ## 什么生成什么
 
 | 环节 | 实际入口 | 输入 → 输出 |

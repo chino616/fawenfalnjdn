@@ -1,0 +1,52 @@
+[
+  {
+    "original": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\P00_SOURCE_REGISTER.yaml",
+    "archive_member": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/P00_SOURCE_REGISTER.yaml",
+    "sha256": "6135349bff9f1862031efd77162dc2f4a37c668ab2fd82e3c83f247f1cdaded0"
+  },
+  {
+    "original": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\P01_EVIDENCE_LEDGER.yaml",
+    "archive_member": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/P01_EVIDENCE_LEDGER.yaml",
+    "sha256": "63584938ccba40eb99e378b5adb211b79a3c70aa8e2ea4ddbf505860a80cbc43"
+  },
+  {
+    "original": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\P02_MISSING_AND_CONFLICTS.md",
+    "archive_member": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/P02_MISSING_AND_CONFLICTS.md",
+    "sha256": "2a3d326cd821b57e18819cee0d32934dae44e0d4ba1625f03ba9a268c841a341"
+  },
+  {
+    "original": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\P03_PHYSICS_CONTRACT.yaml",
+    "archive_member": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/P03_PHYSICS_CONTRACT.yaml",
+    "sha256": "6ec3fa5882cd3658840bafb4be2d6ea350140cc099963b507d85f8715f220c7c"
+  },
+  {
+    "original": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\export_physics_docs.py",
+    "archive_member": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/export_physics_docs.py",
+    "sha256": "bb15b71a9ce33a776bf4da993490a7c461f3f9e967152ececef2d2177539ce7e"
+  },
+  {
+    "original": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\README.md",
+    "archive_member": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/README.md",
+    "sha256": "22fee5d619621e01fcadb0ed1fa3a36daebd7249947babedfaa0c26f20e541bf"
+  },
+  {
+    "original": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\experiments\\COHERENT\\CsI2021\\time_resolved\\experiment.physics.md",
+    "archive_member": "docs/experiments/COHERENT/CsI2021/time_resolved/experiment.physics.md",
+    "sha256": "22ffdd0c6d9c31c9d26068245af269488073b883cf16eb87c3253565e02f07c6"
+  },
+  {
+    "original": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\experiments\\COHERENT\\CsI2021\\time_resolved\\experiment.physics.summary.md",
+    "archive_member": "docs/experiments/COHERENT/CsI2021/time_resolved/experiment.physics.summary.md",
+    "sha256": "3ad3d59160f0cc2a744cfe936b04ab6a8287098ae4aa8c897eedfdcfe91fb143"
+  },
+  {
+    "original": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\experiments\\COHERENT\\CsI2021\\time_resolved\\EXPERIMENT_USER_INPUT.md",
+    "archive_member": "docs/experiments/COHERENT/CsI2021/time_resolved/EXPERIMENT_USER_INPUT.md",
+    "sha256": "fe0f43d6b6628353fea9db2b6dd63bffba65da7041ae4508613a0a7b7b0dba4a"
+  },
+  {
+    "original": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\experiments\\COHERENT\\CsI2021\\time_resolved\\README.md",
+    "archive_member": "docs/experiments/COHERENT/CsI2021/time_resolved/README.md",
+    "sha256": "be2e548db56b8d797d0acc62e853ac4ff7e08ea94c543b2a074f706a3ae06215"
+  }
+]

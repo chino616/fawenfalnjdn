@@ -1,0 +1,5 @@
+isotope,pdf_reference_fraction,kkl_comparison_fraction,default_fraction_source_id,default_source_locator
+U235,0.56,0.53,S0002,Eqs. (1.22)-(1.25); PDF page 5
+U238,0.07,0.08,S0002,Eqs. (1.22)-(1.25); PDF page 5
+Pu239,0.31,0.32,S0002,Eqs. (1.22)-(1.25); PDF page 5
+Pu241,0.06,0.07,S0002,Eqs. (1.22)-(1.25); PDF page 5

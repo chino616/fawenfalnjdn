@@ -1,0 +1,343 @@
+{
+  "date": "2026-11-06",
+  "timezone": "Asia/Shanghai",
+  "revision": "r2",
+  "stage": "DOCUMENTATION_REVIEW_COMPLETE; SCIENTIFIC_DRAFT_REMAINS",
+  "algorithm": "SHA-256 of exact file bytes; authority for scientific source identity remains P00",
+  "source_register": {
+    "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/P00_SOURCE_REGISTER.yaml",
+    "sha256": "2f29260a755628e707d900d30ee3f08c6fde4c39a57e5b06d19ce9d11d6e2268"
+  },
+  "direct_sources": [
+    {
+      "source_id": "S_MEAS",
+      "path": "docs/references/COHERENT/2110.07730v2.pdf",
+      "sha256": "03b4bd7aa10653ecb86743c4d4a90abb0251ac3d0e5087b5202a621567bd81a7"
+    },
+    {
+      "source_id": "S_SUP",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/Paper_CEvNSCsI_FullDataset_SupMaterials.pdf",
+      "sha256": "7f4aec67a7a5323a84d6db0379d973de46e4a782c6c8f3cd43e31c262c6b5753"
+    },
+    {
+      "source_id": "S_2211",
+      "path": "docs/references/COHERENT/2211.11905v2.pdf",
+      "sha256": "071225342b004f4e97001d6c200066b216f0af1af226f4b4aafa43512304a2b1"
+    },
+    {
+      "source_id": "S_2202",
+      "path": "docs/references/COHERENT/2202.11002v3.pdf",
+      "sha256": "dd87860c25f0bde41cc65a3acebdc9e04c8ed0f47e61095801f4b9672364b6a9"
+    },
+    {
+      "source_id": "S_QF_PAPER",
+      "path": "docs/references/COHERENT/2111.02477v2.pdf",
+      "sha256": "22194a7f022dcd5918ad03db5b64e475449980b201fdafd7a5a1c7ac15330605"
+    },
+    {
+      "source_id": "S_snsFlux2D",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/snsFlux2D.root",
+      "sha256": "1af0639911bb9219b66cbfa617057cd145d180c2ac8bc791c3008f1d666206ae"
+    },
+    {
+      "source_id": "S_dataBeamOnC",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/dataBeamOnC.txt",
+      "sha256": "b78333f0cc0c4182f913cecd91d55968e43a620683e9f51e0ceb1c1db596326f"
+    },
+    {
+      "source_id": "S_dataBeamOnAC",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/dataBeamOnAC.txt",
+      "sha256": "fba5c06334521531eda353771b5297b44a70566b0d755e23b174c716abec9468"
+    },
+    {
+      "source_id": "S_brnPE",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/brnPE.txt",
+      "sha256": "0000b042b8d0d28b90370eb70d1409db1d8c510fcf2b3e636370b0d4443ac0b0"
+    },
+    {
+      "source_id": "S_brnTrec",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/brnTrec.txt",
+      "sha256": "6f279d835242a868dfc048abaa42b8c400bf961036de7bc7e64636efdd46466f"
+    },
+    {
+      "source_id": "S_ninPE",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/ninPE.txt",
+      "sha256": "41cae0376003cc2dcd028a3913e7c16395471f612b56d311f80e2a6071c9950c"
+    },
+    {
+      "source_id": "S_ninTrec",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/ninTrec.txt",
+      "sha256": "2bb034d648b312f4ee329ae95078dc748ff3f83b999c411b08f86d82ddf8e151"
+    },
+    {
+      "source_id": "S_effCoefficients",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/effCoefficients.txt",
+      "sha256": "f1e58e6b8ec4db53da3be21fe44ebc4621e9b248b920be09759b1000dada8c51"
+    },
+    {
+      "source_id": "S_scintRespCoefficients",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/scintRespCoefficients.txt",
+      "sha256": "ea6b8f34b296bf6e99f2a4ac504030d99155daba3e3c252f51c87d2470319d13"
+    },
+    {
+      "source_id": "S_LOCAL_W",
+      "path": "data/responses/responses_all.json",
+      "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74"
+    },
+    {
+      "source_id": "S_ELASTIC_CS",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/upstream_nuclear/Elastic/Cs133_GCN5082.txt",
+      "sha256": "da46cf5c93b499f74a9e29d3e932ed4a81108fe23e1a527c5e9df7d6692a5c23"
+    },
+    {
+      "source_id": "S_ELASTIC_I",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/upstream_nuclear/Elastic/I127_GCN5082.txt",
+      "sha256": "393e743c02fe818528de5ede53479b688e36eea03547c2ed6f47c1012fbe2f4b"
+    },
+    {
+      "source_id": "S_MU2E",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/upstream_nuclear/Mu2e_NRET/v2/mathematica/mu2elib_v2.wl",
+      "sha256": "5e5f1e646c9399c25f4ae72cd8f7dd1976ac87234d41ac5759242740783137ca"
+    },
+    {
+      "source_id": "S_NIST",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/NIST_CODATA2022_allascii.txt",
+      "sha256": "77fb90e66c40db3e6eb16630bc9c88e4c7c8beddbe5e71be406f2f26e3f67e67"
+    },
+    {
+      "source_id": "S_PDG",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/PDG2024_pi_charged.pdf",
+      "sha256": "f7c2e47de06d0e28f637441067aa144ca5a9e76cec2055060f95e39cae57bfae"
+    },
+    {
+      "source_id": "S_AUDIT",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/legacy_resolution/input_resolution.json",
+      "sha256": "08a6a2a70d32c5af28928641a64e303a80d9d7d025d562d2532f2761564c5186"
+    },
+    {
+      "source_id": "S_AUDIT_CODE",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/legacy_resolution/code/tools/resolve_input_issues.py",
+      "sha256": "6691472df0a3264d4ba95fa9f356bf6afbd1c411c14e9807b3700cff638e139e"
+    },
+    {
+      "source_id": "S_LEGACY_EFF",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/legacy_resolution/code/legacy/slow_counts_csi2021.py",
+      "sha256": "73d793e61dfa190af26ca01b1381ba4b019da07b0b95f25a5a09a99f595773c9"
+    },
+    {
+      "source_id": "S_LEGACY_SNS",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/legacy_resolution/code/legacy/sns.py",
+      "sha256": "9ea97baf50e46a158680b556f9fe514502fd8ca7386d8e9ea36ed07681e7a764"
+    },
+    {
+      "source_id": "S_TIME_CODE",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/legacy_resolution/code/time_acceptance.py",
+      "sha256": "535de210f4ebde240e8b3f230a24c0e472a71ae7ad3ff836c1abf1787a1cbc28"
+    },
+    {
+      "source_id": "S_DOMAIN_CODE",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/legacy_resolution/code/analysis_inputs.py",
+      "sha256": "931da0b2339f2fe1fda07eea2751784c9f6269db2afbcb26ecf4a85adade119d"
+    },
+    {
+      "source_id": "S_DECISION",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/DECISION_LOG.json",
+      "sha256": "ebb78f1241e263620150cf7d560e851b65c01c81e1e85b0baec7f717e30a4c78"
+    },
+    {
+      "source_id": "S_PREPARE",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/prepare_records.py",
+      "sha256": "2456e69bb75833cb00f182deb44f5d9fd8445291fa28f02582af8b015244e38b"
+    }
+  ],
+  "records": [
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/P00_SOURCE_REGISTER.yaml",
+      "sha256": "2f29260a755628e707d900d30ee3f08c6fde4c39a57e5b06d19ce9d11d6e2268"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/P01_EVIDENCE_LEDGER.yaml",
+      "sha256": "84659b2ce4fba37092eb3bff3a7ea55be1a04d004363879a5081bf854c678b01"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/P02_MISSING_AND_CONFLICTS.md",
+      "sha256": "2bccf78e5bb83a65c397fd41c9216caa7b018a934bcc0052af273a0056dfc968"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/P03_PHYSICS_CONTRACT.yaml",
+      "sha256": "562d7380c4447ff62b8d3278cb15c0a6259dea6d07d30b81ea750047eace3c03"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/DECISION_LOG.json",
+      "sha256": "ebb78f1241e263620150cf7d560e851b65c01c81e1e85b0baec7f717e30a4c78"
+    }
+  ],
+  "generators_and_validators": [
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/prepare_records.py",
+      "sha256": "2456e69bb75833cb00f182deb44f5d9fd8445291fa28f02582af8b015244e38b"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/export_physics_docs.py",
+      "sha256": "33d098260a3098a51193e044ef2d51982fbbd5c83f4595676a5ddb7384cf2856"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/validate_provenance.py",
+      "sha256": "759c7f956eec39e9587199d94308059fa5dba486bbd4c07f48407dd1f8aa26ea"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/validate_readability.mjs",
+      "sha256": "49c016cb32e4fb4b2ce854c6763b1272a8d5ff8f7823e42d74d56aff7487a486"
+    }
+  ],
+  "generated_outputs_and_data": [
+    {
+      "path": "docs/experiments/COHERENT/CsI2021/time_resolved/experiment.physics.md",
+      "sha256": "788f6ad27a5642090d24a3f9718d0b3b7d8e626160ae1cdb3b74e0577b9baa4e"
+    },
+    {
+      "path": "docs/experiments/COHERENT/CsI2021/time_resolved/experiment.physics.summary.md",
+      "sha256": "4bb62632e385fe6c7e029e7e0f026c53194bee1adba5da0551c9709e02f135ed"
+    },
+    {
+      "path": "docs/experiments/COHERENT/CsI2021/time_resolved/EXPERIMENT_USER_INPUT.md",
+      "sha256": "dea03f781d158e5f0e71df0441bd73614256876bf5a0b2a5faacf319a6fe8896"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/data/analysis_inputs.npz",
+      "sha256": "7ba73dae14e3e74c925403b83f352519004c47c3652473ed97d53dc64c2fb897"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/data/nuclear_response_CsI.npz",
+      "sha256": "39e9f6158ceb0fdfb4fd2bcd2b3397247f335f404b5675379e0c92cb13e05584"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/data/nuclear_response_inventory.json",
+      "sha256": "83f0adbba6b3b2b62cd954c735b34808ad920f707a6d32637e568ec4fcece5b6"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/data/observed_99bins.csv",
+      "sha256": "31c4b1aa20b9c4e2aed90bbb11ada11583922496a489d67afd24e74f24b2c74a"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/data/ROOT_inventory.json",
+      "sha256": "e1e268cdfa4560dc8cc4b8054b70e907ea8ba2eae4334978471e33684f572e31"
+    }
+  ],
+  "governance": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "ea0422e4f2c1188493a86b12e77fdb96f1143309f073df51365afb2e6ee2aacb"
+    },
+    {
+      "path": "workflows/_shared/references/onboarding/data-provenance-contract.md",
+      "sha256": "434cb211aa5c49ed1b2d0cded727ae16822ab5b59d680fac665ee483e7f217c9"
+    },
+    {
+      "path": "workflows/_shared/references/onboarding/experiment-physics-report-contract.md",
+      "sha256": "a2206e30533376dbad359ac7d1332c75a9905f26441759bd30a3f62b8e26f7b7"
+    },
+    {
+      "path": "workflows/cevns-pyeft/skills/onboarding/cevns-onboarding/SKILL.md",
+      "sha256": "1820ab734d83af6d37d80d079e7153a75942fa4b3f522bc20b0d3baa8d2dbda3"
+    },
+    {
+      "path": "workflows/_shared/templates/onboarding/SOURCE_REGISTER_TEMPLATE.yaml",
+      "sha256": "9d0bb0a9abc76c270baef341b2c729fab5eaf039328aab0b23eda9eea3d8f651"
+    },
+    {
+      "path": "workflows/_shared/templates/onboarding/EVIDENCE_LEDGER_TEMPLATE.yaml",
+      "sha256": "c5556a48c89cff5956a49a0e8c80fd214a9637d8c5cc8eb7bcfd89f06a2bdb41"
+    }
+  ],
+  "checks_and_review": [
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/PROVENANCE_CHECKS.json",
+      "sha256": "7f10db9c06a66193563563364547566f274c469f16d5d0ca9600b7d42f14df3c"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/READABILITY_CHECKS.json",
+      "sha256": "f174ed84ce70f93e86d5cd4eaa9bee784ea58d7cb7a3c7404d4ab14a77c5aad3"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/GLOBAL_WORKFLOW_ISSUES.json",
+      "sha256": "3c1e23abd766363d498c9380361774e59063c3357631ee9e68eb0b158bf65230"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/workflow-tests.log",
+      "sha256": "dee0c3b951460a6ff6b3bf2037f747a234b3c67bfa7d04b42e8dfa8ef1f1c2af"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/workflow-tests-localtemp.log",
+      "sha256": "6a16801f3886b4b80ab767578fc1a1cf950d58a1a64f88804f1ce1f19e377592"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/PROTECTION_REFRESH.json",
+      "sha256": "7e6c04c138ccb0f48a1acb238a43ee867b703c9829de704b42f4a5d3861a81eb"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/REVIEW_REPORT.md",
+      "sha256": "ef79a54ae300272c179ead592d3648a1a0a70a2e3c39551e14e197286e93e152"
+    }
+  ],
+  "owning_readmes": [
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/README.md",
+      "sha256": "a0c4f0dcb924d4ad9e592582872040c14e959a083e0471492341309ad1496bde"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/data/README.md",
+      "sha256": "e7ea1d02134245fd27fc1320838dea52fbcbb4151aa43486d9aab3cff5210702"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/README.md",
+      "sha256": "d4df0f050a8da70520367c2dad69672db6e62c29f7044c6d8468a0213680225f"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/README.md",
+      "sha256": "a7659dc3950bc42b891d281a9612daf760162c523d7c17f812fd6d6ba5939509"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/upstream_nuclear/README.md",
+      "sha256": "f5fde5f11365b6d2765883825bb744f429d62922d5cba9fd087c96c70d22e76e"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/README.md",
+      "sha256": "f916451fb4eff9cdc31f2fe0e0f7ce9a91c2ece0c5da1c13db580f63821db4cc"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/legacy_resolution/README.md",
+      "sha256": "15a0313efc730f60f8d63ae51c846c27ac86e1519c00a715489cf18957f245a4"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/readability/README.md",
+      "sha256": "41d37715a609fafb940384cd6bdea139adf91c830e1733d8253a40f626479d2f"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/revisions/README.md",
+      "sha256": "7d4b326648894dd342e33663556c4de134ed5352a192c1f8e125537c39b79b50"
+    },
+    {
+      "path": "docs/experiments/COHERENT/CsI2021/time_resolved/README.md",
+      "sha256": "b7b93c12a58979aaef711214407fb460307437663977945307eb41bdbc876180"
+    },
+    {
+      "path": "docs/experiments/COHERENT/CsI2021/README.md",
+      "sha256": "3d291417812d66a048233efbb3edb4a24845e86244b5893333cd9b74571c9eb0"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/README.md",
+      "sha256": "cf91a2dc24ce4f5e68836e5a37f4338a8fd00c14b13032037d75633ee895eb94"
+    },
+    {
+      "path": "data/responses/README.md",
+      "sha256": "edac4a846496a151421b3d7cddc93862e22fd65ae9c9f8946bdbd3ef261418e4"
+    },
+    {
+      "path": "docs/references/COHERENT/README.md",
+      "sha256": "efe227ff0fa07243379657fd442310d732d9d8b0ad08bf1bda9f727c5bf29c94"
+    }
+  ],
+  "scientific_status": "DRAFT_PARTIAL; user-selected original RESPONSE reusable; background and paper-equivalence gaps remain",
+  "exclusions": "This manifest and transient browser caches are excluded from their own hash inventory"
+}

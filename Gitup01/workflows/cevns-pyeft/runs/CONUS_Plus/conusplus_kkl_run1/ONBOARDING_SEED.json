@@ -1,0 +1,2989 @@
+{
+  "old_version": "v2_20261106_response_flux",
+  "new_version": "v3_20261106_provenance",
+  "old_source_register": {
+    "experiment_slug": "CONUS_Plus",
+    "dataset_id": "conusplus_kkl_run1",
+    "document_version": "v2_20261106_response_flux",
+    "sources": [
+      {
+        "source_id": "S0001",
+        "reference_number": 1,
+        "title": "CONUS+ 19-bin benchmark",
+        "uri_or_path": "docs/references/CONUS/2501.17843v3.pdf",
+        "sha256": "b20923363badde299106a6df83f0dff5308fd69d652b59b9967d32b764057c90",
+        "citation": "V. De Romeri, D. K. Papoulias, and G. Sanchez Garcia, \"Implications of the first CONUS+ measurement of coherent elastic neutrino-nucleus scattering,\" Phys. Rev. D **111**, 075025 (2025).",
+        "url": "https://arxiv.org/abs/2501.17843v3",
+        "doi": "10.1103/PhysRevD.111.075025",
+        "locator": "v3; Sec. III, Eqs. (26)-(33), Fig. 1; Eq. (34), Table II",
+        "verification": "primary_read",
+        "accessed": "2026-11-06"
+      },
+      {
+        "source_id": "S0002",
+        "reference_number": 4,
+        "title": "User-supplied unpublished CONUS project note",
+        "uri_or_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS\\Gitup01\\docs\\CONUS_docs\\2026_07_16_CEvNSpyEFT - CONUS.pdf",
+        "sha256": "2f0d7901c92858b2bb2319cfced1986b3d42dba2d441fc51b4d0b715280685d8",
+        "citation": "作者未署名，\"CEνNS-pyEFT 逐文件物理编程笔记：从 LEFT Wilson 系数到 COHERENT 分箱事件数\"，第1章 \"CONUS+ 的 73Ge 现象学分析\"，未发表项目笔记（2026），用户提供，访问日期2026-11-06。",
+        "url": null,
+        "doi": null,
+        "locator": "filename 2026_07_16_CEvNSpyEFT - CONUS.pdf; Flux Sec. 1.4.1; PDF pp. 4-6, printed pp. 3-5; Tables 1/2",
+        "verification": "user_document_read_not_peer_reviewed",
+        "accessed": "2026-11-06"
+      },
+      {
+        "source_id": "S0003",
+        "reference_number": 2,
+        "title": "Mueller original spectrum coefficients",
+        "uri_or_path": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/onboarding_versions/v2_20261106_response_flux/sources/1101.2663v3.pdf",
+        "sha256": "1421b06de707afa7d5bd6ec2a61b31a011bc069a6d7358e477a7a49695afa429",
+        "citation": "Th. A. Mueller et al., \"Improved predictions of reactor antineutrino spectra,\" Phys. Rev. C **83**, 054615 (2011).",
+        "url": "https://arxiv.org/abs/1101.2663v3",
+        "doi": "10.1103/PhysRevC.83.054615",
+        "locator": "Eq. (12), Table VI, PDF p. 13; nominal coefficient arrays verified 24/24",
+        "verification": "primary_read",
+        "accessed": "2026-11-06"
+      },
+      {
+        "source_id": "S0004",
+        "reference_number": 3,
+        "title": "Kopeikin original publication: metadata verified, numeric table pending",
+        "uri_or_path": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/onboarding_versions/v2_20261106_response_flux/sources/kopeikin_2012_publisher.html",
+        "sha256": "a512f096496f388b81046dae0652aa2e399bc28a9c76297a346ce08ae74ac447",
+        "citation": "V. I. Kopeikin, \"Flux and spectrum of reactor antineutrinos,\" Phys. At. Nucl. **75**, 143-152 (2012).",
+        "url": "https://link.springer.com/article/10.1134/S1063778812020123",
+        "doi": "10.1134/S1063778812020123",
+        "locator": "Publisher title/author/volume/pages/DOI verified; subscription full text and exact 32-node source table not acquired",
+        "verification": "metadata_only_not_numeric_table_verified",
+        "accessed": "2026-11-06"
+      },
+      {
+        "source_id": "S0005",
+        "reference_number": 5,
+        "title": "NIST Ge isotopic masses and compositions",
+        "uri_or_path": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/onboarding_versions/v2_20261106_response_flux/sources/nist_ge_isotopic_masses.html",
+        "sha256": "3dd6571ed66ea7046a444e3eb02c5dfe30ee559054a9c2a877ff4ca054a221c5",
+        "citation": "NIST Physical Measurement Laboratory, \"Atomic weights and isotopic compositions for germanium,\" online data table, accessed 2026-11-06.",
+        "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Ge",
+        "doi": null,
+        "locator": "Ge70, Ge72, Ge73, Ge74, Ge76 rows; relative atomic masses and number abundances",
+        "verification": "primary_read",
+        "accessed": "2026-11-06"
+      },
+      {
+        "source_id": "S0006",
+        "reference_number": 6,
+        "title": "NIST CODATA 2022 constants",
+        "uri_or_path": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/onboarding_versions/v2_20261106_response_flux/sources/nist_codata2022_allascii.txt",
+        "sha256": "77fb90e66c40db3e6eb16630bc9c88e4c7c8beddbe5e71be406f2f26e3f67e67",
+        "citation": "NIST Physical Measurement Laboratory, \"Fundamental physical constants: 2022 CODATA adjustment, complete listing,\" online data table, accessed 2026-11-06.",
+        "url": "https://physics.nist.gov/cuu/Constants/Table/allascii.txt",
+        "doi": null,
+        "locator": "atomic mass constant; atomic mass/electron rest energies; Avogadro constant; Fermi coupling constant",
+        "verification": "primary_read",
+        "accessed": "2026-11-06"
+      },
+      {
+        "source_id": "S0007",
+        "reference_number": 7,
+        "title": "Local Nuclear Response numerical asset",
+        "uri_or_path": "data/responses/responses_all.json",
+        "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+        "citation": "CEvNS-pyEFT project, \"responses_all.json: shared nuclear response tables,\" local numerical/software asset, format Mu2eNRET_ResponseW_v1, snapshot accessed 2026-11-06. 原始核计算表的逐项来源对应尚未闭合。",
+        "url": null,
+        "doi": null,
+        "locator": "nuclei.Ge70/Ge72/Ge73/Ge74/Ge76; np basis; ResponseDB.W_np; exact whole-file SHA256 recorded",
+        "verification": "local_asset_verified_external_nuclear_table_provenance_pending",
+        "accessed": "2026-11-06"
+      },
+      {
+        "source_id": "S0008",
+        "reference_number": 8,
+        "title": "Shared EFT theory reference",
+        "uri_or_path": "docs/references/General_CEvNS/2601.19883v2.pdf",
+        "sha256": "e72ae8b8d7642027b9723ce9758b2477d7322c802b53cef67f561191289d90cd",
+        "citation": "G. Li, C.-Q. Song, F.-J. Tang, and J.-H. Yu, \"Comprehensive effective field theory framework for coherent elastic neutrino-nucleus scattering,\" arXiv:2601.19883v2 (2026).",
+        "url": "https://arxiv.org/abs/2601.19883v2",
+        "doi": null,
+        "locator": "Shared theory/matching/particle-response/nuclear-response framework; not proof of the provenance of every coefficient in S0007",
+        "verification": "primary_read",
+        "accessed": "2026-11-06"
+      },
+      {
+        "source_id": "S0009",
+        "reference_number": 9,
+        "title": "NEON primary-paper cross-check for standard Kopeikin fractions",
+        "uri_or_path": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/onboarding_versions/v2_20261106_response_flux/sources/neon_2023_publisher.html",
+        "sha256": "4b0893c25b159ee2ebf1d628ce61814148f33540464e19d5c74f0e8d5b1ff65f",
+        "citation": "J. J. Choi et al. (NEON Collaboration), \"Exploring coherent elastic neutrino-nucleus scattering using reactor electron antineutrinos in the NEON experiment,\" Eur. Phys. J. C **83**, 226 (2023).",
+        "url": "https://link.springer.com/article/10.1140/epjc/s10052-023-11352-x",
+        "doi": "10.1140/epjc/s10052-023-11352-x",
+        "locator": "Flux discussion accompanying Fig. 24: Kopeikin fractions 0.56/0.31/0.07/0.06 in U235/Pu239/U238/Pu241 order; does not identify these as KKL run fractions",
+        "verification": "primary_read",
+        "accessed": "2026-11-06"
+      },
+      {
+        "source_id": "S0010",
+        "reference_number": 10,
+        "title": "CONUS+ original experiment and KKL fractions",
+        "uri_or_path": "docs/references/CONUS/2501.05206v3.pdf",
+        "sha256": "81a612c6c6d31cd37d3a056e9e44fbc5cd061bc9e8399e3636308ef06c4bfc2d",
+        "citation": "N. Ackermann et al. (CONUS Collaboration), \"Direct observation of coherent elastic antineutrino-nucleus scattering,\" Nature **643**, 1229-1233 (2025).",
+        "url": "https://arxiv.org/abs/2501.05206v3",
+        "doi": "10.1038/s41586-025-09322-2",
+        "locator": "Reactor flux paragraph: U235/U238/Pu239/Pu241 = 53%/8%/32%/7%; official dataset is a separate statistical target",
+        "verification": "primary_read",
+        "accessed": "2026-11-06"
+      },
+      {
+        "source_id": "S0011",
+        "reference_number": null,
+        "title": "Digitized Fig. 1 data asset",
+        "uri_or_path": "data/experiments/CONUS_Plus/conusplus_kkl_run1/statistics/conusplus_2501_17843v3_fig1_digitized.csv",
+        "sha256": "ee4d11af7e543b2d9c895c5e0165d557b68869a1d6dc1b733360e0c41ec4ce60",
+        "citation": "PROJECT_DERIVED extraction from [1], Fig. 1, PDF p. 10, with vector coordinate trace and overlay.",
+        "url": null,
+        "doi": null,
+        "locator": "19 signed excess values and upper/lower endpoints; source is [1], not Table 3 of the user note",
+        "verification": "figure_digitization_checked_not_author_raw_release",
+        "accessed": "2026-11-06",
+        "derived_from_source_ids": [
+          "S0001"
+        ]
+      }
+    ]
+  },
+  "old_evidence_ledger": {
+    "sources": [],
+    "claims": [
+      {
+        "claim_id": "C0001",
+        "field": "document.version",
+        "value": "v2_20261106_response_flux",
+        "unit": "1",
+        "status": "USER_CONFIRMED",
+        "source_id": "S0002",
+        "locator": "User request: create a clearly identified new onboarding version",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0002",
+        "field": "experiment_name",
+        "value": "CONUS+",
+        "unit": "1",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0001",
+        "locator": "Sec. III",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0003",
+        "field": "experiment_slug",
+        "value": "CONUS_Plus",
+        "unit": "1",
+        "status": "PROJECT_DERIVED",
+        "source_id": "S0001",
+        "locator": "Existing isolated dataset namespace",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0004",
+        "field": "requested_claim",
+        "value": "Response-based natural-Ge adaptation, compared with 2501.17843v3 Eq. (33), Eq. (34), Table II; no claim of identical nuclear model",
+        "unit": "1",
+        "status": "USER_CONFIRMED",
+        "source_id": "S0001",
+        "locator": "User selection and benchmark scope",
+        "notes": "",
+        "decision_refs": [
+          "D_V2_001",
+          "D_V2_002"
+        ]
+      },
+      {
+        "claim_id": "C0005",
+        "field": "observable.edges_eVee",
+        "value": [
+          160,
+          170,
+          180,
+          190,
+          200,
+          210,
+          220,
+          230,
+          240,
+          250,
+          260,
+          270,
+          280,
+          290,
+          300,
+          310,
+          320,
+          330,
+          340,
+          350
+        ],
+        "unit": "eVee",
+        "status": "PROJECT_DERIVED",
+        "source_id": "S0011",
+        "locator": "19 plotted centres +/-5 eVee",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0006",
+        "field": "observable.processing",
+        "value": "background-subtracted signed excess",
+        "unit": "1",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0001",
+        "locator": "Sec. III; Eq. (33); Fig. 1",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0007",
+        "field": "observable.native_unit",
+        "value": "counts kg^-1 (10 eVee)^-1",
+        "unit": "1",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0001",
+        "locator": "Fig. 1 vertical axis",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0008",
+        "field": "source.flavor",
+        "value": "electron antineutrino; active initial density diag(1,0,0)",
+        "unit": "1",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0001",
+        "locator": "Sec. III reactor source",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0009",
+        "field": "source.total_flux",
+        "value": 15000000000000.0,
+        "unit": "cm^-2*s^-1",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0001",
+        "locator": "Sec. III; [4] Eq. (1.17)",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0010",
+        "field": "source.energy_max",
+        "value": 10.0,
+        "unit": "MeV",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0002",
+        "locator": "Eqs. (1.18)-(1.19); a chosen 0-10 MeV model domain",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0011",
+        "field": "source.join_energy",
+        "value": 2.0,
+        "unit": "MeV",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0001",
+        "locator": "Sec. III; [4] Eqs. (1.27)-(1.28)",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0012",
+        "field": "source.mueller_coefficients",
+        "value": [
+          [
+            3.217,
+            -3.111,
+            1.395,
+            -0.369,
+            0.04445,
+            -0.002053
+          ],
+          [
+            0.4833,
+            0.1927,
+            -0.1283,
+            -0.006762,
+            0.002233,
+            -0.0001536
+          ],
+          [
+            6.413,
+            -7.432,
+            3.535,
+            -0.882,
+            0.1025,
+            -0.00455
+          ],
+          [
+            3.251,
+            -3.204,
+            1.428,
+            -0.3675,
+            0.04254,
+            -0.001896
+          ]
+        ],
+        "unit": "1",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0003",
+        "locator": "Eq. (12), Table VI, PDF p. 13; exponent uses numerical E/MeV",
+        "notes": "All 24 entries independently compared with the original PDF; original spectra have per-fission units, used here only as relative shapes before total-flux normalization.",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0013",
+        "field": "source.low_nodes",
+        "value": [
+          [
+            0.01,
+            0.0774
+          ],
+          [
+            0.02,
+            0.301
+          ],
+          [
+            0.035,
+            0.848
+          ],
+          [
+            0.04,
+            0.354
+          ],
+          [
+            0.07,
+            0.989
+          ],
+          [
+            0.1,
+            1.81
+          ],
+          [
+            0.13,
+            2.74
+          ],
+          [
+            0.16,
+            3.85
+          ],
+          [
+            0.165,
+            3.26
+          ],
+          [
+            0.18,
+            3.74
+          ],
+          [
+            0.215,
+            4.66
+          ],
+          [
+            0.23,
+            4.08
+          ],
+          [
+            0.28,
+            5.03
+          ],
+          [
+            0.33,
+            5.97
+          ],
+          [
+            0.335,
+            4.3
+          ],
+          [
+            0.35,
+            4.08
+          ],
+          [
+            0.39,
+            4.42
+          ],
+          [
+            0.4,
+            4.04
+          ],
+          [
+            0.435,
+            4.39
+          ],
+          [
+            0.44,
+            2.84
+          ],
+          [
+            0.5,
+            3.03
+          ],
+          [
+            0.7,
+            3.14
+          ],
+          [
+            0.9,
+            3.23
+          ],
+          [
+            1.0,
+            3.11
+          ],
+          [
+            1.19,
+            2.24
+          ],
+          [
+            1.25,
+            2.06
+          ],
+          [
+            1.3,
+            1.77
+          ],
+          [
+            1.5,
+            1.59
+          ],
+          [
+            1.7,
+            1.48
+          ],
+          [
+            1.8,
+            1.42
+          ],
+          [
+            1.9,
+            1.36
+          ],
+          [
+            2.0,
+            1.3
+          ]
+        ],
+        "unit": "1",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0002",
+        "locator": "Table 2, PDF p. 6 (printed p. 5)",
+        "notes": "32 node pairs are copied from the user note, whose attribution to Kopeikin 2012 is recorded as unverified at the original-table level. Columns: MeV and relative shape; no unverified absolute units inferred.",
+        "decision_refs": [],
+        "claimed_primary_source_id": "S0004",
+        "primary_table_verified": false
+      },
+      {
+        "claim_id": "C0014",
+        "field": "source.fission_fractions",
+        "value": {
+          "U235": 0.56,
+          "U238": 0.07,
+          "Pu239": 0.31,
+          "Pu241": 0.06
+        },
+        "unit": "1",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0002",
+        "locator": "Eqs. (1.22)-(1.26), PDF p. 5",
+        "notes": "Reference-model fractions; independently seen in [9] as Kopeikin-model fractions, not KKL measurement fractions. Kept distinct from [10].",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0015",
+        "field": "source.endpoint_mode",
+        "value": "Add (0,0) and linearly interpolate to the first original node",
+        "unit": "1",
+        "status": "USER_CONFIRMED",
+        "source_id": "S0002",
+        "locator": "Explicit user reply D_V2_003",
+        "notes": "",
+        "decision_refs": [
+          "D_V2_003"
+        ]
+      },
+      {
+        "claim_id": "C0016",
+        "field": "source.match_factor",
+        "value": 0.9677534794383329,
+        "unit": "1",
+        "status": "PROJECT_DERIVED",
+        "source_id": "S0002",
+        "locator": "Eq. (1.27), evaluated from the selected tables",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0017",
+        "field": "source.normalization_integral",
+        "value": 6.461600041891649,
+        "unit": "MeV",
+        "status": "PROJECT_DERIVED",
+        "source_id": "S0002",
+        "locator": "Eqs. (1.19), (1.28), with user-approved zero endpoint",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0018",
+        "field": "source.flux_table",
+        "value": "data/experiments/CONUS_Plus/conusplus_kkl_run1/onboarding_versions/v2_20261106_response_flux/reactor_flux_v2.csv",
+        "unit": "cm^-2*s^-1*MeV^-1",
+        "status": "PROJECT_DERIVED",
+        "source_id": "S0002",
+        "locator": "Selected source formula sampled every 0.001 MeV; data provenance in P00/P01",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0019",
+        "field": "source.formula_vs_grid",
+        "value": "Piecewise analytic/linear prescription is authoritative; CSV is a sampled review table, not a claim of an already bound runtime source",
+        "unit": "1",
+        "status": "PROJECT_DERIVED",
+        "source_id": "S0002",
+        "locator": "v2 numerical representation",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0020",
+        "field": "target.number_fractions",
+        "value": {
+          "Ge70": 0.2057,
+          "Ge72": 0.2745,
+          "Ge73": 0.0775,
+          "Ge74": 0.365,
+          "Ge76": 0.0773
+        },
+        "unit": "1",
+        "status": "USER_CONFIRMED",
+        "source_id": "S0001",
+        "locator": "Sec. III, PDF p. 9; NIST [5] confirms the same central values",
+        "notes": "",
+        "decision_refs": [
+          "D_V2_002"
+        ]
+      },
+      {
+        "claim_id": "C0021",
+        "field": "target.atomic_mass_kg",
+        "value": {
+          "Ge70": 1.1611194691425548e-25,
+          "Ge72": 1.1942941682689966e-25,
+          "Ge73": 1.2109225263722207e-25,
+          "Ge74": 1.2274900369272075e-25,
+          "Ge76": 1.2607045539373237e-25
+        },
+        "unit": "kg",
+        "status": "PROJECT_DERIVED",
+        "source_id": "S0005",
+        "locator": "Ge isotope rows; multiplied by CODATA [6] atomic mass constant",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0022",
+        "field": "target.nuclei_per_kg",
+        "value": {
+          "Ge70": 1.705625964555e+24,
+          "Ge72": 2.276102709142e+24,
+          "Ge73": 6.426155189744e+23,
+          "Ge74": 3.026511799041e+24,
+          "Ge76": 6.409571563448e+23
+        },
+        "unit": "nuclei/kg",
+        "status": "PROJECT_DERIVED",
+        "source_id": "S0005",
+        "locator": "Natural-isotope atom inventory; see natural_ge_inventory.csv",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0023",
+        "field": "target.nuclear_mass_GeV",
+        "value": {
+          "Ge70": 65.117673451254,
+          "Ge72": 66.9786375928,
+          "Ge73": 67.911420073959,
+          "Ge74": 68.840789257987,
+          "Ge76": 70.703987018998
+        },
+        "unit": "GeV",
+        "status": "PROJECT_DERIVED",
+        "source_id": "S0005",
+        "locator": "Atomic mass times u energy minus Z electron rest energy [6]",
+        "notes": "Electron binding correction omitted explicitly; approximate nuclear kinematic masses, not atomic masses passed silently as nuclear masses.",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0024",
+        "field": "target.detector_mass",
+        "value": 1.0,
+        "unit": "kg",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0001",
+        "locator": "Sec. III, PDF p. 10 effective detector",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0025",
+        "field": "target.exposure",
+        "value": 119.0,
+        "unit": "kg*d",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0001",
+        "locator": "Sec. III, PDF p. 10 effective exposure",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0026",
+        "field": "interaction_module",
+        "value": "li2026_sm_left_v1",
+        "unit": "1",
+        "status": "REFERENCE_ONLY",
+        "source_id": "S0008",
+        "locator": "Existing binding registry; SM reference with vector NSI mapping audited before fitting",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0027",
+        "field": "nuclear_structure_module",
+        "value": "nuclear_np_polynomial_v1",
+        "unit": "1",
+        "status": "USER_CONFIRMED",
+        "source_id": "S0007",
+        "locator": "Explicit user choice Nuclear Response; independent of interaction theory",
+        "notes": "",
+        "decision_refs": [
+          "D_V2_001"
+        ]
+      },
+      {
+        "claim_id": "C0028",
+        "field": "nuclear.response_resource",
+        "value": "data/responses/responses_all.json",
+        "unit": "1",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0007",
+        "locator": "nuclei.Ge70/Ge72/Ge73/Ge74/Ge76",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0029",
+        "field": "nuclear.response_keys",
+        "value": [
+          "Ge70",
+          "Ge72",
+          "Ge73",
+          "Ge74",
+          "Ge76"
+        ],
+        "unit": "1",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0007",
+        "locator": "All five keys read and finite W matrices checked",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0030",
+        "field": "interaction.fermi_GeV_minus2",
+        "value": 1.1663787e-05,
+        "unit": "GeV^-2",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0006",
+        "locator": "Fermi coupling constant row",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0031",
+        "field": "interaction.sin2thetaW_reference",
+        "value": 0.23857,
+        "unit": "1",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0001",
+        "locator": "Sec. II A, low-energy SM reference; scanned when fitting Eq. (34)",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0032",
+        "field": "kinematics_module",
+        "value": "elastic_kinematics_v1",
+        "unit": "1",
+        "status": "REFERENCE_ONLY",
+        "source_id": "S0008",
+        "locator": "Existing registry; benchmark heavy-target approximation versus exact support must be audited",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0033",
+        "field": "cross_section_module",
+        "value": "li2026_dsigma_v1",
+        "unit": "1",
+        "status": "REFERENCE_ONLY",
+        "source_id": "S0008",
+        "locator": "Existing shared cross-section; antineutrino binding/normalization audit pending",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0034",
+        "field": "detector.Z",
+        "value": 32,
+        "unit": "1",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0001",
+        "locator": "PDF pp. 9-10; Ge atomic number; [5]",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0035",
+        "field": "detector.k",
+        "value": 0.162,
+        "unit": "1",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0001",
+        "locator": "PDF pp. 9-10; Eq. (31)",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0036",
+        "field": "detector.sigma0",
+        "value": 20.38,
+        "unit": "eVee",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0001",
+        "locator": "PDF pp. 9-10; Eqs. (29)-(30)",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0037",
+        "field": "detector.fano",
+        "value": 0.1096,
+        "unit": "1",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0001",
+        "locator": "PDF pp. 9-10; Eq. (30)",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0038",
+        "field": "detector.pair_energy",
+        "value": 2.96,
+        "unit": "eVee",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0001",
+        "locator": "PDF pp. 9-10; Eq. (30)",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0039",
+        "field": "detector.threshold",
+        "value": 160.0,
+        "unit": "eVee",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0001",
+        "locator": "PDF pp. 9-10; Sec. III effective detector",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0040",
+        "field": "detector.efficiency",
+        "value": "unity above the selected 160 eVee threshold; no additional official trigger correction",
+        "unit": "1",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0001",
+        "locator": "Sec. III efficiency approximation",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0041",
+        "field": "numerics.seconds_per_day",
+        "value": 86400.0,
+        "unit": "s/d",
+        "status": "PROJECT_DERIVED",
+        "source_id": "S0006",
+        "locator": "Unit definition, derived constant",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0042",
+        "field": "numerics.minimum_true_ionization",
+        "value": 2.96,
+        "unit": "eVee",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0001",
+        "locator": "Sec. III, PDF p. 9",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0043",
+        "field": "numerics.plan",
+        "value": "Direct integral; split source at each low-energy node and at 2 MeV; integrate Gaussian over bins without ROI renormalization; verify grid convergence before use",
+        "unit": "1",
+        "status": "PROJECT_DERIVED",
+        "source_id": "S0001",
+        "locator": "Eqs. (26)-(32); v2 numerical plan",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0044",
+        "field": "fast.requested",
+        "value": false,
+        "unit": "1",
+        "status": "PROJECT_DERIVED",
+        "source_id": "S0001",
+        "locator": "Current request is onboarding/data preparation; supplied note Fast instructions not adopted",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0045",
+        "field": "statistics.model_id",
+        "value": "gaussian_one_pull_legacy_v1",
+        "unit": "1",
+        "status": "REFERENCE_ONLY",
+        "source_id": "S0001",
+        "locator": "Eq. (33); existing component formula has the same analytic one-pull profile",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0046",
+        "field": "statistics.observed",
+        "value": [
+          13.271,
+          38.0685,
+          29.0966,
+          21.3707,
+          12.2741,
+          4.9221,
+          4.2991,
+          0.0623,
+          9.1589,
+          2.4299,
+          3.9252,
+          -2.5545,
+          0.5607,
+          -10.5296,
+          -4.2991,
+          -8.785,
+          -0.5607,
+          -0.9346,
+          13.5202
+        ],
+        "unit": "counts/kg/(10eVee)",
+        "status": "PROJECT_DERIVED",
+        "source_id": "S0011",
+        "locator": "Digitized Fig. 1 CSV; signed values preserved",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0047",
+        "field": "statistics.error_minus",
+        "value": [
+          22.9283,
+          15.7009,
+          12.5857,
+          12.2118,
+          11.5888,
+          11.5888,
+          11.215,
+          10.8411,
+          11.0903,
+          10.3427,
+          10.4673,
+          10.8411,
+          10.4673,
+          10.3427,
+          10.2181,
+          10.2181,
+          9.9688,
+          9.8442,
+          9.7196
+        ],
+        "unit": "counts/kg/(10eVee)",
+        "status": "PROJECT_DERIVED",
+        "source_id": "S0011",
+        "locator": "CSV lower error lengths",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0048",
+        "field": "statistics.error_plus",
+        "value": [
+          23.053,
+          15.7009,
+          12.7103,
+          12.2118,
+          11.4642,
+          11.5888,
+          11.3396,
+          10.7165,
+          10.9657,
+          10.2181,
+          10.2181,
+          10.7165,
+          10.2181,
+          9.9688,
+          9.9688,
+          9.595,
+          9.7196,
+          9.7196,
+          9.4704
+        ],
+        "unit": "counts/kg/(10eVee)",
+        "status": "PROJECT_DERIVED",
+        "source_id": "S0011",
+        "locator": "CSV upper error lengths",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0049",
+        "field": "statistics.sigma_mean",
+        "value": [
+          22.9907,
+          15.7009,
+          12.648,
+          12.2118,
+          11.5265,
+          11.5888,
+          11.2773,
+          10.7788,
+          11.028,
+          10.2804,
+          10.3427,
+          10.7788,
+          10.3427,
+          10.1558,
+          10.0935,
+          9.9065,
+          9.8442,
+          9.7819,
+          9.595
+        ],
+        "unit": "counts/kg/(10eVee)",
+        "status": "PROJECT_DERIVED",
+        "source_id": "S0011",
+        "locator": "Arithmetic mean of plotted upper/lower lengths; explicit candidate statistical convention",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0050",
+        "field": "statistics.sigma_alpha",
+        "value": 0.169,
+        "unit": "1",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0001",
+        "locator": "Eq. (33), PDF p. 10; cumulative systematic prior, no duplicated component pulls",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0051",
+        "field": "statistics.inference",
+        "value": "1D 1-sigma comparisons use Delta chi2=1 with other NSI zero and full disconnected branches; no official discovery significance claimed",
+        "unit": "1",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0001",
+        "locator": "Eq. (34), Table II; candidate inference contract",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0052",
+        "field": "benchmark.targets",
+        "value": {
+          "weak_angle": {
+            "best_fit": 0.247,
+            "sigma": 0.052
+          },
+          "eps_uV_ee": [
+            [
+              -0.037,
+              0.026
+            ],
+            [
+              0.348,
+              0.411
+            ]
+          ],
+          "eps_dV_ee": [
+            [
+              -0.034,
+              0.024
+            ],
+            [
+              0.322,
+              0.38
+            ]
+          ],
+          "eps_uV_emu": [
+            [
+              -0.123,
+              0.123
+            ]
+          ],
+          "eps_dV_emu": [
+            [
+              -0.114,
+              0.114
+            ]
+          ],
+          "eps_uV_etau": [
+            [
+              -0.123,
+              0.123
+            ]
+          ],
+          "eps_dV_etau": [
+            [
+              -0.114,
+              0.114
+            ]
+          ]
+        },
+        "unit": "1",
+        "status": "SOURCE_EXTRACTED",
+        "source_id": "S0001",
+        "locator": "Eq. (34), Table II; literature values, not computed results",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0053",
+        "field": "provenance.open_items",
+        "value": [
+          "Kopeikin 32-node primary-table comparison not complete",
+          "Local response table original nuclear calculation mapping not closed",
+          "Antineutrino/core and experiment adapter compatibility not certified"
+        ],
+        "unit": "1",
+        "status": "PROJECT_DERIVED",
+        "source_id": "S0007",
+        "locator": "P02 v2; no provenance gap hidden as verified",
+        "notes": "",
+        "decision_refs": []
+      },
+      {
+        "claim_id": "C0054",
+        "field": "version.scope",
+        "value": "v2 isolated review; original version bytes preserved; no runtime registration, fit, or canonical promotion",
+        "unit": "1",
+        "status": "USER_CONFIRMED",
+        "source_id": "S0002",
+        "locator": "Current user request",
+        "notes": "",
+        "decision_refs": []
+      }
+    ]
+  },
+  "old_physics_contract": {
+    "contract_version": 4,
+    "dataset_id": "conusplus_kkl_run1",
+    "scientific_claim": "Response-based natural-Ge adaptation with the reference-PDF Flux; compare with, not claim identical reproduction of, 2501.17843v3.",
+    "sections": {
+      "identity_and_goal": {
+        "decision_status": "DRAFT",
+        "fields": {
+          "document.version": {
+            "value": "v2_20261106_response_flux",
+            "unit": "1",
+            "evidence_claims": [
+              "C0001"
+            ],
+            "provenance_status": "USER_CONFIRMED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "experiment_name": {
+            "value": "CONUS+",
+            "unit": "1",
+            "evidence_claims": [
+              "C0002"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "experiment_slug": {
+            "value": "CONUS_Plus",
+            "unit": "1",
+            "evidence_claims": [
+              "C0003"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "requested_claim": {
+            "value": "Response-based natural-Ge adaptation, compared with 2501.17843v3 Eq. (33), Eq. (34), Table II; no claim of identical nuclear model",
+            "unit": "1",
+            "evidence_claims": [
+              "C0004"
+            ],
+            "provenance_status": "USER_CONFIRMED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          }
+        },
+        "decision_refs": [],
+        "evidence_refs": [
+          "C0001",
+          "C0002",
+          "C0003",
+          "C0004"
+        ]
+      },
+      "dataset": {
+        "decision_status": "DRAFT",
+        "fields": {
+          "observable.edges_eVee": {
+            "value": [
+              160,
+              170,
+              180,
+              190,
+              200,
+              210,
+              220,
+              230,
+              240,
+              250,
+              260,
+              270,
+              280,
+              290,
+              300,
+              310,
+              320,
+              330,
+              340,
+              350
+            ],
+            "unit": "eVee",
+            "evidence_claims": [
+              "C0005"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "observable.processing": {
+            "value": "background-subtracted signed excess",
+            "unit": "1",
+            "evidence_claims": [
+              "C0006"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "observable.native_unit": {
+            "value": "counts kg^-1 (10 eVee)^-1",
+            "unit": "1",
+            "evidence_claims": [
+              "C0007"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          }
+        },
+        "decision_refs": [],
+        "evidence_refs": [
+          "C0005",
+          "C0006",
+          "C0007"
+        ]
+      },
+      "target_and_exposure": {
+        "decision_status": "DRAFT",
+        "fields": {
+          "target.number_fractions": {
+            "value": {
+              "Ge70": 0.2057,
+              "Ge72": 0.2745,
+              "Ge73": 0.0775,
+              "Ge74": 0.365,
+              "Ge76": 0.0773
+            },
+            "unit": "1",
+            "evidence_claims": [
+              "C0020"
+            ],
+            "provenance_status": "USER_CONFIRMED",
+            "decision_status": "APPROVED",
+            "blocking_scope": []
+          },
+          "target.atomic_mass_kg": {
+            "value": {
+              "Ge70": 1.1611194691425548e-25,
+              "Ge72": 1.1942941682689966e-25,
+              "Ge73": 1.2109225263722207e-25,
+              "Ge74": 1.2274900369272075e-25,
+              "Ge76": 1.2607045539373237e-25
+            },
+            "unit": "kg",
+            "evidence_claims": [
+              "C0021"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "target.nuclei_per_kg": {
+            "value": {
+              "Ge70": 1.705625964555e+24,
+              "Ge72": 2.276102709142e+24,
+              "Ge73": 6.426155189744e+23,
+              "Ge74": 3.026511799041e+24,
+              "Ge76": 6.409571563448e+23
+            },
+            "unit": "nuclei/kg",
+            "evidence_claims": [
+              "C0022"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "target.nuclear_mass_GeV": {
+            "value": {
+              "Ge70": 65.117673451254,
+              "Ge72": 66.9786375928,
+              "Ge73": 67.911420073959,
+              "Ge74": 68.840789257987,
+              "Ge76": 70.703987018998
+            },
+            "unit": "GeV",
+            "evidence_claims": [
+              "C0023"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "target.detector_mass": {
+            "value": 1.0,
+            "unit": "kg",
+            "evidence_claims": [
+              "C0024"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "target.exposure": {
+            "value": 119.0,
+            "unit": "kg*d",
+            "evidence_claims": [
+              "C0025"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "paper_equations": {
+            "value": [
+              {
+                "id": "natural_inventory",
+                "title": "天然Ge每公斤核数 [1; 5; 6]",
+                "latex": "\\overline m_{\\rm atom}=\\sum_i x_i m_i^{\\rm atom},\\qquad n_i=\\frac{x_i}{\\overline m_{\\rm atom}},\\qquad \\sum_i x_i=1.",
+                "symbols": [
+                  {
+                    "symbol": "x_i",
+                    "definition": "天然Ge核素数分数",
+                    "unit": "1",
+                    "parameter_ref": "target.number_fractions"
+                  },
+                  {
+                    "symbol": "m_i^{\\rm atom}",
+                    "definition": "中性原子质量，用于每公斤库存",
+                    "unit": "kg",
+                    "parameter_ref": "target.atomic_mass_kg"
+                  },
+                  {
+                    "symbol": "\\overline m_{\\rm atom}",
+                    "definition": "平均中性原子质量",
+                    "unit": "kg",
+                    "parameter_ref": null
+                  },
+                  {
+                    "symbol": "n_i",
+                    "definition": "每公斤材料中核素i的核数",
+                    "unit": "nuclei/kg",
+                    "parameter_ref": "target.nuclei_per_kg"
+                  }
+                ]
+              }
+            ],
+            "unit": "1",
+            "evidence_claims": [
+              "C0020",
+              "C0021",
+              "C0022",
+              "C0023",
+              "C0024",
+              "C0025"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          }
+        },
+        "decision_refs": [],
+        "evidence_refs": [
+          "C0020",
+          "C0021",
+          "C0022",
+          "C0023",
+          "C0024",
+          "C0025"
+        ]
+      },
+      "source": {
+        "decision_status": "DRAFT",
+        "fields": {
+          "source.flavor": {
+            "value": "electron antineutrino; active initial density diag(1,0,0)",
+            "unit": "1",
+            "evidence_claims": [
+              "C0008"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "source.total_flux": {
+            "value": 15000000000000.0,
+            "unit": "cm^-2*s^-1",
+            "evidence_claims": [
+              "C0009"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "source.energy_max": {
+            "value": 10.0,
+            "unit": "MeV",
+            "evidence_claims": [
+              "C0010"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "source.join_energy": {
+            "value": 2.0,
+            "unit": "MeV",
+            "evidence_claims": [
+              "C0011"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "source.mueller_coefficients": {
+            "value": [
+              [
+                3.217,
+                -3.111,
+                1.395,
+                -0.369,
+                0.04445,
+                -0.002053
+              ],
+              [
+                0.4833,
+                0.1927,
+                -0.1283,
+                -0.006762,
+                0.002233,
+                -0.0001536
+              ],
+              [
+                6.413,
+                -7.432,
+                3.535,
+                -0.882,
+                0.1025,
+                -0.00455
+              ],
+              [
+                3.251,
+                -3.204,
+                1.428,
+                -0.3675,
+                0.04254,
+                -0.001896
+              ]
+            ],
+            "unit": "1",
+            "evidence_claims": [
+              "C0012"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "source.low_nodes": {
+            "value": [
+              [
+                0.01,
+                0.0774
+              ],
+              [
+                0.02,
+                0.301
+              ],
+              [
+                0.035,
+                0.848
+              ],
+              [
+                0.04,
+                0.354
+              ],
+              [
+                0.07,
+                0.989
+              ],
+              [
+                0.1,
+                1.81
+              ],
+              [
+                0.13,
+                2.74
+              ],
+              [
+                0.16,
+                3.85
+              ],
+              [
+                0.165,
+                3.26
+              ],
+              [
+                0.18,
+                3.74
+              ],
+              [
+                0.215,
+                4.66
+              ],
+              [
+                0.23,
+                4.08
+              ],
+              [
+                0.28,
+                5.03
+              ],
+              [
+                0.33,
+                5.97
+              ],
+              [
+                0.335,
+                4.3
+              ],
+              [
+                0.35,
+                4.08
+              ],
+              [
+                0.39,
+                4.42
+              ],
+              [
+                0.4,
+                4.04
+              ],
+              [
+                0.435,
+                4.39
+              ],
+              [
+                0.44,
+                2.84
+              ],
+              [
+                0.5,
+                3.03
+              ],
+              [
+                0.7,
+                3.14
+              ],
+              [
+                0.9,
+                3.23
+              ],
+              [
+                1.0,
+                3.11
+              ],
+              [
+                1.19,
+                2.24
+              ],
+              [
+                1.25,
+                2.06
+              ],
+              [
+                1.3,
+                1.77
+              ],
+              [
+                1.5,
+                1.59
+              ],
+              [
+                1.7,
+                1.48
+              ],
+              [
+                1.8,
+                1.42
+              ],
+              [
+                1.9,
+                1.36
+              ],
+              [
+                2.0,
+                1.3
+              ]
+            ],
+            "unit": "1",
+            "evidence_claims": [
+              "C0013"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "source.fission_fractions": {
+            "value": {
+              "U235": 0.56,
+              "U238": 0.07,
+              "Pu239": 0.31,
+              "Pu241": 0.06
+            },
+            "unit": "1",
+            "evidence_claims": [
+              "C0014"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "source.endpoint_mode": {
+            "value": "Add (0,0) and linearly interpolate to the first original node",
+            "unit": "1",
+            "evidence_claims": [
+              "C0015"
+            ],
+            "provenance_status": "USER_CONFIRMED",
+            "decision_status": "APPROVED",
+            "blocking_scope": []
+          },
+          "source.match_factor": {
+            "value": 0.9677534794383329,
+            "unit": "1",
+            "evidence_claims": [
+              "C0016"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "source.normalization_integral": {
+            "value": 6.461600041891649,
+            "unit": "MeV",
+            "evidence_claims": [
+              "C0017"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "source.flux_table": {
+            "value": "data/experiments/CONUS_Plus/conusplus_kkl_run1/onboarding_versions/v2_20261106_response_flux/reactor_flux_v2.csv",
+            "unit": "cm^-2*s^-1*MeV^-1",
+            "evidence_claims": [
+              "C0018"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "source.formula_vs_grid": {
+            "value": "Piecewise analytic/linear prescription is authoritative; CSV is a sampled review table, not a claim of an already bound runtime source",
+            "unit": "1",
+            "evidence_claims": [
+              "C0019"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "paper_equations": {
+            "value": [
+              {
+                "id": "mueller_shape",
+                "title": "Mueller混合相对谱形 [2, Eq. (12), Table VI; 4, Table 1]",
+                "latex": "\\rho_H(E_\\nu)=\\sum_r f_r\\exp\\!\\left[\\sum_{n=0}^{5}a_{rn}\\left(\\frac{E_\\nu}{\\mathrm{MeV}}\\right)^n\\right].",
+                "symbols": [
+                  {
+                    "symbol": "E_\\nu",
+                    "definition": "入射中微子能量",
+                    "unit": "MeV",
+                    "parameter_ref": null
+                  },
+                  {
+                    "symbol": "a_{rn}",
+                    "definition": "按E/MeV约定使用的系数数值",
+                    "unit": "1",
+                    "parameter_ref": "source.mueller_coefficients"
+                  },
+                  {
+                    "symbol": "f_r",
+                    "definition": "参考PDF的裂变份额",
+                    "unit": "1",
+                    "parameter_ref": "source.fission_fractions"
+                  },
+                  {
+                    "symbol": "\\rho_H",
+                    "definition": "归一化前相对数值谱形",
+                    "unit": "1",
+                    "parameter_ref": null
+                  }
+                ]
+              },
+              {
+                "id": "source_match",
+                "title": "拼接与归一化；零节点是用户确认的新选择 [4; D_V2_003]",
+                "latex": "c_m=\\frac{\\rho_H(E_m)}{K(E_m)},\\quad \\rho(E)=\\begin{cases}c_m K_0(E),&0\\le E<E_m,\\\\ \\rho_H(E),&E_m\\le E\\le E_{\\max},\\\\0,&\\text{otherwise},\\end{cases}\\qquad K_0(0)=0.",
+                "symbols": [
+                  {
+                    "symbol": "E_m",
+                    "definition": "拼接能量",
+                    "unit": "MeV",
+                    "parameter_ref": "source.join_energy"
+                  },
+                  {
+                    "symbol": "E_{\\max}",
+                    "definition": "所选模型上限",
+                    "unit": "MeV",
+                    "parameter_ref": "source.energy_max"
+                  },
+                  {
+                    "symbol": "c_m",
+                    "definition": "拼接因子",
+                    "unit": "1",
+                    "parameter_ref": "source.match_factor"
+                  },
+                  {
+                    "symbol": "K_0",
+                    "definition": "加(0,0)后的低能相对谱线性插值",
+                    "unit": "1",
+                    "parameter_ref": null
+                  },
+                  {
+                    "symbol": "K",
+                    "definition": "用户笔记原32节点的相对谱值",
+                    "unit": "1",
+                    "parameter_ref": null
+                  },
+                  {
+                    "symbol": "\\rho",
+                    "definition": "归一化前相对谱形",
+                    "unit": "1",
+                    "parameter_ref": null
+                  }
+                ]
+              },
+              {
+                "id": "absolute_flux",
+                "title": "探测器处总通量归一化 [1, Sec. III; 4, Eqs. (1.16)-(1.20)]",
+                "latex": "\\mathcal N=\\int_0^{E_{\\max}}\\rho(E)\\,dE,\\qquad \\phi(E)=\\Phi_0\\frac{\\rho(E)}{\\mathcal N},\\qquad \\int_0^{E_{\\max}}\\phi(E)\\,dE=\\Phi_0.",
+                "symbols": [
+                  {
+                    "symbol": "\\Phi_0",
+                    "definition": "探测器位置每秒总通量",
+                    "unit": "cm^-2*s^-1",
+                    "parameter_ref": "source.total_flux"
+                  },
+                  {
+                    "symbol": "\\mathcal N",
+                    "definition": "相对谱归一化积分",
+                    "unit": "MeV",
+                    "parameter_ref": "source.normalization_integral"
+                  },
+                  {
+                    "symbol": "\\phi",
+                    "definition": "微分通量；对应默认CSV数值列",
+                    "unit": "cm^-2*s^-1*MeV^-1",
+                    "parameter_ref": "source.flux_table"
+                  },
+                  {
+                    "symbol": "E_{\\max}",
+                    "definition": "模型上限",
+                    "unit": "MeV",
+                    "parameter_ref": "source.energy_max"
+                  }
+                ]
+              }
+            ],
+            "unit": "1",
+            "evidence_claims": [
+              "C0008",
+              "C0009",
+              "C0010",
+              "C0011",
+              "C0012",
+              "C0013",
+              "C0014",
+              "C0015",
+              "C0016",
+              "C0017",
+              "C0018",
+              "C0019"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          }
+        },
+        "decision_refs": [],
+        "evidence_refs": [
+          "C0008",
+          "C0009",
+          "C0010",
+          "C0011",
+          "C0012",
+          "C0013",
+          "C0014",
+          "C0015",
+          "C0016",
+          "C0017",
+          "C0018",
+          "C0019"
+        ]
+      },
+      "theory_response": {
+        "decision_status": "DRAFT",
+        "fields": {
+          "interaction_module": {
+            "value": "li2026_sm_left_v1",
+            "unit": "1",
+            "evidence_claims": [
+              "C0026"
+            ],
+            "provenance_status": "REFERENCE_ONLY",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "nuclear_structure_module": {
+            "value": "nuclear_np_polynomial_v1",
+            "unit": "1",
+            "evidence_claims": [
+              "C0027"
+            ],
+            "provenance_status": "USER_CONFIRMED",
+            "decision_status": "APPROVED",
+            "blocking_scope": []
+          },
+          "nuclear.response_resource": {
+            "value": "data/responses/responses_all.json",
+            "unit": "1",
+            "evidence_claims": [
+              "C0028"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "nuclear.response_keys": {
+            "value": [
+              "Ge70",
+              "Ge72",
+              "Ge73",
+              "Ge74",
+              "Ge76"
+            ],
+            "unit": "1",
+            "evidence_claims": [
+              "C0029"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "interaction.fermi_GeV_minus2": {
+            "value": 1.1663787e-05,
+            "unit": "GeV^-2",
+            "evidence_claims": [
+              "C0030"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "interaction.sin2thetaW_reference": {
+            "value": 0.23857,
+            "unit": "1",
+            "evidence_claims": [
+              "C0031"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          }
+        },
+        "decision_refs": [],
+        "evidence_refs": [
+          "C0026",
+          "C0027",
+          "C0028",
+          "C0029",
+          "C0030",
+          "C0031"
+        ]
+      },
+      "kinematics_cross_section": {
+        "decision_status": "DRAFT",
+        "fields": {
+          "kinematics_module": {
+            "value": "elastic_kinematics_v1",
+            "unit": "1",
+            "evidence_claims": [
+              "C0032"
+            ],
+            "provenance_status": "REFERENCE_ONLY",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "cross_section_module": {
+            "value": "li2026_dsigma_v1",
+            "unit": "1",
+            "evidence_claims": [
+              "C0033"
+            ],
+            "provenance_status": "REFERENCE_ONLY",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          }
+        },
+        "decision_refs": [],
+        "evidence_refs": [
+          "C0032",
+          "C0033"
+        ]
+      },
+      "detector_response": {
+        "decision_status": "DRAFT",
+        "fields": {
+          "detector.Z": {
+            "value": 32,
+            "unit": "1",
+            "evidence_claims": [
+              "C0034"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "detector.k": {
+            "value": 0.162,
+            "unit": "1",
+            "evidence_claims": [
+              "C0035"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "detector.sigma0": {
+            "value": 20.38,
+            "unit": "eVee",
+            "evidence_claims": [
+              "C0036"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "detector.fano": {
+            "value": 0.1096,
+            "unit": "1",
+            "evidence_claims": [
+              "C0037"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "detector.pair_energy": {
+            "value": 2.96,
+            "unit": "eVee",
+            "evidence_claims": [
+              "C0038"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "detector.threshold": {
+            "value": 160.0,
+            "unit": "eVee",
+            "evidence_claims": [
+              "C0039"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "detector.efficiency": {
+            "value": "unity above the selected 160 eVee threshold; no additional official trigger correction",
+            "unit": "1",
+            "evidence_claims": [
+              "C0040"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "paper_equations": {
+            "value": [
+              {
+                "id": "lindhard",
+                "title": "核反冲到平均电离能 [1, Eq. (31)]",
+                "latex": "\\epsilon=11.5Z^{-7/3}\\frac{T}{\\mathrm{keV}},\\quad g(\\epsilon)=3\\epsilon^{0.15}+0.7\\epsilon^{0.6}+\\epsilon,\\quad Q(T)=\\frac{k g(\\epsilon)}{1+k g(\\epsilon)},\\quad \\overline E(T)=10^3 Q(T)\\frac{T}{\\mathrm{keV}}\\,\\mathrm{eVee}.",
+                "symbols": [
+                  {
+                    "symbol": "T",
+                    "definition": "真实核反冲能",
+                    "unit": "keVnr",
+                    "parameter_ref": null
+                  },
+                  {
+                    "symbol": "Z",
+                    "definition": "Ge原子序数",
+                    "unit": "1",
+                    "parameter_ref": "detector.Z"
+                  },
+                  {
+                    "symbol": "k",
+                    "definition": "Lindhard名义参数",
+                    "unit": "1",
+                    "parameter_ref": "detector.k"
+                  },
+                  {
+                    "symbol": "Q",
+                    "definition": "淬灭因子",
+                    "unit": "1",
+                    "parameter_ref": null
+                  },
+                  {
+                    "symbol": "\\overline E",
+                    "definition": "真实平均电离能",
+                    "unit": "eVee",
+                    "parameter_ref": null
+                  },
+                  {
+                    "symbol": "\\epsilon",
+                    "definition": "Lindhard无量纲能量",
+                    "unit": "1",
+                    "parameter_ref": null
+                  }
+                ]
+              },
+              {
+                "id": "gaussian",
+                "title": "分辨率与全域归一响应 [1, Eqs. (29)-(30)]",
+                "latex": "\\sigma^2(E)=\\sigma_0^2+F\\eta E,\\qquad G(x\\mid T)=\\frac{\\exp[-(x-\\overline E(T))^2/(2\\sigma^2(\\overline E(T)))]}{\\sqrt{2\\pi}\\,\\sigma(\\overline E(T))},\\qquad \\int_{-\\infty}^{\\infty}G(x\\mid T)\\,dx=1.",
+                "symbols": [
+                  {
+                    "symbol": "x",
+                    "definition": "重建电离能",
+                    "unit": "eVee",
+                    "parameter_ref": null
+                  },
+                  {
+                    "symbol": "E",
+                    "definition": "展宽前真实电离能",
+                    "unit": "eVee",
+                    "parameter_ref": null
+                  },
+                  {
+                    "symbol": "\\sigma_0",
+                    "definition": "基线分辨率",
+                    "unit": "eVee",
+                    "parameter_ref": "detector.sigma0"
+                  },
+                  {
+                    "symbol": "F",
+                    "definition": "Fano因子",
+                    "unit": "1",
+                    "parameter_ref": "detector.fano"
+                  },
+                  {
+                    "symbol": "\\eta",
+                    "definition": "电子空穴对能量",
+                    "unit": "eVee",
+                    "parameter_ref": "detector.pair_energy"
+                  },
+                  {
+                    "symbol": "G",
+                    "definition": "条件响应密度",
+                    "unit": "eVee^-1",
+                    "parameter_ref": null
+                  },
+                  {
+                    "symbol": "\\sigma",
+                    "definition": "能量分辨率标准差",
+                    "unit": "eVee",
+                    "parameter_ref": null
+                  }
+                ]
+              },
+              {
+                "id": "bin_probability",
+                "title": "选定分箱的响应概率 [1, Eqs. (26), (29), (32); PROJECT_DERIVED]",
+                "latex": "P_b(T)=\\int_{E_b}^{E_{b+1}}G(x\\mid T)\\,dx,\\qquad 0\\le\\sum_b P_b(T)\\le1.",
+                "symbols": [
+                  {
+                    "symbol": "P_b",
+                    "definition": "包含窗口损失的分箱概率",
+                    "unit": "1",
+                    "parameter_ref": null
+                  },
+                  {
+                    "symbol": "E_b",
+                    "definition": "完整20条重建边界",
+                    "unit": "eVee",
+                    "parameter_ref": "observable.edges_eVee"
+                  },
+                  {
+                    "symbol": "G",
+                    "definition": "全域归一Gaussian密度",
+                    "unit": "eVee^-1",
+                    "parameter_ref": null
+                  },
+                  {
+                    "symbol": "T",
+                    "definition": "真实反冲能",
+                    "unit": "keVnr",
+                    "parameter_ref": null
+                  }
+                ]
+              }
+            ],
+            "unit": "1",
+            "evidence_claims": [
+              "C0034",
+              "C0035",
+              "C0036",
+              "C0037",
+              "C0038",
+              "C0039",
+              "C0040"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          }
+        },
+        "decision_refs": [],
+        "evidence_refs": [
+          "C0034",
+          "C0035",
+          "C0036",
+          "C0037",
+          "C0038",
+          "C0039",
+          "C0040"
+        ]
+      },
+      "slow_counts": {
+        "decision_status": "DRAFT",
+        "fields": {
+          "numerics.seconds_per_day": {
+            "value": 86400.0,
+            "unit": "s/d",
+            "evidence_claims": [
+              "C0041"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "numerics.minimum_true_ionization": {
+            "value": 2.96,
+            "unit": "eVee",
+            "evidence_claims": [
+              "C0042"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "numerics.plan": {
+            "value": "Direct integral; split source at each low-energy node and at 2 MeV; integrate Gaussian over bins without ROI renormalization; verify grid convergence before use",
+            "unit": "1",
+            "evidence_claims": [
+              "C0043"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "paper_equations": {
+            "value": [
+              {
+                "id": "fold",
+                "title": "天然Ge实验侧积分与曝光 [1, Eqs. (26), (32); PROJECT_DERIVED]",
+                "latex": "N_b=\\mathcal E\\,c_d\\sum_i n_i\\int dT\\,P_b(T)\\int dE_\\nu\\,\\phi(E_\\nu)\\left[\\frac{d\\sigma_i}{dT}\\right]_{\\rm shared}.",
+                "symbols": [
+                  {
+                    "symbol": "N_b",
+                    "definition": "逐箱预测事件数",
+                    "unit": "events/bin",
+                    "parameter_ref": null
+                  },
+                  {
+                    "symbol": "\\mathcal E",
+                    "definition": "有效曝光",
+                    "unit": "kg*d",
+                    "parameter_ref": "target.exposure"
+                  },
+                  {
+                    "symbol": "c_d",
+                    "definition": "每天秒数",
+                    "unit": "s/d",
+                    "parameter_ref": "numerics.seconds_per_day"
+                  },
+                  {
+                    "symbol": "n_i",
+                    "definition": "每公斤核数",
+                    "unit": "nuclei/kg",
+                    "parameter_ref": "target.nuclei_per_kg"
+                  },
+                  {
+                    "symbol": "P_b",
+                    "definition": "分箱概率",
+                    "unit": "1",
+                    "parameter_ref": null
+                  },
+                  {
+                    "symbol": "\\phi",
+                    "definition": "探测器处微分通量",
+                    "unit": "cm^-2*s^-1*MeV^-1",
+                    "parameter_ref": "source.flux_table"
+                  },
+                  {
+                    "symbol": "d\\sigma_i/dT",
+                    "definition": "公共Response截面输出",
+                    "unit": "cm^2/keVnr",
+                    "parameter_ref": null
+                  },
+                  {
+                    "symbol": "T",
+                    "definition": "积分核反冲能",
+                    "unit": "keVnr",
+                    "parameter_ref": null
+                  },
+                  {
+                    "symbol": "E_\\nu",
+                    "definition": "积分中微子能量",
+                    "unit": "MeV",
+                    "parameter_ref": null
+                  }
+                ]
+              }
+            ],
+            "unit": "1",
+            "evidence_claims": [
+              "C0041",
+              "C0042",
+              "C0043"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          }
+        },
+        "decision_refs": [],
+        "evidence_refs": [
+          "C0041",
+          "C0042",
+          "C0043"
+        ]
+      },
+      "fast_counts": {
+        "decision_status": "DRAFT",
+        "fields": {
+          "fast.requested": {
+            "value": false,
+            "unit": "1",
+            "evidence_claims": [
+              "C0044"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "NOT_APPLICABLE",
+            "blocking_scope": []
+          }
+        },
+        "decision_refs": [],
+        "evidence_refs": [
+          "C0044"
+        ]
+      },
+      "statistics": {
+        "decision_status": "DRAFT",
+        "fields": {
+          "statistics.model_id": {
+            "value": "gaussian_one_pull_legacy_v1",
+            "unit": "1",
+            "evidence_claims": [
+              "C0045"
+            ],
+            "provenance_status": "REFERENCE_ONLY",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "statistics.observed": {
+            "value": [
+              13.271,
+              38.0685,
+              29.0966,
+              21.3707,
+              12.2741,
+              4.9221,
+              4.2991,
+              0.0623,
+              9.1589,
+              2.4299,
+              3.9252,
+              -2.5545,
+              0.5607,
+              -10.5296,
+              -4.2991,
+              -8.785,
+              -0.5607,
+              -0.9346,
+              13.5202
+            ],
+            "unit": "counts/kg/(10eVee)",
+            "evidence_claims": [
+              "C0046"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "statistics.error_minus": {
+            "value": [
+              22.9283,
+              15.7009,
+              12.5857,
+              12.2118,
+              11.5888,
+              11.5888,
+              11.215,
+              10.8411,
+              11.0903,
+              10.3427,
+              10.4673,
+              10.8411,
+              10.4673,
+              10.3427,
+              10.2181,
+              10.2181,
+              9.9688,
+              9.8442,
+              9.7196
+            ],
+            "unit": "counts/kg/(10eVee)",
+            "evidence_claims": [
+              "C0047"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "statistics.error_plus": {
+            "value": [
+              23.053,
+              15.7009,
+              12.7103,
+              12.2118,
+              11.4642,
+              11.5888,
+              11.3396,
+              10.7165,
+              10.9657,
+              10.2181,
+              10.2181,
+              10.7165,
+              10.2181,
+              9.9688,
+              9.9688,
+              9.595,
+              9.7196,
+              9.7196,
+              9.4704
+            ],
+            "unit": "counts/kg/(10eVee)",
+            "evidence_claims": [
+              "C0048"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "statistics.sigma_mean": {
+            "value": [
+              22.9907,
+              15.7009,
+              12.648,
+              12.2118,
+              11.5265,
+              11.5888,
+              11.2773,
+              10.7788,
+              11.028,
+              10.2804,
+              10.3427,
+              10.7788,
+              10.3427,
+              10.1558,
+              10.0935,
+              9.9065,
+              9.8442,
+              9.7819,
+              9.595
+            ],
+            "unit": "counts/kg/(10eVee)",
+            "evidence_claims": [
+              "C0049"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "statistics.sigma_alpha": {
+            "value": 0.169,
+            "unit": "1",
+            "evidence_claims": [
+              "C0050"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "statistics.inference": {
+            "value": "1D 1-sigma comparisons use Delta chi2=1 with other NSI zero and full disconnected branches; no official discovery significance claimed",
+            "unit": "1",
+            "evidence_claims": [
+              "C0051"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "paper_equations": {
+            "value": [
+              {
+                "id": "chi2",
+                "title": "19-bin单pull统计 [1, Eq. (33)]",
+                "latex": "\\chi^2(\\boldsymbol\\beta,\\alpha)=\\sum_{b=1}^{19}\\frac{[d_b-(1+\\alpha)t_b(\\boldsymbol\\beta)]^2}{s_b^2}+\\left(\\frac{\\alpha}{s_\\alpha}\\right)^2.",
+                "symbols": [
+                  {
+                    "symbol": "d_b",
+                    "definition": "有符号excess观测",
+                    "unit": "counts/kg/(10eVee)",
+                    "parameter_ref": "statistics.observed"
+                  },
+                  {
+                    "symbol": "s_b",
+                    "definition": "候选对称误差",
+                    "unit": "counts/kg/(10eVee)",
+                    "parameter_ref": "statistics.sigma_mean"
+                  },
+                  {
+                    "symbol": "t_b",
+                    "definition": "已转换到同一图轴单位的预测",
+                    "unit": "counts/kg/(10eVee)",
+                    "parameter_ref": null
+                  },
+                  {
+                    "symbol": "s_\\alpha",
+                    "definition": "累计归一化先验宽度",
+                    "unit": "1",
+                    "parameter_ref": "statistics.sigma_alpha"
+                  },
+                  {
+                    "symbol": "\\alpha",
+                    "definition": "共同归一化nuisance",
+                    "unit": "1",
+                    "parameter_ref": null
+                  },
+                  {
+                    "symbol": "\\boldsymbol\\beta",
+                    "definition": "本次扫描的弱角或向量NSI参数",
+                    "unit": "1",
+                    "parameter_ref": null
+                  }
+                ]
+              },
+              {
+                "id": "profile",
+                "title": "解析profile [1, Eq. (33); PROJECT_DERIVED]",
+                "latex": "\\widehat\\alpha=\\frac{\\sum_b t_b(d_b-t_b)/s_b^2}{\\sum_b t_b^2/s_b^2+s_\\alpha^{-2}},\\qquad \\chi^2_{\\rm prof}(\\boldsymbol\\beta)=\\chi^2(\\boldsymbol\\beta,\\widehat\\alpha).",
+                "symbols": [
+                  {
+                    "symbol": "\\widehat\\alpha",
+                    "definition": "给定物理参数时的解析最优pull",
+                    "unit": "1",
+                    "parameter_ref": null
+                  },
+                  {
+                    "symbol": "d_b",
+                    "definition": "观测向量",
+                    "unit": "counts/kg/(10eVee)",
+                    "parameter_ref": "statistics.observed"
+                  },
+                  {
+                    "symbol": "t_b",
+                    "definition": "同单位预测向量",
+                    "unit": "counts/kg/(10eVee)",
+                    "parameter_ref": null
+                  },
+                  {
+                    "symbol": "s_b",
+                    "definition": "候选对称误差向量",
+                    "unit": "counts/kg/(10eVee)",
+                    "parameter_ref": "statistics.sigma_mean"
+                  },
+                  {
+                    "symbol": "s_\\alpha",
+                    "definition": "累计pull宽度",
+                    "unit": "1",
+                    "parameter_ref": "statistics.sigma_alpha"
+                  }
+                ]
+              }
+            ],
+            "unit": "1",
+            "evidence_claims": [
+              "C0045",
+              "C0046",
+              "C0047",
+              "C0048",
+              "C0049",
+              "C0050",
+              "C0051"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          }
+        },
+        "decision_refs": [],
+        "evidence_refs": [
+          "C0045",
+          "C0046",
+          "C0047",
+          "C0048",
+          "C0049",
+          "C0050",
+          "C0051"
+        ]
+      },
+      "validation_claim": {
+        "decision_status": "DRAFT",
+        "fields": {
+          "benchmark.targets": {
+            "value": {
+              "weak_angle": {
+                "best_fit": 0.247,
+                "sigma": 0.052
+              },
+              "eps_uV_ee": [
+                [
+                  -0.037,
+                  0.026
+                ],
+                [
+                  0.348,
+                  0.411
+                ]
+              ],
+              "eps_dV_ee": [
+                [
+                  -0.034,
+                  0.024
+                ],
+                [
+                  0.322,
+                  0.38
+                ]
+              ],
+              "eps_uV_emu": [
+                [
+                  -0.123,
+                  0.123
+                ]
+              ],
+              "eps_dV_emu": [
+                [
+                  -0.114,
+                  0.114
+                ]
+              ],
+              "eps_uV_etau": [
+                [
+                  -0.123,
+                  0.123
+                ]
+              ],
+              "eps_dV_etau": [
+                [
+                  -0.114,
+                  0.114
+                ]
+              ]
+            },
+            "unit": "1",
+            "evidence_claims": [
+              "C0052"
+            ],
+            "provenance_status": "SOURCE_EXTRACTED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "provenance.open_items": {
+            "value": [
+              "Kopeikin 32-node primary-table comparison not complete",
+              "Local response table original nuclear calculation mapping not closed",
+              "Antineutrino/core and experiment adapter compatibility not certified"
+            ],
+            "unit": "1",
+            "evidence_claims": [
+              "C0053"
+            ],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "version.scope": {
+            "value": "v2 isolated review; original version bytes preserved; no runtime registration, fit, or canonical promotion",
+            "unit": "1",
+            "evidence_claims": [
+              "C0054"
+            ],
+            "provenance_status": "USER_CONFIRMED",
+            "decision_status": "DRAFT",
+            "blocking_scope": []
+          },
+          "physics_report": {
+            "value": {
+              "summary": "新版v2：天然Ge五同位素、Nuclear Response、用户PDF参考Flux与非负零端点；19点数字化数据；源谱数值检查通过，原文来源缺口和实现状态明确保留。",
+              "calculation_steps": [
+                "读取逐核素库存和选定的反中微子Flux",
+                "调用公共Response截面",
+                "用Lindhard与Gaussian分箱概率折叠",
+                "曝光及秒/天因子各施加一次",
+                "核对预测到图轴单位的转换",
+                "用Eq. (33)解析profile并比较文献区间；本次未执行"
+              ],
+              "models": {
+                "li2026_sm_left_v1": {
+                  "group": "theory",
+                  "content_class": "shared_framework",
+                  "title": "Interaction",
+                  "explanation": "项目SM参考入口；vector NSI匹配与反中微子接口在实施前核对；不采用用户笔记的固定0.2312作为弱角基准。",
+                  "equations": []
+                },
+                "nuclear_np_polynomial_v1": {
+                  "group": "nuclear",
+                  "content_class": "shared_framework",
+                  "title": "Nuclear structure",
+                  "explanation": "用户选择Nuclear Response；天然Ge五核素分别读取同一资源，不能乘另一个KN或Helm形状因子。外部数值来源审计待闭合。",
+                  "equations": []
+                },
+                "elastic_kinematics_v1": {
+                  "group": "kinematics",
+                  "content_class": "shared_framework",
+                  "title": "Kinematics",
+                  "explanation": "现有真实ID；论文重核近似与实际接口的支持域差别待核对。",
+                  "equations": []
+                },
+                "li2026_dsigma_v1": {
+                  "group": "kinematics",
+                  "content_class": "shared_framework",
+                  "title": "Cross-section",
+                  "explanation": "现有真实ID；Response、核质量、nu/antinu和输出单位适配待核对。",
+                  "equations": []
+                },
+                "gaussian_one_pull_legacy_v1": {
+                  "group": "statistics",
+                  "content_class": "experiment_specific",
+                  "title": "Eq. (33) candidate binding",
+                  "explanation": "已有单pull公式可复用；实验数据/单位适配未执行。",
+                  "equations": [
+                    {
+                      "id": "chi2",
+                      "title": "19-bin单pull统计 [1, Eq. (33)]",
+                      "latex": "\\chi^2(\\boldsymbol\\beta,\\alpha)=\\sum_{b=1}^{19}\\frac{[d_b-(1+\\alpha)t_b(\\boldsymbol\\beta)]^2}{s_b^2}+\\left(\\frac{\\alpha}{s_\\alpha}\\right)^2.",
+                      "symbols": [
+                        {
+                          "symbol": "d_b",
+                          "definition": "有符号excess观测",
+                          "unit": "counts/kg/(10eVee)",
+                          "parameter_ref": "statistics.observed"
+                        },
+                        {
+                          "symbol": "s_b",
+                          "definition": "候选对称误差",
+                          "unit": "counts/kg/(10eVee)",
+                          "parameter_ref": "statistics.sigma_mean"
+                        },
+                        {
+                          "symbol": "t_b",
+                          "definition": "已转换到同一图轴单位的预测",
+                          "unit": "counts/kg/(10eVee)",
+                          "parameter_ref": null
+                        },
+                        {
+                          "symbol": "s_\\alpha",
+                          "definition": "累计归一化先验宽度",
+                          "unit": "1",
+                          "parameter_ref": "statistics.sigma_alpha"
+                        },
+                        {
+                          "symbol": "\\alpha",
+                          "definition": "共同归一化nuisance",
+                          "unit": "1",
+                          "parameter_ref": null
+                        },
+                        {
+                          "symbol": "\\boldsymbol\\beta",
+                          "definition": "本次扫描的弱角或向量NSI参数",
+                          "unit": "1",
+                          "parameter_ref": null
+                        }
+                      ]
+                    },
+                    {
+                      "id": "profile",
+                      "title": "解析profile [1, Eq. (33); PROJECT_DERIVED]",
+                      "latex": "\\widehat\\alpha=\\frac{\\sum_b t_b(d_b-t_b)/s_b^2}{\\sum_b t_b^2/s_b^2+s_\\alpha^{-2}},\\qquad \\chi^2_{\\rm prof}(\\boldsymbol\\beta)=\\chi^2(\\boldsymbol\\beta,\\widehat\\alpha).",
+                      "symbols": [
+                        {
+                          "symbol": "\\widehat\\alpha",
+                          "definition": "给定物理参数时的解析最优pull",
+                          "unit": "1",
+                          "parameter_ref": null
+                        },
+                        {
+                          "symbol": "d_b",
+                          "definition": "观测向量",
+                          "unit": "counts/kg/(10eVee)",
+                          "parameter_ref": "statistics.observed"
+                        },
+                        {
+                          "symbol": "t_b",
+                          "definition": "同单位预测向量",
+                          "unit": "counts/kg/(10eVee)",
+                          "parameter_ref": null
+                        },
+                        {
+                          "symbol": "s_b",
+                          "definition": "候选对称误差向量",
+                          "unit": "counts/kg/(10eVee)",
+                          "parameter_ref": "statistics.sigma_mean"
+                        },
+                        {
+                          "symbol": "s_\\alpha",
+                          "definition": "累计pull宽度",
+                          "unit": "1",
+                          "parameter_ref": "statistics.sigma_alpha"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            "unit": "1",
+            "evidence_claims": [],
+            "provenance_status": "PROJECT_DERIVED",
+            "decision_status": "DRAFT",
+            "blocking_scope": [
+              "human_review",
+              "implementation_audit",
+              "upstream_provenance"
+            ]
+          }
+        },
+        "decision_refs": [],
+        "evidence_refs": [
+          "C0052",
+          "C0053",
+          "C0054"
+        ]
+      }
+    }
+  },
+  "old_fingerprints": [
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\experiments\\CONUS_Plus\\datasets\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\experiment.physics.md",
+      "sha256": "c95432c5ec22a032733a4c839bb6621640e095bb479bf997cc2d441d6c54a114"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\experiments\\CONUS_Plus\\datasets\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\experiment.physics.summary.md",
+      "sha256": "aec09ddfaeb95f0cafbbfbaa4179e22a40ce24055eae058930e3ec038c4ed1ed"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\experiments\\CONUS_Plus\\datasets\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\EXPERIMENT_USER_INPUT.md",
+      "sha256": "eac848c416e4f49520e22934cc734f4e5229dcf2d08acda8afae52286720a419"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\experiments\\CONUS_Plus\\datasets\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\README.md",
+      "sha256": "6b2907b242ef7c9234028fc1a135aff25b816e508ef20c0d48ebda6c46aba0ca"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\experiments\\CONUS_Plus\\datasets\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\REFERENCES.bib",
+      "sha256": "62e906f58b0f8fa2ee4fb62ea95d3cd9d9565cf0171ee35ea48bf8b6fad162bd"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\experiments\\CONUS_Plus\\datasets\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\REFERENCES.md",
+      "sha256": "5b252d6f0322f457ba02caa00f41155edad08f16fa0d6a92c00a2cd02c968386"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\benchmark\\BENCHMARK_REGISTER.md",
+      "sha256": "c14430f50552ac0e74bab8e7272f8313d600c1f92c149c48cf75519fa4e33acc"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\build_onboarding_v2.py",
+      "sha256": "744f13d0295cf3e813ec956e44382794425a898aa124e0aa11eab52b798fa0b1"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\OLD_VERSION_FINGERPRINTS.json",
+      "sha256": "6c8b8a7fe65ff4303a1acb737eb91c401be57acc74da2d4d2a41376dd95464af"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\P00_SOURCE_REGISTER.yaml",
+      "sha256": "3d97e3a7b8fffb04a85190899ee776b7c12e0ac2aeb4f2f14fc0956bd8a9cc36"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\P01_EVIDENCE_LEDGER.yaml",
+      "sha256": "710ed27bc3ed9afb8b2a48532f161795c49e8ca7827ddb3adf6cadb96c5a31c3"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\P02_MISSING_AND_CONFLICTS.md",
+      "sha256": "671e91d413a7f930e89b410d97ab8fcecc388d06a46f43bd230687f22af8c18e"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\P03_PHYSICS_CONTRACT.yaml",
+      "sha256": "ced5184e85a82d3f8fd4910b97ec3210840ac2118e2f80fd596160e313739f97"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\P04_DECISION_LOG.yaml",
+      "sha256": "9d83cd84c944d6365f638c7460c3dcc5b30cda482d02d25ceec9c6fc62984cfa"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\P05_CONTRACT_STATUS.md",
+      "sha256": "3492bb389b29e8c960a50fac302536c9d6948dfb1f68b3002915341193ae83d8"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\qa\\BROWSER_CHECKS.json",
+      "sha256": "14a54d320453edbdd28705e4e3da1ec373501d53f6f2a1ccb05e6a6a3546c856"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\qa\\experiment.physics.preview.html",
+      "sha256": "7546b29d7d0b9cf5d4a1f54c169249d9e2c602babdc5c9e784d090dc67e25d1c"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\qa\\FINAL_CHECKS.json",
+      "sha256": "25c2cfd7c77cb9212ddd5b5bbfbbff1cbf778676832c8f5f5b1766eadf0217b4"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\qa\\MARKDOWN_MATH_LINK_CHECKS.json",
+      "sha256": "2a34a742f9475fe075e813b48ca1cc2dd7ffdab2327ca8adb4f783d9d912c476"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\qa\\source_formula_desktop.png",
+      "sha256": "963a44f1d77fd7b8e2bfd04a357dca8710dee7e077d1dbb671e151beabe95ada"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\qa\\source_formula_narrow.png",
+      "sha256": "3727f8f5296016d8efc5041f840c7a6ce8bedd56b03ffb0a1bb31f829807e282"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\qa\\statistics_desktop.png",
+      "sha256": "3007e0f83850a88add6a8bbf77a973b40e023fba327c6ff245c119f614a01890"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\README.md",
+      "sha256": "701e14b9565e9a4f98eb0ed31c5c4ae6b60a7659c4cd0c0f22ca42ee89d3aca4"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\sources\\1101.2663v3.pdf",
+      "sha256": "1421b06de707afa7d5bd6ec2a61b31a011bc069a6d7358e477a7a49695afa429"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\sources\\hep-ph_0110030v1.pdf",
+      "sha256": "300fe5f280ad092dffda52b7519e3020de8b8c935a2afdfd617db8c428528def"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\sources\\kopeikin_2012_inspire_metadata.json",
+      "sha256": "a0152f456ff596dd4e4124b5f8821e1ef1c7abe268c088a7dac163f498d1f345"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\sources\\kopeikin_2012_publisher.html",
+      "sha256": "a512f096496f388b81046dae0652aa2e399bc28a9c76297a346ce08ae74ac447"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\sources\\neon_2023_publisher.html",
+      "sha256": "4b0893c25b159ee2ebf1d628ce61814148f33540464e19d5c74f0e8d5b1ff65f"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\sources\\nist_codata2022_allascii.txt",
+      "sha256": "77fb90e66c40db3e6eb16630bc9c88e4c7c8beddbe5e71be406f2f26e3f67e67"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\sources\\nist_ge_isotopic_masses.html",
+      "sha256": "3dd6571ed66ea7046a444e3eb02c5dfe30ee559054a9c2a877ff4ca054a221c5"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\sources\\README.md",
+      "sha256": "f6744f52bd4d10a0942ddd3320bfb82b5549df6669f31eda963a79b0bbb6526e"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\build_inputs.py",
+      "sha256": "670e0715b127529527db8a4e516f5973c8e93e9c8b3c3eaccd77538e5b4387ad"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\fission_fractions.csv",
+      "sha256": "5781f04a6b0ef1a4ef7f3de7aeb693f5a3c87825ab853092cef135f7d02a321a"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\flux_comparison.png",
+      "sha256": "59aaf6e4d8eaa6ec6e4158d4f68023e544f39bd52f7361bfefc0aa94980cbb81"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\input_choices.json",
+      "sha256": "0cc22d0bce36d556bd814d74761094d9aeb38520d961d834c170a4cce608240d"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\kopeikin_low_energy_transcribed.csv",
+      "sha256": "5594737d150727bf40d1512cc6b8bbc50217f6282b3e4ba5a8abd9651569b856"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\mueller_coefficients.csv",
+      "sha256": "6e9d43f06fc0a99c04a8b15e5b60187c6c9b1e4c8f0172875352f23c09e8dfd4"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\natural_ge_inventory.csv",
+      "sha256": "964a9f24692f63e969ad81f7338f6773f0750e98ada1695680b3fc92021815dd"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\numerical_checks.json",
+      "sha256": "0168b935198c2163d7ea17a0384752be2e9bc4a3bd2973dc5952b8cd1072ae9a"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\reactor_flux_reference_linear_extrapolation.csv",
+      "sha256": "cc8a9e186615a2cf426c87b58804a50949dad98198361dfe2664134254a34e21"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\reactor_flux_v2.csv",
+      "sha256": "0b7d66c0e2111f6bc5ecb0870f27edd1f5a4715340a264dfd21cd38786b41b4b"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\README.md",
+      "sha256": "e85cef337bf2bc673114516beac46343695659842aec2d735689e964d936e5e8"
+    }
+  ],
+  "parent_file_baseline": [
+    {
+      "path": "README.md",
+      "sha256": "a2ae1d39b3c0b93ee1488d74f1321620b0d927fe1f68b32d345711265e9f55ac",
+      "backup": "backup/conusplus_onboarding_v3_20261106/README.md"
+    },
+    {
+      "path": "docs/experiments/README.md",
+      "sha256": "37bdacc9f8608b8cb871319d7dca7fa7d4329b57acd0d750197ba3bd3318589e",
+      "backup": "backup/conusplus_onboarding_v3_20261106/docs/experiments/README.md"
+    },
+    {
+      "path": "data/experiments/README.md",
+      "sha256": "49e450f447df7d1074a6e8cf7a81dbbe78e6bced507558db51909b971104f21e",
+      "backup": "backup/conusplus_onboarding_v3_20261106/data/experiments/README.md"
+    },
+    {
+      "path": "docs/references/CONUS/README.md",
+      "sha256": "7fdb18d58ab4fdba26dbeb03cedb937f5654e64a2d79308126a5880b3eecf7cb",
+      "backup": "backup/conusplus_onboarding_v3_20261106/docs/references/CONUS/README.md"
+    },
+    {
+      "path": "outputs/README.md",
+      "sha256": "83561cf61a10835284c3bc883122edbaa33013d04077843449729063a359a380",
+      "backup": "backup/conusplus_onboarding_v3_20261106/outputs/README.md"
+    },
+    {
+      "path": "tools/workflow_validation/config/PROTECTED_FILES.json",
+      "sha256": "2179e8d1139b5cd631d95a76c0398bfc1b66401db91e3173d56b87abff42e4c0",
+      "backup": "backup/conusplus_onboarding_v3_20261106/tools/workflow_validation/config/PROTECTED_FILES.json"
+    }
+  ],
+  "presentation_helper_origin": {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\tools\\report_markdown.py",
+    "sha256": "c28edfa3c1d709fc0ebf14a978da42528ad78c0da6a67ff6cc765f6eeba4b84d"
+  }
+}

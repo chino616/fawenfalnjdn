@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "ir_version": "cevns-onboarding-draft/1",
+  "dataset_id": "PandaX4T_2024_US2",
+  "package_status": "DRAFT",
+  "human_approval": "NOT_REVIEWED",
+  "models": 6,
+  "parameters": 16,
+  "arrays": 9,
+  "sha256": {
+    "experiment.input.yaml": "c7299d35b5fdb192b425a12cb8b5571ea5218619e1bb5ce2f689e8b08bc1e046",
+    "experiment.resources.npz": "56a44e766476c7bc8771e2e98e316c48a97e13d485d006d12324ba473b4f09b8",
+    "experiment.physics.md": "a4e0ac791a0ee0ae907bc4f88b629fca3cda428b2f087b427c8a94f682c865f7",
+    "experiment.physics.summary.md": "ecdc83d4a5693806a99f19b0ece8b62713cd9030b915bb166801bbc014167443"
+  },
+  "scope": "compiler checks only; no physics approval or runtime execution",
+  "diagnostics": [],
+  "temporary_acl_state": "ACL_INHERITANCE_OK",
+  "acl_state": "ACL_INHERITANCE_OK",
+  "write_state": "WRITE_OK",
+  "execution_user": "chino\\codexsandboxoffline",
+  "target_user": null,
+  "execution_user_read_state": "READ_OK",
+  "target_user_read_state": "TARGET_USER_READ_PENDING",
+  "target_user_check": "In the target user PowerShell run whoami and Get-Content -LiteralPath <each final file>; sandbox readback is not target-user verification."
+}

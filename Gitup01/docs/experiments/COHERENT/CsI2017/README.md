@@ -26,3 +26,17 @@ COHERENT 首次 CsI CEvNS 观测的项目复现身份，与更新的 CsI2021 分
 - [通用 EFT 框架：2601.19883v2](../../../references/General_CEvNS/2601.19883v2.pdf)。
 
 [COHERENT](../README.md) · [COHERENT 文献](../../../references/COHERENT/README.md)
+
+<!-- latest-analyses:start -->
+
+## 当前最新分析与处理方式
+
+[五条实验最新入口](<../../LATEST_EXPERIMENTS.md>)
+
+| 分析 | 方法/版本 | 输入 | 结果与核对范围 |
+|---|---|---|---|
+| CsI2017：25PE箱确定性映射 | [Package v2 / legacy compatibility；处理方式](<METHODS.md>) | [当前输入](<../../../../data/experiments/COHERENT_CsI/CsI2017/experiment.input.yaml>) | [最新核对结果](<../../../../outputs/COHERENT_CsI/CsI2017/sm_legacy_25bin_20261111/SM_RESULT.json>) |
+
+来源/审核状态、计算完成状态与默认Runtime注册分别记录；链接不授予新的科学批准。
+
+<!-- latest-analyses:end -->

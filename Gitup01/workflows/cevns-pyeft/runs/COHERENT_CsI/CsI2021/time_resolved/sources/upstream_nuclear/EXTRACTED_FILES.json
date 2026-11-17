@@ -1,0 +1,162 @@
+[
+  {
+    "repository": "Mu2e_NRET",
+    "commit": "15bef514375298b57d9b07852870be3c408c2b19",
+    "original_url": "https://raw.githubusercontent.com/Berkeley-Electroweak-Physics/Mu2e_NRET/15bef514375298b57d9b07852870be3c408c2b19/LICENSE",
+    "local_path": "Mu2e_NRET/LICENSE",
+    "bytes": 1722,
+    "sha256": "d04dba710b795785aa9c701b3fc23c65aa2a4c0c5a90701dde6a9319d365f3fc"
+  },
+  {
+    "repository": "Mu2e_NRET",
+    "commit": "15bef514375298b57d9b07852870be3c408c2b19",
+    "original_url": "https://raw.githubusercontent.com/Berkeley-Electroweak-Physics/Mu2e_NRET/15bef514375298b57d9b07852870be3c408c2b19/README.md",
+    "local_path": "Mu2e_NRET/README.md",
+    "bytes": 3746,
+    "sha256": "faa6d9db48f54c0b0229f2398a4faa2f2591a95e7c995cd8f665e2ab4c8eb0bf"
+  },
+  {
+    "repository": "Mu2e_NRET",
+    "commit": "15bef514375298b57d9b07852870be3c408c2b19",
+    "original_url": "https://raw.githubusercontent.com/Berkeley-Electroweak-Physics/Mu2e_NRET/15bef514375298b57d9b07852870be3c408c2b19/v1/README.md",
+    "local_path": "Mu2e_NRET/v1/README.md",
+    "bytes": 2858,
+    "sha256": "163add47c19fd4dafc125886d0e12a5a1b580fb58c498900a79aecd932cb730f"
+  },
+  {
+    "repository": "Mu2e_NRET",
+    "commit": "15bef514375298b57d9b07852870be3c408c2b19",
+    "original_url": "https://raw.githubusercontent.com/Berkeley-Electroweak-Physics/Mu2e_NRET/15bef514375298b57d9b07852870be3c408c2b19/v1/mathematica/README.md",
+    "local_path": "Mu2e_NRET/v1/mathematica/README.md",
+    "bytes": 9535,
+    "sha256": "660f6d1c27716fe755060c07eca85a1b546572b8699af7e851cf25ab359f04a8"
+  },
+  {
+    "repository": "Mu2e_NRET",
+    "commit": "15bef514375298b57d9b07852870be3c408c2b19",
+    "original_url": "https://raw.githubusercontent.com/Berkeley-Electroweak-Physics/Mu2e_NRET/15bef514375298b57d9b07852870be3c408c2b19/v1/python/README.md",
+    "local_path": "Mu2e_NRET/v1/python/README.md",
+    "bytes": 2450,
+    "sha256": "00d1e254b9d1fdb050c6c2c0454a594a8a926bac17333f51f1510ba4d533ae8c"
+  },
+  {
+    "repository": "Mu2e_NRET",
+    "commit": "15bef514375298b57d9b07852870be3c408c2b19",
+    "original_url": "https://raw.githubusercontent.com/Berkeley-Electroweak-Physics/Mu2e_NRET/15bef514375298b57d9b07852870be3c408c2b19/v1/python/elements.yaml",
+    "local_path": "Mu2e_NRET/v1/python/elements.yaml",
+    "bytes": 6789,
+    "sha256": "a013f73561c9ccd045876d9c8fda05886954a90dbb088e961d82a5c5fb87dee2"
+  },
+  {
+    "repository": "Mu2e_NRET",
+    "commit": "15bef514375298b57d9b07852870be3c408c2b19",
+    "original_url": "https://raw.githubusercontent.com/Berkeley-Electroweak-Physics/Mu2e_NRET/15bef514375298b57d9b07852870be3c408c2b19/v1/python/mu2e_v1.py",
+    "local_path": "Mu2e_NRET/v1/python/mu2e_v1.py",
+    "bytes": 69034,
+    "sha256": "cc551a6f706fc136908e187fbbf82f7047c79900b3d31f85a1de9a0797aebb4b"
+  },
+  {
+    "repository": "Mu2e_NRET",
+    "commit": "15bef514375298b57d9b07852870be3c408c2b19",
+    "original_url": "https://raw.githubusercontent.com/Berkeley-Electroweak-Physics/Mu2e_NRET/15bef514375298b57d9b07852870be3c408c2b19/v2/README.md",
+    "local_path": "Mu2e_NRET/v2/README.md",
+    "bytes": 3393,
+    "sha256": "d47c35a5c484954f1c374b6098d13b1ee1e4da0c620b4a1faa13dd56cb86275b"
+  },
+  {
+    "repository": "Mu2e_NRET",
+    "commit": "15bef514375298b57d9b07852870be3c408c2b19",
+    "original_url": "https://raw.githubusercontent.com/Berkeley-Electroweak-Physics/Mu2e_NRET/15bef514375298b57d9b07852870be3c408c2b19/v2/mathematica/Ca40Rel.wl",
+    "local_path": "Mu2e_NRET/v2/mathematica/Ca40Rel.wl",
+    "bytes": 1375,
+    "sha256": "5a1037e836e9394c74ee8a65a59e20fb5b9fafe7a7b5425c98405df2622350dd"
+  },
+  {
+    "repository": "Mu2e_NRET",
+    "commit": "15bef514375298b57d9b07852870be3c408c2b19",
+    "original_url": "https://raw.githubusercontent.com/Berkeley-Electroweak-Physics/Mu2e_NRET/15bef514375298b57d9b07852870be3c408c2b19/v2/mathematica/Mu2eNRET.wl",
+    "local_path": "Mu2e_NRET/v2/mathematica/Mu2eNRET.wl",
+    "bytes": 13,
+    "sha256": "5b4a950199e6fa2b7015b71cef1b37206a7182a09986e26b47f447795f82e8cc"
+  },
+  {
+    "repository": "Mu2e_NRET",
+    "commit": "15bef514375298b57d9b07852870be3c408c2b19",
+    "original_url": "https://raw.githubusercontent.com/Berkeley-Electroweak-Physics/Mu2e_NRET/15bef514375298b57d9b07852870be3c408c2b19/v2/mathematica/README.md",
+    "local_path": "Mu2e_NRET/v2/mathematica/README.md",
+    "bytes": 2862,
+    "sha256": "117ba2e4aa08ebba1f6da9c997879441857a7adc86d05b86f5cceca553eebdc8"
+  },
+  {
+    "repository": "Mu2e_NRET",
+    "commit": "15bef514375298b57d9b07852870be3c408c2b19",
+    "original_url": "https://raw.githubusercontent.com/Berkeley-Electroweak-Physics/Mu2e_NRET/15bef514375298b57d9b07852870be3c408c2b19/v2/mathematica/mu2elib_v2.wl",
+    "local_path": "Mu2e_NRET/v2/mathematica/mu2elib_v2.wl",
+    "bytes": 77172,
+    "sha256": "5e5f1e646c9399c25f4ae72cd8f7dd1976ac87234d41ac5759242740783137ca"
+  },
+  {
+    "repository": "Mu2e_NRET",
+    "commit": "15bef514375298b57d9b07852870be3c408c2b19",
+    "original_url": "https://raw.githubusercontent.com/Berkeley-Electroweak-Physics/Mu2e_NRET/15bef514375298b57d9b07852870be3c408c2b19/v2/python/Mu2eNRET.py",
+    "local_path": "Mu2e_NRET/v2/python/Mu2eNRET.py",
+    "bytes": 10,
+    "sha256": "699ff1eacaa6eaacf66ea89918a0f1432458a293b012ffb51e41dd0334cda255"
+  },
+  {
+    "repository": "Mu2e_NRET",
+    "commit": "15bef514375298b57d9b07852870be3c408c2b19",
+    "original_url": "https://raw.githubusercontent.com/Berkeley-Electroweak-Physics/Mu2e_NRET/15bef514375298b57d9b07852870be3c408c2b19/v2/python/README.md",
+    "local_path": "Mu2e_NRET/v2/python/README.md",
+    "bytes": 1966,
+    "sha256": "ce10a21c2f31e8d5053086ff52a525c56761b40f0a0f0c424fab1a0ad9481dcd"
+  },
+  {
+    "repository": "Mu2e_NRET",
+    "commit": "15bef514375298b57d9b07852870be3c408c2b19",
+    "original_url": "https://raw.githubusercontent.com/Berkeley-Electroweak-Physics/Mu2e_NRET/15bef514375298b57d9b07852870be3c408c2b19/v2/python/elements.yaml",
+    "local_path": "Mu2e_NRET/v2/python/elements.yaml",
+    "bytes": 7501,
+    "sha256": "805228d030fbc83f10985e71f6c2de9920de1a96f3742597867dbe79c8bc6f41"
+  },
+  {
+    "repository": "Mu2e_NRET",
+    "commit": "15bef514375298b57d9b07852870be3c408c2b19",
+    "original_url": "https://raw.githubusercontent.com/Berkeley-Electroweak-Physics/Mu2e_NRET/15bef514375298b57d9b07852870be3c408c2b19/v2/python/mu2e_v2.py",
+    "local_path": "Mu2e_NRET/v2/python/mu2e_v2.py",
+    "bytes": 115084,
+    "sha256": "1d90c8c15c089b1709e377008ee9910821b96b21b49f0a0070afe0d4800a6c62"
+  },
+  {
+    "repository": "Mu2e_NRET",
+    "commit": "15bef514375298b57d9b07852870be3c408c2b19",
+    "original_url": "https://raw.githubusercontent.com/Berkeley-Electroweak-Physics/Mu2e_NRET/15bef514375298b57d9b07852870be3c408c2b19/v2/python/tst_mod.py",
+    "local_path": "Mu2e_NRET/v2/python/tst_mod.py",
+    "bytes": 354,
+    "sha256": "aae04cb17e002450699ab4470fc5f3f2ce22794fb2b3576a9a4eab5c69299ae6"
+  },
+  {
+    "repository": "Elastic",
+    "commit": "a979c39c89c615c7e719b84006cafa94526b4517",
+    "original_url": "https://raw.githubusercontent.com/Berkeley-Electroweak-Physics/Elastic/a979c39c89c615c7e719b84006cafa94526b4517/Cs133_GCN5082.txt",
+    "local_path": "Elastic/Cs133_GCN5082.txt",
+    "bytes": 8072,
+    "sha256": "da46cf5c93b499f74a9e29d3e932ed4a81108fe23e1a527c5e9df7d6692a5c23"
+  },
+  {
+    "repository": "Elastic",
+    "commit": "a979c39c89c615c7e719b84006cafa94526b4517",
+    "original_url": "https://raw.githubusercontent.com/Berkeley-Electroweak-Physics/Elastic/a979c39c89c615c7e719b84006cafa94526b4517/I127_GCN5082.txt",
+    "local_path": "Elastic/I127_GCN5082.txt",
+    "bytes": 7317,
+    "sha256": "393e743c02fe818528de5ede53479b688e36eea03547c2ed6f47c1012fbe2f4b"
+  },
+  {
+    "repository": "Elastic",
+    "commit": "a979c39c89c615c7e719b84006cafa94526b4517",
+    "original_url": "https://raw.githubusercontent.com/Berkeley-Electroweak-Physics/Elastic/a979c39c89c615c7e719b84006cafa94526b4517/README.md",
+    "local_path": "Elastic/README.md",
+    "bytes": 168,
+    "sha256": "64c0c3fc92a7d854b6dcd98442d1da8b0b260ae08d0d5c76a7400c9d87c65a14"
+  }
+]

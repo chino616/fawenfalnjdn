@@ -1,0 +1,23 @@
+{
+  "analysis_id": "external_snudd_full_fig4",
+  "parent_analysis": "solar_ee_vector_nsi",
+  "parent_source": "external_solar_rho_snudd",
+  "version": "3.4.1",
+  "date": "2026-11-12",
+  "status": "FULL_SOLAR_FIG4_STATISTICAL_CALCULATION_COMPLETE; EXACT_PAPER_REPRODUCTION_NOT_ESTABLISHED",
+  "machine": "PASS",
+  "human": "NOT_REVIEWED",
+  "write_ref": "W0008",
+  "decision_ref": "D0008",
+  "report": "docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_FULL_BENCHMARK.v3.4.1.md",
+  "results": "outputs/external/solar_rho_snudd/20261112_fig4_run2/NSI_RESULTS.json",
+  "entry": "tools/run_solar_b8_snudd_inference.py",
+  "source_card_sha256": "942ae3f85b40b07b87ad271d1a0b943440a89d6d1f294c850ef4a720652861b9",
+  "qa": "outputs/external/solar_rho_snudd/20261112_fig4_run2/QA.json",
+  "exact_paper_reproduction": "NOT_ESTABLISHED",
+  "default_global_activation": false,
+  "phase_reports": {
+    "P09": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P09_snudd_full_inference.md",
+    "P10": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P10_snudd_full_inference.md"
+  }
+}

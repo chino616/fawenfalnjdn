@@ -1,0 +1,154 @@
+{
+  "status": "BLOCKED_EXTERNAL_REPRODUCTION",
+  "implementation": "PASS",
+  "backend": "Native Response",
+  "normalization_sigmas": [
+    0.12,
+    0.25,
+    0.35,
+    0.021
+  ],
+  "mode": "time_nominal",
+  "fit": {
+    "chi2": 88.82896287966966,
+    "chi2_data": 87.91492367219114,
+    "chi2_prior": [
+      0.1383106919674946,
+      0.3784743543948106,
+      0.006898015595810494,
+      0.3903561455204093
+    ],
+    "nuisance": {
+      "signal_norm": -0.04462817455746899,
+      "brn_norm": -0.15380067343700307,
+      "nin_norm": -0.029069002571240475,
+      "ssb_norm": -0.01312048246729138,
+      "time_shift_us": 0.0,
+      "efficiency_shift_pe": 0.0
+    },
+    "success": true,
+    "attempts": [
+      {
+        "success": true,
+        "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "chi2": 88.82896287966966,
+        "iterations": 8,
+        "scaled": [
+          -0.3719014546455749,
+          -0.6152026937480123,
+          -0.08305429306068708,
+          -0.6247848793948276
+        ]
+      },
+      {
+        "success": true,
+        "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "chi2": 88.8289628796697,
+        "iterations": 7,
+        "scaled": [
+          -0.37190122546294324,
+          -0.615202586723222,
+          -0.08305437890034104,
+          -0.6247850581031543
+        ]
+      },
+      {
+        "success": true,
+        "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "chi2": 88.82896287966969,
+        "iterations": 8,
+        "scaled": [
+          -0.3719012462430822,
+          -0.6152025682477535,
+          -0.08305434135715403,
+          -0.6247851293231754
+        ]
+      }
+    ],
+    "active_bounds": [],
+    "mode": "time_nominal",
+    "component_totals": [
+      313.6666555480538,
+      23.205969479876885,
+      6.707739602444725,
+      1269.0545475749518
+    ],
+    "native_radius_nuisance": "unsupported_fixed_zero"
+  },
+  "background_mode": "raw_template_integrals",
+  "blockers": [
+    "BRN/NIN post-time-efficiency normalization requires original-author clarification",
+    "User-selected Response nuclear model differs from the JHEP Helm prescription"
+  ],
+  "time_representation": "full_support_fixed_time",
+  "full_support_probability_candidate_fit": {
+    "chi2": 87.43943392764727,
+    "chi2_data": 86.91204952158253,
+    "chi2_prior": [
+      0.0725640506132628,
+      0.09638408763607177,
+      0.0032138619739637913,
+      0.35522240584144
+    ],
+    "nuisance": {
+      "signal_norm": -0.03232525837222317,
+      "brn_norm": -0.07761446693274705,
+      "nin_norm": -0.019841826826443285,
+      "ssb_norm": -0.012516112854080339,
+      "time_shift_us": 0.0,
+      "efficiency_shift_pe": 0.0
+    },
+    "success": true,
+    "attempts": [
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "chi2": 87.43943392765182,
+        "iterations": 7,
+        "scaled": [
+          -0.2693772704903072,
+          -0.31045830182615003,
+          -0.056688859141034324,
+          -0.596005362358144
+        ]
+      },
+      {
+        "success": true,
+        "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "chi2": 87.43943392764746,
+        "iterations": 6,
+        "scaled": [
+          -0.2693771483951301,
+          -0.31045786355488136,
+          -0.05669093441102895,
+          -0.5960053671037695
+        ]
+      },
+      {
+        "success": true,
+        "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "chi2": 87.43943392764727,
+        "iterations": 7,
+        "scaled": [
+          -0.2693771531018598,
+          -0.3104578677309882,
+          -0.05669093378983796,
+          -0.5960053740038256
+        ]
+      }
+    ],
+    "active_bounds": [],
+    "mode": "time_nominal",
+    "component_totals": [
+      317.70593582673126,
+      16.88854084506492,
+      5.07623913796501,
+      1269.8317224908717
+    ],
+    "native_radius_nuisance": "unsupported_fixed_zero"
+  },
+  "candidate_status": "DIAGNOSTIC_BLOCKED_TIME_EFFICIENCY_CONVENTION",
+  "original_paper_url": "https://arxiv.org/abs/2202.11002",
+  "source_equations": "JHEP05(2022)109 Eq2.6; four normalization pulls",
+  "reference_target": null
+}

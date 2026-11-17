@@ -1,0 +1,2575 @@
+{
+  "contract_version": 4,
+  "dataset_id": "XENONnT_2024_SolarB8",
+  "scientific_claim": "SM nuclear-table Response forward at fixed R01 parameters, seven Xe isotopes without renormalization; original detector approximation/recasting model. No paper-exact or native-likelihood claim.",
+  "sections": {
+    "identity_and_goal": {
+      "decision_status": "DRAFT",
+      "fields": {},
+      "decision_refs": [],
+      "evidence_refs": []
+    },
+    "dataset": {
+      "decision_status": "DRAFT",
+      "fields": {},
+      "decision_refs": [],
+      "evidence_refs": []
+    },
+    "target_and_exposure": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "target_inventory_model_id": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "xenon_natural_isotopes_nist_v2.txt": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/xenon_natural_isotopes_nist_v2.txt",
+            "sha256": "5fd5a0d923c969cb53bcc1267a4eb20d8f6c71e6c2da749d7199676ef361af67",
+            "coverage": "all rows/keys; detailed key map below",
+            "shape": [
+              9,
+              3
+            ]
+          },
+          "unit": "1; u; 1",
+          "evidence_claims": [
+            "XENONnT-C019"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "avogadro_constant": {
+          "value": 6.02214076e+23,
+          "unit": "mol^-1",
+          "evidence_claims": [
+            "XENONnT-S04"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "early_reader_SR0_exposure_factor": {
+          "value": 1.174398,
+          "unit": "t yr",
+          "evidence_claims": [
+            "XENONnT-S05"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "early_reader_SR1_exposure_factor": {
+          "value": 2.342593,
+          "unit": "t yr",
+          "evidence_claims": [
+            "XENONnT-S06"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "target/derived_inventory": {
+          "value": {
+            "mean_molar_mass_g_per_mol": 131.29276144779053,
+            "mass_numbers": [
+              124,
+              126,
+              128,
+              129,
+              130,
+              131,
+              132,
+              134,
+              136
+            ],
+            "nuclei_per_ton": [
+              4.366636774411816e+24,
+              4.0822549676749114e+24,
+              8.761711729497322e+25,
+              1.2109436011190817e+27,
+              1.8672876374611875e+26,
+              9.738884311872001e+26,
+              1.23424456205817e+27,
+              4.786650355748885e+26,
+              4.0626693174367414e+26
+            ],
+            "total_nuclei_per_ton": 4.5868033344661935e+27
+          },
+          "unit": "g/mol and nuclei/t, per field",
+          "evidence_claims": [
+            "XENONnT-DERIVED-INVENTORY"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "target/equation_2": {
+          "value": "\\overline M=\\sum_A f_A M_A,\\qquad n_A^{(t)}=\\frac{10^6N_{\\rm A}f_A}{\\overline M}. \\tag{2}",
+          "unit": "equation with symbol units declared in the chapter",
+          "evidence_claims": [
+            "XENONnT-EQ2"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
+      "decision_refs": [],
+      "evidence_refs": []
+    },
+    "source": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "source_model_ids": {
+          "value": [],
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "b8_bahcall1996_official.txt": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/b8_bahcall1996_official.txt",
+            "sha256": "75ce26216a638b811d131b692e2d22b8624fcbb711839fd167c25cefaafb9789",
+            "coverage": "all rows/keys; detailed key map below"
+          },
+          "unit": "MeV; MeV^-1",
+          "evidence_claims": [
+            "XENONnT-C018"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "flux_reference": {
+          "value": 5460000.0,
+          "unit": "cm^-2 s^-1",
+          "evidence_claims": [
+            "XENONnT-S01"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "flux_relative_error": {
+          "value": 0.12,
+          "unit": "1",
+          "evidence_claims": [
+            "XENONnT-S02"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "source/equation_1": {
+          "value": "\\frac{d\\phi}{dE_\\nu}=\\Phi_{8B}f_{8B}(E_\\nu). \\tag{1}",
+          "unit": "equation with symbol units declared in the chapter",
+          "evidence_claims": [
+            "XENONnT-EQ1"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
+      "decision_refs": [],
+      "evidence_refs": []
+    },
+    "theory_response": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "interaction_module": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "nuclear_structure_module": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "sin2thetaW_reference": {
+          "value": 0.23857,
+          "unit": "1",
+          "evidence_claims": [
+            "XENONnT-S03"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "nuclear/local_coefficients": {
+          "value": {
+            "file": "data/responses/responses_all.json",
+            "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+            "xenon_keys": [
+              "Xe128",
+              "Xe129",
+              "Xe130",
+              "Xe131",
+              "Xe132",
+              "Xe134",
+              "Xe136"
+            ],
+            "missing_natural_xenon_keys": [
+              "Xe124",
+              "Xe126"
+            ]
+          },
+          "unit": "as declared by the existing response reader",
+          "evidence_claims": [
+            "XENONnT-NUCLEAR-LOCAL"
+          ],
+          "provenance_status": "REFERENCE_ONLY",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "nuclear_original_source": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [
+            "XENONnT-M04"
+          ],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": [
+            "Fig4"
+          ]
+        },
+        "sm_runtime_profile": {
+          "value": "coherent_sm_kn_v1 / klein_nystrand_v1",
+          "unit": "1",
+          "evidence_claims": [
+            "SM20261107-MODEL"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "light_vector_benchmark": {
+          "value": {
+            "model": "light_vector_kn_v1",
+            "scope": "flavor-universal V and B-L fixed-point spectra",
+            "implementation": "cevns_pyeft/theory/light_vector.py",
+            "parameter_card": "data/benchmarks/solar_b8_vector_v1/benchmark.input.json"
+          },
+          "unit": "1",
+          "evidence_claims": [
+            "VECTOR20261108-MODEL",
+            "VECTOR20261108-POINTS"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "current_nuclear_route": {
+          "value": {
+            "model": "solar_sm_nuclear_table_v1",
+            "resource": "data/responses/responses_all.json",
+            "basis": "np",
+            "missing": [
+              "Xe124",
+              "Xe126"
+            ],
+            "external_provenance": "UNRESOLVED"
+          },
+          "unit": "1",
+          "evidence_claims": [
+            "NR20261110-TABLE"
+          ],
+          "provenance_status": "LOCAL_RESOURCE_ADOPTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
+      "decision_refs": [
+        "D0004"
+      ],
+      "evidence_refs": []
+    },
+    "kinematics_cross_section": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "kinematics_module": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "cross_section_module": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "current_nuclear_mass_and_units": {
+          "value": {
+            "mass": "A*amu",
+            "cross_section": "m/(8pi E^2) Tr(rho K)",
+            "output_unit": "cm2/keV"
+          },
+          "unit": "1",
+          "evidence_claims": [
+            "NR20261110-METHOD"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
+      "decision_refs": [
+        "D0004"
+      ],
+      "evidence_refs": []
+    },
+    "detector_response": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "detector_model_ids": {
+          "value": [],
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/xenonnt_qy_sr0_23Vcm.txt": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/xenonnt_qy_sr0_23Vcm.txt",
+            "sha256": "59294cb633323d2c459807df9f4eff6eb284e2eab8130fbd507446de37c03f89",
+            "coverage": "all rows; T_keVnr,Qy_e_per_keV,inside_visible_axes,source_line_dashed",
+            "shape": [
+              99,
+              4
+            ]
+          },
+          "unit": "column1 keVnr, Qy columns electron/keV, visibility/line-style flags dimensionless",
+          "evidence_claims": [
+            "XENONnT-C012"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/xenonnt_qy_sr0_band.txt": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/xenonnt_qy_sr0_band.txt",
+            "sha256": "01b045a80121aee1b1103e25ea58e15cb16184813d9ce23f14291faed4aaa76e",
+            "coverage": "all rows; T_keVnr,Qy_lower,Qy_upper",
+            "shape": [
+              100,
+              3
+            ]
+          },
+          "unit": "column1 keVnr, Qy columns electron/keV, visibility/line-style flags dimensionless",
+          "evidence_claims": [
+            "XENONnT-C013"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/xenonnt_sr0_response_release2026_v2.npz": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/xenonnt_sr0_response_release2026_v2.npz",
+            "sha256": "0fec6f489395ce354884d25f9614186292c3ed57d2884e0522609d9e2b1a7dc4",
+            "coverage": "all rows/keys; detailed key map below",
+            "arrays": {
+              "energy_keVnr": [
+                46
+              ],
+              "tLy": [
+                7
+              ],
+              "tQy": [
+                7
+              ],
+              "probability": [
+                7,
+                7,
+                46,
+                3,
+                3,
+                3,
+                3
+              ],
+              "axis_names": [
+                4
+              ],
+              "bin_edges_0": [
+                4
+              ],
+              "bin_edges_1": [
+                4
+              ],
+              "bin_edges_2": [
+                4
+              ],
+              "bin_edges_3": [
+                4
+              ]
+            }
+          },
+          "unit": "1, keVnr; nuisance coordinate dimensionless",
+          "evidence_claims": [
+            "XENONnT-C020"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/xenonnt_sr1_response_release2026_v2.npz": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/xenonnt_sr1_response_release2026_v2.npz",
+            "sha256": "0b94a164d2806fe7775059b30778b735eb9ea3d07257b9ab0dc6b22f7f885525",
+            "coverage": "all rows/keys; detailed key map below",
+            "arrays": {
+              "energy_keVnr": [
+                46
+              ],
+              "tLy": [
+                7
+              ],
+              "tQy": [
+                7
+              ],
+              "probability": [
+                7,
+                7,
+                46,
+                3,
+                3,
+                3,
+                3
+              ],
+              "axis_names": [
+                4
+              ],
+              "bin_edges_0": [
+                4
+              ],
+              "bin_edges_1": [
+                4
+              ],
+              "bin_edges_2": [
+                4
+              ],
+              "bin_edges_3": [
+                4
+              ]
+            }
+          },
+          "unit": "1, keVnr; nuisance coordinate dimensionless",
+          "evidence_claims": [
+            "XENONnT-C023"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/xenonnt_2024_calibration_inputs.v2.1.json": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/xenonnt_2024_calibration_inputs.v2.1.json",
+            "sha256": "247b24197e185238936a64268e1baaa7bfc198b4598d80a11300b3d946e89826",
+            "coverage": "all records",
+            "parameters": [
+              {
+                "name": "g1_SR0",
+                "value": 0.151,
+                "unit": "PE/photon",
+                "sigma": 0.001,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "2408.02877v1 PDF p3, Dataset and detector calibration text"
+              },
+              {
+                "name": "g2_SR0",
+                "value": 16.5,
+                "unit": "PE/electron",
+                "sigma": 0.6,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "2408.02877v1 PDF p3, Dataset and detector calibration text"
+              },
+              {
+                "name": "fiducial_mass_SR0",
+                "value": 3.97,
+                "unit": "t",
+                "sigma": 0.2,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "2408.02877v1 PDF p3, Dataset and detector calibration text"
+              },
+              {
+                "name": "livetime_SR0",
+                "value": 108.0,
+                "unit": "day",
+                "sigma": null,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "2408.02877v1 PDF p2, Dataset and detector calibration text"
+              },
+              {
+                "name": "g1_SR1",
+                "value": 0.137,
+                "unit": "PE/photon",
+                "sigma": 0.001,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "2408.02877v1 PDF p3, Dataset and detector calibration text"
+              },
+              {
+                "name": "g2_SR1",
+                "value": 16.9,
+                "unit": "PE/electron",
+                "sigma": 0.5,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "2408.02877v1 PDF p3, Dataset and detector calibration text"
+              },
+              {
+                "name": "fiducial_mass_SR1",
+                "value": 4.1,
+                "unit": "t",
+                "sigma": 0.19,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "2408.02877v1 PDF p3, Dataset and detector calibration text"
+              },
+              {
+                "name": "livetime_SR1",
+                "value": 208.5,
+                "unit": "day",
+                "sigma": null,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "2408.02877v1 PDF p2, Dataset and detector calibration text"
+              },
+              {
+                "name": "combined_exposure",
+                "value": 3.51,
+                "unit": "t yr",
+                "sigma": null,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "2408.02877v1 PDF p3, fiducial-volume paragraph"
+              }
+            ]
+          },
+          "unit": "per scalar parameter, explicitly declared in the JSON",
+          "evidence_claims": [
+            "XENONnT-C027"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/xenonnt_2024_fig1_acceptance.txt": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/xenonnt_2024_fig1_acceptance.txt",
+            "sha256": "eb2582b66ed05c71d0c950b25030530fdfc6f5ba6b7f5a925f1158211da2bdd1",
+            "coverage": "40x8: T, three acceptance paths, energy/three curve visibility flags",
+            "shape": [
+              40,
+              8
+            ],
+            "axis": "true nuclear recoil energy, keVnr",
+            "original_vertex_energy_range_keVnr": [
+              0.429999996183,
+              2.77000000181
+            ],
+            "all_curves_visible_rows": 36,
+            "representative_visible_rows": [
+              [
+                0.66999999779,
+                0.035798171118,
+                0.0412676726157,
+                0.0015057660302,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              [
+                1.21000000141,
+                0.0866333740278,
+                0.217356935927,
+                0.0189585651125,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              [
+                1.75000000502,
+                0.148145781973,
+                0.370464797306,
+                0.0556466124793,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              [
+                2.28999999859,
+                0.209906777439,
+                0.452641856316,
+                0.0963193566448,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            "extraction_record": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\重构\\20261106_Onboarding_provenance_revision\\XENONNT2024_FIG1_VECTOR.json"
+          },
+          "unit": "All efficiencies and flags dimensionless. Energy keVnr. Total acceptance is already the black combined path.",
+          "evidence_claims": [
+            "XENONnT-C031"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/ybe_early_release/ly_ybe_model_lower.json": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/ybe_early_release/ly_ybe_model_lower.json",
+            "sha256": "c99ef5b4c2fd568a4034172d4c0a963778843e9da962c5cd215a231d5133de14",
+            "coverage": "501 energy and 501 yield values; original JSON also retains coordinate_type/name",
+            "json_keys": [
+              "coordinate_system",
+              "coordinate_type",
+              "coordinate_name",
+              "map"
+            ],
+            "array_shapes": {
+              "coordinate_system": [
+                501
+              ],
+              "map": [
+                501
+              ]
+            },
+            "coordinate_name": "nr_ly_ybe_only_lower",
+            "coordinate_type": "point",
+            "representative_rows": [
+              [
+                0.29999999999999993,
+                2.376009824252355
+              ],
+              [
+                1.7320508075688772,
+                4.336259863573856
+              ],
+              [
+                10.0,
+                3.8373609382714244
+              ]
+            ]
+          },
+          "unit": "coordinate_system keVnr; map photon/keVnr",
+          "evidence_claims": [
+            "XENONnT-C033"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/ybe_early_release/ly_ybe_model_median.json": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/ybe_early_release/ly_ybe_model_median.json",
+            "sha256": "39bf70fd07f33c9f3b1776865bbc13813f06a1004d7736516f8e849b4c7654bf",
+            "coverage": "501 energy and 501 yield values; original JSON also retains coordinate_type/name",
+            "json_keys": [
+              "coordinate_system",
+              "coordinate_type",
+              "coordinate_name",
+              "map"
+            ],
+            "array_shapes": {
+              "coordinate_system": [
+                501
+              ],
+              "map": [
+                501
+              ]
+            },
+            "coordinate_name": "nr_ly_ybe_only_median",
+            "coordinate_type": "point",
+            "representative_rows": [
+              [
+                0.29999999999999993,
+                4.969483910667949
+              ],
+              [
+                1.7320508075688772,
+                4.977021862119084
+              ],
+              [
+                10.0,
+                5.849434265559596
+              ]
+            ]
+          },
+          "unit": "coordinate_system keVnr; map photon/keVnr",
+          "evidence_claims": [
+            "XENONnT-C034"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/ybe_early_release/ly_ybe_model_upper.json": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/ybe_early_release/ly_ybe_model_upper.json",
+            "sha256": "07ae23e82b201803a6774534c8cd44495eb653bc634dbfd453274d54efe21e2c",
+            "coverage": "501 energy and 501 yield values; original JSON also retains coordinate_type/name",
+            "json_keys": [
+              "coordinate_system",
+              "coordinate_type",
+              "coordinate_name",
+              "map"
+            ],
+            "array_shapes": {
+              "coordinate_system": [
+                501
+              ],
+              "map": [
+                501
+              ]
+            },
+            "coordinate_name": "nr_ly_ybe_only_upper",
+            "coordinate_type": "point",
+            "representative_rows": [
+              [
+                0.29999999999999993,
+                7.91125303979625
+              ],
+              [
+                1.7320508075688772,
+                5.7414990359969975
+              ],
+              [
+                10.0,
+                9.775018236360152
+              ]
+            ]
+          },
+          "unit": "coordinate_system keVnr; map photon/keVnr",
+          "evidence_claims": [
+            "XENONnT-C035"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/ybe_early_release/qy_ybe_model_lower.json": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/ybe_early_release/qy_ybe_model_lower.json",
+            "sha256": "5ea6ff1fab7bf983e13e33ed82af921df0147bc4bcfa01f5d05aae4f90d37e87",
+            "coverage": "501 energy and 501 yield values; original JSON also retains coordinate_type/name",
+            "json_keys": [
+              "coordinate_system",
+              "coordinate_type",
+              "coordinate_name",
+              "map"
+            ],
+            "array_shapes": {
+              "coordinate_system": [
+                501
+              ],
+              "map": [
+                501
+              ]
+            },
+            "coordinate_name": "nr_qy_ybe_only_lower",
+            "coordinate_type": "point",
+            "representative_rows": [
+              [
+                0.29999999999999993,
+                0.21484857489935827
+              ],
+              [
+                1.7320508075688772,
+                5.989010135192711
+              ],
+              [
+                10.0,
+                4.8785168729165465
+              ]
+            ]
+          },
+          "unit": "coordinate_system keVnr; map electron/keVnr",
+          "evidence_claims": [
+            "XENONnT-C036"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/ybe_early_release/qy_ybe_model_median.json": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/ybe_early_release/qy_ybe_model_median.json",
+            "sha256": "64fc4eaeae54b895e850aadf5a7782570830d382ab806e6ff969719217044475",
+            "coverage": "501 energy and 501 yield values; original JSON also retains coordinate_type/name",
+            "json_keys": [
+              "coordinate_system",
+              "coordinate_type",
+              "coordinate_name",
+              "map"
+            ],
+            "array_shapes": {
+              "coordinate_system": [
+                501
+              ],
+              "map": [
+                501
+              ]
+            },
+            "coordinate_name": "nr_qy_ybe_only_median",
+            "coordinate_type": "point",
+            "representative_rows": [
+              [
+                0.29999999999999993,
+                2.744883476035867
+              ],
+              [
+                1.7320508075688772,
+                6.420268530245179
+              ],
+              [
+                10.0,
+                5.214717914326497
+              ]
+            ]
+          },
+          "unit": "coordinate_system keVnr; map electron/keVnr",
+          "evidence_claims": [
+            "XENONnT-C037"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/ybe_early_release/qy_ybe_model_upper.json": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/ybe_early_release/qy_ybe_model_upper.json",
+            "sha256": "74555cd70f7f3758e2c1bb9fbc776719b2d9cb80857697a057245d4287c640d1",
+            "coverage": "501 energy and 501 yield values; original JSON also retains coordinate_type/name",
+            "json_keys": [
+              "coordinate_system",
+              "coordinate_type",
+              "coordinate_name",
+              "map"
+            ],
+            "array_shapes": {
+              "coordinate_system": [
+                501
+              ],
+              "map": [
+                501
+              ]
+            },
+            "coordinate_name": "nr_qy_ybe_only_upper",
+            "coordinate_type": "point",
+            "representative_rows": [
+              [
+                0.29999999999999993,
+                6.2342051168804815
+              ],
+              [
+                1.7320508075688772,
+                6.902989194251805
+              ],
+              [
+                10.0,
+                5.643979732432551
+              ]
+            ]
+          },
+          "unit": "coordinate_system keVnr; map electron/keVnr",
+          "evidence_claims": [
+            "XENONnT-C038"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/xenonnt_sr0_response_early_release_basis.npz": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/xenonnt_sr0_response_early_release_basis.npz",
+            "sha256": "b1872622a371b8acf037149fb002f6cfbc1f930081f625d5036041b8e972da4b",
+            "coverage": "16x10x10x3x3x3x3 basis, 1600 source HDF5/run, all four bin-edge arrays",
+            "arrays": {
+              "probability_basis": [
+                16,
+                10,
+                10,
+                3,
+                3,
+                3,
+                3
+              ],
+              "energy_keVnr": [
+                16
+              ],
+              "Ly_photon_per_keV": [
+                10
+              ],
+              "Qy_electron_per_keV": [
+                10
+              ],
+              "bin_edges_0": [
+                4
+              ],
+              "bin_edges_1": [
+                4
+              ],
+              "bin_edges_2": [
+                4
+              ],
+              "bin_edges_3": [
+                4
+              ],
+              "axis_names": [
+                7
+              ],
+              "provenance_json": []
+            }
+          },
+          "unit": "probability dimensionless; energy keVnr, Ly photon/keVnr, Qy electron/keVnr, cS2 PE",
+          "evidence_claims": [
+            "XENONnT-C040"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/xenonnt_sr0_response_early_release_nominal_1d.txt": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/xenonnt_sr0_response_early_release_nominal_1d.txt",
+            "sha256": "4820d9aa07e3ec9750cf99b3df011615839229df0aca2f788a1cb662fc32e4ba",
+            "coverage": "46x4: true energy and three accepted cS2-bin probabilities",
+            "shape": [
+              46,
+              4
+            ]
+          },
+          "unit": "keVnr; probabilities dimensionless",
+          "evidence_claims": [
+            "XENONnT-C041"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/xenonnt_sr1_response_early_release_basis.npz": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/xenonnt_sr1_response_early_release_basis.npz",
+            "sha256": "d435a3a69ce7f5eaa08e5ddeb9e5d2e64c1226e2730dd5e3a7c3fc6eb0ce665a",
+            "coverage": "16x10x10x3x3x3x3 basis, 1600 source HDF5/run, all four bin-edge arrays",
+            "arrays": {
+              "probability_basis": [
+                16,
+                10,
+                10,
+                3,
+                3,
+                3,
+                3
+              ],
+              "energy_keVnr": [
+                16
+              ],
+              "Ly_photon_per_keV": [
+                10
+              ],
+              "Qy_electron_per_keV": [
+                10
+              ],
+              "bin_edges_0": [
+                4
+              ],
+              "bin_edges_1": [
+                4
+              ],
+              "bin_edges_2": [
+                4
+              ],
+              "bin_edges_3": [
+                4
+              ],
+              "axis_names": [
+                7
+              ],
+              "provenance_json": []
+            }
+          },
+          "unit": "probability dimensionless; energy keVnr, Ly photon/keVnr, Qy electron/keVnr, cS2 PE",
+          "evidence_claims": [
+            "XENONnT-C043"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/xenonnt_sr1_response_early_release_nominal_1d.txt": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/xenonnt_sr1_response_early_release_nominal_1d.txt",
+            "sha256": "273c28d2ac646060ebe243f7c860c3da28d3b98f26e8e932a4703df05760f4c4",
+            "coverage": "46x4: true energy and three accepted cS2-bin probabilities",
+            "shape": [
+              46,
+              4
+            ]
+          },
+          "unit": "keVnr; probabilities dimensionless",
+          "evidence_claims": [
+            "XENONnT-C044"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/response_1d_SR0": {
+          "value": {
+            "energy_keVnr": [
+              0.5,
+              0.6,
+              0.7,
+              0.8,
+              0.9,
+              1.0,
+              1.1,
+              1.2,
+              1.3,
+              1.4,
+              1.5,
+              1.6,
+              1.7,
+              1.8,
+              1.9,
+              2.0,
+              2.1,
+              2.2,
+              2.3,
+              2.4,
+              2.5,
+              2.6,
+              2.7,
+              2.8,
+              2.9,
+              3.0,
+              3.1,
+              3.2,
+              3.3,
+              3.4,
+              3.5,
+              3.6,
+              3.7,
+              3.8,
+              3.9,
+              4.0,
+              4.1,
+              4.2,
+              4.3,
+              4.4,
+              4.5,
+              4.6,
+              4.7,
+              4.8,
+              4.9,
+              5.0
+            ],
+            "probability": [
+              [
+                0.00010559645438227636,
+                2.1843030562984605e-05,
+                3.591999349961489e-07
+              ],
+              [
+                0.00039271555408204703,
+                0.00011399044535632423,
+                3.925569224665627e-06
+              ],
+              [
+                0.0009487773748135526,
+                0.0003628416549624307,
+                1.820503064822578e-05
+              ],
+              [
+                0.0018002406122721588,
+                0.0008569282199846839,
+                6.346241871578846e-05
+              ],
+              [
+                0.002860858752410998,
+                0.0016496395832502316,
+                0.00015886278489692215
+              ],
+              [
+                0.004134184420738289,
+                0.0028274737296215846,
+                0.00035522422174386737
+              ],
+              [
+                0.005584468724876606,
+                0.004441715240481396,
+                0.0006902132025694399
+              ],
+              [
+                0.007108311197602719,
+                0.006514102456170792,
+                0.0012596467628831426
+              ],
+              [
+                0.008675775202846917,
+                0.009021003525906603,
+                0.002104338255803435
+              ],
+              [
+                0.010171139775123446,
+                0.011956046175455568,
+                0.0033257568569608144
+              ],
+              [
+                0.011539532064428778,
+                0.015162963695194206,
+                0.005007123697651109
+              ],
+              [
+                0.012745910407414964,
+                0.018608128486900712,
+                0.0071572036927278915
+              ],
+              [
+                0.013742642141891907,
+                0.02210327557075085,
+                0.009901704494769655
+              ],
+              [
+                0.014479971025227403,
+                0.025627452393290354,
+                0.013251779693993089
+              ],
+              [
+                0.014960522558898851,
+                0.028954471947164686,
+                0.017179256768303577
+              ],
+              [
+                0.015181640208673904,
+                0.03205703392640526,
+                0.02174011336555939
+              ],
+              [
+                0.015205635578911398,
+                0.03483098920183775,
+                0.02695297589043283
+              ],
+              [
+                0.014972876360184068,
+                0.03716841598923148,
+                0.032665740448449714
+              ],
+              [
+                0.014573504446059248,
+                0.03904346631424641,
+                0.03883497113104993
+              ],
+              [
+                0.014047193256035224,
+                0.04043075265181254,
+                0.045364962656948296
+              ],
+              [
+                0.01338425734007206,
+                0.04135746583048455,
+                0.0522173374751219
+              ],
+              [
+                0.012637040159271886,
+                0.04177613355630256,
+                0.059347492627214005
+              ],
+              [
+                0.011833901787655747,
+                0.04176188751454714,
+                0.06658824907289729
+              ],
+              [
+                0.010980171251784928,
+                0.04136321164316918,
+                0.07370272645968388
+              ],
+              [
+                0.010122045476574212,
+                0.04055775490648049,
+                0.08077557323150687
+              ],
+              [
+                0.009289333965729205,
+                0.03943919752589662,
+                0.08766187213758356
+              ],
+              [
+                0.008457669444786103,
+                0.03807113847385517,
+                0.09422957869290112
+              ],
+              [
+                0.007660771863328772,
+                0.0364815923165567,
+                0.10040022601689394
+              ],
+              [
+                0.0068969806427190165,
+                0.034692153641670914,
+                0.10613108157472946
+              ],
+              [
+                0.006183438600899801,
+                0.03281851448140933,
+                0.11131415686847831
+              ],
+              [
+                0.0055281631927204,
+                0.03085079835713999,
+                0.11593467467455074
+              ],
+              [
+                0.004924391882624386,
+                0.028846963609808696,
+                0.11996734979764534
+              ],
+              [
+                0.0043581067756822325,
+                0.026835001308512768,
+                0.12332838975284605
+              ],
+              [
+                0.003855197731862617,
+                0.024850630195779797,
+                0.1260016604805449
+              ],
+              [
+                0.00339074053709616,
+                0.022889875527636903,
+                0.1280964242475435
+              ],
+              [
+                0.002977901382801471,
+                0.021006293239134666,
+                0.12945921579169592
+              ],
+              [
+                0.0025972132266490833,
+                0.01920754016116498,
+                0.13022136691775155
+              ],
+              [
+                0.002271748510183062,
+                0.017505360109754255,
+                0.1303269579459183
+              ],
+              [
+                0.001974929709022912,
+                0.01586643113216526,
+                0.1297723932362683
+              ],
+              [
+                0.0017119616585885978,
+                0.014363862693700307,
+                0.12875919852977236
+              ],
+              [
+                0.0014848789750344657,
+                0.012941323812394849,
+                0.12718241709223396
+              ],
+              [
+                0.0012814923523685085,
+                0.01163955389707156,
+                0.1251106436750378
+              ],
+              [
+                0.001110995596505206,
+                0.010429888487042072,
+                0.12255040052353056
+              ],
+              [
+                0.0009518851815490948,
+                0.009320950788934464,
+                0.11959924487311485
+              ],
+              [
+                0.000820072948925894,
+                0.008318727590590052,
+                0.11638331681498627
+              ],
+              [
+                0.0007047212553549778,
+                0.0073795907099345895,
+                0.11277266728176769
+              ]
+            ]
+          },
+          "unit": "1",
+          "evidence_claims": [
+            "XENONnT-DERIVED-SR0"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/response_1d_SR1": {
+          "value": {
+            "energy_keVnr": [
+              0.5,
+              0.6,
+              0.7,
+              0.8,
+              0.9,
+              1.0,
+              1.1,
+              1.2,
+              1.3,
+              1.4,
+              1.5,
+              1.6,
+              1.7,
+              1.8,
+              1.9,
+              2.0,
+              2.1,
+              2.2,
+              2.3,
+              2.4,
+              2.5,
+              2.6,
+              2.7,
+              2.8,
+              2.9,
+              3.0,
+              3.1,
+              3.2,
+              3.3,
+              3.4,
+              3.5,
+              3.6,
+              3.7,
+              3.8,
+              3.9,
+              4.0,
+              4.1,
+              4.2,
+              4.3,
+              4.4,
+              4.5,
+              4.6,
+              4.7,
+              4.8,
+              4.9,
+              5.0
+            ],
+            "probability": [
+              [
+                8.26875511019701e-05,
+                2.7237839071333197e-05,
+                4.708837168148315e-07
+              ],
+              [
+                0.00030793041811734493,
+                0.00014150646524102586,
+                4.839913056632525e-06
+              ],
+              [
+                0.0007373894827387952,
+                0.0004425404150239241,
+                2.345850906898341e-05
+              ],
+              [
+                0.0013752225343453873,
+                0.001030933881193211,
+                8.322480706800562e-05
+              ],
+              [
+                0.002144707039949859,
+                0.001944526064954037,
+                0.00020957740815336735
+              ],
+              [
+                0.0030492564845194772,
+                0.0032500666685792907,
+                0.0004660965161087527
+              ],
+              [
+                0.004030603242583768,
+                0.00500538608457888,
+                0.0008993797514483273
+              ],
+              [
+                0.005022015568136388,
+                0.0071695242584823935,
+                0.0016176318038502331
+              ],
+              [
+                0.005993959478876031,
+                0.009711380889805853,
+                0.0026762393542684865
+              ],
+              [
+                0.0068684614085186765,
+                0.012566485373803655,
+                0.004190427534370577
+              ],
+              [
+                0.00761124607348911,
+                0.01557954116048084,
+                0.006216087897709457
+              ],
+              [
+                0.00823580965923989,
+                0.018676283917580604,
+                0.008796861356067056
+              ],
+              [
+                0.008666121743248833,
+                0.021699092572009127,
+                0.012019902359350963
+              ],
+              [
+                0.008913626730994838,
+                0.024572362393661826,
+                0.015893299688991672
+              ],
+              [
+                0.008996418935506801,
+                0.027130063583300047,
+                0.02035615061294784
+              ],
+              [
+                0.008915321867657136,
+                0.029359088793326975,
+                0.025451562507777567
+              ],
+              [
+                0.00871736970603195,
+                0.031177168631927037,
+                0.0311776795457561
+              ],
+              [
+                0.008370526968738756,
+                0.03251101623410662,
+                0.037387618234165344
+              ],
+              [
+                0.007956032995725542,
+                0.033377399885959586,
+                0.04395902592661171
+              ],
+              [
+                0.007470096541717894,
+                0.033793256375496086,
+                0.05083026214730976
+              ],
+              [
+                0.006951954996468805,
+                0.033798971351783225,
+                0.05789559196499563
+              ],
+              [
+                0.006411541213317409,
+                0.03337202587361267,
+                0.06513252421856079
+              ],
+              [
+                0.00584284679480563,
+                0.032593407550952504,
+                0.07241337160905066
+              ],
+              [
+                0.005304551377622153,
+                0.031543796233559615,
+                0.07945813705205751
+              ],
+              [
+                0.004772958039042479,
+                0.030267160972179095,
+                0.08636419780756678
+              ],
+              [
+                0.004269462733897901,
+                0.028781082990703193,
+                0.09294902107969386
+              ],
+              [
+                0.0037992758869181734,
+                0.027150087983701228,
+                0.09918345065866636
+              ],
+              [
+                0.0033649778106349328,
+                0.025457225606133643,
+                0.10487562499068245
+              ],
+              [
+                0.0029489827629726505,
+                0.023678599750396382,
+                0.11013758825730355
+              ],
+              [
+                0.0025852189487175783,
+                0.02190024313562387,
+                0.11479635642264001
+              ],
+              [
+                0.002255450852718612,
+                0.020170338144096026,
+                0.11878040165565416
+              ],
+              [
+                0.001960522176012442,
+                0.018444887616227108,
+                0.12220865290984458
+              ],
+              [
+                0.0016936007582848743,
+                0.016805240487892673,
+                0.1249116604104571
+              ],
+              [
+                0.0014646002886037261,
+                0.015235609241237248,
+                0.126947015735417
+              ],
+              [
+                0.001259388838900317,
+                0.013742891962194678,
+                0.12841220326850228
+              ],
+              [
+                0.0010774983095873077,
+                0.012350207782607918,
+                0.12907964135671024
+              ],
+              [
+                0.0009197013791053502,
+                0.011063073546611452,
+                0.12925117008063383
+              ],
+              [
+                0.0007846780732855547,
+                0.009858716971066675,
+                0.12878339547067438
+              ],
+              [
+                0.0006682472106750605,
+                0.008756223874562276,
+                0.12766693847910218
+              ],
+              [
+                0.0005660035137959132,
+                0.0077684348040337765,
+                0.12604678565203456
+              ],
+              [
+                0.0004794008527097574,
+                0.006860169957112632,
+                0.12398348193801703
+              ],
+              [
+                0.00040617717480378725,
+                0.006047535832166784,
+                0.1214287698450104
+              ],
+              [
+                0.00034318379591575675,
+                0.005307004441850755,
+                0.11845643445339381
+              ],
+              [
+                0.0002876225772795379,
+                0.004641393832093531,
+                0.11512659826077454
+              ],
+              [
+                0.0002408546033186214,
+                0.004066120980555856,
+                0.11153486913375987
+              ],
+              [
+                0.00020288400972080285,
+                0.003540820083652682,
+                0.10765568591815214
+              ]
+            ]
+          },
+          "unit": "1",
+          "evidence_claims": [
+            "XENONnT-DERIVED-SR1"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "kernel_2024": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [
+            "XENONnT-M01"
+          ],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": [
+            "strict_2024_reproduction"
+          ]
+        },
+        "detector/equation_3": {
+          "value": "P_{r\\mathbf i}(T;\\boldsymbol\\eta)=\\int_{\\Omega_{r\\mathbf i}}p_r(\\mathbf x\\mid T;\\boldsymbol\\eta)\\epsilon_r(\\mathbf x,T;\\boldsymbol\\eta)\\,d\\mathbf x,\\qquad0\\le\\sum_{\\mathbf i}P_{r\\mathbf i}\\le1. \\tag{3}",
+          "unit": "equation with symbol units declared in the chapter",
+          "evidence_claims": [
+            "XENONnT-EQ3"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
+      "decision_refs": [],
+      "evidence_refs": []
+    },
+    "slow_counts": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "observable_definition": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "binning_definition": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "reference/xenonnt_2024_fig1_sm_recoil_spectra.txt": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/reference/xenonnt_2024_fig1_sm_recoil_spectra.txt",
+            "sha256": "64d416a367d34d646fb8376ea2c30a943602458c0132712ae6db84f46a3e9e8e",
+            "coverage": "40x6: T, two true-recoil reference spectra, energy/two curve visibility flags",
+            "shape": [
+              40,
+              6
+            ],
+            "axis": "true nuclear recoil energy, keVnr",
+            "original_vertex_energy_range_keVnr": [
+              0.429999996183,
+              2.77000000181
+            ],
+            "all_curves_visible_rows": 37,
+            "representative_visible_rows": [
+              [
+                0.549999996987,
+                871.465479984,
+                0.272139456359,
+                1.0,
+                1.0,
+                1.0
+              ],
+              [
+                1.0900000006,
+                269.235642484,
+                2.46355300537,
+                1.0,
+                1.0,
+                1.0
+              ],
+              [
+                1.63000000422,
+                71.1165677066,
+                2.31501628053,
+                1.0,
+                1.0,
+                1.0
+              ],
+              [
+                2.16999999779,
+                13.7310962236,
+                0.844434864735,
+                1.0,
+                1.0,
+                1.0
+              ],
+              [
+                2.71000000141,
+                1.49548915486,
+                0.125468259031,
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            "extraction_record": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\重构\\20261106_Onboarding_provenance_revision\\XENONNT2024_FIG1_VECTOR.json"
+          },
+          "unit": "Rates events/(t yr keVnr). Flags dimensionless. With-acceptance rate already includes acceptance.",
+          "evidence_claims": [
+            "XENONnT-C032"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "reference/xenonnt_early_release_cevns_spectrum.json": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/reference/xenonnt_early_release_cevns_spectrum.json",
+            "sha256": "47c1a2232c3d1f09ec8facfcf2a0ef13b01a9dc92d25a02bbba0244ca0e0da67",
+            "coverage": "all original JSON keys and arrays",
+            "json_keys": [
+              "coordinate_system",
+              "coordinate_type",
+              "coordinate_name",
+              "map",
+              "rate"
+            ],
+            "array_shapes": {
+              "coordinate_system": [
+                501
+              ],
+              "map": [
+                501
+              ]
+            },
+            "coordinate_name": "cdf",
+            "coordinate_type": "point",
+            "rate": 335.5964691089417,
+            "representative_rows": [
+              [
+                0.0,
+                0.45
+              ],
+              [
+                0.9914101491630194,
+                2.1213203435596424
+              ],
+              [
+                1.0,
+                10.0
+              ]
+            ]
+          },
+          "unit": "map/coordinate_system according to coordinate_name; recoil keV, rate events/(t yr)",
+          "evidence_claims": [
+            "XENONnT-C039"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "prediction/numerical_policies": {
+          "value": {
+            "seconds_per_year": 31557600,
+            "days_per_year": 365.25,
+            "source_interpolation": "piecewise_linear_candidate",
+            "source_outside_table": "zero_candidate",
+            "response_interpolation": "nonnegative_multilinear_within_verified_grid_candidate",
+            "quadrature_tolerance_and_grid": null
+          },
+          "unit": "per field",
+          "evidence_claims": [
+            "XENONnT-NUMERICAL-POLICIES"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "prediction/equation_4": {
+          "value": "\\mu^{\\rm sig}_{r\\mathbf i}=\\mathcal E_r t_{\\rm yr}\\sum_A n_A^{(t)}\\int dT\\,dE_\\nu\\,\\frac{d\\phi}{dE_\\nu}\\frac{d\\sigma_A}{dT}P_{r\\mathbf i}(T;\\boldsymbol\\eta). \\tag{4}",
+          "unit": "equation with symbol units declared in the chapter",
+          "evidence_claims": [
+            "XENONnT-EQ4"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "sm_runtime_result": {
+          "value": [
+            3.5140309179313785,
+            5.649108573211995,
+            3.1540937324043195
+          ],
+          "unit": "events/bin",
+          "evidence_claims": [
+            "SM20261107-RESULT"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "light_vector_results": {
+          "value": {
+            "SM": [
+              3.5140309179313785,
+              5.649108573211995,
+              3.1540937324043195
+            ],
+            "V10_g1": [
+              2.4361800365535307,
+              4.084558482827038,
+              2.4057786795777076
+            ],
+            "V10_g2": [
+              0.46301385366428766,
+              1.0092597822640426,
+              0.8021189920101682
+            ],
+            "V10_g3": [
+              1.3756917529965038,
+              1.2782671832986736,
+              0.2669710824385743
+            ],
+            "BL10_g2": [
+              5.2779322867577605,
+              8.154747989804658,
+              4.31810633233558
+            ],
+            "V1_g2": [
+              0.3478199023152621,
+              0.5963432478963042,
+              0.5103070353561254
+            ],
+            "V100_g2": [
+              3.3420586554540317,
+              5.373834988708223,
+              3.00148838077725
+            ]
+          },
+          "unit": "events/bin",
+          "evidence_claims": [
+            "VECTOR20261108-SM",
+            "VECTOR20261108-V10_g1",
+            "VECTOR20261108-V10_g2",
+            "VECTOR20261108-V10_g3",
+            "VECTOR20261108-BL10_g2",
+            "VECTOR20261108-V1_g2",
+            "VECTOR20261108-V100_g2"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "current_nuclear_result": {
+          "value": {
+            "file": "outputs/solar_b8_sm/20261110_nuclear_response_run2/XENONnT_2024_SolarB8/RESULT.json",
+            "counts": [
+              3.5154649845127466,
+              5.65087950105582,
+              3.153516202934238
+            ]
+          },
+          "unit": "events/bin",
+          "evidence_claims": [
+            "NR20261110-RESULT"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
+      "decision_refs": [
+        "D0004"
+      ],
+      "evidence_refs": []
+    },
+    "fast_counts": {
+      "decision_status": "DRAFT",
+      "fields": {},
+      "decision_refs": [],
+      "evidence_refs": []
+    },
+    "statistics": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "statistics_model_id": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "statistics/xenonnt_original_fig2.txt": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_original_fig2.txt",
+            "sha256": "e904511d0d0d311f423408e5d56932a1b1e6415dd0cdac70eec12a8282cb7217",
+            "coverage": "all 3 rows; bin,D,AC,neutron,ER,signal; events/bin",
+            "shape": [
+              3,
+              6
+            ]
+          },
+          "unit": "D/background/reference signal events/bin, coordinate columns as declared",
+          "evidence_claims": [
+            "XENONnT-C014"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "statistics/xenonnt_benchmark_fig1.txt": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_benchmark_fig1.txt",
+            "sha256": "0dd44065a10aeab1a07a1dd23b0b0e29cb3ad7c953784d83e995a37a34bde882",
+            "coverage": "all 3 rows; bin,display_left_PE,display_right_PE,D,AC,neutron,ER,signal; events/bin",
+            "shape": [
+              3,
+              8
+            ]
+          },
+          "unit": "D/background/reference signal events/bin, coordinate columns as declared",
+          "evidence_claims": [
+            "XENONnT-C015"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "statistics/xenonnt_official_observed_bins.txt": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_official_observed_bins.txt",
+            "sha256": "010f958e460aa121d418bb7d174af8cb25e14d84ef4d7cf0faaa4fe3f7513b38",
+            "coverage": "all 6 rows; run,bin,cS2_low_PE,cS2_high_PE,D",
+            "shape": [
+              6,
+              5
+            ]
+          },
+          "unit": "as declared per column/key in the numerical file and chapter",
+          "evidence_claims": [
+            "XENONnT-C016"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "statistics/xenonnt_official_observed_events.txt": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_official_observed_events.txt",
+            "sha256": "26a8b6b7011e76145dd9a47a81a401675f16d3855321dbe90af7c2e4e559c18a",
+            "coverage": "all 37 rows; run,CSV_zero_based_row,cS2_PE",
+            "shape": [
+              37,
+              3
+            ]
+          },
+          "unit": "as declared per column/key in the numerical file and chapter",
+          "evidence_claims": [
+            "XENONnT-C017"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "statistics/xenonnt_sr0_background_release2026_v2.npz": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_sr0_background_release2026_v2.npz",
+            "sha256": "8e99e7a71bc4298778cd165d85ca2977ad2a45bd285e08efcb1de687029a0a3f",
+            "coverage": "all rows/keys; detailed key map below",
+            "arrays": {
+              "tLy": [
+                7
+              ],
+              "tQy": [
+                7
+              ],
+              "AC": [
+                3,
+                3,
+                3,
+                3
+              ],
+              "ER": [
+                3,
+                3,
+                3,
+                3
+              ],
+              "neutron": [
+                7,
+                7,
+                3,
+                3,
+                3,
+                3
+              ],
+              "bin_edges_0": [
+                4
+              ],
+              "bin_edges_1": [
+                4
+              ],
+              "bin_edges_2": [
+                4
+              ],
+              "bin_edges_3": [
+                4
+              ]
+            }
+          },
+          "unit": "events/(t yr bin)",
+          "evidence_claims": [
+            "XENONnT-C021"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "statistics/xenonnt_sr0_observed_4d_v2.npz": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_sr0_observed_4d_v2.npz",
+            "sha256": "2d45c8b91e41653f7ccd9a556c356ea3b896d0be2cfdfa82204d35c6e2a1f780",
+            "coverage": "all rows/keys; detailed key map below",
+            "arrays": {
+              "observed": [
+                3,
+                3,
+                3,
+                3
+              ],
+              "events": [
+                9,
+                4
+              ],
+              "axis_names": [
+                4
+              ],
+              "bin_edges_0": [
+                4
+              ],
+              "bin_edges_1": [
+                4
+              ],
+              "bin_edges_2": [
+                4
+              ],
+              "bin_edges_3": [
+                4
+              ]
+            }
+          },
+          "unit": "events/bin; PE and dimensionless classifiers",
+          "evidence_claims": [
+            "XENONnT-C022"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "statistics/xenonnt_sr1_background_release2026_v2.npz": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_sr1_background_release2026_v2.npz",
+            "sha256": "89cb9036fb6f4de81be9b757d8ff0cf1019c575fa2648cd41cdd05f90fa47c6a",
+            "coverage": "all rows/keys; detailed key map below",
+            "arrays": {
+              "tLy": [
+                7
+              ],
+              "tQy": [
+                7
+              ],
+              "AC": [
+                3,
+                3,
+                3,
+                3
+              ],
+              "ER": [
+                3,
+                3,
+                3,
+                3
+              ],
+              "neutron": [
+                7,
+                7,
+                3,
+                3,
+                3,
+                3
+              ],
+              "bin_edges_0": [
+                4
+              ],
+              "bin_edges_1": [
+                4
+              ],
+              "bin_edges_2": [
+                4
+              ],
+              "bin_edges_3": [
+                4
+              ]
+            }
+          },
+          "unit": "events/(t yr bin)",
+          "evidence_claims": [
+            "XENONnT-C024"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "statistics/xenonnt_sr1_observed_4d_v2.npz": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_sr1_observed_4d_v2.npz",
+            "sha256": "202e896ff5ec8ab9216be7b3eba163034d286cee0980d7224068636979e1ea86",
+            "coverage": "all rows/keys; detailed key map below",
+            "arrays": {
+              "observed": [
+                3,
+                3,
+                3,
+                3
+              ],
+              "events": [
+                28,
+                4
+              ],
+              "axis_names": [
+                4
+              ],
+              "bin_edges_0": [
+                4
+              ],
+              "bin_edges_1": [
+                4
+              ],
+              "bin_edges_2": [
+                4
+              ],
+              "bin_edges_3": [
+                4
+              ]
+            }
+          },
+          "unit": "events/bin; PE and dimensionless classifiers",
+          "evidence_claims": [
+            "XENONnT-C025"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "statistics/xenonnt_prefit_inputs_2024.v2.1.json": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_prefit_inputs_2024.v2.1.json",
+            "sha256": "0d7e6f42ac8b7715a278a5e4689a845745e696555dae333321cb1771678a52a1",
+            "coverage": "all records",
+            "parameters": [
+              {
+                "name": "AC_SR0_prefit",
+                "value": 7.5,
+                "unit": "events",
+                "sigma": 0.7,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "PDF p5 Table I expectation, AC(SR0)"
+              },
+              {
+                "name": "AC_SR1_prefit",
+                "value": 17.8,
+                "unit": "events",
+                "sigma": 1.0,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "PDF p5 Table I expectation, AC(SR1)"
+              },
+              {
+                "name": "ER_combined_prefit",
+                "value": 0.7,
+                "unit": "events",
+                "sigma": 0.7,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "PDF p5 Table I expectation, ER"
+              },
+              {
+                "name": "neutron_combined_prefit",
+                "value": 0.5,
+                "unit": "events",
+                "sigma": null,
+                "uncertainty_minus": 0.3,
+                "uncertainty_plus": 0.2,
+                "locator": "PDF p5 Table I expectation, Neutron"
+              },
+              {
+                "name": "total_background_prefit",
+                "value": 26.4,
+                "unit": "events",
+                "sigma": null,
+                "uncertainty_minus": 1.3,
+                "uncertainty_plus": 1.4,
+                "locator": "PDF p5 Table I expectation, Total background"
+              },
+              {
+                "name": "signal_reference",
+                "value": 11.9,
+                "unit": "events",
+                "sigma": null,
+                "uncertainty_minus": 4.2,
+                "uncertainty_plus": 4.5,
+                "locator": "PDF p5 Table I expectation, 8B"
+              },
+              {
+                "name": "AC_SR0_relative_rate_uncertainty",
+                "value": 0.09,
+                "unit": "1",
+                "sigma": null,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "PDF p5 AC model paragraph"
+              },
+              {
+                "name": "AC_SR1_relative_rate_uncertainty",
+                "value": 0.058,
+                "unit": "1",
+                "sigma": null,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "PDF p5 AC model paragraph"
+              },
+              {
+                "name": "neutron_relative_rate_uncertainty",
+                "value": 0.58,
+                "unit": "1",
+                "sigma": null,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "PDF p5 neutron paragraph"
+              },
+              {
+                "name": "ER_relative_rate_uncertainty",
+                "value": 1.0,
+                "unit": "1",
+                "sigma": null,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "PDF p5 ER paragraph"
+              },
+              {
+                "name": "signal_total_acceptance_relative_uncertainty",
+                "value": 0.1,
+                "unit": "1",
+                "sigma": null,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "PDF p5 first column, S2 acceptance paragraph"
+              },
+              {
+                "name": "neutron_SR0_prefit",
+                "value": 0.13,
+                "sigma": 0.07,
+                "unit": "events",
+                "locator": "2408.02877v1 PDF p5 neutron paragraph"
+              },
+              {
+                "name": "neutron_SR1_prefit",
+                "value": 0.33,
+                "sigma": 0.19,
+                "unit": "events",
+                "locator": "2408.02877v1 PDF p5 neutron paragraph"
+              },
+              {
+                "name": "ER_SR0_prefit",
+                "value": 0.13,
+                "sigma": 0.13,
+                "unit": "events",
+                "locator": "2408.02877v1 PDF p5 ER paragraph"
+              },
+              {
+                "name": "ER_SR1_prefit",
+                "value": 0.56,
+                "sigma": 0.56,
+                "unit": "events",
+                "locator": "2408.02877v1 PDF p5 ER paragraph"
+              }
+            ]
+          },
+          "unit": "per scalar parameter, explicitly declared in the JSON",
+          "evidence_claims": [
+            "XENONnT-C028"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "statistics/xenonnt_sr0_background_and_b8_early_release.npz": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_sr0_background_and_b8_early_release.npz",
+            "sha256": "cc489f2afa574089b9c3ef1650a6b7a4e81cd61a79aeccc3c5a1feb98c8750c6",
+            "coverage": "AC/ER each 3x3x3x3; B8/neutron each 7x7x3x3x3x3; all bin edges retained",
+            "arrays": {
+              "tLy": [
+                7
+              ],
+              "tQy": [
+                7
+              ],
+              "provenance_json": [],
+              "ac_rate_per_tyr_bin": [
+                3,
+                3,
+                3,
+                3
+              ],
+              "er_rate_per_tyr_bin": [
+                3,
+                3,
+                3,
+                3
+              ],
+              "b8_rate_per_tyr_bin": [
+                7,
+                7,
+                3,
+                3,
+                3,
+                3
+              ],
+              "rg_rate_per_tyr_bin": [
+                7,
+                7,
+                3,
+                3,
+                3,
+                3
+              ],
+              "bin_edges_0": [
+                4
+              ],
+              "bin_edges_1": [
+                4
+              ],
+              "bin_edges_2": [
+                4
+              ],
+              "bin_edges_3": [
+                4
+              ]
+            }
+          },
+          "unit": "rates events/(t yr bin); no bin-width factors; tLy/tQy nuisance coordinates -3..3",
+          "evidence_claims": [
+            "XENONnT-C042"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "statistics/xenonnt_sr1_background_and_b8_early_release.npz": {
+          "value": {
+            "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_sr1_background_and_b8_early_release.npz",
+            "sha256": "7e78c78cf7df1aca3dfc6e0376ca2e1cf6bead9af7ae8877b62c383862fbf642",
+            "coverage": "AC/ER each 3x3x3x3; B8/neutron each 7x7x3x3x3x3; all bin edges retained",
+            "arrays": {
+              "tLy": [
+                7
+              ],
+              "tQy": [
+                7
+              ],
+              "provenance_json": [],
+              "ac_rate_per_tyr_bin": [
+                3,
+                3,
+                3,
+                3
+              ],
+              "er_rate_per_tyr_bin": [
+                3,
+                3,
+                3,
+                3
+              ],
+              "b8_rate_per_tyr_bin": [
+                7,
+                7,
+                3,
+                3,
+                3,
+                3
+              ],
+              "rg_rate_per_tyr_bin": [
+                7,
+                7,
+                3,
+                3,
+                3,
+                3
+              ],
+              "bin_edges_0": [
+                4
+              ],
+              "bin_edges_1": [
+                4
+              ],
+              "bin_edges_2": [
+                4
+              ],
+              "bin_edges_3": [
+                4
+              ]
+            }
+          },
+          "unit": "rates events/(t yr bin); no bin-width factors; tLy/tQy nuisance coordinates -3..3",
+          "evidence_claims": [
+            "XENONnT-C045"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "benchmark_signal_sigma": {
+          "value": 0.05,
+          "unit": "1",
+          "evidence_claims": [
+            "XENONnT-S07"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "benchmark_AC_sigma": {
+          "value": 0.048,
+          "unit": "1",
+          "evidence_claims": [
+            "XENONnT-S08"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "benchmark_neutron_sigma": {
+          "value": 0.5,
+          "unit": "1",
+          "evidence_claims": [
+            "XENONnT-S09"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "benchmark_ER_sigma": {
+          "value": 1.0,
+          "unit": "1",
+          "evidence_claims": [
+            "XENONnT-S10"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "prefit_shapes_2024": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [
+            "XENONnT-M02"
+          ],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": [
+            "strict_native_4D_likelihood"
+          ]
+        },
+        "yield_constraints": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [
+            "XENONnT-M03"
+          ],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": [
+            "native_4D_likelihood"
+          ]
+        },
+        "benchmark_inference_conventions": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [
+            "XENONnT-M05"
+          ],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": [
+            "strict_benchmark_inference"
+          ]
+        },
+        "statistics/equation_5": {
+          "value": "\\mu_{r\\mathbf i}=\\mu^{\\rm sig}_{r\\mathbf i}+\\sum_k B^k_{r\\mathbf i}. \\tag{5}",
+          "unit": "equation with symbol units declared in the chapter",
+          "evidence_claims": [
+            "XENONnT-EQ5"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "statistics/equation_6": {
+          "value": "-2\\ln\\mathcal L=2\\sum_{r,\\mathbf i}\\left[\\mu_{r\\mathbf i}-D_{r\\mathbf i}+D_{r\\mathbf i}\\ln\\frac{D_{r\\mathbf i}}{\\mu_{r\\mathbf i}}\\right]-2\\ln\\pi(\\boldsymbol\\eta). \\tag{6}",
+          "unit": "equation with symbol units declared in the chapter",
+          "evidence_claims": [
+            "XENONnT-EQ6"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
+      "decision_refs": [],
+      "evidence_refs": []
+    },
+    "validation_claim": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "physics_report": {
+          "value": {
+            "models": {}
+          },
+          "unit": "1",
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": [
+            "human_physics_report_review"
+          ]
+        }
+      },
+      "decision_refs": [],
+      "evidence_refs": []
+    }
+  }
+}

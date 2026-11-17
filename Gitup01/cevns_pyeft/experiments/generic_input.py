@@ -93,6 +93,9 @@ def validate(data):
 
 def profile_errors(data):
     """Closed contracts for code-owned executable profiles, without runtime imports."""
+    if data['assembly']['profile']=='solar_b8_sm_v1':
+        from .solar_input import profile_errors as solar_profile_errors
+        return solar_profile_errors(data)
     errors=[]
     cfg=data['assembly'];params=data['parameters'];arrays=data['resources']['arrays'];models=data['models']
     def require(ok, message):
@@ -230,6 +233,9 @@ def validate_resources(data, arrays, raw):
                 errors.append(key+': invalid fixed density matrix shape/Hermiticity/trace')
             elif np.min(np.linalg.eigvalsh(rho)) < -1e-10:
                 errors.append(key+': density matrix is not positive semidefinite')
+    if data['assembly']['profile']=='solar_b8_sm_v1':
+        from .solar_input import resource_errors
+        errors+=resource_errors(data,arrays)
     return errors
 
 

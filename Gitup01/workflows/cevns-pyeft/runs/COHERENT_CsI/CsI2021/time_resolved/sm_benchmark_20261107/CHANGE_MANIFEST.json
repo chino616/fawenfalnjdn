@@ -1,0 +1,308 @@
+{
+  "date": "2026-11-07",
+  "authorization": "Current user requested SM event-count benchmark using existing project workflow",
+  "scope": "Explicit examples, outputs, scoped run records and navigation; no production prediction algorithm or numerical resource change",
+  "runtime_source_changed": false,
+  "original_response_changed": false,
+  "frozen_reference_changed": false,
+  "active_registry_changed": false,
+  "scientific_freeze_or_paper_equivalence_approval_inferred": false,
+  "backup_manifest": "backup/csi-time-sm-benchmark-20261107-01/MANIFEST.json",
+  "protection_refresh": "PROTECTION_REFRESH.json",
+  "files": [
+    {
+      "path": "docs/experiments/COHERENT/CsI2021/time_resolved/SM_BENCHMARK.md",
+      "operation": "create",
+      "owner_readme": "docs/experiments/COHERENT/CsI2021/time_resolved/README.md"
+    },
+    {
+      "path": "examples/COHERENT_CsI/time_resolved_sm/plot_benchmark.py",
+      "operation": "create",
+      "owner_readme": "examples/COHERENT_CsI/time_resolved_sm/README.md"
+    },
+    {
+      "path": "examples/COHERENT_CsI/time_resolved_sm/README.md",
+      "operation": "create",
+      "owner_readme": "examples/COHERENT_CsI/time_resolved_sm/README.md"
+    },
+    {
+      "path": "examples/COHERENT_CsI/time_resolved_sm/run_benchmark.py",
+      "operation": "create",
+      "owner_readme": "examples/COHERENT_CsI/time_resolved_sm/README.md"
+    },
+    {
+      "path": "examples/COHERENT_CsI/time_resolved_sm/summarize_benchmark.py",
+      "operation": "create",
+      "owner_readme": "examples/COHERENT_CsI/time_resolved_sm/README.md"
+    },
+    {
+      "path": "examples/COHERENT_CsI/time_resolved_sm/validate_benchmark.py",
+      "operation": "create",
+      "owner_readme": "examples/COHERENT_CsI/time_resolved_sm/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/BENCHMARK.md",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/benchmark.npz",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/CODE_SNAPSHOT.zip",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/CONTRACT_TEST_PLAN.json",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/document-preview-0.html",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/document-preview-1.html",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/document-preview-2.html",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/document-preview-counts.png",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/document-preview-desktop.png",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/document-preview-narrow.png",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/DOCUMENT_LINK_CHECKS.json",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/events_99bins.csv",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/figures/sm_counts_2d.png",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/figures/sm_counts_2d.svg",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/figures/sm_projections.png",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/figures/sm_projections.svg",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/figures/sm_time_slices.png",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/figures/sm_time_slices.svg",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/grid_128_240/prediction.npz",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/grid_128_240/report.json",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/grid_256_480/prediction.npz",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/grid_256_480/report.json",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/grid_512_960/prediction.npz",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/grid_512_960/report.json",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/NATIVE_SM_EQUIVALENCE.json",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/PE_projection.csv",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/pilot/prediction.npz",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/pilot/report.json",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/pilot_checked/prediction.npz",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/pilot_checked/report.json",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/pilot_checked_cached/prediction.npz",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/pilot_checked_cached/report.json",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/PLOT_MANIFEST.json",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/README.md",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/RUN_SUMMARY.json",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/runtime-tests.log",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/runtime-tests.xml",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/SOURCE_STATE_BEFORE_VALIDATION.json",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/time_projection.csv",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "outputs/csi2021_time_sm_20261107/VALIDATION_RESULTS.json",
+      "operation": "create",
+      "owner_readme": "outputs/csi2021_time_sm_20261107/README.md"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sm_benchmark_20261107/07_SM_FORWARD_BENCHMARK_REPORT.md",
+      "operation": "create",
+      "owner_readme": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sm_benchmark_20261107/README.md"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sm_benchmark_20261107/NORMALIZATION_LEDGER.json",
+      "operation": "create",
+      "owner_readme": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sm_benchmark_20261107/README.md"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sm_benchmark_20261107/PROTECTION_REFRESH.json",
+      "operation": "create",
+      "owner_readme": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sm_benchmark_20261107/README.md"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sm_benchmark_20261107/README.md",
+      "operation": "create",
+      "owner_readme": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sm_benchmark_20261107/README.md"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sm_benchmark_20261107/RESOURCE_AUDIT.json",
+      "operation": "create",
+      "owner_readme": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sm_benchmark_20261107/README.md"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sm_benchmark_20261107/SM_CONFIG.json",
+      "operation": "create",
+      "owner_readme": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sm_benchmark_20261107/README.md"
+    },
+    {
+      "path": "examples/README.md",
+      "operation": "modify",
+      "owner_readme": "README.md"
+    },
+    {
+      "path": "examples/COHERENT_CsI/README.md",
+      "operation": "modify",
+      "owner_readme": "examples/README.md"
+    },
+    {
+      "path": "outputs/README.md",
+      "operation": "modify",
+      "owner_readme": "README.md"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/README.md",
+      "operation": "modify",
+      "owner_readme": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/README.md"
+    },
+    {
+      "path": "docs/experiments/COHERENT/CsI2021/time_resolved/README.md",
+      "operation": "modify",
+      "owner_readme": "docs/experiments/COHERENT/CsI2021/time_resolved/README.md"
+    },
+    {
+      "path": "tools/workflow_validation/config/PROTECTED_FILES.json",
+      "operation": "modify",
+      "owner_readme": "tools/workflow_validation/config/README.md"
+    }
+  ],
+  "manifest_self_entries": [
+    "CHANGE_MANIFEST.json",
+    "outputs/csi2021_time_sm_20261107/ARTIFACT_MANIFEST.json"
+  ]
+}

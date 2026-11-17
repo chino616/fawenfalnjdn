@@ -1,0 +1,320 @@
+{
+  "version": "v3_20261106_provenance",
+  "records": [
+    {
+      "file": "data/experiments/CONUS_Plus/conusplus_kkl_run1/mueller_coefficients.csv",
+      "columns_or_keys": [
+        "a0",
+        "a1",
+        "a2",
+        "a3",
+        "a4",
+        "a5"
+      ],
+      "range": "all 4 rows",
+      "column_units": {
+        "a0": "1, exponent uses numerical E/MeV",
+        "a1": "1, exponent uses numerical E/MeV",
+        "a2": "1, exponent uses numerical E/MeV",
+        "a3": "1, exponent uses numerical E/MeV",
+        "a4": "1, exponent uses numerical E/MeV",
+        "a5": "1, exponent uses numerical E/MeV"
+      },
+      "source_ids": [
+        "S0003"
+      ],
+      "claim_ids": [
+        "C0012"
+      ],
+      "locator": "Mueller Table VI, PDF p.13",
+      "transformation": "direct transcription, 24/24 original coefficients checked",
+      "sha256": "6e9d43f06fc0a99c04a8b15e5b60187c6c9b1e4c8f0172875352f23c09e8dfd4"
+    },
+    {
+      "file": "data/experiments/CONUS_Plus/conusplus_kkl_run1/kopeikin_low_energy_transcribed.csv",
+      "columns_or_keys": [
+        "energy_MeV",
+        "relative_shape"
+      ],
+      "range": "all 32 rows",
+      "column_units": {
+        "energy_MeV": "MeV",
+        "relative_shape": "1"
+      },
+      "source_ids": [
+        "S0002"
+      ],
+      "claim_ids": [
+        "C0013"
+      ],
+      "locator": "User PDF Table 2, PDF p.6 / printed p.5",
+      "transformation": "direct transcription, claimed upstream S0004 numeric table unverified",
+      "sha256": "5594737d150727bf40d1512cc6b8bbc50217f6282b3e4ba5a8abd9651569b856"
+    },
+    {
+      "file": "data/experiments/CONUS_Plus/conusplus_kkl_run1/fission_fractions.csv",
+      "columns_or_keys": [
+        "pdf_reference_fraction"
+      ],
+      "range": "all 4 rows",
+      "column_units": {
+        "pdf_reference_fraction": "1"
+      },
+      "source_ids": [
+        "S0002",
+        "S0009"
+      ],
+      "claim_ids": [
+        "C0014"
+      ],
+      "locator": "User PDF Eqs.(1.22)-(1.25), NEON Fig.23 caption",
+      "transformation": "direct reference mixture, isotope order explicit",
+      "sha256": "5781f04a6b0ef1a4ef7f3de7aeb693f5a3c87825ab853092cef135f7d02a321a"
+    },
+    {
+      "file": "data/experiments/CONUS_Plus/conusplus_kkl_run1/fission_fractions.csv",
+      "columns_or_keys": [
+        "kkl_comparison_fraction"
+      ],
+      "range": "all 4 rows",
+      "column_units": {
+        "kkl_comparison_fraction": "1"
+      },
+      "source_ids": [
+        "S0010"
+      ],
+      "claim_ids": [
+        "C0062"
+      ],
+      "locator": "arXiv:2501.05206v3 PDF p.6",
+      "transformation": "comparison column only",
+      "sha256": "5781f04a6b0ef1a4ef7f3de7aeb693f5a3c87825ab853092cef135f7d02a321a"
+    },
+    {
+      "file": "data/experiments/CONUS_Plus/conusplus_kkl_run1/reactor_flux_default.csv",
+      "columns_or_keys": [
+        "energy_MeV",
+        "relative_shape",
+        "flux_cm_minus2_s_minus1_MeV_minus1"
+      ],
+      "range": "all 10001 rows",
+      "column_units": {
+        "energy_MeV": "MeV",
+        "relative_shape": "1",
+        "flux_cm_minus2_s_minus1_MeV_minus1": "cm^-2*s^-1*MeV^-1"
+      },
+      "source_ids": [
+        "S0015",
+        "S0001",
+        "S0002",
+        "S0003",
+        "S0014"
+      ],
+      "claim_ids": [
+        "C0018"
+      ],
+      "locator": "build_inputs.py::build and full input dependency chain",
+      "transformation": "piecewise linear/polynomial, zero node, common normalization, low-table limit propagated to the whole normalized spectrum",
+      "sha256": "4fd6a38323d72df354a986c89d800014ca84f629cd2996e9a3255889f6204686"
+    },
+    {
+      "file": "data/experiments/CONUS_Plus/conusplus_kkl_run1/reactor_flux_reference_linear_extrapolation.csv",
+      "columns_or_keys": [
+        "energy_MeV",
+        "relative_shape",
+        "flux_cm_minus2_s_minus1_MeV_minus1"
+      ],
+      "range": "all 10001 rows",
+      "column_units": {
+        "energy_MeV": "MeV",
+        "relative_shape": "1",
+        "flux_cm_minus2_s_minus1_MeV_minus1": "cm^-2*s^-1*MeV^-1"
+      },
+      "source_ids": [
+        "S0015",
+        "S0002",
+        "S0003",
+        "S0001"
+      ],
+      "claim_ids": [
+        "C0018"
+      ],
+      "locator": "User PDF Eqs.(1.27)-(1.31), original first-two-point linear extrapolation",
+      "transformation": "signed diagnostic counterpart with its own normalization",
+      "sha256": "4e14badc7b58fc0e42859a126345d51bba60d20b1a4678c652a58f0b09d78fc3"
+    },
+    {
+      "file": "data/experiments/CONUS_Plus/conusplus_kkl_run1/natural_ge_inventory.csv",
+      "columns_or_keys": [
+        "number_fraction",
+        "atomic_mass_u"
+      ],
+      "range": "all 5 rows",
+      "column_units": {
+        "number_fraction": "1",
+        "atomic_mass_u": "u"
+      },
+      "source_ids": [
+        "S0005",
+        "S0001"
+      ],
+      "claim_ids": [
+        "C0020",
+        "C0055"
+      ],
+      "locator": "NIST Ge isotope rows, benchmark PDF p.9",
+      "transformation": "direct number fractions and atomic masses",
+      "sha256": "964a9f24692f63e969ad81f7338f6773f0750e98ada1695680b3fc92021815dd"
+    },
+    {
+      "file": "data/experiments/CONUS_Plus/conusplus_kkl_run1/natural_ge_inventory.csv",
+      "columns_or_keys": [
+        "mass_fraction",
+        "nuclei_per_kg",
+        "nuclear_mass_GeV_approx"
+      ],
+      "range": "all 5 rows",
+      "column_units": {
+        "mass_fraction": "1",
+        "nuclei_per_kg": "nuclei/kg",
+        "nuclear_mass_GeV_approx": "GeV"
+      },
+      "source_ids": [
+        "S0015",
+        "S0005",
+        "S0006"
+      ],
+      "claim_ids": [
+        "C0022",
+        "C0023"
+      ],
+      "locator": "build_inputs.py::build and input constants",
+      "transformation": "explicit inventory formula, atomic mass minus electron rest masses for approximate nuclear mass",
+      "sha256": "964a9f24692f63e969ad81f7338f6773f0750e98ada1695680b3fc92021815dd"
+    },
+    {
+      "file": "data/experiments/CONUS_Plus/conusplus_kkl_run1/natural_ge_inventory.csv",
+      "columns_or_keys": [
+        "A",
+        "Z",
+        "N",
+        "response_key"
+      ],
+      "range": "all 5 rows",
+      "column_units": {
+        "A": "1",
+        "Z": "1",
+        "N": "1",
+        "response_key": "isotope identifier"
+      },
+      "source_ids": [
+        "S0007",
+        "S0005"
+      ],
+      "claim_ids": [
+        "C0029",
+        "C0034"
+      ],
+      "locator": "nuclei.Ge70/Ge72/Ge73/Ge74/Ge76.basic and NIST atomic number",
+      "transformation": "isotope identity and local Response key mapping",
+      "sha256": "964a9f24692f63e969ad81f7338f6773f0750e98ada1695680b3fc92021815dd"
+    },
+    {
+      "file": "data/experiments/CONUS_Plus/conusplus_kkl_run1/statistics/conusplus_2501_17843v3_fig1_digitized.csv",
+      "columns_or_keys": [
+        "excess",
+        "error_minus",
+        "error_plus",
+        "error_lower_endpoint",
+        "error_upper_endpoint",
+        "energy_center_eVee"
+      ],
+      "range": "all 19 rows",
+      "column_units": {
+        "excess": "counts/kg/(10eVee)",
+        "error_minus": "counts/kg/(10eVee)",
+        "error_plus": "counts/kg/(10eVee)",
+        "error_lower_endpoint": "counts/kg/(10eVee)",
+        "error_upper_endpoint": "counts/kg/(10eVee)",
+        "energy_center_eVee": "eVee"
+      },
+      "source_ids": [
+        "S0001",
+        "S0011"
+      ],
+      "claim_ids": [
+        "C0046",
+        "C0047",
+        "C0048"
+      ],
+      "locator": "benchmark PDF p.10 Fig.1; coordinate_trace in provenance JSON",
+      "transformation": "vector marker and error-bar extraction, original axis units and signed values preserved",
+      "sha256": "ee4d11af7e543b2d9c895c5e0165d557b68869a1d6dc1b733360e0c41ec4ce60"
+    },
+    {
+      "file": "data/experiments/CONUS_Plus/conusplus_kkl_run1/statistics/conusplus_2501_17843v3_fig1_digitized.csv",
+      "columns_or_keys": [
+        "bin_index",
+        "energy_low_eVee",
+        "energy_high_eVee",
+        "sigma_mean_derived"
+      ],
+      "range": "all 19 rows",
+      "column_units": {
+        "bin_index": "1",
+        "energy_low_eVee": "eVee",
+        "energy_high_eVee": "eVee",
+        "sigma_mean_derived": "counts/kg/(10eVee)"
+      },
+      "source_ids": [
+        "S0011"
+      ],
+      "claim_ids": [
+        "C0005",
+        "C0049"
+      ],
+      "locator": "Ordered plotted centers, centers +/-5 eVee; average of error lengths",
+      "transformation": "derived row index, edges and candidate symmetric-error convention",
+      "sha256": "ee4d11af7e543b2d9c895c5e0165d557b68869a1d6dc1b733360e0c41ec4ce60"
+    },
+    {
+      "file": "data/experiments/CONUS_Plus/conusplus_kkl_run1/numerical_checks.json",
+      "columns_or_keys": [
+        "all numerical leaves"
+      ],
+      "range": "$..*",
+      "column_units": {
+        "all numerical leaves": "diagnostic keys carry units in their names; local Response unit limits are stated in response_asset"
+      },
+      "source_ids": [
+        "S0015"
+      ],
+      "claim_ids": [
+        "C0018",
+        "C0022"
+      ],
+      "locator": "build_inputs.py::build",
+      "transformation": "derived diagnostics, source hashes and explicitly prescribed numerical check points",
+      "sha256": "13ad0b627e82ecf86b81eb15bc48aaf2a46d75dfdf54e9f34f477aa2d493d12d"
+    }
+  ],
+  "response_asset": {
+    "file": "data/responses/responses_all.json",
+    "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+    "keys": [
+      "nuclei.Ge70",
+      "nuclei.Ge72",
+      "nuclei.Ge73",
+      "nuclei.Ge74",
+      "nuclei.Ge76"
+    ],
+    "source_id": "S0007",
+    "upstream_numeric_provenance": "PENDING",
+    "units_and_normalization": "Local table declares dimensionless response coefficients/W. Oscillator length b must be inverse to the chosen momentum unit. Original nuclear-table normalization and conversion need audit."
+  },
+  "configuration": {
+    "file": "data/experiments/CONUS_Plus/conusplus_kkl_run1/input_choices.json",
+    "source_field_authority": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P01_EVIDENCE_LEDGER.yaml",
+    "decision_source": "S0014"
+  }
+}

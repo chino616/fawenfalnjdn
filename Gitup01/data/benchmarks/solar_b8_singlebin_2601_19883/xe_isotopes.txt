@@ -1,0 +1,11 @@
+# [R7] NIST Xe isotopic composition; A, atomic_mass_u, original_number_fraction; no subset renormalization
+# See analysis.input.json for full citation, PDF hash, native coordinates and interpolation.
+124 123.905892 0.000952
+126 125.9042983 0.00089
+128 127.903531 0.019102
+129 128.9047808611 0.264006
+130 129.903509349 0.04071
+131 130.90508406 0.212324
+132 131.9041550856 0.269086
+134 133.90539466 0.104357
+136 135.907214484 0.088573

@@ -1,0 +1,88 @@
+{
+  "reference": "R03",
+  "version": "2408.02877v1",
+  "parameters": [
+    {
+      "name": "g1_SR0",
+      "value": 0.151,
+      "unit": "PE/photon",
+      "sigma": 0.001,
+      "uncertainty_minus": null,
+      "uncertainty_plus": null,
+      "locator": "2408.02877v1 PDF p3, Dataset and detector calibration text"
+    },
+    {
+      "name": "g2_SR0",
+      "value": 16.5,
+      "unit": "PE/electron",
+      "sigma": 0.6,
+      "uncertainty_minus": null,
+      "uncertainty_plus": null,
+      "locator": "2408.02877v1 PDF p3, Dataset and detector calibration text"
+    },
+    {
+      "name": "fiducial_mass_SR0",
+      "value": 3.97,
+      "unit": "t",
+      "sigma": 0.2,
+      "uncertainty_minus": null,
+      "uncertainty_plus": null,
+      "locator": "2408.02877v1 PDF p3, Dataset and detector calibration text"
+    },
+    {
+      "name": "livetime_SR0",
+      "value": 108.0,
+      "unit": "day",
+      "sigma": null,
+      "uncertainty_minus": null,
+      "uncertainty_plus": null,
+      "locator": "2408.02877v1 PDF p2, Dataset and detector calibration text"
+    },
+    {
+      "name": "g1_SR1",
+      "value": 0.137,
+      "unit": "PE/photon",
+      "sigma": 0.001,
+      "uncertainty_minus": null,
+      "uncertainty_plus": null,
+      "locator": "2408.02877v1 PDF p3, Dataset and detector calibration text"
+    },
+    {
+      "name": "g2_SR1",
+      "value": 16.9,
+      "unit": "PE/electron",
+      "sigma": 0.5,
+      "uncertainty_minus": null,
+      "uncertainty_plus": null,
+      "locator": "2408.02877v1 PDF p3, Dataset and detector calibration text"
+    },
+    {
+      "name": "fiducial_mass_SR1",
+      "value": 4.1,
+      "unit": "t",
+      "sigma": 0.19,
+      "uncertainty_minus": null,
+      "uncertainty_plus": null,
+      "locator": "2408.02877v1 PDF p3, Dataset and detector calibration text"
+    },
+    {
+      "name": "livetime_SR1",
+      "value": 208.5,
+      "unit": "day",
+      "sigma": null,
+      "uncertainty_minus": null,
+      "uncertainty_plus": null,
+      "locator": "2408.02877v1 PDF p2, Dataset and detector calibration text"
+    },
+    {
+      "name": "combined_exposure",
+      "value": 3.51,
+      "unit": "t yr",
+      "sigma": null,
+      "uncertainty_minus": null,
+      "uncertainty_plus": null,
+      "locator": "2408.02877v1 PDF p3, fiducial-volume paragraph"
+    }
+  ],
+  "meaning": "2024 detector and exposure reference inputs. The complete 2024 CEvNS YBe-calibrated response kernel is still required for the original analysis."
+}

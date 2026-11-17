@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "log_type": "write_authorization_log",
+  "entries": [
+    {
+      "authorization_id": "W0001",
+      "status": "ACTIVE",
+      "date": "2026-11-07",
+      "approval_kind": "manual_write",
+      "approval_message_ref": "conversation:2026-11-07-user-sm-benchmark",
+      "user_quote": "现在已经并入主线了是吧。如果没有请并入主线。下面请你先以标准模型作为banchmark，对示例数图进行计算。按照已有项目的流程进行计算。",
+      "scope": "existing_dataset",
+      "allowed_actions": [
+        "create",
+        "modify"
+      ],
+      "create_paths": [
+        "workflows\\cevns-pyeft\\runs\\XENONnT\\XENONnT_2024_SolarB8",
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.*",
+        "cevns_pyeft/experiments/solar_b8.py",
+        "cevns_pyeft/experiments/solar_input.py",
+        "cevns_pyeft/theory/sm_coherent.py",
+        "tools/build_solar_b8_packages.py",
+        "tools/run_solar_b8_sm_benchmark.py",
+        "tests/test_solar_b8_sm_contract.py"
+      ],
+      "modify_paths": [
+        "cevns_pyeft/experiments/generic_input.py",
+        "cevns_pyeft/experiments/generic_input.schema.json",
+        "cevns_pyeft/experiments/component_bindings.json",
+        "cevns_pyeft/experiments/package_profiles.py",
+        "cevns_pyeft/experiments/input_package.py",
+        "cevns_pyeft/experiments/README.md",
+        "cevns_pyeft/nuclear/README.md",
+        "cevns_pyeft/theory/README.md",
+        "tools/README.md",
+        "tests/README.md",
+        "workflows/cevns-pyeft/README.md",
+        "data/README.md",
+        "data/experiments/README.md",
+        "docs/experiments/README.md",
+        "docs/references/Solar_CEvNS/README.md",
+        "backup/BACKUP_MANIFEST.md",
+        "README.md",
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/README.md",
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/README.md",
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/README.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/README.md"
+      ],
+      "delete_paths": [],
+      "production_paths_affected": true,
+      "recovery_plan": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\backup\\solar-b8-sm-mainline-20261107-01\\MANIFEST.json",
+      "result_acceptance_separate": true
+    },
+    {
+      "authorization_id": "W0002",
+      "status": "ACTIVE",
+      "date": "2026-11-08",
+      "approval_kind": "manual_write",
+      "approval_message_ref": "conversation:2026-11-08-vector-benchmark-confirmation",
+      "user_quote": "请你继续做NSI的benchmark；同论文轻媒介子事例数谱，先做 V 和 B−L（推荐）",
+      "scope": "existing_dataset",
+      "allowed_actions": [
+        "create",
+        "modify"
+      ],
+      "create_paths": [
+        "cevns_pyeft/theory/light_vector.py",
+        "cevns_pyeft/experiments/solar_vector.py",
+        "data/benchmarks/solar_b8_vector_v1/",
+        "outputs/solar_b8_vector/20261108_run1",
+        "workflows/cevns-pyeft/runs/XENONnT/XENONnT_2024_SolarB8/phases",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8"
+      ],
+      "modify_paths": [
+        "workflows/cevns-pyeft/runs/XENONnT/XENONnT_2024_SolarB8",
+        "README/navigation owners"
+      ],
+      "delete_paths": [],
+      "production_paths_affected": true,
+      "recovery_plan": "backup/solar-b8-vector-20261108-01/MANIFEST.json",
+      "result_acceptance_separate": true
+    },
+    {
+      "authorization_id": "W0004",
+      "status": "ACTIVE",
+      "date": "2026-11-10",
+      "approval_kind": "explicit_user_instruction",
+      "approval_message_ref": "current user nuclear Response request and continuation",
+      "user_quote": "请问onboarding中，具体写的是什么，是采用KN计算，还是采用response计算？我现在要求按照response计算",
+      "scope": "Implement and calculate the selected existing nuclear-table SM route, update same-chain onboarding/current navigation and code examples while retaining historical KN artifacts",
+      "allowed_actions": [
+        "read",
+        "create",
+        "modify"
+      ],
+      "create_paths": [
+        "cevns_pyeft/experiments/solar_nuclear.py",
+        "tools/run_solar_b8_nuclear_benchmark.py",
+        "tools/build_solar_b8_onboarding_v3_1.py",
+        "tests/test_solar_nuclear_response.py",
+        "outputs/solar_b8_sm/20261110_nuclear_response_run1/",
+        "docs/experiments/*/datasets/*/*v3.1*",
+        "docs/experiments/PandaX4T_XENONnT_SolarB8/SOLAR_B8_ONBOARDING.v3.1.md",
+        "../重构/20261110_PandaX_Response_P01_P10_物理与最小代码/",
+        "tools/build_pandax_nuclear_teaching.py",
+        "tools/validate_pandax_nuclear_teaching.py",
+        "tools/validate_solar_b8_nuclear_rendering.mjs",
+        "outputs/solar_b8_sm/20261110_nuclear_response_run2/",
+        "workflows/cevns-pyeft/runs/XENONnT/XENONnT_2024_SolarB8/NUCLEAR_BRANCH.json",
+        "workflows/cevns-pyeft/runs/XENONnT/XENONnT_2024_SolarB8/ONBOARDING_V3_1_INDEX.json",
+        "workflows/cevns-pyeft/runs/XENONnT/XENONnT_2024_SolarB8/phases/P04_P05_P07_P10_nuclear_response.md"
+      ],
+      "modify_paths": [
+        "README/navigation owners",
+        "tools/build_solar_b8_onboarding_v3.py",
+        "workflows\\cevns-pyeft\\runs\\XENONnT\\XENONnT_2024_SolarB8/",
+        "tools/run_solar_b8_sm_benchmark.py"
+      ],
+      "delete_paths": [],
+      "production_paths_affected": true,
+      "recovery_plan": "backup/solar-nuclear-response-20261110-01/MANIFEST.json",
+      "result_acceptance_separate": true
+    },
+    {
+      "authorization_id": "W0005",
+      "status": "ACTIVE",
+      "date": "2026-11-11",
+      "approval_kind": "explicit_user_instruction",
+      "user_quote": "需要你合并到主线，并且计算标准模型情况，在主线中计算流程隔开",
+      "scope": "canonical separate singlebin analysis, SM calculation, source verification, scoped statistics and navigation",
+      "allowed_actions": [
+        "read",
+        "create",
+        "modify"
+      ],
+      "create_paths": [
+        "cevns_pyeft/experiments/solar_singlebin.py",
+        "cevns_pyeft/theory/li2026/sm_quadratic.py",
+        "cevns_pyeft/statistics/solar_singlebin.py",
+        "tools/prepare_solar_b8_singlebin.py",
+        "tools/run_solar_b8_singlebin_benchmark.py",
+        "tools/run_solar_b8_multibin_benchmark.py",
+        "tools/build_solar_b8_singlebin_onboarding.py",
+        "tools/promote_solar_b8_singlebin.py",
+        "tools/validate_solar_b8_singlebin.mjs",
+        "tests/test_solar_singlebin.py",
+        "data/benchmarks/solar_b8_singlebin_2601_19883/",
+        "docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/",
+        "outputs/solar_b8_singlebin/",
+        "workflows/cevns-pyeft/runs/XENONnT/XENONnT_2024_SolarB8/SINGLEBIN_BRANCH.json",
+        "workflows/cevns-pyeft/runs/XENONnT/XENONnT_2024_SolarB8/phases/P*_singlebin2601.md",
+        "tools/validate_solar_b8_singlebin.py",
+        "docs/references/General_CEvNS/2502.10702v2.pdf"
+      ],
+      "modify_paths": [
+        "README/navigation owners",
+        "tools/run_solar_b8_sm_benchmark.py",
+        "tools/build_solar_b8_onboarding_v3_1.py",
+        "workflows/cevns-pyeft/runs/XENONnT/XENONnT_2024_SolarB8/"
+      ],
+      "delete_paths": [],
+      "production_paths_affected": true,
+      "recovery_plan": "backup/solar-singlebin-20261111-01/MANIFEST.json",
+      "result_acceptance_separate": true
+    },
+    {
+      "authorization_id": "W0006",
+      "status": "ACTIVE",
+      "date": "2026-11-12",
+      "approval_kind": "explicit_user_instruction",
+      "user_quote": "请你在主线中完成下面内容",
+      "scope": "complete solar flavor-dependent NSI forward, joint Fig4 comparison, tail sensitivity, data/source/onboarding and parallel mainline records",
+      "allowed_actions": [
+        "read",
+        "create",
+        "modify"
+      ],
+      "create_paths": [
+        "cevns_pyeft/sources/solar_msw.py",
+        "cevns_pyeft/theory/li2026/ee_vector_nsi.py",
+        "cevns_pyeft/experiments/solar_nsi.py",
+        "cevns_pyeft/kernels/solar_nsi.py",
+        "cevns_pyeft/statistics/solar_nsi.py",
+        "tools/prepare_solar_b8_nsi.py",
+        "tools/run_solar_b8_nsi_benchmark.py",
+        "tools/build_solar_b8_nsi_onboarding.py",
+        "tools/finalize_solar_b8_nsi.py",
+        "tools/validate_solar_b8_nsi.mjs",
+        "tests/test_solar_nsi.py",
+        "data/benchmarks/solar_b8_nsi_2601_19883",
+        "outputs/solar_b8_nsi",
+        "docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/NSI_EE_VECTOR_ONBOARDING.v3.3.md",
+        "workflows/cevns-pyeft/runs/XENONnT/XENONnT_2024_SolarB8/SOLAR_NSI_BRANCH.json",
+        "workflows/cevns-pyeft/runs/XENONnT/XENONnT_2024_SolarB8/phases/Pxx_solar_nsi2601.md"
+      ],
+      "modify_paths": [
+        "explicit README/navigation owners",
+        "workflows/cevns-pyeft/runs/XENONnT/XENONnT_2024_SolarB8",
+        "tools/promote_solar_b8_singlebin.py",
+        "tools/validate_solar_b8_singlebin.py",
+        "tools/build_solar_b8_singlebin_onboarding.py"
+      ],
+      "delete_paths": [],
+      "production_paths_affected": true,
+      "recovery_plan": "backup/solar-nsi-20261112-01/MANIFEST.json",
+      "result_acceptance_separate": true
+    },
+    {
+      "authorization_id": "W0007",
+      "status": "ACTIVE",
+      "date": "2026-11-12",
+      "approval_kind": "explicit_user_instruction",
+      "user_quote": "请你调整方案，进行安装，修改文档，接入主线",
+      "scope": "reviewed optional SNuDD source adapter, isolated installation, actual runtime point benchmark and documentation/mainline branch records",
+      "allowed_actions": [
+        "read",
+        "create",
+        "modify"
+      ],
+      "create_paths": [
+        "extensions/solar_rho_snudd/",
+        ".externals/SNuDD/",
+        ".venvs/snudd/",
+        "tools/run_solar_b8_snudd_benchmark.py",
+        "tools/finalize_solar_b8_snudd.py",
+        "tools/validate_solar_b8_snudd.mjs",
+        "tests/test_solar_snudd.py",
+        "docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_EXTERNAL_ONBOARDING.v3.4.md",
+        "outputs/external/solar_rho_snudd/"
+      ],
+      "modify_paths": [
+        "explicit README/navigation owners",
+        ".gitignore",
+        "workflows/cevns-pyeft/runs/XENONnT/XENONnT_2024_SolarB8",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\重构\\2026-11-12_EXTERNAL_SNUDD_ADAPTER_ONBOARDING.md"
+      ],
+      "delete_paths": [],
+      "recovery_plan": "backup/solar-snudd-20261112-01/MANIFEST.json",
+      "result_acceptance_separate": true
+    },
+    {
+      "authorization_id": "W0008",
+      "date": "2026-11-12",
+      "status": "ACTIVE",
+      "approval_kind": "explicit_user_instruction",
+      "user_quote": "具体把接入后，整个流程计算，最后的结果给出；最后统计分析跟要求复现的论文对比",
+      "scope": "same SNuDD source physical definition; complete joint inference, paper comparison and mainline report",
+      "write_plan": "outputs/external/solar_rho_snudd/20261112_fig4_run2/WRITE_PLAN.json",
+      "recovery_plan": "backup/solar-snudd-inference-20261112-01/MANIFEST.json",
+      "scientific_result_acceptance_separate": true
+    },
+    {
+      "authorization_id": "W0009",
+      "status": "ACTIVE",
+      "date": "2026-11-12",
+      "approval_kind": "explicit_user_instruction",
+      "user_quote": "你先把onboarding修改了；总的截面积分公式也给一下；截面，事例数公式",
+      "scope": "document-first full-rho/trace requirement, universal cross-section/event equations, per-experiment inputs and actual implementation gap",
+      "write_plan": "outputs/external/solar_rho_snudd/20261112_trace_onboarding/WRITE_PLAN.json",
+      "runtime_changes_this_round": false,
+      "scientific_result_acceptance_separate": true
+    }
+  ]
+}

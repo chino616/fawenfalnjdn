@@ -1,0 +1,222 @@
+{
+  "schema": "external_snudd_source/1",
+  "version": "3.4",
+  "date": "2026-11-12",
+  "commit": "11622ded104994959a649d85e263c2d9f933ea74",
+  "scope": "real ee-only uV/dV, solar day-only effective two-flavor propagation; other project physics unchanged",
+  "versions": {
+    "snudd": "1.0.0",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.1.1",
+    "packaging": "26.3"
+  },
+  "upstream_files": {
+    "LICENSE": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809",
+    "README.md": "36b729159f06aa897c2a124f84be929d4219ce33bbca158e34c52af9ede572ac",
+    "pyproject.toml": "132d3bb528091f5768d74dcfe4ea27489af4d7b61989187d0a858347df96826b",
+    "snudd/.idea/.gitignore": "1bfdece3645ed8ed356030f22cc2004dc3f401ff060ac3d24de811c3bcd82e16",
+    "snudd/.idea/inspectionProfiles/Project_Default.xml": "2b7822b38d0b8350aba4cc0e7ca0a31180a29eb83af354a454f916c8868ce280",
+    "snudd/.idea/inspectionProfiles/profiles_settings.xml": "0156739e86d393cb905f58205f66160abd542749917415ac3b5155261528ae0b",
+    "snudd/.idea/misc.xml": "1b461f04b9babf4f8cd5687ceb7bbb954077aef32c19d9dc25dec0deb95e07ec",
+    "snudd/.idea/modules.xml": "f2209894282e89496206ac83b2935b493cc71cc90305cb3dcb40eceaf8c7715b",
+    "snudd/.idea/nudd.iml": "ad3cb481713f7a74e29ed42d121b8e94ca3bd51e262c2d6122a334f06dace88a",
+    "snudd/.idea/vcs.xml": "d0df76de3a966f51606b564edccc430dbc21c32ee5c3f35dccf95597fad81392",
+    "snudd/.ropeproject/config.py": "c650d638c1801d703a1939a6c5afbbef2d1f96ab2d83fbb97178fd3f4bd21407",
+    "snudd/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "snudd/binding.py": "9c4b45fcf11c96e716f27cc1d5b3be82c7c859034a3eb18d4c465539fa2981a2",
+    "snudd/bkg/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "snudd/bkg/dw_background.py": "4a21fc9361270c203b8cfe340a6d5bdeca42299f6b9e78dd63e3291fa9cbecbf",
+    "snudd/bkg/lz_background.py": "42cec1a8150d7d673fae90f0d943ca960f7b99f56eb596f804ee805735f689cb",
+    "snudd/bkg/xnt_background.py": "c205cf06795e24e9fef3b0071c0e2b2454fb4e7984dcd356d5f677254ca73c56",
+    "snudd/config.py": "b115b72fe36c54fd7905c11eeee8b4acb0dda572f8da1853e2589f77c4669098",
+    "snudd/data/binding_energies/binding_argon.csv": "34fe6d1cbfebc38f5f349697546fb308f2193044650a47e949aef5494da578df",
+    "snudd/data/binding_energies/binding_xenon.csv": "ca004aaa7f5453e66a0da59b972dfb1de70c3f1784b9868604c223637fe3f51c",
+    "snudd/data/binding_energies/readme.txt": "b47db5edf157f46b558f643da23a523ddf676c27cbb74a68d8c0b2b5b1362c60",
+    "snudd/data/exps/LZ2025/BKG_FIT_WS2022.csv": "bacad4ae2dd75c1b8fbfac6d2ef740fb99c1b54b68fa996cb40e07cd1f822a48",
+    "snudd/data/exps/LZ2025/BKG_FIT_WS2024.csv": "ef90ac9e274c7757a3376b5aa9b8612c65173c964303c8996a3a5f189bf4a1c9",
+    "snudd/data/exps/LZ2025/WS2022_1DROI_eff_data.txt": "352e46454c28e5c918c4ae54ae246cf41527e1580aba47088188680565dcb156",
+    "snudd/data/exps/LZ2025/WS2022_data_hist_data.txt": "2802ea64917d29dc779e815eace03bca7f63be77cc3b50795022e9a36c5fe936",
+    "snudd/data/exps/LZ2025/WS2024_1DROI_eff_data.txt": "991df64d2cfac600d8fc787d6f602865cf9b3f24602dd0e17dce5e4b0bdd6006",
+    "snudd/data/exps/LZ2025/WS2024_2DROI_eff_data.txt": "27af86fca5307a4a094d9903a11379b066541c49aed18266ca4711dbc03d4ec0",
+    "snudd/data/exps/LZ2025/WS2024_data_hist_data.txt": "52c8719d9960e894739fb459fd04033c1b870f5cf84e632e864ff288a04e9d70",
+    "snudd/data/exps/LZ8B2025/LZB8-v2-Efficiency.csv": "7cf391270e5e115be957b4dc788d3d5747d0959d5d48adc386e0c6effa13aa55",
+    "snudd/data/exps/darwin/bkg_double_beta": "6f988c23b39ae76814220bd8171bc66e97b24916598db1d849aea74156eee723",
+    "snudd/data/exps/lz/LZ_ER.dat": "0252a24deac3e548d32eddb9ee1b31b07033661adb557023bdc6926ef0faec8b",
+    "snudd/data/exps/lz/LZ_NR.dat": "5688d5fdb3357c0058349cd112fe82f41fce6061b29afe8a96faf03f7ad8e8b2",
+    "snudd/data/exps/lz/LZ_NR_first_data.txt": "f6704b4a3ae6214a1145c45e91dfbf89696d0de1bdad6d12a56b1b929b34df6a",
+    "snudd/data/exps/lz/bkg_individual/DetSurEnv.csv": "0bc0173dd4f531f2cc2e787f176a134bb732e26c650da85095c68de7ff88429c",
+    "snudd/data/exps/lz/bkg_individual/Kr85.csv": "8762bc971efd83203c11f41a5780ac36ae994df42461c45b1c0689b4296380e6",
+    "snudd/data/exps/lz/bkg_individual/Rn220.csv": "06460fbef14c7c96bb6992f77d61b466d3e18d2eb03f3cb3504ec7372955ae53",
+    "snudd/data/exps/lz/bkg_individual/Rn222.csv": "c7e4e83742a260d2e8a878782a8a9cebe0879dc9c3efeffc1b2b176e414b1731",
+    "snudd/data/exps/lz/bkg_individual/Solarnunu.csv": "6f49a8f02867a339d3019b042523bb840bd639720e2e96531609b1125c59de5f",
+    "snudd/data/exps/lz/bkg_individual/Xe136.csv": "b4d555b8fc0aa1060671e8ec11e68b4ee548f4660c02bdcc804c818fd81818cd",
+    "snudd/data/exps/lz/bkg_solar": "c63789bce716ea645db92b4cef708a1bcd5f36376f2c8f427757e4eb77d99da2",
+    "snudd/data/exps/lz/bkg_total": "f60a2286d260c7357302a18645e5c991592a61afd715282adec9057845fc1c6f",
+    "snudd/data/exps/lz/pp.txt": "cdd258b78cb0e513f621d20dac42ff13016ef177cf79905315dcfc4d52e03f9c",
+    "snudd/data/exps/lz/rrpa_rate.txt": "0efe7bcd3e6bbf7e9b5a83e606b07f53a436332a7c373c228771b099411a37ac",
+    "snudd/data/exps/pandaX/ER2024/efficiency_ER_run1.csv": "9ac23466e901670cd76564aee08f84685c88c013afc036ead4c8328eacdb292b",
+    "snudd/data/exps/pandaX/ER2024/run1_bkg.csv": "a22a873f6105dce759c4f1bd257981c7ee9d42b87436f652d05978919bd95ebc",
+    "snudd/data/exps/pandaX/ER2024/run1_evts.csv": "c3209de1521fcb93c9a8259e5fbbbf3cceffcb7338538925e86856473d17c0e2",
+    "snudd/data/exps/pandaX/pandaX.csv": "0e5ba05db5e257bd267f598eec48422fdf14c819005f50d5e0955d35be9ecd29",
+    "snudd/data/exps/xlzd/krypton.csv": "9de7903da06fbe2ddb74882ae24111854990876ad3ede15f6d1a7d36e6fb3673",
+    "snudd/data/exps/xlzd/radon.csv": "e1f7b775a78f1253b14b2171c402dee225193b818ec413fe456631fb2e699073",
+    "snudd/data/exps/xlzd/xe124_ee.csv": "e838cb6ef16d68e7ef193bd1f7ebd1c63166bc8780ffca2df2af366bc33e19a2",
+    "snudd/data/exps/xlzd/xe136_double_beta.csv": "3476909ba22762515574931d8a9a0a538a20d47f820cc9972cfc3f957e715b84",
+    "snudd/data/exps/xnt/2022_binned_data_bkgnonu.txt": "03d24c0a6034da664ab5fb4ef57f6e897d28ac23e720491567a37f09d3d9282f",
+    "snudd/data/exps/xnt/2022data_bkd_datasets.csv": "531bb1f8809d58ab4bac0aa5b84bdb0b8ee4a5640563abca5b3c8989412f57f1",
+    "snudd/data/exps/xnt/XNT_ER.dat": "99af46be2f14d9859e62947f382f31d1766a3834ccb534811bc832a1bc57f3d7",
+    "snudd/data/exps/xnt/XNT_ER_22.csv": "cfb12ebbf4dd34e2b1f050c10b1a000279c750c58d7797460f38acfdd111a3cf",
+    "snudd/data/exps/xnt/XNT_NR.dat": "8cdbaa6aae79e61d2989ff52d1f034e716a920b6f64e1fca6c3d4e45ea3038ec",
+    "snudd/data/exps/xnt/bkg_solar_nu.txt": "05b77374681d7fc14dd1095cb8bfb449cedc28c48a779f939249faa64e839e40",
+    "snudd/data/exps/xnt/bkg_xnt.txt": "f8f6ae14a6243585c92d28443dc4162a1f7a10d5a91f1e677538e20216c51b19",
+    "snudd/data/exps/xnt/xnt_2025.csv": "792b029a3ad99f60354940d7dfd4c15628e23b8c202bc5a24ada8572668b5d07",
+    "snudd/data/exps/xnt/xnt_2026.csv": "bbeb213ef8275621280fb15177dc3c336edb28e0ded65bca90b223a60ef0134b",
+    "snudd/data/exps/xnt/xnt_efficiency.csv": "0754e8f03b89cee931fee783b66a796ab9d3bfbb24d0f7c8c77180fe9157c955",
+    "snudd/data/flux_distributions/13N_dist.txt": "fe7be4cd6f78f4830483522aa0e6399fa085b4a5b5a6c132c3f708f593b69517",
+    "snudd/data/flux_distributions/15O_dist.txt": "f59ef8e86450824a06920baabb7f2faa96a52f3d4570b950f0a892e7cafaaf8b",
+    "snudd/data/flux_distributions/17F_dist.txt": "afe7a58ed115c73510b2ec85745e02e016dc4b65af66f7870edccf24687ccf93",
+    "snudd/data/flux_distributions/7Be_dist.txt": "3960df11b5949dca37b6523b23e02967e6710495c7bc6688286b158cc41ce009",
+    "snudd/data/flux_distributions/8B_dist.txt": "78af0c9ebdbd1cd9850b901c07146e6178935b3fb8b962b37f948a7417a4cb58",
+    "snudd/data/flux_distributions/hep_dist.txt": "2d486adf433697e90f084901411433dfc464b6e96a43787b2adc15c5e1f60038",
+    "snudd/data/flux_distributions/pep_dist.txt": "b8bf50ca6da6f66b3c0a7ea4b179f8f823395d9205c05108c0f4234a14801917",
+    "snudd/data/flux_distributions/pp_dist.txt": "fb05d55c5c892a996dd7d0fdf5f3bad1a6cb29add4acca01c5fbe45552ed43f5",
+    "snudd/data/nu_flux/15O_neutrino.txt": "4e9bef0bc0ab2b1722ce797d7c13c096cfd992912f8ddaa777238ac9cfa07ab7",
+    "snudd/data/nu_flux/17F_neutrino.txt": "979e143d60d865cae4ccbc3f2c24ae22551f6889cefccc99a9d33e542c54e33d",
+    "snudd/data/nu_flux/7Be_3843_neutrino.txt": "9db423ac3f4aa9d083d4359c7c133b9c51a54cc58cfdf7cf239b1da37eab556c",
+    "snudd/data/nu_flux/7Be_8613_neutrino.txt": "506db09026f440852183347666714e5e829c9edac70bb94a2d1c095659dceb29",
+    "snudd/data/nu_flux/Atmos_e_neutrino_flux.txt": "da585236fc7b8c3139667534fa6ca873e529977cbfa9c3455946f9ee3eae207f",
+    "snudd/data/nu_flux/Atmos_mu_neutrino_flux.txt": "c1bb3860e8aee0a1e71dc3225a3171a593cb1beb756e7ad107130404bec7548a",
+    "snudd/data/nu_flux/B8_neutrino_flux.txt": "3d5836cbad7486ea3e6d4ff3d0c5c04d57efa90b2e6a39be97d594eb9b0fe864",
+    "snudd/data/nu_flux/N13_neutrino.txt": "1be627a8eaa592dce3c404bbbc1a37a42365fcd8d4671da1625df8e273d3934f",
+    "snudd/data/nu_flux/hep_neutrino.txt": "9ae48fe4c5f03fe53d08d49e243170b417d852b0239a788d928aef936d47d2b2",
+    "snudd/data/nu_flux/pep_neutrino.txt": "41fe8e6f38c55184bae3cc3bbceb0a6be9a6e44f109c9ce5169c0ec7dcee9804",
+    "snudd/data/nu_flux/pp_neutrino.txt": "93f57e80099c823ee5f2b76911e9f6b88347494805b9beb6f9311374cc937ee6",
+    "snudd/efficiencies.py": "a3ecd4fd773fc9fced3d8477c524b09e24d2224210fd19e406a7bb8a6a5307fc",
+    "snudd/geometry.py": "db07d5632a23b56b34647c2fb6ead6dc7944162c38f30a1c87bc32c036432200",
+    "snudd/models.py": "93289798f840547900c168605e96e902e30cad069b64254228e060e2ac505e32",
+    "snudd/nsi/.ropeproject/config.py": "c650d638c1801d703a1939a6c5afbbef2d1f96ab2d83fbb97178fd3f4bd21407",
+    "snudd/nsi/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "snudd/nsi/earth_matter.py": "5cde3da7216498fe1e41019ae3b2217b64d7e573a729a1a6501aaa5b30126c8d",
+    "snudd/nsi/flux_dists.py": "2ae0756245f50020b23074baed1b408a2b0836b1df9cf970ebd967c3df11ffea",
+    "snudd/nsi/nsi_probabilities.py": "b705d533cb54bd25d8756d6d4cb6763de209c280755c111b2913a70e5cd0959b",
+    "snudd/nsi/oscillation.py": "827e3414a7e635af624d06e17e0656d60a18772a33e14d96dac1e96b7f36ee27",
+    "snudd/nsi/solar_profiles.py": "7afc2ebb41d773e68f2728c223cf39aa5cf48cce17543e5fee08fbfff9da2aec",
+    "snudd/nsi/utils.py": "90388d1ebac28cbdbbcf918f6cd5f972b64bf4db2c54c1f5496ab2022ff260d8",
+    "snudd/quenching.py": "e9d50c56d48559c67ec4ac1f8545b794617896df45baa71129c77dfcd502c8c2",
+    "snudd/resolution.py": "3849825327379a9b97f9222e4f24530a8b2bb2d1652dfc551f46bdb176730a2d",
+    "snudd/rrpa.py": "c88f90b4765381ed245eb4ba9b564bcb0056ac68501c69782da91f4502676d65",
+    "snudd/spectrum.py": "79475c4344f0d87d15617f0f05e8245181c33566213ecb39816894320b2a5b6a",
+    "snudd/targets.py": "f21f674f7b1ac8b150bd5a8db4b2fcf6e08701c4ba95008dafef1f033388d216"
+  },
+  "producer_files": {
+    "extensions/solar_rho_snudd/export_rho.py": "79ff13f41ca00c77d631b3086ecb3e8c5e87316abcb8246c084d8074d6305ce3",
+    "extensions/solar_rho_snudd/protocol.py": "cc77a52cfda75bfada29e1d4b280650bec707462c5cee262aa554e744ad4e568"
+  },
+  "oscillation_actual_GeV_rad": {
+    "delta_m12": 7.420000000000001e-23,
+    "delta_m31": 2.5130000000000003e-21,
+    "theta_12": 0.583638,
+    "theta_13": 0.149575,
+    "theta_23": 0.7557275661135446,
+    "delta_cp": 3.7000980142279785
+  },
+  "oscillation_upstream_default_GeV_rad": {
+    "delta_m12": 7.490000000000001e-23,
+    "delta_m31": 2.5130000000000003e-21,
+    "theta_12": 0.5878268920716901,
+    "theta_13": 0.1494001839707146,
+    "theta_23": 0.7557275661135446,
+    "delta_cp": 3.7000980142279785
+  },
+  "oscillation_choices": {
+    "theta12_theta13_dm21": "match v3.3 PEANUTS-selected project input exactly",
+    "theta23_delta_dm31": "explicit SNuDD pinned defaults; mu/tau distribution unobservable for current ee-only diagonal scattering; dm31 used only in validity diagnostic"
+  },
+  "baseline_card": "data/benchmarks/solar_b8_nsi_2601_19883/nsi.input.json",
+  "baseline_card_sha256": "ee6d5d5e0844e01692ca5612e778e2785db41dcab9172bb89d0955b01830f256",
+  "density_coefficients": {
+    "e1": 2.36,
+    "e2": 4.52,
+    "e3": 0.33,
+    "e4": 0.075,
+    "e5": 1.1,
+    "n1": 1.72,
+    "n2": 4.8
+  },
+  "radial_integration": {
+    "lo": 0.0,
+    "hi": 0.35,
+    "nodes": 1000,
+    "rule": "trapezoid in dr, normalized original production profile"
+  },
+  "production_file": {
+    "path": ".externals/SNuDD/snudd/data/flux_distributions/8B_dist.txt",
+    "sha256": "78af0c9ebdbd1cd9850b901c07146e6178935b3fb8b962b37f948a7417a4cb58",
+    "shape": [
+      96,
+      2
+    ],
+    "ranges": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.17,
+        18.364285825218595
+      ]
+    ],
+    "first_row": [
+      0.0,
+      0.0
+    ],
+    "last_row": [
+      0.17,
+      0.0
+    ]
+  },
+  "normalization": {
+    "rho_unit": "1",
+    "rho_trace": 1,
+    "flux_stays_cm2_s": 5460000.0,
+    "spectrum": "read-only Bahcall829 rows from project singlebin; no SNuDD spectrum/targets/detector/rate called"
+  },
+  "verification": {
+    "direct_software": "pinned checkout and every tracked package-file hash verified",
+    "paper_to_software": "source comments/headers identify upstream papers; formulas and raw array verified as software inputs, no independent paper digitization certification",
+    "adiabaticity": "independent ee-only finite-difference diagnostic; physical validity beyond two-flavor model not certified",
+    "upstream_gamma_check": "not called: gamma_min returns(value,label), gamma_check compares tuple with scalar in this pin"
+  },
+  "references": {
+    "software": {
+      "citation": "AMARAL D W P, CERDEÑO D, CHEEK A, COSTA V, FOLDENAUER P. SNuDD: Solar Neutrinos for Direct Detection[EB/OL]. arXiv:2607.22817v1, 2026.",
+      "url": "https://arxiv.org/abs/2607.22817v1",
+      "direct_url": "https://github.com/SNuDD/SNuDD/blob/11622ded104994959a649d85e263c2d9f933ea74/snudd/nsi/nsi_probabilities.py",
+      "locator": "SolarDensityMatrixCalculator.density_mass/density; ProbabilityCalculator._cos_matter_average; direct adopted software, effective two-flavor and mass-decohered flavor reconstruction"
+    },
+    "nsi_mapping": {
+      "citation": "SNuDD Collaboration. GeneralNSI model source[CP/OL]. Fixed Git commit 11622ded104994959a649d85e263c2d9f933ea74, accessed2026-11-12.",
+      "url": "https://github.com/SNuDD/SNuDD/blob/11622ded104994959a649d85e263c2d9f933ea74/snudd/models.py",
+      "locator": "GeneralNSI.xi_p/xi_n/xi_u/xi_d/xi_e; model eps_matrix multiplies each xi, phi=0"
+    },
+    "density": {
+      "citation": "BAHCALL J N, SERENELLI A M, BASU S. 10,000 Standard Solar Models: a Monte Carlo Simulation[J]. Astrophysical Journal Supplement, 2006,165:400-431. DOI:10.1086/504043. arXiv:astro-ph/0511337.",
+      "url": "https://arxiv.org/abs/astro-ph/0511337",
+      "direct_url": "https://github.com/SNuDD/SNuDD/blob/11622ded104994959a649d85e263c2d9f933ea74/snudd/nsi/solar_profiles.py",
+      "locator": "log10_electron_density, log10_neutron_electron_density; e1..e5,n1,n2; adopted software fits, not B16 arrays"
+    },
+    "production": {
+      "citation": "LOPES I, TURCK-CHIÈZE S. Solar neutrino physics oscillations: Sensitivity to the electronic density in the Sun’s core[J]. Astrophysical Journal,2013,765:14. DOI:10.1088/0004-637X/765/1/14. arXiv:1302.2791.",
+      "url": "https://arxiv.org/abs/1302.2791v1",
+      "direct_url": "https://github.com/SNuDD/SNuDD/blob/11622ded104994959a649d85e263c2d9f933ea74/snudd/data/flux_distributions/8B_dist.txt",
+      "locator": "raw two-column file header identifies1302.2791; flux_dists.interpolate_dist linear, outside0; native distribution normalized in dr over0-.35 by propagation code"
+    },
+    "remaining_oscillation": {
+      "citation": "ESTEBAN I, GONZALEZ-GARCIA M C, MALTONI M, et al. NuFit-6.0: Updated global analysis of three-flavor neutrino oscillations[J]. JHEP,2024,12:216. DOI:10.1007/JHEP12(2024)216. arXiv:2410.05380.",
+      "url": "https://arxiv.org/abs/2410.05380",
+      "direct_url": "https://github.com/SNuDD/SNuDD/blob/11622ded104994959a649d85e263c2d9f933ea74/snudd/nsi/oscillation.py",
+      "locator": "osc_params_best; explicit theta23=43.3deg,delta=212deg,dm31=2.513e-3eV² retained; theta12/13/dm21 overridden from v3.3 project card"
+    }
+  }
+}

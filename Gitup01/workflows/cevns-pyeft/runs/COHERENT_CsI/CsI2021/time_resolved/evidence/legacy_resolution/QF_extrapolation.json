@@ -1,0 +1,25 @@
+{
+  "status": "QUANTIFIED_EXTRAPOLATION_DIAGNOSTIC",
+  "recoil_interval_keV": [
+    0.1,
+    2.0
+  ],
+  "records": [
+    {
+      "n_er": 256,
+      "n_enu": 960,
+      "total_events": 0.005312160451252449,
+      "max_bin_events": 0.000732388662471546
+    },
+    {
+      "n_er": 512,
+      "n_enu": 960,
+      "total_events": 0.005311885141465482,
+      "max_bin_events": 0.0007323476697342947,
+      "max_grid_change_events": 4.099273725132434e-08
+    }
+  ],
+  "interpretation": "Model-dependent omitted contribution, not a calibrated estimate or an error bound",
+  "production_policy": "The time Slow/Fast entries integrate from2keV and reject out-of-domain response evaluations",
+  "source": "https://arxiv.org/html/2111.02477v2#S8"
+}

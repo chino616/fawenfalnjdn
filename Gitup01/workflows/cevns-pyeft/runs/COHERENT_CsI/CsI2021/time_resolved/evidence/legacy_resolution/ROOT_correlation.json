@@ -1,0 +1,95 @@
+{
+  "status": "QUANTIFIED_QF_DOMAIN_LIMITED",
+  "records": [
+    {
+      "component": "mu",
+      "joint_total": 61.286809091285896,
+      "factorized_total": 61.29768318219044,
+      "max_bin_absolute_difference": 0.018500453566288877,
+      "sum_absolute_difference": 0.34120424639883024,
+      "ROOT_energy_ge60_fraction": 0.0024634696378976182,
+      "recoil_domain_keV": [
+        2.0,
+        70.0
+      ],
+      "energy_bin_interpolation": "uniform within original 1 MeV bins, 8-point Gauss quadrature"
+    },
+    {
+      "component": "e",
+      "joint_total": 113.70560904167907,
+      "factorized_total": 113.7114646675175,
+      "max_bin_absolute_difference": 0.005230072924831575,
+      "sum_absolute_difference": 0.04849934765641182,
+      "ROOT_energy_ge60_fraction": 2.374117536600271e-07,
+      "recoil_domain_keV": [
+        2.0,
+        70.0
+      ],
+      "energy_bin_interpolation": "uniform within original 1 MeV bins, 8-point Gauss quadrature"
+    },
+    {
+      "component": "mub",
+      "joint_total": 178.39518037462128,
+      "factorized_total": 178.3606310812399,
+      "max_bin_absolute_difference": 0.010600774272529645,
+      "sum_absolute_difference": 0.28348558047777195,
+      "ROOT_energy_ge60_fraction": 0.0005116965080734827,
+      "recoil_domain_keV": [
+        2.0,
+        70.0
+      ],
+      "energy_bin_interpolation": "uniform within original 1 MeV bins, 8-point Gauss quadrature"
+    }
+  ],
+  "grid": {
+    "n_er": 1024,
+    "n_energy_bin": 8,
+    "n_pe_bin": 128
+  },
+  "max_total_bin_absolute_difference": 0.019906826571506775,
+  "total_joint": 353.3875985075862,
+  "total_factorized": 353.36977893094786,
+  "seconds": 69.32377739998628,
+  "comparison_scope": "Same ROOT energy marginals and normalization, changes only joint versus factorized time-energy distribution",
+  "selected_paper_representation": "Per-flavor factorized DAR energy spectra and timing, per2211 Eq32 and2202 analysis text",
+  "full_ROOT_source_acceptance": "BLOCKED: additional high-energy tails require a source-model decision and recoil response beyond the calibrated domain",
+  "numerical_scope": "Calibrated recoil interval and declared uniform within-bin ROOT energy interpolation",
+  "original_url": "https://arxiv.org/src/2110.07730v2/anc/snsFlux2D.root",
+  "convergence": {
+    "status": "PASS_DECLARED_GRID_DIFFERENCE",
+    "threshold_events": 0.005,
+    "records": [
+      {
+        "level": 0,
+        "grid": {
+          "n_er": 256,
+          "n_energy_bin": 2,
+          "n_pe_bin": 32
+        },
+        "max_correlation_events": 0.01990675599518621
+      },
+      {
+        "level": 1,
+        "grid": {
+          "n_er": 512,
+          "n_energy_bin": 4,
+          "n_pe_bin": 64
+        },
+        "max_correlation_events": 0.0199068236232931,
+        "max_prediction_grid_change": 0.002368960643571394,
+        "passed_0p005": true
+      },
+      {
+        "level": 2,
+        "grid": {
+          "n_er": 1024,
+          "n_energy_bin": 8,
+          "n_pe_bin": 128
+        },
+        "max_correlation_events": 0.019906826571506775,
+        "max_prediction_grid_change": 0.0007167782772409259,
+        "passed_0p005": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "review_date": "2026-11-06",
+  "operation": "Read-only provenance and source-data audit; no physical fit",
+  "official_root": {
+    "paper_url": "https://arxiv.org/abs/2110.07730v2",
+    "publisher_url": "https://doi.org/10.1103/PhysRevLett.129.081801",
+    "ancillary_url": "https://arxiv.org/src/2110.07730v2/anc/snsFlux2D.root",
+    "official_page_ancillary_link_verified": true,
+    "fresh_download": true,
+    "three_raw_copies_identical": true,
+    "copies": [
+      {
+        "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\tmp\\csi2211_provenance_20261106\\official_snsFlux2D.root",
+        "bytes": 11657400,
+        "sha256": "1af0639911bb9219b66cbfa617057cd145d180c2ac8bc791c3008f1d666206ae"
+      },
+      {
+        "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\data\\raw\\snsFlux2D.root",
+        "bytes": 11657400,
+        "sha256": "1af0639911bb9219b66cbfa617057cd145d180c2ac8bc791c3008f1d666206ae"
+      },
+      {
+        "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\sources\\snsFlux2D.root",
+        "bytes": 11657400,
+        "sha256": "1af0639911bb9219b66cbfa617057cd145d180c2ac8bc791c3008f1d666206ae"
+      }
+    ],
+    "reader": "uproot 5.7.7",
+    "objects": {
+      "mu": {
+        "root_key": "convolved_energy_time_of_nu_mu",
+        "shape": [
+          15000,
+          600
+        ],
+        "axis_order": [
+          "source_time_ns",
+          "source_energy_MeV"
+        ],
+        "time_support_us": [
+          0.0,
+          15.0
+        ],
+        "energy_support_MeV": [
+          0.0,
+          600.0
+        ],
+        "nonnegative_finite": true,
+        "raw_sum_float64": 21140914.04383676,
+        "all_flow_zero": true,
+        "full_cache_exact_match": true,
+        "time_cache_exact_match": true,
+        "probability_time_0_6_us_before_efficiency": 0.9999511416572523,
+        "probability_time_0_6_us_after_published_efficiency": 0.9974742806019751,
+        "conditioning_factor_0_6_us": 1.000048860730002,
+        "physical_interpretation": "Relative source-time probabilities only; raw weight sums are not physical fluence."
+      },
+      "e": {
+        "root_key": "convolved_energy_time_of_nu_e",
+        "shape": [
+          15000,
+          600
+        ],
+        "axis_order": [
+          "source_time_ns",
+          "source_energy_MeV"
+        ],
+        "time_support_us": [
+          0.0,
+          15.0
+        ],
+        "energy_support_MeV": [
+          0.0,
+          600.0
+        ],
+        "nonnegative_finite": true,
+        "raw_sum_float64": 21060456.877007723,
+        "all_flow_zero": true,
+        "full_cache_exact_match": true,
+        "time_cache_exact_match": true,
+        "probability_time_0_6_us_before_efficiency": 0.9191783169548304,
+        "probability_time_0_6_us_after_published_efficiency": 0.847519539902113,
+        "conditioning_factor_0_6_us": 1.087928187114907,
+        "physical_interpretation": "Relative source-time probabilities only; raw weight sums are not physical fluence."
+      },
+      "mub": {
+        "root_key": "convolved_energy_time_of_anti_nu_mu",
+        "shape": [
+          15000,
+          600
+        ],
+        "axis_order": [
+          "source_time_ns",
+          "source_energy_MeV"
+        ],
+        "time_support_us": [
+          0.0,
+          15.0
+        ],
+        "energy_support_MeV": [
+          0.0,
+          600.0
+        ],
+        "nonnegative_finite": true,
+        "raw_sum_float64": 21112123.74424184,
+        "all_flow_zero": true,
+        "full_cache_exact_match": true,
+        "time_cache_exact_match": true,
+        "probability_time_0_6_us_before_efficiency": 0.9193761082745149,
+        "probability_time_0_6_us_after_published_efficiency": 0.8478881249974107,
+        "conditioning_factor_0_6_us": 1.0876941340979591,
+        "physical_interpretation": "Relative source-time probabilities only; raw weight sums are not physical fluence."
+      },
+      "ebar": {
+        "root_key": "convolved_energy_time_of_anti_nu_e",
+        "shape": [
+          15000,
+          600
+        ],
+        "axis_order": [
+          "source_time_ns",
+          "source_energy_MeV"
+        ],
+        "time_support_us": [
+          0.0,
+          15.0
+        ],
+        "energy_support_MeV": [
+          0.0,
+          600.0
+        ],
+        "nonnegative_finite": true,
+        "raw_sum_float64": 16433.97197106323,
+        "all_flow_zero": true,
+        "full_cache_exact_match": true,
+        "time_cache_exact_match": true,
+        "probability_time_0_6_us_before_efficiency": 0.9371478772033313,
+        "probability_time_0_6_us_after_published_efficiency": 0.8707663851216781,
+        "conditioning_factor_0_6_us": 1.0670674546948067,
+        "physical_interpretation": "Relative source-time probabilities only; raw weight sums are not physical fluence."
+      }
+    }
+  },
+  "legacy_references": [
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\data\\processed\\full_root_arrays.npz",
+      "sha256": "42d5048754a796d4ff9bfe8ab2f962486f248c03ca8ade506848b63a9793cc00",
+      "role": "USER_SELECTED_LEGACY_REFERENCE_ONLY"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\data\\processed\\time_profiles_v2.npz",
+      "sha256": "c6b4a127d327f0f1b72a39300282a3e32b93855dcf2d8845a69785a24986808c",
+      "role": "USER_SELECTED_LEGACY_REFERENCE_ONLY"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\data\\manifest.json",
+      "sha256": "3d82adeb21f5c28d67968363b669811c78df2e8f75d507617f99ce5034ecac14",
+      "role": "USER_SELECTED_LEGACY_REFERENCE_ONLY"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\2021CsI_root_time.py",
+      "sha256": "3cc8bf7778bd07d9a9e17fd9bdfd3737eef052b456138817c1d487113bcedba2",
+      "role": "USER_SELECTED_LEGACY_REFERENCE_ONLY"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\time_profile.py",
+      "sha256": "92c08c6f3cdf0bcb9863cdbc78786e54030a8b0dd4a1fad186d0b335139cbf89",
+      "role": "USER_SELECTED_LEGACY_REFERENCE_ONLY"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\time_acceptance.py",
+      "sha256": "535de210f4ebde240e8b3f230a24c0e472a71ae7ad3ff836c1abf1787a1cbc28",
+      "role": "USER_SELECTED_LEGACY_REFERENCE_ONLY"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\statistics\\datasets.py",
+      "sha256": "38b0a65d383e59f3663ce058b52d8eb0796f2a0608393fc9ec40c8b890af425f",
+      "role": "USER_SELECTED_LEGACY_REFERENCE_ONLY"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\statistics\\likelihoods.py",
+      "sha256": "d006f406fdc97e2f6d4fae74ebdb49f353bfe5ec5bb19e89c848e093050f66a7",
+      "role": "USER_SELECTED_LEGACY_REFERENCE_ONLY"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\benchmarks\\table_ii_comparison\\README.md",
+      "sha256": "2a5aad87b51bd5b4c890fa1cbc1aca01731a043f0ba056137ba27d978b579e80",
+      "role": "USER_SELECTED_LEGACY_REFERENCE_ONLY"
+    }
+  ],
+  "legacy_interpretation": {
+    "time_template_normalization": "full_support_0_15_us",
+    "energy_model": "factorized legacy SNS energy fluence; ROOT E-time correlations not used in its counting interface",
+    "root_units": "ROOT data give source time and neutrino energy, not recoil energy or PE",
+    "statistical_model": "six fitted nuisances, fixed nuclear-radius deformation; not the full seven-nuisance CEvNS-only prescription of 2211.11905v2",
+    "bound_status": "Legacy optimizer bounds and signs are implementation choices; not automatically paper evidence"
+  },
+  "background_diagnostics": {
+    "brn": {
+      "energy_roi_sum": 0.9999999700000001,
+      "direct_table_product_with_time_efficiency": 27.423762642464457,
+      "published_prior_events": 18.4,
+      "absolute_normalization_resolved": false,
+      "interpretation": "A diagnostic under the supplied-bin-mass interpretation; not rescaled to the published prior."
+    },
+    "nin": {
+      "energy_roi_sum": 0.9999997999999999,
+      "direct_table_product_with_time_efficiency": 6.908564687097542,
+      "published_prior_events": 5.6,
+      "absolute_normalization_resolved": false,
+      "interpretation": "A diagnostic under the supplied-bin-mass interpretation; not rescaled to the published prior."
+    }
+  },
+  "ss_diagnostic": {
+    "ac_PE_0_60_time_0_12": 2242,
+    "k_per_us": 0.0494,
+    "selected_0_6_model_count": 1285.92652398715,
+    "original_source": "2110.07730v2 Supplement p2 lines55-59; p7 TableI",
+    "status": "PROJECT_DERIVED"
+  },
+  "limitations": [
+    "Raw-byte and cache identity do not approve a physics model.",
+    "Conditional normalization at 6 us in 2211.11905v2 differs from the legacy full-support convention.",
+    "The paper does not state all shifted-template renormalization and nominal trigger-transfer implementation details.",
+    "No numerical bin data or new fit was digitized from Fig18.",
+    "Current JHEP2022 benchmark and P03 scientific values remain unchanged."
+  ],
+  "reproduction_script": {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\tmp\\csi2211_provenance_20261106\\audit_original_sources.py",
+    "sha256": "0a6ce1bece40774bdb3a42301d3a5b50e5f172199ef4519cc7f980e45c7b3fbf"
+  },
+  "paper_original_source_chain": {
+    "S0004": {
+      "original_url": "https://arxiv.org/abs/2211.11905v2",
+      "pdf_url": "https://arxiv.org/pdf/2211.11905v2",
+      "html_url": "https://arxiv.org/html/2211.11905v2",
+      "related_doi": "https://doi.org/10.1007/JHEP04(2023)035",
+      "local_pdf": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\references\\COHERENT\\2211.11905v2.pdf",
+      "sha256": "071225342b004f4e97001d6c200066b216f0af1af226f4b4aafa43512304a2b1",
+      "role": "user-selected comparison and supplemental extraction"
+    },
+    "S0001": {
+      "original_url": "https://arxiv.org/abs/2110.07730v2",
+      "publisher_url": "https://doi.org/10.1103/PhysRevLett.129.081801",
+      "role": "2211.11905v2 reference [8], original measurement/data release"
+    },
+    "S0013": {
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/snsFlux2D.root",
+      "role": "Original released ROOT; source identity owned by P00"
+    },
+    "ref99": {
+      "original_url": "https://iris.unica.it/handle/11584/327520",
+      "persistent_url": "https://hdl.handle.net/11584/327520",
+      "title": "Low-energy signatures in DarkSide-50 experiment and neutrino scattering processes",
+      "role": "Original university record identified for reference [99]; metadata checked, thesis numeric contents not used"
+    },
+    "ref69": {
+      "original_url": "https://doi.org/10.1103/PhysRevC.60.014903",
+      "role": "Original Klein-Nystrand reference; publisher identity checked; adopted parametrization is extracted from 2211 Eq3"
+    }
+  }
+}

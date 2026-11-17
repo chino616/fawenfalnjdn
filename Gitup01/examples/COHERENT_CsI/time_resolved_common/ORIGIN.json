@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-11",
+  "method": "CsI2021_time_9x11",
+  "time_modules": {
+    "time_profile.py": {
+      "source": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\time_profile.py",
+      "sha256": "92c08c6f3cdf0bcb9863cdbc78786e54030a8b0dd4a1fad186d0b335139cbf89"
+    },
+    "time_acceptance.py": {
+      "source": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\time_acceptance.py",
+      "sha256": "535de210f4ebde240e8b3f230a24c0e472a71ae7ad3ff836c1abf1787a1cbc28"
+    }
+  },
+  "mapping": {
+    "source": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\kernels\\vector_nsi.py",
+    "source_sha256": "9fcd48c306496a64f4577479be7fdfb3ed43f06d4bd1515c02694fbba6b3d2d0",
+    "functions": [
+      "_matrix",
+      "vector_nsi_wilson"
+    ],
+    "local_sha256": "c124b444d517e141a09132081499f4a3a054b39ec1b57fd5acea5cf654ca95a7"
+  },
+  "point_input": "data/benchmarks/COHERENT_CsI/CsI2021_time/nsi_20261108/points.json",
+  "point_input_sha256": "eaab0086082a0eebfa19c4a6001a32d4b0958959d449e9b82d5e7e729e6fbc99"
+}

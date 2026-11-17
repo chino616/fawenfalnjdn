@@ -1,0 +1,72 @@
+{
+  "dataset_id": "conusplus_kkl_run1",
+  "request": [
+    "请你先以标准模型作为banchmark，对示例数图进行计算",
+    "按照已有项目的流程进行计算",
+    "请继续"
+  ],
+  "workspace": "isolated_candidate",
+  "human_gate": "NOT_REVIEWED",
+  "phase_order": [
+    "Phase0",
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P07",
+    "P10"
+  ],
+  "unrequested": [
+    "P08",
+    "P09"
+  ],
+  "executor": "cevns_pyeft.core.predict.predict with ExperimentModel, backend=slow, bin_probability_v1",
+  "write_scope": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\conusplus-sm-response-20261106",
+  "normalization": {
+    "route": "detector flux times live seconds times actual nuclei",
+    "detector_mass_kg": 1,
+    "live_days": 119,
+    "exposure_kg_day": 119,
+    "source_includes_geometry": true,
+    "ROI_eVee": [
+      160,
+      350
+    ],
+    "bin_width_eVee": 10
+  },
+  "implementation": {
+    "source": "REUSE DifferentialFluxSource/CallableFluenceComponent/ArrayContinuum, fixed electron-antineutrino state",
+    "target": "CONFIG_ONLY natural Ge, NIST atomic masses for inventory, A*amu for the selected engine kinematics",
+    "interaction": "REUSE Li2026LegacyInteraction with the five explicit Ge Response keys",
+    "observation": "ADAPTER Lindhard plus true-ionization-dependent Gaussian CDF probabilities",
+    "integration": "REUSE core predict/recoil integration/probability fold without Fast cache"
+  },
+  "predeclared_checks": {
+    "relative_bin_tolerance": 0.003,
+    "absolute_bin_tolerance_events": 0.0001,
+    "E_nu_refinement": [
+      161,
+      321
+    ],
+    "recoil_refinement": [
+      81,
+      161
+    ],
+    "gaussian_bin_probability_absolute_tolerance": 1e-10,
+    "component_sum_relative_tolerance": 1e-12,
+    "source_and_mass_scaling_relative_tolerance": 1e-12
+  },
+  "model_choices": {
+    "mass_convention": "Existing engine A*amu in all kinematic/amplitude/phase-space occurrences. NIST mass only in nuclei per kg. Disclose difference to onboarding approximate nuclear mass.",
+    "antineutrino": "Legacy shared kernel. Inspect the actual SM-only nonzero channels and conjugation. Preserve applicability limitation for Ge73 and general EFT.",
+    "efficiency": "Paper approximation 1 above reconstructed threshold. No ROI renormalization.",
+    "true_energy_min_eVee": 2.96
+  },
+  "provenance_limits": [
+    "32 low-energy nodes directly sourced from user note Table 2. Exact Kopeikin primary numeric table remains unverified.",
+    "Ge response coefficients have a verified local asset identity. Their original nuclear-calculation and conversion chain remains unresolved."
+  ],
+  "authorization_basis": "Existing user authorization for isolated processing, SM computation and use of project workflow. Result review remains NOT_REVIEWED. No formal phase approval inferred."
+}

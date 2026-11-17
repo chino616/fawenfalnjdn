@@ -1,0 +1,15 @@
+{
+  "analysis_id": "snudd_full_rho_trace_contract",
+  "version": "3.5",
+  "status": "ONBOARDING_UPDATED_RUNTIME_PENDING",
+  "write_ref": "W0009",
+  "decision_ref": "D0009",
+  "onboarding": "docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_FULL_TRACE_ONBOARDING.v3.5.md",
+  "contract": "docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_FULL_TRACE_CONTRACT.v3.5.json",
+  "availability_audit": "outputs/external/solar_rho_snudd/20261112_trace_onboarding/RHO_INPUT_AUDIT.json",
+  "implementation_audit": "outputs/external/solar_rho_snudd/20261112_trace_onboarding/IMPLEMENTATION_AUDIT.json",
+  "runtime_full_trace": "NOT_IMPLEMENTED",
+  "full_trace_statistics": "NOT_RUN",
+  "old_numerical_results_preserved": true,
+  "human_result_review": "NOT_REVIEWED"
+}

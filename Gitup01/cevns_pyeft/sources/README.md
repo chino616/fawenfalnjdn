@@ -27,3 +27,13 @@ SNS 要求 `POTExposure`；每秒通量适配器要求 `LiveTimeExposure` 并乘
 ---
 
 [上一级](../README.md) · [项目总览](../../README.md)
+
+<!-- solar-nsi-v33:start -->
+
+## 太阳⁸B NSI：v3.3（2026-11-12）
+
+solar_msw.py负责B16产生区平均Pee及对角入射态；明确两味绝热、θ13,m近似与来源。
+
+[完整新onboarding：实际输入、标准引文、物理与程序](<../../docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/NSI_EE_VECTOR_ONBOARDING.v3.3.md>) · [独立NSI数据](<../../data/benchmarks/solar_b8_nsi_2601_19883/README.md>) · [实际结果与核对](<../../outputs/solar_b8_nsi/20261112_fig4_run2/README.md>)
+
+<!-- solar-nsi-v33:end -->

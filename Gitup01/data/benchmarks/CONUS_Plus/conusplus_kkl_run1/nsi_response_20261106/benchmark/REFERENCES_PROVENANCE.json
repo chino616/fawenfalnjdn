@@ -1,0 +1,305 @@
+{
+  "citation": "V. De Romeri, D. K. Papoulias, and G. Sanchez Garcia, \"Implications of the first CONUS+ measurement of coherent elastic neutrino-nucleus scattering,\" Phys. Rev. D 111, 075025 (2025), doi:10.1103/PhysRevD.111.075025, arXiv:2501.17843v3.",
+  "source_pdf": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\conusplus-nsi-response-20261106\\snapshot\\docs\\references\\CONUS\\2501.17843v3.pdf",
+  "source_sha256": "b20923363badde299106a6df83f0dff5308fd69d652b59b9967d32b764057c90",
+  "table_locator": "PDF p.13, Table II, CONUS+ (This Work) column, six vector NSI rows, 1sigma caption",
+  "figure_locator": "PDF p.14, Fig.4, four panels, blue CONUS+ 90% CL filled-region boundaries",
+  "method": "Table values checked against PDF text and visually reviewed table. Polygon paths and all major axis ticks extracted as PDF vectors.",
+  "table_trace": [
+    {
+      "row_index": 1,
+      "coupling": "epsilon_ee_uV",
+      "raw_pdf_text": "εuV [−0.037,0.026]∪[0.348,0.411] [−0.024,0.045]∪[0.34,0.43]",
+      "CONUS_intervals": [
+        [
+          -0.037,
+          0.026
+        ],
+        [
+          0.348,
+          0.411
+        ]
+      ],
+      "COHERENT_column_excluded": true
+    },
+    {
+      "row_index": 2,
+      "coupling": "epsilon_ee_dV",
+      "raw_pdf_text": "εdV [−0.034,0.024]∪[0.322,0.380] [−0.027,0.048]∪[0.30,0.39]",
+      "CONUS_intervals": [
+        [
+          -0.034,
+          0.024
+        ],
+        [
+          0.322,
+          0.38
+        ]
+      ],
+      "COHERENT_column_excluded": true
+    },
+    {
+      "row_index": 3,
+      "coupling": "epsilon_emu_uV",
+      "raw_pdf_text": "εuV [−0.123,0.123] [−0.081,0.081]",
+      "CONUS_intervals": [
+        [
+          -0.123,
+          0.123
+        ]
+      ],
+      "COHERENT_column_excluded": true
+    },
+    {
+      "row_index": 4,
+      "coupling": "epsilon_emu_dV",
+      "raw_pdf_text": "εdV [−0.114,0.114] [−0.071,0.071]",
+      "CONUS_intervals": [
+        [
+          -0.114,
+          0.114
+        ]
+      ],
+      "COHERENT_column_excluded": true
+    },
+    {
+      "row_index": 5,
+      "coupling": "epsilon_etau_uV",
+      "raw_pdf_text": "εuV [−0.123,0.123] [−0.13,0.13]",
+      "CONUS_intervals": [
+        [
+          -0.123,
+          0.123
+        ]
+      ],
+      "COHERENT_column_excluded": true
+    },
+    {
+      "row_index": 6,
+      "coupling": "epsilon_etau_dV",
+      "raw_pdf_text": "εdV [−0.114,0.114] [−0.12,0.12]",
+      "CONUS_intervals": [
+        [
+          -0.114,
+          0.114
+        ]
+      ],
+      "COHERENT_column_excluded": true
+    }
+  ],
+  "figure_panels": [
+    {
+      "panel": "diag_ud",
+      "rectangle_index": 1,
+      "x_parameter": "epsilon_ee_dV",
+      "y_parameter": "epsilon_ee_uV",
+      "x_map": [
+        0.011181080073998177,
+        -2.3228042037032663
+      ],
+      "y_map": [
+        -0.013504421388075716,
+        2.078129708176475
+      ],
+      "x_tick_values": [
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1
+      ],
+      "y_tick_values": [
+        1,
+        0.5,
+        0,
+        -0.5,
+        -1
+      ],
+      "frame": {
+        "x0": 118.30737236016,
+        "x1": 297.18096836016,
+        "top": 79.83531298338005,
+        "bottom": 227.93495698338006
+      },
+      "max_tick_residual": 1.7763568394002505e-15,
+      "polygons": [
+        {
+          "polygon_index": 0,
+          "pdf_curve_index": 0,
+          "vertices": 397,
+          "fill_rule": "Preserve individual outline; inner boundaries may represent holes."
+        },
+        {
+          "polygon_index": 1,
+          "pdf_curve_index": 1,
+          "vertices": 341,
+          "fill_rule": "Preserve individual outline; inner boundaries may represent holes."
+        }
+      ]
+    },
+    {
+      "panel": "fc_ud",
+      "rectangle_index": 4,
+      "x_parameter": "epsilon_emu_uV",
+      "y_parameter": "epsilon_emu_dV",
+      "x_map": [
+        0.01133188339618901,
+        -4.942217367413102
+      ],
+      "y_map": [
+        -0.013686560465527006,
+        2.0872897682181004
+      ],
+      "x_tick_values": [
+        -1,
+        -0.5,
+        0,
+        0.5,
+        1
+      ],
+      "y_tick_values": [
+        1,
+        0.5,
+        0,
+        -0.5,
+        -1
+      ],
+      "frame": {
+        "x0": 347.88721605968,
+        "x1": 524.38038405968,
+        "top": 79.44214844604005,
+        "bottom": 225.57090044604
+      },
+      "max_tick_residual": 3.9968028886505635e-15,
+      "polygons": [
+        {
+          "polygon_index": 0,
+          "pdf_curve_index": 8,
+          "vertices": 399,
+          "fill_rule": "Preserve individual outline; inner boundaries may represent holes."
+        }
+      ]
+    },
+    {
+      "panel": "ring_mu",
+      "rectangle_index": 6,
+      "x_parameter": "epsilon_ee_dV",
+      "y_parameter": "epsilon_emu_dV",
+      "x_map": [
+        0.007034797626459281,
+        -1.2665522608889865
+      ],
+      "y_map": [
+        -0.007788525943579923,
+        2.7022012211863498
+      ],
+      "x_tick_values": [
+        -0.4,
+        -0.2,
+        0,
+        0.2,
+        0.4,
+        0.6,
+        0.8
+      ],
+      "y_tick_values": [
+        0.6,
+        0.4,
+        0.2,
+        0,
+        -0.2,
+        -0.4
+      ],
+      "frame": {
+        "x0": 123.18083716149998,
+        "x1": 293.76143716149994,
+        "top": 269.9100235930001,
+        "bottom": 411.1434235930001
+      },
+      "max_tick_residual": 1.0547118733938987e-15,
+      "polygons": [
+        {
+          "polygon_index": 0,
+          "pdf_curve_index": 9,
+          "vertices": 99,
+          "fill_rule": "Preserve individual outline; inner boundaries may represent holes."
+        },
+        {
+          "polygon_index": 1,
+          "pdf_curve_index": 10,
+          "vertices": 47,
+          "fill_rule": "Preserve individual outline; inner boundaries may represent holes."
+        }
+      ]
+    },
+    {
+      "panel": "ring_tau",
+      "rectangle_index": 10,
+      "x_parameter": "epsilon_ee_dV",
+      "y_parameter": "epsilon_etau_dV",
+      "x_map": [
+        0.0069869381287763896,
+        -2.8388992439441902
+      ],
+      "y_map": [
+        -0.007735538642573878,
+        2.678770660579886
+      ],
+      "x_tick_values": [
+        -0.4,
+        -0.2,
+        0,
+        0.2,
+        0.4,
+        0.6,
+        0.8
+      ],
+      "y_tick_values": [
+        0.6,
+        0.4,
+        0.2,
+        0,
+        -0.2,
+        -0.4
+      ],
+      "frame": {
+        "x0": 349.06552755910997,
+        "x1": 520.8145795591099,
+        "top": 268.7299174150601,
+        "bottom": 410.9307454150601
+      },
+      "max_tick_residual": 1.887379141862766e-15,
+      "polygons": [
+        {
+          "polygon_index": 0,
+          "pdf_curve_index": 15,
+          "vertices": 99,
+          "fill_rule": "Preserve individual outline; inner boundaries may represent holes."
+        },
+        {
+          "polygon_index": 1,
+          "pdf_curve_index": 16,
+          "vertices": 47,
+          "fill_rule": "Preserve individual outline; inner boundaries may represent holes."
+        }
+      ]
+    }
+  ],
+  "scope": "Published rounded intervals and rendered contour boundaries. Author likelihood/surface arrays were not acquired.",
+  "limitations": [
+    "3-decimal Table II endpoints have publication rounding precision.",
+    "Vector polygon coordinates describe the plotted geometry, including clipped boundaries at panel edges.",
+    "The bottom-panel y frames extend to -0.5; calibration uses the labeled -0.4..0.6 major ticks.",
+    "PDF vector geometry does not establish original likelihood-grid precision."
+  ],
+  "files": {
+    "tableII_1sigma.csv": {
+      "sha256": "ff6c6dab2b76e791865b9440dbd9a8f0ec949aa1fb549cbc64c57b843329dadb"
+    },
+    "fig4_blue_polygons.csv": {
+      "sha256": "e899f48a83cb5f138b177ae96858bbdb12cda346cfb5a4ea026ed5058621dfdc"
+    }
+  },
+  "extractor_sha256": "2cbcd7f030023b700a623a679f1024f47597538b50bda8ccfa214dd1e4839f99",
+  "created_date": "2026-11-06"
+}

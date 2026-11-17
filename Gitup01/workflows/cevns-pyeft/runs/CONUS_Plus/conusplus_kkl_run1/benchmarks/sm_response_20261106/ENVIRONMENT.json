@@ -1,0 +1,21 @@
+{
+  "created_date": "2026-11-06",
+  "python_executable": "C:\\Users\\Ultimator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "versions": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "pdfplumber": "0.11.9"
+  },
+  "module_locations": {
+    "numpy": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\conusplus-sm-response-20261106\\deps\\numpy\\__init__.py",
+    "scipy": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\deps\\scipy\\__init__.py",
+    "matplotlib": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\conusplus-sm-response-20261106\\deps\\matplotlib\\__init__.py",
+    "pdfplumber": "C:\\Users\\Ultimator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\site-packages\\pdfplumber\\__init__.py"
+  },
+  "bytecode_writes_disabled": true,
+  "matplotlib_cache": "review/mplconfig",
+  "dependencies": "Matplotlib installed into this run deps/ from official PyPI. SciPy and JSON Schema reused read-only from previously installed local dependencies."
+}

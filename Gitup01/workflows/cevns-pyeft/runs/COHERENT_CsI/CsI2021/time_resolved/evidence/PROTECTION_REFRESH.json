@@ -1,0 +1,11 @@
+{
+  "scope": "Only files backed up and edited by this authorized provenance task",
+  "updates": [
+    {
+      "path": "data/responses/README.md",
+      "previous_sha256": "e4fe2214963d26ba87d8298209d66ec4a9c513afed3e946bbeaa974bb4753aa7",
+      "current_sha256": "edac4a846496a151421b3d7cddc93862e22fd65ae9c9f8946bdbd3ef261418e4"
+    }
+  ],
+  "response_json_unchanged": true
+}

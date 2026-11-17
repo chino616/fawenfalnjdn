@@ -1,0 +1,22 @@
+{
+  "version": "2026-11-06",
+  "files": [
+    {
+      "path": "cevns_pyeft/experiments/model_bindings.json",
+      "sha256": "1d03f7e0136be69c7d8c12324eb4e26c1c0c6093496efc7c19bfd77f9f1bcf24"
+    },
+    {
+      "path": "cevns_pyeft/experiments/package_profiles.py",
+      "sha256": "e198c81a24aedac693a673016e7c5682317ba6be96ff1bbaa51272f6d41df546"
+    },
+    {
+      "path": "cevns_pyeft/statistics/profiling.py",
+      "sha256": "48131701f2c003b56676ad6803890317039b352f60affa3e457bd70b5739a688"
+    },
+    {
+      "path": "cevns_pyeft/nuclear/response.py",
+      "sha256": "fc94a1582b11e58113e2f192be9733dfaf5b27b2604fe075da9e9f56b94d776f"
+    }
+  ],
+  "scope": "Current main-project implementation identities and exact source code locations"
+}

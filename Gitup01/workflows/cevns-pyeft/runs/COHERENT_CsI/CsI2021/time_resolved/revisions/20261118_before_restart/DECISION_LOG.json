@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-06",
+  "evidence": "Conversation user instructions",
+  "decisions": [
+    {
+      "id": "D_RESPONSE",
+      "text": "核结构用RESPONSE处理，两套benchmark独立验收"
+    },
+    {
+      "id": "D_PE",
+      "text": "用旧程序[0,8,12,16,20,24,32,40,48,60]，无原始数字依据则标重建值"
+    },
+    {
+      "id": "D_REUSE",
+      "text": "优先复用旧二维预测、背景、时间偏移和likelihood"
+    },
+    {
+      "id": "D_PROVENANCE",
+      "text": "重写onboarding，将逐数据来源严格写入文件及主规则，保留草稿与缺口"
+    },
+    {
+      "id": "D_LOCAL_RESPONSE",
+      "text": "response本来就可以直接去调用原始的 data中的response",
+      "interpretation": "本次以原data/responses/responses_all.json为直接数值来源；外部生成链仍记未核实，不作为原表复用的阻断"
+    }
+  ]
+}

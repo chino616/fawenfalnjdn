@@ -1,0 +1,100 @@
+{
+  "changes": [
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\analysis_inputs.py",
+      "sha256": "931da0b2339f2fe1fda07eea2751784c9f6269db2afbcb26ecf4a85adade119d",
+      "owner_readme": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\README.md"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\slow_counts_csi2021_time.py",
+      "sha256": "ccb228729e2ce9ca2f3b48f4e686016552d78e4bd8033f281f69177313345e16",
+      "owner_readme": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\README.md"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\kernels\\builder.py",
+      "sha256": "0e4f310261bb08ac4a6bb54f240017a4404850472edc558f5fbc9682f86c1a47",
+      "owner_readme": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\README.md"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\kernels\\vector_nsi.py",
+      "sha256": "9fcd48c306496a64f4577479be7fdfb3ed43f06d4bd1515c02694fbba6b3d2d0",
+      "owner_readme": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\README.md"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\statistics\\datasets.py",
+      "sha256": "dd7626d50a4459affe7a5490a821991d96d0e4d9a4ecc65a96896f6546396756",
+      "owner_readme": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\README.md"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\statistics\\likelihoods.py",
+      "sha256": "69c92a2dcc79fdb7ce671f94653a4c6e76c4827dabb2f709d8c1b9690b2c6eb7",
+      "owner_readme": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\README.md"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\tests\\test_counts_api.py",
+      "sha256": "c6dcc388a2a783aec829ea42cdfbba009f9e75e7830bf52a9dc394006f2c494c",
+      "owner_readme": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\README.md"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\tests\\test_input_resolution.py",
+      "sha256": "ce121729114267fb87a845ba7b12a8dd635f7ebe4052aa3edea429d69280068c",
+      "owner_readme": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\README.md"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\tools\\resolve_input_issues.py",
+      "sha256": "6691472df0a3264d4ba95fa9f356bf6afbd1c411c14e9807b3700cff638e139e",
+      "owner_readme": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\README.md"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\README.md",
+      "sha256": "668776165d9a5f66baab1a81ae5d60d7dcb9630484102fb3ac9c6436cdd48f40",
+      "owner_readme": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\README.md"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\benchmarks\\README.md",
+      "sha256": "3ef8b7aad9ad830cdd39ab2f2c475863119b7d68a56324ab8256c8c6cf26eb48",
+      "owner_readme": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\README.md"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\docs\\time_binned_events_api.md",
+      "sha256": "0602436e66afee780c61b0838316b96372f8b7bd48634706d9e7f7b8cf1bbd22",
+      "owner_readme": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\README.md"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\tests\\test_csi2021_root_time.py",
+      "sha256": "8bf515f4db6230de4c807d1a3bbc441f342f545671f3bd438218cab1c736f83e",
+      "owner_readme": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\README.md",
+      "role": "Normal pytest collector"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\README.md",
+      "sha256": "22fee5d619621e01fcadb0ed1fa3a36daebd7249947babedfaa0c26f20e541bf",
+      "role": "Current evidence/navigation update with historical contract preserved"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\P02_MISSING_AND_CONFLICTS.md",
+      "sha256": "2a3d326cd821b57e18819cee0d32934dae44e0d4ba1625f03ba9a268c841a341",
+      "role": "Current evidence/navigation update with historical contract preserved"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\experiments\\COHERENT\\CsI2021\\time_resolved\\README.md",
+      "sha256": "be2e548db56b8d797d0acc62e853ac4ff7e08ea94c543b2a074f706a3ae06215",
+      "role": "Current evidence/navigation update with historical contract preserved"
+    },
+    {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\experiments\\COHERENT\\CsI2021\\time_resolved\\EXPERIMENT_USER_INPUT.md",
+      "sha256": "fe0f43d6b6628353fea9db2b6dd63bffba65da7041ae4508613a0a7b7b0dba4a",
+      "role": "Current evidence/navigation update with historical contract preserved"
+    }
+  ],
+  "evidence_directory": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\benchmarks\\input_resolution_20261106",
+  "evidence_owner_readme": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\benchmarks\\input_resolution_20261106\\README.md",
+  "rollback_directory": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\backup\\csi-input-resolution-20261106-01",
+  "backup_log": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\backup\\BACKUP_MANIFEST.md",
+  "baseline": "Explicit file backups; selected legacy checkout has no Git metadata",
+  "shared_implementation_reuse": [
+    "Native ResponseDB and differential_cross_section_nn",
+    "Original build_time_kernel and TimeKernel/Fast/Slow interfaces",
+    "Original TimeMassCDF, build_time_weights and TimeLikelihood profile"
+  ]
+}

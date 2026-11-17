@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-11",
+  "scope": "Only the five user-selected latest experiment analyses; navigation and method descriptions, not a second physical parameter authority",
+  "analyses": [
+    {
+      "analysis_id": "solar_b8_singlebin_2601_19883",
+      "title": "太阳⁸B：单bin（三样本）",
+      "version": "v3.2.1 / 20261111_response_run2",
+      "methods_file": "docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/METHODS.md",
+      "onboarding": "docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SOLAR_B8_SINGLEBIN_ONBOARDING.v3.2.1.md",
+      "input": "data/benchmarks/solar_b8_singlebin_2601_19883/analysis.input.json",
+      "entry": "tools/run_solar_b8_singlebin_benchmark.py",
+      "evidence": "data/benchmarks/solar_b8_singlebin_2601_19883/analysis.input.json",
+      "purpose": "本文件区别当前分析的处理方式，并链接它实际读取的输入和结果。",
+      "processing": {
+        "源与靶": "太阳⁸B；天然Xe的9行核数分母，实际7个有核响应的同位素；曝光分别1.20/1.04/3.51 t·yr。",
+        "观测与响应": "paired / US2 / XENONnT各一个信号总数；真反冲×Total接受度积分；不读旧多bin的Qy/Ne/cS2或其缓存。",
+        "统计与能力": "三个拟合信号量的Gaussian，各自独立12% pull；XENONnT缺尾段用区间，joint_chi2=null。",
+        "核结构": "本地Response→共享Li2026；不叠加KN/Helm。",
+        "分支区别": "本入口只列单bin。既有多bin是不同观测/统计方法，仍保留原目录，不混合输入或结果。"
+      },
+      "results": [
+        {
+          "label": "SM结果",
+          "path": "outputs/solar_b8_singlebin/20261111_response_run2/README.md"
+        }
+      ],
+      "limitations": [
+        "XENONnT约2.77–3 keVnr效率缺失；区间只描述该尾段。",
+        "Xe124/126核表缺失，不补KN、不重归一；外部核表认证未闭合。",
+        "计算已完成不等于科学接受。"
+      ],
+      "readmes": [
+        "docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/README.md",
+        "data/benchmarks/solar_b8_singlebin_2601_19883/README.md"
+      ]
+    },
+    {
+      "analysis_id": "CsI2021_time_9x11",
+      "title": "CsI-time：9PE×11时间箱",
+      "version": "r2 / SM 20261107；NSI 20261108",
+      "methods_file": "docs/experiments/COHERENT/CsI2021/time_resolved/METHODS.md",
+      "onboarding": "docs/experiments/COHERENT/CsI2021/time_resolved/experiment.physics.md",
+      "input": "data/experiments/COHERENT_CsI/CsI2021/time_resolved/analysis_inputs.npz",
+      "entry": "examples/COHERENT_CsI/time_resolved_sm/run_benchmark.py",
+      "evidence": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/P00_SOURCE_REGISTER.yaml",
+      "purpose": "本文件区别当前分析的处理方式，并链接它实际读取的输入和结果。",
+      "processing": {
+        "源与靶": "SNS解析DAR能谱×ROOT时间边缘；14.6 kg等化学计量Cs/I，sin²θW=.23857。",
+        "观测与响应": "QF→光产额→Gamma→PE效率，再施加时间权重；99箱，events/bin；0–6μs参考窗注量为主口径。",
+        "统计与能力": "SM为未拟合353.465608686事例；NSI为24点前向对照，不是参数区间或原生二维likelihood。",
+        "本地依赖": "examples/COHERENT_CsI/time_resolved_common内的两份原样时间模块和纯NSI映射；24点坐标为最新已声明输入。 当前99箱数值资源位于data/experiments/.../CsI2021/time_resolved，与来源证据按SHA核对。",
+        "分支区别": "全支撑注量329.016422597只是另一注量解释；默认注册CsI2021旧一维九箱不能替代本时间分析。"
+      },
+      "results": [
+        {
+          "label": "SM报告",
+          "path": "docs/experiments/COHERENT/CsI2021/time_resolved/SM_BENCHMARK.md"
+        },
+        {
+          "label": "NSI报告",
+          "path": "docs/experiments/COHERENT/CsI2021/time_resolved/NSI_BENCHMARK.md"
+        },
+        {
+          "label": "观测叠加",
+          "path": "outputs/csi2021_time_sm_data_comparison_20261109/README.md"
+        }
+      ],
+      "limitations": [
+        "BRN/NIN绝对归一与严格论文模型等价仍未闭合。",
+        "旧图/原始C、扣背景诊断与纯信号分别解释；本地化依赖不改变统计含义。"
+      ],
+      "readmes": [
+        "docs/experiments/COHERENT/CsI2021/time_resolved/README.md",
+        "examples/COHERENT_CsI/time_resolved_sm/README.md",
+        "examples/COHERENT_CsI/time_resolved_nsi/README.md",
+        "data/experiments/COHERENT_CsI/CsI2021/time_resolved/README.md",
+        "data/experiments/COHERENT_CsI/CsI2021/README.md"
+      ],
+      "input_origin": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/data/analysis_inputs.npz"
+    },
+    {
+      "analysis_id": "CsI2017_legacy_SM",
+      "title": "CsI2017：25PE箱确定性映射",
+      "version": "Package v2 / legacy compatibility",
+      "methods_file": "docs/experiments/COHERENT/CsI2017/METHODS.md",
+      "onboarding": "data/experiments/COHERENT_CsI/CsI2017/experiment.physics.md",
+      "input": "data/experiments/COHERENT_CsI/CsI2017/experiment.input.yaml",
+      "entry": "examples/experiment_modularization/run_experiments.py",
+      "evidence": "data/experiments/COHERENT_CsI/CsI2017/README.md",
+      "purpose": "本文件区别当前分析的处理方式，并链接它实际读取的输入和结果。",
+      "processing": {
+        "源与靶": "已物化SNS运行期积分注量，不重复乘POT或活时间；14.6 kg Cs/I。",
+        "观测与响应": "PE=1.17T，固定251节点、4.9 PE效率阈值；不使用CsI2021 Gamma/时间响应。",
+        "统计与能力": "单28%归一化pull的近似Gaussian，保留有符号residual。",
+        "核结构": "YAML/NPZ中的本地核响应快照，兼容现有Li2026实现。",
+        "最新核对口径": "本次已运行的回归网格：n_enu=12；167.558550049事例。 不是默认网格收敛声明。"
+      },
+      "results": [
+        {
+          "label": "最新核对结果",
+          "path": "outputs/COHERENT_CsI/CsI2017/sm_legacy_25bin_20261111/SM_RESULT.json"
+        }
+      ],
+      "limitations": [
+        "DRAFT/NOT_REVIEWED；官方likelihood与科学发布未通过。",
+        "现有Physics MD与Renderer不同步，迁移不以改写数组或放松阈值消除该问题。",
+        "兼容observation_schema.json仍缺失，不猜测补造。"
+      ],
+      "readmes": [
+        "docs/experiments/COHERENT/CsI2017/README.md",
+        "data/experiments/COHERENT_CsI/CsI2017/README.md"
+      ]
+    },
+    {
+      "analysis_id": "Ar2020_legacy_SM",
+      "title": "Ar2020：12箱专用观测宽度Gaussian",
+      "version": "Package v2 / legacy compatibility",
+      "methods_file": "docs/experiments/COHERENT/Ar2020/METHODS.md",
+      "onboarding": "data/experiments/COHERENT_Ar/Ar2020/experiment.physics.md",
+      "input": "data/experiments/COHERENT_Ar/Ar2020/experiment.input.yaml",
+      "entry": "examples/experiment_modularization/run_experiments.py",
+      "evidence": "data/experiments/COHERENT_Ar/Ar2020/README.md",
+      "purpose": "本文件区别当前分析的处理方式，并链接它实际读取的输入和结果。",
+      "processing": {
+        "源与靶": "已物化SNS运行期积分注量，不重复乘POT或活时间；24 kg Ar40。",
+        "观测与响应": "均值(0.246+0.00078T)T；σ(x)=0.58√x依赖观测值；效率为表格。",
+        "统计与能力": "非对称IRLS、有界信号/背景pull .12/.146。",
+        "核结构": "YAML/NPZ中的本地核响应快照，兼容现有Li2026实现。",
+        "最新核对口径": "本次已运行的回归网格：n_er=11,n_enu=40,n_pe_bin=8；136.632223203事例。 不是默认网格收敛声明。"
+      },
+      "results": [
+        {
+          "label": "最新核对结果",
+          "path": "outputs/COHERENT_Ar/Ar2020/sm_legacy_12bin_20261111/SM_RESULT.json"
+        }
+      ],
+      "limitations": [
+        "DRAFT/NOT_REVIEWED；官方likelihood与科学发布未通过。",
+        "现有Physics MD与Renderer不同步，迁移不以改写数组或放松阈值消除该问题。",
+        "Package标为PE的效率坐标来自官方keVee列，单位冲突待科学核对。"
+      ],
+      "readmes": [
+        "docs/experiments/COHERENT/Ar2020/README.md",
+        "data/experiments/COHERENT_Ar/Ar2020/README.md"
+      ]
+    },
+    {
+      "analysis_id": "conusplus_kkl_run1_response",
+      "title": "CONUS+：SM / 矢量NSI Response",
+      "version": "onboarding v3 / Response benchmark v1",
+      "methods_file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/METHODS.md",
+      "onboarding": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+      "input": "data/experiments/CONUS_Plus/conusplus_kkl_run1/input_choices.json",
+      "entry": "examples/CONUS_Plus/conusplus_kkl_run1/run_benchmark.py",
+      "evidence": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P00_SOURCE_REGISTER.yaml",
+      "purpose": "本文件区别当前分析的处理方式，并链接它实际读取的输入和结果。",
+      "processing": {
+        "源与靶": "反应堆ν̄e；用户选定非负Flux、天然Ge五同位素；1 kg、119 days、160–350 eVee。",
+        "观测与响应": "19×10 eVee箱；Lindhard k=.162＋真电离能Gaussian，ROI损失保留；Nuclear Response，非论文KN等价。",
+        "统计与能力": "SM：未拟合前向149.419399803事例；NSI：六个实数u/d矢量坐标，误差均值、Gaussian .169归一化pull的近似区间/二维比较。",
+        "方法分目录": "sm_response与nsi_response各自代码、基准data、结果、文档和阶段记录；共享唯一SM装配。",
+        "本地化与缓存": "代码使用Gitup01显式输入；原运行源码归入一份压缩证据。新源身份需在新输出目录重编译核，不将旧缓存误作当前缓存。"
+      },
+      "results": [
+        {
+          "label": "SM报告",
+          "path": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/benchmarks/sm_response_20261106/SM_BENCHMARK.md"
+        },
+        {
+          "label": "SM结果",
+          "path": "outputs/CONUS_Plus/conusplus_kkl_run1/sm_response_20261106/summary.json"
+        },
+        {
+          "label": "NSI报告",
+          "path": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/benchmarks/nsi_response_20261106/NSI_BENCHMARK.md"
+        },
+        {
+          "label": "NSI区间",
+          "path": "outputs/CONUS_Plus/conusplus_kkl_run1/nsi_response_20261106/nsi_intervals.csv"
+        }
+      ],
+      "limitations": [
+        "原始科学来源PARTIAL，人工接受NOT_REVIEWED；目录集中不自动成为默认活动Runtime dataset。",
+        "Kopeikin原始数表与核响应上游认证未闭合；SM高能谱形与文献仍有差异。",
+        "当前主项目原onboarding生成器的既有实施指纹问题单独保留。"
+      ],
+      "readmes": [
+        "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/README.md",
+        "data/experiments/CONUS_Plus/conusplus_kkl_run1/README.md",
+        "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/README.md"
+      ]
+    }
+  ]
+}

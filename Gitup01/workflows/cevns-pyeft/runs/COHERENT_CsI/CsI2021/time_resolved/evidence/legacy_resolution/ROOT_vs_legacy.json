@@ -1,0 +1,109 @@
+{
+  "status": "QUANTIFIED_THREE_SOURCE_REPRESENTATIONS",
+  "records": [
+    {
+      "component": "mu",
+      "ROOT_joint_events": 61.286809091285896,
+      "ROOT_factorized_events": 61.29768318219044,
+      "legacy_DAR_events": 50.4693827362674,
+      "max_bin_correlation_difference": 0.018500453566288877,
+      "max_bin_energy_model_difference": 0.869674476998493,
+      "max_bin_total_difference": 0.8704752402642164,
+      "ROOT_mean_energy_MeV": 30.67637496435611,
+      "ROOT_peak_energy_bin_MeV": [
+        30.0,
+        31.0
+      ],
+      "legacy_DAR_line_MeV": 29.792140909877446
+    },
+    {
+      "component": "e",
+      "ROOT_joint_events": 113.70560904167907,
+      "ROOT_factorized_events": 113.7114646675175,
+      "legacy_DAR_events": 107.0051999509585,
+      "max_bin_correlation_difference": 0.005230072924831575,
+      "max_bin_energy_model_difference": 0.46485674572916125,
+      "max_bin_total_difference": 0.465421500710133,
+      "ROOT_mean_energy_MeV": 32.389385805954824,
+      "ROOT_peak_energy_bin_MeV": [
+        36.0,
+        37.0
+      ],
+      "legacy_interpolated_mass_in_DAR_support": 0.9991978576993168,
+      "legacy_interpolated_mean_energy_MeV": 31.68056375700714,
+      "analytic_Michel_mass_in_DAR_support": 0.9999999942178713,
+      "analytic_Michel_mean_energy_MeV": 31.697512527822813
+    },
+    {
+      "component": "mub",
+      "ROOT_joint_events": 178.39518037462128,
+      "ROOT_factorized_events": 178.3606310812399,
+      "legacy_DAR_events": 170.84434738250118,
+      "max_bin_correlation_difference": 0.010600774272529645,
+      "max_bin_energy_model_difference": 0.5417806065321518,
+      "max_bin_total_difference": 0.5335855195841077,
+      "ROOT_mean_energy_MeV": 37.64221599519112,
+      "ROOT_peak_energy_bin_MeV": [
+        51.0,
+        52.0
+      ],
+      "legacy_interpolated_mass_in_DAR_support": 0.9999540764818752,
+      "legacy_interpolated_mean_energy_MeV": 36.97253891278669,
+      "analytic_Michel_mass_in_DAR_support": 0.9999532197914793,
+      "analytic_Michel_mean_energy_MeV": 36.97969003310568
+    }
+  ],
+  "total_ROOT_joint_events": 353.3875985075862,
+  "total_ROOT_factorized_events": 353.36977893094786,
+  "total_legacy_DAR_events": 328.3189300697272,
+  "total_event_difference": 25.06866843785912,
+  "max_bin_total_difference": 1.0058675295241777,
+  "max_bin_correlation_difference": 0.019906826571506775,
+  "max_bin_energy_model_difference": 1.0070979016956727,
+  "identical_absolute_inputs": {
+    "detector_mass_kg": 14.57,
+    "fluence_per_flavor_cm_minus2": 579361763793233.6,
+    "PE_edges": [
+      0.0,
+      8.0,
+      12.0,
+      16.0,
+      20.0,
+      24.0,
+      32.0,
+      40.0,
+      48.0,
+      60.0
+    ],
+    "time_edges_us": [
+      0.0,
+      0.125,
+      0.25,
+      0.375,
+      0.5,
+      0.625,
+      0.75,
+      0.875,
+      1.0,
+      2.0,
+      4.0,
+      6.0
+    ]
+  },
+  "legacy_energy_representation": "Original SNS 200-point interpolated Michel spectra and exact prompt line",
+  "energy_difference_scope": "Energy marginal, physical endpoint/tails, within-bin representation and associated recoil support",
+  "calibrated_recoil_scope": "ROOT2--70keV versus DAR2keV--kinematic endpoint",
+  "paper_parameter_difference": {
+    "paper_detector_mass_kg": 14.6,
+    "legacy_detector_mass_kg": 14.57,
+    "paper_nominal_sin2thetaW": 0.23857,
+    "legacy_sin2thetaW": 0.2387,
+    "legacy_endpoint": "Native finite-electron-mass muon DAR endpoint",
+    "paper_endpoint": "m_mu/2 approximation in Eq28"
+  },
+  "external_paper_status": "BLOCKED_FULL_EQUIVALENCE",
+  "sources": [
+    "https://arxiv.org/html/2211.11905v2#S3.SS1",
+    "https://arxiv.org/src/2110.07730v2/anc/snsFlux2D.root"
+  ]
+}

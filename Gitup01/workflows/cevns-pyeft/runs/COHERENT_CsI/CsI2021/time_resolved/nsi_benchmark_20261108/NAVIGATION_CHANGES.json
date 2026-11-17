@@ -1,0 +1,25 @@
+{
+  "backups": [
+    {
+      "path": "examples/COHERENT_CsI/README.md",
+      "sha256": "23f7fca0b6fd510e0ca3005622b82b31bd47ea084d528cfc026ce7e51605d61e",
+      "backup": "backup/csi-nsi-benchmark-20261108-02/examples/COHERENT_CsI/README.md"
+    },
+    {
+      "path": "outputs/README.md",
+      "sha256": "b67c8752c122c608bac77b853279ffe4b95e8e85ec771344b54fa66fc28eb099",
+      "backup": "backup/csi-nsi-benchmark-20261108-02/outputs/README.md"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/README.md",
+      "sha256": "96cd2e6fb35cb36abc28b17a42a1da8fd8b80921112877c693499cd6d8b98ea6",
+      "backup": "backup/csi-nsi-benchmark-20261108-02/workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/README.md"
+    },
+    {
+      "path": "docs/experiments/COHERENT/CsI2021/time_resolved/README.md",
+      "sha256": "e15a657f95464996ce922960ddd2a6aad9cec960e9a3cbcb51253d6a98c61722",
+      "backup": "backup/csi-nsi-benchmark-20261108-02/docs/experiments/COHERENT/CsI2021/time_resolved/README.md"
+    }
+  ],
+  "scope": "Four existing parent READMEs only; no original physics change"
+}

@@ -1,0 +1,238 @@
+{
+  "version": "v3_20261106_provenance",
+  "source_checks": {
+    "mueller_24_coefficients_vs_primary_Table_VI": "PASS",
+    "low_32_nodes_vs_supplied_note_Table_2": "PASS",
+    "low_32_nodes_vs_Kopeikin_2012_original_table": "NOT_VERIFIED_SUBSCRIPTION_FULLTEXT_NOT_ACQUIRED"
+  },
+  "input_note_sha256": "2f0d7901c92858b2bb2319cfced1986b3d42dba2d441fc51b4d0b715280685d8",
+  "mueller_primary_pdf_sha256": "1421b06de707afa7d5bd6ec2a61b31a011bc069a6d7358e477a7a49695afa429",
+  "fission_fraction_sum": 1.0000000000000002,
+  "mueller_mixture_at_2_MeV": 1.2580795232698327,
+  "matching_factor": 0.9677534794383329,
+  "normalization_default_MeV": 6.461600041891649,
+  "normalization_literal_reference_MeV": 6.460892614098181,
+  "supplied_note_Nrho_6_46089_reproduced": true,
+  "relative_normalization_change_percent": 0.010949381698810434,
+  "literal_reference_relative_shape_at_zero": -0.1462,
+  "literal_reference_negative_below_MeV": 0.006538461538461538,
+  "default_low_shape_node_added": [
+    0.0,
+    0.0
+  ],
+  "default_flux_min": 0.0,
+  "default_nonnegative": true,
+  "default_finite": true,
+  "analytic_piecewise_total_flux": 15000000000000.0,
+  "csv_trapezoid_integral_flux": 15000000181330.584,
+  "csv_integral_relative_error": 1.2088705592105953e-08,
+  "quadrature_128_256_relative_difference": 1.2656542480726785e-14,
+  "join_left_right_relative_difference": 0.0,
+  "fraction_of_shape_integral_in_8_to_10_MeV_extension": 6.880402550815444e-05,
+  "mean_atomic_mass_u": 72.6275501646868,
+  "number_fraction_sum": 1.0,
+  "mass_fraction_sum": 1.0,
+  "response_resource_sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+  "response_review": [
+    {
+      "isotope": "Ge70",
+      "basic": {
+        "name": "Ge70",
+        "A": 70,
+        "Z": 32,
+        "N": 38,
+        "J": 0,
+        "T": 3,
+        "b": 10.618824284005962
+      },
+      "channels": [
+        "Delta",
+        "M",
+        "MPhiPP",
+        "PhiPP",
+        "PhiPT",
+        "SigmaP",
+        "SigmaPDelta",
+        "SigmaPP"
+      ],
+      "finite_matrices_at_y": [
+        0.0,
+        0.01,
+        0.1,
+        1.0
+      ],
+      "M_at_zero": [
+        [
+          1023.8582398487537,
+          1215.4882332028144
+        ],
+        [
+          1215.4882332028144,
+          1442.9845730134923
+        ]
+      ],
+      "primary_nuclear_calculation_table_provenance": "NOT_CLOSED"
+    },
+    {
+      "isotope": "Ge72",
+      "basic": {
+        "name": "Ge72",
+        "A": 72,
+        "Z": 32,
+        "N": 40,
+        "J": 0,
+        "T": 4,
+        "b": 10.661038969384785
+      },
+      "channels": [
+        "Delta",
+        "M",
+        "MPhiPP",
+        "PhiPP",
+        "PhiPT",
+        "SigmaP",
+        "SigmaPDelta",
+        "SigmaPP"
+      ],
+      "finite_matrices_at_y": [
+        0.0,
+        0.01,
+        0.1,
+        1.0
+      ],
+      "M_at_zero": [
+        [
+          1023.9823771108217,
+          1279.9276397746173
+        ],
+        [
+          1279.9276397746173,
+          1599.8466376748247
+        ]
+      ],
+      "primary_nuclear_calculation_table_provenance": "NOT_CLOSED"
+    },
+    {
+      "isotope": "Ge73",
+      "basic": {
+        "name": "Ge73",
+        "A": 73,
+        "Z": 32,
+        "N": 41,
+        "J": 4.5,
+        "T": 4.5,
+        "b": 10.68180034434144
+      },
+      "channels": [
+        "Delta",
+        "M",
+        "MPhiPP",
+        "PhiPP",
+        "PhiPT",
+        "SigmaP",
+        "SigmaPDelta",
+        "SigmaPP"
+      ],
+      "finite_matrices_at_y": [
+        0.0,
+        0.01,
+        0.1,
+        1.0
+      ],
+      "M_at_zero": [
+        [
+          1023.9603249218732,
+          1311.8044949096773
+        ],
+        [
+          1311.8044949096773,
+          1680.5641693163564
+        ]
+      ],
+      "primary_nuclear_calculation_table_provenance": "NOT_CLOSED"
+    },
+    {
+      "isotope": "Ge74",
+      "basic": {
+        "name": "Ge74",
+        "A": 74,
+        "Z": 32,
+        "N": 42,
+        "J": 0,
+        "T": 5,
+        "b": 10.702338447286174
+      },
+      "channels": [
+        "Delta",
+        "M",
+        "MPhiPP",
+        "PhiPP",
+        "PhiPT",
+        "SigmaP",
+        "SigmaPDelta",
+        "SigmaPP"
+      ],
+      "finite_matrices_at_y": [
+        0.0,
+        0.01,
+        0.1,
+        1.0
+      ],
+      "M_at_zero": [
+        [
+          1023.9172808953736,
+          1343.5383392964598
+        ],
+        [
+          1343.5383392964598,
+          1762.9307589974526
+        ]
+      ],
+      "primary_nuclear_calculation_table_provenance": "NOT_CLOSED"
+    },
+    {
+      "isotope": "Ge76",
+      "basic": {
+        "name": "Ge76",
+        "A": 76,
+        "Z": 32,
+        "N": 44,
+        "J": 0,
+        "T": 6,
+        "b": 10.74276575001275
+      },
+      "channels": [
+        "Delta",
+        "M",
+        "MPhiPP",
+        "PhiPP",
+        "PhiPT",
+        "SigmaP",
+        "SigmaPDelta",
+        "SigmaPP"
+      ],
+      "finite_matrices_at_y": [
+        0.0,
+        0.01,
+        0.1,
+        1.0
+      ],
+      "M_at_zero": [
+        [
+          1023.8795353642556,
+          1407.2645350304037
+        ],
+        [
+          1407.2645350304037,
+          1934.2055419144522
+        ]
+      ],
+      "primary_nuclear_calculation_table_provenance": "NOT_CLOSED"
+    }
+  ],
+  "response_scope": "Structure and finite-value checks only; no external nuclear-table equivalence or antineutrino-kernel audit certified",
+  "fit_executed": false,
+  "runtime_changed": false,
+  "nuclear_mass_convention": "NIST atomic mass*u energy minus Z*electron rest energy; electron binding energy neglected explicitly",
+  "coefficient_uncertainty_usage": "Nominal coefficients only; no extra Mueller shape pulls added to the benchmark cumulative 0.169 pull"
+}

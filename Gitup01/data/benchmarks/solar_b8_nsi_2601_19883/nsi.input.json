@@ -1,0 +1,154 @@
+{
+  "schema": "solar_b8_ee_vector_nsi/1",
+  "version": "3.3",
+  "date": "2026-11-12",
+  "base_singlebin_card": "data/benchmarks/solar_b8_singlebin_2601_19883/analysis.input.json",
+  "base_card_sha256": "50c510dbe07d4f41b5c38ce897d1610efcfcc389e107d621009fc57334a0d316",
+  "base_input_policy": "read-only reuse source/target/Total efficiencies; never old multibin Qy/D/B",
+  "solar_model": "B16-GS98",
+  "solar_profile": "solar_b16_gs98_profile.txt",
+  "alternative_profile": "solar_b16_agss09_profile.txt",
+  "files": {
+    "solar_b16_gs98_profile.txt": {
+      "sha256": "cfe8f24aaf8e21e1f459818a13c3a190597849d94e2d24cef750cb27980fd861",
+      "shape": [
+        1000,
+        4
+      ],
+      "ranges": [
+        [
+          0.0005,
+          1.1534532578210923,
+          0.19954674217890767,
+          5.3446518e-23
+        ],
+        [
+          0.5,
+          100.92528860766845,
+          49.87471139233156,
+          18.3601275
+        ]
+      ],
+      "production_raw": "peanuts_Data_nudistr_b16_gs98.dat",
+      "production_sha256": "3c5c6afb19fd8c2455c462bfeac757959c3b3c7d03575b411648eda57acf2378",
+      "structure_raw": "magnus_src_magnus_data_solar_models_b16_gs98.dat",
+      "structure_sha256": "1807677fe488566aa010917564c3f3aa612e88be83680c6aa3f6ccc9aa9e460e",
+      "derived_neutron_density": "nn/N_A=rho_mass - ne/N_A; neutral matter, baryon mass1u; not a printed primary neutron array"
+    },
+    "solar_b16_agss09_profile.txt": {
+      "sha256": "ba7789a9bcac8d14fe52a5bfb29e22cee4bdf69550f21f6d81b14237bbb13e32",
+      "shape": [
+        1000,
+        4
+      ],
+      "ranges": [
+        [
+          0.0005,
+          1.1561122421920988,
+          0.18888775780790112,
+          2.33164178e-23
+        ],
+        [
+          0.5,
+          100.92528860766845,
+          47.97471139233156,
+          18.3370164
+        ]
+      ],
+      "production_raw": "peanuts_Data_nudistr_b16_agss09.dat",
+      "production_sha256": "2fa6908bef59be96200d18faf26a246f039c8813ff65ffe03989730377d823f6",
+      "structure_raw": "magnus_src_magnus_data_solar_models_b16_agss09met.dat",
+      "structure_sha256": "fd69444a5abc4d9c1890e9d9a9f8adf222c65eb7fe547327a161c333991d50c5",
+      "derived_neutron_density": "nn/N_A=rho_mass - ne/N_A; neutral matter, baryon mass1u; not a printed primary neutron array"
+    }
+  },
+  "oscillation": {
+    "theta12_rad": 0.583638,
+    "theta13_rad": 0.149575,
+    "dm21_eV2": 7.42e-05,
+    "source": "PEANUTS pinned examples/solar_test.yaml Neutrinos; explicit project benchmark selection, paper2601 does not print its oscillation input card",
+    "theta23_and_delta": "not needed: mu/tau have equal SM cross sections in real ee-only vector NSI subspace"
+  },
+  "physics": {
+    "sin2thetaW": 0.23857,
+    "flux_cm2_s": 5460000.0,
+    "primary_propagation": "nsi_msw",
+    "comparison_propagation": "sm_fixed",
+    "matter_potential": "Vee=sqrt(2)*G_F*[ne+(2ne+nn)*eu+(ne+2nn)*ed]",
+    "nsi_mapping": "C61q_NSI=-sqrt(2)*G_F*epsilonee_qV; neutrinos, SM+NSI, others zero",
+    "radial_quadrature_order_per_panel": 8,
+    "radial_panels_Rsun": [
+      0.02,
+      0.05,
+      0.1,
+      0.2,
+      0.4
+    ],
+    "neutron_density_approximation": "nn=rho_mass*N_A-ne; one atomic mass unit per baryon",
+    "earth_matter": false,
+    "adiabatic_two_flavor": true,
+    "theta13_m_equals_vacuum": true
+  },
+  "statistics": {
+    "source": "paper2601 PDF p20 Eq88 and exact printed percentages",
+    "independent_pulls": true,
+    "pull_sigma": 0.12,
+    "delta_chi2_90_2d": 4.61,
+    "D": [
+      3.5,
+      75.0,
+      10.7
+    ],
+    "sigma_stat": [
+      1.2985,
+      27.975,
+      3.9482999999999997
+    ],
+    "data_meaning": "fitted signal yields; no explicit background or raw-count Poisson",
+    "minimum": "joint parameter minimum; do not subtract SM chi2 or sum separately minimized datasets"
+  },
+  "xenon_tail": {
+    "primary": "flat_sensitivity",
+    "definition": "epsilon(last) constant for T>last up to3keV; project assumption, not experimental data",
+    "sensitivity_modes": [
+      "zero",
+      "unit",
+      "profile_bounds"
+    ],
+    "profile_bounds": "at each parameter point use allowed [known,known+unselected_tail] signal interval; additional unpenalized unknown-tail nuisance, not exact paper likelihood"
+  },
+  "references": {
+    "paper2601": {
+      "citation": "LI G, SONG C Q, TANG F J, et al. Comprehensive Effective Field Theory Framework for Coherent Elastic Neutrino-Nucleus Scattering[J]. Physical Review D, 2026, 114: 055032. arXiv:2601.19883v2.",
+      "file": "docs/references/General_CEvNS/2601.19883v2.pdf",
+      "locator": "p19 Eq84; p20 Eqs87,88 (three independent .12 pulls, percentages); p22 Eq95 mapping and 2-parameter Delta chi2=4.61; p23 Fig4 green region",
+      "sha256": "e72ae8b8d7642027b9723ce9758b2477d7322c802b53cef67f561191289d90cd"
+    },
+    "propagation": {
+      "citation": "LI G, SONG C Q, TANG F J, et al. Constraints on neutrino non-standard interactions from COHERENT, PandaX-4T and XENONnT[EB/OL]. arXiv:2409.04703v2, 2024.",
+      "file": "docs/references/General_CEvNS/2409.04703v2.pdf",
+      "locator": "p5 explicitly includes NSI in propagation; p10 Appendix B EqsB4-B9, two-flavor adiabatic average, theta13_m=theta13, no Earth matter. For ee-only: epsilonD_q=-cos²theta13 epsilonee_q/2, epsilonN=0; sum u+d potentials.",
+      "sha256": "15f239ca06ed6e4eca541a46d3facd83f9c039d5eb01023c728bea666be61c88"
+    },
+    "b16": {
+      "citation": "VINYOLES N, SERENELLI A M, VILLANTE F L, et al. A new generation of standard solar models[J]. Astrophysical Journal, 2017, 835: 202. DOI:10.3847/1538-4357/835/2/202. arXiv:1611.09867.",
+      "url": "https://doi.org/10.3847/1538-4357/835/2/202",
+      "locator": "B16 GS98 / AGSS09 numerical model tables; n_e and B8 production from nudistr columns1,3,9; mass density from struct column4 (distributed as trimmed column2)"
+    },
+    "peanuts": {
+      "citation": "GONZALO T E, LUCENTE M. PEANUTS: a software for the automatic computation of solar neutrino flux and its propagation within Earth[J]. European Physical Journal C, 2024, 84:119. DOI:10.1140/epjc/s10052-024-12423-3. arXiv:2303.15527.",
+      "url": "https://github.com/michelelucente/PEANUTS/tree/39ef11f6d10014822809da65fa60752ea21aabb6",
+      "commit": "39ef11f6d10014822809da65fa60752ea21aabb6",
+      "locator": "Data/nudistr_b16_gs98.dat and agss09.dat headers/columns; peanuts/solar.py SolarModel and solar_flux_mass use normalized integral in dr, not extra r²; examples/solar_test.yaml Neutrinos gives adopted oscillation inputs",
+      "verification": "direct pinned software distribution verified; original B16 author URL not independently fetched this run"
+    },
+    "magnus": {
+      "citation": "BUSTAMANTE M. Magnus: public tabulated solar model distribution[DS/OL]. Fixed Git commit, accessed2026-11-12.",
+      "url": "https://github.com/mbustama/Magnus/tree/7eb53ef0b3e960b3b10383fef99bfe0c9110cc8f",
+      "commit": "7eb53ef0b3e960b3b10383fef99bfe0c9110cc8f",
+      "locator": "src/magnus/data/solar_models/b16_gs98.dat and b16_agss09met.dat; tools/build_solar_model_tables.py. Header supplies original source URL and original SHA256.",
+      "verification": "secondary transcription explicitly adopted; primary URL returned403/HTML challenge; original 47-column author-file equivalence not independently certified"
+    }
+  },
+  "status": "SOURCE_SPEC_READY_FOR_IMPLEMENTATION; paper input-card and neutron primary-source certification limitations retained"
+}

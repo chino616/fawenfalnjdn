@@ -1,0 +1,310 @@
+{
+  "status": "BLOCKED_EXTERNAL_REPRODUCTION",
+  "implementation": "PASS",
+  "backend": "Native Response",
+  "normalization_sigmas": [
+    0.1145,
+    0.25,
+    0.35,
+    0.021
+  ],
+  "mode": "time",
+  "fit": {
+    "chi2": 85.73695636707505,
+    "chi2_data": 83.9425020163539,
+    "chi2_prior": [
+      0.8278704140241019,
+      0.3873806346630354,
+      0.013911914960949751,
+      0.5652913870730606
+    ],
+    "nuisance": {
+      "signal_norm": -0.10418055526565158,
+      "brn_norm": -0.1555997739922514,
+      "nin_norm": -0.041282073381994085,
+      "ssb_norm": -0.01578903105637644,
+      "time_shift_us": 0.06375270161041252,
+      "efficiency_shift_pe": 0.3441886632706543
+    },
+    "success": true,
+    "attempts": [
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "chi2": 85.73701519150303,
+        "iterations": 22,
+        "scaled": [
+          -0.9099608807778721,
+          -0.6224338184465864,
+          -0.11802177337871395,
+          -0.7517171339235761,
+          0.2561429691407693,
+          0.344253790131278
+        ]
+      },
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "chi2": 85.73695636707505,
+        "iterations": 18,
+        "scaled": [
+          -0.9098738451148609,
+          -0.6223990959690056,
+          -0.11794878109141167,
+          -0.7518586217322114,
+          0.2550108064416501,
+          0.3441886632706543
+        ]
+      },
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "chi2": 85.73695636808219,
+        "iterations": 19,
+        "scaled": [
+          -0.9098686270023563,
+          -0.6224036896435848,
+          -0.1179723394758638,
+          -0.7518420727183304,
+          0.25501123358518346,
+          0.34418392590781516
+        ]
+      }
+    ],
+    "active_bounds": [],
+    "mode": "time",
+    "component_totals": [
+      327.4763331717105,
+      23.09303322162079,
+      6.588752280197111,
+      1265.622990163699
+    ],
+    "native_radius_nuisance": "unsupported_fixed_zero"
+  },
+  "background_mode": "raw_template_integrals",
+  "blockers": [
+    "BRN/NIN post-time-efficiency normalization requires original-author clarification",
+    "User-selected Response nuclear model uses a fixed radius; the 2211 radius nuisance is not implemented"
+  ],
+  "time_representation": "reference_window_0_6_same_numerical_eta_as_Eq29",
+  "full_support_probability_candidate_fit": {
+    "chi2": 84.2856277282506,
+    "chi2_data": 82.99694663656624,
+    "chi2_prior": [
+      0.6595349889583861,
+      0.09930164729546166,
+      0.006903020164215702,
+      0.5229414352663068
+    ],
+    "nuisance": {
+      "signal_norm": -0.09298746468740657,
+      "brn_norm": -0.07878040972200102,
+      "nin_norm": -0.02907954556241248,
+      "ssb_norm": -0.015186084846083315,
+      "time_shift_us": 0.06435209050358255,
+      "efficiency_shift_pe": 0.3432632207196314
+    },
+    "success": true,
+    "attempts": [
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "chi2": 84.2856277282506,
+        "iterations": 15,
+        "scaled": [
+          -0.8121175955232014,
+          -0.3151216388880041,
+          -0.0830844158926071,
+          -0.7231468974325388,
+          0.2574083620143302,
+          0.3432632207196314
+        ]
+      },
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "chi2": 84.28562772857637,
+        "iterations": 22,
+        "scaled": [
+          -0.8121105223555042,
+          -0.3151260663251272,
+          -0.0830879810907514,
+          -0.7231499634013963,
+          0.25740835038736143,
+          0.3432658497494931
+        ]
+      },
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "chi2": 84.28562772860313,
+        "iterations": 15,
+        "scaled": [
+          -0.8121161037498255,
+          -0.31512728390102956,
+          -0.08310675457203544,
+          -0.7231465241142003,
+          0.25740878467260975,
+          0.3432615677041964
+        ]
+      }
+    ],
+    "active_bounds": [],
+    "mode": "time",
+    "component_totals": [
+      331.5169831889343,
+      16.820411408523242,
+      5.001868154307195,
+      1266.3983346880523
+    ],
+    "native_radius_nuisance": "unsupported_fixed_zero"
+  },
+  "candidate_status": "DIAGNOSTIC_BLOCKED_TIME_EFFICIENCY_CONVENTION",
+  "original_paper_url": "https://arxiv.org/abs/2211.11905v2",
+  "source_equations": "Eqs28--32,36,38; seven paper nuisances versus six fixed-radius Response nuisances",
+  "reference_target": 83.2,
+  "full_fluence_diagnostic_fit": {
+    "chi2": 84.77986475848276,
+    "chi2_data": 83.62803561695887,
+    "chi2_prior": [
+      0.3511795747565016,
+      0.3649162854786938,
+      0.010732862602944707,
+      0.4250004186857472
+    ],
+    "nuisance": {
+      "signal_norm": -0.06785316514320776,
+      "brn_norm": -0.15102075301897538,
+      "nin_norm": -0.036259835477573894,
+      "ssb_norm": -0.013690331794387401,
+      "time_shift_us": 0.0693243015485618,
+      "efficiency_shift_pe": 0.3550553597553279
+    },
+    "success": true,
+    "attempts": [
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "chi2": 84.77986475867627,
+        "iterations": 20,
+        "scaled": [
+          -0.5925985338008998,
+          -0.6040878743797852,
+          -0.10359977000027827,
+          -0.6519113307110105,
+          0.2772965786331631,
+          0.3550556637450719
+        ]
+      },
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "chi2": 84.77986475848276,
+        "iterations": 20,
+        "scaled": [
+          -0.592604062386094,
+          -0.6040830120759015,
+          -0.10359952993592542,
+          -0.6519205616374952,
+          0.2772972061942472,
+          0.3550553597553279
+        ]
+      },
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "chi2": 84.7798647611012,
+        "iterations": 17,
+        "scaled": [
+          -0.5926032489856119,
+          -0.6040993605452933,
+          -0.10364301545478875,
+          -0.6519042528561738,
+          0.277296840272058,
+          0.355052829223095
+        ]
+      }
+    ],
+    "active_bounds": [],
+    "mode": "time",
+    "component_totals": [
+      317.62528833206807,
+      23.2123837183891,
+      6.620173568331103,
+      1268.3217632105627
+    ],
+    "native_radius_nuisance": "unsupported_fixed_zero"
+  },
+  "full_fluence_probability_candidate_fit": {
+    "chi2": 83.38901009003366,
+    "chi2_data": 82.66499947577893,
+    "chi2_prior": [
+      0.24303798012527517,
+      0.09041657273301022,
+      0.005201699984467616,
+      0.3853543614119776
+    ],
+    "nuisance": {
+      "signal_norm": -0.05644722029415965,
+      "brn_norm": -0.07517337158737221,
+      "nin_norm": -0.02524298413613737,
+      "ssb_norm": -0.013036152552907708,
+      "time_shift_us": 0.07040644178170948,
+      "efficiency_shift_pe": 0.3550905797262306
+    },
+    "success": true,
+    "attempts": [
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "chi2": 83.38901009003366,
+        "iterations": 19,
+        "scaled": [
+          -0.4929888235297786,
+          -0.30069348634948884,
+          -0.07212281181753534,
+          -0.6207691691860813,
+          0.2816257671268379,
+          0.3550905797262306
+        ]
+      },
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "chi2": 83.38915676027493,
+        "iterations": 15,
+        "scaled": [
+          -0.4928158789708485,
+          -0.30058334205591264,
+          -0.07202445221803465,
+          -0.6210173130347749,
+          0.27951975843466675,
+          0.3549651467329429
+        ]
+      },
+      {
+        "success": true,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "chi2": 83.38901009066338,
+        "iterations": 16,
+        "scaled": [
+          -0.49298913158728697,
+          -0.30069995647143954,
+          -0.0721464042875264,
+          -0.620765095566899,
+          0.2816257365699769,
+          0.35509031463044943
+        ]
+      }
+    ],
+    "active_bounds": [],
+    "mode": "time",
+    "component_totals": [
+      321.48712742034127,
+      16.881621313608996,
+      5.019083610477425,
+      1269.1629896486234
+    ],
+    "native_radius_nuisance": "unsupported_fixed_zero"
+  }
+}

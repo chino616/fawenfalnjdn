@@ -1,10 +1,28 @@
 # cevns-pyeft：项目专属任务路由与执行流程
 
+<!-- solar-nuclear-v31:start -->
+
+## 当前太阳⁸B SM：v3.1 原子核Response
+
+[当前新版本与两实验实际计算](<../../docs/experiments/PandaX4T_XENONnT_SolarB8/SOLAR_B8_ONBOARDING.v3.1.md>)。核表→振幅→截面→事例数；旧KN文档/计算保留。
+
+<!-- solar-nuclear-v31:end -->
+
+<!-- solar-onboarding-v3:start -->
+
+## 历史v3.0太阳⁸B onboarding：v3.0完整整合版（2026-11-09）
+
+[单文件阅读PandaX与XENONnT：全部输入、来源、SM/V/B−L结果及交接](<../../docs/experiments/PandaX4T_XENONnT_SolarB8/SOLAR_B8_ONBOARDING.v3.0.md>)。本版合并v2.0–v2.3的有效内容；旧版本保留。
+
+<!-- solar-onboarding-v3:end -->
+
 本目录把用户请求连接到已有流程和能力包。[AGENTS.md](AGENTS.md) 规定项目治理，[START_PROMPT_GENERAL.txt](START_PROMPT_GENERAL.txt) 提供启动提示；实际入口是 catalog 中的 `cevns.router.experiment`，对应 [Master Skill](skills/router/cevns-experiment/SKILL.md)。
 
 查看全部能力及维护要求，请打开 [Skill 库总表与增减规则](../../cevns_pyeft/SKILLS.md)。该表从 catalog 与流程 metadata 生成，包含职责、产物、调用关系和文件入口；不是独立的路由权威。
 
 涉及输入文件时，先按[共同输入规范](../_shared/INPUT_STANDARD.md)确定检查要求、格式与实际消费者，再进入所选流程；规范适用于所有实验，填写件与数据按 dataset 隔离。
+
+Onboarding 的[强制溯源闭环](../_shared/references/onboarding/data-provenance-contract.md)要求首次可读输出后说明数据/原文核验缺口并与用户交互，补充后回填 P00–P03 和重生成；终稿中每项采用数据都有具体出处或推导/决定。模板和输出规范已接入此责任，现有机器检查不自动认证原文或科学批准。
 
 | 子目录 | 实际职责 |
 |---|---|
@@ -45,3 +63,11 @@ P00–P03 权威记录和人工摘要分开，H0–H3 优先在对话展示。
 [唯一报告规范](../_shared/references/onboarding/experiment-physics-report-contract.md)：
 实验侧完整记录，Interaction / Nuclear Structure 独立选择；精简/详细两份 MD 共用原有生成链。
 P04/P05 和后续阶段保留。
+
+<!-- solar-onboarding-history:start -->
+
+## 历史记录（v3.0时期）
+
+[2026-11-07 SM执行记录](<../../docs/experiments/PandaX4T_XENONnT_SolarB8/SOLAR_B8_SM_BENCHMARK_20261107.md>) · [2026-11-08 V/B−L执行记录](<../../docs/experiments/PandaX4T_XENONnT_SolarB8/SOLAR_B8_VECTOR_BENCHMARK_20261108.md>)。旧实验报告与数值保留，各版本链接集中在dataset版本导航；当前SM以页首v3.1为准，旧矢量结果仍按历史版本解释。
+
+<!-- solar-onboarding-history:end -->

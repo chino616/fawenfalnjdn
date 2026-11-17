@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "log_type": "write_authorization_log",
+  "entries": [
+    {
+      "authorization_id": "W0001",
+      "status": "ACTIVE",
+      "approved_at": "2026-11-18",
+      "approval_kind": "explicit_user_instruction",
+      "approval_message_ref": "本对话：把三个计算入口清理掉先；我要重新处理onboarding，重新走一遍流程计算物理",
+      "approval_semantics": "Natural-language task authorization; not an APPROVE WRITE transcript and not a physics acceptance",
+      "scope": "existing_dataset",
+      "allowed_actions": [
+        "create",
+        "modify",
+        "delete"
+      ],
+      "delete_paths": [
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\examples\\COHERENT_CsI\\time_resolved_sm\\run_benchmark.py",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\examples\\COHERENT_CsI\\time_resolved_sm\\run_timing_diagnostics.py",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\examples\\COHERENT_CsI\\time_resolved_sm\\run_response_mainline.py"
+      ],
+      "modify_paths": [
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\COHERENT\\CsI2021\\time_resolved\\EXPERIMENT_USER_INPUT.md",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\COHERENT\\CsI2021\\time_resolved\\METHODS.md",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\COHERENT\\CsI2021\\time_resolved\\README.md",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\COHERENT\\CsI2021\\time_resolved\\SM_BENCHMARK.md",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\COHERENT\\CsI2021\\time_resolved\\experiment.physics.md",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\COHERENT\\CsI2021\\time_resolved\\experiment.physics.summary.md",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\examples\\COHERENT_CsI\\README.md",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\examples\\COHERENT_CsI\\time_resolved_common\\README.md",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\examples\\COHERENT_CsI\\time_resolved_nsi\\run_benchmark.py",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\examples\\COHERENT_CsI\\time_resolved_sm\\README.md",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\examples\\COHERENT_CsI\\time_resolved_sm\\run_benchmark.py",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\examples\\COHERENT_CsI\\time_resolved_sm\\run_response_mainline.py",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\examples\\COHERENT_CsI\\time_resolved_sm\\run_timing_diagnostics.py",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\examples\\COHERENT_CsI\\time_resolved_sm\\summarize_benchmark.py",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\examples\\COHERENT_CsI\\time_resolved_sm\\summarize_response_mainline.py",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\examples\\COHERENT_CsI\\time_resolved_sm\\validate_benchmark.py",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\examples\\one_d_benchmark\\route_audit.py",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\csi2021_response_mainline_20261117\\README.md",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\csi2021_time_sm_20261107\\README.md",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\csi2021_timing_diagnostics_20261117\\README.md",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\time_resolved\\DECISION_LOG.json",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\time_resolved\\P00_SOURCE_REGISTER.yaml",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\time_resolved\\P01_EVIDENCE_LEDGER.yaml",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\time_resolved\\P02_MISSING_AND_CONFLICTS.md",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\time_resolved\\P03_PHYSICS_CONTRACT.yaml",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\time_resolved\\README.md",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\time_resolved\\export_physics_docs.py",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\time_resolved\\prepare_records.py",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\time_resolved\\timing_diagnostics_records.py"
+      ],
+      "create_paths": [
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\time_resolved\\restart_records.py",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\time_resolved\\00_EXECUTION_PLAN.md",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\time_resolved\\00_IMPLEMENTATION_MANIFEST.yaml",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\time_resolved\\00_MIGRATION_PROGRESS.md",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\time_resolved\\AUTHORIZATION_LOG.yaml",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\time_resolved\\evidence\\INPUT_FILE_REVIEW_20261118.json",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\examples\\COHERENT_CsI\\time_resolved_common\\sm_support.py",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\重构\\20261118_CsI2021_onboarding_restart",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\重构\\20261118_CsI2021_onboarding_restart\\retired_entries\\run_benchmark.py",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\重构\\20261118_CsI2021_onboarding_restart\\retired_entries\\run_timing_diagnostics.py",
+        "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\重构\\20261118_CsI2021_onboarding_restart\\retired_entries\\run_response_mainline.py"
+      ],
+      "production_paths_affected": false,
+      "scientific_approval": false,
+      "recovery_plan": "CLEANUP_MANIFEST.json lists exact backups; removed files preserved as byte-identical retired_entries; no raw data/shared formula edits"
+    }
+  ]
+}

@@ -1,0 +1,596 @@
+{
+  "version": "3.0",
+  "date": "2026-11-10",
+  "scope": "documentation consolidation and explicitly separated benchmark branches",
+  "detailed": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+  "summary": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.summary.v3.0.md",
+  "user_input": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/EXPERIMENT_USER_INPUT.v3.0.md",
+  "combined": "docs/experiments/PandaX4T_XENONnT_SolarB8/SOLAR_B8_ONBOARDING.v3.0.md",
+  "source_register": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/P00_SOURCE_REGISTER.yaml",
+  "evidence_ledger": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/P01_EVIDENCE_LEDGER.yaml",
+  "physics_contract": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/P03_PHYSICS_CONTRACT.yaml",
+  "claim_outputs": [
+    {
+      "claim_id": "PandaX4T-C001",
+      "field": "detector/pandax_qy_nominal.txt",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C002",
+      "field": "detector/pandax_qy_bestfit.txt",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C003",
+      "field": "detector/pandax_qy_nominal_band.txt",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C004",
+      "field": "statistics/pandax_original_fig5.txt",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C005",
+      "field": "statistics/pandax_benchmark_fig1.txt",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C006",
+      "field": "b8_bahcall1996_official.txt",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s2"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C007",
+      "field": "xenon_natural_isotopes_nist_v2.txt",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C008",
+      "field": "statistics/pandax_official_later_run0_events.csv",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C009",
+      "field": "statistics/pandax_official_later_run1_events.csv",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C010",
+      "field": "statistics/pandax_official_later_run_bins_v2.txt",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C011",
+      "field": "detector/pandax_response_calibration_2403.04239v2.json",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C026",
+      "field": "statistics/pandax_us2_rate_uncertainties_2024.v2.1.json",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C029",
+      "field": "detector/pandax_us2_acceptance_2407.10892v3.txt",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C030",
+      "field": "statistics/pandax_prefit_inputs_2024.v2.1.json",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-S01",
+      "field": "flux_reference",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s2"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-S02",
+      "field": "flux_relative_error",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s2"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-S03",
+      "field": "sin2thetaW_reference",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s4"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-S04",
+      "field": "avogadro_constant",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-S05",
+      "field": "FV_mass_Run0",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-S06",
+      "field": "FV_mass_Run1",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-S07",
+      "field": "US2_total_exposure",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-S08",
+      "field": "benchmark_signal_sigma",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-S09",
+      "field": "benchmark_cathode_sigma",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-S10",
+      "field": "benchmark_MD_sigma",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-DERIVED-INVENTORY",
+      "field": "target/derived_inventory",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-NUMERICAL-POLICIES",
+      "field": "prediction/numerical_policies",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s7"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-NUCLEAR-LOCAL",
+      "field": "nuclear/local_coefficients",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s4"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-M01",
+      "field": "kernel_2024",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-M02",
+      "field": "run_exposures",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-M03",
+      "field": "width_edges_prefit_shapes",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-M04",
+      "field": "nuclear_original_source",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s4"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-M05",
+      "field": "benchmark_inference_conventions",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-EQ1",
+      "field": "source/equation_1",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s2"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-EQ2",
+      "field": "target/equation_2",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-EQ3",
+      "field": "detector/equation_3",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-EQ4",
+      "field": "prediction/equation_4",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s7"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-EQ5",
+      "field": "statistics/equation_5",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-EQ6",
+      "field": "statistics/equation_6",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P01",
+      "field": "source.total_flux",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P02",
+      "field": "target.anchor_mass_kg",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P03",
+      "field": "target.Z",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P04",
+      "field": "constants.avogadro",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P05",
+      "field": "constants.amu_GeV",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P06",
+      "field": "constants.electron_mass_GeV",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P07",
+      "field": "constants.G_F",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P08",
+      "field": "constants.hbarc_GeV_fm",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P09",
+      "field": "constants.GeV_inverse2_to_cm2",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P10",
+      "field": "constants.seconds_per_year",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P11",
+      "field": "nuclear.radius_fm",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P12",
+      "field": "nuclear.skin_fm",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P13",
+      "field": "interaction.sin2thetaW",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P14",
+      "field": "interaction.include_sm",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P15",
+      "field": "numerics.n_er",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P16",
+      "field": "numerics.n_enu",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A01",
+      "field": "resources/arrays/source_energy_MeV",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.physics.md",
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A02",
+      "field": "resources/arrays/source_shape_per_MeV",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.physics.md",
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A03",
+      "field": "resources/arrays/target_mass_number",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.physics.md",
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A04",
+      "field": "resources/arrays/target_atomic_mass_u",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.physics.md",
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A05",
+      "field": "resources/arrays/target_number_fraction",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.physics.md",
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A06",
+      "field": "resources/arrays/run_exposures_tyr",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.physics.md",
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A07",
+      "field": "resources/arrays/efficiency_energy_keV",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.physics.md",
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A08",
+      "field": "resources/arrays/efficiency",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.physics.md",
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A09",
+      "field": "resources/arrays/observable_edges",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.physics.md",
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-MODEL",
+      "field": "theory_response/sm_runtime_profile",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    },
+    {
+      "claim_id": "SM20261107-RESULT",
+      "field": "prediction/sm_forward",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    },
+    {
+      "claim_id": "VECTOR20261108-MODEL",
+      "field": "theory_response/light_vector",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    },
+    {
+      "claim_id": "VECTOR20261108-POINTS",
+      "field": "benchmark/project_test_points",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    },
+    {
+      "claim_id": "VECTOR20261108-SM",
+      "field": "prediction/vector/SM",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    },
+    {
+      "claim_id": "VECTOR20261108-V10_g1",
+      "field": "prediction/vector/V10_g1",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    },
+    {
+      "claim_id": "VECTOR20261108-V10_g2",
+      "field": "prediction/vector/V10_g2",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    },
+    {
+      "claim_id": "VECTOR20261108-V10_g3",
+      "field": "prediction/vector/V10_g3",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    },
+    {
+      "claim_id": "VECTOR20261108-BL10_g2",
+      "field": "prediction/vector/BL10_g2",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    },
+    {
+      "claim_id": "VECTOR20261108-V1_g2",
+      "field": "prediction/vector/V1_g2",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    },
+    {
+      "claim_id": "VECTOR20261108-V100_g2",
+      "field": "prediction/vector/V100_g2",
+      "v3_output": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    }
+  ],
+  "simplified_benchmark": "outputs/solar_b8_sm/20261110_pandax_simplified_run1/RESULT.json",
+  "scientific_gates_changed_by_generator": false,
+  "data_or_runtime_changed_by_generator": false
+}

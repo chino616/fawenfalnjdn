@@ -1,7 +1,9 @@
 # CsI2021 P04–P10 输入包执行审计
 
-本目录是本次唯一 canonical 阶段/Gate 记录，数值结果在 [outputs](../../../../../outputs/csi2021_package_execution_20261104/README.md)。
+本目录保存九箱输入包的 canonical 阶段/Gate 记录，摘要见[执行报告](11_FINAL_EXECUTION_REPORT.md)。历史引用的 `outputs/csi2021_package_execution_20261104/` 在当前副本未提供，旧输出的可用性需按原阶段记录核对。
 输入与代码按版本固定；科学状态为 DRAFT/PARTIAL、人工 NOT_REVIEWED。
+
+[CsI2021_time_9x11 逐数据溯源与补充记录](time_resolved/README.md)保存时间分析的P00/P01/P02/P03、实际核响应/ROOT/原始事件数据及同源生成器。当前r2已落实用户对原data中RESPONSE直接复用的选择，详细、精简、用户资料和交接表均可回查来源。其分析范围与本页九箱包的历史阶段记录分别登记。
 
 | 文件 | 内容 |
 |---|---|

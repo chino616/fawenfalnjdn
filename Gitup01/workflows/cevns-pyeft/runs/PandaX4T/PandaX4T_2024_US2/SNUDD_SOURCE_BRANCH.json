@@ -1,0 +1,36 @@
+{
+  "analysis_id": "external_solar_rho_snudd",
+  "parent_analysis": "solar_ee_vector_nsi",
+  "version": "3.4",
+  "date": "2026-11-12",
+  "status": "INSTALLED_EXTERNAL_SOURCE_BOUND_TO_MAINLINE_RUNTIME; POINT_BENCHMARK_VERIFIED",
+  "decision_ref": "D0007",
+  "write_ref": "W0007",
+  "scientific_result_acceptance": "NOT_REVIEWED",
+  "onboarding": "docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_EXTERNAL_ONBOARDING.v3.4.md",
+  "source_card": "extensions/solar_rho_snudd/snudd.input.json",
+  "source_card_sha256": "942ae3f85b40b07b87ad271d1a0b943440a89d6d1f294c850ef4a720652861b9",
+  "entry": "tools/run_solar_b8_snudd_benchmark.py",
+  "loader": "extensions.solar_rho_snudd.experiment.load_snudd",
+  "results": "outputs/external/solar_rho_snudd/20261112_run1/RESULTS.json",
+  "qa": "outputs/external/solar_rho_snudd/20261112_run1/QA.json",
+  "software_commit": "11622ded104994959a649d85e263c2d9f933ea74",
+  "primary_old_branch": "solar_ee_vector_nsi (retained)",
+  "default_global_activation": false,
+  "capability": {
+    "installation": "PASS",
+    "rho_export": "PASS",
+    "standard_runtime": "PASS",
+    "actual_Slow_Fast": "PASS",
+    "new_full_Fig4": "COMPUTED; EXACT_PAPER_REPRODUCTION_NOT_ESTABLISHED",
+    "human": "NOT_REVIEWED"
+  },
+  "phase_reports": {
+    "P03": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P03_snudd_source.md",
+    "P07": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P07_snudd_source.md",
+    "P08": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P08_snudd_source.md",
+    "P09": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P09_snudd_source.md",
+    "P10": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P10_snudd_source.md"
+  },
+  "full_inference_extension": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/SNUDD_FIG4_BRANCH.json"
+}

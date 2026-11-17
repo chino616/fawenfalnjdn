@@ -1,5 +1,21 @@
 # experiments：实验身份、装配与统一运行入口
 
+<!-- solar-singlebin-v321:start -->
+
+## 太阳⁸B：单 bin独立能力
+
+[solar_singlebin.py](solar_singlebin.py)的`load_singlebin`返回标准PreparedExperiment，通过独立scoped Catalog绑定三样本。SourceSpectrum/build_targets/TotalAcceptance/SingleBinExecutor对应onboarding Source/Target/Detector/Prediction；不导入旧solar_*多bin装配、不读其NPZ/Qy/D/B。`predict_experiment`和`evaluate_experiment`仍是通用主线入口；全局默认实验IDs不变。
+
+<!-- solar-singlebin-v321:end -->
+
+<!-- solar-nuclear-v31:start -->
+
+## Solar SM：显式原子核Response入口
+
+[solar_nuclear.py](solar_nuclear.py)提供`with_solar_nuclear_response`：绑定实际七核素JSON，复用共享SM振幅，再交给原有标准Runtime。PandaX先调用`with_pandax_mean_map`。不修改旧KN输入包，不用KN替代缺表核素；源/探测器输入保持原配置。
+
+<!-- solar-nuclear-v31:end -->
+
 [package_compiler.py](package_compiler.py) 从通用IR生成三文件；
 [generic_input.py](generic_input.py)、[v2 Schema](generic_input.schema.json)、
 [component_bindings.json](component_bindings.json)提供跨实验合同；[package 编译器入口](../../tools/compile_experiment_package.py)。
@@ -64,3 +80,37 @@ H3 报告元数据使用受严格校验的 `lab.physics_report` namespace；既�
 默认详细视图完整记录实验侧公式与数据，共享模块只列实际 ID/配置。
 两视图的单一规范位于 workflows/_shared/references/onboarding/，
 符号引用同时核对精确 Parameter ID 与 NPZ key；运行期仍只读取 YAML/NPZ。
+
+<!-- solar-b8-sm-20261107:start -->
+
+## Solar B8 SM profile
+
+新增[solar_b8.py](solar_b8.py)与只读文件合同[solar_input.py](solar_input.py)：显式solar_b8_sm_v1输入包走标准Runtime；XENONnT用官方基底，PandaX只提供真实反冲诊断。包经Compiler生成；不按实验名复制核心算法，不无条件激活PARTIAL包。
+
+<!-- solar-b8-sm-20261107:end -->
+
+<!-- solar-vector-20261108:start -->
+
+## Solar B8 vector benchmark
+
+[solar_vector.py](solar_vector.py)用已有interaction组件替换接口加载太阳8B的V/B−L固定点；保留原正式SM输入包、源、靶与Response。`load_solar_light_vector`或`with_solar_light_vector`返回标准PreparedExperiment。
+
+<!-- solar-vector-20261108:end -->
+
+<!-- pandax-simplified-20261110:start -->
+
+## PandaX US2：显式简化平均映射
+
+[solar_mean_map.py](solar_mean_map.py)以`with_pandax_mean_map`绑定nominal Qy资源、独立观测轴与代码指纹，再交由标准Runtime和共享SM反冲积分生成八箱谱。原正式包、原Response分支与全局默认注册保持原状；c=1直接输出不暗含有效校准。
+
+<!-- pandax-simplified-20261110:end -->
+
+<!-- solar-nsi-v33:start -->
+
+## 太阳⁸B NSI：v3.3（2026-11-12）
+
+solar_nsi.py独立scoped loader/Slow/Fast调用，复用只读单bin表；不改全局默认实验。
+
+[完整新onboarding：实际输入、标准引文、物理与程序](<../../docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/NSI_EE_VECTOR_ONBOARDING.v3.3.md>) · [独立NSI数据](<../../data/benchmarks/solar_b8_nsi_2601_19883/README.md>) · [实际结果与核对](<../../outputs/solar_b8_nsi/20261112_fig4_run2/README.md>)
+
+<!-- solar-nsi-v33:end -->

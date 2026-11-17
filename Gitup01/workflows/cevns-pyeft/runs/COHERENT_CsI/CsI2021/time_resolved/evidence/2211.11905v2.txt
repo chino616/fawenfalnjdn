@@ -1,0 +1,2814 @@
+                                          Physics implications of a combined analysis of COHERENT CsI and LAr data
+
+                                                                                  1, ∗                       2, †                   3, ‡
+                                                                V. De Romeri,            O. G. Miranda,             D. K. Papoulias,       G.
+                                                                                    1, 2, §              1, ¶                            1, ∗∗
+                                                                 Sanchez Garcia,              M. Tórtola,          and J. W. F. Valle
+                                                      1
+                                                          AHEP Group, Institut de Fı́sica Corpuscular – CSIC/Universitat de València and
+                                                      Departament de Fı́sica Teòrica, Universitat de València, Parc Cientı́fic de Paterna.
+                                                               C/ Catedrático José Beltrán, 2 E-46980 Paterna (Valencia) - SPAIN
+                                                     2
+                                                         Departamento de Fı́sica, Centro de Investigación y de Estudios Avanzados del IPN,
+                                                                       Apartado Postal 14-740 07000 Ciudad de Mexico, Mexico
+                                                                  3
+                                                                      Department of Physics, National and Kapodistrian University
+                                                                        of Athens, Zografou Campus GR-15772 Athens, Greece
+
+                                                     The observation of coherent elastic neutrino nucleus scattering has opened the window to
+arXiv:2211.11905v2 [hep-ph] 25 Apr 2023
+
+
+
+
+                                                   many physics opportunities. This process has been measured by the COHERENT Collab-
+                                                   oration using two different targets, first CsI and then argon. Recently, the COHERENT
+                                                   Collaboration has updated the CsI data analysis with a higher statistics and an improved
+                                                   understanding of systematics. Here we perform a detailed statistical analysis of the full CsI
+                                                   data and combine it with the previous argon result. We discuss a vast array of implications,
+                                                   from tests of the Standard Model to new physics probes. In our analyses we take into account
+                                                   experimental uncertainties associated to the efficiency as well as the timing distribution of
+                                                   neutrino fluxes, making our results rather robust. In particular, we update previous mea-
+                                                   surements of the weak mixing angle and the neutron root mean square charge radius for
+                                                   CsI and argon. We also update the constraints on new physics scenarios including neutrino
+                                                   nonstandard interactions and the most general case of neutrino generalized interactions, as
+                                                   well as the possibility of light mediators. Finally, constraints on neutrino electromagnetic
+                                                   properties are also examined, including the conversion to sterile neutrino states. In many
+                                                   cases, the inclusion of the recent CsI data leads to a dramatic improvement of bounds.
+
+
+
+
+                                                                                         1.    INTRODUCTION
+
+
+                                               The discovery of oscillations has brought neutrino physics to the precision era [1, 2]. The field
+                                          is currently thriving, experiments are growing in size and number, and new detection concepts
+                                          are being proposed. Novel ways to probe fundamental parameters of the Standard Model (SM)
+                                          as well as new neutrino interactions beyond the SM are now under scrutiny. In particular, the
+                                          structure of the neutral current may reveal novel aspects of the physics associated to neutrino
+                                          mass generation [3, 4]. This suggests that studies using neutral current neutrino interactions can
+                                          play an important complementary role in neutrino physics. An example is provided by the new
+                                          ∗
+                                             deromeri@ific.uv.es
+                                           †
+                                             omar.miranda@cinvestav.mx
+                                           ‡
+                                             dkpapoulias@phys.uoa.gr
+                                           §
+                                             gsanchez@fis.cinvestav.mx
+                                           ¶
+                                             mariam@ific.uv.es
+                                          ∗∗
+                                             valle@ific.uv.es
+                                                                                                  2
+
+
+generation of neutrino experiments using coherent elastic neutrino-nucleus scattering (CEνNS) [5].
+Originally proposed by Freedman in the 1970’s [6], CEνNS was finally detected using Spallation
+Neutron Source (SNS) neutrinos emerging from pion decay at rest (π-DAR) [7].
+   So far the COHERENT Collaboration has observed this process at the SNS using detectors
+made of CsI [7, 8] and liquid argon (LAr) [9]. More recently, a suggestive evidence for CEνNS from
+reactor antineutrinos was reported by the Dresden-II Collaboration [10]. Moreover, several reactor-
+based CEνNS experiments aim at measuring this process, such as: CONNIE [11], CONUS [12],
+νGEN [13], MINER [14], RICOCHET [15], ν-cleus [16], TEXONO [17], vIOLETA [18] and Scintil-
+lating Bubble Chamber (SBC) [19]. There are also further experimental efforts underway, aiming
+to use π-DAR at the European Spallation Source [20] and at the LANSCE Lujan Center [21]. Fi-
+nally, the newly formed νBDX-DRIFT Collaboration using a directional time projection chamber
+aims to measure CEνNS using decay-in-flight neutrinos produced in the Long Baseline Neutrino
+Facility (LBNF) beamline [22].
+   Here we analyze the updated data release from the CsI COHERENT experiment [8] and combine
+this result with the LAr COHERENT data [23]. In so doing, we perform a detailed analysis
+that includes all the relevant uncertainties for these experiments such as, for instance, the timing
+information as well as the neutrino-electron scattering (ES) signal for the CsI detector. This
+combined study of the recent CsI data with the LAr results provides a solid and updated analysis of
+COHERENT data, from which we can extract valuable information both on SM parameters, such
+as the weak mixing angle at low momentum transfer [24–26] as well as nuclear physics features [27,
+28]. Moreover, these data can also be used to constrain new physics scenarios. These include
+neutrino nonstandard interactions (NSI) [29–33] and neutrino generalized interactions (NGI) [34–
+37], light mediators [38–43], CP-violating effects [44], neutrino electromagnetic (EM) properties,
+e.g. transition magnetic moments [45–53], charge radius [54, 55], or millicharge [56]. We also
+examine CEνNS sensitivities on conversions to sterile neutrinos, induced either by oscillations [57–
+59] or by active-to-sterile transition magnetic moments [60–62].
+   Some of the physics scenarios we discuss have been already constrained using COHERENT data,
+see for example [24, 37, 43, 63] and [64–66]. However, in some of these references the new CsI
+dataset was not included or it was not combined with the liquid argon data. Note that we improve
+upon previous analyses by paying special attention to the experimental details of the COHERENT
+data. For example, in the CsI analysis we include the efficiency and timing information together
+with their uncertainties, all systematic uncertainties and the ES background which could mimic
+a CEνNS signal. In the LAr case, we also account for all systematic errors. By means of such
+a careful statistical analysis, in this paper we have made an effort to address both SM precision
+tests as well as new physics scenarios in a comprehensive manner, presenting updated constraints.
+We show that the new CsI data dramatically improves the sensitivity, in some cases leading to
+stringent constraints, competitive to existing bounds from other observables.
+                                                                                                                     3
+
+
+     This paper is organized as follows. In Sec. 2 we present all physics scenarios under scrutiny
+together with the relevant cross sections. In Sec. 3 we discuss the statistical analysis procedure,
+highlighting all details, uncertainties and backgrounds. We discuss our results in Sec. 4 for each
+scenario previously introduced in Sec. 2. Finally, in Sec. 5 we conclude and present a table sum-
+marizing all the derived bounds.
+
+
+             2.       CROSS SECTIONS FOR CEνNS AND ELECTRON SCATTERING
+
+
+     In this section, we provide the necessary cross sections for the case of CEνNS and neutrino-
+electron scattering, for various physics scenarios within and beyond the SM.
+
+
+                                             2.1.     Standard physics
+
+
+     The differential CEνNS cross section with respect to the nuclear recoil energy Enr is given by [6]
+
+                                                 2
+                          dσνN »»SM      G mN 2           SM 2     mN Enr
+                                 »                   2
+                                                  q ∣ ) (QV ) (1 −
+                                        = Fπ FW (∣⃗                       ),
+                          dEnr »»»CEνNS
+                                                                                                                    (1)
+                                                                    2Eν2
+
+where GF is the Fermi’s constant, Eν denotes the incident neutrino energy, while mN is the nuclear
+mass. Notice that Eq. (1) applies for both neutrinos and antineutrinos. In addition, within the
+SM, the CEνNS cross section is flavor independent at tree level, with small loop corrections that
+are flavor dependent but have no significant impact for current experimental sensitivities [67]. The
+                         SM
+SM weak charge, QV , takes the form
+
+                                                     SM      p      n
+                                                 QV       = gV Z + gV N ,                                           (2)
+
+                                                                        p                 2                n
+where the proton and neutron couplings are given by gV = 1/2(1 − 4 sin θW ) and gV = −1/2,
+respectively. Notice that, although the proton contribution is small, it contains the dependence on
+the fundamental electroweak mixing angle. Using RGE extrapolation in the minimal subtraction
+(MS) renormalization scheme, one finds that the weak mixing angle in the low-energy regime takes
+                  2
+the value sin θW = 0.23857(5) [68]. Nuclear physics effects in CEνNS are incorporated through
+the weak nuclear form factors for protons, Fp , and neutrons, Fn . Here we assume the latter to be
+       1
+equal i.e. Fp ≃ Fn ≡ FW , and we rely on the Klein-Nystrand [69] parametrization:
+
+                                             2             q ∣RA )
+                                                      j1 (∣⃗              1
+                                         q∣ ) = 3
+                                    FW (∣⃗                         (               ) ,                              (3)
+                                                          q ∣RA
+                                                         ∣⃗               q ∣2 a2k
+                                                                     1 + ∣⃗
+                                                                                                      √
+                              2                                                                           2mN Enr
+                                                                                 q∣ =
+where j1 (x) = sin(x)/x − cos(x)/x is a spherical Bessel function of order one, ∣⃗
+                                                                                                                     −1
+                                                                                                           197.3
+                                                                                                                  fm
+                                                                                                1/3
+is the magnitude of the three-momentum transfer, ak = 0.7 fm and RA = 1.23 A                          represents the
+1
+    This is a valid approximation since the proton coupling in Eq. (2) is tiny compared to the one of the neutron.
+                                                                                                                4
+
+
+nuclear root mean square (RMS) radius (in units of fm), A being the mass number. The value of the
+nuclear RMS radius RA can be obtained in the spirit of a nuclear structure model, see e.g. [70, 71].
+Experimentally, however, it is known only for the case of protons, while CEνNS measurements are
+valuable probes of the yet unknown neutron RMS radius. Our determination of RA using CEνNS
+will be discussed in Sec. 4.
+     It is well known that, for incoming neutrino energies in the range of a few tens of MeV, the
+CEνNS cross section is dominant when compared to other neutrino interactions. However, in
+some new physics scenarios, the ES process may be important and we will need to include the
+corresponding contribution to the total number of events. Within the SM, the ES cross section on
+                                                                  dσν` A    A          dσν         dσν
+an atomic nucleus A containing Z protons is given by               dEer
+                                                                         = Zeff (Eer ) dE ` . Here dE ` represents
+                                                                                         er          er
+the cross section of a neutrino scattering off a single electron and Zeff (Eer ) is the effective number
+of protons seen by the neutrino for an energy deposition Eer . The effective charges for Cs and I
+isotopes are given in Table I. In the SM, the flavor-dependent differential ES cross section is given
+by
+
+                             2
+    dσν` A »»SM             GF me                               Eer 2              ν 2 me Eer
+            »» =Zeff
+                 A
+                     (Eer )
+                                     ν`   ν` 2    ν`   ν` 2
+                                  [(gV + gA ) + (gV − gA ) (1 −
+                                                                          ν 2
+                                                                   ) − ((gV` ) − (gA` ) )     ],
+    dEer »»ES                2π                                 Eν                        Eν2
+                                                                                                              (4)
+
+                                                                             ν         2                 ν
+where ` = {e, µ, τ } stands for the incoming neutrino flavor. Here gV` = 2 sin θW +1/2 and gA` = 1/2
+                          −
+for the case of νe − e scattering, which acquires contributions from both charged- and neutral-
+                                               −
+currents, while for the case of νµ,τ − e scattering, where only neutral-currents are relevant, one
+        ν            2                  ν
+has gV` = 2 sin θW − 1/2 and gA` = −1/2. Note that, for antineutrino-electron scattering, the
+                 ν         ν
+substitution gA` → −gA` is required.
+
+
+                                              2.2.    Neutrino NSI
+
+
+     Neutral current neutrino nonstandard interactions [3, 4] have attracted considerable attention in
+recent years [29–31, 33], mainly because they constitute the “side-show” of neutrino mass generation
+schemes. Indeed, they arise in a wide class of motivated scenarios beyond the SM [73]. Some would
+involve an extra U (1) symmetry, that could lead to the existence of a new vector mediator. Others
+might be associated to different types of interactions and mediators, both at a high [34–36] as well
+as at a low-mass scale [74–76]. If they exist, these mediators would contribute to CEνNS and ES
+processes leading to detectable distortions of the event rates, especially at low-energy recoils. For
+completeness, here we will consider both light and heavy mediators.
+                                                                                                  2
+     In the presence of neutrino NSI associated to a heavy intermediate vector boson , the neutral
+
+2
+    For a concrete example on neutral gauge bosons from strings-inspired models see [77].
+                                                                                                                 5
+
+                    Cs                                                    I
+                  Zeff                       Eer                         Zeff                 Eer
+                   55           Eer > 35.99 keV                          53              Eer > 33.17 keV
+                   53 35.99 keV ≥ Eer > 5.71 keV 51 33.17 keV ≥ Eer > 5.19 keV
+                   51 5.71 keV ≥ Eer > 5.36 keV                          49      5.19 keV ≥ Eer > 4.86 keV
+                   49 5.36 keV ≥ Eer > 5.01 keV                          47      4.86 keV ≥ Eer > 4.56 keV
+                   45 5.01 keV ≥ Eer > 1.21 keV                          43      4.56 keV ≥ Eer > 1.07 keV
+                   43 1.21 keV ≥ Eer > 1.07 keV                          41      1.07 keV ≥ Eer > 0.93 keV
+                   41     1.07 keV ≥ Eer > 1 keV                         39      0.93 keV ≥ Eer > 0.88 keV
+                   37     1 keV ≥ Eer > 0.74 keV                         35      0.88 keV ≥ Eer > 0.63 keV
+                   33     0.74 keV ≥ Eer >0.73 keV                       31      0.63 keV ≥ Eer >0.62 keV
+                   27     0.73 keV ≥ Eer >0.23 keV                       25      0.62 keV ≥ Eer >0.19 keV
+                   25     0.23 keV ≥ Eer >0.17 keV                       23 0.19 keV ≥ Eer >0.124 keV
+                   23     0.17 keV ≥ Eer >0.16 keV                       21 0.124 keV ≥ Eer >0.123 keV
+                   19            Eer < 0.16 keV                          17              Eer < 0.123 keV
+
+ TABLE I: Effective electron charge for Cs and I as a function of the energy deposition Eer [72].
+
+current Lagrangian contains [29–31]
+
+                                 NSI    √       qX        µ
+                                LNC = −2 2GF ∑ ε``′ (ν̄` γ PL ν`′ )(f¯γµ PX f ) ,                              (5)
+                                                             q,`,`′
+
+
+where q corresponds to quarks of the first family, q = {u, d}. The ` and ` indices run over neutrino
+                                                                                                     ′
+
+flavors (specifically for COHERENT: e and µ), PX (X = L, R) are the left and right chirality
+                     qV
+projectors, and ε ′ are the couplings that describe the relative strength of the NSI in terms of GF .
+                     ``
+                                                                                                           ′
+These couplings can be either flavor preserving (also called nonuniversal, ` = ` ) or flavor changing
+(` ≠ ` ). Once NSI are introduced, the SM weak charge of Eq. (2) becomes flavor dependent and
+        ′
+
+              3      SM         NSI
+is modified as QV         → QV , with [78]
+
+                             NSI             p          uV          dV               n   uV     dV
+                           QV      = [(gV + 2ε`` + ε`` ) Z + (gV + ε`` + 2ε`` ) N ]
+                                                   uV          dV               uV       dV
+                                   + ∑ [(2ε``′ + ε``′ ) Z + (ε``′ + 2ε``′ ) N ] .                              (6)
+                                      `,`′
+
+
+
+                                                    2.3.         Neutrino NGI
+
+
+     Beyond the typical NSI interactions that could arise in gauge extensions of the SM, a more
+general framework can be considered to accommodate all Lorentz invariant interactions that might
+3
+    As noted in Ref. [71], in new physics scenarios the nuclear form factor can be modified. However, the effect is
+    subdominant in COHERENT, and it is effectively accounted for by the CEνNS normalization uncertainty in our
+    fitting procedure (see Sec. 3).
+                                                                                                                        6
+
+
+lead to new physics, i.e. NGI with heavy mediators [34–36]. The relevant Lagrangian reads [36]
+
+                    NGI
+                LNC ∼           ∑       ν̄ ΓX ν N̄ CX ΓX N +              ∑           ν̄ ΓX ν N̄ iDX ΓY N ,            (7)
+                              X=S,V,T                                 (X,Y )=(P,S),
+                                                                             (A,V )
+
+        X           5     µ    µ 5      µν   µν           µ       ν
+with Γ      = {I, iγ , γ , γ γ , σ }, σ           = i[γ , γ ]/2. The CX , DX denote the corresponding
+neutrino-nucleus couplings. Note that, for X=V, S, T , the couplings CX correspond to the weak
+charges given in Eqs. (9), (10) and (11).
+
+
+
+
+     The corresponding differential cross section associated to the Lagrangian density in Eq. (7)
+takes the form [36]
+
+           dσ »»»NGI
+                               2
+                        G mN 2      2   2 mN Enr            SM 2     mN Enr Enr
+                »»     = F  FW (∣⃗
+                                 q ∣ ){CS        + (CV + 2 QV ) (1 −        −    )
+          dEnr »»CEνNS   4π                2Eν2
+                                                                       2Eν2   Eν
+                                                                                                                       (8)
+                                            2      mN Enr Enr       Enr
+                                       + 8 CT (1 −     2
+                                                          −    )±R      }.
+                                                    4Eν     Eν       Eν
+
+
+
+
+     Notice the interference between the SM and vector NGI, as well as the interference between the
+scalar and tensor terms given by R = 2CS CT , where the plus (minus) sign accounts for coherent
+elastic antineutrino (neutrino) scattering off nuclei (see also Ref. [37]). The weak charge associated
+to the new vector boson reads
+
+                                CV = gνV [(2guV + gdV ) Z + (guV + 2gdV ) N ] ,                                        (9)
+
+with gνV and gqV denoting the new mediator couplings with neutrinos and quarks q = {u, d}. The
+scalar and tensor weak charges are given by
+
+                                                     mp p           mn n
+                                   CS = gνS (Z ∑ gqS m fq + N ∑ gqS m fq )                                            (10)
+                                                              q                            q
+                                                  q                          q
+
+
+and
+
+                                                                  p                    n
+                                       CT = gνT (Z ∑ gqT δq + N ∑ gqT δq ) ,                                          (11)
+                                                      q                     q
+
+                                                                                                                  p
+respectively. The hadronic structure parameters for the case of scalar interactions: fu = 0.0208,
+ n              p                  n                                                   p       n       p      n
+fu = 0.0189, fd = 0.0411, fd = 0.0451 and tensor interactions: δu = δd = 0.54, δd = δu = −0.23 are
+taken from Ref. [79]. See also Ref. [80].
+                                                                                                                     7
+
+
+                                              2.4.    Light mediators
+
+
+     It has been noticed that low-energy neutrino experiments are very sensitive to interactions
+involving light mediators [74–76, 81]. In the simplest scenario with light vector-type (LV) interac-
+tions, the relevant CEνNS cross section can be written as [74]
+
+                                                                                 2
+                   dσν` N »»LV                    CV             dσν` N »»SM
+                           »»   = (1 + κ √                     )         »
+                                                                  dEnr »»»CEνNS
+                                                                                .                                 (12)
+                            »
+                    dEnr »CEνNS           2GF Q (2mN Enr + m )
+                                               SM           2
+                                                      V                      V
+
+
+For the case of ES, the corresponding cross section is given by Eq. (4) with the following substitution
+
+                                       ν     ν          gνV ⋅ geV
+                                      gV` = gV` + κ √                     ,                                       (13)
+                                                   2 2GF (2me Eer + m2V )
+
+where geV denotes the new mediator coupling with the electrons. Let us note that, for the case
+of CEνNS, κ = 1 for universal couplings (see e.g. [82, 83] for reviews) and κ = −1/3 in the B − L
+                                                                                                   4
+model [82, 84] while, for ES, κ = 1 for both the universal and B − L models . As a simple
+phenomenological reference, we will show results for the universal-coupling scenario, as any other
+case can be obtained by adequate coupling rescaling.
+
+     Going one step further, one may also consider more general scalar and tensor interactions allowed
+by Lorentz invariance, and involving light mediators. Such neutrino generalized interactions have
+been previously searched for using CEνNS in Refs. [26, 87] and ES in Ref. [88]. For the case of a
+new light scalar (LS) mediator, the CEνNS cross section reads
+
+                                                     2      2
+                               dσν` N »»LS          mN Enr CS
+                                       »»   =
+                                                                 2
+                                                                F (∣⃗
+                                                                      2
+                                                                    q∣ ) ,                                        (14)
+                                dEnr »»CEνNS 4πE 2 (2m E + m2 )2 W
+                                                      ν      N   nr      S
+
+while the corresponding cross section for the case of a new light tensor (LT) mediator takes the
+form
+                                                     2            2
+                               dσν` N »»LT    mN (4Eν − mN Enr ) CT 2
+                                       »»   =                       F (∣⃗
+                                                                          2
+                                                                        q∣ ) .                                    (15)
+                                dEnr »»CEνNS 2πE 2 (2m E + m2 )2 W
+                                                      ν      N   nr      T
+
+Finally, the cross sections for the case of scalar- and tensor-mediated ES processes read [89]
+
+                                                           2     2           2
+                             dσν` A »»LS                  gνS ⋅ geS         me Eer
+                                     »» = Zeff
+                                           A
+                                               (E  )
+                                                 er [                     ]        ,                              (16)
+                             dEer »»ES                4π(2me Eer + m2S )2    Eν2
+
+
+
+4
+    Similar to the case of universal couplings, one may consider theoretically consistent anomaly-free U(1) extensions
+    of the SM, such as those discussed in [43]. A specially interesting example is the model proposed in [85, 86] as it
+    is motivated by the explanation of the anomalies observed in B meson systems.
+                                                                                                   8
+
+
+and
+                                        2     2
+       dσν` A »»LT                me ⋅ gνT ⋅ geT                  Eer          Eer 2 me Eer
+               »» = Zeff
+                     A
+                         (Eer )                     ⋅ [1 + 2 (1 −     ) + (1 −    ) −       ].   (17)
+       dEer »»ES                2π(2me Eer + m2T )2               Eν           Eν     Eν2
+
+
+                                2.5.     Neutrino electromagnetic properties
+
+                                                                                5
+     Turning our attention to neutrino electromagnetic properties , our aim is to explore the associ-
+ated phenomenological parameters using CEνNS experiments. These include the neutrino effective
+magnetic moment (MM), the neutrino electric charge (EC) and the neutrino charge radius (CR). It
+should be noted that the former is given in terms of the fundamental transition magnetic moments
+(TMMs) [45] and the corresponding effective parameter combinations relevant to each experimental
+setup are given in Refs. [52, 62, 91].
+
+
+                                    1.    Effective neutrino magnetic moment
+
+
+     Neutrino magnetic moment interactions flip chirality and do not interfere with the SM terms.
+Therefore, in the presence of a nonzero effective neutrino MM, the differential cross section is
+incoherently added to the SM one and can be cast in the form [92]
+
+                                           2
+                          dσν` N »»MM                              2 » µν »
+                                                                                   2
+                                                                q ∣ ) »»»» µ ` »»»» ,
+                                         παEM 1      1
+                                  »»   =      (    −
+                                                          2 2
+                                                       ) Z FW (∣⃗                                (18)
+                                   »
+                           dEnr »CEνNS    me2   Enr Eν                   » B»
+
+with αEM being the fine structure constant and µB the Bohr magneton. For the case of ES, the
+corresponding cross section is given in a similar form to Eq. (18), as
+
+                                            2
+                              dσν` N »»MM παEM                           » µ ν »2
+                                                        ) Zeff (Eer ) »»»» µ ` »»»» .
+                                                  1   1
+                                      »» =     (    −
+                                                           A
+                                                                                                 (19)
+                               dEer »ES»   me2   Eer Eν                  » B»
+
+At this point, we should stress that, while the neutrino magnetic moment is given as an effective
+parameter in Eqs. (18) and (19), it should actually be expressed in terms of the fundamental TMM
+          6
+matrix , λij , as
+
+                                                         »»           »»2
+                                                       »»           »»
+                                             µν` = ∑ »»»∑ U`k λjk »»»
+                                              eff          ∗
+                                                                            ,                    (20)
+                                                        »            »»
+                                                   k »»» j            »»
+
+where U denotes the lepton mixing matrix. Relevant expressions for SNS-produced neutrinos are
+given in Refs. [52, 62].
+
+5
+    For a review see Ref. [90].
+6
+    For Majorana (Dirac) neutrinos λij is an antisymmetric (general complex) matrix [51].
+                                                                                                                             9
+
+
+                                         2.    Neutrino charge radius
+
+
+
+     The neutrino charge radius is the only EM neutrino parameter that is different from zero within
+the SM framework. Indeed, flavor-diagonal CR are generated via radiative corrections from the
+γ − Z boson mixing and box diagrams involving W and Z bosons, leading to [55]
+
+                                                                         2
+                                   2           GF           m
+                                 ⟨rν`` ⟩SM = − √ 2 [3 − 2 ln 2` ] ,                                                        (21)
+                                              2 2π          MW
+
+where m` denotes the mass of the corresponding charged lepton and MW is the mass of W boson.
+                                     2           2           2                                                         2
+Numerically, the SM values are (⟨rνee ⟩ , ⟨rνµµ ⟩ , ⟨rντ τ ⟩) = (−0.83, −0.48, −0.30) × 10
+                                                                                                        −32
+                                                                                                              cm , close
+to the sensitivity reach of CEνNS experiments. The contribution to the CEνNS cross section due
+                                                                                  p       p    CR
+to flavor-diagonal charge radii is obtained through the substitution gV → gV − Q`` in Eq. (2) with
+                                                     √
+                                           CR         2παEM 2
+                                          Q`` =             ⟨rν`` ⟩ .                                                      (22)
+                                                       3 GF
+
+                                                                                                    ν          ν           CR
+For the case of ES, the corresponding cross section is obtained via the substitution gV` → gV` +Q`` .
+                                                                                                                   ′
+Before closing this discussion, let us finally note that transition charge radii with ` ≠ ` can be
+generated via neutrino mixing [93] and/or physics beyond the SM, as explained in Ref. [94].
+
+
+
+
+                                          3.    Neutrino millicharge
+
+
+
+     Another interesting EM neutrino property that can be probed at low-energy neutrino scattering
+experiments is the existence of a tiny neutrino EC (also referred to as the neutrino millicharge).
+Such neutrino millicharges could arise in gauge models that include right-handed neutrinos [56].
+According to Ref. [63], the contribution of a nonvanishing EC to the differential CEνNS cross
+                                                             p   p       EC                                   EC
+section is given by Eq. (1) with the substitution gV → gV − Q`` , where the quantity Q`` is given
+as
+                                                         √
+                                           EC   2        2παEM
+                                          Q`` =                 qν`` ,                                                     (23)
+                                                         GF q 2
+
+        2
+with q = −2mN Enr denoting the four-momentum transfer and qν`` being the neutrino millicharge.
+                                                                              ν       ν       EC
+Similarly, the EC contribution to ES is taken by substituting gV` → gV` + Q`` in Eq. (4) where
+                                                     2
+in this case the four-momentum transfer is q = −2me Eer (see also Ref. [93]). Interactions with
+flavor-nondiagonal EC are also possible and have been explored in Ref. [63].
+                                                                                                             10
+
+
+                                   2.6.         Conversion to sterile neutrinos
+
+
+   Given the distances between source and detector used in current CEνNS experiments, active-
+to-sterile oscillations can develop. Moreover, active-sterile neutrino TMMs may also lead to con-
+versions to light sterile neutrinos. We now examine conversion to sterile neutrinos, induced either
+by oscillations or transition magnetic moments.
+
+
+                                    1.        Active-to-sterile neutrino oscillations
+
+
+   Because of its sensitivity to the total active neutrino flux, the COHERENT experiment can be
+exploited in order to search for sterile neutrinos. Here, we assume the simplest (3+1) scheme with
+three active neutrinos and one light sterile neutrino. The survival probabilities read
+
+                                                                                     2
+                                                             2                2   ∆m41 L
+                                   Pee (Eν ) ≃ 1 − sin 2θ14 sin (                        ),                 (24)
+                                                                                   4Eν
+
+for electron neutrinos, and
+
+                                                                                     2
+                                                                 2            2   ∆m42 L
+                                  Pµµ (Eν ) ≃ 1 − sin 2θ24 sin (                         ),                 (25)
+                                                                                   4Eν
+
+for muon (anti-)neutrinos. In the previous expressions, θ14 and θ24 are the active-sterile mixing
+              2          2                                                                              2
+angles, ∆m41 ≈ ∆m42 are the active-sterile mass splittings, where we have assumed ∆m41 ≫
+    2          2
+∣∆m31 ∣, ∆m21 . The presence of a light sterile neutral fermion is taken into account when computing
+                                                          SM             SM
+the CEνNS number of events by changing QV                            → QV × Pαα (Eν ) in Eq. (1).
+
+
+                                         2.     Active-to-sterile EM interactions
+
+
+   The presence of active-sterile neutrino TMMs leads to up-scattering processes of the form νL +
+N → ν4 + N with production of a neutral massive outgoing fermion (sterile neutrino) with mass
+m4 . This process will contribute to the CEνNS cross section [95] through
+
+                          2
+        dσν` N »»DP     παEM 2 2        2 »» µν` »»
+                                                      2
+                »»    =      Z F  (∣⃗
+                                    q ∣  ) »»      »»
+         dEnr »»CEνNS    m2e
+                                W           »» µB »»
+                                                         2                                    4             (26)
+                              1   1     m4          Enr   mN   m (Enr − mN )
+                          ×[    −   −          (1 −     +    )+ 4 2 2 2 ] ,
+                             Enr Eν 2Eν Enr mN      2Eν 2Eν     8Eν Enr m                           N
+
+where the mass of the produced sterile neutrino final state is subject to the kinematic constraint
+                                                             √
+                                      2           ⎛                     2          ⎞
+                                     m4 ≲ 2mN Enr ⎜                          Eν − 1⎟ .                      (27)
+                                                             ⎝        mN Enr       ⎠
+                                                                                                                   11
+
+
+For ES scattering, the corresponding cross section is given by Eqs. (26) and (27) and the following
+                                                  2     2    2       A
+                                            q ∣ ) → Zeff . Finally, the effective magnetic moment
+substitutions: Enr → Eer , mN → me , Z FW (∣⃗
+for active-sterile transitions is expressed in terms of the fundamental TMMs as given in Ref. [60].
+
+
+                                      3.     DATA ANALYSIS DETAILS
+
+
+     In this section we provide the necessary details of our analysis. Regarding the COHERENT-LAr
+data, we update the results of Refs. [60, 96] by including all systematic errors on COHERENT-
+LAr data, following the method used in Ref. [43] and the guidance provided in [23]. For the
+analysis of the recent COHERENT-CsI data, we update previous results [36, 52, 97, 98] in two
+ways. First, in addition to CEνNS, we also include possible contributions from ES events, as
+in [63, 64]. This contribution can get significantly enhanced in some new physics scenarios, e.g.
+light mediators or millicharges, and dangerously mimic the CEνNS signal. Note also that we add
+the ES contribution only in the CsI analysis since in the LAr case the measurement of the ratio
+of the integrated photomultiplier amplitude and the total amplitude in the first 90 ns (called F90 )
+allows a clear separation between CEνNS-induced nuclear recoils and ES-induced electron recoils.
+Moreover, following closely the analysis method of the COHERENT Collaboration [8], we perform
+a new comprehensive analysis including further nuisance parameters which account for signal shape
+uncertainties. Finally, we also perform a combined analysis of the full CsI+LAr data. Whenever
+available, we will compare our results to existing constraints in the literature [24, 37, 43, 63–66].
+
+
+                                           3.1.       CsI number of events
+
+
+     For the case of the COHERENT-CsI detector, the predicted number of CEνNS events per
+neutrino flavor, n, in each nuclear recoil energy bin i, is
+                                                      i+1                    ′max
+                                                  Enr                      Enr
+                        CEνNS,N
+                                                        dEnr E (Enr ) ∫         dEnr P (Enr , Enr )×
+                                                                                    ′           ′
+                       Ni,n     = Ntarget ∫
+                                                   i
+                                                  Enr                    0
+                                       max
+                                      Eν
+                                                   dNn       dσν` N »»
+                                   ∫                   (Eν )         »    (Eν , Enr ),
+                                                                                 ′
+                                                                ′ »»CEνNS
+                                               dEν                                                               (28)
+                                     E min
+                                       ν   (E )
+                                             ′
+                                             nr
+                                                   dEν        dEnr »
+
+where N = Cs or I, and Ntarget = NA mdet /Mtarget is the number of target atoms in the detector.
+Here, mdet = 14.6 kg denotes the CsI detector mass, while NA is the Avogadro number and Mtarget
+                                                                                                    ′
+is the molar mass. Moreover, Enr is the reconstructed nuclear recoil energy, Enr is the true nuclear
+                                                                                               max 2
+                                                                                            2(Eν )      max
+recoil energy, P (Enr , Enr ) is the energy resolution function, Enr ≃                   = mµ /2 ∼
+                             ′                                                      ′max
+                                                                                  , Eν
+                               √      ′
+                                                                             mN
+                  min             mN Enr  7
+52.8 MeV and Eν (Enr ) ≃
+                         ′
+                                    2
+                                         . The SNS neutrino flux consists of a prompt and a delayed
+beam. The three components to the total differential neutrino flux, n, produced by pions decaying
+7
+    Note that, for the case of TMM-induced conversion to a sterile neutrino the integration limits depend also on m4 ,
+    according to Eq. (27).
+                                                                                                                                 12
+
+
+at rest are
+                                                                    2            2
+                          dNνµ                   mπ − mµ
+                               (Eν ) = η δ (Eν −         )                                  (prompt) ,
+                           dEν                    2mπ
+                          dNν̄µ                        2
+                                        64E 3 Eν
+                               (Eν ) = η 3 ν ( − m )                                        (delayed) ,                         (29)
+                           dEν           mµ 4     µ
+                                              2
+                          dNνe           192Eν 1 Eν
+                               (Eν ) = η        ( −m )                                      (delayed) ,
+                          dEν             m3µ    2  µ
+
+
+                                                   2
+which are normalized to η = rNPOT /4πL , where L = 19.3 m is the detector distance from the
+SNS source, and r = 0.0848 denotes the number of neutrinos per flavor produced for each proton
+                                                           23
+on target (POT), where NPOT = 3.198 × 10 . The energy-dependent detector efficiency is given
+by
+
+                                                                    a
+                                         E (x) =                   −b(x−c)
+                                                                                     + d,                                       (30)
+                                                           1+e
+
+where x = PE + α7 and a = 1.32045, b = 0.285979, c = 10.8646, d = −0.333322 [8]. We account
+for the 1σ uncertainty on the efficiency curve through the parameter α7 , which can vary between
+[−1, +1]×PE (PE being the number of photoelectrons), see Appendix A. Quenched recoils are given
+through the light yield LY = 13.35 PE/keVee , with PE= LY × Eer , where the electron-equivalent
+                                                                ′               ′2          ′3        ′4
+energy is given in terms of Enr as Eer = x1 Enr + x2 Enr + x3 Enr + x4 Enr (x1 = 0.0554628, x2 =
+4.30681, x3 = −111.707, x4 = 840.384) [8]. Finally, smearing is applied through the Gamma
+function
+                                                       1+b
+                                             (a(1 + b))      b
+                            P (Enr , Enr ) =
+                                      ′                          −a(1+b)x
+                                                           ⋅x ⋅e          ,                                                     (31)
+                                                           Γ(1 + b)
+
+where x is the reconstructed recoil energy in PE, PE(Enr ), while a and b instead depend on the
+true quenched energy deposition: a = 0.0749/Eer (Enr ), b = 9.56 × Eer (Enr ) [8]. Moreover, we
+                                                                            ′                              ′
+
+                                                                                                                   CEνNS,N
+include the timing information in our analysis, by distributing the predicted Ni                                             in each
+                                            n
+time bin j. We take the time distributions fT (trec ) of n = νe , νµ , ν̄µ from [8, 99] and we normalize
+them to 6 µs. Finally, the predicted CEνNS event number, per observed nuclear recoil energy and
+time bins i, j is
+                                                    j+1
+                                                   trec
+                     CEνNS,N                                            n                           CEνNS,N
+                    Nij      =        ∑           ∫j        dtrec fT (trec , α6 )T (trec )Ni,n                .                (32)
+                                  n=νe ,νµ ,ν̄µ    trec
+                                                                                                                                            13
+
+
+We also include an additional nuisance parameter on beam timing, α6 , thus allowing the CEνNS tim-
+                                                                   8
+ing distribution to vary in a ±250 ns range . Finally,
+
+                                                          ⎧
+                                                          ⎪                                              ′
+                                                          ⎪1,                          if trec < t
+                                             T (trec ) = ⎪
+                                                          ⎨
+                                                          ⎪                                                                             (33)
+                                                          ⎪  −k(trec −t )
+                                                                       ′
+                                                          ⎪
+                                                          ⎩e              ,            if trec ≥ t
+                                                                                                         ′
+
+
+
+                                                   ′
+is a time-dependent efficiency with t = 0.52 µs and k = 0.0494/µs. The total number of predicted
+                                                            CEνNS               CEνNS,Cs               CEνNS,I
+CEνNS events is in the end given by Nij                                 = Nij                    + Nij           , where the indices i and j
+run over the 9 PE-bins and 11 time-bins, as reported in [8].
+                                                        ES
+     The predicted ES event number, Ni,n , per neutrino flavor, n, in each observed electron recoil
+energy bin i is
+                                                            i+1                            ′max
+                                                        Eer                            Eer
+                             ES,A
+                                                              dEer E (Eer ) ∫               dEer P (Eer , Eer )×
+                                                                                                   ′               ′
+                            Ni,n = Ntarget ∫
+                                                        i
+                                                       Eer                             0
+                                          max
+                                        Eν
+                                                            dNn       dσν` A »»
+                                    ∫             dEν           (Eν )         »» (Eν , Eer
+                                                                                        ′
+                                                                                           ),                                           (34)
+                                        Eνmin (Eer
+                                                ′ )         dEν       dEer »ES
+                                                                         ′     »
+
+                                                                                                       √ ′
+                                                                   min
+                                                                         (Eer ) = (Eer +                               )/2, and Eer
+                                                                            ′                ′                                   ′max
+where A refers to the atom (Cs or I), Eν                                                                Eer2 + 2me Eer
+                                                                                                                    ′
+                                                                                                                                      =
+      max 2          max
+2(Eν      ) /(2Eν          + me ). We also include the timing information in our analysis, by distribut-
+                            ES,A
+ing the predicted Ni               in j time bins. Similarly to the CEνNS case, the predicted ES event
+number per observed nuclear recoil energy and time bins i, j, is
+                                                                  j+1
+                                                               trec
+                               ES,A                                             n                                ES,A
+                              Nij   =           ∑           ∫j          dtrec fT (trec , α6 )T (trec )Ni,n .                           (35)
+                                           n=νe ,νµ ,ν̄µ      trec
+
+
+                                                                                                   ES        ES,Cs        ES,I
+The total number of predicted ES events is finally given by Nij = Nij                                                  + Nij     .
+
+
+                                                3.2.        LAr number of events
+
+
+     For the analysis of COHERENT-LAr data, the detector mass is mdet = 24 kg and it is located at
+a distance L = 27.5 m from the SNS source. In this case, the CEνNS event rate is given by Eq. (28),
+                                                       23
+with r = 0.09 and NPOT = 1.38 × 10 . The corresponding efficiency function is taken from the
+data release [23], while the conversion between nuclear and electron recoil energy is given through
+the quenching factor QF(Enr ) = 0.246 + 7.8 × 10 Enr (keVnr ) [9]. The reconstructed event rate is
+                                    ′                                      −4    ′
+
+obtained by smearing the true event spectrum with a normalized Gaussian function P (Eer , Eer ),
+                                                                                                                                        ′
+
+                                                       σEer               0.58
+whose energy resolution is given by                               = √                  [23]. For the COHERENT-LAr detector
+                                                       Eer              Eer (keVee )
+there is no reported time efficiency, hence in Eq. (32) we consider T (trec ) = 1, while the time
+                 9    n
+distributions        fT (trec ) are taken from [23]. In our analysis, the index i runs over the 12 Eer -bins
+8
+    Private communication with D. Pershey and [8].
+9
+    We do not introduce any nuisance parameter in this case.
+                                                                                                                                14
+
+
+while the index j runs over the 10 time-bins [9]. Finally, as noted in Ref. [63], we do not include ES
+events in the analysis of COHERENT-LAr data, since the F90 data provided by the COHERENT
+Collaboration already ensure a successful discrimination of CEνNS- versus ES-induced signals in
+the detector.
+
+
+
+                                                   3.3.   Statistical analysis
+
+
+   In order to perform the analysis of the COHERENT-CsI data we use the following Poissonian
+least-squares function
+
+                                               9   11              exp      4(5)
+                   2 »                                            Nij
+                  χCsI »»»»
+                                                 CsI exp   exp                   αk 2
+                                     = 2 ∑ ∑ [Nth − Nij + Nij ln ( CsI )] + ∑ ( σ ) .                                          (36)
+                         »CEνNS(+ES)     i=1 j=1                  Nth       k=0
+                                                                                  k
+
+
+In the analyses where ES events are relevant, the predicted number of events is defined as
+
+                    CsI,CEνNS+ES                               CEνNS                                ES
+                 Nth                  = (1 + α0 + α5 )Nij              (α4 , α6 , α7 ) + (1 + α0 )Nij (α6 , α7 )
+                                                        BRN                        NIN                     SSB
+                                      + (1 + α1 )Nij          (α6 ) + (1 + α2 )Nij       (α6 ) + (1 + α3 )Nij      .           (37)
+
+In the previous expressions, σ0 = 11% encodes efficiency and flux uncertainties, σ1 = 25% is
+associated to Beam Related Neutrons (BRN), σ2 = 35% corresponds to Neutrino Induced Neutrons
+(NIN), σ3 = 2.1% to Steady State Background (SSB) and σ5 = 3.8% is the systematic uncertainty
+                                                                         CEνNS            ES
+associated to the quenching factor (QF). Moreover, Nij                           and Nij include three further nuisance
+parameters: α4 , which enters the nuclear form factor and thus affects only the CEνNS number
+of events. Note that the expression of RA that appears in Eq. (3) should be modified to RA =
+         1/3
+1.23 A         (1 + α4 ), with σ4 = 5%; α6 accommodates the uncertainty in beam timing with no prior
+assigned, see Eq. (32), while α7 allows for deviations of the uncertainty in the CEνNS efficiency,
+see Eq. (30). We also note that, according to Ref. [8], the efficiency function is already applied in
+the BRN and NIN backgrounds provided in the data release, hence in our calculations the latter
+are not weighted by the nuisance parameter α7 .
+   In scenarios where ES is not playing a relevant role, we instead rely on a simplified least-squares
+function, where the predicted number of events is defined as
+
+               CsI,CEνNS                  CEνNS                                     BRN                         NIN
+         Nth                  = (1 + α0 )Nij        (α4 , α6 , α7 ) + (1 + α1 )Nij        (α6 ) + (1 + α2 )Nij         (α6 )
+                                          SSB
+                              + (1 + α3 )Nij .                                                                                 (38)
+
+In this case, the relevant systematic uncertainties are σ0 = 11.45% (which encodes efficiency, flux
+and QF uncertainties), σ1 = 25% (BRN), σ2 = 35% (NIN), σ3 = 2.1% (SSB), σ4 = 5% (RA ).
+                                                                                                                                  2
+   In contrast, for the analysis of the COHERENT-LAr dataset we consider the following χ
+                                                                                                                                 15
+
+
+function [43]
+
+              12 10
+      2                1                            F                 F                  ttrig    CEνNS
+     χLAr = ∑ ∑        2
+                              [(1 + β0 + β1 ∆CEνNS
+                                              90+         90−
+                                                   + β1 ∆CEνNS + β2 ∆CEνNS )Nij
+              i=1 j=1 σij
+                                                SSB
+                               + (1 + β3 )Nij
+                                                                                            +              −     w
+                                                        E                 E               ttrig         ttrig   ttrig       pBRN
+                               + (1 + β4 + β5 ∆pBRN
+                                                +          −
+                                                    + β5 ∆pBRN + β6 ∆pBRN + β6 ∆pBRN + β7 ∆pBRN )Nij
+                                                dBRN            exp 2
+                               + (1 + β8 )Nij               − Nij ]
+                                                βk 2                          2
+                               +     ∑         (σ ) +          ∑          (βk ) ,
+                                                k
+                                   k=0,3,4,8                k=1,2,5,6,7
+                                                                                                                                (39)
+       2     exp   SSB
+where σij = Nij + Nij /5. The nuisance parameters β0 , β3 , β4 and β8 are introduced to account
+                               10
+for the normalization of CEνNS                          , SS, prompt BRN and delayed BRN, respectively, with the
+corresponding uncertainties being {σ0 , σ3 , σ4 , σ8 }={0.13, 0.0079, 0.32, 1.0} [9]. The shape
+uncertainties are taken into account by introducing the nuisance parameters β1 , β2 , β5 , β6 and β7 .
+The first two parameters modify the shape of the CEνNS prediction, while the last three affect the
+shape of the prompt BRN background. In particular, for the case of CEνNS, the relevant sources
+                                                                                            90+                             F
+of systematic uncertainty are the ±1σ energy distributions of the F90 parameter, given by ∆CEνNS
+      90− F                                                                               ttrig
+and ∆CEνNS , and the mean time to trigger distribution, ∆CEνNS . Similarly, for the shape of the
+                                                                                      +                                 E
+prompt BRN background, the relevant distributions are the ±1σ energy distributions (∆pBRN and
+                                                                                     +              −
+  −  E                                                                              ttrig          ttrig
+∆pBRN ), the ±1σ mean time to trigger distributions (∆pBRN and ∆pBRN ) and the trigger width
+                       w
+                      ttrig
+distribution (∆pBRN ). These distributions, introduced in Eq. (39), are defined as
+
+                                                                  λ,ξ      λ,CV
+                                                             ξλ  Nij λ − Nij
+                                                            ∆λ =       λ,CV
+                                                                                ,                                               (40)
+                                                                     Nij
+
+where λ = {CEνNS, pBRN}, ξλ is any of the sources relevant to the given λ as described above,
+while CV denotes the central values of the CEνNS or prompt BRN distributions, all taken from
+the COHERENT-LAr data release [23].
+
+
+                                                               4.    RESULTS
+
+
+      In this section, we discuss the results that we have obtained from the combined analysis of
+the COHERENT CsI [8] and LAr [9] data. We will start with standard electroweak and nuclear
+physics, presenting the determination of the weak mixing angle and neutron RMS radius, then
+proceed to scenarios beyond the SM, including neutrino NSI as well as NGI with both heavy
+and light mediators. Next, we discuss neutrino EM properties, including the effective neutrino
+10
+     This component includes the uncertainties on the flux (10%), efficiency (3.6%), energy calibration (0.8%), the
+     calibration of the pulse-shape discrimination parameter F90 (7.8%), QF (1%), and nuclear form factor (2%) [9].
+                                                                                                    16
+
+
+magnetic moments, charge radius and neutrino millicharge. Finally, we discuss conversions to sterile
+neutrinos, both active-to-sterile neutrino oscillations as well as active-to-sterile EM interactions.
+   In what follows, we include the contribution from ES events whenever it becomes relevant, i.e.
+for the neutrino millicharge, neutrino magnetic moment, TMM to sterile neutrinos, and the light
+mediator analyses. We will see that the most important effect of the presence of ES events is found
+for the neutrino millicharge and the light vector and tensor mediator analyses. This is due to the
+                                                                         2
+fact that their corresponding cross sections are proportional to ∼ 1/Eer , which enhances the event
+rates significantly. For the neutrino magnetic moment conversions and the light scalar mediator
+analyses, the cross sections are proportional to   ∼ 1/Eer , yielding to a moderate enhancement of
+the event rates. Notice that for the cases of the weak mixing angle, neutrino charge radius and
+heavy NSI and NGI analyses, the ES event rate is too small and hence neglected.
+
+
+                                      4.1.   Standard physics
+
+                                              2
+   In the left panel of Fig. 1 we show the ∆χ profile obtained from the analysis of CsI (magenta),
+                                                               2
+LAr (orange) and CsI + LAr (blue) data as a function of sin θW . The combined fit of CsI + LAr
+data leads to the following best fit value for this parameter at 1σ
+
+                                         2
+                                      sin θW = 0.237 ± 0.029 .                                    (41)
+
+As can be seen from the plot, clearly the result is mainly driven by the recent CsI data. We note
+that for this analysis the ES events on CsI can be safely neglected. The right panel of Fig. 1
+             2
+shows the sin θW RGE evolution in the SM (light red line), calculated in the MS renormalization
+scheme as obtained in Ref. [100], together with our combined CsI + LAr determination (blue)
+and other measurements at different scales [25, 26, 101–106]. It is interesting to note that the full
+COHERENT data provide a determination of the weak mixing angle at low-energies, in a region
+where other data-driven constraints are absent. Moreover, one may notice the complementarity
+with the results obtained in Refs. [25, 26] using the Dresden-II CEνNS reactor data.
+   At this point, we will explore the implications of COHERENT data on nuclear physics, with the
+goal of probing the neutron density distributions in CsI and Ar. The relevant phenomenological
+parameter is the RMS value of the neutron radius Rn inside the nucleus. Let us note that, for
+this particular analysis, different RMS radii have been considered for protons and neutrons, i.e.
+             q ∣) ≠ Fn (∣⃗
+we take Fp (∣⃗           q ∣). Specifically, we fix the proton RMS radius to Rp (Ar) = 3.448 fm,
+Rp (I) = 4.766 fm, Rp (Cs) = 4.824 fm [107], while Rn is left to vary freely. We furthermore
+deactivate the α4 nuisance parameter for the case of CsI, while for the case of LAr the effect of
+neglecting the nuclear physics uncertainty in β0 is tiny, see footnote 10.
+   In Fig. 2 we display the sensitivity on the neutron RMS radius, Rn , of argon and CsI obtained
+from the analysis of COHERENT data. For the case of LAr, here we have updated the result
+                                                                                                                                                                      17
+
+
+              10                                                           0.30
+
+
+              8                                                            0.28
+
+                                                                           0.26
+              6                                                                        APV                                Qweak
+                                                                                                                                       PVDIS      NuTeV
+
+
+
+
+                                                                  sin2θW
+                                                                                      (PDG2020)                            (ep)                  (ν−nucleus)
+        ∆χ2
+
+
+
+                                                                                                                                        (e2 H)
+                                                                           0.24
+                                                                                                                                E158
+
+
+
+
+                                                                                                  Dresden-II
+              4                                                                                                                 (ee)
+
+                                                                           0.22
+                                                    LAr                                                            COHERENT
+                                                                                                                    (CsI+LAr)
+              2                                     CsI                    0.20
+                                               CsI+LAr
+              0                                                            0.18
+              0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50                    10−3                10−2                   10−1           100                    101
+                                    2
+                                sin θW                                                                                  µ [GeV]
+                                2                         2
+FIG. 1: Left panel: ∆χ profile for sin θW obtained from the analysis of CsI (magenta), LAr
+                                                     2
+(orange) and CsI + LAr (blue) data. Right panel: sin θW RGE running in the SM for the MS
+renormalization scheme (light red line), compared with our CsI + LAr determination (blue) and
+other measurements at different scales.
+
+                                               10
+
+
+                                               8
+
+
+                                               6
+                                         ∆χ2
+
+
+
+
+                                               4
+
+                                                                                                          LAr
+                                               2                                                          CsI
+
+
+                                               0
+                                                    2         3     4             5         6                  7    8
+                                                                           Rn [fm]
+
+                          FIG. 2: Sensitivity on the neutron RMS radii of argon and CsI.
+
+
+on Rn (Ar) obtained in Ref. [96] using not only the energy data but also the timing information
+and the shape uncertainties described in Eq. (39). As for the CsI detector, ours is the first result
+                                                                                                                                                      2
+obtained using the actual COHERENT-CsI (2021) data [8] and the comprehensive χ function
+given in Eq. (37), including timing and efficiency shape uncertainties as well as the small NIN
+                   11
+background              . The 1σ regions on the neutron RMS radii of argon and CsI from our analysis are
+
+                                                        Rn (Ar) ∈ [0.00, 3.72] fm ,
+                                                                                                                                                                     (42)
+                                                    Rn (CsI) ∈ [5.22, 6.03] fm .
+
+
+11
+     Note that Ref. [24] analyzed the preliminary CsI data reported in [108] neglecting the shape uncertainties.
+                                                                                                                   18
+
+
+      Before closing this discussion, we would like to comment on the level of improvement of the
+current determination of Rn in comparison with the results obtained with the first COHERENT-
+CsI data. To this end we compare our results with those extracted in Ref. [28] which analyzed the
+                                                                                                                +0.41
+energy and timing data of the 2017 COHERENT-CsI release [7]. Our analysis gives Rn = 5.62−0.40
+                                              +0.89
+fm (at 1σ) compared to Rn = 5.80−0.93 fm reported in [28]. While comparing the best fit points
+may not be straightforward because they belong to different data sets, it is however interesting to
+notice that in our case the 1σ uncertainty is reduced by a factor of 2.
+
+
+                                                  4.2.     Neutrino NSI
+
+
+      Here we explore NSI involving both the flavor-preserving and flavor-changing terms in Eq. (6).
+In our analysis we consider two NSI parameters at a time, with the rest set to zero, and our results
+are presented as 90% C.L. (2 d.o.f.) preferred regions. First, in Fig. 3 we consider nonuniversal
+                                                                                                    dV   uV
+NSI involving electron or muon neutrinos. In the upper-left panel we explore the (ee , ee ) plane,
+noting that a single allowed band is present when analysing CsI or LAr data separately. The reason
+is that, even when the νe -induced CEνNS rate is suppressed, the νµ + ν̄µ contributions can still
+fit the data reasonably well. Nevertheless, the combination of CsI and LAr data can break the
+degeneracy between different NSI parameter combinations, resulting in two bands (see upper-right
+                                                            uV    dV
+panel). One band contains the SM solution (εee = εee = 0), while the other corresponds to the
+                    NSI        SM
+region where QV           ≈ −QV , thus mimicking the SM signal. The width of the two bands is reduced
+by ∼ 20% when compared to the result presented in [109], where a combined CsI (2017) + LAr
+analysis was performed. In contrast, having the NSI confined to the muon neutrino sector leads to
+                                                                                              dV    uV
+a different situation (see lower-left panel). Here, we find two bands in the (εµµ , εµµ ) plane even
+before combining CsI and LAr data. This happens because the contribution to the CEνNS event
+rate from νµ + ν̄µ is larger compared to νe . Of course, the combined CsI+LAr analysis leads to
+significantly narrower allowed bands, as seen in the lower-right panel.
+      In Fig. 4 we consider nonuniversal NSI for both electron and muon neutrinos. We present the
+                              uV    uV                                         dV   dV
+allowed regions in the (ee , µµ ) plane (upper panel) and in the (ee , µµ ) plane (lower panel). One
+sees that, due to the significantly reduced uncertainty of the recent COHERENT-CsI measurement,
+there are two separated allowed regions for CsI, but just a single region is obtained from the LAr
+data analysis (left panel). By comparing the NSI constraints for u or d quarks, one sees that
+the latter case is slightly more constrained. Moreover, the combined CsI+LAr analysis is mostly
+driven by the CsI data, leading to a mild improvement compared to the CsI alone analysis (see right
+                                                                    uV    uV
+panels). At this point, we stress that our results in the (ee , µµ ) plane regarding the CsI data alone
+are in excellent agreement with the original result reported by COHERENT Collaboration [5, 8],
+a result which is further strengthened by our simulation of event spectra shown in Appendix A.
+                                         12
+This serves also as a calibration             for the robustness and accuracy of our calculational procedure.
+
+     Although not shown here, our result in the (ee , ee ) is consistent with Refs. [8, 9] when assuming 1 d.o.f. as
+12                                                    dV   uV
+                                                                                                                             19
+
+
+                    1                                                     1
+
+                 0.75                                                  0.75
+
+                  0.5                                                   0.5
+
+                 0.25                                                  0.25
+            uV
+
+
+
+
+                                                                  uV
+                    0                                                     0
+           eee
+
+
+
+
+                                                                 eee
+             -0.25                                                 -0.25
+
+                 -0.5        LAr
+                                                                       -0.5
+                             CsI
+             -0.75                                                 -0.75         CsI+LAr
+
+                   -1                                                    -1
+                        -1 -0.75 -0.5 -0.25 0 0.25 0.5 0.75 1                 -1 -0.75 -0.5 -0.25 0 0.25 0.5 0.75 1
+                                          dV
+                                         eee                                                          dV
+                                                                                                     eee
+                    1                                                     1
+
+                 0.75                                                  0.75
+
+                   0.5                                                   0.5
+
+                 0.25                                                  0.25
+            uV
+
+
+
+
+                                                                  uV
+           eµµ
+
+
+
+
+                                                                 eµµ
+                    0                                                     0
+
+                 -0.25                                                 -0.25
+
+                  -0.5       LAr                                        -0.5
+                                                                                     CsI+LAr
+                             CsI
+                 -0.75                                                 -0.75
+
+                    -1                                                    -1
+                         -1 -0.75 -0.5 -0.25 0 0.25 0.5 0.75 1                 -1 -0.75 -0.5 -0.25 0 0.25 0.5 0.75 1
+                                           dV
+                                          eµµ                                                         dV
+                                                                                                     eµµ
+
+FIG. 3: 90% C.L. (2 d.o.f.) allowed regions on flavor-preserving neutrino NSI from the CsI
+(magenta), LAr (orange) and CsI + LAr (blue) analyses, allowing two NSI parameters at a time.
+The analysis of CsI data includes only CEνNS interactions.
+
+
+
+In addition, our result is consistent with the analysis of CsI (2017) data presented in [64].
+
+   Finally, in Figs. 5 and 6 we display the allowed regions for one flavor-preserving NSI versus
+                                                                                        dV      dV         dV   dV     dV   dV
+one flavor-changing NSI parameter for various combinations, (ee , eτ ), (µµ , µτ ), and (ee , eµ )
+ dV   dV
+(µµ , eµ ), respectively. As previously, the results show the constraints from the CsI or LAr mea-
+surements (left panels), as well as those resulting from the combined CsI+LAr analysis (right
+panels), leading to the same general conclusions as discussed above. The implications of the en-
+                                                                                   dV      dV
+larged CsI (2021) dataset can be seen, for instance, in the (ee , eτ ) plane, for which the allowed
+region is reduced by ∼ 40% in comparison with the results obtained using the former CsI (2017)
+data [96]. To summarise, the 1σ limits obtained from the combined CsI+LAr analysis on the single
+
+
+
+
+  taken by the COHERENT Collaboration. In contrast, here we have considered 2 d.o.f., which leads to a single
+  band.
+                                                                                                                      20
+
+
+                0.6                                                   0.6
+                0.5                                                   0.5
+                0.4                                                   0.4
+                0.3                                                   0.3
+                0.2                                                   0.2
+          uV
+
+
+
+
+                                                                uV
+         eµµ
+
+
+
+
+                                                               eµµ
+                0.1                                                   0.1
+                0.0                                                   0.0
+               −0.1     LAr                                          −0.1         CsI+LAr
+                        CsI
+               −0.2                                                  −0.2
+               −0.3                                                  −0.3
+                      −0.4 −0.2 0.0    0.2   0.4   0.6   0.8                −0.4 −0.2 0.0    0.2   0.4   0.6   0.8
+                                       uV
+                                      eee                                                    uV
+                                                                                            eee
+                0.6                                                   0.6
+                0.5                                                   0.5
+                0.4                                                   0.4
+                0.3                                                   0.3
+                0.2                                                   0.2
+          dV
+
+
+
+
+                                                                dV
+         eµµ
+
+
+
+
+                                                               eµµ
+                0.1                                                   0.1
+                0.0                                                   0.0
+               −0.1     LAr                                          −0.1         CsI+LAr
+                        CsI
+               −0.2                                                  −0.2
+               −0.3                                                  −0.3
+                      −0.4 −0.2 0.0    0.2   0.4   0.6   0.8                −0.4 −0.2 0.0    0.2   0.4   0.6   0.8
+                                       dV
+                                      eee                                                    dV
+                                                                                            eee
+
+                                                                             qV     qV
+                           FIG. 4: Same as Fig. 3 but in the (ee , µµ ) planes.
+
+
+
+
+nonuniversal NSI parameters (setting all the others to zero) read
+
+                                       dV
+                                      ee =[−0.027, 0.048] ∪ [0.30, 0.39] ,
+                                       uV
+                                      ee =[−0.024, 0.045] ∪ [0.34, 0.43] ,
+                                       dV
+                                                                                                                     (43)
+                                      µµ =[−0.012, 0.016] ∪ [0.33, 0.37] ,
+                                       uV
+                                      µµ =[−0.002, 0.001] ∪ [0.37, 0.41] .
+
+Similarly, the 1σ limits on flavor-changing NSI parameters are
+
+                               dV                               uV
+                              eµ =[−0.071, 0.071] ,           eµ = [−0.081, 0.081] ,
+                               dV                               uV
+                              eτ =[−0.12, 0.12] ,             eτ = [−0.13, 0.13] ,                                 (44)
+                               dV                               uV
+                              µτ =[−0.087, 0.087] ,           µτ = [−0.098, 0.098].
+                                                                                                                   21
+
+
+                  0.6                                                0.6
+
+                  0.4                                                0.4
+
+            dV    0.2                                                0.2
+
+
+
+
+                                                               dV
+                  0.0                                                0.0
+           eeτ
+
+
+
+
+                                                              eeτ
+              −0.2                                              −0.2
+                        LAr
+                                                                            CsI+LAr
+              −0.4      CsI                                     −0.4
+
+              −0.6                                              −0.6
+                 −0.4 −0.2      0.0        0.2   0.4    0.6        −0.4 −0.2       0.0       0.2   0.4   0.6
+                                           dV
+                                          eee                                             dV
+                                                                                         eee
+                  0.6                                                0.6
+
+                  0.4                                                0.4
+
+                  0.2                                                0.2
+            dV
+
+
+
+
+                                                               dV
+           eµτ
+
+
+
+
+                                                              eµτ
+                  0.0                                                0.0
+
+                 −0.2                                               −0.2
+                        LAr
+                                                                             CsI+LAr
+                 −0.4   CsI                                         −0.4
+
+                 −0.6                                               −0.6
+                    −0.4 −0.2       0.0    0.2   0.4    0.6            −0.4 −0.2   0.0       0.2   0.4   0.6
+                                           dV
+                                          eµµ                                             dV
+                                                                                         eµµ
+
+FIG. 5: 90% C.L. (2 d.o.f.) allowed regions assuming one nonuniversal and one flavor-changing
+neutrino NSI, extracted from the analysis of CsI (magenta), LAr (orange) and the combined CsI
+                                                                 dV dV
++ LAr (blue) data. The upper panel shows the result in the (ee , eτ ) plane while the lower
+                                          dV dV
+panel shows the corresponding result in (µµ , µτ ). The analysis of CsI data includes only CEνNS
+interactions.
+
+
+                                                 4.3.   Neutrino NGI
+
+
+     We now turn our attention on a more general description of exotic new physics, namely NGI
+that go beyond the typical vector NSI that arise in gauge extensions of the SM. In this context, we
+aim to explore additional types of Lorentz-invariant interactions involving also scalar and tensor
+terms. In full generality, all types of NGI could in principle exist at the same time. However,
+for simplicity, in our analysis we only allow up to two new interactions to be present at the same
+                                                                                                   u      d    q
+time (while setting the third one to zero), assuming universal couplings (i.e. CX = CX ≡ CX ) and
+neglecting the ES data in the analysis.
+                                2                                                                              q
+     Figure 7 shows the ∆χ profiles for a single NGI (upper row) given in terms of the CX , and
+                                                                                   q     q
+the 90% C.L. (2 d.o.f.) allowed regions for neutrino NGI in the (CX , CY ) plane (lower row), with
+ q
+CX = gνX ⋅ gqX and X = S, V, T , see Eqs. (9), (10) and (11). The results show that, although a
+                                                                                                                 22
+
+
+                 0.3                                                 0.3
+
+                 0.2                                                 0.2
+
+           dV    0.1                                                 0.1
+
+
+
+
+                                                               dV
+                 0.0                                                 0.0
+          eeµ
+
+
+
+
+                                                              eeµ
+                −0.1                                                −0.1
+                       LAr
+                                                                           CsI+LAr
+                −0.2   CsI                                          −0.2
+
+                −0.3                                                −0.3
+                   −0.4 −0.2     0.0       0.2   0.4    0.6            −0.4 −0.2     0.0       0.2   0.4   0.6
+                                        dV
+                                       eee                                                  dV
+                                                                                           eee
+                 0.3                                                 0.3
+
+                 0.2                                                 0.2
+
+                 0.1                                                 0.1
+           dV
+
+
+
+
+                                                               dV
+                 0.0                                                 0.0
+          eeµ
+
+
+
+
+                                                              eeµ
+
+
+                −0.1                                                −0.1
+                       LAr                                                 CsI+LAr
+                −0.2   CsI                                          −0.2
+
+                −0.3                                                −0.3
+                   −0.4 −0.2     0.0       0.2   0.4    0.6            −0.4 −0.2     0.0       0.2   0.4   0.6
+                                        dV
+                                       eµµ                                                  dV
+                                                                                           eµµ
+
+                                                   dV   dV            dV   dV
+FIG. 6: Same as Fig. 5 for the planes (ee , eµ ) and (µµ , eµ ), in the upper and lower panel,
+respectively.
+
+
+
+new scalar or tensor interaction actually improves the fit of LAr data alone, such a new NGI does
+not fit the CsI data set, so that the combined analysis prefers a SM explanation. For the scenario
+                                                                                           2
+with a new vector interaction instead, both LAr and CsI lead to two χ minima, one of them at
+ q                                     q
+CV = 0 and a second one at CV ∼ 0.18. In the region between the two minima, the extra vector
+contribution cancels the SM one, worsening the fit. If two interactions are simultaneously present,
+see lower panels, one can also expect interferences between the NGI and the SM interactions, as
+well as between different NGI. For the scalar versus tensor (S-T) case, the allowed region, indicated
+                                                                                q    q
+in the left panel, is centered around the SM solution, with CT = CS = 0, with no other solutions
+allowed at the same confidence level. In the other two cases, however, degenerate solutions with
+similar goodness of fit as the SM solution appear. In particular, in the scalar versus vector (S-V)
+case, shown in the middle panel, the combination of the two data sets reduces the ring-shaped
+contour obtained with LAr data to two smaller disjoint regions, one centered around the SM and
+                             q
+a second one around CV ∼ 0.18, as already seen for the one-dimensional profiles. Similarly, for
+the vector versus tensor (V-T) case, the combined analysis of LAr and CsI data results in a ring-
+                                                                                                                                                 23
+
+
+          12                                                 12                                          12
+                            LAr                                                                                            LAr
+          10                CsI                              10                                          10                CsI
+                         CsI+LAr                                                                                         CsI+LAr
+          8                                                   8                                          8
+    ∆χ2
+
+
+
+
+                                                       ∆χ2
+
+
+
+
+                                                                                                   ∆χ2
+          6                                                   6                                          6
+
+          4                                                   4                LAr                       4
+                                                                               CsI
+          2                                                   2                                          2
+                                                                             CsI+LAr
+          0                                                  0                                           0
+               −0.04 −0.02 0.00    0.02       0.04           −0.05 0.00 0.05 0.10 0.15 0.20 0.25          -0.75 -0.5 -0.25 0     0.25 0.5 0.75
+                             q                                                  q                                            q
+                            CS                                                 CV                                          CT
+      1.00                                                                                                    1
+                  LAr                                        0.04
+      0.75        CsI                                                                                    0.75
+      0.50        CsI+LAr                                                                                  0.5
+                                                             0.02
+      0.25                                                                                               0.25
+CT
+
+
+
+
+                                                                                                   CT
+                                                      CS
+
+
+
+      0.00                                                        0                                           0
+                                                      q
+q
+
+
+
+
+                                                                                                 q
+    −0.25                                                                                                -0.25
+                                                           -0.02
+    −0.50                                                                                                 -0.5
+    −0.75                                                  -0.04                                         -0.75
+    −1.00                                                                                                     -1
+               −0.04 −0.02 0.00 0.02 0.04                         -0.05 0.0 0.05 0.1 0.15 0.2 0.25             -0.05 0.0 0.05 0.1 0.15 0.2 0.25
+                              q                                                      q                                           q
+                            CS                                                  CV                                             CV
+
+                                          2
+FIG. 7: Upper panels: ∆χ profiles for single NGI from the CsI (magenta), LAr (orange) and CsI
++ LAr (blue) analyses. The analysis of CsI data includes only CEνNS interactions. Lower panels:
+90% C.L. (2 d.o.f.) allowed regions on neutrino NGI allowing two NGI couplings at a time.
+
+
+
+
+                                                                                q        q
+shaped allowed region including the SM solution CV = CT = 0. In all cases, the addition of the CsI
+data substantially improves the sensitivity to these new interactions and is competitive to existing
+results [25], extracted recently from the analysis of Dresden-II data [10]. Furthermore, one sees
+a tiny part of the parameter space where the combined contour extends outside the CsI allowed
+                                                                                             2
+region. This can be understood from the LAr and CsI χ profiles in the upper panels of Fig. 7,
+which show how in some cases the best fit values for the couplings in the LAr analysis lie outside
+the region preferred by the CsI data.
+
+
+    The 1σ limits obtained from the combined CsI+LAr analysis on vector, scalar and tensor NGI
+parameters (setting all the others to zero) read
+
+                                                      q
+                                                     CV =[−0.003, 0.003] ∪ [0.18, 0.19] ,
+                                                       q
+                                                     CS =[−0.009, 0.009] ,                                                                  (45)
+                                                      q
+                                                     CT =[−0.19, 0.19] .
+                                                                                                              24
+
+
+      10−3                                                    10−3
+
+
+
+      10−4                                                    10−4
+
+
+
+
+                                                          g B− L
+      10−5                                                    10−5
+ gV
+
+
+
+
+      10−6                                 LAr                10−6                             LAr
+                                            CsI                                                 CsI
+                                          CsI+LAr                                             CsI+LAr
+      10−7 −3                                                 10−7 −3
+         10   10−2 10−1       100   101    102      103          10   10−2 10−1   100   101    102      103
+                        mV [MeV]                                             mV [MeV]
+
+FIG. 8: 90% C.L. (2 d.o.f.) exclusion regions from the analysis of CsI (magenta), LAr (orange)
+and CsI + LAr (blue) data, for the universal light vector model (left) and the B-L scenario
+(right). The analysis of CsI data includes CEνNS + ES interactions.
+
+
+                                          4.4.    Light mediators
+
+
+   The NGI discussed above may appear mediated by a light particle. In such a case, the relevant
+parameters entering the scattering cross sections given in Sec. 2.2 are the mass of the mediator, mX ,
+                                                                            √
+and a coupling gX , which, for the sake of simplicity, we define as gX = gνX gf X , with f = {u, d}
+for CEνNS and f = e for ES. Notice that we are assuming universal couplings to quarks, i.e.
+guX = gdX ≡ gqX .
+   We first focus on light vector mediators and we present in Fig. 8 the 90% C.L. (2 d.o.f.)
+exclusion regions for the universal light vector model (left) and the B-L scenario (right). In the
+universal model, a cancellation with the SM is possible thus leading to a tiny unconstrained band
+                                     −4
+at mV ∼ 0.05 − 1 GeV and gV ≳ 10 . In the B-L scenario, by contrast, the charge assignment does
+not allow for this destructive interference. We can also notice that the addition of CsI ES events
+significantly improves the bounds by a factor ∼ 8, at mV ≲ 30 MeV. The corresponding results
+for the light scalar and tensor interactions are given in Fig. 9. The conclusions are similar to the
+vector case, although without the ES-driven improvement in the scalar scenario. This behavior is
+understood since, in the scalar case, the cross section is proportional to ∼ 1/Eer , unlike the vector
+and tensor cases where the ES enhancement is more significant as the cross section of this process
+                          2
+is proportional to ∼ 1/Eer . Let us finally comment that, keeping in mind the differences in the
+data sets considered and in the statistical analyses performed, our current bounds are in general
+agreement with those given previously, e.g. in Refs. [41, 43, 64].
+   In order to make a comparison with the available constraints from other experimental probes, we
+reproduce in Fig. 10 the exclusion curves from our combined analysis (dark blue line) for the cases
+                                                                                                            25
+
+
+      10−3                                                  10−3
+
+
+
+      10−4                                                  10−4
+
+
+
+      10−5                                                  10−5
+
+
+
+
+                                                       gT
+ gS
+
+
+
+
+      10−6                              LAr                 10−6                             LAr
+                                         CsI                                                  CsI
+                                       CsI+LAr                                              CsI+LAr
+      10−7 −3                                               10−7 −3
+         10   10−2 10−1    100   101    102      103           10   10−2 10−1   100   101    102      103
+                       mS [MeV]                                            m T [MeV]
+
+FIG. 9: 90% C.L. (2 d.o.f.) exclusion regions from the analysis of CsI (magenta), LAr (orange)
+and CsI + LAr (blue) data, for the universal light scalar model (left) and the universal light
+tensor model (right). The analysis of CsI data includes CEνNS + ES interactions.
+
+
+
+
+of the universal vector mediator (see left panel of Fig. 8) and the universal scalar mediator (see
+left panel of Fig. 9). We choose the latter as benchmark scenarios since they can be easily recast
+into more dedicated theoretical models, where neutrinos and quarks couple differently to the new
+light mediator. We compare our results with the existing limits from other CEνNS experiments, in
+particular CONNIE [110], CONUS [12] and Dresden-II [26], from the analysis given in Ref. [88] of
+two multi-ton DM experiments (namely XENONnT [111] and LZ [112]), from the analysis of solar
+neutrino data collected by Borexino [113], from collider experiments [43], including BaBar [114]
+and LHCb [115], and from rare meson decays at NA48 [116]. In the ∼ 1 GeV mass region, we
+also show bounds from beam-dump experiments [41, 117], including E141 [118, 119], E137 [120],
+E774 [121], KEK [122], Orsay [123], U70/ν-CAL I [124, 125], CHARM [126, 127], NOMAD [128],
+NA64 [129, 130] and the fixed target experiments A1 [131] and APEX [132]. In the low mass
+regime, we show the bound from Big Bang Nucleosynthesis [133, 134] (BBN) obtained by requiring
+that the nonstandard mediator couples to neutrinos only. Finally, we also indicate the 2σ preferred
+region to account for the muon anomalous magnetic moment (g −2)µ [43]. While the COHERENT
+constraints obtained here slightly improve the existing bounds only in a small mass region around
+mX ∼ 0.1 GeV, they nonetheless constitute a complementary test of these new physics scenarios.
+                                                                                                                                         26
+
+
+      10−3                                                                     10−3
+             ( g − 2) µ
+
+
+
+
+                                                                  rs
+                                                                                      ( g − 2) µ
+
+
+
+
+                                                                   de
+                                                                lli
+                                                      IE
+
+
+                                                              co
+
+
+
+
+                                                                                                                             IE
+      10−4                                                                     10−4
+
+
+
+
+                                                     N
+
+
+
+
+                                                                                                                           NN
+                                                    N
+                                                  CO
+
+
+
+
+                                                                                                                        CO
+             CONUS
+                                                                                          CsI+LAr
+
+      10−5    CsI+LAr                                                          10−5   CONUS
+ gV
+
+
+
+
+                                                                          gS
+
+
+
+
+                                                                                                                       -II
+                                                                                                                       n
+                                                                                                                    de
+                          Dresden-II
+
+
+
+
+                                                                                                                   s
+                                                                                                                re
+                                                                                                                D
+                            LZ
+
+
+
+
+                                                                                                    LZ
+                                                                                      Borexino
+      10−6   Borexino                                                          10−6
+                                                  beam dump                           XENONnT
+             XENONnT
+
+
+                                   BBN                                                                   BBN
+      10−7 −3                                                                  10−7 −3
+         10   10−2 10−1                100        101      102      103           10   10−2 10−1          100    101         102   103
+                                mV [MeV]                                                            mS [MeV]
+
+FIG. 10: 90% C.L. exclusion regions from our combined CsI+LAr analysis of vector (left) and
+scalar (right) light mediators coupled universally to neutrinos and quarks, compared with other
+available experimental constraints. See text for more details.
+
+
+                                                  4.5.     Neutrino EM properties
+
+
+                                             1.    Effective neutrino magnetic moment
+
+
+   The constraints on neutrino effective MM µνe and µνµ are summarised in Fig. 11. In the left
+                                                    2
+(middle) panel, we present the ∆χ profiles as a function of the effective electron neutrino (muon
+neutrino) MM. We assume that only one MM is nonzero at a time, and we include ES events in
+the CsI analysis. One finds an improvement of a factor ∼ 2 with the recent CsI data in comparison
+to the LAr data set. From the combined analysis of CsI+LAr data, at 90% C.L. we find the upper
+limits
+
+                                                     µνe < 3.6 (3.8) × 10
+                                                                                 −9
+                                                                                      µB ,
+                                                                                                                                    (46)
+                                                    µνµ < 2.4 (2.6) × 10
+                                                                                 −9
+                                                                                      µB ,
+
+where the limits in parenthesis indicate the results from the CEνNS-only analysis. We note that
+the inclusion of ES events improves the constraints only slightly, in agreement with Ref. [63] where
+a similar analysis was presented. Likewise, only a small improvement is found with respect to
+the results obtained in previous analyses of COHERENT-CsI (2017) data in Refs. [97, 107]. This
+comes from the fact that, even though the 2021 dataset increased the statistics considerably, the
+threshold of the COHERENT-CsI detector remained unchanged for the two measurements. Indeed,
+due to their larger threshold, CEνNS experiments cannot compete with the very low-threshold
+dark matter direct detection experiments, for which the sensitivity reach on the neutrino magnetic
+                                       −12
+moment is in the few ×10                      µB ballpark [88]. We have also performed a combined analysis,
+                                                                                                                                                 27
+
+
+      12                                                 12                                                10−8
+               LAr                                               LAr                                                    LAr
+                                                                                                                        CsI
+      10       CsI                                       10      CsI
+                                                                                                                    CsI+LAr
+           CsI+LAr                                            CsI+LAr
+      8                                                   8
+
+
+
+
+                                                                                              µνµ [µ B ]
+∆χ2
+
+
+
+
+                                                   ∆χ2
+      6                                                   6                                                10−9
+
+      4                                                   4
+
+      2                                                   2
+
+      0                                                  0                                                 10−10 −10
+      10−10            10−9                 10−8         10−10            10−9              10−8              10                    10−9       10−8
+                     µνe [µ B ]                                         µνµ [µ B ]                                                µνe [µ B ]
+
+                                                          2
+FIG. 11: Left and middle panels: ∆χ profile for the effective neutrino magnetic moments µνe
+and µνµ obtained from the analysis of CsI (magenta), LAr (orange) and CsI + LAr (blue) data.
+Right panel: 90% C.L. allowed regions (2 d.o.f.) when two effective MM are taken
+simultaneously. The analysis of CsI data includes CEνNS + ES interactions.
+
+
+allowing both effective MM to vary simultaneously. The corresponding result is presented in the
+right panel of Fig. 11. Similarly to the NGI case discussed previously, there is a tiny part of the
+region allowed in the combined analysis which falls outside the CsI-driven contour. Again, this is
+due to the fact that the analysis of LAr data leads to a nonzero best fit coupling, in contrast to
+the CsI data (see upper panel).
+
+
+                                                         2.   Neutrino charge radius
+
+
+      Bounds on flavor-diagonal neutrino CR are shown in Fig. 12. The left and middle panels show
+           2                      2                2
+the ∆χ profile for ⟨rνee ⟩ and ⟨rνµµ ⟩ from the analysis of CsI (magenta), LAr (orange) and CsI +
+                                              −32         2
+LAr (blue) data, in units of 10                        cm . We find the following 1σ allowed regions:
+
+                                        2                                                                           2
+                                      ⟨rνee ⟩ ∈ [−61.2, −48.2] ∪ [−4.7, 2.2] × 10
+                                                                                                     −32
+                                                                                                              cm ,
+                                        2                                              2
+                                                                                                                                               (47)
+                                      ⟨rνµµ ⟩ ∈ [−58.2, −52.1] × 10
+                                                                              −32
+                                                                                     cm .
+
+While our results are less stringent, they are still in reasonable agreement with those reported in
+Ref. [63]. The agreement is not perfect due to our different analysis strategy, in which the efficiency
+and time uncertainties are taken into account in a more systematic manner. The right panel of
+                                                                                                                2             2
+Fig. 12 summarizes the 90% C.L. (2 d.o,f.) allowed contours in the ⟨rνee ⟩-⟨rνµµ ⟩ plane. Note that
+the analysis of CsI data includes only CEνNS interactions, since the ES event contribution on
+CsI is negligible. From a closer inspection of this figure, one sees a substantial improvement due
+to the CsI data: the LAr data alone lead to a single region, while the CsI data result in a more
+constrained allowed area, with two separate regions. We should also stress the fact that our CsI
+result differs from the one obtained in Ref. [63], where the authors obtained four distinct contour
+islands at 90% C.L. Let us finally note that the current CEνNS limits on the neutrino charge radius
+                                                                                                                                                      28
+
+
+      12                                         12                                                             40
+                                                                                                                     LAr
+                                                                                                                     CsI
+      10                                         10                                                             20   CsI+LAr
+
+
+
+
+                                                                                         hrν2µµ i [10−32cm2 ]
+      8                                           8                                                             0
+∆χ2
+
+
+
+
+                                           ∆χ2
+      6                                           6                                                       −20
+
+      4                                           4                                                       −40
+                                     LAr                                      LAr
+      2                              CsI          2                               CsI                     −60
+                               CsI+LAr                                      CsI+LAr
+      0                                           0                                                       −80
+      -100 -75 -50 -25   0    25 50 75            -100 -75 -50 -25    0   25 50 75                          -100 -75 -50 -25            0       25    50
+              hrν2ee i [10−32cm2 ]                         hrν2µµ i [10−32cm2 ]                                          hrν2ee i [10−32cm2 ]
+
+                                                  2
+FIG. 12: Left and middle panels: ∆χ profile for the neutrino charge radii obtained from the
+analysis of CsI (magenta), LAr (orange) and CsI + LAr (blue) data. Right panel: 90% C.L. (2
+                                                                     −32   2
+d.o.f.) allowed regions for the neutrino charge radii, in units of 10    cm . The analysis of CsI
+data includes only CEνNS interactions.
+
+
+                                                       2                                                             2
+are weaker than the existing limits on ⟨rνe ⟩ from TEXONO [135] and ⟨rνµ ⟩ from BNL-E734 [136]
+by about one order of magnitude.
+
+
+
+                                                  3.   Neutrino millicharge
+
+              2
+      The ∆χ profile for the neutrino EC parameters qνee and qνµµ is given in the upper-left and
+upper-middle plots of Fig. 13. The upper-right plot shows the 90% C.L. (2 d.o.f.) allowed regions
+in the plane (qνee , qνµµ ), when both parameters are allowed to vary simultaneously. From the
+combined analysis of CsI+LAr data, we find the following 1σ allowed intervals
+
+                                             qνee ∈ [−6.9, 5.6] × 10
+                                                                              −8
+                                                                                    e,
+                                                                                                                                                     (48)
+                                             qνµµ ∈ [−3.3, 2.5] × 10
+                                                                              −8
+                                                                                    e.
+
+Note that this result is obtained considering only CEνNS interactions in CsI data, neglecting the
+ES contribution. We find appreciable differences when comparing our results with those obtained
+in Ref. [65], mainly due to the fact that the latter did not take into account the timing information
+                                                                                                                               2
+in COHERENT data. Indeed, in our analysis we obtain two minima in the ∆χ profile of qνee .
+In general, our present results are in good agreement with those of Ref. [43], the slight differences
+being due to the different analysis methods, as discussed above.
+      Note that, since in ES the momentum transferred is much smaller than in CEνNS interactions,
+the inclusion of ES events in the analysis strongly enhances the sensitivity of COHERENT data to
+neutrino EC. This is shown in the lower panels of Fig. 13, where a dramatic improvement of two
+orders or magnitude is gained when including ES events. In the latter case, the constraints are
+completely dominated by ES-induced events in CsI and as a consequence, the combined analysis
+                                                                                                                                                            29
+
+
+      12                                                 12                                                         40
+                                                                                                                                               LAr
+      10         LAr                                     10                                                         30                         CsI
+                 CsI                                                                                                                           CsI+LAr
+      8          CsI+LAr                                  8                                                         20
+
+
+
+
+                                                                                                   qνµµ [10−8 e]
+∆χ2
+
+
+
+
+                                                 ∆χ2
+      6                                                   6                                                         10
+
+      4                                                   4                                                          0
+                                                                                    LAr
+      2                                                   2                         CsI                            −10
+                                                                                    CsI+LAr
+      0                                                   0                                                        −20
+           −20   0     20     40      60                      −20   0    20     40      60                                −20   0      20    40       60    80
+                 qνee [10−8 e]                                      qνµµ [10−8 e]                                                   qνee [10−8 e]
+      12                                                 12                                                        10.0
+                                                                                                                    7.5
+      10                                                 10
+                                                                                                                    5.0
+
+
+
+
+                                                                                                qνµµ [10−10 e]
+      8                                                   8
+                                                                                                                    2.5
+∆χ2
+
+
+
+
+                                                   ∆χ2
+
+
+
+
+      6                                                   6                                                         0.0
+                                                                                                                   −2.5
+      4                                                   4
+                                                                                                                   −5.0
+      2                                                   2
+                                                                                                                   −7.5
+                                  CsI+LAr                                           CsI+LAr                                                          CsI+LAr
+      0                                                   0                                                      −10.0
+       -10 -7.5-5.0-2.5 0 2.5 5 7.5 10                     -10 -7.5-5.0-2.5 0 2.5 5 7.5 10                            -10 -7.5-5.0-2.5 0 2.5 5 7.5 10
+                 qνee [10−10 e]                                     qνµµ [10−10 e]                                                  qνee [10−10 e]
+
+                                                          2
+FIG. 13: Left and middle panels: ∆χ profile for the neutrino electric charges obtained from the
+analysis of CsI (magenta), LAr (orange) and CsI + LAr (blue) data. Right panels: 90% C.L. (2
+dofs) allowed regions for the neutrino electric charges, in units of the elementary charge e. In the
+upper (lower) panels the analysis of CsI data includes only CEνNS (CEνNS+ES) interactions. In
+the lower panels, we do not show LAr contours as the combined analysis is driven by CsI data.
+
+
+is totally driven by CsI data. We find the following 1σ allowed ranges:
+
+                                                    qνee ∈ [−2.6, 2.6] × 10
+                                                                                     −10
+                                                                                           e,
+                                                                                                                                                           (49)
+                                                    qνµµ ∈ [−1.4, 1.4] × 10
+                                                                                     −10
+                                                                                           e.
+
+As in the case of the effective neutrino magnetic moment, the present limits are less severe compared
+to the currently most stringent constraints derived from the analysis of LZ and XENONnT data
+in Ref. [88] by two orders of magnitude (for reactor-based experiments see Ref. [137]).
+
+
+
+                                            4.6.     Conversion to sterile neutrinos
+
+
+                                            1.     Active-to-sterile neutrino oscillations
+
+
+      Neutrino oscillations involving a sterile state may be studied with neutrinos produced at a
+Spallation Neutron Source. Given the small electron neutrino component in the SNS flux, one
+                                                                                                   30
+
+
+                              102
+
+
+
+
+                          ∆m241
+                              101
+
+
+
+                                             LAr
+                                             CsI
+                                            CsI+LAr
+                              100 −1
+                                10                                          100
+                                                        2
+                                                    sin 2θ24
+
+FIG. 14: 90% C.L. (2 d.o.f.) exclusion regions from the analysis of CsI (magenta), LAr (orange)
+                                        2     2
+and CsI + LAr (blue) data, in the (∆m41 , sin 2θ24 ) plane.
+
+
+                                                            2     2
+does not expect any meaningful sensitivity in the (∆m41 , sin 2θ14 ) plane. However, muon neutrino
+oscillations to a sterile state can be constrained with COHERENT data. In Fig. 14 we show the
+90% C.L. (2 d.o.f.) exclusion regions from the analysis of CsI (magenta), LAr (orange) and CsI
++ LAr (blue) data. Our analysis of CsI data includes only CEνNS interactions. Concerning the
+sterile neutrino hypothesis we find a slightly improved fit for the CsI data when compared to the
+SM, while for the case of LAr it leads to a poorer result, very far from the promising prospects for
+this scenario expected from the SBN program or the upcoming reactor SBL experiments [138].
+
+
+
+                                  2.    Active-to-sterile EM interactions
+
+
+   We now consider active-sterile transitions in the presence of a nonzero neutrino transition mag-
+netic moment. The corresponding results are shown in Fig. 15. Given the nuclear recoil and
+neutrino energies typical of the COHERENT experiment, the maximum sensitivity to the sterile
+state mass is about 50 MeV due to kinematics. Similarly to the case of active-active MM, ES events
+contribute sizeably to the CEνNS event rate, and their inclusion in the analysis leads to a slight
+improvement in the resulting constraints, reflected in a small kink around ∼ 2 MeV. From the
+combined analysis of the full COHERENT data, the 90% C.L. contours shown in Fig. 15 exclude
+                                       −8
+values of µνe(µ) as low as 4(3) × 10 µB for m4 ≲ 10 MeV. At this point, we would like to highlight
+the complementarity of the COHERENT measurements with existing CEνNS reactor experiments.
+Although the present results for the case of electron neutrinos are slightly less stringent than those
+obtained from the analysis of Dresden-II data [26], the COHERENT data analyzed here can probe
+larger values of m4 . One should also stress that COHERENT data can be used to probe TMMs
+                                                                                                                        31
+
+
+to sterile neutrinos in the muon sector, unlike reactor-based experiments.
+
+                10−7                                                         10−7
+
+
+
+
+                                                                µνµ [µ B ]
+   µνe [µ B ]
+
+
+
+
+                10−8                                                         10−8
+
+
+                                                 LAr                                                     LAr
+                                                  CsI                                                     CsI
+                                                CsI+LAr                                                 CsI+LAr
+                10−9 1                                                       10−9 1
+                    10   102   103        104   105       106                    10   102   103   104   105       106
+                               m4 [keV]                                                     m4 [keV]
+
+FIG. 15: 90% C.L. (2 d.o.f.) exclusion regions for the neutrino magnetic moments concerning
+active-to-sterile transitions, from the analysis of CsI (magenta), LAr (orange) and CsI + LAr
+(blue) data. The analysis of CsI data includes CEνNS + ES interactions.
+
+
+
+
+                                     5.    SUMMARY AND CONCLUSIONS
+
+
+   In this paper we have analyzed the updated CsI data release from the COHERENT experiment
+and combined this result with the previous LAr dataset. By performing a thorough statistical
+analysis including all systematic errors plus the relevant nuisance parameters associated to signal
+shape uncertainties, we have probed Standard Model parameters such as the weak mixing angle,
+nuclear physics as well as several new physics scenarios. We have shown that the inclusion of the
+recent CsI data significantly improves the CEνNS sensitivity in most of these physics cases.
+
+   In order to compare the various scenarios examined above with respect to SM expectations we
+now give a summary of our results. In this paper we have analyzed the impact of recent CsI+LAr
+COHERENT data on:
+• Standard Model physics (weak mixing angle in Fig. 1 and neutron RMS radii in Fig. 2)
+• flavor-preserving neutrino NSI (Fig. 3 and Fig. 4)
+• co-existence of nonuniversal and flavor-changing neutrino NSI (Fig. 5 and Fig. 6)
+• neutrino generalized interactions (Fig. 7)
+• light mediators (Figures 8 to 10)
+• effective neutrino magnetic moments (Fig. 11)
+• neutrino charge radii (Fig. 12)
+• neutrino millicharges (Fig. 13)
+                                                                                                                      32
+
+
+• oscillations into sterile states (Fig. 14)
+• TMMs to sterile neutrinos (Fig. 15).
+                                        2
+         In Table II we present the χmin values obtained in each physics case, normalized to the total num-
+                                13
+ber of degrees of freedom            . At this point, we would like to remark that both CsI and LAr datasets
+                                                                  2    CsI                 2       LAr
+are in good agreement with the SM expectation, with χ /#dof = 0.849 and χ /#dof = 0.887, which
+implies a preference for the presence of CEνNS as given by the SM over the background hypothesis
+                                                                                                   2     CsI
+of 11.5σ and 3.4σ, respectively (for the background-only hypothesis one finds χ /#dof = 2.19 and
+     2     LAr                                                                                 2       CsI+LAr
+χ /#dof = 0.984). We also find that the combined CsI+LAr analysis leads to χ /#dof                               = 0.870,
+favoring the SM over the background explanation at almost 12σ.
+         Regarding the new physics scenarios considered in this work, for the case of CsI, as well as for
+the combined CsI+LAr analysis, only the addition of a light vector mediator tends to improve the
+fit, while this is not the case for the LAr data alone. In contrast, the presence of a NGI with
+                 q                                                                                       q
+nonzero CS couplings leads to the best fit for the LAr dataset. NGI with nonzero CV as well as a
+light vector mediator with universal couplings also fit well the combined datasets CsI+LAr, slightly
+improving the quality of the fit (by ∼ 1σ) in comparison with the SM. On the other hand, active-
+                                                                                                                       q
+active TMM, sterile conversion through TMM, NSI, as well as the NGI analysis with nonzero CS
+            q
+and CT couplings, all lead to poorer fits than the SM. Finally, a scenario in which muon neutrinos
+oscillate into a light sterile state leads to the worst fit, both analyzing the two datasets separately
+and combined. Indeed, the addition of the new CsI data disfavor the sterile neutrino oscillations
+scenario. All in all, in this paper we have provided a survey of the main physics implications of a
+combined analysis of COHERENT CsI and LAr data.
+
+
+
+                                            ACKNOWLEDGEMENTS
+
+
+         We thank Oscar Sanders for collaborating in the early stages of this project. We are grate-
+ful to Dan Pershey for sharing insightful details about the COHERENT analysis performed in
+Ref. [8]. We also thank Luis Flores and Anirban Majumdar for fruitful discussions. This work
+has been supported by the Spanish grants PID2020-113775GB-I00 (AEI/10.13039/501100011033)
+and CIPROM/2021/054 (Generalitat Valenciana). VDR acknowledges financial support by the
+SEJI/2020/016 grant (Generalitat Valenciana). DKP was supported by the Hellenic Foundation
+for Research and Innovation (H.F.R.I.) under the “3rd Call for H.F.R.I. Research Projects to sup-
+port Post-Doctoral Researchers” (Project Number: 7036). The work of O. G. M. and G. S. G.
+has been supported in part by CONACYT-Mexico under grant A1-S-23238. O. G. M. has been
+supported by SNI (Sistema Nacional de Investigadores, Mexico).
+
+
+13                            CsI+LAr
+     These are calculated as #dof     = #CsI + #LAr − #free pars , where the number of degrees of freedom for CsI data
+     is #CsI = 99 (data bins) −1 (time) = 98, while #LAr = 120.
+                                                                                                                  33
+
+
+                                               weak mixing angle nuclear neutron          MMactive
+                 Scenario          SM                  2
+                                                   (sin θW )       radius (Rn )           (µνe , µνµ )
+                 CsI           83.2 (0.849)        82.8 (0.854)       81.9 (0.845)       83.2 (0.867)
+                 LAr          106.5 (0.887)       105.5 (0.887)       105.5 (0.887)      105.4 (0.893)
+                 CsI+LAr 189.7 (0.870)            189.7 (0.874)            —             189.6 (0.877)
+                                NSI NU              NSI NU             NSI NU             NSI NU
+                 Scenario         dV uV               dV uV              dV dV              uV uV
+                                (ee , ee )        (µµ , µµ )       (ee , µµ )       (ee , µµ )
+                 CsI           82.9 (0.863)        82.9 (0.863)       82.8 (0.863)       82.8 (0.863)
+                 LAr          105.7 (0.896)       105.6 (0.895)       105.5 (0.894)      105.5 (0.894)
+                 CsI+LAr 188.9 (0.874)            188.5 (0.873)       188.9 (0.875)      188.5 (0.872)
+                                NSI FC               NSI FC            NSI FC             NSI FC
+                 Scenario         dV dV               uV uV              dV dV              dV dV
+                                (ee , eµ )        (µµ , eµ )       (ee , eτ )       (µµ , µτ )
+                 CsI           82.9 (0.863)        82.9 (0.863)       82.9 (0.863)       82.9 (0.863)
+                 LAr          105.5 (0.894)       105.5 (0.894)       105.7 (0.896)      105.6 (0.895)
+                 CsI+LAr 189.4 (0.877)            189.1 (0.876)       189.4 (0.877)      189.1 (0.876)
+                                NGI (V)             NGI (S)            NGI (T)
+                 Scenario          q                   q                  q
+                                 (CV )               (CS )              (CT )
+                 CsI           82.8 (0.854)        83.2 (0.858)       83.2 (0.858)            —
+                 LAr          105.5 (0.887)       103.2 (0.867)       104.6 (0.879)           —
+                 CsI+LAr 188.6 (0.869)            189.7 (0.874)       189.7 (0.874)           —
+                              NGI (V-T)           NGI (V-S)           NGI (S-T)
+                 Scenario        q    q              q    q              q    q
+                               (CV , CT )          (CV , CS )          (CS , CT )
+                 CsI           82.8 (0.863)        82.9 (0.863)       83.2 (0.867)            —
+                 LAr          103.3 (0.875)       102.6 (0.870)       103.2 (0.874)           —
+                 CsI+LAr 188.6 (0.873)            188.6 (0.873)       189.7 (0.878)           —
+                             LV universal           LV B-L                LS                 LT
+                 Scenario
+                               (mV , gV )           (mV , gV )          (mS , gS )         (mT , gT )
+                 CsI           81.4 (0.848)        83.2 (0.867)       83.2 (0.867)       83.2 (0.867)
+                 LAr          105.6 (0.895)       105.5 (0.894)       102.9 (0.872)      104.6 (0.887)
+                 CsI+LAr 187.8 (0.869)            189.6 (0.878)       189.4 (0.877)      189.5 (0.877)
+                              millicharge        charge radius        TMMsterile         Sterile Osc.
+                 Scenario                           2        2                     a       2         2
+                              (qνee , qνµµ )     (⟨rνee ⟩, ⟨rνµµ ⟩)    (m4 , µνµ )     (sin 2θ24 , ∆m42 )
+                 CsI           83.2 (0.867)        82.8 (0.863)       83.2 (0.867)       82.1 (0.855)
+                 LAr          106.4 (0.902)       105.5 (0.894)       105.1 (0.891)      106.5 (0.902)
+                 CsI+LAr 189.7 (0.878)            188.4 (0.872)       189.5 (0.877)      188.6 (0.881)
+
+    For the active-sterile TMM case, we show only the limits coming out from the (m4 , µνµ ) analysis since we have
+a
+
+    verified that the case of (m4 , µνe ) leads to approximately the same result.
+
+                 2
+TABLE II: χmin values for the various physics scenarios analyzed in the present work, in
+parenthesis normalized to #dof in each case.
+                                                                                                   34
+
+
+                        Appendix A: Details of the CsI signal simulation
+
+
+   In this Appendix we provide some further details regarding the analysis of COHERENT-CsI
+data. First, in Fig. 16 we present the efficiency as a function of the reconstructed PE, where
+the width of the curve illustrates the ±1σ uncertainty given in Ref. [8]. We also show that ±1PE
+variations of the reconstructed photoelectron have an effect equivalent with varying the parameters
+a, b, c, d entering Eq. (30) within ±1σ.
+
+
+
+
+                                       1.0
+
+
+                                       0.8
+                          efficiency
+
+
+
+
+                                       0.6
+
+
+                                       0.4
+
+                                                                  nominal
+                                       0.2
+                                                                  nominal + 1PE
+                                                                  nominal - 1PE
+                                       0.0
+                                          0   5   10   15   20   25   30    35    40
+                                                            PE
+
+FIG. 16: COHERENT-CsI efficiency as a function of PE along with its 1σ uncertainty.
+
+
+
+
+   In Fig. 17 we present the scintillation response curve Eer as a function of the true nuclear recoil
+         ′
+energy Enr (see Sec. 3.1) using the best fit coefficients xi provided in the supplemental material
+of Ref. [8] for the two QF models reported by COHERENT Collaboration. The width of the
+curve indicates the ±1σ uncertainty which is obtained by varying the coefficients xi within their
+±1σ uncertainties. As can be seen, the variation of the individual xi coefficients is expected to
+have a rather small effect on the shape uncertainty of the CEνNS event rate. Thus, in order to
+reduce computational time in our analysis we assigned a flat 3.8% uncertainty to the CEνNS nor-
+malization (through the nuisance α5 ) [8]. We finally compare our theoretical calculation of the
+event spectra with the experimental data from the COHERENT-CsI measurement in Fig. 18. Also
+superimposed is the best fit of the predicted event spectra from where one can notice the effect
+of timing and threshold uncertainties taken into account in the present work (compare cyan and
+orange histograms).
+                                                                                                                                                                                                                                     35
+
+
+                5                                                                                                                                5
+                           nominal                                                                                                                            nominal
+                           QF0 : max                                                                                                                          QF1 : max
+                4          QF0 : min                                                                                                             4            QF1 : min
+
+
+                3                                                                                                                                3
+       0 )
+
+
+
+
+                                                                                                                                           0 )
+Eer ( Enr
+
+
+
+
+                                                                                                                                    Eer ( Enr
+                2                                                                                                                                2
+
+
+                1                                                                                                                                1
+
+
+                0                                                                                                                                0
+                 0         10                         20         30                   40              50                                          0          10                    20            30                     40         50
+                                                       0 [keV]
+                                                      Enr                                                                                                                          0 [keV]
+                                                                                                                                                                                  Enr
+
+FIG. 17: COHERENT-CsI scintillation curve as function of the true nuclear recoil energy for the
+two QF models reported by COHERENT [8].
+
+
+            trec: [0.0, 0.125]µs                  trec: [0.125, 0.25]µs               trec: [0.25, 0.375]µs                    trec: [0.375, 0.5]µs                     trec: [0.5, 0.625]µs                 trec: [0.625, 0.75]µs
+                                                                                                                                                                        4
+            2                                                                                                                                                                                                4
+                                            1.0
+                                                                                      2
+Counts/PE
+
+
+
+
+                                Counts/PE
+
+
+
+
+                                                                          Counts/PE
+
+
+
+
+                                                                                                                   Counts/PE
+
+
+
+
+                                                                                                                                                            Counts/PE
+
+
+
+
+                                                                                                                                                                                                 Counts/PE
+                                                                                                                               2
+            1                                                                                                                                                           2                                    2
+                                            0.5                                       1
+
+            00       20 40 60 0.00                         20 40 60                   00      20 40 60                         00        20 40 60                       00      20 40 60                     00     20 40 60
+                      PE                                    PE                                    PE                                       PE                                       PE                                   PE
+            trec: [0.75, 0.875]µs                 trec: [0.875, 1.0]µs                    trec: [1.0, 2.0]µs                       trec: [2.0, 4.0]µs                       trec: [4.0, 6.0]µs
+
+                                                                                                                                                                                                                  CEνNS-prediction
+Counts/PE
+
+
+
+
+                                      Counts/PE
+
+
+
+
+                                                                      Counts/PE
+
+
+
+
+                                                                                                               Counts/PE
+
+
+
+
+                                                                                                                                                        Counts/PE
+
+
+
+
+            2                                     2                               10                                                                                10
+                                                                                                                                                                                                                  CEνNS-best fit
+                                                                                                                           10
+                                                                                                                                                                                                                  BRN+NIN
+                                                                                      5                                                                                 5                                         SSB
+                                                                                                                                                                                                                  Data
+            00       20 40 60                     00       20 40 60                   00      20 40 60                         00        20 40 60                       00      20 40 60
+                      PE                                    PE                                   PE                                              PE                                PE
+
+
+FIG. 18: Simulation of the event spectra at COHERENT-CsI along with the experimental data
+of COHERENT-CsI measurement [8] (in agreement with [108]).
+
+
+
+
+        [1] T. Kajita, “Nobel Lecture: Discovery of atmospheric neutrino oscillations,” Rev.Mod.Phys. 88
+                    (2016) 030501.
+        [2] A. B. McDonald, “Nobel Lecture: The Sudbury Neutrino Observatory: Observation of flavor change
+                    for solar neutrinos,” Rev.Mod.Phys. 88 (2016) 030502.
+        [3] J. Schechter and J. Valle, “Neutrino Masses in SU(2) x U(1) Theories,” Phys.Rev.D 22 (1980) 2227.
+                                                                                                        36
+
+
+ [4] J. Valle, “Resonant Oscillations of Massless Neutrinos in Matter,” Phys.Lett.B 199 (1987) 432–436.
+ [5] M. Abdullah et al., “Coherent elastic neutrino-nucleus scattering: Terrestrial and astrophysical
+    applications,” 3, 2022. arXiv:2203.07361 [hep-ph].
+ [6] D. Z. Freedman, “Coherent Neutrino Nucleus Scattering as a Probe of the Weak Neutral Current,”
+    Phys. Rev. D9 (1974) 1389–1392.
+ [7] COHERENT Collaboration, D. Akimov et al., “Observation of Coherent Elastic Neutrino-Nucleus
+    Scattering,” Science 357 (2017) 1123–1126, arXiv:1708.01294 [nucl-ex].
+ [8] COHERENT Collaboration, D. Akimov et al., “Measurement of the Coherent Elastic
+    Neutrino-Nucleus Scattering Cross Section on CsI by COHERENT,” Phys.Rev.Lett. 129 no. 8,
+    (2022) 081801, arXiv:2110.07730 [hep-ex].
+ [9] COHERENT Collaboration, D. Akimov et al., “First Measurement of Coherent Elastic
+    Neutrino-Nucleus Scattering on Argon,” Phys.Rev.Lett. 126 (2021) 012002, arXiv:2003.10630
+    [nucl-ex].
+[10] J. Colaresi, J. Collar, T. Hossbach, C. Lewis, and K. Yocum, “Measurement of Coherent Elastic
+    Neutrino-Nucleus Scattering from Reactor Antineutrinos,” Phys.Rev.Lett. 129 no. 21, (2022) 211802,
+    arXiv:2202.09672 [hep-ex].
+[11] CONNIE Collaboration, A. Aguilar-Arevalo et al., “Search for coherent elastic neutrino-nucleus
+    scattering at a nuclear reactor with CONNIE 2019 data,” JHEP 05 (2022) 017, arXiv:2110.13033
+    [hep-ex].
+[12] CONUS Collaboration, H. Bonet et al., “Novel constraints on neutrino physics beyond the
+    standard model from the CONUS experiment,” JHEP 05 (2022) 085, arXiv:2110.02174 [hep-ph].
+[13] νGeN Collaboration, I. Alekseev et al., “First results of the ¡math
+    display=”inline”¿¡mrow¿¡mi¿ν¡/mi¿¡mi¿GeN¡/mi¿¡/mrow¿¡/math¿ experiment on coherent elastic
+    neutrino-nucleus scattering,” Phys.Rev.D 106 no. 5, (2022) L051101, arXiv:2205.04305 [nucl-ex].
+[14] MINER Collaboration, G. Agnolet et al., “Background Studies for the MINER Coherent Neutrino
+    Scattering Reactor Experiment,” Nucl.Instrum.Meth.A 853 (2017) 53–60, arXiv:1609.02066
+    [physics.ins-det].
+[15] J. Billard et al., “Coherent Neutrino Scattering with Low Temperature Bolometers at Chooz Reactor
+    Complex,” J.Phys.G 44 (2017) 105101, arXiv:1612.09035 [physics.ins-det].
+[16] R. Strauss et al., “The ν-cleus experiment: A gram-scale fiducial-volume cryogenic detector for the
+    first detection of coherent neutrino-nucleus scattering,” Eur.Phys.J.C 77 (2017) 506,
+    arXiv:1704.04320 [physics.ins-det].
+[17] H. T.-K. Wong, “Taiwan EXperiment On NeutrinO — History and Prospects,” The Universe 3
+    no. 4, (2015) 22–37, arXiv:1608.00306 [hep-ex].
+[18] G. Fernandez-Moroni et al., “The physics potential of a reactor neutrino experiment with Skipper
+    CCDs: Measuring the weak mixing angle,” JHEP 03 (2021) 186, arXiv:2009.10741 [hep-ph].
+[19] SBC, CEνNS Theory Group at IF-UNAM Collaboration, L. Flores et al., “Physics reach of a
+    low threshold scintillating argon bubble chamber in coherent elastic neutrino-nucleus scattering
+    reactor experiments,” Phys.Rev.D 103 no. 9, (2021) L091301, arXiv:2101.08785 [hep-ex].
+[20] D. Baxter et al., “Coherent Elastic Neutrino-Nucleus Scattering at the European Spallation Source,”
+    JHEP 02 (2020) 123, arXiv:1911.00762 [physics.ins-det].
+[21] CCM Collaboration, A. Aguilar-Arevalo et al., “First dark matter search results from Coherent
+    CAPTAIN-Mills,” Phys.Rev.D 106 no. 1, (2022) 012001, arXiv:2105.14020 [hep-ex].
+                                                                                                         37
+
+
+[22] νBDX-DRIFT Collaboration, D. Aristizabal Sierra et al., “Rock neutron backgrounds from FNAL
+     neutrino beamlines in the ¡math display=”inline”¿¡mrow¿¡mi¿ν¡/mi¿¡mi¿BDX¡/mi¿¡mtext¿-
+     ¡/mtext¿¡mi¿DRIFT¡/mi¿¡/mrow¿¡/math¿ detector,” Phys.Rev.D 107 no. 1, (2023) 013003,
+     arXiv:2210.08612 [hep-ex].
+[23] COHERENT Collaboration, D. Akimov et al., “COHERENT Collaboration data release from the
+     first detection of coherent elastic neutrino-nucleus scattering on argon,” arXiv:2006.12659
+     [nucl-ex].
+[24] M. Cadeddu et al., “New insights into nuclear physics and weak mixing angle using electroweak
+     probes,” Phys.Rev.C 104 no. 6, (2021) 065502, arXiv:2102.06153 [hep-ph].
+[25] A. Majumdar, D. K. Papoulias, R. Srivastava, and J. W. Valle, “Physics implications of recent
+     Dresden-II reactor data,” Phys.Rev.D 106 no. 9, (2022) 093010, arXiv:2208.13262 [hep-ph].
+[26] D. Aristizabal Sierra, V. De Romeri, and D. Papoulias, “Consequences of the Dresden-II reactor data
+     for the weak mixing angle and new physics,” JHEP 09 (2022) 076, arXiv:2203.02414 [hep-ph].
+[27] D. Papoulias, T. Kosmas, R. Sahu, V. Kota, and M. Hota, “Constraining nuclear physics parameters
+     with current and future COHERENT data,” Phys.Lett.B 800 (2020) 135133, arXiv:1903.03722
+     [hep-ph].
+[28] P. Coloma, I. Esteban, M. Gonzalez-Garcia, and J. Menendez, “Determining the nuclear neutron
+     distribution from Coherent Elastic neutrino-Nucleus Scattering: current results and future
+     prospects,” JHEP 08 no. 08, (2020) 030, arXiv:2006.08624 [hep-ph].
+[29] T. Ohlsson, “Status of non-standard neutrino interactions,” Rept. Prog. Phys. 76 (2013) 044201,
+     arXiv:1209.2710 [hep-ph].
+[30] O. Miranda and H. Nunokawa, “Non standard neutrino interactions: current status and future
+     prospects,” New J.Phys. 17 (2015) 095002, arXiv:1505.06254 [hep-ph].
+[31] Y. Farzan and M. Tortola, “Neutrino oscillations and Non-Standard Interactions,” Front.in Phys. 6
+     (2018) 10, arXiv:1710.09360 [hep-ph].
+[32] P. B. Denton and J. Gehrlein, “A Statistical Analysis of the COHERENT Data and Applications to
+     New Physics,” JHEP 04 (2021) 266, arXiv:2008.06062 [hep-ph].
+[33] C. Giunti, “General COHERENT constraints on neutrino nonstandard interactions,” Phys.Rev.D
+     101 no. 3, (2020) 035039, arXiv:1909.00466 [hep-ph].
+[34] T. Lee and C.-N. Yang, “Question of Parity Conservation in Weak Interactions,” Phys.Rev. 104
+     (1956) 254–258.
+[35] M. Lindner, W. Rodejohann, and X.-J. Xu, “Coherent Neutrino-Nucleus Scattering and new
+     Neutrino Interactions,” JHEP 03 (2017) 097, arXiv:1612.04150 [hep-ph].
+[36] D. Aristizabal Sierra, V. De Romeri, and N. Rojas, “COHERENT analysis of neutrino generalized
+     interactions,” Phys.Rev.D 98 (2018) 075018, arXiv:1806.07424 [hep-ph].
+[37] L. Flores, N. Nath, and E. Peinado, “CEνNS as a probe of flavored generalized neutrino
+     interactions,” Phys.Rev.D 105 no. 5, (2022) 055010, arXiv:2112.05103 [hep-ph].
+[38] M. Abdullah et al., “Coherent elastic neutrino nucleus scattering as a probe of a Z’ through kinetic
+     and mass mixing effects,” Phys.Rev.D 98 (2018) 015005, arXiv:1803.01224 [hep-ph].
+[39] D. Aristizabal Sierra, B. Dutta, S. Liao, and L. E. Strigari, “Coherent elastic neutrino-nucleus
+     scattering in multi-ton scale dark matter experiments: Classification of vector and scalar interactions
+     new physics signals,” JHEP 12 (2019) 124, arXiv:1910.12437 [hep-ph].
+[40] L. Flores, N. Nath, and E. Peinado, “Non-standard neutrino interactions in U(1)’ model after
+                                                                                                         38
+
+
+    COHERENT data,” JHEP 06 (2020) 045, arXiv:2002.12342 [hep-ph].
+[41] M. Cadeddu et al., “Constraints on light vector mediators through coherent elastic neutrino nucleus
+    scattering data from COHERENT,” JHEP 01 (2021) 116, arXiv:2008.05022 [hep-ph].
+[42] D. P. Amaral, D. Cerdeno, A. Cheek, and P. Foldenauer, “Confirming U (1)Lµ −Lτ as a solution for
+    (g − 2)µ with neutrinos,” Eur.Phys.J.C 81 no. 10, (2021) 861, arXiv:2104.03297 [hep-ph].
+[43] M. Atzori Corona, M. Cadeddu, N. Cargioli, F. Dordei, C. Giunti, Y. F. Li, E. Picciau, C. A. Ternes,
+    and Y. Y. Zhang, “Probing light mediators and (g − 2) through detection of coherent elastic
+    neutrino nucleus scattering at COHERENT,” JHEP 05 (2022) 109, arXiv:2202.11002 [hep-ph].
+[44] D. Aristizabal Sierra, V. De Romeri, and N. Rojas, “CP violating effects in coherent elastic
+    neutrino-nucleus scattering processes,” JHEP 1909 (2019) 069, arXiv:1906.01156 [hep-ph].
+[45] J. Schechter and J. Valle, “Majorana Neutrinos and Magnetic Fields,” Phys.Rev. D24 (1981)
+    1883–1889.
+[46] P. B. Pal and L. Wolfenstein, “Radiative Decays of Massive Neutrinos,” Phys.Rev.D 25 (1982) 766.
+[47] B. Kayser, “Majorana Neutrinos and their Electromagnetic Properties,” Phys.Rev.D 26 (1982) 1662.
+[48] J. F. Nieves, “Electromagnetic Properties of Majorana Neutrinos,” Phys.Rev.D 26 (1982) 3152.
+[49] R. E. Shrock, “Electromagnetic Properties and Decays of Dirac and Majorana Neutrinos in a
+    General Class of Gauge Theories,” Nucl.Phys.B 206 (1982) 359–379.
+[50] T. Kosmas, O. Miranda, D. Papoulias, M. Tortola, and J. Valle, “Probing neutrino magnetic
+    moments at the Spallation Neutron Source facility,” Phys.Rev. D92 (2015) 013011,
+    arXiv:1505.03202 [hep-ph].
+[51] B. Canas, O. Miranda, A. Parada, M. Tortola, and J. W. Valle, “Updating neutrino magnetic
+    moment constraints,” Phys.Lett. B753 (2016) 191–198, arXiv:1510.01684 [hep-ph].
+[52] O. Miranda, D. Papoulias, M. Tórtola, and J. Valle, “Probing neutrino transition magnetic moments
+    with coherent elastic neutrino-nucleus scattering,” JHEP 1907 (2019) 103, arXiv:1905.03750
+    [hep-ph].
+[53] O. Miranda, D. Papoulias, M. Tórtola, and J. Valle, “XENON1T signal from transition neutrino
+    magnetic moments,” Phys.Lett. B808 (2020) 135685, arXiv:2007.01765 [hep-ph].
+[54] M. Hirsch, E. Nardi, and D. Restrepo, “Bounds on the tau and muon neutrino vector and axial
+    vector charge radius,” Phys.Rev.D 67 (2003) 033005, arXiv:hep-ph/0210137 [hep-ph].
+[55] J. Bernabeu, J. Papavassiliou, and J. Vidal, “The Neutrino charge radius is a physical observable,”
+    Nucl.Phys.B 680 (2004) 450–478, arXiv:hep-ph/0210055 [hep-ph].
+[56] K. Babu and R. Mohapatra, “Is There a Connection Between Quantization of Electric Charge and a
+    Majorana Neutrino?,” Phys.Rev.Lett. 63 (1989) 938.
+[57] T. Kosmas, D. Papoulias, M. Tortola, and J. Valle, “Probing light sterile neutrino signatures at
+    reactor and Spallation Neutron Source neutrino experiments,” Phys.Rev. D96 (2017) 063013,
+    arXiv:1703.00054 [hep-ph].
+[58] C. Blanco, D. Hooper, and P. Machado, “Constraining Sterile Neutrino Interpretations of the LSND
+    and MiniBooNE Anomalies with Coherent Neutrino Scattering Experiments,” Phys.Rev. D101
+    (2020) 075051, arXiv:1901.08094 [hep-ph].
+[59] O. Miranda, D. Papoulias, O. Sanders, M. Tórtola, and J. Valle, “Future CEvNS experiments as
+    probes of lepton unitarity and light-sterile neutrinos,” Phys.Rev. D102 (2020) 113014,
+    arXiv:2008.02759 [hep-ph].
+[60] O. Miranda, D. Papoulias, O. Sanders, M. Tórtola, and J. F. Valle, “Low-energy probes of sterile
+                                                                                                           39
+
+
+    neutrino transition magnetic moments,” JHEP 12 (2021) 191, arXiv:2109.09545 [hep-ph].
+[61] P. D. Bolton et al., “Probing active-sterile neutrino transition magnetic moments with photon
+    emission from ¡math display=”inline”¿¡mrow¿¡mi¿CE¡/mi¿¡mi¿ν¡/mi¿¡mi¿NS¡/mi¿¡/mrow¿¡/math¿,”
+    Phys.Rev.D 106 (2022) 035036, arXiv:2110.02233 [hep-ph].
+[62] D. Aristizabal Sierra, O. Miranda, D. Papoulias, and G. S. Garcia, “Neutrino magnetic and electric
+    dipole moments: From measurements to parameter space,” Phys.Rev.D 105 (2022) 035027,
+    arXiv:2112.12817 [hep-ph].
+[63] M. Atzori Corona et al., “Impact of the Dresden-II and COHERENT neutrino scattering data on
+    neutrino electromagnetic properties and electroweak physics,” JHEP 09 (2022) 164,
+    arXiv:2205.09484 [hep-ph].
+[64] P. Coloma et al., “Bounds on new physics with data of the Dresden-II reactor experiment and
+    COHERENT,” JHEP 05 (2022) 037, arXiv:2202.10829 [hep-ph].
+[65] A. N. Khan, “Neutrino millicharge and other electromagnetic interactions with COHERENT-2021
+    data,” Nucl.Phys.B 986 (2023) 116064, arXiv:2201.10578 [hep-ph].
+[66] A. N. Khan, “Extra dimensions with light and heavy neutral leptons: an application to CEνNS,”
+    JHEP 01 (2023) 052, arXiv:2208.09584 [hep-ph].
+[67] O. Tomalak, P. Machado, V. Pandey, and R. Plestid, “Flavor-dependent radiative corrections in
+    coherent elastic neutrino-nucleus scattering,” JHEP 02 (2021) 097, arXiv:2011.05960 [hep-ph].
+[68] Particle Data Group Collaboration, P. Zyla et al., “Review of Particle Physics,” PTEP 2020
+    (2020) 083C01.
+[69] S. Klein and J. Nystrand, “Exclusive vector meson production in relativistic heavy ion collisions,”
+    Phys.Rev. C60 (1999) 014903.
+[70] R. Sahu, D. Papoulias, V. Kota, and T. Kosmas, “Elastic and inelastic scattering of neutrinos and
+    weakly interacting massive particles on nuclei,” Phys.Rev. C102 (2020) 035501, arXiv:2004.04055
+    [nucl-th].
+[71] M. Hoferichter, J. Menéndez, and A. Schwenk, “Coherent elastic neutrino-nucleus scattering: EFT
+    analysis and nuclear responses,” Phys.Rev.D 102 (2020) 074018, arXiv:2007.08529 [hep-ph].
+[72] A. Thompson et al., X-ray data booklet, 2009. https://xdb.lbl.gov/.
+[73] S. M. Boucenna, S. Morisi, and J. W. Valle, “The low-scale approach to neutrino masses,” Adv.High
+    Energy Phys. 2014 (2014) 831598, arXiv:1404.3751 [hep-ph].
+[74] D. G. Cerdeño, M. Fairbairn, T. Jubb, P. A. N. Machado, A. C. Vincent, and C. Bœhm, “Physics
+    from solar neutrinos in dark matter direct detection experiments,” JHEP 1605 (2016) 118,
+    arXiv:1604.01025 [hep-ph].
+[75] E. Bertuzzo, F. F. Deppisch, S. Kulkarni, Y. F. Perez Gonzalez, and R. Zukanovich Funchal, “Dark
+    Matter and Exotic Neutrino Interactions in Direct Detection Searches,” JHEP 1704 (2017) 073,
+    arXiv:1701.07443 [hep-ph].
+[76] Y. Farzan, M. Lindner, W. Rodejohann, and X.-J. Xu, “Probing neutrino coupling to a light scalar
+    with coherent neutrino scattering,” JHEP 1805 (2018) 066, arXiv:1802.05171 [hep-ph].
+[77] O. Miranda, D. Papoulias, M. Tórtola, and J. Valle, “Probing new neutral gauge bosons with
+    CEνN S and neutrino-electron scattering,” Phys.Rev. D101 (2020) 073005, arXiv:2002.01482
+    [hep-ph].
+[78] J. Barranco, O. Miranda, and T. Rashba, “Probing new physics with coherent neutrino scattering off
+    nuclei,” JHEP 0512 (2005) 021.
+                                                                                                        40
+
+
+[79] D. Aristizabal Sierra, J. Liao, and D. Marfatia, “Impact of form factor uncertainties on
+    interpretations of coherent elastic neutrino-nucleus scattering data,” JHEP 1906 (2019) 141,
+    arXiv:1902.07398 [hep-ph].
+[80] M. Cirelli, E. Del Nobile, and P. Panci, “Tools for model-independent bounds in direct dark matter
+    searches,” JCAP 10 (2013) 019, arXiv:1307.5955 [hep-ph].
+[81] P. B. Denton and J. Gehrlein, “New constraints on the dark side of non-standard interactions from
+    reactor neutrino scattering data,” Phys.Rev.D 106 (2022) 015022, arXiv:2204.09060 [hep-ph].
+                                            ′
+[82] P. Langacker, “The Physics of Heavy Z Gauge Bosons,” Rev.Mod.Phys. 81 (2009) 1199–1228,
+    arXiv:0801.1345 [hep-ph].
+[83] J. Billard, J. Johnston, and B. J. Kavanagh, “Prospects for exploring New Physics in Coherent
+    Elastic Neutrino-Nucleus Scattering,” JCAP 1811 (2018) 016, arXiv:1805.01798 [hep-ph].
+                  ′
+[84] S. Okada, “Z Portal Dark Matter in the Minimal B − L Model,” Adv.High Energy Phys. 2018
+    (2018) 5340935, arXiv:1803.06793 [hep-ph].
+[85] C. Bonilla, T. Modak, R. Srivastava, and J. W. F. Valle, “U (1)B3 −3Lµ gauge symmetry as a simple
+    description of b → s anomalies,” Phys.Rev.D 98 (2018) 095002, arXiv:1705.00915 [hep-ph].
+                                                                             ′
+[86] B. Allanach, J. Butterworth, and T. Corbett, “Collider constraints on Z models for neutral current
+    B-anomalies,” JHEP 08 (2019) 106, arXiv:1904.10954 [hep-ph].
+[87] A. Majumdar, D. Papoulias, and R. Srivastava, “Dark matter detectors as a novel probe for light
+    new physics,” Phys.Rev.D 106 (2022) 013001, arXiv:2112.03309 [hep-ph].
+[88] S. K. A., A. Majumdar, D. K. Papoulias, H. Prajapati, and R. Srivastava, “Implications of first LZ
+    and XENONnT results: A comparative study of neutrino properties and light mediators,”
+    arXiv:2208.06415 [hep-ph].
+[89] J. M. Link and X.-J. Xu, “Searching for BSM neutrino interactions in dark matter detectors,” JHEP
+    1908 (2019) 004, arXiv:1903.09891 [hep-ph].
+[90] C. Giunti and A. Studenikin, “Neutrino electromagnetic interactions: a window to new physics,”
+    Rev.Mod.Phys. 87 (2015) 531, arXiv:1403.6344 [hep-ph].
+[91] W. Grimus and T. Schwetz, “Elastic neutrino electron scattering of solar neutrinos and potential
+    effects of magnetic and electric dipole moments,” Nucl.Phys.B 587 (2000) 45–66,
+    arXiv:hep-ph/0006028 [hep-ph].
+[92] P. Vogel and J. Engel, “Neutrino Electromagnetic Form-Factors,” Phys.Rev. D39 (1989) 3378.
+[93] K. A. Kouzakov and A. I. Studenikin, “Electromagnetic properties of massive neutrinos in low-energy
+    elastic neutrino-electron scattering,” Phys.Rev.D 95 (2017) 055013, arXiv:1703.00401 [hep-ph].
+[94] M. Cadeddu, C. Giunti, K. Kouzakov, Y. Li, A. Studenikin, and Y. Zhang, “Neutrino Charge Radii
+    from COHERENT Elastic Neutrino-Nucleus Scattering,” Phys.Rev. D98 (2018) 113010,
+    arXiv:1810.05606 [hep-ph].
+[95] D. McKeen and M. Pospelov, “Muon Capture Constraints on Sterile Neutrino Properties,”
+    Phys.Rev. D82 (2010) 113018, arXiv:1011.3046 [hep-ph].
+[96] O. Miranda, D. Papoulias, G. Sanchez Garcia, O. Sanders, M. Tórtola, and J. Valle, “Implications of
+    the first detection of coherent elastic neutrino-nucleus scattering (CEvNS) with Liquid Argon,”
+    JHEP 2005 (2020) 130, arXiv:2003.12050 [hep-ph].
+[97] D. Papoulias and T. Kosmas, “COHERENT constraints to conventional and exotic neutrino
+    physics,” Phys.Rev.D 97 (2018) 033003, arXiv:1711.09773 [hep-ph].
+[98] D. K. Papoulias, “COHERENT constraints after the COHERENT-2020 quenching factor
+                                                                                                       41
+
+
+      measurement,” Phys.Rev. D102 (2020) 113004, arXiv:1907.11644 [hep-ph].
+ [99] E. Picciau, W. M. Bonivento, and M. Cadeddu, Low-energy signatures in DarkSide-50 experiment
+      and neutrino scattering processes. PhD thesis, 2022.
+[100] J. Erler and M. J. Ramsey-Musolf, “The Weak mixing angle at low energies,” Phys.Rev.D 72 (2005)
+      073003, arXiv:hep-ph/0409169 [hep-ph].
+[101] C. Wood et al., “Measurement of parity nonconservation and an anapole moment in cesium,”
+      Science 275 (1997) 1759–1763.
+[102] A. Derevianko, V. Dzuba, V. Flambaum, and M. Pospelov, “Axio-electric effect,” Phys.Rev.D 82
+      (2010) 065006, arXiv:1007.1833 [hep-ph].
+[103] Qweak Collaboration, D. Androić et al., “Precision measurement of the weak charge of the proton,”
+      Nature 557 no. 7704, (2018) 207–211, arXiv:1905.08283 [nucl-ex].
+[104] SLAC E158 Collaboration, P. Anthony et al., “Precision measurement of the weak mixing angle in
+      Moller scattering,” Phys.Rev.Lett. 95 (2005) 081601, arXiv:hep-ex/0504049 [hep-ex].
+[105] PVDIS Collaboration, D. Wang et al., “Measurement of parity violation in electron–quark
+      scattering,” Nature 506 no. 7486, (2014) 67–70.
+[106] NuTeV Collaboration, G. Zeller et al., “A Precise Determination of Electroweak Parameters in
+      Neutrino Nucleon Scattering,” Phys.Rev.Lett. 88 (2002) 091802, arXiv:hep-ex/0110059 [hep-ex].
+      [Erratum: Phys.Rev.Lett. 90, 239902 (2003)].
+[107] M. Cadeddu, F. Dordei, C. Giunti, Y. Li, E. Picciau, and Y. Zhang, “Physics results from the first
+      COHERENT observation of coherent elastic neutrino-nucleus scattering in argon and their
+      combination with cesium-iodide data,” Phys.Rev. D102 (2020) 015030, arXiv:2005.01645
+      [hep-ph].
+[108] D. Pershey, talk at Magnificent CEvNS, 2020.
+      https://indico.cern.ch/event/943069/contributions/4066386/.
+[109] G. Sinev, Constraining Non-Standard Neutrino Interactions and Estimating Future
+      Neutrino-Magnetic-Moment Sensitivity With COHERENT. PhD thesis, 2020.
+[110] CONNIE Collaboration, A. Aguilar-Arevalo et al., “Search for light mediators in the low-energy
+      data of the CONNIE reactor neutrino experiment,” JHEP 04 (2020) 054, arXiv:1910.04951
+      [hep-ex].
+[111] (XENON Collaboration)††, XENON Collaboration, E. Aprile et al., “Search for New Physics
+      in Electronic Recoil Data from XENONnT,” Phys.Rev.Lett. 129 (2022) 161805, arXiv:2207.11330
+      [hep-ex].
+[112] LZ Collaboration, J. Aalbers et al., “First Dark Matter Search Results from the LUX-ZEPLIN (LZ)
+      Experiment,” arXiv:2207.03764 [hep-ex].
+[113] P. Coloma et al., “Constraining new physics with Borexino Phase-II spectral data,” JHEP 07 (2022)
+      138, arXiv:2204.03011 [hep-ph].
+                                                                            + −
+[114] BaBar Collaboration, J. P. Lees et al., “Search for a Dark Photon in e e Collisions at BaBar,”
+      Phys. Rev. Lett. 113 no. 20, (2014) 201801, arXiv:1406.2980 [hep-ex].
+[115] LHCb Collaboration, R. Aaij et al., “Search for Dark Photons Produced in 13 TeV pp Collisions,”
+      Phys. Rev. Lett. 120 no. 6, (2018) 061801, arXiv:1710.02867 [hep-ex].
+                                                                                  0
+[116] NA48/2 Collaboration, J. R. Batley et al., “Search for the dark photon in π decays,” Phys. Lett. B
+      746 (2015) 178–185, arXiv:1504.00607 [hep-ex].
+[117] M. Bauer, P. Foldenauer, and J. Jaeckel, “Hunting All the Hidden Photons,” JHEP 07 (2018) 094,
+                                                                                                        42
+
+
+     arXiv:1803.05466 [hep-ph].
+[118] E. Riordan et al., “A Search for Short Lived Axions in an Electron Beam Dump Experiment,”
+     Phys.Rev.Lett. 59 (1987) 755.
+[119] J. D. Bjorken, R. Essig, P. Schuster, and N. Toro, “New Fixed-Target Experiments to Search for
+     Dark Gauge Forces,” Phys.Rev.D 80 (2009) 075018, arXiv:0906.0580 [hep-ph].
+[120] J. Bjorken et al., “Search for Neutral Metastable Penetrating Particles Produced in the SLAC Beam
+     Dump,” Phys.Rev.D 38 (1988) 3375.
+[121] A. Bross et al., “A Search for Shortlived Particles Produced in an Electron Beam Dump,”
+     Phys.Rev.Lett. 67 (1991) 2942–2945.
+[122] A. Konaka et al., “Search for Neutral Particles in Electron Beam Dump Experiment,” vol. 57,
+     p. 659. 1986.
+[123] S. Andreas, C. Niebuhr, and A. Ringwald, “New Limits on Hidden Photons from Past Electron
+     Beam Dumps,” Phys.Rev.D 86 (2012) 095019, arXiv:1209.6083 [hep-ph].
+[124] J. Blumlein and J. Brunner, “New Exclusion Limits for Dark Gauge Forces from Beam-Dump
+     Data,” Phys.Lett.B 701 (2011) 155–159, arXiv:1104.2747 [hep-ex].
+[125] J. Blümlein and J. Brunner, “New Exclusion Limits on Dark Gauge Forces from Proton
+     Bremsstrahlung in Beam-Dump Data,” Phys.Lett.B 731 (2014) 320–326, arXiv:1311.3870
+     [hep-ph].
+[126] CHARM Collaboration, F. Bergsma et al., “Search for Axion Like Particle Production in 400-GeV
+     Proton - Copper Interactions,” Phys.Lett.B 157 (1985) 458–462.
+[127] S. Gninenko, “Constraints on sub-GeV hidden sector gauge bosons from a search for heavy neutrino
+     decays,” Phys.Lett.B 713 (2012) 244–248, arXiv:1204.3583 [hep-ph].
+[128] NOMAD Collaboration, P. Astier et al., “Search for heavy neutrinos mixing with tau neutrinos,”
+     Phys.Lett.B 506 (2001) 27–38, arXiv:hep-ex/0101041 [hep-ex].
+[129] NA64 Collaboration, D. Banerjee et al., “Search for invisible decays of sub-GeV dark photons in
+     missing-energy events at the CERN SPS,” Phys. Rev. Lett. 118 no. 1, (2017) 011802,
+     arXiv:1610.02988 [hep-ex].
+[130] NA64 Collaboration, D. Banerjee et al., “Improved limits on a hypothetical X(16.7) boson and a
+                                 + −
+     dark photon decaying into e e pairs,” Phys. Rev. D 101 no. 7, (2020) 071101, arXiv:1912.11389
+     [hep-ex].
+[131] H. Merkel et al., “Search at the Mainz Microtron for Light Massive Gauge Bosons Relevant for the
+     Muon g-2 Anomaly,” Phys.Rev.Lett. 112 (2014) 221802, arXiv:1404.5502 [hep-ex].
+[132] APEX Collaboration, S. Abrahamyan et al., “Search for a New Gauge Boson in Electron-Nucleus
+     Fixed-Target Scattering by the APEX Experiment,” Phys.Rev.Lett. 107 (2011) 191804,
+     arXiv:1108.2750 [hep-ex].
+[133] N. Blinov, K. J. Kelly, G. Z. Krnjaic, and S. D. McDermott, “Constraining the Self-Interacting
+     Neutrino Interpretation of the Hubble Tension,” Phys.Rev.Lett. 123 (2019) 191102,
+     arXiv:1905.02727 [astro-ph.CO].
+[134] A. M. Suliga and I. Tamborra, “Astrophysical constraints on nonstandard coherent neutrino-nucleus
+     scattering,” Phys.Rev.D 103 (2021) 083002, arXiv:2010.14545 [hep-ph].
+[135] TEXONO Collaboration, M. Deniz et al., “Measurement of Nu(e)-bar -Electron Scattering
+     Cross-Section with a CsI(Tl) Scintillating Crystal Array at the Kuo-Sheng Nuclear Power Reactor,”
+     Phys.Rev.D 81 (2010) 072001, arXiv:0911.1597 [hep-ex].
+                                                                                                         43
+
+
+[136] L. Ahrens et al., “Determination of electroweak parameters from the elastic scattering of
+      muon-neutrinos and anti-neutrinos on electrons,” Phys.Rev.D 41 (1990) 3297–3316.
+[137] S. Gninenko, N. Krasnikov, and A. Rubbia, “Search for millicharged particles in reactor neutrino
+      experiments: A Probe of the PVLAS anomaly,” Phys.Rev.D 75 (2007) 075014,
+      arXiv:hep-ph/0612203 [hep-ph].
+[138] P. A. Machado, O. Palamara, and D. W. Schmitz, “The Short-Baseline Neutrino Program at
+      Fermilab,” Ann.Rev.Nucl.Part.Sci. 69 (2019) 363–387, arXiv:1903.04608 [hep-ex].
+

@@ -1,0 +1,256 @@
+{
+  "revision": "r2",
+  "date": "2026-11-06",
+  "timezone": "Asia/Shanghai",
+  "machineStatus": "PASS",
+  "documents": 23,
+  "localLinksAndAnchors": 747,
+  "externalLinksRecordedWithoutNetworkCheck": 74,
+  "strictEncodingDocuments": 4,
+  "records": [
+    {
+      "file": "AGENTS.md",
+      "sha256": "ea0422e4f2c1188493a86b12e77fdb96f1143309f073df51365afb2e6ee2aacb",
+      "localLinksAndAnchors": 3,
+      "uniqueIds": 11,
+      "displayMath": 0
+    },
+    {
+      "file": "workflows/_shared/references/onboarding/data-provenance-contract.md",
+      "sha256": "434cb211aa5c49ed1b2d0cded727ae16822ab5b59d680fac665ee483e7f217c9",
+      "localLinksAndAnchors": 17,
+      "uniqueIds": 18,
+      "displayMath": 0
+    },
+    {
+      "file": "workflows/_shared/references/onboarding/experiment-physics-report-contract.md",
+      "sha256": "a2206e30533376dbad359ac7d1332c75a9905f26441759bd30a3f62b8e26f7b7",
+      "localLinksAndAnchors": 24,
+      "uniqueIds": 34,
+      "displayMath": 0
+    },
+    {
+      "file": "workflows/cevns-pyeft/skills/onboarding/cevns-onboarding/SKILL.md",
+      "sha256": "1820ab734d83af6d37d80d079e7153a75942fa4b3f522bc20b0d3baa8d2dbda3",
+      "localLinksAndAnchors": 12,
+      "uniqueIds": 23,
+      "displayMath": 0
+    },
+    {
+      "file": "data/responses/README.md",
+      "sha256": "edac4a846496a151421b3d7cddc93862e22fd65ae9c9f8946bdbd3ef261418e4",
+      "localLinksAndAnchors": 8,
+      "uniqueIds": 4,
+      "displayMath": 0
+    },
+    {
+      "file": "docs/references/COHERENT/README.md",
+      "sha256": "efe227ff0fa07243379657fd442310d732d9d8b0ad08bf1bda9f727c5bf29c94",
+      "localLinksAndAnchors": 16,
+      "uniqueIds": 13,
+      "displayMath": 0
+    },
+    {
+      "file": "docs/experiments/COHERENT/CsI2021/README.md",
+      "sha256": "3d291417812d66a048233efbb3edb4a24845e86244b5893333cd9b74571c9eb0",
+      "localLinksAndAnchors": 18,
+      "uniqueIds": 4,
+      "displayMath": 0
+    },
+    {
+      "file": "docs/experiments/COHERENT/CsI2021/time_resolved/README.md",
+      "sha256": "b7b93c12a58979aaef711214407fb460307437663977945307eb41bdbc876180",
+      "localLinksAndAnchors": 6,
+      "uniqueIds": 1,
+      "displayMath": 0
+    },
+    {
+      "file": "docs/experiments/COHERENT/CsI2021/time_resolved/experiment.physics.md",
+      "sha256": "788f6ad27a5642090d24a3f9718d0b3b7d8e626160ae1cdb3b74e0577b9baa4e",
+      "localLinksAndAnchors": 307,
+      "uniqueIds": 34,
+      "displayMath": 9
+    },
+    {
+      "file": "docs/experiments/COHERENT/CsI2021/time_resolved/experiment.physics.summary.md",
+      "sha256": "4bb62632e385fe6c7e029e7e0f026c53194bee1adba5da0551c9709e02f135ed",
+      "localLinksAndAnchors": 84,
+      "uniqueIds": 4,
+      "displayMath": 0
+    },
+    {
+      "file": "docs/experiments/COHERENT/CsI2021/time_resolved/EXPERIMENT_USER_INPUT.md",
+      "sha256": "dea03f781d158e5f0e71df0441bd73614256876bf5a0b2a5faacf319a6fe8896",
+      "localLinksAndAnchors": 98,
+      "uniqueIds": 17,
+      "displayMath": 0
+    },
+    {
+      "file": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/README.md",
+      "sha256": "cf91a2dc24ce4f5e68836e5a37f4338a8fd00c14b13032037d75633ee895eb94",
+      "localLinksAndAnchors": 19,
+      "uniqueIds": 1,
+      "displayMath": 0
+    },
+    {
+      "file": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/README.md",
+      "sha256": "a0c4f0dcb924d4ad9e592582872040c14e959a083e0471492341309ad1496bde",
+      "localLinksAndAnchors": 20,
+      "uniqueIds": 1,
+      "displayMath": 0
+    },
+    {
+      "file": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/P02_MISSING_AND_CONFLICTS.md",
+      "sha256": "2bccf78e5bb83a65c397fd41c9216caa7b018a934bcc0052af273a0056dfc968",
+      "localLinksAndAnchors": 26,
+      "uniqueIds": 1,
+      "displayMath": 0
+    },
+    {
+      "file": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/data/README.md",
+      "sha256": "e7ea1d02134245fd27fc1320838dea52fbcbb4151aa43486d9aab3cff5210702",
+      "localLinksAndAnchors": 9,
+      "uniqueIds": 1,
+      "displayMath": 0
+    },
+    {
+      "file": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/README.md",
+      "sha256": "d4df0f050a8da70520367c2dad69672db6e62c29f7044c6d8468a0213680225f",
+      "localLinksAndAnchors": 9,
+      "uniqueIds": 1,
+      "displayMath": 0
+    },
+    {
+      "file": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/README.md",
+      "sha256": "a7659dc3950bc42b891d281a9612daf760162c523d7c17f812fd6d6ba5939509",
+      "localLinksAndAnchors": 13,
+      "uniqueIds": 1,
+      "displayMath": 0
+    },
+    {
+      "file": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/upstream_nuclear/README.md",
+      "sha256": "f5fde5f11365b6d2765883825bb744f429d62922d5cba9fd087c96c70d22e76e",
+      "localLinksAndAnchors": 8,
+      "uniqueIds": 1,
+      "displayMath": 0
+    },
+    {
+      "file": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/README.md",
+      "sha256": "f916451fb4eff9cdc31f2fe0e0f7ce9a91c2ece0c5da1c13db580f63821db4cc",
+      "localLinksAndAnchors": 12,
+      "uniqueIds": 1,
+      "displayMath": 0
+    },
+    {
+      "file": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/legacy_resolution/README.md",
+      "sha256": "15a0313efc730f60f8d63ae51c846c27ac86e1519c00a715489cf18957f245a4",
+      "localLinksAndAnchors": 2,
+      "uniqueIds": 1,
+      "displayMath": 0
+    },
+    {
+      "file": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/readability/README.md",
+      "sha256": "41d37715a609fafb940384cd6bdea139adf91c830e1733d8253a40f626479d2f",
+      "localLinksAndAnchors": 4,
+      "uniqueIds": 1,
+      "displayMath": 0
+    },
+    {
+      "file": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/REVIEW_REPORT.md",
+      "sha256": "ef79a54ae300272c179ead592d3648a1a0a70a2e3c39551e14e197286e93e152",
+      "localLinksAndAnchors": 25,
+      "uniqueIds": 1,
+      "displayMath": 0
+    },
+    {
+      "file": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/revisions/README.md",
+      "sha256": "7d4b326648894dd342e33663556c4de134ed5352a192c1f8e125537c39b79b50",
+      "localLinksAndAnchors": 7,
+      "uniqueIds": 1,
+      "displayMath": 0
+    }
+  ],
+  "browser": {
+    "desktopViewport": [
+      1200,
+      900
+    ],
+    "narrowViewport": [
+      720,
+      900
+    ],
+    "documents": [
+      {
+        "name": "detailed",
+        "sectionJumpsAndReturns": 10,
+        "displayMath": 9,
+        "narrow": {
+          "viewport": 720,
+          "pageWidth": 720,
+          "scrollableTables": 11
+        },
+        "status": "PASS"
+      },
+      {
+        "name": "user_input",
+        "sectionJumpsAndReturns": 7,
+        "displayMath": 0,
+        "narrow": {
+          "viewport": 720,
+          "pageWidth": 720,
+          "scrollableTables": 1
+        },
+        "status": "PASS"
+      },
+      {
+        "name": "summary",
+        "sectionJumpsAndReturns": 0,
+        "displayMath": 0,
+        "narrow": {
+          "viewport": 720,
+          "pageWidth": 720,
+          "scrollableTables": 1
+        },
+        "status": "PASS"
+      }
+    ]
+  },
+  "formulaTags": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "dependencyPaths": {
+    "markdownModules": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\tmp\\math-render-check\\node_modules",
+    "katexRenderer": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\tmp\\math-render-check\\node_modules\\.pnpm\\katex@0.16.47\\node_modules\\katex\\dist\\katex.js",
+    "katexCss": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\tmp\\math-render-check\\node_modules\\.pnpm\\katex@0.16.47\\node_modules\\katex\\dist\\katex.min.css",
+    "playwright": "C:\\Users\\Ultimator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright",
+    "browser": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+  },
+  "dependencyVersions": {
+    "katex": "0.16.47"
+  },
+  "previews": [
+    {
+      "source": "docs/experiments/COHERENT/CsI2021/time_resolved/experiment.physics.md",
+      "html": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/readability/detailed.html"
+    },
+    {
+      "source": "docs/experiments/COHERENT/CsI2021/time_resolved/EXPERIMENT_USER_INPUT.md",
+      "html": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/readability/user_input.html"
+    },
+    {
+      "source": "docs/experiments/COHERENT/CsI2021/time_resolved/experiment.physics.summary.md",
+      "html": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/readability/summary.html"
+    }
+  ],
+  "scope": "Standalone CommonMark/GFM/math AST, KaTeX and headless Edge; local links and rendered anchors of selected documents",
+  "outsideScope": "Codex internal Markdown renderer, live availability of external URLs, scientific source authentication or benchmark reproduction",
+  "visualReview": "Recorded separately in REVIEW_REPORT.md after screenshots are inspected"
+}

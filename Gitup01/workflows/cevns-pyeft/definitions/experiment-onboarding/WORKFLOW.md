@@ -37,9 +37,13 @@ does not require a complete contract. Keep evidence, semantic approval and write
 ## Ordered steps and handoffs
 
 正式输入包交接：Scope → Source Register → Evidence Extraction → Semantic Normalization →
-Model Reconstruction → Missing/Conflict Audit → 同一 IR/确定性 compiler → Physics MD 人工 Review →
+Model Reconstruction → Missing/Conflict Audit → 同一 IR/确定性 compiler → 首次可读草稿 →
+来源/缺口说明 → 用户补充与澄清 → 更新同源记录并重生成（按需循环）→ Physics MD 人工 Review →
 独立 Machine Gate/科学决定 → 通用 Runtime。三文件为 YAML、NPZ、Physics MD；台账/IR 非运行依赖。
 参见[package 编译器入口](../../../../tools/compile_experiment_package.py)，缺失只阻断依赖它的能力。
+逐数据覆盖和实际输出中的出处遵循[溯源合同](../../../_shared/references/onboarding/data-provenance-contract.md)，首次输出不能仅以文件链接或机器 PASS 交付。
+
+每个实验专属章节直接展示已取得的数值或数组范围、数据文件、标准引文及原文定位、核验范围与适用性。公式符号逐项登记数值取得情况。完整核、分布或校准输入尚缺时，将 MISSING 写入该符号行及下一阶段的能力交接表。修订从同一来源、证据、缺失与配置记录重新生成。
 
 1. Material registration starts the Evidence Ledger immediately, with independent source IDs,
    version/locator, units and status. Use `cevns.onboarding.experiment`.
@@ -53,6 +57,10 @@ Model Reconstruction → Missing/Conflict Audit → 同一 IR/确定性 compiler
 6. Update/finalize the Evidence Ledger and missing/conflict matrix; preserve all conflicting claims.
    Form the partial Physics Contract. Later numerical details may remain missing with an owner,
    needed_by_phase, candidate sources and blocking scope.
+   After the first readable draft, explain what is sourced, which data or primary verification is
+   missing, and the impact; ask specific supplementation questions. Update the same evidence and
+   regenerate affected outputs after replies. Preserve unresolved gaps and versions; every adopted
+   datum in a final output needs a traceable source or explicit derivation/decision for its claim.
 7. Hand off approved identity/claim, candidate evidence refs, fingerprints and blockers to **Phase 0** below.
    This handoff may be in conversation or an already authorized temporary directory; formal P00–P05
    and run directories are persisted only after Phase 0 scope and exact write authorization,

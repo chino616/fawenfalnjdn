@@ -1,4 +1,40 @@
 {
+  "solar_b8_flux_v1": {
+    "contract": "solar_b8_flux.v1",
+    "formula": "dphi/dE=Phi_B8*linear_interp(E,E_table,f_table); fluence=flux*effective_seconds",
+    "state": "BOUND_UNVERIFIED",
+    "implementation": "solar_b8.SolarSpectrum and DifferentialFluxSource"
+  },
+  "klein_nystrand_v1": {
+    "contract": "klein_nystrand.v1",
+    "formula": "F=3*j1(q*R)/(q*R)/(1+(q*a)^2); R=radius_coefficient*A^(1/3)",
+    "state": "BOUND_UNVERIFIED",
+    "implementation": "theory.sm_coherent.klein_nystrand_squared; 2411.11749v1 Eq.(3)"
+  },
+  "coherent_sm_kn_v1": {
+    "contract": "coherent_sm_kn.v1",
+    "formula": "dsigma/dT=GF^2*m/pi*QV^2*F^2*(1-m*T/(2*E^2)-T/E); QV=((1-4*s2w)*Z-N)/2",
+    "state": "BOUND_UNVERIFIED",
+    "implementation": "theory.sm_coherent.StandardModelKN; 2411.11749v1 Eqs.(1)-(2)"
+  },
+  "xenon_mono_basis_v1": {
+    "contract": "xenon_mono_basis.v1",
+    "formula": "P_i(T)=trilinear_interp(T,Ly_median(T),Qy_median(T),sum_other_observable_axes(template))",
+    "state": "BOUND_UNVERIFIED",
+    "implementation": "solar_b8.XenonBasisObservation; pinned early official light-WIMP release"
+  },
+  "recoil_efficiency_projection_v1": {
+    "contract": "recoil_efficiency_projection.v1",
+    "formula": "N_true_bin=integral_true_bin(dT*recoil_density(T)*efficiency(T)); electron response unavailable",
+    "state": "BOUND_UNVERIFIED",
+    "implementation": "solar_b8.RecoilAcceptanceObservation; true-energy diagnostic only"
+  },
+  "solar_b8_sm_v1": {
+    "contract": "solar_b8_sm.v1",
+    "formula": "N_bin=sum_run,A(n_A*integral(dT*dE*fluence*dsigma*P_bin)); selections once; no c_i",
+    "state": "BOUND_UNVERIFIED",
+    "implementation": "solar_b8.SolarExecutor via shared integrate_recoil_yield/probability_fold"
+  },
   "constant_v1": {
     "contract": "constant.v1",
     "formula": "y = c",

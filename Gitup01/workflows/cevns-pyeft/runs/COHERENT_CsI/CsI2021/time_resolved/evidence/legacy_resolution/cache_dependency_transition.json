@@ -1,0 +1,30 @@
+{
+  "original_script": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\backup\\csi-input-resolution-20261106-01\\resolve_input_issues-before-source-comparison.py",
+  "original_script_sha256": "06e4e58c0837eea849acba073bb89948ba6409462da4bd322beb9c3d8043d2f4",
+  "unchanged_numeric_evaluator_functions": [
+    "verified_sm_cross_section",
+    "native_sm_rate",
+    "audited_rate_per_kg"
+  ],
+  "function_sha256": "f49f3b5e90a6bd8779e49ee34830c1d32b75048c3d1ce622cdd1beb5d5fed5ff",
+  "caches": [
+    {
+      "cache": "RESPONSE_er128_enu240.npz",
+      "action": "METADATA_ONLY_FUNCTION_HASH_SCOPE",
+      "previous_sha256": "bb155d8b0a0ed7f485a34dab7a0fd6d3c088cd8c4907bdacde6224ae1e680ca5",
+      "current_sha256": "75abd7da935b2dac744eba0027c773d41d00d97f9ae246aaf9cdbf2838dedd0c"
+    },
+    {
+      "cache": "RESPONSE_er256_enu480.npz",
+      "action": "METADATA_ONLY_FUNCTION_HASH_SCOPE",
+      "previous_sha256": "ddfd59bbaa9e9f80b02abad41986f3d1530712320fb592927e3430523fc9c3bb",
+      "current_sha256": "cccdcafd95182fa533a5c0c9395a93543e3db36471c6d16d4f14eb02d0b24a99"
+    },
+    {
+      "cache": "RESPONSE_er512_enu960.npz",
+      "action": "METADATA_ONLY_FUNCTION_HASH_SCOPE",
+      "previous_sha256": "7a76a43fd95b7b2668c565a70093cdb5f7575ca7ad29cfe0b8950ea02bf17cf9",
+      "current_sha256": "de1c58b867c2ad652fea97b5f2446c56afd9dc512ca4cb0d0b32aee912f0c924"
+    }
+  ]
+}

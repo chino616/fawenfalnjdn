@@ -1,0 +1,23 @@
+{
+  "created_date": "2026-11-06",
+  "normal_entrypoint_exit_code": 0,
+  "normal_entrypoint_log": "review/FINAL_RUN.log",
+  "markdown_files_checked": 16,
+  "local_links_checked": 157,
+  "missing_paths": [],
+  "missing_anchors": [],
+  "output_provenance_hash_mismatches": [],
+  "phase_artifact_hash_checks": 5,
+  "python_syntax": "PASS",
+  "CSV_19_rows_and_total": "PASS",
+  "visual_QA": "Final PNG inspected; all points, error bars, legend, total label and ratio are readable.",
+  "delivery_manifest_files": 49,
+  "readme_ownership": {
+    "calculate_sm.py/extract_sm_reference.py/validate_results.py/build_reports.py/run_benchmark.ps1": "README.md",
+    "outputs/*": "outputs/README.md",
+    "data/benchmark/*": "data/benchmark/README.md",
+    "review/*": "review/README.md",
+    "review/phase_reports/*": "review/phase_reports/README.md"
+  },
+  "scope": "New delivery documents, their local targets, actual numerical outputs and preserved snapshot fingerprints. Scientific primary-source gaps remain as explicitly recorded."
+}

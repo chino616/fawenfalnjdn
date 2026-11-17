@@ -52,6 +52,16 @@ CONFLICT
 发现冲突时保留所有 claim，不覆盖。
 
 
+### 5.1 逐数据来源与核验范围
+
+执行[Onboarding 数据溯源与补充闭环](../references/onboarding/data-provenance-contract.md)。
+`SOURCE_EXTRACTED` 表示从已登记的直接材料提取，不自动表示原始论文数字已核。
+二手转录的直接材料、所引上游文献及实际核验范围分开记录；`USER_CONFIRMED` 只证明相应选择确已发生，不能认证外部事实。
+派生结果引用完整输入与变换，继承未闭合的来源限制。现有 evidence status 枚举不变。
+
+首次可读输出必须主动披露缺失数据、溯源缺口及影响，提出针对性补充问题；补充后更新证据并重生成。
+终稿的每个采用项都要有可审阅的依据，是否满足请求的原文/benchmark 主张另行核验；Machine PASS 不替代这项审阅。
+
 ## 6. Decision log
 
 每次 Physics Decision 追加：

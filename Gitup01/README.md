@@ -1,5 +1,39 @@
 # CEvNS-pyEFT：从实验定义到事件数
 
+> GitHub 本分支发布的是当前可维护骨干；本地备份、环境、缓存、参考 PDF 和批量生成物已分离。详见[骨干版范围](CURATED_UPLOAD.md)。
+
+[论文图公共主题 v4.0](plotting/paper_theme/README.md) · [绘图文件架构](plotting/README.md)：新图统一读取 `plotting/paper_theme/PAPER_THEME_GUIDE.md` 与 `PAPER_THEME.json`，支持 12 色和多图型；编号图集中的旧样式仅用于历史复现。
+
+[截断能标独立统计Part（2026-11-14）](examples/cutoff_scales/README.md)：已完成24条dim-6主路线及176条完整算符控制路线、90/95%结果和独立图集；固定太阳传播与dim-8正定性缺口明确标记，原一维/二维及实验结果保持原样。
+
+[当前五条实验：最新版本与处理方式](<docs/experiments/LATEST_EXPERIMENTS.md>)。本入口仅列当前选定分析；不同方法的输入、代码、结果和审核范围分别说明。
+
+<!-- solar-singlebin-v321:start -->
+
+## 太阳⁸B主线：单 bin与多 bin分别计算
+
+[单bin v3.2.1：输入、来源、代码与SM结果](<docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/README.md>) · [多bin v3.1（保留）](<docs/experiments/PandaX4T_XENONnT_SolarB8/SOLAR_B8_ONBOARDING.v3.1.md>)。
+
+单bin采用2601.19883v2 Eqs.(87),(88)：paired/US2/XENONnT三个信号总数；[独立数据](<data/benchmarks/solar_b8_singlebin_2601_19883/README.md>)、[独立入口](<tools/run_solar_b8_singlebin_benchmark.py>)、[独立结果](<outputs/solar_b8_singlebin/20261111_response_run2/README.md>)。多bin继续原Qy平均映射/响应基底及Ne/cS2分箱。只共享底层物理，不交叉数据、统计和缓存。旧文档中的“当前v3.1”仅指多bin分支。
+
+<!-- solar-singlebin-v321:end -->
+
+<!-- solar-nuclear-v31:start -->
+
+## 当前太阳⁸B SM：v3.1 原子核Response
+
+[当前新版本与两实验实际计算](<docs/experiments/PandaX4T_XENONnT_SolarB8/SOLAR_B8_ONBOARDING.v3.1.md>)。核表→振幅→截面→事例数；旧KN文档/计算保留。
+
+<!-- solar-nuclear-v31:end -->
+
+<!-- solar-onboarding-v3:start -->
+
+## 历史v3.0太阳⁸B onboarding：v3.0完整整合版（2026-11-09）
+
+[单文件阅读PandaX与XENONnT：全部输入、来源、SM/V/B−L结果及交接](<docs/experiments/PandaX4T_XENONnT_SolarB8/SOLAR_B8_ONBOARDING.v3.0.md>)。本版合并v2.0–v2.3的有效内容；旧版本保留。
+
+<!-- solar-onboarding-v3:end -->
+
 本项目用 Python 计算相干弹性中微子–原子核散射（CEvNS）。发行包提供 CsI2021、CsI2017、Ar2020 的计算定义；本地已安装和可默认加载的状态见 [Dataset 注册与安装清单](cevns_pyeft/experiments/DATASETS.md)。唯一登记数据在 [dataset_registry.json](cevns_pyeft/experiments/dataset_registry.json)，[manifest.py](cevns_pyeft/experiments/manifest.py)提供运行时兼容视图。
 
 **检查、整理或接入实验输入，先读[共同输入规范](workflows/_shared/INPUT_STANDARD.md)。** 所有实验以此核对文件身份、字段/单位、坐标、归一化、来源与实际读取结果；具体资料、数据和审核结论按 dataset 独立保存。
@@ -73,6 +107,7 @@ dataset_id + ResourceCatalog
 | [docs/](docs/README.md) | 论文文献库及具体实验／数据集的身份说明 | 文献按主要研究对象保存一份 PDF，数据集说明链接真实代码与输入 |
 | [workflows/](workflows/README.md) | 共同输入规范、[实验输入格式](workflows/_shared/schemas/experiment-input/README.md)、接入流程、授权记录和结构 QA | 使用者与执行者共用检查依据；运行时读取显式 data，不导入工作流 |
 | [outputs/](outputs/README.md) | 本地运行报告、缓存、构建记录和历史重构证据 | 结果与输入分开，loader 不会把旧输出当成当前实验数据 |
+| [plotting/](plotting/README.md) | 跨实验共用的论文主题 v4、样式接口、模板和预览 | 公共视觉规则有稳定入口，不随编号图集和运行日期复制 |
 | [论文图NoteBook/](论文图NoteBook/README.md) | 调用现有计算接口生成论文图、表格和数值检查 | 绘图风格、展示网格和研究输出不混入物理公式 |
 
 根目录的 [pyproject.toml](pyproject.toml) 管理包名、依赖、`cevns-pyeft` 命令和包发现；[requirements.txt](requirements.txt) 提供运行依赖列表；[AGENTS.md](AGENTS.md) 规定仓库维护边界。wheel 的包发现限定为 `cevns_pyeft*`，外置 `data/` 需另行提供，不能依赖当前工作目录自动搜索。
@@ -90,6 +125,7 @@ dataset_id + ResourceCatalog
 | 新的真实数据集 | 先按[实验接入入口](workflows/cevns-pyeft/skills/router/cevns-experiment/SKILL.md)明确数据和物理范围；代码、数据、说明、测试分别进入对应目录。先用 custom catalog 验证，正式激活时维护 `experiments/manifest.py` |
 | 新数据文件 | 先按共同输入规范核对适用格式、单位、坐标、归一化和证据，再放入 `data/experiments/<实验族>/<dataset_id>/` 的相应子目录；声明资源 ID、role、路径和真实消费者，维护资源清单；单放一个 CSV 不会被加载 |
 | 新运行组合 | 参照 `configs/analysis_selection.example.yaml` 创建配置，显式传给 `load_selection` 或示例脚本的 `--selection` |
+| 公共论文绘图主题 | 在 `plotting/paper_theme/` 维护规范、唯一参数和接口；具体绘图脚本读取此处，新运行可保存参数快照 |
 | 新使用示例、测试或说明 | 示例放 `examples/`、测试放 `tests/test_*.py`；代码用法和职责更新所属目录 README。论文与具体数据集说明分别放 `docs/references/`、`docs/experiments/`，同步其索引 |
 | 新报告、缓存或图表 | 放入新的 `outputs/<任务或运行>/`，或绘图脚本指定的输出目录，记录生成入口和参数，不覆盖历史验收证据 |
 
@@ -141,3 +177,52 @@ python tools/validate_docs.py --scope docs
 CsI2021：[快速阅读](data/experiments/COHERENT_CsI/CsI2021/experiment.physics.summary.md) ·
 [详细实现](data/experiments/COHERENT_CsI/CsI2021/experiment.physics.md)。
 本次集成范围见[任务说明](CODEX_ONBOARDING_REPORT_INTEGRATION.md)。
+
+
+## CONUS+ onboarding v3
+
+已整合来源标注的 CONUS+ 资料，采用天然 Ge、Nuclear Response 和参考 PDF Flux。当前阶段为输入与路线审阅，原始来源待补项见数据集说明。
+
+[详细主文件](docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md) · [资料入口](docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/README.md) · [数据与来源](data/experiments/CONUS_Plus/conusplus_kkl_run1/README.md)
+
+<!-- solar-onboarding-history:start -->
+
+## 历史记录（v3.0时期）
+
+[2026-11-07 SM执行记录](<docs/experiments/PandaX4T_XENONnT_SolarB8/SOLAR_B8_SM_BENCHMARK_20261107.md>) · [2026-11-08 V/B−L执行记录](<docs/experiments/PandaX4T_XENONnT_SolarB8/SOLAR_B8_VECTOR_BENCHMARK_20261108.md>)。旧实验报告与数值保留，各版本链接集中在dataset版本导航；当前SM以页首v3.1为准，旧矢量结果仍按历史版本解释。
+
+<!-- solar-onboarding-history:end -->
+
+<!-- solar-nsi-v33:start -->
+
+## 太阳⁸B NSI：v3.3（2026-11-12）
+
+新增太阳⁸B电子味矢量NSI，已完成传播+散射及三样本单bin联合区域；论文Fig.4绿色中间禁区仍不一致。
+
+[完整新onboarding：实际输入、标准引文、物理与程序](<docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/NSI_EE_VECTOR_ONBOARDING.v3.3.md>) · [独立NSI数据](<data/benchmarks/solar_b8_nsi_2601_19883/README.md>) · [实际结果与核对](<outputs/solar_b8_nsi/20261112_fig4_run2/README.md>)
+
+<!-- solar-nsi-v33:end -->
+
+<!-- solar-snudd-v34:start -->
+
+## 太阳传播可选扩展：SNuDD v3.4
+
+[已安装并接入主线的新onboarding](<docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_EXTERNAL_ONBOARDING.v3.4.md>) · [独立安装/API](<extensions/solar_rho_snudd/README.md>) · [三样本实际对照](<outputs/external/solar_rho_snudd/20261112_run1/README.md>)。只更换传播源，旧B16-MSW/SM/多bin入口保留；不改变全局默认注册。
+
+<!-- solar-snudd-v34:end -->
+
+<!-- solar-snudd-v341:start -->
+
+## 太阳完整统计：SNuDD v3.4.1
+
+[三样本全流程、联合区域和论文比较](<docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_FULL_BENCHMARK.v3.4.1.md>) · [实际结果、图与验收](<outputs/external/solar_rho_snudd/20261112_fig4_run2/README.md>)。已计算601×601面与各方案联合最小值；2601 Fig.4绿色精确复现未成立，旧结果保留。
+
+<!-- solar-snudd-v341:end -->
+
+<!-- solar-full-rho-trace-onboarding-v35:start -->
+
+## 当前太阳onboarding：完整ρ与Tr(ρK) v3.5
+
+[微分/总截面、事例数积分与三样本差别](<docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_FULL_TRACE_ONBOARDING.v3.5.md>) · [明确合同与待改程序](<docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_FULL_TRACE_CONTRACT.v3.5.json>)。按用户要求先更新文档；旧投影程序尚未改成新版trace，旧结果保留。
+
+<!-- solar-full-rho-trace-onboarding-v35:end -->

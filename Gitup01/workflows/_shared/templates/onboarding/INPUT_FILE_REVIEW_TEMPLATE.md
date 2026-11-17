@@ -17,15 +17,17 @@
 
 ## 2. 需要提取的内容
 
-| 物理主题 | 原文位置（页、表、公式、文件或列） | 提取内容 | 单位 / 坐标 / 归一化 | 状态 |
-|---|---|---|---|---|
-| Source |  |  |  |  |
-| Target / Exposure |  |  |  |  |
-| Interaction |  |  |  |  |
-| Nuclear structure |  |  |  |  |
-| Detector |  |  |  |  |
-| Observable / Binning |  |  |  |  |
-| Statistics |  |  |  |  |
+| 物理主题 | 标准引文与原文精确位置 | 实际值或数组范围及代表值 | 本地数值文件与行列/key | 单位、坐标及归一化 | 取得情况、核验范围与适用性 |
+|---|---|---|---|---|---|
+| Source |  |  |  |  |  |
+| Target / Exposure |  |  |  |  |  |
+| Interaction |  |  |  |  |  |
+| Nuclear structure |  |  |  |  |  |
+| Detector |  |  |  |  |  |
+| Observable / Binning |  |  |  |  |  |
+| Statistics |  |  |  |  |  |
+
+需要数值输入而尚未取得的项目写 MISSING，随后列出所需原始材料和依赖计算。公式定义量单独标注。该表在相应物理章节就地展示。
 
 ## 3. 与其他材料的关系
 

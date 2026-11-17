@@ -1,0 +1,5 @@
+isotope,a0,a1,a2,a3,a4,a5,source_id,source_locator,primary_verified
+U235,3.217,-3.111,1.395,-0.369,0.04445,-0.002053,S0003,Table VI; Eq. (12); PDF page 13,true
+U238,0.4833,0.1927,-0.1283,-0.006762,0.002233,-0.0001536,S0003,Table VI; Eq. (12); PDF page 13,true
+Pu239,6.413,-7.432,3.535,-0.882,0.1025,-0.00455,S0003,Table VI; Eq. (12); PDF page 13,true
+Pu241,3.251,-3.204,1.428,-0.3675,0.04254,-0.001896,S0003,Table VI; Eq. (12); PDF page 13,true

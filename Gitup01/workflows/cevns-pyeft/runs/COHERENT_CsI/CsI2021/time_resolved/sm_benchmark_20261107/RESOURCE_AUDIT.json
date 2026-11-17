@@ -1,0 +1,177 @@
+{
+  "date": "2026-11-07",
+  "status": "PASS_FILE_AND_CONFIG_AUDIT",
+  "onboarding_sources": [
+    {
+      "source_id": "S_MEAS",
+      "path": "docs/references/COHERENT/2110.07730v2.pdf",
+      "sha256": "03b4bd7aa10653ecb86743c4d4a90abb0251ac3d0e5087b5202a621567bd81a7",
+      "original_url": "https://arxiv.org/abs/2110.07730v2"
+    },
+    {
+      "source_id": "S_SUP",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/Paper_CEvNSCsI_FullDataset_SupMaterials.pdf",
+      "sha256": "7f4aec67a7a5323a84d6db0379d973de46e4a782c6c8f3cd43e31c262c6b5753",
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/Paper_CEvNSCsI_FullDataset_SupMaterials.pdf"
+    },
+    {
+      "source_id": "S_2211",
+      "path": "docs/references/COHERENT/2211.11905v2.pdf",
+      "sha256": "071225342b004f4e97001d6c200066b216f0af1af226f4b4aafa43512304a2b1",
+      "original_url": "https://arxiv.org/abs/2211.11905v2"
+    },
+    {
+      "source_id": "S_2202",
+      "path": "docs/references/COHERENT/2202.11002v3.pdf",
+      "sha256": "dd87860c25f0bde41cc65a3acebdc9e04c8ed0f47e61095801f4b9672364b6a9",
+      "original_url": "https://arxiv.org/abs/2202.11002v3"
+    },
+    {
+      "source_id": "S_QF_PAPER",
+      "path": "docs/references/COHERENT/2111.02477v2.pdf",
+      "sha256": "22194a7f022dcd5918ad03db5b64e475449980b201fdafd7a5a1c7ac15330605",
+      "original_url": "https://arxiv.org/abs/2111.02477v2"
+    },
+    {
+      "source_id": "S_snsFlux2D",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/snsFlux2D.root",
+      "sha256": "1af0639911bb9219b66cbfa617057cd145d180c2ac8bc791c3008f1d666206ae",
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/snsFlux2D.root"
+    },
+    {
+      "source_id": "S_dataBeamOnC",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/dataBeamOnC.txt",
+      "sha256": "b78333f0cc0c4182f913cecd91d55968e43a620683e9f51e0ceb1c1db596326f",
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/dataBeamOnC.txt"
+    },
+    {
+      "source_id": "S_dataBeamOnAC",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/dataBeamOnAC.txt",
+      "sha256": "fba5c06334521531eda353771b5297b44a70566b0d755e23b174c716abec9468",
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/dataBeamOnAC.txt"
+    },
+    {
+      "source_id": "S_brnPE",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/brnPE.txt",
+      "sha256": "0000b042b8d0d28b90370eb70d1409db1d8c510fcf2b3e636370b0d4443ac0b0",
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/brnPE.txt"
+    },
+    {
+      "source_id": "S_brnTrec",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/brnTrec.txt",
+      "sha256": "6f279d835242a868dfc048abaa42b8c400bf961036de7bc7e64636efdd46466f",
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/brnTrec.txt"
+    },
+    {
+      "source_id": "S_ninPE",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/ninPE.txt",
+      "sha256": "41cae0376003cc2dcd028a3913e7c16395471f612b56d311f80e2a6071c9950c",
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/ninPE.txt"
+    },
+    {
+      "source_id": "S_ninTrec",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/ninTrec.txt",
+      "sha256": "2bb034d648b312f4ee329ae95078dc748ff3f83b999c411b08f86d82ddf8e151",
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/ninTrec.txt"
+    },
+    {
+      "source_id": "S_effCoefficients",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/effCoefficients.txt",
+      "sha256": "f1e58e6b8ec4db53da3be21fe44ebc4621e9b248b920be09759b1000dada8c51",
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/effCoefficients.txt"
+    },
+    {
+      "source_id": "S_scintRespCoefficients",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/official/scintRespCoefficients.txt",
+      "sha256": "ea6b8f34b296bf6e99f2a4ac504030d99155daba3e3c252f51c87d2470319d13",
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/scintRespCoefficients.txt"
+    },
+    {
+      "source_id": "S_LOCAL_W",
+      "path": "data/responses/responses_all.json",
+      "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+      "original_url": null
+    },
+    {
+      "source_id": "S_ELASTIC_CS",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/upstream_nuclear/Elastic/Cs133_GCN5082.txt",
+      "sha256": "da46cf5c93b499f74a9e29d3e932ed4a81108fe23e1a527c5e9df7d6692a5c23",
+      "original_url": "https://github.com/Berkeley-Electroweak-Physics/Elastic/blob/a979c39c89c615c7e719b84006cafa94526b4517/Cs133_GCN5082.txt"
+    },
+    {
+      "source_id": "S_ELASTIC_I",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/upstream_nuclear/Elastic/I127_GCN5082.txt",
+      "sha256": "393e743c02fe818528de5ede53479b688e36eea03547c2ed6f47c1012fbe2f4b",
+      "original_url": "https://github.com/Berkeley-Electroweak-Physics/Elastic/blob/a979c39c89c615c7e719b84006cafa94526b4517/I127_GCN5082.txt"
+    },
+    {
+      "source_id": "S_MU2E",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/upstream_nuclear/Mu2e_NRET/v2/mathematica/mu2elib_v2.wl",
+      "sha256": "5e5f1e646c9399c25f4ae72cd8f7dd1976ac87234d41ac5759242740783137ca",
+      "original_url": "https://github.com/Berkeley-Electroweak-Physics/Mu2e_NRET/blob/15bef514375298b57d9b07852870be3c408c2b19/v2/mathematica/mu2elib_v2.wl"
+    },
+    {
+      "source_id": "S_NIST",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/NIST_CODATA2022_allascii.txt",
+      "sha256": "77fb90e66c40db3e6eb16630bc9c88e4c7c8beddbe5e71be406f2f26e3f67e67",
+      "original_url": "https://physics.nist.gov/cuu/Constants/Table/allascii.txt"
+    },
+    {
+      "source_id": "S_PDG",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/sources/PDG2024_pi_charged.pdf",
+      "sha256": "f7c2e47de06d0e28f637441067aa144ca5a9e76cec2055060f95e39cae57bfae",
+      "original_url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-pi-plus-minus.pdf"
+    },
+    {
+      "source_id": "S_AUDIT",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/legacy_resolution/input_resolution.json",
+      "sha256": "08a6a2a70d32c5af28928641a64e303a80d9d7d025d562d2532f2761564c5186",
+      "original_url": null
+    },
+    {
+      "source_id": "S_AUDIT_CODE",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/legacy_resolution/code/tools/resolve_input_issues.py",
+      "sha256": "6691472df0a3264d4ba95fa9f356bf6afbd1c411c14e9807b3700cff638e139e",
+      "original_url": null
+    },
+    {
+      "source_id": "S_LEGACY_EFF",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/legacy_resolution/code/legacy/slow_counts_csi2021.py",
+      "sha256": "73d793e61dfa190af26ca01b1381ba4b019da07b0b95f25a5a09a99f595773c9",
+      "original_url": null
+    },
+    {
+      "source_id": "S_LEGACY_SNS",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/legacy_resolution/code/legacy/sns.py",
+      "sha256": "9ea97baf50e46a158680b556f9fe514502fd8ca7386d8e9ea36ed07681e7a764",
+      "original_url": null
+    },
+    {
+      "source_id": "S_TIME_CODE",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/legacy_resolution/code/time_acceptance.py",
+      "sha256": "535de210f4ebde240e8b3f230a24c0e472a71ae7ad3ff836c1abf1787a1cbc28",
+      "original_url": null
+    },
+    {
+      "source_id": "S_DOMAIN_CODE",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/evidence/legacy_resolution/code/analysis_inputs.py",
+      "sha256": "931da0b2339f2fe1fda07eea2751784c9f6269db2afbcb26ecf4a85adade119d",
+      "original_url": null
+    },
+    {
+      "source_id": "S_DECISION",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/DECISION_LOG.json",
+      "sha256": "ebb78f1241e263620150cf7d560e851b65c01c81e1e85b0baec7f717e30a4c78",
+      "original_url": null
+    },
+    {
+      "source_id": "S_PREPARE",
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/prepare_records.py",
+      "sha256": "2456e69bb75833cb00f182deb44f5d9fd8445291fa28f02582af8b015244e38b",
+      "original_url": null
+    }
+  ],
+  "runtime_code_files_unchanged": 124,
+  "response_original_unchanged": true,
+  "scope": "Actual local files, fingerprints, adopted direct inputs and executed readers; no new external-authorship certification"
+}

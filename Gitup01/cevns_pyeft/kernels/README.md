@@ -31,3 +31,13 @@ Fast 把源、靶核、探测器和积分网格固定后，预先积分与 Wilso
 ---
 
 [上一级](../README.md) · [项目总览](../../README.md)
+
+<!-- solar-nsi-v33:start -->
+
+## 太阳⁸B NSI：v3.3（2026-11-12）
+
+solar_nsi.py保留中微子能量轴；逐参数点重算Pee，不复用固定态通用kernel。
+
+[完整新onboarding：实际输入、标准引文、物理与程序](<../../docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/NSI_EE_VECTOR_ONBOARDING.v3.3.md>) · [独立NSI数据](<../../data/benchmarks/solar_b8_nsi_2601_19883/README.md>) · [实际结果与核对](<../../outputs/solar_b8_nsi/20261112_fig4_run2/README.md>)
+
+<!-- solar-nsi-v33:end -->

@@ -1,0 +1,90 @@
+{
+  "created_date": "2026-11-06",
+  "dataset_id": "conusplus_kkl_run1",
+  "version": "nsi_response_v1_isolated_candidate",
+  "request": "请你继续做NSI的benchmark",
+  "primary_route": "existing_dataset",
+  "supporting_route": "statistics_semantics_change",
+  "write_scope": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\conusplus-nsi-response-20261106",
+  "workflow": [
+    "P04-P05 NSI matching audit",
+    "P07 direct nonzero points",
+    "P08 existing 4-operator interface kernel",
+    "P09 Gaussian nuisance-profiled NSI inference",
+    "P10 comparison/provenance review"
+  ],
+  "fixed_inputs": "Same natural Ge five isotopes, Nuclear Response, nonnegative source, detector and 19 bins as previous SM calculation.",
+  "SM_reference": {
+    "path": "data/sm_reference/fine_641.npz",
+    "total_events": 149.4193998032586,
+    "n_er": 161,
+    "n_enu": 641
+  },
+  "NSI_basis": [
+    [
+      6,
+      1,
+      "u"
+    ],
+    [
+      6,
+      1,
+      "d"
+    ],
+    [
+      6,
+      2,
+      "u"
+    ],
+    [
+      6,
+      2,
+      "d"
+    ]
+  ],
+  "NSI_mapping": "Existing vector_nsi_to_np_wilson: delta C_(6,1,q)=-sqrt(2)*G_F*epsilon^qV; include_sm=True.",
+  "statistical_contract": {
+    "representation": "binned_density",
+    "processing": "background_subtracted",
+    "design": "single_sample",
+    "likelihood": "Gaussian diagonal chi2, 2501.17843v3 Eq.(33)",
+    "sigma_alpha": 0.169,
+    "sigma_primary": "arithmetic mean of digitized upper/lower error lengths",
+    "sigma_sensitivity": [
+      "lower lengths",
+      "upper lengths"
+    ],
+    "alpha_domain": "real unbounded Gaussian pull as Eq.(33)",
+    "single_parameter_domain": [
+      -1,
+      1
+    ],
+    "single_parameter_thresholds": {
+      "1sigma": 1.0,
+      "90percent": 2.705543454095404
+    },
+    "two_parameter_threshold_90percent": 4.605170185988092,
+    "confidence_interpretation": "Nominal asymptotic thresholds for paper benchmark comparison, not a calibrated frequentist coverage claim."
+  },
+  "predeclared_checks": {
+    "Fast_vs_Slow_relative": 1e-08,
+    "Fast_vs_Slow_absolute_events": 1e-08,
+    "real_polynomial_vs_interface_relative": 1e-10,
+    "real_polynomial_vs_interface_absolute_events": 1e-08,
+    "interval_root_absolute_epsilon": 1e-09,
+    "interval_grid_stability_epsilon": 5e-06,
+    "paper_endpoint_comparison_absolute_epsilon": 0.001,
+    "nuisance_analytic_vs_numeric_chi2": 1e-08,
+    "grid_convergence_inherited_reference": "SM fine641 against321 max bin change0.151%; recoil81->161 max0.0114%",
+    "additional_checks": "NSI nonzero energy-grid convergence and full/pair kernels, complex transition phase, mu/tau equality, even offdiagonal dependence, zero-NSI recovery, stale kernel rejection"
+  },
+  "scope_limits": [
+    "Prior SM spectrum differs from paper, particularly at the high-energy tail.",
+    "32 low-energy source nodes have direct user-note provenance; exact Kopeikin original numeric correspondence remains unresolved.",
+    "Original Ge nuclear-response computation and conversion chain remains unresolved.",
+    "Average error convention is an executor choice for this provisional benchmark; lower/upper sensitivity will be recorded.",
+    "No human authoritative freeze or scientific approval is inferred from the continuation request."
+  ],
+  "human_gate": "NOT_REVIEWED",
+  "scientific_provenance_status": "PARTIAL"
+}

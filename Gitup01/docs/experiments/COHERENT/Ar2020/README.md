@@ -28,3 +28,17 @@ COHERENT CENNS-10 首次液氩 CEvNS 测量的项目复现身份；测量论文�
 - [太阳测量与 COHERENT 等约束比较：2411.11749v1](../../../references/Solar_CEvNS/2411.11749v1.pdf)，属于再分析，非 Ar2020 的新数据释放。
 
 [COHERENT](../README.md) · [COHERENT 文献](../../../references/COHERENT/README.md)
+
+<!-- latest-analyses:start -->
+
+## 当前最新分析与处理方式
+
+[五条实验最新入口](<../../LATEST_EXPERIMENTS.md>)
+
+| 分析 | 方法/版本 | 输入 | 结果与核对范围 |
+|---|---|---|---|
+| Ar2020：12箱专用观测宽度Gaussian | [Package v2 / legacy compatibility；处理方式](<METHODS.md>) | [当前输入](<../../../../data/experiments/COHERENT_Ar/Ar2020/experiment.input.yaml>) | [最新核对结果](<../../../../outputs/COHERENT_Ar/Ar2020/sm_legacy_12bin_20261111/SM_RESULT.json>) |
+
+来源/审核状态、计算完成状态与默认Runtime注册分别记录；链接不授予新的科学批准。
+
+<!-- latest-analyses:end -->

@@ -1,0 +1,4184 @@
+{
+  "sources": [],
+  "claims": [
+    {
+      "claim_id": "XENONnT-C012",
+      "field": "detector/xenonnt_qy_sr0_23Vcm.txt",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/xenonnt_qy_sr0_23Vcm.txt",
+        "sha256": "59294cb633323d2c459807df9f4eff6eb284e2eab8130fbd507446de37c03f89",
+        "coverage": "all rows; T_keVnr,Qy_e_per_keV,inside_visible_axes,source_line_dashed",
+        "shape": [
+          99,
+          4
+        ]
+      },
+      "unit": "column1 keVnr, Qy columns electron/keV, visibility/line-style flags dimensionless",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R07",
+      "locator": "2406.13638v1 PDF p6 Fig.3 bottom right; deep red SR0 23 V/cm",
+      "derivation": "PDF vectors; clipped nodes and original extrapolation flags retained",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "用途及适用性按主文对应章节逐项说明",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C013",
+      "field": "detector/xenonnt_qy_sr0_band.txt",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/xenonnt_qy_sr0_band.txt",
+        "sha256": "01b045a80121aee1b1103e25ea58e15cb16184813d9ce23f14291faed4aaa76e",
+        "coverage": "all rows; T_keVnr,Qy_lower,Qy_upper",
+        "shape": [
+          100,
+          3
+        ]
+      },
+      "unit": "column1 keVnr, Qy columns electron/keV, visibility/line-style flags dimensionless",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R07",
+      "locator": "2406.13638v1 PDF p6 Fig.3 bottom right; same figure; deep red model band",
+      "derivation": "original band; no nuisance covariance inferred",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "用途及适用性按主文对应章节逐项说明",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C014",
+      "field": "statistics/xenonnt_original_fig2.txt",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_original_fig2.txt",
+        "sha256": "e904511d0d0d311f423408e5d56932a1b1e6415dd0cdac70eec12a8282cb7217",
+        "coverage": "all 3 rows; bin,D,AC,neutron,ER,signal; events/bin",
+        "shape": [
+          3,
+          6
+        ]
+      },
+      "unit": "D/background/reference signal events/bin, coordinate columns as declared",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R03",
+      "locator": "2408.02877v1 PDF p6 Fig.2 upper",
+      "derivation": "fitted components; run bin edges are in the separate official bin table",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "用途及适用性按主文对应章节逐项说明",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C015",
+      "field": "statistics/xenonnt_benchmark_fig1.txt",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_benchmark_fig1.txt",
+        "sha256": "0dd44065a10aeab1a07a1dd23b0b0e29cb3ad7c953784d83e995a37a34bde882",
+        "coverage": "all 3 rows; bin,display_left_PE,display_right_PE,D,AC,neutron,ER,signal; events/bin",
+        "shape": [
+          3,
+          8
+        ]
+      },
+      "unit": "D/background/reference signal events/bin, coordinate columns as declared",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p7 Fig.1 right",
+      "derivation": "plot coordinates are not certified likelihood edges; reference B",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "用途及适用性按主文对应章节逐项说明",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C016",
+      "field": "statistics/xenonnt_official_observed_bins.txt",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_official_observed_bins.txt",
+        "sha256": "010f958e460aa121d418bb7d174af8cb25e14d84ef4d7cf0faaa4fe3f7513b38",
+        "coverage": "all 6 rows; run,bin,cS2_low_PE,cS2_high_PE,D",
+        "shape": [
+          6,
+          5
+        ]
+      },
+      "unit": "as declared per column/key in the numerical file and chapter",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R08",
+      "locator": "fixed commit data/sr0.csv,sr1.csv; binning/sr0.yaml,sr1.yaml",
+      "derivation": "direct official histogram; no cuts",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "用途及适用性按主文对应章节逐项说明",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C017",
+      "field": "statistics/xenonnt_official_observed_events.txt",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_official_observed_events.txt",
+        "sha256": "26a8b6b7011e76145dd9a47a81a401675f16d3855321dbe90af7c2e4e559c18a",
+        "coverage": "all 37 rows; run,CSV_zero_based_row,cS2_PE",
+        "shape": [
+          37,
+          3
+        ]
+      },
+      "unit": "as declared per column/key in the numerical file and chapter",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R08",
+      "locator": "fixed commit data/sr0.csv,sr1.csv",
+      "derivation": "direct event values; original row order retained",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "用途及适用性按主文对应章节逐项说明",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C018",
+      "field": "b8_bahcall1996_official.txt",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/b8_bahcall1996_official.txt",
+        "sha256": "75ce26216a638b811d131b692e2d22b8624fcbb711839fd167c25cefaafb9789",
+        "coverage": "all rows/keys; detailed key map below"
+      },
+      "unit": "MeV; MeV^-1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R04",
+      "locator": "official b8spectrum.txt, all four columns",
+      "derivation": "byte-identical download",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Energy; central normalized shape; +3sigma and -3sigma shape spectra; no total flux",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s2"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C019",
+      "field": "xenon_natural_isotopes_nist_v2.txt",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/xenon_natural_isotopes_nist_v2.txt",
+        "sha256": "5fd5a0d923c969cb53bcc1267a4eb20d8f6c71e6c2da749d7199676ef361af67",
+        "coverage": "all rows/keys; detailed key map below",
+        "shape": [
+          9,
+          3
+        ]
+      },
+      "unit": "1; u; 1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R09",
+      "locator": "Xe rows 124,126,128,129,130,131,132,134,136",
+      "derivation": "parsed central values; uncertainties retained in official source download, not treated as zero",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Natural-xenon reference composition; experimental isotope assay not provided",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C020",
+      "field": "detector/xenonnt_sr0_response_release2026_v2.npz",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/xenonnt_sr0_response_release2026_v2.npz",
+        "sha256": "0fec6f489395ce354884d25f9614186292c3ed57d2884e0522609d9e2b1a7dc4",
+        "coverage": "all rows/keys; detailed key map below",
+        "arrays": {
+          "energy_keVnr": [
+            46
+          ],
+          "tLy": [
+            7
+          ],
+          "tQy": [
+            7
+          ],
+          "probability": [
+            7,
+            7,
+            46,
+            3,
+            3,
+            3,
+            3
+          ],
+          "axis_names": [
+            4
+          ],
+          "bin_edges_0": [
+            4
+          ],
+          "bin_edges_1": [
+            4
+          ],
+          "bin_edges_2": [
+            4
+          ],
+          "bin_edges_3": [
+            4
+          ]
+        }
+      },
+      "unit": "1, keVnr; nuisance coordinate dimensionless",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R08",
+      "locator": "templates/sr0/mono/*; /templates/template and /bins/*",
+      "derivation": "lossless direct HDF5 array stacking; no interpolation or normalization",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "2026 release selected-bin probabilities; 2024-response equivalence unverified",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C021",
+      "field": "statistics/xenonnt_sr0_background_release2026_v2.npz",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_sr0_background_release2026_v2.npz",
+        "sha256": "8e99e7a71bc4298778cd165d85ca2977ad2a45bd285e08efcb1de687029a0a3f",
+        "coverage": "all rows/keys; detailed key map below",
+        "arrays": {
+          "tLy": [
+            7
+          ],
+          "tQy": [
+            7
+          ],
+          "AC": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "ER": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "neutron": [
+            7,
+            7,
+            3,
+            3,
+            3,
+            3
+          ],
+          "bin_edges_0": [
+            4
+          ],
+          "bin_edges_1": [
+            4
+          ],
+          "bin_edges_2": [
+            4
+          ],
+          "bin_edges_3": [
+            4
+          ]
+        }
+      },
+      "unit": "events/(t yr bin)",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R08",
+      "locator": "templates/sr0/ac,er,rg/*; /templates/template",
+      "derivation": "lossless HDF5 array stacking",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "2026 release rate templates, retain calibration revision; no 2024 exposure applied",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C022",
+      "field": "statistics/xenonnt_sr0_observed_4d_v2.npz",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_sr0_observed_4d_v2.npz",
+        "sha256": "2d45c8b91e41653f7ccd9a556c356ea3b896d0be2cfdfa82204d35c6e2a1f780",
+        "coverage": "all rows/keys; detailed key map below",
+        "arrays": {
+          "observed": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "events": [
+            9,
+            4
+          ],
+          "axis_names": [
+            4
+          ],
+          "bin_edges_0": [
+            4
+          ],
+          "bin_edges_1": [
+            4
+          ],
+          "bin_edges_2": [
+            4
+          ],
+          "bin_edges_3": [
+            4
+          ]
+        }
+      },
+      "unit": "events/bin; PE and dimensionless classifiers",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R08",
+      "locator": "data/sr0.csv; binning/sr0.yaml",
+      "derivation": "histogramdd without cuts; exact event values",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Observed 4D counts and event table; early run identity verified separately",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C023",
+      "field": "detector/xenonnt_sr1_response_release2026_v2.npz",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/xenonnt_sr1_response_release2026_v2.npz",
+        "sha256": "0b94a164d2806fe7775059b30778b735eb9ea3d07257b9ab0dc6b22f7f885525",
+        "coverage": "all rows/keys; detailed key map below",
+        "arrays": {
+          "energy_keVnr": [
+            46
+          ],
+          "tLy": [
+            7
+          ],
+          "tQy": [
+            7
+          ],
+          "probability": [
+            7,
+            7,
+            46,
+            3,
+            3,
+            3,
+            3
+          ],
+          "axis_names": [
+            4
+          ],
+          "bin_edges_0": [
+            4
+          ],
+          "bin_edges_1": [
+            4
+          ],
+          "bin_edges_2": [
+            4
+          ],
+          "bin_edges_3": [
+            4
+          ]
+        }
+      },
+      "unit": "1, keVnr; nuisance coordinate dimensionless",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R08",
+      "locator": "templates/sr1/mono/*; /templates/template and /bins/*",
+      "derivation": "lossless direct HDF5 array stacking; no interpolation or normalization",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "2026 release selected-bin probabilities; 2024-response equivalence unverified",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C024",
+      "field": "statistics/xenonnt_sr1_background_release2026_v2.npz",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_sr1_background_release2026_v2.npz",
+        "sha256": "89cb9036fb6f4de81be9b757d8ff0cf1019c575fa2648cd41cdd05f90fa47c6a",
+        "coverage": "all rows/keys; detailed key map below",
+        "arrays": {
+          "tLy": [
+            7
+          ],
+          "tQy": [
+            7
+          ],
+          "AC": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "ER": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "neutron": [
+            7,
+            7,
+            3,
+            3,
+            3,
+            3
+          ],
+          "bin_edges_0": [
+            4
+          ],
+          "bin_edges_1": [
+            4
+          ],
+          "bin_edges_2": [
+            4
+          ],
+          "bin_edges_3": [
+            4
+          ]
+        }
+      },
+      "unit": "events/(t yr bin)",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R08",
+      "locator": "templates/sr1/ac,er,rg/*; /templates/template",
+      "derivation": "lossless HDF5 array stacking",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "2026 release rate templates, retain calibration revision; no 2024 exposure applied",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C025",
+      "field": "statistics/xenonnt_sr1_observed_4d_v2.npz",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_sr1_observed_4d_v2.npz",
+        "sha256": "202e896ff5ec8ab9216be7b3eba163034d286cee0980d7224068636979e1ea86",
+        "coverage": "all rows/keys; detailed key map below",
+        "arrays": {
+          "observed": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "events": [
+            28,
+            4
+          ],
+          "axis_names": [
+            4
+          ],
+          "bin_edges_0": [
+            4
+          ],
+          "bin_edges_1": [
+            4
+          ],
+          "bin_edges_2": [
+            4
+          ],
+          "bin_edges_3": [
+            4
+          ]
+        }
+      },
+      "unit": "events/bin; PE and dimensionless classifiers",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R08",
+      "locator": "data/sr1.csv; binning/sr1.yaml",
+      "derivation": "histogramdd without cuts; exact event values",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Observed 4D counts and event table; early run identity verified separately",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C027",
+      "field": "detector/xenonnt_2024_calibration_inputs.v2.1.json",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/xenonnt_2024_calibration_inputs.v2.1.json",
+        "sha256": "247b24197e185238936a64268e1baaa7bfc198b4598d80a11300b3d946e89826",
+        "coverage": "all records",
+        "parameters": [
+          {
+            "name": "g1_SR0",
+            "value": 0.151,
+            "unit": "PE/photon",
+            "sigma": 0.001,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "2408.02877v1 PDF p3, Dataset and detector calibration text"
+          },
+          {
+            "name": "g2_SR0",
+            "value": 16.5,
+            "unit": "PE/electron",
+            "sigma": 0.6,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "2408.02877v1 PDF p3, Dataset and detector calibration text"
+          },
+          {
+            "name": "fiducial_mass_SR0",
+            "value": 3.97,
+            "unit": "t",
+            "sigma": 0.2,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "2408.02877v1 PDF p3, Dataset and detector calibration text"
+          },
+          {
+            "name": "livetime_SR0",
+            "value": 108.0,
+            "unit": "day",
+            "sigma": null,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "2408.02877v1 PDF p2, Dataset and detector calibration text"
+          },
+          {
+            "name": "g1_SR1",
+            "value": 0.137,
+            "unit": "PE/photon",
+            "sigma": 0.001,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "2408.02877v1 PDF p3, Dataset and detector calibration text"
+          },
+          {
+            "name": "g2_SR1",
+            "value": 16.9,
+            "unit": "PE/electron",
+            "sigma": 0.5,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "2408.02877v1 PDF p3, Dataset and detector calibration text"
+          },
+          {
+            "name": "fiducial_mass_SR1",
+            "value": 4.1,
+            "unit": "t",
+            "sigma": 0.19,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "2408.02877v1 PDF p3, Dataset and detector calibration text"
+          },
+          {
+            "name": "livetime_SR1",
+            "value": 208.5,
+            "unit": "day",
+            "sigma": null,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "2408.02877v1 PDF p2, Dataset and detector calibration text"
+          },
+          {
+            "name": "combined_exposure",
+            "value": 3.51,
+            "unit": "t yr",
+            "sigma": null,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "2408.02877v1 PDF p3, fiducial-volume paragraph"
+          }
+        ]
+      },
+      "unit": "per scalar parameter, explicitly declared in the JSON",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R03",
+      "locator": "2408.02877v1 PDF p2-p3, Dataset and gain/FV paragraphs",
+      "derivation": "transcribed printed primary-source values",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "用途及适用性按主文对应章节逐项说明",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C028",
+      "field": "statistics/xenonnt_prefit_inputs_2024.v2.1.json",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_prefit_inputs_2024.v2.1.json",
+        "sha256": "0d7e6f42ac8b7715a278a5e4689a845745e696555dae333321cb1771678a52a1",
+        "coverage": "all records",
+        "parameters": [
+          {
+            "name": "AC_SR0_prefit",
+            "value": 7.5,
+            "unit": "events",
+            "sigma": 0.7,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "PDF p5 Table I expectation, AC(SR0)"
+          },
+          {
+            "name": "AC_SR1_prefit",
+            "value": 17.8,
+            "unit": "events",
+            "sigma": 1.0,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "PDF p5 Table I expectation, AC(SR1)"
+          },
+          {
+            "name": "ER_combined_prefit",
+            "value": 0.7,
+            "unit": "events",
+            "sigma": 0.7,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "PDF p5 Table I expectation, ER"
+          },
+          {
+            "name": "neutron_combined_prefit",
+            "value": 0.5,
+            "unit": "events",
+            "sigma": null,
+            "uncertainty_minus": 0.3,
+            "uncertainty_plus": 0.2,
+            "locator": "PDF p5 Table I expectation, Neutron"
+          },
+          {
+            "name": "total_background_prefit",
+            "value": 26.4,
+            "unit": "events",
+            "sigma": null,
+            "uncertainty_minus": 1.3,
+            "uncertainty_plus": 1.4,
+            "locator": "PDF p5 Table I expectation, Total background"
+          },
+          {
+            "name": "signal_reference",
+            "value": 11.9,
+            "unit": "events",
+            "sigma": null,
+            "uncertainty_minus": 4.2,
+            "uncertainty_plus": 4.5,
+            "locator": "PDF p5 Table I expectation, 8B"
+          },
+          {
+            "name": "AC_SR0_relative_rate_uncertainty",
+            "value": 0.09,
+            "unit": "1",
+            "sigma": null,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "PDF p5 AC model paragraph"
+          },
+          {
+            "name": "AC_SR1_relative_rate_uncertainty",
+            "value": 0.058,
+            "unit": "1",
+            "sigma": null,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "PDF p5 AC model paragraph"
+          },
+          {
+            "name": "neutron_relative_rate_uncertainty",
+            "value": 0.58,
+            "unit": "1",
+            "sigma": null,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "PDF p5 neutron paragraph"
+          },
+          {
+            "name": "ER_relative_rate_uncertainty",
+            "value": 1.0,
+            "unit": "1",
+            "sigma": null,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "PDF p5 ER paragraph"
+          },
+          {
+            "name": "signal_total_acceptance_relative_uncertainty",
+            "value": 0.1,
+            "unit": "1",
+            "sigma": null,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "PDF p5 first column, S2 acceptance paragraph"
+          },
+          {
+            "name": "neutron_SR0_prefit",
+            "value": 0.13,
+            "sigma": 0.07,
+            "unit": "events",
+            "locator": "2408.02877v1 PDF p5 neutron paragraph"
+          },
+          {
+            "name": "neutron_SR1_prefit",
+            "value": 0.33,
+            "sigma": 0.19,
+            "unit": "events",
+            "locator": "2408.02877v1 PDF p5 neutron paragraph"
+          },
+          {
+            "name": "ER_SR0_prefit",
+            "value": 0.13,
+            "sigma": 0.13,
+            "unit": "events",
+            "locator": "2408.02877v1 PDF p5 ER paragraph"
+          },
+          {
+            "name": "ER_SR1_prefit",
+            "value": 0.56,
+            "sigma": 0.56,
+            "unit": "events",
+            "locator": "2408.02877v1 PDF p5 ER paragraph"
+          }
+        ]
+      },
+      "unit": "per scalar parameter, explicitly declared in the JSON",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R03",
+      "locator": "2408.02877v1 PDF p5 Table I and background text, p6 statistical inference",
+      "derivation": "transcribed printed primary-source values",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "用途及适用性按主文对应章节逐项说明",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C031",
+      "field": "detector/xenonnt_2024_fig1_acceptance.txt",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/xenonnt_2024_fig1_acceptance.txt",
+        "sha256": "eb2582b66ed05c71d0c950b25030530fdfc6f5ba6b7f5a925f1158211da2bdd1",
+        "coverage": "40x8: T, three acceptance paths, energy/three curve visibility flags",
+        "shape": [
+          40,
+          8
+        ],
+        "axis": "true nuclear recoil energy, keVnr",
+        "original_vertex_energy_range_keVnr": [
+          0.429999996183,
+          2.77000000181
+        ],
+        "all_curves_visible_rows": 36,
+        "representative_visible_rows": [
+          [
+            0.66999999779,
+            0.035798171118,
+            0.0412676726157,
+            0.0015057660302,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.21000000141,
+            0.0866333740278,
+            0.217356935927,
+            0.0189585651125,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.75000000502,
+            0.148145781973,
+            0.370464797306,
+            0.0556466124793,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            2.28999999859,
+            0.209906777439,
+            0.452641856316,
+            0.0963193566448,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        ],
+        "extraction_record": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\重构\\20261106_Onboarding_provenance_revision\\XENONNT2024_FIG1_VECTOR.json"
+      },
+      "unit": "All efficiencies and flags dimensionless. Energy keVnr. Total acceptance is already the black combined path.",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R03",
+      "locator": "2408.02877v1 PDF p4 Fig.1 upper: light-blue S1, dark-blue S2, black combined acceptance",
+      "derivation": "Direct PDF vector digitization with tick-axis calibration; all original vertices and clipping flags retained; no interpolation or extrapolation",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Mean selection check only; not a bin migration kernel, not an additional factor on an efficiency-containing response.",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s9"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C032",
+      "field": "reference/xenonnt_2024_fig1_sm_recoil_spectra.txt",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/reference/xenonnt_2024_fig1_sm_recoil_spectra.txt",
+        "sha256": "64d416a367d34d646fb8376ea2c30a943602458c0132712ae6db84f46a3e9e8e",
+        "coverage": "40x6: T, two true-recoil reference spectra, energy/two curve visibility flags",
+        "shape": [
+          40,
+          6
+        ],
+        "axis": "true nuclear recoil energy, keVnr",
+        "original_vertex_energy_range_keVnr": [
+          0.429999996183,
+          2.77000000181
+        ],
+        "all_curves_visible_rows": 37,
+        "representative_visible_rows": [
+          [
+            0.549999996987,
+            871.465479984,
+            0.272139456359,
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0900000006,
+            269.235642484,
+            2.46355300537,
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.63000000422,
+            71.1165677066,
+            2.31501628053,
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            2.16999999779,
+            13.7310962236,
+            0.844434864735,
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            2.71000000141,
+            1.49548915486,
+            0.125468259031,
+            1.0,
+            1.0,
+            1.0
+          ]
+        ],
+        "extraction_record": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\重构\\20261106_Onboarding_provenance_revision\\XENONNT2024_FIG1_VECTOR.json"
+      },
+      "unit": "Rates events/(t yr keVnr). Flags dimensionless. With-acceptance rate already includes acceptance.",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R03",
+      "locator": "2408.02877v1 PDF p4 Fig.1 lower: light-pink without acceptance and dark-red with acceptance SM curves",
+      "derivation": "Direct PDF vector digitization with tick-axis calibration; all original vertices and clipping flags retained; no interpolation or extrapolation",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Validation reference only. No second acceptance factor. Not a flux spectrum, observed S2 distribution, or response matrix.",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s9"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C033",
+      "field": "detector/ybe_early_release/ly_ybe_model_lower.json",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/ybe_early_release/ly_ybe_model_lower.json",
+        "sha256": "c99ef5b4c2fd568a4034172d4c0a963778843e9da962c5cd215a231d5133de14",
+        "coverage": "501 energy and 501 yield values; original JSON also retains coordinate_type/name",
+        "json_keys": [
+          "coordinate_system",
+          "coordinate_type",
+          "coordinate_name",
+          "map"
+        ],
+        "array_shapes": {
+          "coordinate_system": [
+            501
+          ],
+          "map": [
+            501
+          ]
+        },
+        "coordinate_name": "nr_ly_ybe_only_lower",
+        "coordinate_type": "point",
+        "representative_rows": [
+          [
+            0.29999999999999993,
+            2.376009824252355
+          ],
+          [
+            1.7320508075688772,
+            4.336259863573856
+          ],
+          [
+            10.0,
+            3.8373609382714244
+          ]
+        ]
+      },
+      "unit": "coordinate_system keVnr; map photon/keVnr",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "data/signal/ly_ybe_model_lower.json; utils.py::load_default_yield_model; notebook 1 cells 9-13",
+      "derivation": "byte-identical copy from pinned official archive",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Official YBe mean-yield model for the early light-WIMP release; lower/median/upper are t=-1/0/+1 curves. File spans 0.3-10keV; response-recasting domain is 0.51-5keV. CEvNS-paper equivalence remains under review.",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C034",
+      "field": "detector/ybe_early_release/ly_ybe_model_median.json",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/ybe_early_release/ly_ybe_model_median.json",
+        "sha256": "39bf70fd07f33c9f3b1776865bbc13813f06a1004d7736516f8e849b4c7654bf",
+        "coverage": "501 energy and 501 yield values; original JSON also retains coordinate_type/name",
+        "json_keys": [
+          "coordinate_system",
+          "coordinate_type",
+          "coordinate_name",
+          "map"
+        ],
+        "array_shapes": {
+          "coordinate_system": [
+            501
+          ],
+          "map": [
+            501
+          ]
+        },
+        "coordinate_name": "nr_ly_ybe_only_median",
+        "coordinate_type": "point",
+        "representative_rows": [
+          [
+            0.29999999999999993,
+            4.969483910667949
+          ],
+          [
+            1.7320508075688772,
+            4.977021862119084
+          ],
+          [
+            10.0,
+            5.849434265559596
+          ]
+        ]
+      },
+      "unit": "coordinate_system keVnr; map photon/keVnr",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "data/signal/ly_ybe_model_median.json; utils.py::load_default_yield_model; notebook 1 cells 9-13",
+      "derivation": "byte-identical copy from pinned official archive",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Official YBe mean-yield model for the early light-WIMP release; lower/median/upper are t=-1/0/+1 curves. File spans 0.3-10keV; response-recasting domain is 0.51-5keV. CEvNS-paper equivalence remains under review.",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C035",
+      "field": "detector/ybe_early_release/ly_ybe_model_upper.json",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/ybe_early_release/ly_ybe_model_upper.json",
+        "sha256": "07ae23e82b201803a6774534c8cd44495eb653bc634dbfd453274d54efe21e2c",
+        "coverage": "501 energy and 501 yield values; original JSON also retains coordinate_type/name",
+        "json_keys": [
+          "coordinate_system",
+          "coordinate_type",
+          "coordinate_name",
+          "map"
+        ],
+        "array_shapes": {
+          "coordinate_system": [
+            501
+          ],
+          "map": [
+            501
+          ]
+        },
+        "coordinate_name": "nr_ly_ybe_only_upper",
+        "coordinate_type": "point",
+        "representative_rows": [
+          [
+            0.29999999999999993,
+            7.91125303979625
+          ],
+          [
+            1.7320508075688772,
+            5.7414990359969975
+          ],
+          [
+            10.0,
+            9.775018236360152
+          ]
+        ]
+      },
+      "unit": "coordinate_system keVnr; map photon/keVnr",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "data/signal/ly_ybe_model_upper.json; utils.py::load_default_yield_model; notebook 1 cells 9-13",
+      "derivation": "byte-identical copy from pinned official archive",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Official YBe mean-yield model for the early light-WIMP release; lower/median/upper are t=-1/0/+1 curves. File spans 0.3-10keV; response-recasting domain is 0.51-5keV. CEvNS-paper equivalence remains under review.",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C036",
+      "field": "detector/ybe_early_release/qy_ybe_model_lower.json",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/ybe_early_release/qy_ybe_model_lower.json",
+        "sha256": "5ea6ff1fab7bf983e13e33ed82af921df0147bc4bcfa01f5d05aae4f90d37e87",
+        "coverage": "501 energy and 501 yield values; original JSON also retains coordinate_type/name",
+        "json_keys": [
+          "coordinate_system",
+          "coordinate_type",
+          "coordinate_name",
+          "map"
+        ],
+        "array_shapes": {
+          "coordinate_system": [
+            501
+          ],
+          "map": [
+            501
+          ]
+        },
+        "coordinate_name": "nr_qy_ybe_only_lower",
+        "coordinate_type": "point",
+        "representative_rows": [
+          [
+            0.29999999999999993,
+            0.21484857489935827
+          ],
+          [
+            1.7320508075688772,
+            5.989010135192711
+          ],
+          [
+            10.0,
+            4.8785168729165465
+          ]
+        ]
+      },
+      "unit": "coordinate_system keVnr; map electron/keVnr",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "data/signal/qy_ybe_model_lower.json; utils.py::load_default_yield_model; notebook 1 cells 9-13",
+      "derivation": "byte-identical copy from pinned official archive",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Official YBe mean-yield model for the early light-WIMP release; lower/median/upper are t=-1/0/+1 curves. File spans 0.3-10keV; response-recasting domain is 0.51-5keV. CEvNS-paper equivalence remains under review.",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C037",
+      "field": "detector/ybe_early_release/qy_ybe_model_median.json",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/ybe_early_release/qy_ybe_model_median.json",
+        "sha256": "64fc4eaeae54b895e850aadf5a7782570830d382ab806e6ff969719217044475",
+        "coverage": "501 energy and 501 yield values; original JSON also retains coordinate_type/name",
+        "json_keys": [
+          "coordinate_system",
+          "coordinate_type",
+          "coordinate_name",
+          "map"
+        ],
+        "array_shapes": {
+          "coordinate_system": [
+            501
+          ],
+          "map": [
+            501
+          ]
+        },
+        "coordinate_name": "nr_qy_ybe_only_median",
+        "coordinate_type": "point",
+        "representative_rows": [
+          [
+            0.29999999999999993,
+            2.744883476035867
+          ],
+          [
+            1.7320508075688772,
+            6.420268530245179
+          ],
+          [
+            10.0,
+            5.214717914326497
+          ]
+        ]
+      },
+      "unit": "coordinate_system keVnr; map electron/keVnr",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "data/signal/qy_ybe_model_median.json; utils.py::load_default_yield_model; notebook 1 cells 9-13",
+      "derivation": "byte-identical copy from pinned official archive",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Official YBe mean-yield model for the early light-WIMP release; lower/median/upper are t=-1/0/+1 curves. File spans 0.3-10keV; response-recasting domain is 0.51-5keV. CEvNS-paper equivalence remains under review.",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C038",
+      "field": "detector/ybe_early_release/qy_ybe_model_upper.json",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/ybe_early_release/qy_ybe_model_upper.json",
+        "sha256": "74555cd70f7f3758e2c1bb9fbc776719b2d9cb80857697a057245d4287c640d1",
+        "coverage": "501 energy and 501 yield values; original JSON also retains coordinate_type/name",
+        "json_keys": [
+          "coordinate_system",
+          "coordinate_type",
+          "coordinate_name",
+          "map"
+        ],
+        "array_shapes": {
+          "coordinate_system": [
+            501
+          ],
+          "map": [
+            501
+          ]
+        },
+        "coordinate_name": "nr_qy_ybe_only_upper",
+        "coordinate_type": "point",
+        "representative_rows": [
+          [
+            0.29999999999999993,
+            6.2342051168804815
+          ],
+          [
+            1.7320508075688772,
+            6.902989194251805
+          ],
+          [
+            10.0,
+            5.643979732432551
+          ]
+        ]
+      },
+      "unit": "coordinate_system keVnr; map electron/keVnr",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "data/signal/qy_ybe_model_upper.json; utils.py::load_default_yield_model; notebook 1 cells 9-13",
+      "derivation": "byte-identical copy from pinned official archive",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Official YBe mean-yield model for the early light-WIMP release; lower/median/upper are t=-1/0/+1 curves. File spans 0.3-10keV; response-recasting domain is 0.51-5keV. CEvNS-paper equivalence remains under review.",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C039",
+      "field": "reference/xenonnt_early_release_cevns_spectrum.json",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/reference/xenonnt_early_release_cevns_spectrum.json",
+        "sha256": "47c1a2232c3d1f09ec8facfcf2a0ef13b01a9dc92d25a02bbba0244ca0e0da67",
+        "coverage": "all original JSON keys and arrays",
+        "json_keys": [
+          "coordinate_system",
+          "coordinate_type",
+          "coordinate_name",
+          "map",
+          "rate"
+        ],
+        "array_shapes": {
+          "coordinate_system": [
+            501
+          ],
+          "map": [
+            501
+          ]
+        },
+        "coordinate_name": "cdf",
+        "coordinate_type": "point",
+        "rate": 335.5964691089417,
+        "representative_rows": [
+          [
+            0.0,
+            0.45
+          ],
+          [
+            0.9914101491630194,
+            2.1213203435596424
+          ],
+          [
+            1.0,
+            10.0
+          ]
+        ]
+      },
+      "unit": "map/coordinate_system according to coordinate_name; recoil keV, rate events/(t yr)",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "data/signal/cevns_spectrum.json; utils.py::Template.required_keys and format_custom_signal_spectrum",
+      "derivation": "byte-identical copy from pinned official archive",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Author's true-recoil reference spectrum; separate from the adopted Bahcall neutrino spectrum, never a detector efficiency or measured S2 spectrum.",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s7"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C040",
+      "field": "detector/xenonnt_sr0_response_early_release_basis.npz",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/xenonnt_sr0_response_early_release_basis.npz",
+        "sha256": "b1872622a371b8acf037149fb002f6cfbc1f930081f625d5036041b8e972da4b",
+        "coverage": "16x10x10x3x3x3x3 basis, 1600 source HDF5/run, all four bin-edge arrays",
+        "arrays": {
+          "probability_basis": [
+            16,
+            10,
+            10,
+            3,
+            3,
+            3,
+            3
+          ],
+          "energy_keVnr": [
+            16
+          ],
+          "Ly_photon_per_keV": [
+            10
+          ],
+          "Qy_electron_per_keV": [
+            10
+          ],
+          "bin_edges_0": [
+            4
+          ],
+          "bin_edges_1": [
+            4
+          ],
+          "bin_edges_2": [
+            4
+          ],
+          "bin_edges_3": [
+            4
+          ],
+          "axis_names": [
+            7
+          ],
+          "provenance_json": []
+        }
+      },
+      "unit": "probability dimensionless; energy keVnr, Ly photon/keVnr, Qy electron/keVnr, cS2 PE",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "data/orthonormal_basis/SR0 selected by utils.py::BASIS_E_R/LY_SWEEP/QY_SWEEP and Template.interpolator",
+      "derivation": "lossless stacking of author HDF5 /templates/template; original nonzero floor and normalization retained",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Full early recasting basis, not a nuisance tLy/tQy grid: integer filename tly/tqy labels are physical yields 1..10. The extra SR0 0.5keV files are excluded exactly as in author's BASIS_E_R. Exact original-analysis equivalence not certified.",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C041",
+      "field": "detector/xenonnt_sr0_response_early_release_nominal_1d.txt",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/xenonnt_sr0_response_early_release_nominal_1d.txt",
+        "sha256": "4820d9aa07e3ec9750cf99b3df011615839229df0aca2f788a1cb662fc32e4ba",
+        "coverage": "46x4: true energy and three accepted cS2-bin probabilities",
+        "shape": [
+          46,
+          4
+        ]
+      },
+      "unit": "keVnr; probabilities dimensionless",
+      "status": "PROJECT_DERIVED",
+      "source_id": "R17",
+      "locator": "utils.py::Template.interpolator/default_yield_model; original 1600 SR0 HDF5 plus ly/qy median JSON",
+      "derivation": "Project derivation of author's linear recasting interpolator, marginalize three unused observables; local energy grid; no c_i or added efficiency",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Available nominal one-dimensional response under the official recasting model. Not an array directly tabulated in the 2024 CEvNS article.",
+      "input_claims": [
+        "XENONnT-C040",
+        "XENONnT-C034",
+        "XENONnT-C037"
+      ],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C042",
+      "field": "statistics/xenonnt_sr0_background_and_b8_early_release.npz",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_sr0_background_and_b8_early_release.npz",
+        "sha256": "cc489f2afa574089b9c3ef1650a6b7a4e81cd61a79aeccc3c5a1feb98c8750c6",
+        "coverage": "AC/ER each 3x3x3x3; B8/neutron each 7x7x3x3x3x3; all bin edges retained",
+        "arrays": {
+          "tLy": [
+            7
+          ],
+          "tQy": [
+            7
+          ],
+          "provenance_json": [],
+          "ac_rate_per_tyr_bin": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "er_rate_per_tyr_bin": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "b8_rate_per_tyr_bin": [
+            7,
+            7,
+            3,
+            3,
+            3,
+            3
+          ],
+          "rg_rate_per_tyr_bin": [
+            7,
+            7,
+            3,
+            3,
+            3,
+            3
+          ],
+          "bin_edges_0": [
+            4
+          ],
+          "bin_edges_1": [
+            4
+          ],
+          "bin_edges_2": [
+            4
+          ],
+          "bin_edges_3": [
+            4
+          ]
+        }
+      },
+      "unit": "rates events/(t yr bin); no bin-width factors; tLy/tQy nuisance coordinates -3..3",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "data/ac,er,b8,rg/template_XENONnT_sr0_*; statistical_model_base.yaml in_events_per_bin",
+      "derivation": "lossless original HDF5 template stacking, no exposure applied or rescaling",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Early official rate templates; B8 is signal/reference in the CEvNS application, not an extra background to add to the computed neutrino signal. Statistical constraints from light-WIMP recasting are not adopted for the benchmark.",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C043",
+      "field": "detector/xenonnt_sr1_response_early_release_basis.npz",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/xenonnt_sr1_response_early_release_basis.npz",
+        "sha256": "d435a3a69ce7f5eaa08e5ddeb9e5d2e64c1226e2730dd5e3a7c3fc6eb0ce665a",
+        "coverage": "16x10x10x3x3x3x3 basis, 1600 source HDF5/run, all four bin-edge arrays",
+        "arrays": {
+          "probability_basis": [
+            16,
+            10,
+            10,
+            3,
+            3,
+            3,
+            3
+          ],
+          "energy_keVnr": [
+            16
+          ],
+          "Ly_photon_per_keV": [
+            10
+          ],
+          "Qy_electron_per_keV": [
+            10
+          ],
+          "bin_edges_0": [
+            4
+          ],
+          "bin_edges_1": [
+            4
+          ],
+          "bin_edges_2": [
+            4
+          ],
+          "bin_edges_3": [
+            4
+          ],
+          "axis_names": [
+            7
+          ],
+          "provenance_json": []
+        }
+      },
+      "unit": "probability dimensionless; energy keVnr, Ly photon/keVnr, Qy electron/keVnr, cS2 PE",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "data/orthonormal_basis/SR1 selected by utils.py::BASIS_E_R/LY_SWEEP/QY_SWEEP and Template.interpolator",
+      "derivation": "lossless stacking of author HDF5 /templates/template; original nonzero floor and normalization retained",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Full early recasting basis, not a nuisance tLy/tQy grid: integer filename tly/tqy labels are physical yields 1..10. The extra SR0 0.5keV files are excluded exactly as in author's BASIS_E_R. Exact original-analysis equivalence not certified.",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C044",
+      "field": "detector/xenonnt_sr1_response_early_release_nominal_1d.txt",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/detector/xenonnt_sr1_response_early_release_nominal_1d.txt",
+        "sha256": "273c28d2ac646060ebe243f7c860c3da28d3b98f26e8e932a4703df05760f4c4",
+        "coverage": "46x4: true energy and three accepted cS2-bin probabilities",
+        "shape": [
+          46,
+          4
+        ]
+      },
+      "unit": "keVnr; probabilities dimensionless",
+      "status": "PROJECT_DERIVED",
+      "source_id": "R17",
+      "locator": "utils.py::Template.interpolator/default_yield_model; original 1600 SR1 HDF5 plus ly/qy median JSON",
+      "derivation": "Project derivation of author's linear recasting interpolator, marginalize three unused observables; local energy grid; no c_i or added efficiency",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Available nominal one-dimensional response under the official recasting model. Not an array directly tabulated in the 2024 CEvNS article.",
+      "input_claims": [
+        "XENONnT-C043",
+        "XENONnT-C034",
+        "XENONnT-C037"
+      ],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C045",
+      "field": "statistics/xenonnt_sr1_background_and_b8_early_release.npz",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/statistics/xenonnt_sr1_background_and_b8_early_release.npz",
+        "sha256": "7e78c78cf7df1aca3dfc6e0376ca2e1cf6bead9af7ae8877b62c383862fbf642",
+        "coverage": "AC/ER each 3x3x3x3; B8/neutron each 7x7x3x3x3x3; all bin edges retained",
+        "arrays": {
+          "tLy": [
+            7
+          ],
+          "tQy": [
+            7
+          ],
+          "provenance_json": [],
+          "ac_rate_per_tyr_bin": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "er_rate_per_tyr_bin": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "b8_rate_per_tyr_bin": [
+            7,
+            7,
+            3,
+            3,
+            3,
+            3
+          ],
+          "rg_rate_per_tyr_bin": [
+            7,
+            7,
+            3,
+            3,
+            3,
+            3
+          ],
+          "bin_edges_0": [
+            4
+          ],
+          "bin_edges_1": [
+            4
+          ],
+          "bin_edges_2": [
+            4
+          ],
+          "bin_edges_3": [
+            4
+          ]
+        }
+      },
+      "unit": "rates events/(t yr bin); no bin-width factors; tLy/tQy nuisance coordinates -3..3",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "data/ac,er,b8,rg/template_XENONnT_sr1_*; statistical_model_base.yaml in_events_per_bin",
+      "derivation": "lossless original HDF5 template stacking, no exposure applied or rescaling",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Early official rate templates; B8 is signal/reference in the CEvNS application, not an extra background to add to the computed neutrino signal. Statistical constraints from light-WIMP recasting are not adopted for the benchmark.",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-DERIVED-SR0",
+      "field": "detector/response_1d_SR0",
+      "value": {
+        "energy_keVnr": [
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.6,
+          1.7,
+          1.8,
+          1.9,
+          2.0,
+          2.1,
+          2.2,
+          2.3,
+          2.4,
+          2.5,
+          2.6,
+          2.7,
+          2.8,
+          2.9,
+          3.0,
+          3.1,
+          3.2,
+          3.3,
+          3.4,
+          3.5,
+          3.6,
+          3.7,
+          3.8,
+          3.9,
+          4.0,
+          4.1,
+          4.2,
+          4.3,
+          4.4,
+          4.5,
+          4.6,
+          4.7,
+          4.8,
+          4.9,
+          5.0
+        ],
+        "probability": [
+          [
+            0.00010559645438227636,
+            2.1843030562984605e-05,
+            3.591999349961489e-07
+          ],
+          [
+            0.00039271555408204703,
+            0.00011399044535632423,
+            3.925569224665627e-06
+          ],
+          [
+            0.0009487773748135526,
+            0.0003628416549624307,
+            1.820503064822578e-05
+          ],
+          [
+            0.0018002406122721588,
+            0.0008569282199846839,
+            6.346241871578846e-05
+          ],
+          [
+            0.002860858752410998,
+            0.0016496395832502316,
+            0.00015886278489692215
+          ],
+          [
+            0.004134184420738289,
+            0.0028274737296215846,
+            0.00035522422174386737
+          ],
+          [
+            0.005584468724876606,
+            0.004441715240481396,
+            0.0006902132025694399
+          ],
+          [
+            0.007108311197602719,
+            0.006514102456170792,
+            0.0012596467628831426
+          ],
+          [
+            0.008675775202846917,
+            0.009021003525906603,
+            0.002104338255803435
+          ],
+          [
+            0.010171139775123446,
+            0.011956046175455568,
+            0.0033257568569608144
+          ],
+          [
+            0.011539532064428778,
+            0.015162963695194206,
+            0.005007123697651109
+          ],
+          [
+            0.012745910407414964,
+            0.018608128486900712,
+            0.0071572036927278915
+          ],
+          [
+            0.013742642141891907,
+            0.02210327557075085,
+            0.009901704494769655
+          ],
+          [
+            0.014479971025227403,
+            0.025627452393290354,
+            0.013251779693993089
+          ],
+          [
+            0.014960522558898851,
+            0.028954471947164686,
+            0.017179256768303577
+          ],
+          [
+            0.015181640208673904,
+            0.03205703392640526,
+            0.02174011336555939
+          ],
+          [
+            0.015205635578911398,
+            0.03483098920183775,
+            0.02695297589043283
+          ],
+          [
+            0.014972876360184068,
+            0.03716841598923148,
+            0.032665740448449714
+          ],
+          [
+            0.014573504446059248,
+            0.03904346631424641,
+            0.03883497113104993
+          ],
+          [
+            0.014047193256035224,
+            0.04043075265181254,
+            0.045364962656948296
+          ],
+          [
+            0.01338425734007206,
+            0.04135746583048455,
+            0.0522173374751219
+          ],
+          [
+            0.012637040159271886,
+            0.04177613355630256,
+            0.059347492627214005
+          ],
+          [
+            0.011833901787655747,
+            0.04176188751454714,
+            0.06658824907289729
+          ],
+          [
+            0.010980171251784928,
+            0.04136321164316918,
+            0.07370272645968388
+          ],
+          [
+            0.010122045476574212,
+            0.04055775490648049,
+            0.08077557323150687
+          ],
+          [
+            0.009289333965729205,
+            0.03943919752589662,
+            0.08766187213758356
+          ],
+          [
+            0.008457669444786103,
+            0.03807113847385517,
+            0.09422957869290112
+          ],
+          [
+            0.007660771863328772,
+            0.0364815923165567,
+            0.10040022601689394
+          ],
+          [
+            0.0068969806427190165,
+            0.034692153641670914,
+            0.10613108157472946
+          ],
+          [
+            0.006183438600899801,
+            0.03281851448140933,
+            0.11131415686847831
+          ],
+          [
+            0.0055281631927204,
+            0.03085079835713999,
+            0.11593467467455074
+          ],
+          [
+            0.004924391882624386,
+            0.028846963609808696,
+            0.11996734979764534
+          ],
+          [
+            0.0043581067756822325,
+            0.026835001308512768,
+            0.12332838975284605
+          ],
+          [
+            0.003855197731862617,
+            0.024850630195779797,
+            0.1260016604805449
+          ],
+          [
+            0.00339074053709616,
+            0.022889875527636903,
+            0.1280964242475435
+          ],
+          [
+            0.002977901382801471,
+            0.021006293239134666,
+            0.12945921579169592
+          ],
+          [
+            0.0025972132266490833,
+            0.01920754016116498,
+            0.13022136691775155
+          ],
+          [
+            0.002271748510183062,
+            0.017505360109754255,
+            0.1303269579459183
+          ],
+          [
+            0.001974929709022912,
+            0.01586643113216526,
+            0.1297723932362683
+          ],
+          [
+            0.0017119616585885978,
+            0.014363862693700307,
+            0.12875919852977236
+          ],
+          [
+            0.0014848789750344657,
+            0.012941323812394849,
+            0.12718241709223396
+          ],
+          [
+            0.0012814923523685085,
+            0.01163955389707156,
+            0.1251106436750378
+          ],
+          [
+            0.001110995596505206,
+            0.010429888487042072,
+            0.12255040052353056
+          ],
+          [
+            0.0009518851815490948,
+            0.009320950788934464,
+            0.11959924487311485
+          ],
+          [
+            0.000820072948925894,
+            0.008318727590590052,
+            0.11638331681498627
+          ],
+          [
+            0.0007047212553549778,
+            0.0073795907099345895,
+            0.11277266728176769
+          ]
+        ]
+      },
+      "unit": "1",
+      "status": "PROJECT_DERIVED",
+      "source_id": "R08",
+      "locator": "原单能模板的名义tLy=tQy=0切片",
+      "derivation": "probability[3,3].sum(axis=(-3,-2,-1))，对shadow/S1BDT/S2BDT观测箱求和",
+      "input_claims": [
+        "XENONnT-C020"
+      ],
+      "verification_scope": "原数组边际化，2026模板的2024适用性缺口继续传播",
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-DERIVED-SR1",
+      "field": "detector/response_1d_SR1",
+      "value": {
+        "energy_keVnr": [
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.6,
+          1.7,
+          1.8,
+          1.9,
+          2.0,
+          2.1,
+          2.2,
+          2.3,
+          2.4,
+          2.5,
+          2.6,
+          2.7,
+          2.8,
+          2.9,
+          3.0,
+          3.1,
+          3.2,
+          3.3,
+          3.4,
+          3.5,
+          3.6,
+          3.7,
+          3.8,
+          3.9,
+          4.0,
+          4.1,
+          4.2,
+          4.3,
+          4.4,
+          4.5,
+          4.6,
+          4.7,
+          4.8,
+          4.9,
+          5.0
+        ],
+        "probability": [
+          [
+            8.26875511019701e-05,
+            2.7237839071333197e-05,
+            4.708837168148315e-07
+          ],
+          [
+            0.00030793041811734493,
+            0.00014150646524102586,
+            4.839913056632525e-06
+          ],
+          [
+            0.0007373894827387952,
+            0.0004425404150239241,
+            2.345850906898341e-05
+          ],
+          [
+            0.0013752225343453873,
+            0.001030933881193211,
+            8.322480706800562e-05
+          ],
+          [
+            0.002144707039949859,
+            0.001944526064954037,
+            0.00020957740815336735
+          ],
+          [
+            0.0030492564845194772,
+            0.0032500666685792907,
+            0.0004660965161087527
+          ],
+          [
+            0.004030603242583768,
+            0.00500538608457888,
+            0.0008993797514483273
+          ],
+          [
+            0.005022015568136388,
+            0.0071695242584823935,
+            0.0016176318038502331
+          ],
+          [
+            0.005993959478876031,
+            0.009711380889805853,
+            0.0026762393542684865
+          ],
+          [
+            0.0068684614085186765,
+            0.012566485373803655,
+            0.004190427534370577
+          ],
+          [
+            0.00761124607348911,
+            0.01557954116048084,
+            0.006216087897709457
+          ],
+          [
+            0.00823580965923989,
+            0.018676283917580604,
+            0.008796861356067056
+          ],
+          [
+            0.008666121743248833,
+            0.021699092572009127,
+            0.012019902359350963
+          ],
+          [
+            0.008913626730994838,
+            0.024572362393661826,
+            0.015893299688991672
+          ],
+          [
+            0.008996418935506801,
+            0.027130063583300047,
+            0.02035615061294784
+          ],
+          [
+            0.008915321867657136,
+            0.029359088793326975,
+            0.025451562507777567
+          ],
+          [
+            0.00871736970603195,
+            0.031177168631927037,
+            0.0311776795457561
+          ],
+          [
+            0.008370526968738756,
+            0.03251101623410662,
+            0.037387618234165344
+          ],
+          [
+            0.007956032995725542,
+            0.033377399885959586,
+            0.04395902592661171
+          ],
+          [
+            0.007470096541717894,
+            0.033793256375496086,
+            0.05083026214730976
+          ],
+          [
+            0.006951954996468805,
+            0.033798971351783225,
+            0.05789559196499563
+          ],
+          [
+            0.006411541213317409,
+            0.03337202587361267,
+            0.06513252421856079
+          ],
+          [
+            0.00584284679480563,
+            0.032593407550952504,
+            0.07241337160905066
+          ],
+          [
+            0.005304551377622153,
+            0.031543796233559615,
+            0.07945813705205751
+          ],
+          [
+            0.004772958039042479,
+            0.030267160972179095,
+            0.08636419780756678
+          ],
+          [
+            0.004269462733897901,
+            0.028781082990703193,
+            0.09294902107969386
+          ],
+          [
+            0.0037992758869181734,
+            0.027150087983701228,
+            0.09918345065866636
+          ],
+          [
+            0.0033649778106349328,
+            0.025457225606133643,
+            0.10487562499068245
+          ],
+          [
+            0.0029489827629726505,
+            0.023678599750396382,
+            0.11013758825730355
+          ],
+          [
+            0.0025852189487175783,
+            0.02190024313562387,
+            0.11479635642264001
+          ],
+          [
+            0.002255450852718612,
+            0.020170338144096026,
+            0.11878040165565416
+          ],
+          [
+            0.001960522176012442,
+            0.018444887616227108,
+            0.12220865290984458
+          ],
+          [
+            0.0016936007582848743,
+            0.016805240487892673,
+            0.1249116604104571
+          ],
+          [
+            0.0014646002886037261,
+            0.015235609241237248,
+            0.126947015735417
+          ],
+          [
+            0.001259388838900317,
+            0.013742891962194678,
+            0.12841220326850228
+          ],
+          [
+            0.0010774983095873077,
+            0.012350207782607918,
+            0.12907964135671024
+          ],
+          [
+            0.0009197013791053502,
+            0.011063073546611452,
+            0.12925117008063383
+          ],
+          [
+            0.0007846780732855547,
+            0.009858716971066675,
+            0.12878339547067438
+          ],
+          [
+            0.0006682472106750605,
+            0.008756223874562276,
+            0.12766693847910218
+          ],
+          [
+            0.0005660035137959132,
+            0.0077684348040337765,
+            0.12604678565203456
+          ],
+          [
+            0.0004794008527097574,
+            0.006860169957112632,
+            0.12398348193801703
+          ],
+          [
+            0.00040617717480378725,
+            0.006047535832166784,
+            0.1214287698450104
+          ],
+          [
+            0.00034318379591575675,
+            0.005307004441850755,
+            0.11845643445339381
+          ],
+          [
+            0.0002876225772795379,
+            0.004641393832093531,
+            0.11512659826077454
+          ],
+          [
+            0.0002408546033186214,
+            0.004066120980555856,
+            0.11153486913375987
+          ],
+          [
+            0.00020288400972080285,
+            0.003540820083652682,
+            0.10765568591815214
+          ]
+        ]
+      },
+      "unit": "1",
+      "status": "PROJECT_DERIVED",
+      "source_id": "R08",
+      "locator": "原单能模板的名义tLy=tQy=0切片",
+      "derivation": "probability[3,3].sum(axis=(-3,-2,-1))，对shadow/S1BDT/S2BDT观测箱求和",
+      "input_claims": [
+        "XENONnT-C023"
+      ],
+      "verification_scope": "原数组边际化，2026模板的2024适用性缺口继续传播",
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-S01",
+      "field": "flux_reference",
+      "value": 5460000.0,
+      "unit": "cm^-2 s^-1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p5 Eq.(11)后",
+      "verification_scope": "列出的直接原文数值已核",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s2"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-S02",
+      "field": "flux_relative_error",
+      "value": 0.12,
+      "unit": "1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p6 Eq.(17)后",
+      "verification_scope": "列出的直接原文数值已核",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s2"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-S03",
+      "field": "sin2thetaW_reference",
+      "value": 0.23857,
+      "unit": "1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p3 Eq.(2)后",
+      "verification_scope": "列出的直接原文数值已核",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s4"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-S04",
+      "field": "avogadro_constant",
+      "value": 6.02214076e+23,
+      "unit": "mol^-1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R13",
+      "locator": "§2.2 Table1，英文PDF p13–14",
+      "verification_scope": "列出的直接原文数值已核",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-S05",
+      "field": "early_reader_SR0_exposure_factor",
+      "value": 1.174398,
+      "unit": "t yr",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "statistical_model_base.yaml parameter_definition/livetime_sr0/nominal_value，曝光乘率模板的reader约定，候选",
+      "verification_scope": "列出的直接原文数值已核",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-S06",
+      "field": "early_reader_SR1_exposure_factor",
+      "value": 2.342593,
+      "unit": "t yr",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "statistical_model_base.yaml parameter_definition/livetime_sr1/nominal_value，同上，候选",
+      "verification_scope": "列出的直接原文数值已核",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-S07",
+      "field": "benchmark_signal_sigma",
+      "value": 0.05,
+      "unit": "1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p6 Eq.(17)后",
+      "verification_scope": "列出的直接原文数值已核",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-S08",
+      "field": "benchmark_AC_sigma",
+      "value": 0.048,
+      "unit": "1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p6 Eq.(17)后",
+      "verification_scope": "列出的直接原文数值已核",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-S09",
+      "field": "benchmark_neutron_sigma",
+      "value": 0.5,
+      "unit": "1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p6 Eq.(17)后",
+      "verification_scope": "列出的直接原文数值已核",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-S10",
+      "field": "benchmark_ER_sigma",
+      "value": 1.0,
+      "unit": "1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p6 Eq.(17)后",
+      "verification_scope": "列出的直接原文数值已核",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-DERIVED-INVENTORY",
+      "field": "target/derived_inventory",
+      "value": {
+        "mean_molar_mass_g_per_mol": 131.29276144779053,
+        "mass_numbers": [
+          124,
+          126,
+          128,
+          129,
+          130,
+          131,
+          132,
+          134,
+          136
+        ],
+        "nuclei_per_ton": [
+          4.366636774411816e+24,
+          4.0822549676749114e+24,
+          8.761711729497322e+25,
+          1.2109436011190817e+27,
+          1.8672876374611875e+26,
+          9.738884311872001e+26,
+          1.23424456205817e+27,
+          4.786650355748885e+26,
+          4.0626693174367414e+26
+        ],
+        "total_nuclei_per_ton": 4.5868033344661935e+27
+      },
+      "unit": "g/mol and nuclei/t, per field",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "式(2)，NIST全部9行及SI阿伏伽德罗常量",
+      "derivation": "molar-mass constant approximated as 1g/mol. M=sum(f_A*M_A), n_A=1e6*N_A*f_A/M",
+      "input_claims": [
+        "XENONnT-C019",
+        "XENONnT-S04"
+      ],
+      "verification_scope": "本版中心值推导，原数据精度和天然组成适用性由输入传播",
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-NUMERICAL-POLICIES",
+      "field": "prediction/numerical_policies",
+      "value": {
+        "seconds_per_year": 31557600,
+        "days_per_year": 365.25,
+        "source_interpolation": "piecewise_linear_candidate",
+        "source_outside_table": "zero_candidate",
+        "response_interpolation": "nonnegative_multilinear_within_verified_grid_candidate",
+        "quadrature_tolerance_and_grid": null
+      },
+      "unit": "per field",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "本版显式数值方案，主文第2、5、7节",
+      "derivation": "seconds_per_year=365.25*24*3600. Interpolation and support are draft numerical choices requiring P07 convergence review.",
+      "input_claims": [
+        "XENONnT-C018"
+      ],
+      "decision_refs": [],
+      "verification_scope": "项目拟议处理约定，DRAFT",
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s7"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-NUCLEAR-LOCAL",
+      "field": "nuclear/local_coefficients",
+      "value": {
+        "file": "data/responses/responses_all.json",
+        "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+        "xenon_keys": [
+          "Xe128",
+          "Xe129",
+          "Xe130",
+          "Xe131",
+          "Xe132",
+          "Xe134",
+          "Xe136"
+        ],
+        "missing_natural_xenon_keys": [
+          "Xe124",
+          "Xe126"
+        ]
+      },
+      "unit": "as declared by the existing response reader",
+      "status": "REFERENCE_ONLY",
+      "source_id": "R16",
+      "locator": "/nuclei/Xe*/basic,exp_factor,responses",
+      "verification_scope": "本地键与数值容器已核，上游系数及绝对归一化待核",
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s4"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-M01",
+      "field": "kernel_2024",
+      "value": null,
+      "unit": null,
+      "status": "MISSING",
+      "source_id": null,
+      "locator": null,
+      "verification_scope": "已核材料列于P00，具体所需输入待取得或适用性核验",
+      "needed_material": "早期官方YBe重铸基底和名义三箱响应已取得；仍需核验与2024 CEvNS原分析的等价性或误差。2026版本另列候选",
+      "blocking_scope": [
+        "strict_2024_reproduction"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-M02",
+      "field": "prefit_shapes_2024",
+      "value": null,
+      "unit": null,
+      "status": "MISSING",
+      "source_id": null,
+      "locator": null,
+      "verification_scope": "已核材料列于P00，具体所需输入待取得或适用性核验",
+      "needed_material": "早期官方81箱组分形状已取得；仍核对与原生2024 likelihood的配置/模板版本配套",
+      "blocking_scope": [
+        "strict_native_4D_likelihood"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-M03",
+      "field": "yield_constraints",
+      "value": null,
+      "unit": null,
+      "status": "MISSING",
+      "source_id": null,
+      "locator": null,
+      "verification_scope": "已核材料列于P00，具体所需输入待取得或适用性核验",
+      "needed_material": "原生tLy/tQy约束数值实现及相关性/形变合同",
+      "blocking_scope": [
+        "native_4D_likelihood"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-M04",
+      "field": "nuclear_original_source",
+      "value": null,
+      "unit": null,
+      "status": "MISSING",
+      "source_id": null,
+      "locator": null,
+      "verification_scope": "已核材料列于P00，具体所需输入待取得或适用性核验",
+      "needed_material": "Xe系数原始外部来源、归一化和Fig.4算符匹配",
+      "blocking_scope": [
+        "Fig4"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s4"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-M05",
+      "field": "benchmark_inference_conventions",
+      "value": null,
+      "unit": null,
+      "status": "MISSING",
+      "source_id": null,
+      "locator": null,
+      "verification_scope": "已核材料列于P00，具体所需输入待取得或适用性核验",
+      "needed_material": "Fig.2通量扫描的α参数化及Fig.4置信区间/阈值构造对照",
+      "blocking_scope": [
+        "strict_benchmark_inference"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-EQ1",
+      "field": "source/equation_1",
+      "value": "\\frac{d\\phi}{dE_\\nu}=\\Phi_{8B}f_{8B}(E_\\nu). \\tag{1}",
+      "unit": "equation with symbol units declared in the chapter",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "本项目的数学定义或推导，主文对应编号公式",
+      "derivation": "源总量与谱形分解、质量到核数换算、接受后箱概率、真实谱折叠、计数分量求和、Poisson likelihood with external constraints",
+      "input_claims": [
+        "XENONnT-C018",
+        "XENONnT-S01"
+      ],
+      "verification_scope": "数学合同草稿，必需输入缺口按依赖传播",
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s2"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-EQ2",
+      "field": "target/equation_2",
+      "value": "\\overline M=\\sum_A f_A M_A,\\qquad n_A^{(t)}=\\frac{10^6N_{\\rm A}f_A}{\\overline M}. \\tag{2}",
+      "unit": "equation with symbol units declared in the chapter",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "本项目的数学定义或推导，主文对应编号公式",
+      "derivation": "源总量与谱形分解、质量到核数换算、接受后箱概率、真实谱折叠、计数分量求和、Poisson likelihood with external constraints",
+      "input_claims": [
+        "XENONnT-C019",
+        "XENONnT-S04"
+      ],
+      "verification_scope": "数学合同草稿，必需输入缺口按依赖传播",
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-EQ3",
+      "field": "detector/equation_3",
+      "value": "P_{r\\mathbf i}(T;\\boldsymbol\\eta)=\\int_{\\Omega_{r\\mathbf i}}p_r(\\mathbf x\\mid T;\\boldsymbol\\eta)\\epsilon_r(\\mathbf x,T;\\boldsymbol\\eta)\\,d\\mathbf x,\\qquad0\\le\\sum_{\\mathbf i}P_{r\\mathbf i}\\le1. \\tag{3}",
+      "unit": "equation with symbol units declared in the chapter",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "本项目的数学定义或推导，主文对应编号公式",
+      "derivation": "源总量与谱形分解、质量到核数换算、接受后箱概率、真实谱折叠、计数分量求和、Poisson likelihood with external constraints",
+      "input_claims": [
+        "XENONnT-M01"
+      ],
+      "verification_scope": "数学合同草稿，必需输入缺口按依赖传播",
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-EQ4",
+      "field": "prediction/equation_4",
+      "value": "\\mu^{\\rm sig}_{r\\mathbf i}=\\mathcal E_r t_{\\rm yr}\\sum_A n_A^{(t)}\\int dT\\,dE_\\nu\\,\\frac{d\\phi}{dE_\\nu}\\frac{d\\sigma_A}{dT}P_{r\\mathbf i}(T;\\boldsymbol\\eta). \\tag{4}",
+      "unit": "equation with symbol units declared in the chapter",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "本项目的数学定义或推导，主文对应编号公式",
+      "derivation": "源总量与谱形分解、质量到核数换算、接受后箱概率、真实谱折叠、计数分量求和、Poisson likelihood with external constraints",
+      "input_claims": [
+        "XENONnT-EQ1",
+        "XENONnT-EQ2",
+        "XENONnT-EQ3",
+        "XENONnT-NUMERICAL-POLICIES",
+        "XENONnT-C027",
+        "XENONnT-S05",
+        "XENONnT-S06"
+      ],
+      "verification_scope": "数学合同草稿，必需输入缺口按依赖传播",
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s7"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-EQ5",
+      "field": "statistics/equation_5",
+      "value": "\\mu_{r\\mathbf i}=\\mu^{\\rm sig}_{r\\mathbf i}+\\sum_k B^k_{r\\mathbf i}. \\tag{5}",
+      "unit": "equation with symbol units declared in the chapter",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "本项目的数学定义或推导，主文对应编号公式",
+      "derivation": "源总量与谱形分解、质量到核数换算、接受后箱概率、真实谱折叠、计数分量求和、Poisson likelihood with external constraints",
+      "input_claims": [
+        "XENONnT-EQ4",
+        "XENONnT-C014",
+        "XENONnT-C015",
+        "XENONnT-C016",
+        "XENONnT-C017",
+        "XENONnT-C021",
+        "XENONnT-C022",
+        "XENONnT-C024",
+        "XENONnT-C025",
+        "XENONnT-C028",
+        "XENONnT-C042",
+        "XENONnT-C045",
+        "XENONnT-S07",
+        "XENONnT-S08",
+        "XENONnT-S09",
+        "XENONnT-S10"
+      ],
+      "verification_scope": "数学合同草稿，必需输入缺口按依赖传播",
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-EQ6",
+      "field": "statistics/equation_6",
+      "value": "-2\\ln\\mathcal L=2\\sum_{r,\\mathbf i}\\left[\\mu_{r\\mathbf i}-D_{r\\mathbf i}+D_{r\\mathbf i}\\ln\\frac{D_{r\\mathbf i}}{\\mu_{r\\mathbf i}}\\right]-2\\ln\\pi(\\boldsymbol\\eta). \\tag{6}",
+      "unit": "equation with symbol units declared in the chapter",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "本项目的数学定义或推导，主文对应编号公式",
+      "derivation": "源总量与谱形分解、质量到核数换算、接受后箱概率、真实谱折叠、计数分量求和、Poisson likelihood with external constraints",
+      "input_claims": [
+        "XENONnT-EQ5",
+        "XENONnT-M05",
+        "XENONnT-C014",
+        "XENONnT-C015",
+        "XENONnT-C016",
+        "XENONnT-C017",
+        "XENONnT-C021",
+        "XENONnT-C022",
+        "XENONnT-C024",
+        "XENONnT-C025",
+        "XENONnT-C028",
+        "XENONnT-C042",
+        "XENONnT-C045",
+        "XENONnT-S07",
+        "XENONnT-S08",
+        "XENONnT-S09",
+        "XENONnT-S10"
+      ],
+      "verification_scope": "数学合同草稿，必需输入缺口按依赖传播",
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P01",
+      "field": "source.total_flux",
+      "value": 5460000.0,
+      "unit": "cm^-2 s^-1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p5 Eq.(11)后，参考总通量；形状表不含该值",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P02",
+      "field": "target.anchor_mass_kg",
+      "value": 1000.0,
+      "unit": "kg",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "计算归一化锚点1t，不是实测探测器质量；与质量时间因子配对",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P03",
+      "field": "target.Z",
+      "value": 54.0,
+      "unit": "1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R09",
+      "locator": "NIST Xenon，Z=54",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P04",
+      "field": "constants.avogadro",
+      "value": 6.02214076e+23,
+      "unit": "mol^-1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R13",
+      "locator": "SI第9版§2.2/Table1精确值",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P05",
+      "field": "constants.amu_GeV",
+      "value": 0.93149410372,
+      "unit": "GeV/u",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R18",
+      "locator": "foundation/constants.py::AMU_GEV；原子质量的GeV换算",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P06",
+      "field": "constants.electron_mass_GeV",
+      "value": 0.0005109989506900001,
+      "unit": "GeV",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R18",
+      "locator": "foundation/constants.py::m_e；裸核质量近似扣除Z个电子，忽略电子结合能",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P07",
+      "field": "constants.G_F",
+      "value": 1.1663787e-05,
+      "unit": "GeV^-2",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R18",
+      "locator": "foundation/constants.py::G_F",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P08",
+      "field": "constants.hbarc_GeV_fm",
+      "value": 0.1973269804,
+      "unit": "GeV fm",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R18",
+      "locator": "foundation/constants.py::HBARC_GEV_FM",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P09",
+      "field": "constants.GeV_inverse2_to_cm2",
+      "value": 3.893793721e-28,
+      "unit": "cm^2 GeV^2",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R18",
+      "locator": "foundation/constants.py::GEV_INV2_TO_CM2；微分截面另乘1e-6转成每keV",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P10",
+      "field": "constants.seconds_per_year",
+      "value": 31557600.0,
+      "unit": "s/yr",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R18",
+      "locator": "365.25×86400=31557600；计算单位约定，不是额外活时间",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P11",
+      "field": "nuclear.radius_fm",
+      "value": 1.23,
+      "unit": "fm",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p3 Eq.(3)后：R_A=1.23 A^(1/3) fm",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P12",
+      "field": "nuclear.skin_fm",
+      "value": 0.7,
+      "unit": "fm",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "同上，a_k=0.7 fm",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P13",
+      "field": "interaction.sin2thetaW",
+      "value": 0.23857,
+      "unit": "1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p3 Eq.(2)后参考弱混合角",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P14",
+      "field": "interaction.include_sm",
+      "value": true,
+      "unit": "boolean",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": null,
+      "locator": "本轮用户指定纯标准模型，不扫描BSM",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P15",
+      "field": "numerics.n_er",
+      "value": 401,
+      "unit": "1",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "Slow直接积分基础节点；另并入原表/响应/观测断点，加密检查后记录",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P16",
+      "field": "numerics.n_enu",
+      "value": 240,
+      "unit": "1",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "Slow直接积分基础节点；另并入原表/响应/观测断点，加密检查后记录",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A01",
+      "field": "resources/arrays/source_energy_MeV",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.resources.npz",
+        "key": "source_energy_MeV",
+        "shape": [
+          829
+        ],
+        "minimum": 0.0,
+        "maximum": 16.56,
+        "representative_first_middle_last": [
+          0.0,
+          8.28,
+          16.56
+        ],
+        "sha256_raw_c_order": "6ac928890e222a91db8fd186d6274b8fbd1d856e9dece4b73bbffda5a08d0bea"
+      },
+      "unit": "MeV",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R04",
+      "locator": "Bahcall官网b8spectrum.txt全部829行第一列",
+      "input_claims": [
+        "XENONnT-C018"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A02",
+      "field": "resources/arrays/source_shape_per_MeV",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.resources.npz",
+        "key": "source_shape_per_MeV",
+        "shape": [
+          829
+        ],
+        "minimum": 0.0,
+        "maximum": 0.1321716,
+        "representative_first_middle_last": [
+          0.0,
+          0.1154396,
+          0.0
+        ],
+        "sha256_raw_c_order": "22688f9623ff5e1cdb07fdbb6f09b6561be51500f801514498eb3f155a0fc839"
+      },
+      "unit": "MeV^-1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R04",
+      "locator": "同表第二列中心归一化谱；不重归一化，不含总通量/效率",
+      "input_claims": [
+        "XENONnT-C018"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A03",
+      "field": "resources/arrays/target_mass_number",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.resources.npz",
+        "key": "target_mass_number",
+        "shape": [
+          9
+        ],
+        "minimum": 124.0,
+        "maximum": 136.0,
+        "representative_first_middle_last": [
+          124.0,
+          130.0,
+          136.0
+        ],
+        "sha256_raw_c_order": "7c80fa52360d367884280618a5eee232aafa7e9f786eb23b85efebe4cb198e3b"
+      },
+      "unit": "1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R09",
+      "locator": "NIST天然Xe表全部九行，对应A/原子质量/数丰度",
+      "input_claims": [
+        "XENONnT-C019"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A04",
+      "field": "resources/arrays/target_atomic_mass_u",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.resources.npz",
+        "key": "target_atomic_mass_u",
+        "shape": [
+          9
+        ],
+        "minimum": 123.905892,
+        "maximum": 135.907214484,
+        "representative_first_middle_last": [
+          123.905892,
+          129.903509349,
+          135.907214484
+        ],
+        "sha256_raw_c_order": "884eee0754e989e8078a4c6321b7218f1da528a46f8a4db3a79de3c14b9b04dd"
+      },
+      "unit": "u",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R09",
+      "locator": "NIST天然Xe表全部九行，对应A/原子质量/数丰度",
+      "input_claims": [
+        "XENONnT-C019"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A05",
+      "field": "resources/arrays/target_number_fraction",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.resources.npz",
+        "key": "target_number_fraction",
+        "shape": [
+          9
+        ],
+        "minimum": 0.00089,
+        "maximum": 0.269086,
+        "representative_first_middle_last": [
+          0.000952,
+          0.04071,
+          0.088573
+        ],
+        "sha256_raw_c_order": "a10a5b945b97d99cdabb590a3eed0643310f0e759be54e3533a171c6ba1f793b"
+      },
+      "unit": "1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R09",
+      "locator": "NIST天然Xe表全部九行，对应A/原子质量/数丰度",
+      "input_claims": [
+        "XENONnT-C019"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A06",
+      "field": "resources/arrays/run_exposures_tyr",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.resources.npz",
+        "key": "run_exposures_tyr",
+        "shape": [
+          2
+        ],
+        "minimum": 1.174398,
+        "maximum": 2.342593,
+        "representative_first_middle_last": [
+          1.174398,
+          2.342593,
+          2.342593
+        ],
+        "sha256_raw_c_order": "08a9696e73a247671a29e84b189980cb2e94f134ab6de479870901ec0592b1f0"
+      },
+      "unit": "t yr",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "官方statistical_model_base.yaml livetime_sr0/1；每t yr模板的曝光乘数。合计3.516991，与论文打印3.51分别报告",
+      "input_claims": [
+        "XENONnT-S05",
+        "XENONnT-S06"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A07",
+      "field": "resources/arrays/response_energy_keV",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.resources.npz",
+        "key": "response_energy_keV",
+        "shape": [
+          16
+        ],
+        "minimum": 0.51,
+        "maximum": 5.0,
+        "representative_first_middle_last": [
+          0.51,
+          1.75,
+          5.0
+        ],
+        "sha256_raw_c_order": "232333667ab2b191a1dc7abdde567b32124a9b795526d55b82634e10ea66ce0c"
+      },
+      "unit": "keVnr",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "官方utils.py::BASIS_E_R/LY_SWEEP/QY_SWEEP；原HDF5节点",
+      "input_claims": [
+        "XENONnT-C040",
+        "XENONnT-C043"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A08",
+      "field": "resources/arrays/response_Ly",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.resources.npz",
+        "key": "response_Ly",
+        "shape": [
+          10
+        ],
+        "minimum": 1.0,
+        "maximum": 10.0,
+        "representative_first_middle_last": [
+          1.0,
+          6.0,
+          10.0
+        ],
+        "sha256_raw_c_order": "fd239096fa7119540931bf5e19d05267e3baf5524ce6302b4f24231d58de264d"
+      },
+      "unit": "photon/keVnr",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "官方utils.py::BASIS_E_R/LY_SWEEP/QY_SWEEP；原HDF5节点",
+      "input_claims": [
+        "XENONnT-C040",
+        "XENONnT-C043"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A09",
+      "field": "resources/arrays/response_Qy",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.resources.npz",
+        "key": "response_Qy",
+        "shape": [
+          10
+        ],
+        "minimum": 1.0,
+        "maximum": 10.0,
+        "representative_first_middle_last": [
+          1.0,
+          6.0,
+          10.0
+        ],
+        "sha256_raw_c_order": "fd239096fa7119540931bf5e19d05267e3baf5524ce6302b4f24231d58de264d"
+      },
+      "unit": "electron/keVnr",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "官方utils.py::BASIS_E_R/LY_SWEEP/QY_SWEEP；原HDF5节点",
+      "input_claims": [
+        "XENONnT-C040",
+        "XENONnT-C043"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A10",
+      "field": "resources/arrays/response_SR0",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.resources.npz",
+        "key": "response_SR0",
+        "shape": [
+          16,
+          10,
+          10,
+          3
+        ],
+        "minimum": 2.7e-09,
+        "maximum": 0.13485916324373193,
+        "representative_first_middle_last": [
+          5.507319894400944e-08,
+          3.635089025983809e-05,
+          0.0017157620318368318
+        ],
+        "sha256_raw_c_order": "0c1159fb28c1d399e185bc0213889867c377c559e2f35f93a9e53c4d7a9c4bd8"
+      },
+      "unit": "1",
+      "status": "PROJECT_DERIVED",
+      "source_id": "R17",
+      "locator": "SR0原始1600个单能模板，对shadow/S1BDT/S2BDT求和；含全部原模板选取，不额外乘接受度",
+      "input_claims": [
+        "XENONnT-C040"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。原HDF5对其余三观测轴求和，保留原选择通过概率；未重新归一化。",
+      "output_locations": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A11",
+      "field": "resources/arrays/cs2_edges_SR0",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.resources.npz",
+        "key": "cs2_edges_SR0",
+        "shape": [
+          4
+        ],
+        "minimum": 90.0,
+        "maximum": 500.0,
+        "representative_first_middle_last": [
+          90.0,
+          249.889739990234,
+          500.0
+        ],
+        "sha256_raw_c_order": "193082d847a544acf61b46fd78b32ece63ec427adc950ab7c63f62c0b591dd14"
+      },
+      "unit": "PE",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "SR0原HDF5 /bins/0，原样保留",
+      "input_claims": [
+        "XENONnT-C040"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A12",
+      "field": "resources/arrays/response_SR1",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.resources.npz",
+        "key": "response_SR1",
+        "shape": [
+          16,
+          10,
+          10,
+          3
+        ],
+        "minimum": 2.7e-09,
+        "maximum": 0.13492746197312186,
+        "representative_first_middle_last": [
+          2.927716980405046e-08,
+          2.5491064751818386e-05,
+          0.0012173567436711608
+        ],
+        "sha256_raw_c_order": "9e593fbaa1af36d5f2cc4730274a32adfa3f65ec8316e5ba8807c32303355543"
+      },
+      "unit": "1",
+      "status": "PROJECT_DERIVED",
+      "source_id": "R17",
+      "locator": "SR1原始1600个单能模板，对shadow/S1BDT/S2BDT求和；含全部原模板选取，不额外乘接受度",
+      "input_claims": [
+        "XENONnT-C043"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。原HDF5对其余三观测轴求和，保留原选择通过概率；未重新归一化。",
+      "output_locations": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A13",
+      "field": "resources/arrays/cs2_edges_SR1",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.resources.npz",
+        "key": "cs2_edges_SR1",
+        "shape": [
+          4
+        ],
+        "minimum": 90.0,
+        "maximum": 500.0,
+        "representative_first_middle_last": [
+          90.0,
+          232.292022705078,
+          500.0
+        ],
+        "sha256_raw_c_order": "dd43a0732f74ab049cbfec27c157df5a1d313f01624fd06c3d9fbf66f7a97752"
+      },
+      "unit": "PE",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "SR1原HDF5 /bins/0，原样保留",
+      "input_claims": [
+        "XENONnT-C043"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A14",
+      "field": "resources/arrays/yield_energy_keV",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.resources.npz",
+        "key": "yield_energy_keV",
+        "shape": [
+          501
+        ],
+        "minimum": 0.29999999999999993,
+        "maximum": 10.0,
+        "representative_first_middle_last": [
+          0.29999999999999993,
+          1.7320508075688772,
+          10.0
+        ],
+        "sha256_raw_c_order": "c0d7bc4076d7e00b0d3333d99aacaeafe2beafb1791f4ad8065acdc6c2bc8393"
+      },
+      "unit": "keVnr",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "官方YBe median JSON coordinate_system，501节点；仅在响应0.51–5keV域使用",
+      "input_claims": [
+        "XENONnT-C034",
+        "XENONnT-C037"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A15",
+      "field": "resources/arrays/yield_Ly_median",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.resources.npz",
+        "key": "yield_Ly_median",
+        "shape": [
+          501
+        ],
+        "minimum": 4.964833049983989,
+        "maximum": 5.849434265559596,
+        "representative_first_middle_last": [
+          4.969483910667949,
+          4.977021862119084,
+          5.849434265559596
+        ],
+        "sha256_raw_c_order": "5ad6f4bc1941b21926ac454b8705af349e1564d32d25331f5f5e4c55c16bd84f"
+      },
+      "unit": "photon/keVnr",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "data/signal/ly_ybe_model_median.json 原始map；非旧WIMP Qy",
+      "input_claims": [
+        "XENONnT-C034"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A16",
+      "field": "resources/arrays/yield_Qy_median",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.resources.npz",
+        "key": "yield_Qy_median",
+        "shape": [
+          501
+        ],
+        "minimum": 2.744883476035867,
+        "maximum": 6.423151533880817,
+        "representative_first_middle_last": [
+          2.744883476035867,
+          6.420268530245179,
+          5.214717914326497
+        ],
+        "sha256_raw_c_order": "a243e2e74b0d0ea8411578a7eadfeff6c515757d77431b2b0f7c501768462d1a"
+      },
+      "unit": "electron/keVnr",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R17",
+      "locator": "data/signal/qy_ybe_model_median.json 原始map；非旧WIMP Qy",
+      "input_claims": [
+        "XENONnT-C037"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A17",
+      "field": "resources/arrays/observable_edges",
+      "value": {
+        "file": "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.resources.npz",
+        "key": "observable_edges",
+        "shape": [
+          4
+        ],
+        "minimum": 0.0,
+        "maximum": 3.0,
+        "representative_first_middle_last": [
+          0.0,
+          2.0,
+          3.0
+        ],
+        "sha256_raw_c_order": "9392b85eaba90b4aa6f39e1f269927b4bd6bec47cd2e34a80cf3ed914c26dc7e"
+      },
+      "unit": "1",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "本轮显式输出坐标：按SR0/SR1各自三箱序号相加，不伪造统一PE边界",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。本轮项目输出坐标选择，不声称为论文原始分箱。",
+      "output_locations": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-MODEL",
+      "field": "theory_response/sm_runtime_profile",
+      "value": {
+        "interaction": "coherent_sm_kn_v1",
+        "nuclear_response": "klein_nystrand_v1",
+        "implementation": "cevns_pyeft/theory/sm_coherent.py",
+        "implementation_sha256": "8e5ab60e6bc7f7c63356965e8d7f937185918a18a5ea792ea77022126b249759"
+      },
+      "unit": "1",
+      "status": "PROJECT_DERIVED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p3 式(1)–(3)，含−T/E的树级SM与Klein–Nystrand；参数从正式包读取。",
+      "input_claims": [
+        "XENONnT-S03"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "解析共享模块实现与参数卡绑定；零反冲弱荷/单位/端点合同验证。不是实验完整likelihood认证。"
+    },
+    {
+      "claim_id": "SM20261107-RESULT",
+      "field": "prediction/sm_forward",
+      "value": {
+        "file": "outputs/solar_b8_sm/20261107_run1/XENONnT_2024_SolarB8/SM_RESULT.json",
+        "counts": [
+          3.5140309179313785,
+          5.649108573211995,
+          3.1540937324043195
+        ],
+        "total_events": 12.317233223547694,
+        "package_sha256": "271e18b89398ed90c29db2f88924a10514125328a7c27f69de49baa33c1111c4",
+        "resource_sha256": "39aa001f5c5657ddbb0099f232ee7e2a81f78ff383da3cf43b0dc214b62fdeb2",
+        "physics_fingerprint": "86c45c9280e7ea74de38576960958a3f7b664f3331f865e7ceb934904a4aac32"
+      },
+      "unit": "events/bin",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "正式两文件→load_experiment_package→predict_experiment→共享recoil积分/概率折叠",
+      "verification_scope": "固定SM点的数值收敛及逐箱对照；非拟合、非官方likelihood认证",
+      "decision_refs": [
+        "D0001"
+      ],
+      "input_claims": [
+        "SM20261107-MODEL",
+        "SM20261107-P01",
+        "SM20261107-P02",
+        "SM20261107-P03",
+        "SM20261107-P04",
+        "SM20261107-P05",
+        "SM20261107-P06",
+        "SM20261107-P07",
+        "SM20261107-P08",
+        "SM20261107-P09",
+        "SM20261107-P10",
+        "SM20261107-P11",
+        "SM20261107-P12",
+        "SM20261107-P13",
+        "SM20261107-P14",
+        "SM20261107-P15",
+        "SM20261107-P16",
+        "SM20261107-A01",
+        "SM20261107-A02",
+        "SM20261107-A03",
+        "SM20261107-A04",
+        "SM20261107-A05",
+        "SM20261107-A06",
+        "SM20261107-A07",
+        "SM20261107-A08",
+        "SM20261107-A09",
+        "SM20261107-A10",
+        "SM20261107-A11",
+        "SM20261107-A12",
+        "SM20261107-A13",
+        "SM20261107-A14",
+        "SM20261107-A15",
+        "SM20261107-A16",
+        "SM20261107-A17"
+      ]
+    },
+    {
+      "claim_id": "VECTOR20261108-MODEL",
+      "field": "theory_response/light_vector",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R19",
+      "locator": "PDF p5, printed p4, Eqs.(2.6),(2.10), kappa paragraph and g definition",
+      "value": {
+        "C_V": "3 A g^2",
+        "kappa_V": 1.0,
+        "kappa_BL": -0.3333333333333333
+      },
+      "unit": "1",
+      "input_claims": [],
+      "decision_refs": [
+        "D0002"
+      ],
+      "verification_scope": "原文公式及版本差异已目视核验；SM源/靶/Response沿既有显式输入，不认证完整官方likelihood"
+    },
+    {
+      "claim_id": "VECTOR20261108-POINTS",
+      "field": "benchmark/project_test_points",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "显式项目测试点卡，数值用于抵消/回升/传播子质量测试；不是原文拟合点",
+      "value": {
+        "file": "data/benchmarks/solar_b8_vector_v1/benchmark.input.json",
+        "sha256": "d1d589c0d3b85177948b3d388fd9f5683fe204246ff81d5c5c101fe200eb83db",
+        "points": [
+          {
+            "id": "SM",
+            "scenario": "SM",
+            "mass_MeV": null,
+            "coupling": 0.0,
+            "parameter_provenance": "SM reference in the existing formal packages"
+          },
+          {
+            "id": "V10_g1",
+            "scenario": "universal",
+            "mass_MeV": 10.0,
+            "coupling": 1e-05,
+            "kappa": 1.0,
+            "parameter_provenance": "PROJECT_BENCHMARK_CHOICE: these illustrative numerical masses/couplings are selected for interference, regeneration and propagator tests; not paper best fits or limits. kappa/model definitions from R19 Eqs.(2.6),(2.10)."
+          },
+          {
+            "id": "V10_g2",
+            "scenario": "universal",
+            "mass_MeV": 10.0,
+            "coupling": 2e-05,
+            "kappa": 1.0,
+            "parameter_provenance": "PROJECT_BENCHMARK_CHOICE: these illustrative numerical masses/couplings are selected for interference, regeneration and propagator tests; not paper best fits or limits. kappa/model definitions from R19 Eqs.(2.6),(2.10)."
+          },
+          {
+            "id": "V10_g3",
+            "scenario": "universal",
+            "mass_MeV": 10.0,
+            "coupling": 3e-05,
+            "kappa": 1.0,
+            "parameter_provenance": "PROJECT_BENCHMARK_CHOICE: these illustrative numerical masses/couplings are selected for interference, regeneration and propagator tests; not paper best fits or limits. kappa/model definitions from R19 Eqs.(2.6),(2.10)."
+          },
+          {
+            "id": "BL10_g2",
+            "scenario": "b_minus_l",
+            "mass_MeV": 10.0,
+            "coupling": 2e-05,
+            "kappa": -0.3333333333333333,
+            "parameter_provenance": "PROJECT_BENCHMARK_CHOICE: these illustrative numerical masses/couplings are selected for interference, regeneration and propagator tests; not paper best fits or limits. kappa/model definitions from R19 Eqs.(2.6),(2.10)."
+          },
+          {
+            "id": "V1_g2",
+            "scenario": "universal",
+            "mass_MeV": 1.0,
+            "coupling": 2e-05,
+            "kappa": 1.0,
+            "parameter_provenance": "PROJECT_BENCHMARK_CHOICE: these illustrative numerical masses/couplings are selected for interference, regeneration and propagator tests; not paper best fits or limits. kappa/model definitions from R19 Eqs.(2.6),(2.10)."
+          },
+          {
+            "id": "V100_g2",
+            "scenario": "universal",
+            "mass_MeV": 100.0,
+            "coupling": 2e-05,
+            "kappa": 1.0,
+            "parameter_provenance": "PROJECT_BENCHMARK_CHOICE: these illustrative numerical masses/couplings are selected for interference, regeneration and propagator tests; not paper best fits or limits. kappa/model definitions from R19 Eqs.(2.6),(2.10)."
+          }
+        ]
+      },
+      "unit": "mass MeV; g dimensionless",
+      "input_claims": [
+        "VECTOR20261108-MODEL"
+      ],
+      "decision_refs": [
+        "D0002"
+      ],
+      "verification_scope": "用户确认V/B−L事例数谱范围；各m/g为执行者明确标注的项目测试选择，不伪造用户指定参数"
+    },
+    {
+      "claim_id": "VECTOR20261108-SM",
+      "field": "prediction/vector/SM",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "value": {
+        "file": "outputs/solar_b8_vector/20261108_run1/XENONnT_2024_SolarB8/SM/RESULT.json",
+        "counts": [
+          3.5140309179313785,
+          5.649108573211995,
+          3.1540937324043195
+        ],
+        "total_events": 12.317233223547694,
+        "physics_fingerprint": "86c45c9280e7ea74de38576960958a3f7b664f3331f865e7ceb934904a4aac32"
+      },
+      "unit": "events/bin",
+      "locator": "标准load_experiment_package→interaction组件替换→predict_experiment；共享Slow/Response",
+      "input_claims": [
+        "VECTOR20261108-MODEL",
+        "VECTOR20261108-POINTS",
+        "SM20261107-P01",
+        "SM20261107-P02",
+        "SM20261107-P03",
+        "SM20261107-P04",
+        "SM20261107-P05",
+        "SM20261107-P06",
+        "SM20261107-P07",
+        "SM20261107-P08",
+        "SM20261107-P09",
+        "SM20261107-P10",
+        "SM20261107-P11",
+        "SM20261107-P12",
+        "SM20261107-P13",
+        "SM20261107-P14",
+        "SM20261107-P15",
+        "SM20261107-P16",
+        "SM20261107-A01",
+        "SM20261107-A02",
+        "SM20261107-A03",
+        "SM20261107-A04",
+        "SM20261107-A05",
+        "SM20261107-A06",
+        "SM20261107-A07",
+        "SM20261107-A08",
+        "SM20261107-A09",
+        "SM20261107-A10",
+        "SM20261107-A11",
+        "SM20261107-A12",
+        "SM20261107-A13",
+        "SM20261107-A14",
+        "SM20261107-A15",
+        "SM20261107-A16",
+        "SM20261107-A17"
+      ],
+      "decision_refs": [
+        "D0002"
+      ],
+      "verification_scope": "独立T/Eν收敛、逐核素带符号分解闭合、同参数SM回归；非外部非零点模板/置信边界复现"
+    },
+    {
+      "claim_id": "VECTOR20261108-V10_g1",
+      "field": "prediction/vector/V10_g1",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "value": {
+        "file": "outputs/solar_b8_vector/20261108_run1/XENONnT_2024_SolarB8/V10_g1/RESULT.json",
+        "counts": [
+          2.4361800365535307,
+          4.084558482827038,
+          2.4057786795777076
+        ],
+        "total_events": 8.926517198958276,
+        "physics_fingerprint": "a81064db75875aaf359b5b0ee8f00db8ea5e2c1263107496d0be1f0d992e4690"
+      },
+      "unit": "events/bin",
+      "locator": "标准load_experiment_package→interaction组件替换→predict_experiment；共享Slow/Response",
+      "input_claims": [
+        "VECTOR20261108-MODEL",
+        "VECTOR20261108-POINTS",
+        "SM20261107-P01",
+        "SM20261107-P02",
+        "SM20261107-P03",
+        "SM20261107-P04",
+        "SM20261107-P05",
+        "SM20261107-P06",
+        "SM20261107-P07",
+        "SM20261107-P08",
+        "SM20261107-P09",
+        "SM20261107-P10",
+        "SM20261107-P11",
+        "SM20261107-P12",
+        "SM20261107-P13",
+        "SM20261107-P14",
+        "SM20261107-P15",
+        "SM20261107-P16",
+        "SM20261107-A01",
+        "SM20261107-A02",
+        "SM20261107-A03",
+        "SM20261107-A04",
+        "SM20261107-A05",
+        "SM20261107-A06",
+        "SM20261107-A07",
+        "SM20261107-A08",
+        "SM20261107-A09",
+        "SM20261107-A10",
+        "SM20261107-A11",
+        "SM20261107-A12",
+        "SM20261107-A13",
+        "SM20261107-A14",
+        "SM20261107-A15",
+        "SM20261107-A16",
+        "SM20261107-A17"
+      ],
+      "decision_refs": [
+        "D0002"
+      ],
+      "verification_scope": "独立T/Eν收敛、逐核素带符号分解闭合、同参数SM回归；非外部非零点模板/置信边界复现"
+    },
+    {
+      "claim_id": "VECTOR20261108-V10_g2",
+      "field": "prediction/vector/V10_g2",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "value": {
+        "file": "outputs/solar_b8_vector/20261108_run1/XENONnT_2024_SolarB8/V10_g2/RESULT.json",
+        "counts": [
+          0.46301385366428766,
+          1.0092597822640426,
+          0.8021189920101682
+        ],
+        "total_events": 2.2743926279384983,
+        "physics_fingerprint": "abbbd5404c84c270e11904f09ed9b30c0ca27b83eb650a8de44cdc5eed1f21da"
+      },
+      "unit": "events/bin",
+      "locator": "标准load_experiment_package→interaction组件替换→predict_experiment；共享Slow/Response",
+      "input_claims": [
+        "VECTOR20261108-MODEL",
+        "VECTOR20261108-POINTS",
+        "SM20261107-P01",
+        "SM20261107-P02",
+        "SM20261107-P03",
+        "SM20261107-P04",
+        "SM20261107-P05",
+        "SM20261107-P06",
+        "SM20261107-P07",
+        "SM20261107-P08",
+        "SM20261107-P09",
+        "SM20261107-P10",
+        "SM20261107-P11",
+        "SM20261107-P12",
+        "SM20261107-P13",
+        "SM20261107-P14",
+        "SM20261107-P15",
+        "SM20261107-P16",
+        "SM20261107-A01",
+        "SM20261107-A02",
+        "SM20261107-A03",
+        "SM20261107-A04",
+        "SM20261107-A05",
+        "SM20261107-A06",
+        "SM20261107-A07",
+        "SM20261107-A08",
+        "SM20261107-A09",
+        "SM20261107-A10",
+        "SM20261107-A11",
+        "SM20261107-A12",
+        "SM20261107-A13",
+        "SM20261107-A14",
+        "SM20261107-A15",
+        "SM20261107-A16",
+        "SM20261107-A17"
+      ],
+      "decision_refs": [
+        "D0002"
+      ],
+      "verification_scope": "独立T/Eν收敛、逐核素带符号分解闭合、同参数SM回归；非外部非零点模板/置信边界复现"
+    },
+    {
+      "claim_id": "VECTOR20261108-V10_g3",
+      "field": "prediction/vector/V10_g3",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "value": {
+        "file": "outputs/solar_b8_vector/20261108_run1/XENONnT_2024_SolarB8/V10_g3/RESULT.json",
+        "counts": [
+          1.3756917529965038,
+          1.2782671832986736,
+          0.2669710824385743
+        ],
+        "total_events": 2.920930018733752,
+        "physics_fingerprint": "3f23874cac1f57de405485709b59782ee6182ea2360c418dc54cf4125fb6cff8"
+      },
+      "unit": "events/bin",
+      "locator": "标准load_experiment_package→interaction组件替换→predict_experiment；共享Slow/Response",
+      "input_claims": [
+        "VECTOR20261108-MODEL",
+        "VECTOR20261108-POINTS",
+        "SM20261107-P01",
+        "SM20261107-P02",
+        "SM20261107-P03",
+        "SM20261107-P04",
+        "SM20261107-P05",
+        "SM20261107-P06",
+        "SM20261107-P07",
+        "SM20261107-P08",
+        "SM20261107-P09",
+        "SM20261107-P10",
+        "SM20261107-P11",
+        "SM20261107-P12",
+        "SM20261107-P13",
+        "SM20261107-P14",
+        "SM20261107-P15",
+        "SM20261107-P16",
+        "SM20261107-A01",
+        "SM20261107-A02",
+        "SM20261107-A03",
+        "SM20261107-A04",
+        "SM20261107-A05",
+        "SM20261107-A06",
+        "SM20261107-A07",
+        "SM20261107-A08",
+        "SM20261107-A09",
+        "SM20261107-A10",
+        "SM20261107-A11",
+        "SM20261107-A12",
+        "SM20261107-A13",
+        "SM20261107-A14",
+        "SM20261107-A15",
+        "SM20261107-A16",
+        "SM20261107-A17"
+      ],
+      "decision_refs": [
+        "D0002"
+      ],
+      "verification_scope": "独立T/Eν收敛、逐核素带符号分解闭合、同参数SM回归；非外部非零点模板/置信边界复现"
+    },
+    {
+      "claim_id": "VECTOR20261108-BL10_g2",
+      "field": "prediction/vector/BL10_g2",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "value": {
+        "file": "outputs/solar_b8_vector/20261108_run1/XENONnT_2024_SolarB8/BL10_g2/RESULT.json",
+        "counts": [
+          5.2779322867577605,
+          8.154747989804658,
+          4.31810633233558
+        ],
+        "total_events": 17.750786608897997,
+        "physics_fingerprint": "8cc4d4d77ffda65db8b14fe9349a62c14e233204a8774fe1731d0291722dde23"
+      },
+      "unit": "events/bin",
+      "locator": "标准load_experiment_package→interaction组件替换→predict_experiment；共享Slow/Response",
+      "input_claims": [
+        "VECTOR20261108-MODEL",
+        "VECTOR20261108-POINTS",
+        "SM20261107-P01",
+        "SM20261107-P02",
+        "SM20261107-P03",
+        "SM20261107-P04",
+        "SM20261107-P05",
+        "SM20261107-P06",
+        "SM20261107-P07",
+        "SM20261107-P08",
+        "SM20261107-P09",
+        "SM20261107-P10",
+        "SM20261107-P11",
+        "SM20261107-P12",
+        "SM20261107-P13",
+        "SM20261107-P14",
+        "SM20261107-P15",
+        "SM20261107-P16",
+        "SM20261107-A01",
+        "SM20261107-A02",
+        "SM20261107-A03",
+        "SM20261107-A04",
+        "SM20261107-A05",
+        "SM20261107-A06",
+        "SM20261107-A07",
+        "SM20261107-A08",
+        "SM20261107-A09",
+        "SM20261107-A10",
+        "SM20261107-A11",
+        "SM20261107-A12",
+        "SM20261107-A13",
+        "SM20261107-A14",
+        "SM20261107-A15",
+        "SM20261107-A16",
+        "SM20261107-A17"
+      ],
+      "decision_refs": [
+        "D0002"
+      ],
+      "verification_scope": "独立T/Eν收敛、逐核素带符号分解闭合、同参数SM回归；非外部非零点模板/置信边界复现"
+    },
+    {
+      "claim_id": "VECTOR20261108-V1_g2",
+      "field": "prediction/vector/V1_g2",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "value": {
+        "file": "outputs/solar_b8_vector/20261108_run1/XENONnT_2024_SolarB8/V1_g2/RESULT.json",
+        "counts": [
+          0.3478199023152621,
+          0.5963432478963042,
+          0.5103070353561254
+        ],
+        "total_events": 1.4544701855676918,
+        "physics_fingerprint": "692f794cadef40ef0e1dd182233e8981455d2e1343aee1d6a21418e61f5cbc22"
+      },
+      "unit": "events/bin",
+      "locator": "标准load_experiment_package→interaction组件替换→predict_experiment；共享Slow/Response",
+      "input_claims": [
+        "VECTOR20261108-MODEL",
+        "VECTOR20261108-POINTS",
+        "SM20261107-P01",
+        "SM20261107-P02",
+        "SM20261107-P03",
+        "SM20261107-P04",
+        "SM20261107-P05",
+        "SM20261107-P06",
+        "SM20261107-P07",
+        "SM20261107-P08",
+        "SM20261107-P09",
+        "SM20261107-P10",
+        "SM20261107-P11",
+        "SM20261107-P12",
+        "SM20261107-P13",
+        "SM20261107-P14",
+        "SM20261107-P15",
+        "SM20261107-P16",
+        "SM20261107-A01",
+        "SM20261107-A02",
+        "SM20261107-A03",
+        "SM20261107-A04",
+        "SM20261107-A05",
+        "SM20261107-A06",
+        "SM20261107-A07",
+        "SM20261107-A08",
+        "SM20261107-A09",
+        "SM20261107-A10",
+        "SM20261107-A11",
+        "SM20261107-A12",
+        "SM20261107-A13",
+        "SM20261107-A14",
+        "SM20261107-A15",
+        "SM20261107-A16",
+        "SM20261107-A17"
+      ],
+      "decision_refs": [
+        "D0002"
+      ],
+      "verification_scope": "独立T/Eν收敛、逐核素带符号分解闭合、同参数SM回归；非外部非零点模板/置信边界复现"
+    },
+    {
+      "claim_id": "VECTOR20261108-V100_g2",
+      "field": "prediction/vector/V100_g2",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "value": {
+        "file": "outputs/solar_b8_vector/20261108_run1/XENONnT_2024_SolarB8/V100_g2/RESULT.json",
+        "counts": [
+          3.3420586554540317,
+          5.373834988708223,
+          3.00148838077725
+        ],
+        "total_events": 11.717382024939505,
+        "physics_fingerprint": "a4c91a14176bda31b5223b01c68a1137633c3bdee7879dd4b4a3273a3c0f9a04"
+      },
+      "unit": "events/bin",
+      "locator": "标准load_experiment_package→interaction组件替换→predict_experiment；共享Slow/Response",
+      "input_claims": [
+        "VECTOR20261108-MODEL",
+        "VECTOR20261108-POINTS",
+        "SM20261107-P01",
+        "SM20261107-P02",
+        "SM20261107-P03",
+        "SM20261107-P04",
+        "SM20261107-P05",
+        "SM20261107-P06",
+        "SM20261107-P07",
+        "SM20261107-P08",
+        "SM20261107-P09",
+        "SM20261107-P10",
+        "SM20261107-P11",
+        "SM20261107-P12",
+        "SM20261107-P13",
+        "SM20261107-P14",
+        "SM20261107-P15",
+        "SM20261107-P16",
+        "SM20261107-A01",
+        "SM20261107-A02",
+        "SM20261107-A03",
+        "SM20261107-A04",
+        "SM20261107-A05",
+        "SM20261107-A06",
+        "SM20261107-A07",
+        "SM20261107-A08",
+        "SM20261107-A09",
+        "SM20261107-A10",
+        "SM20261107-A11",
+        "SM20261107-A12",
+        "SM20261107-A13",
+        "SM20261107-A14",
+        "SM20261107-A15",
+        "SM20261107-A16",
+        "SM20261107-A17"
+      ],
+      "decision_refs": [
+        "D0002"
+      ],
+      "verification_scope": "独立T/Eν收敛、逐核素带符号分解闭合、同参数SM回归；非外部非零点模板/置信边界复现"
+    },
+    {
+      "claim_id": "NR20261110-TABLE",
+      "field": "theory_response/nuclear_table",
+      "status": "USER_CONFIRMED",
+      "source_id": "R16",
+      "value": {
+        "file": "data/responses/responses_all.json",
+        "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+        "audit": "outputs/solar_b8_sm/20261110_nuclear_response_run2/NUCLEAR_INPUT_AUDIT.json",
+        "number_fraction": 0.998158,
+        "missing": [
+          "Xe124",
+          "Xe126"
+        ]
+      },
+      "unit": "dimensionless W",
+      "locator": "seven Xe keys; all eight channels; 2x2x11 M; existing np reader normalization",
+      "decision_refs": [
+        "D0004"
+      ],
+      "verification_scope": "Local numerical existence/reader/Runtime consistency only; external author provenance and exact paper equivalence unresolved"
+    },
+    {
+      "claim_id": "NR20261110-METHOD",
+      "field": "theory_response/nuclear_method",
+      "status": "PROJECT_DERIVED",
+      "source_id": "R20",
+      "value": {
+        "mass": "A*amu",
+        "SM": "existing LEFT matching and all nonzero implemented channels",
+        "extra_KN_or_spin_factor": false
+      },
+      "unit": "shared code convention",
+      "locator": "shared amplitude, LEFT/LEC and cross-section APIs",
+      "decision_refs": [
+        "D0004"
+      ],
+      "verification_scope": "Local numerical existence/reader/Runtime consistency only; external author provenance and exact paper equivalence unresolved"
+    },
+    {
+      "claim_id": "NR20261110-RESULT",
+      "field": "slow_counts/current_nuclear_SM",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "value": {
+        "file": "outputs/solar_b8_sm/20261110_nuclear_response_run2/XENONnT_2024_SolarB8/RESULT.json",
+        "counts": [
+          3.5154649845127466,
+          5.65087950105582,
+          3.153516202934238
+        ],
+        "total_events": 12.319860688502803,
+        "physics_fingerprint": "e9e2818841ea1431a849bf5b7a9a5aab512cb33e8f5f013a8f1bd71d546ecd8e"
+      },
+      "unit": "events/bin",
+      "locator": "standard Runtime, source and detector folding; independent T/E refinements",
+      "decision_refs": [
+        "D0004"
+      ],
+      "verification_scope": "Local numerical existence/reader/Runtime consistency only; external author provenance and exact paper equivalence unresolved"
+    }
+  ],
+  "source_register": "P00_SOURCE_REGISTER.yaml"
+}

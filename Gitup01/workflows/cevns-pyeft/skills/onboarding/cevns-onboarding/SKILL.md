@@ -27,6 +27,20 @@ partial Physics Contract
 
 不写生产代码。
 
+逐数据依据、output 中的来源标记、首次输出缺口说明和补充循环，统一执行
+[数据溯源与补充闭环](../../../../_shared/references/onboarding/data-provenance-contract.md)。
+P00 身份/P01 证据必须最终映射到采用的每个值、数组范围、公式与处理选择；参数 ID 和参考文献列表不代替出处。
+
+### 在物理章节核对实际数值输入
+
+每个实验专属章节生成输入及取得情况表，包含实际值或数组范围、单位、本地数值文件与行列/key、同章标准引文和精确原文定位、实际核验范围与适用性。大数组展示 shape、全部轴范围和代表性切片。
+
+公式符号逐项标为定义变量、已有数值输入、项目推导或 MISSING。Detector 的概率核、产额、增益与涨落、选择、分箱和系统误差分别核对。对于缺失数值函数，记录检索过的材料、仍需取得的原始文件和依赖该函数的能力。
+
+详细版、精简版和用户资料从同一份 P00/P01/P02/P03 修订生成。各章附使用的标准书目。交接下一步时，按能力列出输入取得情况和具体补充材料。
+
+共享模块执行[数值资源核对](../../../../_shared/references/onboarding/data-provenance-contract.md#module-numerical-provenance)。核响应必须展示实际核素、通道、系数/网格、基底、单位、归一化、代表值和完整数值文件。数值取得、上游来源、转换等价和适用性分别记录。作者仓库只构成候选上游时明确标注，未完成的来源审计与数值文件本身缺失分开说明，并把相应限制传递到预测和benchmark。
+
 若 Master 已启用 `workflows/_shared/policies/automation.md` 的隔离低/高自动运行，本 Skill 可以在
 隔离副本中预填候选材料与缺失项；这些结果不创建正式 dataset，也不授予正式
 Dataset Identity 或 Scientific Claim approval。正式写入仍按本 Skill 下方 Gate。
@@ -130,7 +144,7 @@ docs/experiments/<experiment_slug>/datasets/<dataset_id>/EXPERIMENT_USER_INPUT.m
 
 - 用户没有其他文件时，继续处理当前材料；
 - 用户已明确要求只使用当前文件时，不重复询问；
-- 不得自动搜索或引入用户未指定的外部材料；
+- 若任务已要求数据溯源，可沿已选材料的引用查找上游原文/官方数表并独立登记，说明与直接材料的关系；新增物理候选或扩大数据集范围仍需用户选择，不能以溯源为由替换已选输入；
 - `backup/**` 仍受 `BACKUP_QUARANTINE` 约束。
 
 存在多份材料时，应辅助生成逐项对比，至少覆盖：
@@ -277,6 +291,8 @@ downstream_owner: dataset|target|source|theory|kinematics|detector|slow|fast|sta
 冲突保留两条 claim，以 `conflict_group` 连接。
 
 项目推导必须写 derivation，例如 `nuclei/kg`、uniform bin edges；不能伪装论文值。
+每条采用项还须记录实际直接出处与精确 locator、核验范围、上游来源/输入 claim、处理规则和 output 位置。
+二手材料已转录但原文数字未核时保留该区别；按[证据政策](../../../../_shared/policies/evidence-and-approval.md)解释现有状态，不新造等同“原文已核”的状态。
 
 ### H2 — Evidence review output
 
@@ -443,6 +459,19 @@ blocking_scope: []
 
 `needed_by_phase` 只是收集时机，不是新的 evidence status。字段没有证据时仍必须是
 `MISSING`；不得用 `DEFERRED` 掩盖缺失。
+
+## Step 6a — 首次可读输出、缺口说明与用户补充
+
+在获准位置生成首次 Physics MD/用户资料后，执行[补充循环](../../../../_shared/references/onboarding/data-provenance-contract.md#section-3)：
+
+1. 明确标为首次草稿，向用户说明已提取数据及实际核到的来源层级。
+2. 在对话和输出中列明具体缺项、已有替代材料、影响与补充办法；区分缺实验数据、缺原文核验和实现待办。
+3. 就影响目标的缺口提出具体问题，等待依赖问题的答复；独立工作继续。不要只说“请审核”或让用户猜缺什么。
+4. 新材料/决定回填 P00/P01/P02/P03 与 IR，重生成全部受影响输出并重新核对来源映射；说明已补和未补内容。
+5. 每项实际采用的数据都可追到依据且满足本次主张后，才报告相应终稿完成。仍需补充时保持候选并继续同一循环；无缺口时明确说明，无须人为制造问答。
+
+步骤可以迭代，不新增 H Gate，不解除写入冻结；未获文件授权时先在对话展示候选及缺口。
+后续 Phase 退回补充数据也执行本步骤，然后返回原请求阶段。
 
 ## Step 7 — Canonical LaTeX
 

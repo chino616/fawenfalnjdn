@@ -214,6 +214,9 @@ class ProfileExecutor:
 
 
 def definition_from_generic(data,arrays,resource_prefix=''):
+    if data['assembly']['profile']=='solar_b8_sm_v1':
+        from .solar_b8 import definition_from_solar
+        return definition_from_solar(data,arrays,resource_prefix)
     p=lambda k:_value(data,k);cfg=data['assembly'];package=data['package'];prefix=Path(resource_prefix)
     if cfg['profile']=='specification_only':raise ValueError('SPECIFICATION_ONLY package is not executable')
     profiles={backend:{key:p(ref) for key,ref in values.items()} for backend,values in cfg['numerics'].items()}

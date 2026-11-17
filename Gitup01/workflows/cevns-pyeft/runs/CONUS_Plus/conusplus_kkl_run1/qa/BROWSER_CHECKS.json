@@ -1,0 +1,25 @@
+{
+  "result": "PASS",
+  "clicks": [
+    {
+      "hash": "#section-2",
+      "top": 16.109375
+    },
+    {
+      "hash": "#section-8",
+      "top": 16.484375
+    },
+    {
+      "hash": "#section-10",
+      "top": 15.703125
+    }
+  ],
+  "return_to_toc": true,
+  "narrow_width": {
+    "viewport": 720,
+    "document": 720
+  },
+  "katex_errors": 0,
+  "main_document_sha256": "a2475d935f04d372389b0d287af19141a62d3e93b146ce44fd6a4a828ca98f85",
+  "scope": "Independent local renderer; link targets/anchors checked separately"
+}

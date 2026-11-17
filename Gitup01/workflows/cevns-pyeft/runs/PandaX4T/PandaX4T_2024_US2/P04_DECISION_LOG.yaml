@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "decision_id": "D0001",
+      "date": "2026-11-07",
+      "scope": "canonical integration and SM forward benchmark",
+      "user_quote": "现在已经并入主线了是吧。如果没有请并入主线。下面请你先以标准模型作为banchmark，对示例数图进行计算。按照已有项目的流程进行计算。",
+      "interpretation": "继续此前指定的Response方法。以2411.11749v1树级SM、KN、Bahcall及参考通量比较事件谱。先交付有输入的计算，不编造PandaX电子数响应。",
+      "execution_authorized": true,
+      "result_acceptance": "NOT_REVIEWED",
+      "scope_limits": [
+        "no c_i",
+        "no fitting/CI or BSM scan",
+        "no fabricated missing response",
+        "existing datasets preserved"
+      ]
+    },
+    {
+      "decision_id": "D0002",
+      "date": "2026-11-08",
+      "user_quote": "请你继续做NSI的benchmark",
+      "scope_confirmation": "同论文轻媒介子事例数谱，先做 V 和 B−L（推荐）",
+      "scope": "same-paper V/B-L light-mediator event spectra",
+      "interpretation": "沿用正式太阳8B输入包与Response；六个m/g数值是明确标注的项目测试点。采用期刊版矢量耦合定义，记录v1记号差异。",
+      "execution_authorized": true,
+      "result_acceptance": "NOT_REVIEWED",
+      "scope_limits": [
+        "no Fig.4 exclusion fit",
+        "no contact epsilon or flavor-dependent propagation",
+        "no fabricated PandaX Ne kernel",
+        "no c_i"
+      ]
+    },
+    {
+      "decision_id": "D0003",
+      "date": "2026-11-10",
+      "user_quote": "请你根据简化方法处理",
+      "scope": "PandaX US2 SM eight-bin simplified mean mapping; separate conditional effective calibration",
+      "interpretation": "R01 Eqs.(11)-(15) mean map, nominal Qy matching footnote 3, Total(US2) once. Preserve original Response branch. Calculate unity-ci baseline and explicitly conditional reconstructed ci from R02 Fig.5; author ci unavailable.",
+      "execution_authorized": true,
+      "result_acceptance": "NOT_REVIEWED",
+      "scope_limits": [
+        "no fabricated full response",
+        "no fits or exclusions",
+        "no alteration of original packages or previous physical results",
+        "no calibration-as-independent-validation"
+      ]
+    },
+    {
+      "decision_id": "D0004",
+      "date": "2026-11-10",
+      "user_quote": "请问onboarding中，具体写的是什么，是采用KN计算，还是采用response计算？我现在要求按照response计算",
+      "clarification_quote": "我是指 振幅的，原子核的response计算！",
+      "scope": "SM actual local Xe nuclear Response table -> amplitude -> cross section -> fixed-input event spectrum",
+      "interpretation": "Adopt responses_all.json and its existing ResponseDB/Li2026 convention; seven available isotopes with original absolute number counts, A*amu kinematics; fixed SSM. Detector handling remains the separately authorized approximation/recasting model.",
+      "execution_authorized": true,
+      "result_acceptance": "NOT_REVIEWED",
+      "scope_limits": [
+        "no KN/Helm in primary nuclear route",
+        "no c_i calibration or flux adjustment",
+        "no proxy for Xe124/Xe126 and no abundance renormalization",
+        "no assertion of externally certified nuclear table origin",
+        "no fit/CI; old KN packages/results retained"
+      ]
+    },
+    {
+      "decision_id": "D0005",
+      "date": "2026-11-11",
+      "user_quote": "需要你合并到主线，并且计算标准模型情况，在主线中计算流程隔开",
+      "material_quote": "检查2026-11-11_SOLAR_B8_SINGLEBIN_ONBOARDING.v3.2；单bin与多bin是两种不同方案，数据采用有较多不同",
+      "scope": "separate 2601.19883v2 singlebin capability for paired/US2/XENONnT; fresh SM nuclear-Response integral and Eq.88 objective",
+      "interpretation": "Adopt supplied v3.2 singlebin meaning with explicit source corrections; keep independent resources/loaders/executors/observations/statistics/outputs; bounded unknown X tail plus explicitly named project sensitivity only",
+      "execution_authorized": true,
+      "result_acceptance": "NOT_REVIEWED",
+      "scope_limits": [
+        "do not sum multibin counts",
+        "no implicit tail data",
+        "no ci or fitted flux calibration",
+        "do not modify old numerical inputs/results",
+        "no new BSM or confidence-limit claim"
+      ]
+    },
+    {
+      "decision_id": "D0006",
+      "date": "2026-11-12",
+      "user_quote": "请你在主线中完成下面内容",
+      "scope": "solar real epsilon_ee_uV/dV, propagation+scattering and three-sample singlebin region per2601",
+      "interpretation": "execute requested continuation with explicitly sourced two-flavor approximation, conditional X tail and separate controls; compute then compare, no tuning to paper reference",
+      "execution_authorized": true,
+      "result_acceptance": "NOT_REVIEWED",
+      "project_choices_not_claimed_as_author_card": [
+        "PEANUTS example oscillation values",
+        "B16 pinned distribution/derived neutron density",
+        "flat-tail primary plus bounds",
+        "existing local nuclear table"
+      ],
+      "scope_limits": [
+        "retain SM/multibin/light-vector branches",
+        "no fitted flux/ci",
+        "all-flavor NSI diagnostic not adopted",
+        "no scientific acceptance or exact-paper claim"
+      ]
+    },
+    {
+      "decision_id": "D0007",
+      "date": "2026-11-12",
+      "user_quote": "请你调整方案，进行安装，修改文档，接入主线",
+      "scope": "execute revised external SNuDD source design in mainline; preserve original scientific branches",
+      "interpretation": "day-only SNuDD own profiles; explicitly matched theta12/theta13/dm21; ee-only realuV/dV; complete rho retained and equivalent restricted-rate projection",
+      "execution_authorized": true,
+      "result_acceptance": "NOT_REVIEWED",
+      "core_changes": false,
+      "limits": [
+        "effective two-flavor solar approximation",
+        "do not relabel as originalB16 propagation",
+        "no source flux recalibration",
+        "no full new Fig4 result claimed"
+      ]
+    },
+    {
+      "decision_id": "D0008",
+      "date": "2026-11-12",
+      "user_quote": "最后统计分析跟要求复现的论文对比",
+      "scope": "complete requested statistical calculation without replacing the frozen source/target/statistics model",
+      "interpretation": "same1000-node SNuDD ee specialization; full-plane mathematical model minima;601-square2D90%green comparison",
+      "execution_authorized": true,
+      "result_acceptance": "NOT_REVIEWED",
+      "exact_paper_reproduction": "NOT_ESTABLISHED"
+    },
+    {
+      "decision_id": "D0009",
+      "date": "2026-11-12",
+      "user_quote": "散射端需要改用trace(rho K)",
+      "method_selection": "USER_EXPLICITLY_REQUIRED",
+      "scope": "native full SNuDD rho, actual incoming-flavor K and Tr(rho K) in Slow/Fast/joint forward",
+      "supersedes": "D0007 use of ee-equivalent projected state as current implementation target",
+      "implementation_status": "PENDING; current round onboarding only",
+      "result_acceptance": "NOT_REVIEWED"
+    }
+  ]
+}

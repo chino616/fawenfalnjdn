@@ -1,5 +1,15 @@
 # statistics：把预测与指定观测进行比较
 
+[截断能标独立Part](../../examples/cutoff_scales/README.md)位于分析层：已完成有符号LEFT推断、完整区间/能标转换、dim-6主版本和完整22算符控制版及柱状图。控制版保留固定太阳传播与dim-8正定性缺口；未注册runtime入口或改变本目录既有χ²行为。
+
+<!-- solar-singlebin-v321:start -->
+
+## 太阳⁸B：单 bin独立能力
+
+[solar_singlebin.py](solar_singlebin.py)实现2601.19883v2 p20 Eq.(88)：拟合信号D/统计σ、每样本独立12% pull的Gaussian。原候选D_i/B_i不进入此模型。部分接受度积分由evaluator拒绝；统计资源lazy读取，身份/观测/物理指纹由Runtime先检查。
+
+<!-- solar-singlebin-v321:end -->
+
 事件数预测完成后，`experiments.runtime.evaluate_experiment` 核对实验、物理身份和观测轴，再调用 definition 中绑定的 evaluator。COHERENT 的实际绑定在 [statistics_binding.py](../experiments/coherent/statistics_binding.py)，随后进入本目录的 profiling 函数。
 
 | 文件 | 实际用途 |
@@ -32,3 +42,13 @@
 ## CsI2021 输入包的独立统计入口
 
 包级 [__init__.py](__init__.py) 延迟解析旧 dataset 常量，单独导入 profiler 不加载旧实验 definition。[evaluate_package](../experiments/coherent/csi2021_package.py) 消费同一包的统计数组，events/bin 只除一次 PE 箱宽；[P09 报告](../../workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/09_STATISTICS_REPORT.md) 记录独立正规方程与 Asimov 检查。该能力保持 legacy approximate。
+
+<!-- solar-nsi-v33:start -->
+
+## 太阳⁸B NSI：v3.3（2026-11-12）
+
+solar_nsi.py负责三样本独立pull、联合参数最小值与二维Δχ²面，保持旧统计分支。
+
+[完整新onboarding：实际输入、标准引文、物理与程序](<../../docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/NSI_EE_VECTOR_ONBOARDING.v3.3.md>) · [独立NSI数据](<../../data/benchmarks/solar_b8_nsi_2601_19883/README.md>) · [实际结果与核对](<../../outputs/solar_b8_nsi/20261112_fig4_run2/README.md>)
+
+<!-- solar-nsi-v33:end -->

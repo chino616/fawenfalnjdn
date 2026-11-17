@@ -1,0 +1,1290 @@
+{
+  "version": "v3_20261106_provenance",
+  "adopted_fields": 67,
+  "unmapped_fields": [],
+  "scope": "Mechanical field-to-source/locator/output mapping and propagated limits. Original-source factual checks are recorded separately.",
+  "fields": [
+    {
+      "field": "document.version",
+      "claim_id": "C0001",
+      "source_id": "S0014",
+      "locator": "Current rewrite and main-project integration request",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-document-version"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "document.version"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "experiment_name",
+      "claim_id": "C0002",
+      "source_id": "S0001",
+      "locator": "Sec. III",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-experiment_name"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "experiment_name"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "experiment_slug",
+      "claim_id": "C0003",
+      "source_id": "S0014",
+      "locator": "Project namespace chosen for the requested main-project CONUS+ integration",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-experiment_slug"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "experiment_slug"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "requested_claim",
+      "claim_id": "C0004",
+      "source_id": "S0014",
+      "locator": "D_V2_001/D_V2_002 与 D_V3_001",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-requested_claim"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "requested_claim"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "observable.edges_eVee",
+      "claim_id": "C0005",
+      "source_id": "S0011",
+      "locator": "19 plotted centres +/-5 eVee",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-observable-edges_eVee"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "observable.edges_eVee"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "observable.processing",
+      "claim_id": "C0006",
+      "source_id": "S0001",
+      "locator": "Sec. III; Eq. (33); Fig. 1",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-observable-processing"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "observable.processing"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "observable.native_unit",
+      "claim_id": "C0007",
+      "source_id": "S0001",
+      "locator": "Fig. 1 vertical axis",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-observable-native_unit"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "observable.native_unit"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "source.flavor",
+      "claim_id": "C0008",
+      "source_id": "S0001",
+      "locator": "Ref. [1], PDF p. 8, reactor-source paragraph",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-source-flavor"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "source.flavor"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "source.total_flux",
+      "claim_id": "C0009",
+      "source_id": "S0001",
+      "locator": "Sec. III; [4] Eq. (1.17)",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-source-total_flux"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "source.total_flux"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "source.energy_max",
+      "claim_id": "C0010",
+      "source_id": "S0002",
+      "locator": "Eqs. (1.18)-(1.19); a chosen 0-10 MeV model domain",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-source-energy_max"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "source.energy_max"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "source.join_energy",
+      "claim_id": "C0011",
+      "source_id": "S0001",
+      "locator": "Sec. III; [4] Eqs. (1.27)-(1.28)",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-source-join_energy"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "source.join_energy"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "source.mueller_coefficients",
+      "claim_id": "C0012",
+      "source_id": "S0003",
+      "locator": "Eq. (12), Table VI, PDF p. 13; exponent uses numerical E/MeV",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-source-mueller_coefficients"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "source.mueller_coefficients"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "source.low_nodes",
+      "claim_id": "C0013",
+      "source_id": "S0002",
+      "locator": "Table 2, PDF p. 6 (printed p. 5)",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-source-low_nodes"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "source.low_nodes"
+        }
+      ],
+      "unresolved_upstream_source_ids": [
+        "S0004"
+      ]
+    },
+    {
+      "field": "source.fission_fractions",
+      "claim_id": "C0014",
+      "source_id": "S0002",
+      "locator": "Eqs. (1.22)-(1.26), PDF p. 5",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-source-fission_fractions"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "source.fission_fractions"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "source.endpoint_mode",
+      "claim_id": "C0015",
+      "source_id": "S0014",
+      "locator": "D_V2_003",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-source-endpoint_mode"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "source.endpoint_mode"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "source.match_factor",
+      "claim_id": "C0016",
+      "source_id": "S0015",
+      "locator": "build, high(2)/low_shape[-1]",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-source-match_factor"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "source.match_factor"
+        }
+      ],
+      "unresolved_upstream_source_ids": [
+        "S0004"
+      ]
+    },
+    {
+      "field": "source.normalization_integral",
+      "claim_id": "C0017",
+      "source_id": "S0015",
+      "locator": "build, low_default + high256",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-source-normalization_integral"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "source.normalization_integral"
+        }
+      ],
+      "unresolved_upstream_source_ids": [
+        "S0004"
+      ]
+    },
+    {
+      "field": "source.flux_table",
+      "claim_id": "C0018",
+      "source_id": "S0015",
+      "locator": "build, flux_bytes and piecewise normalization",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-source-flux_table"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "source.flux_table"
+        }
+      ],
+      "unresolved_upstream_source_ids": [
+        "S0004"
+      ]
+    },
+    {
+      "field": "source.formula_vs_grid",
+      "claim_id": "C0019",
+      "source_id": "S0015",
+      "locator": "build，分段处方与 CSV 采样",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-source-formula_vs_grid"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "source.formula_vs_grid"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "target.number_fractions",
+      "claim_id": "C0020",
+      "source_id": "S0001",
+      "locator": "Ref. [1], PDF p. 9, natural-Ge paragraph. NIST Ge composition rows agree.",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-target-number_fractions"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "target.number_fractions"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "target.atomic_mass_kg",
+      "claim_id": "C0021",
+      "source_id": "S0005",
+      "locator": "Ge isotope rows; multiplied by CODATA [6] atomic mass constant",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-target-atomic_mass_kg"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "target.atomic_mass_kg"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "target.nuclei_per_kg",
+      "claim_id": "C0022",
+      "source_id": "S0005",
+      "locator": "Natural-isotope atom inventory; see natural_ge_inventory.csv",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-target-nuclei_per_kg"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "target.nuclei_per_kg"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "target.nuclear_mass_GeV",
+      "claim_id": "C0023",
+      "source_id": "S0005",
+      "locator": "Atomic mass times u energy minus Z electron rest energy [6]",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-target-nuclear_mass_GeV"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "target.nuclear_mass_GeV"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "target.detector_mass",
+      "claim_id": "C0024",
+      "source_id": "S0001",
+      "locator": "Sec. III, PDF p. 10 effective detector",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-target-detector_mass"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "target.detector_mass"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "target.exposure",
+      "claim_id": "C0025",
+      "source_id": "S0001",
+      "locator": "Sec. III, PDF p. 10 effective exposure",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-target-exposure"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "target.exposure"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "interaction_module",
+      "claim_id": "C0026",
+      "source_id": "S0012",
+      "locator": "model_bindings.json exact key li2026_sm_left_v1",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-interaction_module"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "interaction_module"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "nuclear_structure_module",
+      "claim_id": "C0027",
+      "source_id": "S0014",
+      "locator": "D_V2_001 and D_V2_002",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-nuclear_structure_module"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "nuclear_structure_module"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "nuclear.response_resource",
+      "claim_id": "C0028",
+      "source_id": "S0007",
+      "locator": "nuclei.Ge70/Ge72/Ge73/Ge74/Ge76",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-nuclear-response_resource"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "nuclear.response_resource"
+        }
+      ],
+      "unresolved_upstream_source_ids": [
+        "S0007"
+      ]
+    },
+    {
+      "field": "nuclear.response_keys",
+      "claim_id": "C0029",
+      "source_id": "S0007",
+      "locator": "All five keys read and finite W matrices checked",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-nuclear-response_keys"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "nuclear.response_keys"
+        }
+      ],
+      "unresolved_upstream_source_ids": [
+        "S0007"
+      ]
+    },
+    {
+      "field": "interaction.fermi_GeV_minus2",
+      "claim_id": "C0030",
+      "source_id": "S0006",
+      "locator": "Fermi coupling constant row",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-interaction-fermi_GeV_minus2"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "interaction.fermi_GeV_minus2"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "interaction.sin2thetaW_reference",
+      "claim_id": "C0031",
+      "source_id": "S0001",
+      "locator": "Ref. [1], Sec. II.A, PDF p. 3, low-energy reference 0.23857(5)",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-interaction-sin2thetaW_reference"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "interaction.sin2thetaW_reference"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "kinematics_module",
+      "claim_id": "C0032",
+      "source_id": "S0012",
+      "locator": "model_bindings.json exact key elastic_kinematics_v1",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-kinematics_module"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "kinematics_module"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "cross_section_module",
+      "claim_id": "C0033",
+      "source_id": "S0012",
+      "locator": "model_bindings.json exact key li2026_dsigma_v1",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-cross_section_module"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "cross_section_module"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "detector.Z",
+      "claim_id": "C0034",
+      "source_id": "S0001",
+      "locator": "PDF pp. 9-10; Ge atomic number; [5]",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-detector-Z"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "detector.Z"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "detector.k",
+      "claim_id": "C0035",
+      "source_id": "S0001",
+      "locator": "PDF pp. 9-10; Eq. (31)",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-detector-k"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "detector.k"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "detector.sigma0",
+      "claim_id": "C0036",
+      "source_id": "S0001",
+      "locator": "PDF pp. 9-10; Eqs. (29)-(30)",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-detector-sigma0"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "detector.sigma0"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "detector.fano",
+      "claim_id": "C0037",
+      "source_id": "S0001",
+      "locator": "PDF pp. 9-10; Eq. (30)",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-detector-fano"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "detector.fano"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "detector.pair_energy",
+      "claim_id": "C0038",
+      "source_id": "S0001",
+      "locator": "PDF pp. 9-10; Eq. (30)",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-detector-pair_energy"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "detector.pair_energy"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "detector.threshold",
+      "claim_id": "C0039",
+      "source_id": "S0001",
+      "locator": "PDF pp. 9-10; Sec. III effective detector",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-detector-threshold"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "detector.threshold"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "detector.efficiency",
+      "claim_id": "C0040",
+      "source_id": "S0001",
+      "locator": "Sec. III efficiency approximation",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-detector-efficiency"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "detector.efficiency"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "numerics.seconds_per_day",
+      "claim_id": "C0041",
+      "source_id": "S0013",
+      "locator": "Chapter 4, Table 8, day row. PDF p. 142 / printed p. 140",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-numerics-seconds_per_day"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "numerics.seconds_per_day"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "numerics.minimum_true_ionization",
+      "claim_id": "C0042",
+      "source_id": "S0001",
+      "locator": "Sec. III, PDF p. 9",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-numerics-minimum_true_ionization"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "numerics.minimum_true_ionization"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "numerics.plan",
+      "claim_id": "C0043",
+      "source_id": "S0001",
+      "locator": "由式 (26)–(32)、源谱节点和观测箱边界推导的候选积分方案",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-numerics-plan"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "numerics.plan"
+        }
+      ],
+      "unresolved_upstream_source_ids": [
+        "S0004"
+      ]
+    },
+    {
+      "field": "fast.requested",
+      "claim_id": "C0044",
+      "source_id": "S0014",
+      "locator": "D_V3_001, current requested deliverable",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-fast-requested"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "fast.requested"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "statistics.model_id",
+      "claim_id": "C0045",
+      "source_id": "S0012",
+      "locator": "package_profiles.py::definition_from_generic/evaluate_statistics and profiling.py::profile_gaussian_one_pull",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-statistics-model_id"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "statistics.model_id"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "statistics.observed",
+      "claim_id": "C0046",
+      "source_id": "S0011",
+      "locator": "Digitized Fig. 1 CSV; signed values preserved",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-statistics-observed"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "statistics.observed"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "statistics.error_minus",
+      "claim_id": "C0047",
+      "source_id": "S0011",
+      "locator": "CSV lower error lengths",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-statistics-error_minus"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "statistics.error_minus"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "statistics.error_plus",
+      "claim_id": "C0048",
+      "source_id": "S0011",
+      "locator": "CSV upper error lengths",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-statistics-error_plus"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "statistics.error_plus"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "statistics.sigma_mean",
+      "claim_id": "C0049",
+      "source_id": "S0011",
+      "locator": "Arithmetic mean of plotted upper/lower lengths; explicit candidate statistical convention",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-statistics-sigma_mean"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "statistics.sigma_mean"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "statistics.sigma_alpha",
+      "claim_id": "C0050",
+      "source_id": "S0001",
+      "locator": "Eq. (33), PDF p. 10; cumulative systematic prior, no duplicated component pulls",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-statistics-sigma_alpha"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "statistics.sigma_alpha"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "statistics.inference",
+      "claim_id": "C0051",
+      "source_id": "S0001",
+      "locator": "[1] 式 (34) 与表 II 的 1σ 标记，以及本版候选单参数比较约定",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-statistics-inference"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "statistics.inference"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "benchmark.targets",
+      "claim_id": "C0052",
+      "source_id": "S0001",
+      "locator": "Ref. [1], Eq. (34), PDF p. 11, and Table II CONUS+ column, PDF p. 13",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-benchmark-targets"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "benchmark.targets"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "provenance.open_items",
+      "claim_id": "C0053",
+      "source_id": "S0007",
+      "locator": "Current P02 source gaps and implementation backlog",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-provenance-open_items"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "provenance.open_items"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "version.scope",
+      "claim_id": "C0054",
+      "source_id": "S0014",
+      "locator": "D_V3_001",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-version-scope"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "version.scope"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "target.atomic_mass_u",
+      "claim_id": "C0055",
+      "source_id": "S0005",
+      "locator": "Ge isotope rows, relative atomic mass column",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-target-atomic_mass_u"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "target.atomic_mass_u"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "constants.atomic_mass_kg",
+      "claim_id": "C0056",
+      "source_id": "S0006",
+      "locator": "atomic mass constant row",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-constants-atomic_mass_kg"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "constants.atomic_mass_kg"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "constants.atomic_mass_energy_GeV",
+      "claim_id": "C0057",
+      "source_id": "S0006",
+      "locator": "atomic mass constant energy equivalent in MeV, divided by 1000",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-constants-atomic_mass_energy_GeV"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "constants.atomic_mass_energy_GeV"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "constants.electron_mass_energy_GeV",
+      "claim_id": "C0058",
+      "source_id": "S0006",
+      "locator": "electron mass energy equivalent in MeV, divided by 1000",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-constants-electron_mass_energy_GeV"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "constants.electron_mass_energy_GeV"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "constants.avogadro_per_mol",
+      "claim_id": "C0059",
+      "source_id": "S0006",
+      "locator": "Avogadro constant row, exact",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-constants-avogadro_per_mol"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "constants.avogadro_per_mol"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "constants.atomic_mass_energy_MeV",
+      "claim_id": "C0060",
+      "source_id": "S0006",
+      "locator": "atomic mass constant energy equivalent in MeV row",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-constants-atomic_mass_energy_MeV"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "constants.atomic_mass_energy_MeV"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "constants.electron_mass_energy_MeV",
+      "claim_id": "C0061",
+      "source_id": "S0006",
+      "locator": "electron mass energy equivalent in MeV row",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-constants-electron_mass_energy_MeV"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "constants.electron_mass_energy_MeV"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "source.kkl_comparison_fractions",
+      "claim_id": "C0062",
+      "source_id": "S0010",
+      "locator": "PDF p. 6, reactor-flux paragraph, U235/U238/Pu239/Pu241 order",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-source-kkl_comparison_fractions"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "source.kkl_comparison_fractions"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "source.grid_step",
+      "claim_id": "C0063",
+      "source_id": "S0015",
+      "locator": "build, linspace(0,10,10001)",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-source-grid_step"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "source.grid_step"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "source.low_endpoint_node",
+      "claim_id": "C0064",
+      "source_id": "S0014",
+      "locator": "D_V2_003, energy in MeV and relative shape",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-source-low_endpoint_node"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "source.low_endpoint_node"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "source.initial_density",
+      "claim_id": "C0065",
+      "source_id": "S0001",
+      "locator": "Project representation of the electron-antineutrino state as |e><e| in the ordered (e,mu,tau) active-flavor basis",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-source-initial_density"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "source.initial_density"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "detector.fwhm_reference",
+      "claim_id": "C0066",
+      "source_id": "S0001",
+      "locator": "PDF p. 9, paragraph following Eq. (30)",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-detector-fwhm_reference"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "detector.fwhm_reference"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    },
+    {
+      "field": "source.reference_identification",
+      "claim_id": "C0067",
+      "source_id": "S0016",
+      "locator": "User figure, bibliography bullets",
+      "output_locations": [
+        {
+          "file": "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md",
+          "anchor": "source-source-reference_identification"
+        },
+        {
+          "file": "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P03_PHYSICS_CONTRACT.yaml",
+          "field": "source.reference_identification"
+        }
+      ],
+      "unresolved_upstream_source_ids": []
+    }
+  ],
+  "formulas": [
+    {
+      "id": "mueller_shape",
+      "output_anchor": "formula-mueller-shape",
+      "source_ids": [
+        "S0003"
+      ],
+      "input_claims": [
+        "C0012",
+        "C0014"
+      ],
+      "number": 1
+    },
+    {
+      "id": "source_match",
+      "output_anchor": "formula-source-match",
+      "source_ids": [
+        "S0002"
+      ],
+      "input_claims": [
+        "C0016",
+        "C0013",
+        "C0064"
+      ],
+      "number": 2
+    },
+    {
+      "id": "absolute_flux",
+      "output_anchor": "formula-absolute-flux",
+      "source_ids": [
+        "S0002"
+      ],
+      "input_claims": [
+        "C0009",
+        "C0017"
+      ],
+      "number": 3
+    },
+    {
+      "id": "natural_inventory",
+      "output_anchor": "formula-natural-inventory",
+      "source_ids": [
+        "S0005"
+      ],
+      "input_claims": [
+        "C0020",
+        "C0055",
+        "C0056",
+        "C0022"
+      ],
+      "number": 4
+    },
+    {
+      "id": "lindhard",
+      "output_anchor": "formula-lindhard",
+      "source_ids": [
+        "S0001"
+      ],
+      "input_claims": [
+        "C0034",
+        "C0035"
+      ],
+      "number": 5
+    },
+    {
+      "id": "gaussian",
+      "output_anchor": "formula-gaussian",
+      "source_ids": [
+        "S0001"
+      ],
+      "input_claims": [
+        "C0036",
+        "C0037",
+        "C0038"
+      ],
+      "number": 6
+    },
+    {
+      "id": "bin_probability",
+      "output_anchor": "formula-bin-probability",
+      "source_ids": [
+        "S0001"
+      ],
+      "input_claims": [
+        "C0005"
+      ],
+      "number": 7
+    },
+    {
+      "id": "fold",
+      "output_anchor": "formula-fold",
+      "source_ids": [
+        "S0001"
+      ],
+      "input_claims": [
+        "C0018",
+        "C0022",
+        "C0025",
+        "C0041"
+      ],
+      "number": 8
+    },
+    {
+      "id": "chi2",
+      "output_anchor": "formula-chi2",
+      "source_ids": [
+        "S0001"
+      ],
+      "input_claims": [
+        "C0046",
+        "C0049",
+        "C0050"
+      ],
+      "number": 9
+    },
+    {
+      "id": "profile",
+      "output_anchor": "formula-profile",
+      "source_ids": [
+        "S0001"
+      ],
+      "input_claims": [
+        "C0046",
+        "C0049",
+        "C0050"
+      ],
+      "number": 10
+    }
+  ]
+}

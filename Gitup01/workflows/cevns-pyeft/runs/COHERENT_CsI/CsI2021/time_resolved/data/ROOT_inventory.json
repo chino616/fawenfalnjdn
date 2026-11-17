@@ -1,0 +1,130 @@
+[
+  {
+    "component": "mu",
+    "root_key": "convolved_energy_time_of_nu_mu",
+    "shape": [
+      15000,
+      600
+    ],
+    "axes": [
+      "time_ns",
+      "energy_MeV"
+    ],
+    "ranges": [
+      [
+        0.0,
+        15000.0
+      ],
+      [
+        0.0,
+        600.0
+      ]
+    ],
+    "sum": 21140914.04383676,
+    "reference_0_6_us_fraction": 0.999951141657252,
+    "representative_cell": {
+      "index": [
+        499,
+        30
+      ],
+      "value": 54945.265625
+    },
+    "high_energy_ge60_fraction": 0.002463469637897619
+  },
+  {
+    "component": "e",
+    "root_key": "convolved_energy_time_of_nu_e",
+    "shape": [
+      15000,
+      600
+    ],
+    "axes": [
+      "time_ns",
+      "energy_MeV"
+    ],
+    "ranges": [
+      [
+        0.0,
+        15000.0
+      ],
+      [
+        0.0,
+        600.0
+      ]
+    ],
+    "sum": 21060456.877007723,
+    "reference_0_6_us_fraction": 0.9191783169548304,
+    "representative_cell": {
+      "index": [
+        796,
+        36
+      ],
+      "value": 278.8775939941406
+    },
+    "high_energy_ge60_fraction": 2.3741175366002712e-07
+  },
+  {
+    "component": "mub",
+    "root_key": "convolved_energy_time_of_anti_nu_mu",
+    "shape": [
+      15000,
+      600
+    ],
+    "axes": [
+      "time_ns",
+      "energy_MeV"
+    ],
+    "ranges": [
+      [
+        0.0,
+        15000.0
+      ],
+      [
+        0.0,
+        600.0
+      ]
+    ],
+    "sum": 21112123.74424184,
+    "reference_0_6_us_fraction": 0.919376108274515,
+    "representative_cell": {
+      "index": [
+        800,
+        52
+      ],
+      "value": 312.0618591308594
+    },
+    "high_energy_ge60_fraction": 0.0005116965080734827
+  },
+  {
+    "component": "ebar",
+    "root_key": "convolved_energy_time_of_anti_nu_e",
+    "shape": [
+      15000,
+      600
+    ],
+    "axes": [
+      "time_ns",
+      "energy_MeV"
+    ],
+    "ranges": [
+      [
+        0.0,
+        15000.0
+      ],
+      [
+        0.0,
+        600.0
+      ]
+    ],
+    "sum": 16433.97197106323,
+    "reference_0_6_us_fraction": 0.9371478772033314,
+    "representative_cell": {
+      "index": [
+        629,
+        45
+      ],
+      "value": 0.27518460154533386
+    },
+    "high_energy_ge60_fraction": 0.005659009283960104
+  }
+]

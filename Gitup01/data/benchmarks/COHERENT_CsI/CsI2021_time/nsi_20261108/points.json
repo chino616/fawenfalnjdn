@@ -1,0 +1,1190 @@
+[
+  {
+    "id": "SM",
+    "epsilon_u": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "Historical diagnostic coordinate re-evaluated with current SM inputs; not a current or paper best fit",
+    "origin": {
+      "kind": "legacy_project_coordinate",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\benchmarks\\results_fine\\benchmark_points.json",
+      "sha256": "6af282d9f3758a20c754e8ec45a0f708b2752f01f1336d8a332b596a4c7116e8",
+      "locator": "row[0].point",
+      "original_name": "SM"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "mu_cancellation",
+    "epsilon_u": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.2,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "Historical diagnostic coordinate re-evaluated with current SM inputs; not a current or paper best fit",
+    "origin": {
+      "kind": "legacy_project_coordinate",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\benchmarks\\results_fine\\benchmark_points.json",
+      "sha256": "6af282d9f3758a20c754e8ec45a0f708b2752f01f1336d8a332b596a4c7116e8",
+      "locator": "row[1].point",
+      "original_name": "mu_cancellation"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "electron_compensation",
+    "epsilon_u": [
+      [
+        -0.12,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.2,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "Historical diagnostic coordinate re-evaluated with current SM inputs; not a current or paper best fit",
+    "origin": {
+      "kind": "legacy_project_coordinate",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\benchmarks\\results_fine\\benchmark_points.json",
+      "sha256": "6af282d9f3758a20c754e8ec45a0f708b2752f01f1336d8a332b596a4c7116e8",
+      "locator": "row[2].point",
+      "original_name": "electron_compensation"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "mu_sign_flip",
+    "epsilon_u": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.4,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "Historical diagnostic coordinate re-evaluated with current SM inputs; not a current or paper best fit",
+    "origin": {
+      "kind": "legacy_project_coordinate",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\benchmarks\\results_fine\\benchmark_points.json",
+      "sha256": "6af282d9f3758a20c754e8ec45a0f708b2752f01f1336d8a332b596a4c7116e8",
+      "locator": "row[3].point",
+      "original_name": "mu_sign_flip"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "legacy_scan_branch_0",
+    "epsilon_u": [
+      [
+        0.002854992041426147,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.018460488116334595,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "Historical diagnostic coordinate re-evaluated with current SM inputs; not a current or paper best fit",
+    "origin": {
+      "kind": "legacy_project_coordinate",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\benchmarks\\results_fine\\benchmark_points.json",
+      "sha256": "6af282d9f3758a20c754e8ec45a0f708b2752f01f1336d8a332b596a4c7116e8",
+      "locator": "row[4].point",
+      "original_name": "scan_branch_0"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "legacy_scan_branch_1",
+    "epsilon_u": [
+      [
+        0.003550157067839762,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.3722235851030103,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "Historical diagnostic coordinate re-evaluated with current SM inputs; not a current or paper best fit",
+    "origin": {
+      "kind": "legacy_project_coordinate",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\benchmarks\\results_fine\\benchmark_points.json",
+      "sha256": "6af282d9f3758a20c754e8ec45a0f708b2752f01f1336d8a332b596a4c7116e8",
+      "locator": "row[5].point",
+      "original_name": "scan_branch_1"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "legacy_scan_branch_2",
+    "epsilon_u": [
+      [
+        0.38644537458550227,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.018018281884933866,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "Historical diagnostic coordinate re-evaluated with current SM inputs; not a current or paper best fit",
+    "origin": {
+      "kind": "legacy_project_coordinate",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\benchmarks\\results_fine\\benchmark_points.json",
+      "sha256": "6af282d9f3758a20c754e8ec45a0f708b2752f01f1336d8a332b596a4c7116e8",
+      "locator": "row[6].point",
+      "original_name": "scan_branch_2"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "legacy_scan_branch_3",
+    "epsilon_u": [
+      [
+        0.3857981786304465,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.3726273386665798,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "Historical diagnostic coordinate re-evaluated with current SM inputs; not a current or paper best fit",
+    "origin": {
+      "kind": "legacy_project_coordinate",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\benchmarks\\results_fine\\benchmark_points.json",
+      "sha256": "6af282d9f3758a20c754e8ec45a0f708b2752f01f1336d8a332b596a4c7116e8",
+      "locator": "row[7].point",
+      "original_name": "scan_branch_3"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "u_domain_corner_0",
+    "epsilon_u": [
+      [
+        -0.4,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        -0.4,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "Previously declared u_ee/u_mumu diagnostic-domain corner",
+    "origin": {
+      "kind": "project_validation_choice",
+      "locator": "legacy resolve_input_issues.py::precision_points"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "u_domain_corner_1",
+    "epsilon_u": [
+      [
+        -0.4,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.8,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "Previously declared u_ee/u_mumu diagnostic-domain corner",
+    "origin": {
+      "kind": "project_validation_choice",
+      "locator": "legacy resolve_input_issues.py::precision_points"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "u_domain_corner_2",
+    "epsilon_u": [
+      [
+        0.8,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        -0.4,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "Previously declared u_ee/u_mumu diagnostic-domain corner",
+    "origin": {
+      "kind": "project_validation_choice",
+      "locator": "legacy resolve_input_issues.py::precision_points"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "u_domain_corner_3",
+    "epsilon_u": [
+      [
+        0.8,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.8,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "Previously declared u_ee/u_mumu diagnostic-domain corner",
+    "origin": {
+      "kind": "project_validation_choice",
+      "locator": "legacy resolve_input_issues.py::precision_points"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "d_ee_plus",
+    "epsilon_u": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.1,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "d-electron diagonal suppression",
+    "origin": {
+      "kind": "declared_project_benchmark_design",
+      "not_a_paper_measurement_or_best_fit": true,
+      "definition": "Finite test stimuli for d coupling, flavor flow, Hermiticity, signs and mixed u/d interference"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "d_ee_minus",
+    "epsilon_u": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        -0.1,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "d-electron diagonal interference sign",
+    "origin": {
+      "kind": "declared_project_benchmark_design",
+      "not_a_paper_measurement_or_best_fit": true,
+      "definition": "Finite test stimuli for d coupling, flavor flow, Hermiticity, signs and mixed u/d interference"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "d_mumu_plus",
+    "epsilon_u": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.1,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "d-muon diagonal suppression",
+    "origin": {
+      "kind": "declared_project_benchmark_design",
+      "not_a_paper_measurement_or_best_fit": true,
+      "definition": "Finite test stimuli for d coupling, flavor flow, Hermiticity, signs and mixed u/d interference"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "d_mumu_minus",
+    "epsilon_u": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        -0.1,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "d-muon diagonal interference sign",
+    "origin": {
+      "kind": "declared_project_benchmark_design",
+      "not_a_paper_measurement_or_best_fit": true,
+      "definition": "Finite test stimuli for d coupling, flavor flow, Hermiticity, signs and mixed u/d interference"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "u_emu_plus",
+    "epsilon_u": [
+      [
+        0.0,
+        0.1,
+        0.0
+      ],
+      [
+        0.1,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "u real Hermitian e-mu flavor change",
+    "origin": {
+      "kind": "declared_project_benchmark_design",
+      "not_a_paper_measurement_or_best_fit": true,
+      "definition": "Finite test stimuli for d coupling, flavor flow, Hermiticity, signs and mixed u/d interference"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "u_emu_minus",
+    "epsilon_u": [
+      [
+        0.0,
+        -0.1,
+        0.0
+      ],
+      [
+        -0.1,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "u flavor-changing sign symmetry",
+    "origin": {
+      "kind": "declared_project_benchmark_design",
+      "not_a_paper_measurement_or_best_fit": true,
+      "definition": "Finite test stimuli for d coupling, flavor flow, Hermiticity, signs and mixed u/d interference"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "d_emu_plus",
+    "epsilon_u": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        0.1,
+        0.0
+      ],
+      [
+        0.1,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "d real Hermitian e-mu flavor change",
+    "origin": {
+      "kind": "declared_project_benchmark_design",
+      "not_a_paper_measurement_or_best_fit": true,
+      "definition": "Finite test stimuli for d coupling, flavor flow, Hermiticity, signs and mixed u/d interference"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "d_emu_minus",
+    "epsilon_u": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        -0.1,
+        0.0
+      ],
+      [
+        -0.1,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "d flavor-changing sign symmetry",
+    "origin": {
+      "kind": "declared_project_benchmark_design",
+      "not_a_paper_measurement_or_best_fit": true,
+      "definition": "Finite test stimuli for d coupling, flavor flow, Hermiticity, signs and mixed u/d interference"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "d_etau",
+    "epsilon_u": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        0.0,
+        0.1
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.1,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "electron incident to tau final state; no tau source",
+    "origin": {
+      "kind": "declared_project_benchmark_design",
+      "not_a_paper_measurement_or_best_fit": true,
+      "definition": "Finite test stimuli for d coupling, flavor flow, Hermiticity, signs and mixed u/d interference"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "d_mutau",
+    "epsilon_u": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.1
+      ],
+      [
+        0.0,
+        0.1,
+        0.0
+      ]
+    ],
+    "purpose": "muon incident to tau final state; original source timing",
+    "origin": {
+      "kind": "declared_project_benchmark_design",
+      "not_a_paper_measurement_or_best_fit": true,
+      "definition": "Finite test stimuli for d coupling, flavor flow, Hermiticity, signs and mixed u/d interference"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "mixed_ud_emu",
+    "epsilon_u": [
+      [
+        0.0,
+        0.1,
+        0.0
+      ],
+      [
+        0.1,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        -0.05,
+        0.0
+      ],
+      [
+        -0.05,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "nonzero u-d interference for the same flavor-changing final state",
+    "origin": {
+      "kind": "declared_project_benchmark_design",
+      "not_a_paper_measurement_or_best_fit": true,
+      "definition": "Finite test stimuli for d coupling, flavor flow, Hermiticity, signs and mixed u/d interference"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  },
+  {
+    "id": "tau_diagonal_control",
+    "epsilon_u": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.2
+      ]
+    ],
+    "epsilon_d": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "purpose": "tau-tau diagonal must not affect an SNS source with no incident tau",
+    "origin": {
+      "kind": "declared_project_benchmark_design",
+      "not_a_paper_measurement_or_best_fit": true,
+      "definition": "Finite test stimuli for d coupling, flavor flow, Hermiticity, signs and mixed u/d interference"
+    },
+    "unit": "dimensionless",
+    "flavor_order": [
+      "e",
+      "mu",
+      "tau"
+    ]
+  }
+]

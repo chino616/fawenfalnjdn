@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-10",
+  "decision_ref": "D0003",
+  "authorization_ref": "W0003",
+  "method_card": "data/benchmarks/pandax_us2_simplified_v1/benchmark.input.json",
+  "card_sha256": "52462e4600c4bdb41e5552e9d5f7dba12f93e2e11cfe0e8ae392c4f28c64ded3",
+  "primary_source_register": "P00_SOURCE_REGISTER.yaml",
+  "existing_evidence_claims": {
+    "PandaX4T-C001": "nominal Qy adopted for mean mapping",
+    "PandaX4T-C002": "fitted Qy sensitivity only",
+    "PandaX4T-C004": "experimental Fig.5 fitted signal: calibration anchor only",
+    "PandaX4T-C005": "theory Fig.1 observations/backgrounds: plotted comparison only"
+  },
+  "new_evidence": "outputs/solar_b8_sm/20261110_pandax_simplified_run1/INPUT_EVIDENCE.json",
+  "derived_output": "outputs/solar_b8_sm/20261110_pandax_simplified_run1/RESULT.json",
+  "direct_counts": [
+    3.6023993900728635,
+    3.7208389318489337,
+    3.697757408500083,
+    3.5571386376619794,
+    3.3076075315438933,
+    3.001445738218666,
+    2.6619984479147254,
+    2.3024897440161984
+  ],
+  "direct_total": 25.851675829777342,
+  "effective_calibrated_total": 48.654330768550004,
+  "author_ci": "NOT_OBTAINED; project conditional reconstruction stored separately",
+  "full_response_status": "BLOCKED, original gap retained",
+  "human_result_acceptance": "NOT_REVIEWED",
+  "reference_role_audit": "outputs/solar_b8_sm/20261110_pandax_simplified_run1/SSM_REFERENCE_ROLE_AUDIT.json",
+  "historical_effective_calibrated_total_role": "postfit template rescaling reference, not independently calibrated SSM prediction"
+}

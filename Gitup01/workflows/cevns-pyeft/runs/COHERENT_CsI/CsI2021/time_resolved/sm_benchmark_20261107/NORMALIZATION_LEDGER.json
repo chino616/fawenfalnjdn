@@ -1,0 +1,23 @@
+{
+  "route": "integrated detector fluence cm^-2 times per-nucleus differential cross section cm^2/keVnr times dT times nucleus count times accepted PE/time probabilities",
+  "fluence_owner": "Eq29 DAR input; POT, yield, 4*pi*L^2 once",
+  "eta_cm_minus2": 579361763793233.9,
+  "nuclei_owner": "targets.materials.csi_target_inventory, actual per-isotope nucleus counts",
+  "nuclei": {
+    "Cs133": 3.381663658707092e+25,
+    "I127": 3.3816636587070914e+25
+  },
+  "energy_selection_owner": "CsI2021Observation: official Gamma density and PE efficiency once",
+  "legacy_component_acceptance": "unity before time selection",
+  "time_selection_owner": "existing build_time_weights: ROOT time marginal, fixed zero-shift0-6us denominator, observer time efficiency once",
+  "reference_fractions": [
+    0.999951141657252,
+    0.9191783169548307,
+    0.9193761082745151
+  ],
+  "reference_scope_total_events": 353.46560868634367,
+  "same_eta_full_fluence_total_events": 329.01642259688515,
+  "scope_difference_meaning": "The numerical eta is assigned to different physical fluence scopes; a representation-only conversion preserves counts and was checked separately",
+  "extra_livetime_POT_mass_factor": false,
+  "posthoc_rescale_to_data_or_prior": false
+}

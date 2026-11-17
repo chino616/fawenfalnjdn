@@ -1,0 +1,9 @@
+coupling,interval_index,lower,upper,confidence,nominal_delta_chi2,source_id
+epsilon_ee_uV,1,-0.037,0.026,1sigma,1.0,arxiv2501_17843v3_p13_tableII_CONUS
+epsilon_ee_uV,2,0.348,0.411,1sigma,1.0,arxiv2501_17843v3_p13_tableII_CONUS
+epsilon_ee_dV,1,-0.034,0.024,1sigma,1.0,arxiv2501_17843v3_p13_tableII_CONUS
+epsilon_ee_dV,2,0.322,0.38,1sigma,1.0,arxiv2501_17843v3_p13_tableII_CONUS
+epsilon_emu_uV,1,-0.123,0.123,1sigma,1.0,arxiv2501_17843v3_p13_tableII_CONUS
+epsilon_emu_dV,1,-0.114,0.114,1sigma,1.0,arxiv2501_17843v3_p13_tableII_CONUS
+epsilon_etau_uV,1,-0.123,0.123,1sigma,1.0,arxiv2501_17843v3_p13_tableII_CONUS
+epsilon_etau_dV,1,-0.114,0.114,1sigma,1.0,arxiv2501_17843v3_p13_tableII_CONUS

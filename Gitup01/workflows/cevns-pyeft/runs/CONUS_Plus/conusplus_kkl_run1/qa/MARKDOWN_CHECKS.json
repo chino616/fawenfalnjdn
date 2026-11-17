@@ -1,0 +1,31 @@
+{
+  "result": "PASS",
+  "documents": 20,
+  "math_expressions": 65,
+  "display_math": 10,
+  "links": 516,
+  "errors": [],
+  "sha256": {
+    "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md": "a2475d935f04d372389b0d287af19141a62d3e93b146ce44fd6a4a828ca98f85",
+    "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.summary.md": "5c9a9664161371b19d4f65bf3294e2777972953fc2e64c044e1c2bb70c1fa6ae",
+    "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/EXPERIMENT_USER_INPUT.md": "e6c3e712a54e31f487f9784d5dcc45fe2f0617d952ce5e0f194f842dcceabd85",
+    "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/README.md": "62190f6e4477a61b744494f59b0cadda0a9e4c38266504b227592fc1d9aedbb0",
+    "docs/experiments/CONUS_Plus/datasets/conusplus_kkl_run1/REFERENCES.md": "e79287db031f8768b7b8106d3347c22f2c14bc28c26cb247e7654d86f246b438",
+    "docs/experiments/CONUS_Plus/README.md": "c68482145cb9461ae0e8dca1f035e28f623d75bb4dd01b5b55cb0151e016e23e",
+    "data/experiments/CONUS_Plus/conusplus_kkl_run1/README.md": "4418ddd832d238405855a38a02c304dbf43f217681e9355aad0c89d95b93e778",
+    "data/experiments/CONUS_Plus/conusplus_kkl_run1/statistics/README.md": "00dbaef0d498b07d88638c3e3d88584930bd554bab0237ade12ae66e6edce0c6",
+    "data/experiments/CONUS_Plus/README.md": "5be0790fa0b0eb186d3258573d1a410ebfde0c60d141b08ae39c2297e73248a9",
+    "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/benchmark/BENCHMARK_REGISTER.md": "f071865bff586da388efe7937118578977d6b5ad1440e9261ab35e693e4d7ddc",
+    "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P02_MISSING_AND_CONFLICTS.md": "06a7395c204a2e04d4e0eb04ca1aff15ef2cf38d4a538d937fccbf23c60f99c7",
+    "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P05_CONTRACT_STATUS.md": "4fc6296f7450adc40fd0c04bb8f53f2523564c6486c4984905f39e98bbdc77ff",
+    "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/README.md": "ff497bd80590b7785e9b714cb716baea5e46b790e04621285665e0965fab9e1b",
+    "workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/sources/README.md": "6e3d664eb681bef155d406936eff4610104737b3abb2a15d48cd525ab10a5cbe",
+    "workflows/cevns-pyeft/runs/CONUS_Plus/README.md": "b2854a12a86ebd60eb9c8db8e6b1a2f1df83ffc45340b7e058ef7d3eb81fb37c",
+    "README.md": "621b7fecf1be4fd5a98bcc36bcc78a7e940e09627ef6357fc57532042d78c640",
+    "docs/experiments/README.md": "84f8c5e784c8439f042e559375ca2ce077fb7a761e01cc4c2f5ae788e2e044b5",
+    "data/experiments/README.md": "95b56c5bf657d3d45b1275dd94a3b028e434d39fd1a75155f1891726a1cfc37e",
+    "docs/references/CONUS/README.md": "29ad33a405fe15a5a9060107584433239220c8f91276d171acbd1099f3392f7a",
+    "outputs/conusplus_onboarding_v3_20261106/README.md": "86d45402cb5511d7f2de244fc863ce75690974087cb1130c805f16f9c7720b38"
+  },
+  "renderer": "Independent Markdown/GFM, strict KaTeX and Edge preview"
+}

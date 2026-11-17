@@ -503,6 +503,7 @@
         "profile": {
           "enum": [
             "specification_only",
+            "solar_b8_sm_v1",
             "deterministic_pe_legacy_v1",
             "observed_gaussian_legacy_v1"
           ]

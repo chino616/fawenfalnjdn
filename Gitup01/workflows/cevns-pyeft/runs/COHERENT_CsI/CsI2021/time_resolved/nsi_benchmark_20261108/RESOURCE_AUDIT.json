@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-08",
+  "status": "PASS_LOCAL_RESOURCE_REUSE",
+  "source_code_files_unchanged": 126,
+  "response": {
+    "path": "data/responses/responses_all.json",
+    "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+    "keys": [
+      "nuclei.Cs133",
+      "nuclei.I"
+    ],
+    "external_generation_equivalence": "UNVERIFIED_OPTIONAL_FOR_LOCAL_REUSE"
+  },
+  "parent_register": {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\time_resolved\\P00_SOURCE_REGISTER.yaml",
+    "sha256": "2f29260a755628e707d900d30ee3f08c6fde4c39a57e5b06d19ce9d11d6e2268"
+  },
+  "parent_evidence": {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\time_resolved\\P01_EVIDENCE_LEDGER.yaml",
+    "sha256": "84659b2ce4fba37092eb3bff3a7ea55be1a04d004363879a5081bf854c678b01"
+  },
+  "local_source_inventory": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\time_resolved\\data\\nuclear_response_inventory.json",
+  "mapping_source": {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\kernels\\vector_nsi.py",
+    "sha256": "9fcd48c306496a64f4577479be7fdfb3ed43f06d4bd1515c02694fbba6b3d2d0",
+    "locator": "vector_nsi_wilson and _matrix"
+  },
+  "legacy_time_files": {
+    "time_acceptance.py": {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\time_acceptance.py",
+      "sha256": "535de210f4ebde240e8b3f230a24c0e472a71ae7ad3ff836c1abf1787a1cbc28"
+    },
+    "time_profile.py": {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\time_profile.py",
+      "sha256": "92c08c6f3cdf0bcb9863cdbc78786e54030a8b0dd4a1fad186d0b335139cbf89"
+    }
+  },
+  "scope": "Fingerprints and availability, not independent certification of external source authenticity"
+}

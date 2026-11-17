@@ -1,0 +1,822 @@
+{
+  "version": "3.0",
+  "date": "2026-11-09",
+  "scope": "documentation consolidation and explicitly separated benchmark branches",
+  "detailed": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+  "summary": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.summary.v3.0.md",
+  "user_input": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/EXPERIMENT_USER_INPUT.v3.0.md",
+  "combined": "docs/experiments/PandaX4T_XENONnT_SolarB8/SOLAR_B8_ONBOARDING.v3.0.md",
+  "source_register": "workflows/cevns-pyeft/runs/XENONnT/XENONnT_2024_SolarB8/P00_SOURCE_REGISTER.yaml",
+  "evidence_ledger": "workflows/cevns-pyeft/runs/XENONnT/XENONnT_2024_SolarB8/P01_EVIDENCE_LEDGER.yaml",
+  "physics_contract": "workflows/cevns-pyeft/runs/XENONnT/XENONnT_2024_SolarB8/P03_PHYSICS_CONTRACT.yaml",
+  "claim_outputs": [
+    {
+      "claim_id": "XENONnT-C012",
+      "field": "detector/xenonnt_qy_sr0_23Vcm.txt",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C013",
+      "field": "detector/xenonnt_qy_sr0_band.txt",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C014",
+      "field": "statistics/xenonnt_original_fig2.txt",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C015",
+      "field": "statistics/xenonnt_benchmark_fig1.txt",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C016",
+      "field": "statistics/xenonnt_official_observed_bins.txt",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C017",
+      "field": "statistics/xenonnt_official_observed_events.txt",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C018",
+      "field": "b8_bahcall1996_official.txt",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s2"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C019",
+      "field": "xenon_natural_isotopes_nist_v2.txt",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C020",
+      "field": "detector/xenonnt_sr0_response_release2026_v2.npz",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C021",
+      "field": "statistics/xenonnt_sr0_background_release2026_v2.npz",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C022",
+      "field": "statistics/xenonnt_sr0_observed_4d_v2.npz",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C023",
+      "field": "detector/xenonnt_sr1_response_release2026_v2.npz",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C024",
+      "field": "statistics/xenonnt_sr1_background_release2026_v2.npz",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C025",
+      "field": "statistics/xenonnt_sr1_observed_4d_v2.npz",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C027",
+      "field": "detector/xenonnt_2024_calibration_inputs.v2.1.json",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C028",
+      "field": "statistics/xenonnt_prefit_inputs_2024.v2.1.json",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C031",
+      "field": "detector/xenonnt_2024_fig1_acceptance.txt",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s9"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C032",
+      "field": "reference/xenonnt_2024_fig1_sm_recoil_spectra.txt",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s9"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C033",
+      "field": "detector/ybe_early_release/ly_ybe_model_lower.json",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C034",
+      "field": "detector/ybe_early_release/ly_ybe_model_median.json",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C035",
+      "field": "detector/ybe_early_release/ly_ybe_model_upper.json",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C036",
+      "field": "detector/ybe_early_release/qy_ybe_model_lower.json",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C037",
+      "field": "detector/ybe_early_release/qy_ybe_model_median.json",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C038",
+      "field": "detector/ybe_early_release/qy_ybe_model_upper.json",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C039",
+      "field": "reference/xenonnt_early_release_cevns_spectrum.json",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s7"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C040",
+      "field": "detector/xenonnt_sr0_response_early_release_basis.npz",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C041",
+      "field": "detector/xenonnt_sr0_response_early_release_nominal_1d.txt",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C042",
+      "field": "statistics/xenonnt_sr0_background_and_b8_early_release.npz",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C043",
+      "field": "detector/xenonnt_sr1_response_early_release_basis.npz",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C044",
+      "field": "detector/xenonnt_sr1_response_early_release_nominal_1d.txt",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-C045",
+      "field": "statistics/xenonnt_sr1_background_and_b8_early_release.npz",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-DERIVED-SR0",
+      "field": "detector/response_1d_SR0",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-DERIVED-SR1",
+      "field": "detector/response_1d_SR1",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-S01",
+      "field": "flux_reference",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s2"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-S02",
+      "field": "flux_relative_error",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s2"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-S03",
+      "field": "sin2thetaW_reference",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s4"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-S04",
+      "field": "avogadro_constant",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-S05",
+      "field": "early_reader_SR0_exposure_factor",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-S06",
+      "field": "early_reader_SR1_exposure_factor",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-S07",
+      "field": "benchmark_signal_sigma",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-S08",
+      "field": "benchmark_AC_sigma",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-S09",
+      "field": "benchmark_neutron_sigma",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-S10",
+      "field": "benchmark_ER_sigma",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-DERIVED-INVENTORY",
+      "field": "target/derived_inventory",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-NUMERICAL-POLICIES",
+      "field": "prediction/numerical_policies",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s7"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-NUCLEAR-LOCAL",
+      "field": "nuclear/local_coefficients",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s4"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-M01",
+      "field": "kernel_2024",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-M02",
+      "field": "prefit_shapes_2024",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-M03",
+      "field": "yield_constraints",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-M04",
+      "field": "nuclear_original_source",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s4"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-M05",
+      "field": "benchmark_inference_conventions",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-EQ1",
+      "field": "source/equation_1",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s2"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-EQ2",
+      "field": "target/equation_2",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-EQ3",
+      "field": "detector/equation_3",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-EQ4",
+      "field": "prediction/equation_4",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s7"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-EQ5",
+      "field": "statistics/equation_5",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "XENONnT-EQ6",
+      "field": "statistics/equation_6",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P01",
+      "field": "source.total_flux",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P02",
+      "field": "target.anchor_mass_kg",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P03",
+      "field": "target.Z",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P04",
+      "field": "constants.avogadro",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P05",
+      "field": "constants.amu_GeV",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P06",
+      "field": "constants.electron_mass_GeV",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P07",
+      "field": "constants.G_F",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P08",
+      "field": "constants.hbarc_GeV_fm",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P09",
+      "field": "constants.GeV_inverse2_to_cm2",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P10",
+      "field": "constants.seconds_per_year",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P11",
+      "field": "nuclear.radius_fm",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P12",
+      "field": "nuclear.skin_fm",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P13",
+      "field": "interaction.sin2thetaW",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P14",
+      "field": "interaction.include_sm",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P15",
+      "field": "numerics.n_er",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P16",
+      "field": "numerics.n_enu",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A01",
+      "field": "resources/arrays/source_energy_MeV",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A02",
+      "field": "resources/arrays/source_shape_per_MeV",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A03",
+      "field": "resources/arrays/target_mass_number",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A04",
+      "field": "resources/arrays/target_atomic_mass_u",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A05",
+      "field": "resources/arrays/target_number_fraction",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A06",
+      "field": "resources/arrays/run_exposures_tyr",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A07",
+      "field": "resources/arrays/response_energy_keV",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A08",
+      "field": "resources/arrays/response_Ly",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A09",
+      "field": "resources/arrays/response_Qy",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A10",
+      "field": "resources/arrays/response_SR0",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A11",
+      "field": "resources/arrays/cs2_edges_SR0",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A12",
+      "field": "resources/arrays/response_SR1",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A13",
+      "field": "resources/arrays/cs2_edges_SR1",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A14",
+      "field": "resources/arrays/yield_energy_keV",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A15",
+      "field": "resources/arrays/yield_Ly_median",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A16",
+      "field": "resources/arrays/yield_Qy_median",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A17",
+      "field": "resources/arrays/observable_edges",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": [
+        "data/experiments/XENONnT/XENONnT_2024_SolarB8/experiment.physics.md",
+        "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-MODEL",
+      "field": "theory_response/sm_runtime_profile",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    },
+    {
+      "claim_id": "SM20261107-RESULT",
+      "field": "prediction/sm_forward",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    },
+    {
+      "claim_id": "VECTOR20261108-MODEL",
+      "field": "theory_response/light_vector",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    },
+    {
+      "claim_id": "VECTOR20261108-POINTS",
+      "field": "benchmark/project_test_points",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    },
+    {
+      "claim_id": "VECTOR20261108-SM",
+      "field": "prediction/vector/SM",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    },
+    {
+      "claim_id": "VECTOR20261108-V10_g1",
+      "field": "prediction/vector/V10_g1",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    },
+    {
+      "claim_id": "VECTOR20261108-V10_g2",
+      "field": "prediction/vector/V10_g2",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    },
+    {
+      "claim_id": "VECTOR20261108-V10_g3",
+      "field": "prediction/vector/V10_g3",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    },
+    {
+      "claim_id": "VECTOR20261108-BL10_g2",
+      "field": "prediction/vector/BL10_g2",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    },
+    {
+      "claim_id": "VECTOR20261108-V1_g2",
+      "field": "prediction/vector/V1_g2",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    },
+    {
+      "claim_id": "VECTOR20261108-V100_g2",
+      "field": "prediction/vector/V100_g2",
+      "v3_output": "docs/experiments/XENONnT/datasets/XENONnT_2024_SolarB8/experiment.physics.v3.0.md",
+      "prior_output_locations_retained": []
+    }
+  ],
+  "simplified_benchmark": null,
+  "scientific_gates_changed_by_generator": false,
+  "data_or_runtime_changed_by_generator": false
+}

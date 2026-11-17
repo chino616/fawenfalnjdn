@@ -1,0 +1,972 @@
+{
+  "package": {
+    "schema_version": "cevns-experiment-input/2",
+    "dataset_id": "PandaX4T_2024_US2",
+    "experiment_slug": "PandaX4T",
+    "analysis_revision": "sm_forward_20261107_1",
+    "scientific_claim": "SM forward benchmark with explicit public response limitations; no inference/CI reproduction",
+    "status": "DRAFT",
+    "human_approval": "NOT_REVIEWED"
+  },
+  "parameters": {
+    "source.total_flux": {
+      "value": 5460000.0,
+      "unit": "cm^-2 s^-1",
+      "role": "direct_input",
+      "meaning": "2411.11749v1 PDF p5 Eq.(11)后，参考总通量；形状表不含该值",
+      "source_refs": [
+        "R01"
+      ],
+      "consumers": [
+        "solar_b8_flux_v1"
+      ],
+      "status": "SOURCE_EXTRACTED"
+    },
+    "target.anchor_mass_kg": {
+      "value": 1000.0,
+      "unit": "kg",
+      "role": "runtime_control",
+      "meaning": "计算归一化锚点1t，不是实测探测器质量；与质量时间因子配对",
+      "source_refs": [
+        "USER"
+      ],
+      "consumers": [
+        "explicit_target_inventory_v1"
+      ],
+      "status": "PROJECT_DERIVED"
+    },
+    "target.Z": {
+      "value": 54.0,
+      "unit": "1",
+      "role": "direct_input",
+      "meaning": "NIST Xenon，Z=54",
+      "source_refs": [
+        "R09"
+      ],
+      "consumers": [
+        "explicit_target_inventory_v1",
+        "coherent_sm_kn_v1"
+      ],
+      "status": "SOURCE_EXTRACTED"
+    },
+    "constants.avogadro": {
+      "value": 6.02214076e+23,
+      "unit": "mol^-1",
+      "role": "direct_input",
+      "meaning": "SI第9版§2.2/Table1精确值",
+      "source_refs": [
+        "R13"
+      ],
+      "consumers": [
+        "explicit_target_inventory_v1"
+      ],
+      "status": "SOURCE_EXTRACTED"
+    },
+    "constants.amu_GeV": {
+      "value": 0.93149410372,
+      "unit": "GeV/u",
+      "role": "direct_input",
+      "meaning": "foundation/constants.py::AMU_GEV；原子质量的GeV换算",
+      "source_refs": [
+        "R18"
+      ],
+      "consumers": [
+        "explicit_target_inventory_v1"
+      ],
+      "status": "SOURCE_EXTRACTED"
+    },
+    "constants.electron_mass_GeV": {
+      "value": 0.0005109989506900001,
+      "unit": "GeV",
+      "role": "direct_input",
+      "meaning": "foundation/constants.py::m_e；裸核质量近似扣除Z个电子，忽略电子结合能",
+      "source_refs": [
+        "R18"
+      ],
+      "consumers": [
+        "explicit_target_inventory_v1"
+      ],
+      "status": "SOURCE_EXTRACTED"
+    },
+    "constants.G_F": {
+      "value": 1.1663787e-05,
+      "unit": "GeV^-2",
+      "role": "direct_input",
+      "meaning": "foundation/constants.py::G_F",
+      "source_refs": [
+        "R18"
+      ],
+      "consumers": [
+        "coherent_sm_kn_v1"
+      ],
+      "status": "SOURCE_EXTRACTED"
+    },
+    "constants.hbarc_GeV_fm": {
+      "value": 0.1973269804,
+      "unit": "GeV fm",
+      "role": "direct_input",
+      "meaning": "foundation/constants.py::HBARC_GEV_FM",
+      "source_refs": [
+        "R18"
+      ],
+      "consumers": [
+        "klein_nystrand_v1"
+      ],
+      "status": "SOURCE_EXTRACTED"
+    },
+    "constants.GeV_inverse2_to_cm2": {
+      "value": 3.893793721e-28,
+      "unit": "cm^2 GeV^2",
+      "role": "direct_input",
+      "meaning": "foundation/constants.py::GEV_INV2_TO_CM2；微分截面另乘1e-6转成每keV",
+      "source_refs": [
+        "R18"
+      ],
+      "consumers": [
+        "coherent_sm_kn_v1"
+      ],
+      "status": "SOURCE_EXTRACTED"
+    },
+    "constants.seconds_per_year": {
+      "value": 31557600.0,
+      "unit": "s/yr",
+      "role": "direct_input",
+      "meaning": "365.25×86400=31557600；计算单位约定，不是额外活时间",
+      "source_refs": [
+        "R18"
+      ],
+      "consumers": [
+        "solar_b8_sm_v1"
+      ],
+      "status": "SOURCE_EXTRACTED"
+    },
+    "nuclear.radius_fm": {
+      "value": 1.23,
+      "unit": "fm",
+      "role": "direct_input",
+      "meaning": "2411.11749v1 PDF p3 Eq.(3)后：R_A=1.23 A^(1/3) fm",
+      "source_refs": [
+        "R01"
+      ],
+      "consumers": [
+        "klein_nystrand_v1"
+      ],
+      "status": "SOURCE_EXTRACTED"
+    },
+    "nuclear.skin_fm": {
+      "value": 0.7,
+      "unit": "fm",
+      "role": "direct_input",
+      "meaning": "同上，a_k=0.7 fm",
+      "source_refs": [
+        "R01"
+      ],
+      "consumers": [
+        "klein_nystrand_v1"
+      ],
+      "status": "SOURCE_EXTRACTED"
+    },
+    "interaction.sin2thetaW": {
+      "value": 0.23857,
+      "unit": "1",
+      "role": "direct_input",
+      "meaning": "2411.11749v1 PDF p3 Eq.(2)后参考弱混合角",
+      "source_refs": [
+        "R01"
+      ],
+      "consumers": [
+        "coherent_sm_kn_v1"
+      ],
+      "status": "SOURCE_EXTRACTED"
+    },
+    "interaction.include_sm": {
+      "value": true,
+      "unit": "boolean",
+      "role": "direct_input",
+      "meaning": "本轮用户指定纯标准模型，不扫描BSM",
+      "source_refs": [
+        "USER"
+      ],
+      "consumers": [
+        "coherent_sm_kn_v1"
+      ],
+      "status": "SOURCE_EXTRACTED"
+    },
+    "numerics.n_er": {
+      "value": 401,
+      "unit": "1",
+      "role": "runtime_control",
+      "meaning": "Slow直接积分基础节点；另并入原表/响应/观测断点，加密检查后记录",
+      "source_refs": [
+        "USER"
+      ],
+      "consumers": [
+        "solar_b8_sm_v1"
+      ],
+      "status": "PROJECT_DERIVED"
+    },
+    "numerics.n_enu": {
+      "value": 240,
+      "unit": "1",
+      "role": "runtime_control",
+      "meaning": "Slow直接积分基础节点；另并入原表/响应/观测断点，加密检查后记录",
+      "source_refs": [
+        "USER"
+      ],
+      "consumers": [
+        "solar_b8_sm_v1"
+      ],
+      "status": "PROJECT_DERIVED"
+    }
+  },
+  "models": {
+    "solar_b8_flux_v1": {
+      "model_type": "source",
+      "model_revision": "1",
+      "formula": "dphi/dE=Phi_B8*linear_interp(E,E_table,f_table); fluence=flux*effective_seconds",
+      "formula_purpose": "audit_only",
+      "variables": {},
+      "parameter_refs": [
+        "source.total_flux"
+      ],
+      "resource_refs": [
+        "source_energy_MeV",
+        "source_shape_per_MeV"
+      ],
+      "depends_on": [],
+      "source_refs": [
+        "R01",
+        "R04"
+      ],
+      "locator": "见本模型说明及每个输入的直接来源/原文件定位",
+      "meaning": "Bahcall官网829点谱形×论文参考总通量；源仅乘一次参考年秒数，原表积分约0.999986544，不静默校正。",
+      "domain": "纯SM，太阳8B；接受度可见真实反冲能区",
+      "boundary": "不外推、不重复曝光/效率；缺失能力单独BLOCKED",
+      "binding_status": "BOUND_UNVERIFIED",
+      "implementation_contract": "solar_b8_flux.v1"
+    },
+    "explicit_target_inventory_v1": {
+      "model_type": "target",
+      "model_revision": "1",
+      "formula": "sum_i(nuclei_i * mass_i_kg) = detector_mass_kg",
+      "formula_purpose": "audit_only",
+      "variables": {},
+      "parameter_refs": [
+        "target.anchor_mass_kg",
+        "target.Z",
+        "constants.avogadro",
+        "constants.amu_GeV",
+        "constants.electron_mass_GeV"
+      ],
+      "resource_refs": [
+        "target_mass_number",
+        "target_atomic_mass_u",
+        "target_number_fraction",
+        "run_exposures_tyr"
+      ],
+      "depends_on": [],
+      "source_refs": [
+        "R09",
+        "R13",
+        "R02"
+      ],
+      "locator": "见本模型说明及每个输入的直接来源/原文件定位",
+      "meaning": "NIST九核素数丰度与原子质量给核数；参考1t×1yr仅为量纲锚点。动力学用扣除电子质量的裸核近似，电子结合能忽略。",
+      "domain": "纯SM，太阳8B；接受度可见真实反冲能区",
+      "boundary": "不外推、不重复曝光/效率；缺失能力单独BLOCKED",
+      "binding_status": "BOUND_UNVERIFIED",
+      "implementation_contract": "explicit_target_inventory.v1"
+    },
+    "klein_nystrand_v1": {
+      "model_type": "nuclear",
+      "model_revision": "1",
+      "formula": "F=3*j1(q*R)/(q*R)/(1+(q*a)^2); R=radius_coefficient*A^(1/3)",
+      "formula_purpose": "audit_only",
+      "variables": {},
+      "parameter_refs": [
+        "constants.hbarc_GeV_fm",
+        "nuclear.radius_fm",
+        "nuclear.skin_fm"
+      ],
+      "resource_refs": [],
+      "depends_on": [],
+      "source_refs": [
+        "R01"
+      ],
+      "locator": "见本模型说明及每个输入的直接来源/原文件定位",
+      "meaning": "选择文献[1]式(3)的共享解析模型；不读取Fig.4所需的EFT核系数。",
+      "domain": "纯SM，太阳8B；接受度可见真实反冲能区",
+      "boundary": "不外推、不重复曝光/效率；缺失能力单独BLOCKED",
+      "binding_status": "BOUND_UNVERIFIED",
+      "implementation_contract": "klein_nystrand.v1"
+    },
+    "coherent_sm_kn_v1": {
+      "model_type": "theory",
+      "model_revision": "1",
+      "formula": "dsigma/dT=GF^2*m/pi*QV^2*F^2*(1-m*T/(2*E^2)-T/E); QV=((1-4*s2w)*Z-N)/2",
+      "formula_purpose": "audit_only",
+      "variables": {},
+      "parameter_refs": [
+        "target.Z",
+        "constants.G_F",
+        "constants.GeV_inverse2_to_cm2",
+        "interaction.sin2thetaW",
+        "interaction.include_sm"
+      ],
+      "resource_refs": [],
+      "depends_on": [
+        "klein_nystrand_v1"
+      ],
+      "source_refs": [
+        "R01",
+        "R18"
+      ],
+      "locator": "见本模型说明及每个输入的直接来源/原文件定位",
+      "meaning": "选择文献[1]式(1)–(2)，保留−T/E项，味普适；公式和单位由共享模块实现。",
+      "domain": "纯SM，太阳8B；接受度可见真实反冲能区",
+      "boundary": "不外推、不重复曝光/效率；缺失能力单独BLOCKED",
+      "binding_status": "BOUND_UNVERIFIED",
+      "implementation_contract": "coherent_sm_kn.v1"
+    },
+    "recoil_efficiency_projection_v1": {
+      "model_type": "detector",
+      "model_revision": "1",
+      "formula": "N_true_bin=integral_true_bin(dT*recoil_density(T)*efficiency(T)); electron response unavailable",
+      "formula_purpose": "audit_only",
+      "variables": {},
+      "parameter_refs": [],
+      "resource_refs": [
+        "efficiency_energy_keV",
+        "efficiency"
+      ],
+      "depends_on": [],
+      "source_refs": [
+        "R02"
+      ],
+      "locator": "见本模型说明及每个输入的直接来源/原文件定位",
+      "meaning": "Ne逐箱Response仍缺；本输出只是真实反冲能量上的效率加权积分，不能冒充电子数事件谱。",
+      "domain": "纯SM，太阳8B；接受度可见真实反冲能区",
+      "boundary": "不外推、不重复曝光/效率；缺失能力单独BLOCKED",
+      "binding_status": "BOUND_UNVERIFIED",
+      "implementation_contract": "recoil_efficiency_projection.v1"
+    },
+    "solar_b8_sm_v1": {
+      "model_type": "prediction",
+      "model_revision": "1",
+      "formula": "N_bin=sum_run,A(n_A*integral(dT*dE*fluence*dsigma*P_bin)); selections once; no c_i",
+      "formula_purpose": "audit_only",
+      "variables": {},
+      "parameter_refs": [
+        "constants.seconds_per_year",
+        "numerics.n_er",
+        "numerics.n_enu"
+      ],
+      "resource_refs": [
+        "observable_edges"
+      ],
+      "depends_on": [
+        "solar_b8_flux_v1",
+        "explicit_target_inventory_v1",
+        "klein_nystrand_v1",
+        "coherent_sm_kn_v1",
+        "recoil_efficiency_projection_v1"
+      ],
+      "source_refs": [
+        "USER"
+      ],
+      "locator": "见本模型说明及每个输入的直接来源/原文件定位",
+      "meaning": "现有Runtime调用共享recoil积分及概率折叠。保留run与核素分量，单独检验Eν/T收敛；不使用c_i或全局拟合重标定。",
+      "domain": "纯SM，太阳8B；接受度可见真实反冲能区",
+      "boundary": "不外推、不重复曝光/效率；缺失能力单独BLOCKED",
+      "binding_status": "BOUND_UNVERIFIED",
+      "implementation_contract": "solar_b8_sm.v1"
+    }
+  },
+  "resources": {
+    "archive": "experiment.resources.npz",
+    "sha256": "56a44e766476c7bc8771e2e98e316c48a97e13d485d006d12324ba473b4f09b8",
+    "arrays": {
+      "source_energy_MeV": {
+        "key": "source_energy_MeV",
+        "unit": "MeV",
+        "shape": [
+          829
+        ],
+        "dtype": "float64",
+        "axes": [
+          {
+            "name": "source_energy_MeV_axis0",
+            "unit": "MeV",
+            "rule": "explicit source order; Bahcall官网b8spectrum.txt全部829行第一列"
+          }
+        ],
+        "meaning": "Bahcall官网b8spectrum.txt全部829行第一列",
+        "role": "direct_input",
+        "source_refs": [
+          "R04"
+        ],
+        "normalization": {
+          "quantity_kind": "coordinate",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "6ac928890e222a91db8fd186d6274b8fbd1d856e9dece4b73bbffda5a08d0bea",
+        "generation": null
+      },
+      "source_shape_per_MeV": {
+        "key": "source_shape_per_MeV",
+        "unit": "MeV^-1",
+        "shape": [
+          829
+        ],
+        "dtype": "float64",
+        "axes": [
+          {
+            "name": "source_shape_per_MeV_axis0",
+            "unit": "MeV^-1",
+            "rule": "explicit source order; 同表第二列中心归一化谱；不重归一化，不含总通量/效率"
+          }
+        ],
+        "meaning": "同表第二列中心归一化谱；不重归一化，不含总通量/效率",
+        "role": "direct_input",
+        "source_refs": [
+          "R04"
+        ],
+        "normalization": {
+          "quantity_kind": "table",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "22688f9623ff5e1cdb07fdbb6f09b6561be51500f801514498eb3f155a0fc839",
+        "generation": null
+      },
+      "target_mass_number": {
+        "key": "target_mass_number",
+        "unit": "1",
+        "shape": [
+          9
+        ],
+        "dtype": "float64",
+        "axes": [
+          {
+            "name": "target_mass_number_axis0",
+            "unit": "1",
+            "rule": "explicit source order; NIST天然Xe表全部九行，对应A/原子质量/数丰度"
+          }
+        ],
+        "meaning": "NIST天然Xe表全部九行，对应A/原子质量/数丰度",
+        "role": "direct_input",
+        "source_refs": [
+          "R09"
+        ],
+        "normalization": {
+          "quantity_kind": "table",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "7c80fa52360d367884280618a5eee232aafa7e9f786eb23b85efebe4cb198e3b",
+        "generation": null
+      },
+      "target_atomic_mass_u": {
+        "key": "target_atomic_mass_u",
+        "unit": "u",
+        "shape": [
+          9
+        ],
+        "dtype": "float64",
+        "axes": [
+          {
+            "name": "target_atomic_mass_u_axis0",
+            "unit": "u",
+            "rule": "explicit source order; NIST天然Xe表全部九行，对应A/原子质量/数丰度"
+          }
+        ],
+        "meaning": "NIST天然Xe表全部九行，对应A/原子质量/数丰度",
+        "role": "direct_input",
+        "source_refs": [
+          "R09"
+        ],
+        "normalization": {
+          "quantity_kind": "table",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "884eee0754e989e8078a4c6321b7218f1da528a46f8a4db3a79de3c14b9b04dd",
+        "generation": null
+      },
+      "target_number_fraction": {
+        "key": "target_number_fraction",
+        "unit": "1",
+        "shape": [
+          9
+        ],
+        "dtype": "float64",
+        "axes": [
+          {
+            "name": "target_number_fraction_axis0",
+            "unit": "1",
+            "rule": "explicit source order; NIST天然Xe表全部九行，对应A/原子质量/数丰度"
+          }
+        ],
+        "meaning": "NIST天然Xe表全部九行，对应A/原子质量/数丰度",
+        "role": "direct_input",
+        "source_refs": [
+          "R09"
+        ],
+        "normalization": {
+          "quantity_kind": "table",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "a10a5b945b97d99cdabb590a3eed0643310f0e759be54e3533a171c6ba1f793b",
+        "generation": null
+      },
+      "run_exposures_tyr": {
+        "key": "run_exposures_tyr",
+        "unit": "t yr",
+        "shape": [
+          1
+        ],
+        "dtype": "float64",
+        "axes": [
+          {
+            "name": "run_exposures_tyr_axis0",
+            "unit": "t yr",
+            "rule": "explicit source order; 2407.10892v3 PDF p3 US2总曝光，未拆造逐run曝光"
+          }
+        ],
+        "meaning": "2407.10892v3 PDF p3 US2总曝光，未拆造逐run曝光",
+        "role": "direct_input",
+        "source_refs": [
+          "R02"
+        ],
+        "normalization": {
+          "quantity_kind": "table",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "184c9ef3e141eeb915648a0d0b08e31b60c231120862d186dc4ac4163bbdb44b",
+        "generation": null
+      },
+      "efficiency_energy_keV": {
+        "key": "efficiency_energy_keV",
+        "unit": "keVnr",
+        "shape": [
+          99
+        ],
+        "dtype": "float64",
+        "axes": [
+          {
+            "name": "efficiency_energy_keV_axis0",
+            "unit": "keVnr",
+            "rule": "explicit source order; 2407.10892v3 PDF p3 Fig.1黑色Total(US2)99个可见域矢量节点"
+          }
+        ],
+        "meaning": "2407.10892v3 PDF p3 Fig.1黑色Total(US2)99个可见域矢量节点",
+        "role": "direct_input",
+        "source_refs": [
+          "R02"
+        ],
+        "normalization": {
+          "quantity_kind": "coordinate",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "3cdfd59d0693c7e064b14eed9f3df3760a676e6bab9757d50163770d4d6e3f5f",
+        "generation": null
+      },
+      "efficiency": {
+        "key": "efficiency",
+        "unit": "1",
+        "shape": [
+          99
+        ],
+        "dtype": "float64",
+        "axes": [
+          {
+            "name": "efficiency_axis0",
+            "unit": "1",
+            "rule": "explicit source order; 同曲线接受度；仅展示真实反冲接受度加权，不代表Ne 4–8的迁移概率"
+          }
+        ],
+        "meaning": "同曲线接受度；仅展示真实反冲接受度加权，不代表Ne 4–8的迁移概率",
+        "role": "direct_input",
+        "source_refs": [
+          "R02"
+        ],
+        "normalization": {
+          "quantity_kind": "table",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "e4962ce8f588e56b1c04d8693e7f7e063777442a5d538a804c47c48e8007d967",
+        "generation": null
+      },
+      "observable_edges": {
+        "key": "observable_edges",
+        "unit": "keVnr",
+        "shape": [
+          28
+        ],
+        "dtype": "float64",
+        "axes": [
+          {
+            "name": "observable_edges_axis0",
+            "unit": "keVnr",
+            "rule": "explicit source order; 本轮显式输出坐标：可见能区分27个真实反冲箱，非电子数箱"
+          }
+        ],
+        "meaning": "本轮显式输出坐标：可见能区分27个真实反冲箱，非电子数箱",
+        "role": "direct_input",
+        "source_refs": [
+          "USER"
+        ],
+        "normalization": {
+          "quantity_kind": "coordinate",
+          "runtime_authority": "array",
+          "included_factors": [],
+          "runtime_factors": []
+        },
+        "sha256_raw_c_order": "12d9cb9803a2f71958b162e87307673dec00488f4d1ab0e4786eb375b0b267af",
+        "generation": null
+      }
+    }
+  },
+  "observable": {
+    "name": "efficiency-weighted true nuclear recoil spectrum",
+    "unit": "keVnr",
+    "edges_ref": "observable_edges",
+    "bin_count": 27
+  },
+  "assembly": {
+    "profile": "solar_b8_sm_v1",
+    "source": {
+      "energy_ref": "source_energy_MeV",
+      "shape_ref": "source_shape_per_MeV"
+    },
+    "target": {
+      "mass_number_ref": "target_mass_number",
+      "atomic_mass_ref": "target_atomic_mass_u",
+      "number_fraction_ref": "target_number_fraction",
+      "exposures_ref": "run_exposures_tyr"
+    },
+    "interaction": {
+      "model_id": "coherent_sm_kn_v1"
+    },
+    "detector": {
+      "mode": "recoil_acceptance",
+      "model_id": "recoil_efficiency_projection_v1",
+      "run_ids": [
+        "US2"
+      ]
+    },
+    "statistics": {},
+    "numerics": {
+      "slow": {
+        "n_er": "numerics.n_er",
+        "n_enu": "numerics.n_enu"
+      }
+    }
+  },
+  "capabilities": {
+    "signal": {
+      "status": "PARTIAL",
+      "blockers": [
+        "Ne response missing; true-recoil projection only"
+      ],
+      "evidence": [
+        "P00/P01/P03 canonical records; source-native array verification"
+      ],
+      "human_approval": "NOT_REVIEWED"
+    },
+    "electron_spectrum": {
+      "status": "BLOCKED",
+      "blockers": [
+        "PandaX US2 P(Ne-bin|T) absent"
+      ],
+      "evidence": [
+        "P00/P01/P03 canonical records; source-native array verification"
+      ],
+      "human_approval": "NOT_REVIEWED"
+    },
+    "fast": {
+      "status": "NOT_APPLICABLE",
+      "blockers": [],
+      "evidence": [
+        "P00/P01/P03 canonical records; source-native array verification"
+      ],
+      "human_approval": "NOT_REVIEWED"
+    },
+    "legacy_statistics": {
+      "status": "NOT_APPLICABLE",
+      "blockers": [],
+      "evidence": [
+        "P00/P01/P03 canonical records; source-native array verification"
+      ],
+      "human_approval": "NOT_REVIEWED"
+    }
+  },
+  "provenance": {
+    "sources": {
+      "R01": {
+        "source_id": "R01",
+        "citation": "DE ROMERI V, PAPOULIAS D K, TERNES C A. Bounds on new neutrino interactions from the first CEνNS data at direct detection experiments[J]. Journal of Cosmology and Astroparticle Physics, 2025, 05: 012. DOI: [10.1088/1475-7516/2025/05/012](https://doi.org/10.1088/1475-7516/2025/05/012). 本任务实际使用 [arXiv:2411.11749v1](https://arxiv.org/abs/2411.11749v1), 2024-11-18；期刊版本不替代所用 v1。",
+        "uri_or_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\references\\Solar_CEvNS\\2411.11749v1.pdf",
+        "sha256": "fffe6e2c364ad25a0f090cd933619866dba1d21603adc6fbab912500eb291479",
+        "verification_scope": "精确数值核验范围按P01与对应章节登记",
+        "kind": "primary_or_direct",
+        "version": "fffe6e2c364ad25a0f090cd933619866dba1d21603adc6fbab912500eb291479",
+        "locator": "精确数值核验范围按P01与对应章节登记"
+      },
+      "R02": {
+        "source_id": "R02",
+        "citation": "BO Z, et al. (PandaX Collaboration). First Indication of Solar ⁸B Neutrino Flux through Coherent Elastic Neutrino-Nucleus Scattering in PandaX-4T[J]. Physical Review Letters, 2024, 133: 191001. DOI: [10.1103/PhysRevLett.133.191001](https://doi.org/10.1103/PhysRevLett.133.191001). 实际使用 [arXiv:2407.10892v3](https://arxiv.org/abs/2407.10892v3), 2024-09-13。",
+        "uri_or_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\references\\Solar_CEvNS\\2407.10892v3.pdf",
+        "sha256": "fc5e460404919cd82debece761b724576093f8b01539b566e9acd281e9102026",
+        "verification_scope": "精确数值核验范围按P01与对应章节登记",
+        "kind": "primary_or_direct",
+        "version": "fc5e460404919cd82debece761b724576093f8b01539b566e9acd281e9102026",
+        "locator": "精确数值核验范围按P01与对应章节登记"
+      },
+      "R03": {
+        "source_id": "R03",
+        "citation": "APRILE E, et al. (XENON Collaboration). First Indication of Solar ⁸B Neutrinos via Coherent Elastic Neutrino-Nucleus Scattering with XENONnT[J]. Physical Review Letters, 2024, 133: 191002. DOI: [10.1103/PhysRevLett.133.191002](https://doi.org/10.1103/PhysRevLett.133.191002). D/B 版本对照实际使用 [arXiv:2408.02877v1](https://arxiv.org/abs/2408.02877v1), 2024-08-06（v1 题名为 First Measurement…）；本库原有 v2 保留，不能追溯当成 benchmark v1 的输入。",
+        "uri_or_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\重构\\20261106_8B_Qy_DB提取\\references\\2408.02877v1.pdf",
+        "sha256": "db11a4d30b0127923b6af94614b16d52692b9a2637ad3c1f7928bfbbaec8e529",
+        "verification_scope": "精确数值核验范围按P01与对应章节登记",
+        "kind": "primary_or_direct",
+        "version": "db11a4d30b0127923b6af94614b16d52692b9a2637ad3c1f7928bfbbaec8e529",
+        "locator": "精确数值核验范围按P01与对应章节登记"
+      },
+      "R04": {
+        "source_id": "R04",
+        "citation": "BAHCALL J N, LISI E, ALBURGER D E, et al. Standard neutrino spectrum from ⁸B decay[J]. Physical Review C, 1996, 54: 411–422. DOI: [10.1103/PhysRevC.54.411](https://doi.org/10.1103/PhysRevC.54.411). [arXiv:nucl-th/9601044v2](https://arxiv.org/abs/nucl-th/9601044v2). 数值来源：[Bahcall 官方 b8spectrum.txt](https://www.sns.ias.edu/~jnb/SNdata/Export/B8spectrum/b8spectrum.txt)[DS/OL]，访问日期 2026-11-06；四列完整原件，SHA256 `75ce26216a638b811d131b692e2d22b8624fcbb711839fd167c25cefaafb9789`。",
+        "uri_or_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\重构\\20261106_Response_onboarding_v2\\source_downloads\\Bahcall-b8spectrum.txt",
+        "sha256": "75ce26216a638b811d131b692e2d22b8624fcbb711839fd167c25cefaafb9789",
+        "verification_scope": "精确数值核验范围按P01与对应章节登记",
+        "kind": "primary_or_direct",
+        "version": "75ce26216a638b811d131b692e2d22b8624fcbb711839fd167c25cefaafb9789",
+        "locator": "精确数值核验范围按P01与对应章节登记"
+      },
+      "R05": {
+        "source_id": "R05",
+        "citation": "VINYOLES N, SERENELLI A M, VILLANTE F L, et al. A new generation of standard solar models[J]. The Astrophysical Journal, 2017, 835(2): 202. DOI: [10.3847/1538-4357/835/2/202](https://doi.org/10.3847/1538-4357/835/2/202). [arXiv:1611.09867](https://arxiv.org/abs/1611.09867). 本任务采用的通量值与 12% 误差直接定位于文献 [1] 第 III 节和式 (17) 后文字，后者引用本篇；未声称从任意 SSM 表重新推导。",
+        "uri_or_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\重构\\20261106_Response_onboarding_v2\\source_downloads\\Vinyoles-abs.html",
+        "sha256": "a52b8c04fea89ef0bc76fa058a1ad38f9b342cf4c7059ef7aa3487a5dfe91bb0",
+        "verification_scope": "仅核书目，上游SSM数表保持未独立核验。通量标量的直接来源为R01",
+        "kind": "primary_or_direct",
+        "version": "a52b8c04fea89ef0bc76fa058a1ad38f9b342cf4c7059ef7aa3487a5dfe91bb0",
+        "locator": "仅核书目，上游SSM数表保持未独立核验。通量标量的直接来源为R01"
+      },
+      "R06": {
+        "source_id": "R06",
+        "citation": "LUO Y, BO Z, ZHANG S, et al. (PandaX Collaboration). Signal response model in PandaX-4T[J]. Physical Review D, 2024, 110: 023029. DOI: [10.1103/PhysRevD.110.023029](https://doi.org/10.1103/PhysRevD.110.023029). 实际提取 [arXiv:2403.04239v2](https://arxiv.org/abs/2403.04239v2), 2024-03-08，第 21 页 Table II；本文 NR 拟合适用范围不能外推冒充 US2 sub-keV 校准。",
+        "uri_or_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\references\\Solar_CEvNS\\2403.04239v2.pdf",
+        "sha256": "4e15f95ddc9cf8b7ab71796fe4efe775d4fffdd4e0f58d8693241f9cc4d76f68",
+        "verification_scope": "精确数值核验范围按P01与对应章节登记",
+        "kind": "primary_or_direct",
+        "version": "4e15f95ddc9cf8b7ab71796fe4efe775d4fffdd4e0f58d8693241f9cc4d76f68",
+        "locator": "精确数值核验范围按P01与对应章节登记"
+      },
+      "R07": {
+        "source_id": "R07",
+        "citation": "APRILE E, et al. (XENON Collaboration). XENONnT WIMP search: Signal and background modeling and statistical inference[J]. Physical Review D, 2025, 111: 103040. DOI: [10.1103/PhysRevD.111.103040](https://doi.org/10.1103/PhysRevD.111.103040). 实际提取 [arXiv:2406.13638v1](https://arxiv.org/abs/2406.13638v1), 2024-06-19，第 6 页 Fig.3 右下图；期刊版为后续版本，不替换本次所用曲线。",
+        "uri_or_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\references\\Solar_CEvNS\\2406.13638v1.pdf",
+        "sha256": "139f039b7ee5a957fd3594ac2301e9e8cd3a6dbcd4f63f4a6e87e02c06da71fc",
+        "verification_scope": "精确数值核验范围按P01与对应章节登记",
+        "kind": "primary_or_direct",
+        "version": "139f039b7ee5a957fd3594ac2301e9e8cd3a6dbcd4f63f4a6e87e02c06da71fc",
+        "locator": "精确数值核验范围按P01与对应章节登记"
+      },
+      "R08": {
+        "source_id": "R08",
+        "citation": "XU D (XENONnT). XENONnT/cevns_data_release: SR0+SR1+SR2[DS/OL]. Version sr0_sr1_sr2. Zenodo, 2026-06-07[2026-11-06]. DOI: [10.5281/zenodo.20576156](https://doi.org/10.5281/zenodo.20576156). 本次数值提取来自 [GitHub 固定提交](https://github.com/XENONnT/cevns_data_release/tree/60d230dd7a5646fd4aa2368c5fdfba575ee0cb88)，ZIP SHA256 `18c750ab841e99f072161c7fee42ae549451bca147c2bbb8ae2b1e880bbbce25`；Zenodo DOI 说明发布身份，本地 ZIP 并非该 DOI 附件的字节核验。模板属更新版本；SR0/SR1 事件的早期使用身份与模板校准版本分开。 固定提交指纹 `60d230dd7a5646fd4aa2368c5fdfba575ee0cb88`。",
+        "uri_or_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\重构\\20261106_8B_Qy_DB提取\\official_release\\cevns_data_release-master\\README.md",
+        "sha256": "f4886dda96ea6ac43aea547b3553cee27484362d37763db33aa07869047f1a74",
+        "verification_scope": "精确数值核验范围按P01与对应章节登记",
+        "kind": "primary_or_direct",
+        "version": "f4886dda96ea6ac43aea547b3553cee27484362d37763db33aa07869047f1a74",
+        "locator": "精确数值核验范围按P01与对应章节登记"
+      },
+      "R09": {
+        "source_id": "R09",
+        "citation": "NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY. Atomic Weights and Isotopic Compositions for Xenon[DB/OL].[2026-11-06]. [NIST Xe 表](https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Xe&ascii=ascii2&isotype=all). 下载 HTML SHA256 `873d7f0675cc47bf2cb1304b25aa62f4d7182594f7421a99210bb594e57b91a3`。提取天然同位素数丰度和原子质量中心值；未称为实验氙同位素实测报告，也未称为裸核质量。",
+        "uri_or_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\重构\\20261106_Response_onboarding_v2\\source_downloads\\NIST-Xe.html",
+        "sha256": "873d7f0675cc47bf2cb1304b25aa62f4d7182594f7421a99210bb594e57b91a3",
+        "verification_scope": "精确数值核验范围按P01与对应章节登记",
+        "kind": "primary_or_direct",
+        "version": "873d7f0675cc47bf2cb1304b25aa62f4d7182594f7421a99210bb594e57b91a3",
+        "locator": "精确数值核验范围按P01与对应章节登记"
+      },
+      "R10": {
+        "source_id": "R10",
+        "citation": "PANDAX COLLABORATION. PandaX-4T: Search for Light Dark Matter with 259-day data[DS/OL].[2026-11-06]. [官方发布入口](https://pandax.sjtu.edu.cn/data-release/pandax-4t-search-for-light-dark-matter-with-259-day-data/)；[run0_data.csv](https://static.pandax.sjtu.edu.cn/download/data-share/p4-light-dark-matter/run0_data.csv)、[run1_data.csv](https://static.pandax.sjtu.edu.cn/download/data-share/p4-light-dark-matter/run1_data.csv)。未提供不可变发布标签，访问日和 SHA256 固定本次原件；属于文献 [11] 的后续发布，逐箱相同不能独立证明 2024 事件 ID 完全相同。 本轮已直接核对新网址的发布正文，页面列出两个事件CSV下载链接。",
+        "uri_or_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\重构\\20261106_Onboarding_provenance_revision\\sources\\pandax-release-259day.html",
+        "sha256": "41f5759ba79120fbe49a1903255487cfbfc70e5185ce34c6995b2b854faf9ba8",
+        "verification_scope": "精确数值核验范围按P01与对应章节登记",
+        "kind": "primary_or_direct",
+        "version": "41f5759ba79120fbe49a1903255487cfbfc70e5185ce34c6995b2b854faf9ba8",
+        "locator": "精确数值核验范围按P01与对应章节登记"
+      },
+      "R11": {
+        "source_id": "R11",
+        "citation": "ZHANG M, et al. (PandaX Collaboration). Search for Light Dark Matter with 259 Days of Data in PandaX-4T[J]. Physical Review Letters, 2025, 135: 211001. DOI: [10.1103/rtnh-jn8s](https://doi.org/10.1103/rtnh-jn8s). [arXiv:2507.11930](https://arxiv.org/abs/2507.11930). 用于后续事件资料的采样/选择范围核对，不将其带约束的 DM likelihood 替换为 2024 自由 8B likelihood。 本轮实际核对arXiv:2507.11930v3（2025-12-08），PDF p4 Fig.2给出width单位µs，p7–8 Data availability与ref.[39]指定官方事件发布。",
+        "uri_or_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\重构\\20261106_Onboarding_provenance_revision\\sources\\pandax-2507.11930v3.pdf",
+        "sha256": "37170328542fc9b6c645bab732d2e269b014ad22a6e86b9b47e7428a9840d8e1",
+        "verification_scope": "精确数值核验范围按P01与对应章节登记",
+        "kind": "primary_or_direct",
+        "version": "37170328542fc9b6c645bab732d2e269b014ad22a6e86b9b47e7428a9840d8e1",
+        "locator": "精确数值核验范围按P01与对应章节登记"
+      },
+      "R12": {
+        "source_id": "R12",
+        "citation": "APRILE E, et al. (XENON Collaboration). First Search for Light Dark Matter in the Neutrino Fog with XENONnT[J]. Physical Review Letters, 2025, 134: 111802. DOI: [10.1103/PhysRevLett.134.111802](https://doi.org/10.1103/PhysRevLett.134.111802). 实际资料版本 [arXiv:2409.17868v1](https://arxiv.org/abs/2409.17868v1), 2024-09-26；文献 [1] 的背景关联来源 [72]。",
+        "uri_or_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\references\\Solar_CEvNS\\2409.17868v1.pdf",
+        "sha256": "011d164e7aa009c9cd95a398fa7bebb7436f3ff48abb8f869e62398f76770aff",
+        "verification_scope": "精确数值核验范围按P01与对应章节登记",
+        "kind": "primary_or_direct",
+        "version": "011d164e7aa009c9cd95a398fa7bebb7436f3ff48abb8f869e62398f76770aff",
+        "locator": "精确数值核验范围按P01与对应章节登记"
+      },
+      "R13": {
+        "source_id": "R13",
+        "citation": "BUREAU INTERNATIONAL DES POIDS ET MESURES. The International System of Units (SI)[S/OL]. 9th ed., V4.01 (June 2026). Sèvres: BIPM, 2026[2026-11-06]. DOI: [10.59161/AUEZ1291](https://doi.org/10.59161/AUEZ1291). [官方入口](https://www.bipm.org/en/publications/si-brochure). §2.2/Table 1，印刷页 123–124（英文 PDF 第 13–14 页）给出阿伏伽德罗常量的精确值；§2.3.1 印刷页 130 给出摩尔质量常量关系。",
+        "uri_or_path": "https://www.bipm.org/en/publications/si-brochure",
+        "sha256": null,
+        "verification_scope": "BIPM第9版V4.01，§2.2/Table1在线原文已核。未缓存该PDF",
+        "kind": "primary_or_direct",
+        "version": "see citation",
+        "locator": "BIPM第9版V4.01，§2.2/Table1在线原文已核。未缓存该PDF"
+      },
+      "R14": {
+        "source_id": "R14",
+        "citation": "APRILE E, et al. (XENON Collaboration). Probing the Solar ⁸B Neutrino Fog with XENONnT[J]. Physical Review Letters, 2026, 137: 091807. DOI: [10.1103/xvpn-w3q9](https://doi.org/10.1103/xvpn-w3q9). 本库保存 [arXiv:2604.06002v2](https://arxiv.org/abs/2604.06002v2), 2026-08-28。文献 [8] README 指定它为后续数据与模板的关联论文；本任务只提取 SR0/SR1 候选，不纳入 SR2。",
+        "uri_or_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\references\\Solar_CEvNS\\2604.06002v2.pdf",
+        "sha256": "a6a81a7fd423a3005152c02dcd45f93a444dc9c85c92d098a9f0f58db96917a4",
+        "verification_scope": "精确数值核验范围按P01与对应章节登记",
+        "kind": "primary_or_direct",
+        "version": "a6a81a7fd423a3005152c02dcd45f93a444dc9c85c92d098a9f0f58db96917a4",
+        "locator": "精确数值核验范围按P01与对应章节登记"
+      },
+      "R15": {
+        "source_id": "R15",
+        "citation": "CEvNS-pyEFT共享模型登记[CP/OL]. 本地工作副本, 2026-11-06. 版本SHA256 `1d03f7e0136be69c7d8c12324eb4e26c1c0c6093496efc7c19bfd77f9f1bcf24`。",
+        "uri_or_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\cevns_pyeft\\experiments\\model_bindings.json",
+        "sha256": "1d03f7e0136be69c7d8c12324eb4e26c1c0c6093496efc7c19bfd77f9f1bcf24",
+        "verification_scope": "精确数值核验范围按P01与对应章节登记",
+        "kind": "primary_or_direct",
+        "version": "1d03f7e0136be69c7d8c12324eb4e26c1c0c6093496efc7c19bfd77f9f1bcf24",
+        "locator": "精确数值核验范围按P01与对应章节登记"
+      },
+      "R16": {
+        "source_id": "R16",
+        "citation": "本地核响应聚合表responses_all.json[DS/OL]. 本地工作副本, 2026-11-06. 版本SHA256 `cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74`。本地文件责任者与上游核物理来源待核。直接文件内容已核，外部科学来源保持待补。",
+        "uri_or_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\data\\responses\\responses_all.json",
+        "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+        "verification_scope": "精确数值核验范围按P01与对应章节登记",
+        "kind": "primary_or_direct",
+        "version": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+        "locator": "精确数值核验范围按P01与对应章节登记"
+      },
+      "R17": {
+        "source_id": "R17",
+        "citation": "XENON COLLABORATION. XENONnT light-WIMP data release[DS/OL]. [GitHub固定版本](https://github.com/XENONnT/light_wimp_data_release/tree/a09cd8fd77570dc2095f65f094fbcc114b634dfc)[2026-11-06]，提交指纹`a09cd8fd77570dc2095f65f094fbcc114b634dfc`，下载ZIP SHA256 `275418ce030902c27f887f54e3b4397213beccc8a7fc835553db42f54ac9d4bd`。关联论文为文献[12]，Phys. Rev. Lett. 134, 111802 (2025)，arXiv:2409.17868。包内README给出数据DOI [10.5281/zenodo.14522706](https://doi.org/10.5281/zenodo.14522706)；本次核验GitHub ZIP，未将其冒充Zenodo附件逐字节核验。实际读取signal/六份YBe JSON、orthonormal_basis/单能HDF5、ac/er/b8/rg模板、utils.py与notebook 1；官方重铸方法与原2024 CEvNS分析的精确等价性单独待核。",
+        "uri_or_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\重构\\20261106_Onboarding_provenance_revision\\sources\\xenon-light-wimp-release-master.zip",
+        "sha256": "275418ce030902c27f887f54e3b4397213beccc8a7fc835553db42f54ac9d4bd",
+        "verification_scope": "精确数值核验范围按P01与对应章节登记",
+        "kind": "primary_or_direct",
+        "version": "275418ce030902c27f887f54e3b4397213beccc8a7fc835553db42f54ac9d4bd",
+        "locator": "精确数值核验范围按P01与对应章节登记"
+      },
+      "R18": {
+        "source_id": "R18",
+        "citation": "CEvNS-pyEFT Project. foundation/constants.py[CP/OL]. 本地项目工作副本[2026-11-07]. 采用现有常量约定，不把本地复用当作独立上游文献核验。",
+        "uri_or_path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\cevns_pyeft\\foundation\\constants.py",
+        "sha256": "0bb51033d1ca64e18a7a7bb0fd4cce38bc679558dd7392740f72d4683276cd44",
+        "verification_scope": "实际使用G_F、AMU_GEV、m_e、HBARC_GEV_FM、GEV_INV2_TO_CM2、SEC_PER_YEAR；数值由参数卡固定并与本地模块核对。",
+        "kind": "primary_or_direct",
+        "version": "0bb51033d1ca64e18a7a7bb0fd4cce38bc679558dd7392740f72d4683276cd44",
+        "locator": "实际使用G_F、AMU_GEV、m_e、HBARC_GEV_FM、GEV_INV2_TO_CM2、SEC_PER_YEAR；数值由参数卡固定并与本地模块核对。"
+      },
+      "USER": {
+        "kind": "project_decision",
+        "version": "2026-11-07",
+        "locator": "P04_DECISION_LOG.yaml D0001; user requests canonical SM forward benchmark",
+        "citation": "本项目. SM benchmark数值处理约定[CP/OL]. 2026-11-07. 记录在正式Phase 0和参数卡；不是新增实验测量。"
+      }
+    },
+    "issues": [
+      {
+        "id": "response_precision",
+        "status": "PARTIAL",
+        "detail": "US2电子数响应缺失；真实反冲诊断不替代完整目标",
+        "blocks": [
+          "strict_paper_reproduction"
+        ]
+      }
+    ]
+  },
+  "extensions": {
+    "lab.physics_report": {
+      "models": {
+        "solar_b8_flux_v1": {
+          "group": "source",
+          "content_class": "experiment_specific",
+          "title": "太阳8B通量",
+          "explanation": "Bahcall官网829点谱形×论文参考总通量；源仅乘一次参考年秒数，原表积分约0.999986544，不静默校正。",
+          "equations": []
+        },
+        "explicit_target_inventory_v1": {
+          "group": "target",
+          "content_class": "experiment_specific",
+          "title": "天然Xe与质量时间归一化",
+          "explanation": "NIST九核素数丰度与原子质量给核数；参考1t×1yr仅为量纲锚点。动力学用扣除电子质量的裸核近似，电子结合能忽略。",
+          "equations": []
+        },
+        "klein_nystrand_v1": {
+          "group": "nuclear",
+          "content_class": "shared_framework",
+          "title": "Klein–Nystrand核形状因子",
+          "explanation": "选择文献[1]式(3)的共享解析模型；不读取Fig.4所需的EFT核系数。",
+          "equations": []
+        },
+        "coherent_sm_kn_v1": {
+          "group": "theory",
+          "content_class": "shared_framework",
+          "title": "树级SM CEvNS",
+          "explanation": "选择文献[1]式(1)–(2)，保留−T/E项，味普适；公式和单位由共享模块实现。",
+          "equations": []
+        },
+        "recoil_efficiency_projection_v1": {
+          "group": "detector",
+          "content_class": "experiment_specific",
+          "title": "真实反冲接受度诊断",
+          "explanation": "Ne逐箱Response仍缺；本输出只是真实反冲能量上的效率加权积分，不能冒充电子数事件谱。",
+          "equations": []
+        },
+        "solar_b8_sm_v1": {
+          "group": "prediction",
+          "content_class": "experiment_specific",
+          "title": "Slow直接积分",
+          "explanation": "现有Runtime调用共享recoil积分及概率折叠。保留run与核素分量，单独检验Eν/T收敛；不使用c_i或全局拟合重标定。",
+          "equations": []
+        }
+      },
+      "summary": "2026-11-07 SM benchmark输入包，DRAFT/PARTIAL；每个输入附直接来源，旧onboarding保留。",
+      "calculation_steps": [
+        "按Bahcall源谱和SM截面求真实反冲率",
+        "按天然九核素求和并进行对应响应/接受度投影",
+        "乘各run的显式质量时间因子",
+        "检查逐箱收敛、组分和及原参考谱差异"
+      ]
+    }
+  }
+}

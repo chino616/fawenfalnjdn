@@ -1,0 +1,3114 @@
+{
+  "contract_version": 4,
+  "dataset_id": "CsI2021",
+  "scientific_claim": "DRAFT r3: same CsI2021 9x11 SM+local RESPONSE signal forward; no fit, no official onset or full nuclear-theory certification",
+  "sections": {
+    "identity": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "C_ID": {
+          "value": "CsI2021_time_9x11",
+          "unit": "1",
+          "evidence_claims": [
+            "C_ID"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_RESTART_SCOPE": {
+          "value": {
+            "analysis_id": "CsI2021_time_9x11",
+            "interaction": "SM candidate",
+            "nuclear_resource": "data/responses/responses_all.json",
+            "timing_onset_ns": 0,
+            "plus75ns": "REFERENCE_ONLY diagnostic",
+            "two_body": "not implemented; theory truncation must be disclosed",
+            "requested": [
+              "P01-P07 signal forward",
+              "P10 scoped validation"
+            ],
+            "not_requested": [
+              "P08 new Fast",
+              "P09 likelihood fit"
+            ],
+            "old_results": "REFERENCE_ONLY; no current accepted Slow"
+          },
+          "unit": "1",
+          "evidence_claims": [
+            "C_RESTART_SCOPE"
+          ],
+          "provenance_status": "USER_CONFIRMED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
+      "evidence_refs": [
+        "C_ID",
+        "C_RESTART_SCOPE"
+      ]
+    },
+    "source": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "C_POT": {
+          "value": 3.198e+23,
+          "unit": "POT",
+          "evidence_claims": [
+            "C_POT"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_YIELD": {
+          "value": 0.0848,
+          "unit": "neutrinos/flavor/POT",
+          "evidence_claims": [
+            "C_YIELD"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_L": {
+          "value": 19.3,
+          "unit": "m",
+          "evidence_claims": [
+            "C_L"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_ETA": {
+          "value": 579361763793233.9,
+          "unit": "cm^-2",
+          "evidence_claims": [
+            "C_ETA"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_LINE": {
+          "value": 29.792140909877446,
+          "unit": "MeV",
+          "evidence_claims": [
+            "C_LINE"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_ENDPOINT": {
+          "value": 52.82918775,
+          "unit": "MeV",
+          "evidence_claims": [
+            "C_ENDPOINT"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_COMPONENTS": {
+          "value": [
+            "nu_mu",
+            "nu_e",
+            "anti_nu_mu"
+          ],
+          "unit": "1",
+          "evidence_claims": [
+            "C_COMPONENTS"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_ROOT": {
+          "value": [
+            {
+              "component": "mu",
+              "root_key": "convolved_energy_time_of_nu_mu",
+              "shape": [
+                15000,
+                600
+              ],
+              "axes": [
+                "time_ns",
+                "energy_MeV"
+              ],
+              "ranges": [
+                [
+                  0.0,
+                  15000.0
+                ],
+                [
+                  0.0,
+                  600.0
+                ]
+              ],
+              "sum": 21140914.04383676,
+              "reference_0_6_us_fraction": 0.999951141657252,
+              "representative_cell": {
+                "index": [
+                  499,
+                  30
+                ],
+                "value": 54945.265625
+              },
+              "high_energy_ge60_fraction": 0.002463469637897619
+            },
+            {
+              "component": "e",
+              "root_key": "convolved_energy_time_of_nu_e",
+              "shape": [
+                15000,
+                600
+              ],
+              "axes": [
+                "time_ns",
+                "energy_MeV"
+              ],
+              "ranges": [
+                [
+                  0.0,
+                  15000.0
+                ],
+                [
+                  0.0,
+                  600.0
+                ]
+              ],
+              "sum": 21060456.877007723,
+              "reference_0_6_us_fraction": 0.9191783169548304,
+              "representative_cell": {
+                "index": [
+                  796,
+                  36
+                ],
+                "value": 278.8775939941406
+              },
+              "high_energy_ge60_fraction": 2.3741175366002712e-07
+            },
+            {
+              "component": "mub",
+              "root_key": "convolved_energy_time_of_anti_nu_mu",
+              "shape": [
+                15000,
+                600
+              ],
+              "axes": [
+                "time_ns",
+                "energy_MeV"
+              ],
+              "ranges": [
+                [
+                  0.0,
+                  15000.0
+                ],
+                [
+                  0.0,
+                  600.0
+                ]
+              ],
+              "sum": 21112123.74424184,
+              "reference_0_6_us_fraction": 0.919376108274515,
+              "representative_cell": {
+                "index": [
+                  800,
+                  52
+                ],
+                "value": 312.0618591308594
+              },
+              "high_energy_ge60_fraction": 0.0005116965080734827
+            },
+            {
+              "component": "ebar",
+              "root_key": "convolved_energy_time_of_anti_nu_e",
+              "shape": [
+                15000,
+                600
+              ],
+              "axes": [
+                "time_ns",
+                "energy_MeV"
+              ],
+              "ranges": [
+                [
+                  0.0,
+                  15000.0
+                ],
+                [
+                  0.0,
+                  600.0
+                ]
+              ],
+              "sum": 16433.97197106323,
+              "reference_0_6_us_fraction": 0.9371478772033314,
+              "representative_cell": {
+                "index": [
+                  629,
+                  45
+                ],
+                "value": 0.27518460154533386
+              },
+              "high_energy_ge60_fraction": 0.005659009283960104
+            }
+          ],
+          "unit": "weighted bin mass",
+          "evidence_claims": [
+            "C_ROOT"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_TIME_MARGINAL": {
+          "value": [
+            0.999951141657252,
+            0.9191783169548304,
+            0.919376108274515
+          ],
+          "unit": "probability",
+          "evidence_claims": [
+            "C_TIME_MARGINAL"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_SOURCE_CHOICE": {
+          "value": "DAR解析谱 × ROOT各味时间边缘",
+          "unit": "1",
+          "evidence_claims": [
+            "C_SOURCE_CHOICE"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_INTERPOLATION_LEGACY": {
+          "value": 200,
+          "unit": "nodes over0.001–300MeV",
+          "evidence_claims": [
+            "C_INTERPOLATION_LEGACY"
+          ],
+          "provenance_status": "REFERENCE_ONLY",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_FLUENCE_SCOPE_REVIEW": {
+          "value": {
+            "eta_cm_minus2": 579361763793233.9,
+            "adopted_scope": null,
+            "candidates": [
+              "full_support: normalized all-time source with time-window acceptance",
+              "reference_window: requires evidence that eta is a 0-6us reference fluence"
+            ],
+            "known": "Both numerical definitions are available; closeness to341 is not a selection criterion"
+          },
+          "unit": "1",
+          "evidence_claims": [
+            "C_FLUENCE_SCOPE_REVIEW"
+          ],
+          "provenance_status": "CONFLICT",
+          "decision_status": "BLOCKED",
+          "blocking_scope": [
+            "new P07 authoritative freeze"
+          ]
+        }
+      },
+      "evidence_refs": [
+        "C_POT",
+        "C_YIELD",
+        "C_L",
+        "C_ETA",
+        "C_LINE",
+        "C_ENDPOINT",
+        "C_COMPONENTS",
+        "C_ROOT",
+        "C_TIME_MARGINAL",
+        "C_SOURCE_CHOICE",
+        "C_INTERPOLATION_LEGACY",
+        "C_FLUENCE_SCOPE_REVIEW"
+      ]
+    },
+    "target": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "C_MASS": {
+          "value": 14.6,
+          "unit": "kg",
+          "evidence_claims": [
+            "C_MASS"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_STOICH": {
+          "value": [
+            1,
+            1
+          ],
+          "unit": "number ratio",
+          "evidence_claims": [
+            "C_STOICH"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_MASS_LEGACY": {
+          "value": 14.57,
+          "unit": "kg",
+          "evidence_claims": [
+            "C_MASS_LEGACY"
+          ],
+          "provenance_status": "REFERENCE_ONLY",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_BASIC_Cs133": {
+          "value": {
+            "name": "Cs133",
+            "A": 133,
+            "Z": 55,
+            "N": 78,
+            "J": 3.5,
+            "T": 11.5,
+            "b": 11.644334960750054
+          },
+          "unit": "A,Z,N,J,T dimensionless; b GeV^-1 in current reader",
+          "evidence_claims": [
+            "C_BASIC_Cs133"
+          ],
+          "provenance_status": "REFERENCE_ONLY",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_BASIC_I127": {
+          "value": {
+            "name": "I",
+            "A": 127,
+            "Z": 53,
+            "N": 74,
+            "J": 2.5,
+            "T": 10.5,
+            "b": 11.566047952236252
+          },
+          "unit": "A,Z,N,J,T dimensionless; b GeV^-1 in current reader",
+          "evidence_claims": [
+            "C_BASIC_I127"
+          ],
+          "provenance_status": "REFERENCE_ONLY",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
+      "evidence_refs": [
+        "C_MASS",
+        "C_STOICH",
+        "C_MASS_LEGACY",
+        "C_BASIC_Cs133",
+        "C_BASIC_I127"
+      ]
+    },
+    "constants": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "C_MMU": {
+          "value": 105.6583755,
+          "unit": "MeV",
+          "evidence_claims": [
+            "C_MMU"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_ME": {
+          "value": 0.51099895069,
+          "unit": "MeV",
+          "evidence_claims": [
+            "C_ME"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_U": {
+          "value": 0.93149410372,
+          "unit": "GeV",
+          "evidence_claims": [
+            "C_U"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_GF": {
+          "value": 1.1663787e-05,
+          "unit": "GeV^-2",
+          "evidence_claims": [
+            "C_GF"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_MPI": {
+          "value": 139.57039,
+          "unit": "MeV",
+          "evidence_claims": [
+            "C_MPI"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_SIN2_PAPER": {
+          "value": 0.23857,
+          "unit": "1",
+          "evidence_claims": [
+            "C_SIN2_PAPER"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_SIN2_NATIVE": {
+          "value": 0.2387,
+          "unit": "1",
+          "evidence_claims": [
+            "C_SIN2_NATIVE"
+          ],
+          "provenance_status": "REFERENCE_ONLY",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
+      "evidence_refs": [
+        "C_MMU",
+        "C_ME",
+        "C_U",
+        "C_GF",
+        "C_MPI",
+        "C_SIN2_PAPER",
+        "C_SIN2_NATIVE"
+      ]
+    },
+    "nuclear": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "C_NUCLEAR_CHOICE": {
+          "value": "native RESPONSE",
+          "unit": "1",
+          "evidence_claims": [
+            "C_NUCLEAR_CHOICE"
+          ],
+          "provenance_status": "USER_CONFIRMED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_RESOURCE_BINDING": {
+          "value": {
+            "path": "data/responses/responses_all.json",
+            "reader": "cevns_pyeft.nuclear.response.ResponseDB",
+            "nucleus_keys": {
+              "Cs133": "Cs133",
+              "I127": "I"
+            }
+          },
+          "unit": "1",
+          "evidence_claims": [
+            "C_RESOURCE_BINDING"
+          ],
+          "provenance_status": "USER_CONFIRMED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_W_Cs133_Delta": {
+          "value": {
+            "nucleus": "Cs133",
+            "json_key": "nuclei.Cs133.responses.Delta",
+            "array_key": "Cs133_Delta",
+            "shape": [
+              2,
+              2,
+              9
+            ],
+            "coefficient_order": "ascending",
+            "axes": [
+              "outgoing_nucleon(p,n)",
+              "incoming_nucleon(p,n)",
+              "polynomial_power"
+            ],
+            "power_range": [
+              0,
+              8
+            ],
+            "first_three_coefficients": [
+              [
+                [
+                  2.777767329081821,
+                  -6.672857949038999,
+                  6.55129294731681
+                ],
+                [
+                  0.1862548867406329,
+                  -0.4815181408155617,
+                  0.5140682583669228
+                ]
+              ],
+              [
+                [
+                  0.1862548867406329,
+                  -0.4815181408155617,
+                  0.5140682583669228
+                ],
+                [
+                  0.012488764797386004,
+                  -0.034572535685396394,
+                  0.040401935372031676
+                ]
+              ]
+            ],
+            "exp_factor": -2.0,
+            "basic": {
+              "name": "Cs133",
+              "A": 133,
+              "Z": 55,
+              "N": 78,
+              "J": 3.5,
+              "T": 11.5,
+              "b": 11.644334960750054
+            },
+            "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+            "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+            "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+            "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+          },
+          "unit": "dimensionless coefficients under local convention",
+          "evidence_claims": [
+            "C_W_Cs133_Delta"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_W_Cs133_M": {
+          "value": {
+            "nucleus": "Cs133",
+            "json_key": "nuclei.Cs133.responses.M",
+            "array_key": "Cs133_M",
+            "shape": [
+              2,
+              2,
+              11
+            ],
+            "coefficient_order": "ascending",
+            "axes": [
+              "outgoing_nucleon(p,n)",
+              "incoming_nucleon(p,n)",
+              "polynomial_power"
+            ],
+            "power_range": [
+              0,
+              10
+            ],
+            "first_three_coefficients": [
+              [
+                [
+                  3024.998274020381,
+                  -11027.633404691845,
+                  15552.131264975062
+                ],
+                [
+                  4289.9996412299715,
+                  -17067.907574177727,
+                  26578.800788135144
+                ]
+              ],
+              [
+                [
+                  4289.9996412299715,
+                  -17067.907574177727,
+                  26578.800788135144
+                ],
+                [
+                  6084.002453757858,
+                  -26231.58060212355,
+                  44782.86942155816
+                ]
+              ]
+            ],
+            "exp_factor": -2.0,
+            "basic": {
+              "name": "Cs133",
+              "A": 133,
+              "Z": 55,
+              "N": 78,
+              "J": 3.5,
+              "T": 11.5,
+              "b": 11.644334960750054
+            },
+            "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+            "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+            "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+            "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+          },
+          "unit": "dimensionless coefficients under local convention",
+          "evidence_claims": [
+            "C_W_Cs133_M"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_W_Cs133_MPhiPP": {
+          "value": {
+            "nucleus": "Cs133",
+            "json_key": "nuclei.Cs133.responses.MPhiPP",
+            "array_key": "Cs133_MPhiPP",
+            "shape": [
+              2,
+              2,
+              10
+            ],
+            "coefficient_order": "ascending",
+            "axes": [
+              "outgoing_nucleon(p,n)",
+              "incoming_nucleon(p,n)",
+              "polynomial_power"
+            ],
+            "power_range": [
+              0,
+              9
+            ],
+            "first_three_coefficients": [
+              [
+                [
+                  -337.2270119061203,
+                  1028.1187793706663,
+                  -1191.3713542557764
+                ],
+                [
+                  -651.971286861826,
+                  2209.5134742717923,
+                  -2896.119563058932
+                ]
+              ],
+              [
+                [
+                  -478.2494497649966,
+                  1617.334276920973,
+                  -2098.777365437798
+                ],
+                [
+                  -924.614275237974,
+                  3441.4180966762283,
+                  -5003.062046480429
+                ]
+              ]
+            ],
+            "exp_factor": -2.0,
+            "basic": {
+              "name": "Cs133",
+              "A": 133,
+              "Z": 55,
+              "N": 78,
+              "J": 3.5,
+              "T": 11.5,
+              "b": 11.644334960750054
+            },
+            "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+            "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+            "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+            "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+          },
+          "unit": "dimensionless coefficients under local convention",
+          "evidence_claims": [
+            "C_W_Cs133_MPhiPP"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_W_Cs133_PhiPP": {
+          "value": {
+            "nucleus": "Cs133",
+            "json_key": "nuclei.Cs133.responses.PhiPP",
+            "array_key": "Cs133_PhiPP",
+            "shape": [
+              2,
+              2,
+              9
+            ],
+            "coefficient_order": "ascending",
+            "axes": [
+              "outgoing_nucleon(p,n)",
+              "incoming_nucleon(p,n)",
+              "polynomial_power"
+            ],
+            "power_range": [
+              0,
+              8
+            ],
+            "first_three_coefficients": [
+              [
+                [
+                  92.77117991352004,
+                  -227.5432243891409,
+                  211.79690175505195
+                ],
+                [
+                  179.31768013673852,
+                  -500.6524130832624,
+                  535.5397429245113
+                ]
+              ],
+              [
+                [
+                  179.31768013673852,
+                  -500.6524130832624,
+                  535.5397429245113
+                ],
+                [
+                  346.7407632378248,
+                  -1086.1118581504106,
+                  1320.5990764588826
+                ]
+              ]
+            ],
+            "exp_factor": -2.0,
+            "basic": {
+              "name": "Cs133",
+              "A": 133,
+              "Z": 55,
+              "N": 78,
+              "J": 3.5,
+              "T": 11.5,
+              "b": 11.644334960750054
+            },
+            "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+            "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+            "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+            "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+          },
+          "unit": "dimensionless coefficients under local convention",
+          "evidence_claims": [
+            "C_W_Cs133_PhiPP"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_W_Cs133_PhiPT": {
+          "value": {
+            "nucleus": "Cs133",
+            "json_key": "nuclei.Cs133.responses.PhiPT",
+            "array_key": "Cs133_PhiPT",
+            "shape": [
+              2,
+              2,
+              9
+            ],
+            "coefficient_order": "ascending",
+            "axes": [
+              "outgoing_nucleon(p,n)",
+              "incoming_nucleon(p,n)",
+              "polynomial_power"
+            ],
+            "power_range": [
+              0,
+              8
+            ],
+            "first_three_coefficients": [
+              [
+                [
+                  0.017221086156055408,
+                  -0.010712014633078523,
+                  0.0029834868952053955
+                ],
+                [
+                  -0.026221186833360246,
+                  0.039430327637627736,
+                  -0.023236015561259964
+                ]
+              ],
+              [
+                [
+                  -0.026221186833360246,
+                  0.039430327637627736,
+                  -0.023236015561259964
+                ],
+                [
+                  0.039924928818048044,
+                  -0.09524042439526507,
+                  0.0949350898827911
+                ]
+              ]
+            ],
+            "exp_factor": -2.0,
+            "basic": {
+              "name": "Cs133",
+              "A": 133,
+              "Z": 55,
+              "N": 78,
+              "J": 3.5,
+              "T": 11.5,
+              "b": 11.644334960750054
+            },
+            "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+            "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+            "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+            "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+          },
+          "unit": "dimensionless coefficients under local convention",
+          "evidence_claims": [
+            "C_W_Cs133_PhiPT"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_W_Cs133_SigmaP": {
+          "value": {
+            "nucleus": "Cs133",
+            "json_key": "nuclei.Cs133.responses.SigmaP",
+            "array_key": "Cs133_SigmaP",
+            "shape": [
+              2,
+              2,
+              11
+            ],
+            "coefficient_order": "ascending",
+            "axes": [
+              "outgoing_nucleon(p,n)",
+              "incoming_nucleon(p,n)",
+              "polynomial_power"
+            ],
+            "power_range": [
+              0,
+              10
+            ],
+            "first_three_coefficients": [
+              [
+                [
+                  0.4027959920988274,
+                  -3.072499366548158,
+                  8.226342731339976
+                ],
+                [
+                  -0.0011039931292083404,
+                  0.020820041986513098,
+                  -0.10211081106891545
+                ]
+              ],
+              [
+                [
+                  -0.0011039931292083404,
+                  0.020820041986513098,
+                  -0.10211081106891545
+                ],
+                [
+                  3.0258514316105365e-06,
+                  -9.104718199377984e-05,
+                  0.0014772017592419675
+                ]
+              ]
+            ],
+            "exp_factor": -2.0,
+            "basic": {
+              "name": "Cs133",
+              "A": 133,
+              "Z": 55,
+              "N": 78,
+              "J": 3.5,
+              "T": 11.5,
+              "b": 11.644334960750054
+            },
+            "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+            "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+            "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+            "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+          },
+          "unit": "dimensionless coefficients under local convention",
+          "evidence_claims": [
+            "C_W_Cs133_SigmaP"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_W_Cs133_SigmaPDelta": {
+          "value": {
+            "nucleus": "Cs133",
+            "json_key": "nuclei.Cs133.responses.SigmaPDelta",
+            "array_key": "Cs133_SigmaPDelta",
+            "shape": [
+              2,
+              2,
+              10
+            ],
+            "coefficient_order": "ascending",
+            "axes": [
+              "outgoing_nucleon(p,n)",
+              "incoming_nucleon(p,n)",
+              "polynomial_power"
+            ],
+            "power_range": [
+              0,
+              9
+            ],
+            "first_three_coefficients": [
+              [
+                [
+                  0.6733961453469848,
+                  -3.3771379778618753,
+                  5.326274178703672
+                ],
+                [
+                  0.04515256604470164,
+                  -0.23470801367607982,
+                  0.3935380785969338
+                ]
+              ],
+              [
+                [
+                  -0.0018456606626712669,
+                  0.029984612964432725,
+                  -0.0839065136762114
+                ],
+                [
+                  -0.00012375525987668224,
+                  0.002033179112514557,
+                  -0.005632474174543013
+                ]
+              ]
+            ],
+            "exp_factor": -2.0,
+            "basic": {
+              "name": "Cs133",
+              "A": 133,
+              "Z": 55,
+              "N": 78,
+              "J": 3.5,
+              "T": 11.5,
+              "b": 11.644334960750054
+            },
+            "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+            "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+            "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+            "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+          },
+          "unit": "dimensionless coefficients under local convention",
+          "evidence_claims": [
+            "C_W_Cs133_SigmaPDelta"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_W_Cs133_SigmaPP": {
+          "value": {
+            "nucleus": "Cs133",
+            "json_key": "nuclei.Cs133.responses.SigmaPP",
+            "array_key": "Cs133_SigmaPP",
+            "shape": [
+              2,
+              2,
+              11
+            ],
+            "coefficient_order": "ascending",
+            "axes": [
+              "outgoing_nucleon(p,n)",
+              "incoming_nucleon(p,n)",
+              "polynomial_power"
+            ],
+            "power_range": [
+              0,
+              10
+            ],
+            "first_three_coefficients": [
+              [
+                [
+                  0.20139799604941389,
+                  -0.14750139319149005,
+                  0.04729454446532723
+                ],
+                [
+                  -0.0005519965646041798,
+                  0.0010692693237293824,
+                  -0.0068281163231585515
+                ]
+              ],
+              [
+                [
+                  -0.0005519965646041798,
+                  0.0010692693237293824,
+                  -0.0068281163231585515
+                ],
+                [
+                  1.5129257158053197e-06,
+                  -4.7533111280765205e-06,
+                  0.0004874711824476048
+                ]
+              ]
+            ],
+            "exp_factor": -2.0,
+            "basic": {
+              "name": "Cs133",
+              "A": 133,
+              "Z": 55,
+              "N": 78,
+              "J": 3.5,
+              "T": 11.5,
+              "b": 11.644334960750054
+            },
+            "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+            "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+            "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+            "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+          },
+          "unit": "dimensionless coefficients under local convention",
+          "evidence_claims": [
+            "C_W_Cs133_SigmaPP"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_W_I127_Delta": {
+          "value": {
+            "nucleus": "I127",
+            "json_key": "nuclei.I.responses.Delta",
+            "array_key": "I127_Delta",
+            "shape": [
+              2,
+              2,
+              9
+            ],
+            "coefficient_order": "ascending",
+            "axes": [
+              "outgoing_nucleon(p,n)",
+              "incoming_nucleon(p,n)",
+              "polynomial_power"
+            ],
+            "power_range": [
+              0,
+              8
+            ],
+            "first_three_coefficients": [
+              [
+                [
+                  0.5358168796402408,
+                  -1.2859608404378045,
+                  1.6442979109260578
+                ],
+                [
+                  0.23163314424621675,
+                  -0.6485716130894684,
+                  0.7910001684059156
+                ]
+              ],
+              [
+                [
+                  0.23163314424621675,
+                  -0.6485716130894684,
+                  0.7910001684059156
+                ],
+                [
+                  0.10013479521103008,
+                  -0.320430253571225,
+                  0.3977773344707208
+                ]
+              ]
+            ],
+            "exp_factor": -2.0,
+            "basic": {
+              "name": "I",
+              "A": 127,
+              "Z": 53,
+              "N": 74,
+              "J": 2.5,
+              "T": 10.5,
+              "b": 11.566047952236252
+            },
+            "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+            "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+            "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+            "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+          },
+          "unit": "dimensionless coefficients under local convention",
+          "evidence_claims": [
+            "C_W_I127_Delta"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_W_I127_M": {
+          "value": {
+            "nucleus": "I127",
+            "json_key": "nuclei.I.responses.M",
+            "array_key": "I127_M",
+            "shape": [
+              2,
+              2,
+              11
+            ],
+            "coefficient_order": "ascending",
+            "axes": [
+              "outgoing_nucleon(p,n)",
+              "incoming_nucleon(p,n)",
+              "polynomial_power"
+            ],
+            "power_range": [
+              0,
+              10
+            ],
+            "first_three_coefficients": [
+              [
+                [
+                  2808.9995665607275,
+                  -10034.66474862081,
+                  13985.083771812386
+                ],
+                [
+                  3921.985800775471,
+                  -15131.936068913743,
+                  23039.49218040387
+                ]
+              ],
+              [
+                [
+                  3921.985800775471,
+                  -15131.936068913743,
+                  23039.49218040387
+                ],
+                [
+                  5475.961194368475,
+                  -22693.147694980555,
+                  37521.4281769301
+                ]
+              ]
+            ],
+            "exp_factor": -2.0,
+            "basic": {
+              "name": "I",
+              "A": 127,
+              "Z": 53,
+              "N": 74,
+              "J": 2.5,
+              "T": 10.5,
+              "b": 11.566047952236252
+            },
+            "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+            "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+            "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+            "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+          },
+          "unit": "dimensionless coefficients under local convention",
+          "evidence_claims": [
+            "C_W_I127_M"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_W_I127_MPhiPP": {
+          "value": {
+            "nucleus": "I127",
+            "json_key": "nuclei.I.responses.MPhiPP",
+            "array_key": "I127_MPhiPP",
+            "shape": [
+              2,
+              2,
+              10
+            ],
+            "coefficient_order": "ascending",
+            "axes": [
+              "outgoing_nucleon(p,n)",
+              "incoming_nucleon(p,n)",
+              "polynomial_power"
+            ],
+            "power_range": [
+              0,
+              9
+            ],
+            "first_three_coefficients": [
+              [
+                [
+                  -358.9434624297877,
+                  1071.860847241573,
+                  -1226.724001560627
+                ],
+                [
+                  -168.70759172914163,
+                  571.2775470897285,
+                  -748.693222596135
+                ]
+              ],
+              [
+                [
+                  -501.1646066768365,
+                  1639.8451383342444,
+                  -2077.7548199768694
+                ],
+                [
+                  -235.5531795452892,
+                  864.9665463054715,
+                  -1243.7890306149388
+                ]
+              ]
+            ],
+            "exp_factor": -2.0,
+            "basic": {
+              "name": "I",
+              "A": 127,
+              "Z": 53,
+              "N": 74,
+              "J": 2.5,
+              "T": 10.5,
+              "b": 11.566047952236252
+            },
+            "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+            "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+            "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+            "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+          },
+          "unit": "dimensionless coefficients under local convention",
+          "evidence_claims": [
+            "C_W_I127_MPhiPP"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_W_I127_PhiPP": {
+          "value": {
+            "nucleus": "I127",
+            "json_key": "nuclei.I.responses.PhiPP",
+            "array_key": "I127_PhiPP",
+            "shape": [
+              2,
+              2,
+              9
+            ],
+            "coefficient_order": "ascending",
+            "axes": [
+              "outgoing_nucleon(p,n)",
+              "incoming_nucleon(p,n)",
+              "polynomial_power"
+            ],
+            "power_range": [
+              0,
+              8
+            ],
+            "first_three_coefficients": [
+              [
+                [
+                  201.1953955323554,
+                  -482.868031339836,
+                  442.67902718816634
+                ],
+                [
+                  94.56362577682016,
+                  -264.7780925065691,
+                  282.3185712069178
+                ]
+              ],
+              [
+                [
+                  94.56362577682016,
+                  -264.7780925065691,
+                  282.3185712069178
+                ],
+                [
+                  44.44739903804423,
+                  -142.23242927003102,
+                  174.82375219181566
+                ]
+              ]
+            ],
+            "exp_factor": -2.0,
+            "basic": {
+              "name": "I",
+              "A": 127,
+              "Z": 53,
+              "N": 74,
+              "J": 2.5,
+              "T": 10.5,
+              "b": 11.566047952236252
+            },
+            "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+            "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+            "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+            "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+          },
+          "unit": "dimensionless coefficients under local convention",
+          "evidence_claims": [
+            "C_W_I127_PhiPP"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_W_I127_PhiPT": {
+          "value": {
+            "nucleus": "I127",
+            "json_key": "nuclei.I.responses.PhiPT",
+            "array_key": "I127_PhiPT",
+            "shape": [
+              2,
+              2,
+              9
+            ],
+            "coefficient_order": "ascending",
+            "axes": [
+              "outgoing_nucleon(p,n)",
+              "incoming_nucleon(p,n)",
+              "polynomial_power"
+            ],
+            "power_range": [
+              0,
+              8
+            ],
+            "first_three_coefficients": [
+              [
+                [
+                  0.0002687821306724113,
+                  -0.0012325808757454723,
+                  0.01758896344149697
+                ],
+                [
+                  -0.0006901948462545364,
+                  0.00237134182929609,
+                  -0.04228122100222151
+                ]
+              ],
+              [
+                [
+                  -0.0006901948462545364,
+                  0.00237134182929609,
+                  -0.04228122100222151
+                ],
+                [
+                  0.0017723236459380415,
+                  -0.004051026696742288,
+                  0.10351592957122067
+                ]
+              ]
+            ],
+            "exp_factor": -2.0,
+            "basic": {
+              "name": "I",
+              "A": 127,
+              "Z": 53,
+              "N": 74,
+              "J": 2.5,
+              "T": 10.5,
+              "b": 11.566047952236252
+            },
+            "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+            "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+            "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+            "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+          },
+          "unit": "dimensionless coefficients under local convention",
+          "evidence_claims": [
+            "C_W_I127_PhiPT"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_W_I127_SigmaP": {
+          "value": {
+            "nucleus": "I127",
+            "json_key": "nuclei.I.responses.SigmaP",
+            "array_key": "I127_SigmaP",
+            "shape": [
+              2,
+              2,
+              11
+            ],
+            "coefficient_order": "ascending",
+            "axes": [
+              "outgoing_nucleon(p,n)",
+              "incoming_nucleon(p,n)",
+              "polynomial_power"
+            ],
+            "power_range": [
+              0,
+              10
+            ],
+            "first_three_coefficients": [
+              [
+                [
+                  0.26026299886965265,
+                  -1.5935648492504124,
+                  5.29611648786122
+                ],
+                [
+                  0.06457354625322986,
+                  -0.4559822972101023,
+                  1.2808706554956186
+                ]
+              ],
+              [
+                [
+                  0.06457354625322986,
+                  -0.4559822972101023,
+                  1.2808706554956186
+                ],
+                [
+                  0.016021266541258704,
+                  -0.12816981616040665,
+                  0.3703059158852223
+                ]
+              ]
+            ],
+            "exp_factor": -2.0,
+            "basic": {
+              "name": "I",
+              "A": 127,
+              "Z": 53,
+              "N": 74,
+              "J": 2.5,
+              "T": 10.5,
+              "b": 11.566047952236252
+            },
+            "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+            "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+            "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+            "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+          },
+          "unit": "dimensionless coefficients under local convention",
+          "evidence_claims": [
+            "C_W_I127_SigmaP"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_W_I127_SigmaPDelta": {
+          "value": {
+            "nucleus": "I127",
+            "json_key": "nuclei.I.responses.SigmaPDelta",
+            "array_key": "I127_SigmaPDelta",
+            "shape": [
+              2,
+              2,
+              10
+            ],
+            "coefficient_order": "ascending",
+            "axes": [
+              "outgoing_nucleon(p,n)",
+              "incoming_nucleon(p,n)",
+              "polynomial_power"
+            ],
+            "power_range": [
+              0,
+              9
+            ],
+            "first_three_coefficients": [
+              [
+                [
+                  -0.1783018283767848,
+                  0.7598245640626068,
+                  -1.4954404774973509
+                ],
+                [
+                  -0.07707971641261865,
+                  0.3593029031243831,
+                  -0.6993837353763155
+                ]
+              ],
+              [
+                [
+                  -0.04423825673156908,
+                  0.23003851209093953,
+                  -0.4055828371533289
+                ],
+                [
+                  -0.01912415769653394,
+                  0.10709499020716554,
+                  -0.20303695561612226
+                ]
+              ]
+            ],
+            "exp_factor": -2.0,
+            "basic": {
+              "name": "I",
+              "A": 127,
+              "Z": 53,
+              "N": 74,
+              "J": 2.5,
+              "T": 10.5,
+              "b": 11.566047952236252
+            },
+            "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+            "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+            "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+            "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+          },
+          "unit": "dimensionless coefficients under local convention",
+          "evidence_claims": [
+            "C_W_I127_SigmaPDelta"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_W_I127_SigmaPP": {
+          "value": {
+            "nucleus": "I127",
+            "json_key": "nuclei.I.responses.SigmaPP",
+            "array_key": "I127_SigmaPP",
+            "shape": [
+              2,
+              2,
+              11
+            ],
+            "coefficient_order": "ascending",
+            "axes": [
+              "outgoing_nucleon(p,n)",
+              "incoming_nucleon(p,n)",
+              "polynomial_power"
+            ],
+            "power_range": [
+              0,
+              10
+            ],
+            "first_three_coefficients": [
+              [
+                [
+                  0.1301314994348263,
+                  -0.48853937121139385,
+                  1.8336914142506728
+                ],
+                [
+                  0.03228677312661495,
+                  -0.12517937397772838,
+                  0.26444995227503193
+                ]
+              ],
+              [
+                [
+                  0.03228677312661495,
+                  -0.12517937397772838,
+                  0.26444995227503193
+                ],
+                [
+                  0.008010633270629362,
+                  -0.03204271350574278,
+                  0.05343325902839009
+                ]
+              ]
+            ],
+            "exp_factor": -2.0,
+            "basic": {
+              "name": "I",
+              "A": 127,
+              "Z": 53,
+              "N": 74,
+              "J": 2.5,
+              "T": 10.5,
+              "b": 11.566047952236252
+            },
+            "numerical_availability": "PRESENT_EXACT_LOCAL_COPY",
+            "original_source": "LOCAL_DATA_RESOURCE_USER_SELECTED",
+            "upstream_correspondence": "UNVERIFIED_OPTIONAL_EXTERNAL_AUDIT",
+            "conversion_equivalence": "EXACT_LOCAL_EXTRACTION"
+          },
+          "unit": "dimensionless coefficients under local convention",
+          "evidence_claims": [
+            "C_W_I127_SigmaPP"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_UPSTREAM": {
+          "value": [
+            "Elastic Cs133_GCN5082.txt",
+            "Elastic I127_GCN5082.txt",
+            "Mu2e_NRET v1/v2 author code"
+          ],
+          "unit": "1",
+          "evidence_claims": [
+            "C_UPSTREAM"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_W_CONVERSION": {
+          "value": null,
+          "unit": "1",
+          "evidence_claims": [
+            "C_W_CONVERSION"
+          ],
+          "provenance_status": "MISSING",
+          "decision_status": "BLOCKED",
+          "blocking_scope": [
+            "external_nuclear_source_certification"
+          ]
+        },
+        "C_I_ZERO": {
+          "value": {
+            "M_nn_0": 5475.961194368475,
+            "N_squared": 5476,
+            "residual": -0.03880563152506511
+          },
+          "unit": "1",
+          "evidence_claims": [
+            "C_I_ZERO"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_RESPONSE_ASSEMBLY_REVIEW": {
+          "value": {
+            "state": "CONFLICT_PENDING_AUDIT",
+            "paper_locator": "2601.19883v2 p15 Eq75, p18-19 Eq82",
+            "implementation": "amplitude.py direct contraction; responses.py R_Delta and zero R_SigmaPDelta",
+            "required": "Verify response prefactors, spin/isospin normalization and interference against actual table-generation convention; no correction adopted"
+          },
+          "unit": "1",
+          "evidence_claims": [
+            "C_RESPONSE_ASSEMBLY_REVIEW"
+          ],
+          "provenance_status": "CONFLICT",
+          "decision_status": "BLOCKED",
+          "blocking_scope": [
+            "new P07 authoritative freeze"
+          ]
+        }
+      },
+      "evidence_refs": [
+        "C_NUCLEAR_CHOICE",
+        "C_RESOURCE_BINDING",
+        "C_W_Cs133_Delta",
+        "C_W_Cs133_M",
+        "C_W_Cs133_MPhiPP",
+        "C_W_Cs133_PhiPP",
+        "C_W_Cs133_PhiPT",
+        "C_W_Cs133_SigmaP",
+        "C_W_Cs133_SigmaPDelta",
+        "C_W_Cs133_SigmaPP",
+        "C_W_I127_Delta",
+        "C_W_I127_M",
+        "C_W_I127_MPhiPP",
+        "C_W_I127_PhiPP",
+        "C_W_I127_PhiPT",
+        "C_W_I127_SigmaP",
+        "C_W_I127_SigmaPDelta",
+        "C_W_I127_SigmaPP",
+        "C_UPSTREAM",
+        "C_W_CONVERSION",
+        "C_I_ZERO",
+        "C_RESPONSE_ASSEMBLY_REVIEW"
+      ]
+    },
+    "detector": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "C_QF": {
+          "value": [
+            0.0554628,
+            4.30681,
+            -111.707,
+            840.384
+          ],
+          "unit": "[1,MeV^-1,MeV^-2,MeV^-3]",
+          "evidence_claims": [
+            "C_QF"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_QF_SYSTEMATICS": {
+          "value": [
+            [
+              0.0554628,
+              4.30681,
+              -111.707,
+              840.384
+            ],
+            [
+              0.0613632,
+              3.51547,
+              -85.5548,
+              595.562
+            ],
+            [
+              0.0495624,
+              5.09815,
+              -137.858,
+              1085.2
+            ],
+            [
+              0.055413,
+              3.93597,
+              -93.1045,
+              630.092
+            ],
+            [
+              0.0555126,
+              4.67765,
+              -130.309,
+              1050.68
+            ]
+          ],
+          "unit": "同nominal系数单位",
+          "evidence_claims": [
+            "C_QF_SYSTEMATICS"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_QF_DOMAIN": {
+          "value": [
+            2,
+            70
+          ],
+          "unit": "keVnr",
+          "evidence_claims": [
+            "C_QF_DOMAIN"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_LY": {
+          "value": 13.35,
+          "unit": "PE/keVee",
+          "evidence_claims": [
+            "C_LY"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_GAMMA": {
+          "value": {
+            "a_numerator": 0.0749,
+            "b_slope": 9.56
+          },
+          "unit": "a=0.0749/Eee(keVee); b=9.56*Eee(keVee)",
+          "evidence_claims": [
+            "C_GAMMA"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_EFF": {
+          "value": [
+            1.32045,
+            0.285979,
+            10.8646,
+            -0.333322
+          ],
+          "unit": "a,d dimensionless; b PE^-1; c PE",
+          "evidence_claims": [
+            "C_EFF"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_EFF_SYSTEMATICS": {
+          "value": [
+            [
+              1.32045,
+              0.285979,
+              10.8646,
+              -0.333322
+            ],
+            [
+              1.3439,
+              0.285366,
+              9.84596,
+              -0.356364
+            ],
+            [
+              1.297,
+              0.286592,
+              11.8832,
+              -0.31028
+            ]
+          ],
+          "unit": "同nominal效率单位",
+          "evidence_claims": [
+            "C_EFF_SYSTEMATICS"
+          ],
+          "provenance_status": "CONFLICT",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_EFF_LEGACY": {
+          "value": -0.3333,
+          "unit": "1",
+          "evidence_claims": [
+            "C_EFF_LEGACY"
+          ],
+          "provenance_status": "CONFLICT",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_TIME_EFF": {
+          "value": [
+            0.52,
+            0.0494
+          ],
+          "unit": "[us,us^-1]",
+          "evidence_claims": [
+            "C_TIME_EFF"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_SHIFTS": {
+          "value": {
+            "time_shift_us": [
+              -0.25,
+              0.25
+            ],
+            "efficiency_shift_PE": [
+              -1,
+              1
+            ]
+          },
+          "unit": "us and PE",
+          "evidence_claims": [
+            "C_SHIFTS"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
+      "evidence_refs": [
+        "C_QF",
+        "C_QF_SYSTEMATICS",
+        "C_QF_DOMAIN",
+        "C_LY",
+        "C_GAMMA",
+        "C_EFF",
+        "C_EFF_SYSTEMATICS",
+        "C_EFF_LEGACY",
+        "C_TIME_EFF",
+        "C_SHIFTS"
+      ]
+    },
+    "observable": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "C_PE": {
+          "value": [
+            0.0,
+            8.0,
+            12.0,
+            16.0,
+            20.0,
+            24.0,
+            32.0,
+            40.0,
+            48.0,
+            60.0
+          ],
+          "unit": "PE",
+          "evidence_claims": [
+            "C_PE"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_TIME": {
+          "value": [
+            0.0,
+            0.125,
+            0.25,
+            0.375,
+            0.5,
+            0.625,
+            0.75,
+            0.875,
+            1.0,
+            2.0,
+            4.0,
+            6.0
+          ],
+          "unit": "us",
+          "evidence_claims": [
+            "C_TIME"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_ENDPOINT_RULE": {
+          "value": "每箱左闭右开，PE60及t6us排除",
+          "unit": "1",
+          "evidence_claims": [
+            "C_ENDPOINT_RULE"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_OBS": {
+          "value": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              3,
+              5
+            ],
+            [
+              4,
+              3,
+              8,
+              3,
+              8,
+              9,
+              9,
+              5,
+              28,
+              37,
+              33
+            ],
+            [
+              6,
+              3,
+              4,
+              8,
+              12,
+              14,
+              9,
+              9,
+              49,
+              61,
+              49
+            ],
+            [
+              3,
+              3,
+              7,
+              10,
+              9,
+              5,
+              9,
+              7,
+              44,
+              51,
+              29
+            ],
+            [
+              2,
+              1,
+              3,
+              3,
+              2,
+              4,
+              5,
+              2,
+              36,
+              53,
+              33
+            ],
+            [
+              4,
+              4,
+              6,
+              4,
+              7,
+              11,
+              7,
+              6,
+              53,
+              65,
+              70
+            ],
+            [
+              5,
+              6,
+              2,
+              4,
+              5,
+              4,
+              6,
+              3,
+              35,
+              78,
+              62
+            ],
+            [
+              9,
+              6,
+              7,
+              4,
+              4,
+              3,
+              4,
+              3,
+              28,
+              66,
+              59
+            ],
+            [
+              1,
+              5,
+              5,
+              6,
+              5,
+              8,
+              7,
+              6,
+              38,
+              77,
+              77
+            ]
+          ],
+          "unit": "events/bin",
+          "evidence_claims": [
+            "C_OBS"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_CONTROL": {
+          "value": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              5,
+              2,
+              1,
+              2,
+              3,
+              2,
+              24,
+              27,
+              28
+            ],
+            [
+              3,
+              2,
+              3,
+              2,
+              3,
+              3,
+              3,
+              3,
+              28,
+              43,
+              51
+            ],
+            [
+              2,
+              4,
+              3,
+              7,
+              2,
+              3,
+              6,
+              4,
+              24,
+              38,
+              30
+            ],
+            [
+              2,
+              1,
+              3,
+              3,
+              4,
+              1,
+              4,
+              2,
+              18,
+              37,
+              30
+            ],
+            [
+              5,
+              5,
+              6,
+              5,
+              2,
+              4,
+              1,
+              6,
+              40,
+              65,
+              63
+            ],
+            [
+              2,
+              5,
+              4,
+              5,
+              5,
+              4,
+              4,
+              1,
+              30,
+              60,
+              62
+            ],
+            [
+              5,
+              1,
+              2,
+              3,
+              4,
+              7,
+              8,
+              4,
+              25,
+              64,
+              52
+            ],
+            [
+              2,
+              4,
+              4,
+              5,
+              7,
+              8,
+              2,
+              8,
+              43,
+              98,
+              81
+            ]
+          ],
+          "unit": "events/bin",
+          "evidence_claims": [
+            "C_CONTROL"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
+      "evidence_refs": [
+        "C_PE",
+        "C_TIME",
+        "C_ENDPOINT_RULE",
+        "C_OBS",
+        "C_CONTROL"
+      ]
+    },
+    "statistics": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "C_SS": {
+          "value": 1285.9265239871502,
+          "unit": "events in0–6us",
+          "evidence_claims": [
+            "C_SS"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_BRN_PE": {
+          "value": {
+            "shape": [
+              250,
+              2
+            ],
+            "center_range_PE": [
+              0.5,
+              249.5
+            ],
+            "sum": 1.4977778220000002,
+            "first_rows": [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                1.5,
+                0.0
+              ],
+              [
+                2.5,
+                0.0
+              ],
+              [
+                3.5,
+                0.0
+              ]
+            ]
+          },
+          "unit": "relative bin weight; epsilon_PE already applied",
+          "evidence_claims": [
+            "C_BRN_PE"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_BRN_TIME": {
+          "value": {
+            "shape": [
+              650,
+              2
+            ],
+            "center_range_us": [
+              -0.245,
+              6.245
+            ],
+            "sum": 27.632009229740003,
+            "first_rows": [
+              [
+                -0.245,
+                0.0
+              ],
+              [
+                -0.235,
+                0.0
+              ],
+              [
+                -0.225,
+                0.0
+              ],
+              [
+                -0.215,
+                0.0
+              ]
+            ]
+          },
+          "unit": "events per0.01us bin at13.99GWhr; before epsilon_T",
+          "evidence_claims": [
+            "C_BRN_TIME"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_NIN_PE": {
+          "value": {
+            "shape": [
+              250,
+              2
+            ],
+            "center_range_PE": [
+              0.5,
+              249.5
+            ],
+            "sum": 1.3339572780000002,
+            "first_rows": [
+              [
+                0.5,
+                0.0
+              ],
+              [
+                1.5,
+                0.0
+              ],
+              [
+                2.5,
+                0.0
+              ],
+              [
+                3.5,
+                0.0
+              ]
+            ]
+          },
+          "unit": "relative bin weight; epsilon_PE already applied",
+          "evidence_claims": [
+            "C_NIN_PE"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_NIN_TIME": {
+          "value": {
+            "shape": [
+              650,
+              2
+            ],
+            "center_range_us": [
+              -0.245,
+              6.245
+            ],
+            "sum": 7.564846239112,
+            "first_rows": [
+              [
+                -0.245,
+                0.0
+              ],
+              [
+                -0.235,
+                0.0
+              ],
+              [
+                -0.225,
+                0.0
+              ],
+              [
+                -0.215,
+                0.0
+              ]
+            ]
+          },
+          "unit": "events per0.01us bin at13.99GWhr; before epsilon_T",
+          "evidence_claims": [
+            "C_NIN_TIME"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_PRIORS": {
+          "value": [
+            18.4,
+            5.6,
+            1286
+          ],
+          "unit": "events for BRN,NIN,SS",
+          "evidence_claims": [
+            "C_PRIORS"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_PULL_JHEP": {
+          "value": [
+            0.12,
+            0.25,
+            0.35,
+            0.021
+          ],
+          "unit": "relative sigma",
+          "evidence_claims": [
+            "C_PULL_JHEP"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_PULL_2211": {
+          "value": [
+            0.1145,
+            0.25,
+            0.35,
+            0.021
+          ],
+          "unit": "relative sigma",
+          "evidence_claims": [
+            "C_PULL_2211"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_RADIUS": {
+          "value": 0.05,
+          "unit": "relative sigma",
+          "evidence_claims": [
+            "C_RADIUS"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_SM_PAPER": {
+          "value": 83.2,
+          "unit": "chi2",
+          "evidence_claims": [
+            "C_SM_PAPER"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_BG_GAP": {
+          "value": [
+            18.309633271138438,
+            5.1789999582711825
+          ],
+          "unit": "events",
+          "evidence_claims": [
+            "C_BG_GAP"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
+      "evidence_refs": [
+        "C_SS",
+        "C_BRN_PE",
+        "C_BRN_TIME",
+        "C_NIN_PE",
+        "C_NIN_TIME",
+        "C_PRIORS",
+        "C_PULL_JHEP",
+        "C_PULL_2211",
+        "C_RADIUS",
+        "C_SM_PAPER",
+        "C_BG_GAP"
+      ]
+    },
+    "prediction": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "C_RECOIL_POLICY": {
+          "value": [
+            2,
+            70
+          ],
+          "unit": "keVnr",
+          "evidence_claims": [
+            "C_RECOIL_POLICY"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_DENOM": {
+          "value": "固定零位移0–6us参考分数",
+          "unit": "1",
+          "evidence_claims": [
+            "C_DENOM"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_DIAGNOSTICS": {
+          "value": {
+            "full_fluence_SM": 328.3189300697272,
+            "same_eta_6us_SM": 352.71221639340564,
+            "max_grid_change": 0.004015979465854969,
+            "ROOT_correlation_max": 0.019906826571506775,
+            "ROOT_vs_legacy_max": 1.0058675295241777
+          },
+          "unit": "events or events/bin",
+          "evidence_claims": [
+            "C_DIAGNOSTICS"
+          ],
+          "provenance_status": "REFERENCE_ONLY",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "C_TIMING_DIAGNOSTIC": {
+          "value": {
+            "default_shift_ns": 0,
+            "diagnostic_shifts_ns": [
+              -125,
+              -50,
+              0,
+              50,
+              75,
+              125
+            ],
+            "positive_shift": "h(t-delta), source delayed; observer bins/efficiency fixed",
+            "q": "unshifted integral of full-support normalized h from 0 to 6 us",
+            "default_fluence_scope": "reference_window",
+            "scopes": [
+              "reference_window",
+              "full_support"
+            ],
+            "default_background_mode": "raw",
+            "background_modes": [
+              "raw",
+              "prior_posteff",
+              "bestfit_posteff",
+              "prior_preeff"
+            ],
+            "signal_and_neutrons_shift_together": true,
+            "SSB_shifted": false,
+            "official_onset_verified": false,
+            "flight_time_added": false,
+            "prior_posteff_zero_shift_ROI_events": [
+              18.4,
+              5.6
+            ],
+            "bestfit_posteff_zero_shift_ROI_events": [
+              17.3,
+              5.5
+            ],
+            "native_nominal_reference_events": 353.46560868634367,
+            "native_full_support_reference_events": 329.01642259688515,
+            "KN_nominal_reference_events": 333.11348797594866,
+            "KN_plus75_reference_events": 331.2663916870358
+          },
+          "unit": "ns or explicitly named events",
+          "evidence_claims": [
+            "C_TIMING_DIAGNOSTIC"
+          ],
+          "provenance_status": "REFERENCE_ONLY",
+          "decision_status": "DRAFT",
+          "blocking_scope": [
+            "official timing-onset certification"
+          ]
+        }
+      },
+      "evidence_refs": [
+        "C_RECOIL_POLICY",
+        "C_DENOM",
+        "C_DIAGNOSTICS",
+        "C_TIMING_DIAGNOSTIC"
+      ]
+    }
+  },
+  "report_spec": {
+    "revision": "r3-onboarding-restart-20261118",
+    "date": "2026-11-18",
+    "status": "DRAFT_H3_REVIEW_REQUIRED",
+    "analysis_id": "CsI2021_time_9x11",
+    "section_titles": {
+      "identity": "身份、目标与本轮补充",
+      "source": "Source 数值与来源",
+      "target": "Target 与曝光",
+      "nuclear": "Nuclear RESPONSE 实际数据和上游缺口",
+      "constants": "常数及单位来源",
+      "detector": "Detector Response 与校准",
+      "observable": "Observable、分箱与原始计数",
+      "prediction": "Prediction folding 与旧诊断",
+      "statistics": "Statistics 与独立benchmark"
+    },
+    "formulas": [
+      {
+        "id": "F_SOURCE",
+        "section": "source",
+        "latex": "\\eta=\\frac{rN_{\\rm POT}}{4\\pi(100L)^2},\\quad E_\\pi=\\frac{m_\\pi^2-m_\\mu^2}{2m_\\pi}",
+        "sources": [
+          "S_2211"
+        ],
+        "locator": "p12 Eq29与后续归一化段",
+        "inputs": [
+          "C_YIELD",
+          "C_POT",
+          "C_L",
+          "C_MPI",
+          "C_MMU"
+        ],
+        "symbols": {
+          "eta": "C_ETA",
+          "r": "C_YIELD",
+          "N_POT": "C_POT",
+          "L": "C_L",
+          "m_pi": "C_MPI",
+          "m_mu": "C_MMU",
+          "E_pi": "C_LINE"
+        }
+      },
+      {
+        "id": "F_DAR",
+        "section": "source",
+        "latex": "\\phi_{\\nu_\\mu}(E)=\\eta\\delta(E-E_\\pi),\\quad\\phi_{\\nu_e}(E)=\\eta\\frac{192E^2}{m_\\mu^3}\\left(\\frac12-\\frac{E}{m_\\mu}\\right),\\quad\\phi_{\\bar\\nu_\\mu}(E)=\\eta\\frac{64E^2}{m_\\mu^3}\\left(\\frac34-\\frac{E}{m_\\mu}\\right)",
+        "sources": [
+          "S_2211"
+        ],
+        "locator": "p12 Eq29，0≤E≤m_mu/2",
+        "inputs": [
+          "C_COMPONENTS",
+          "C_ETA",
+          "C_MMU",
+          "C_LINE",
+          "C_ENDPOINT"
+        ],
+        "symbols": {
+          "E": "积分变量MeV，数值域见C_ENDPOINT",
+          "phi": "由已列输入定义的每味谱，不另索取实验采样表",
+          "m_mu": "C_MMU",
+          "eta": "C_ETA"
+        }
+      },
+      {
+        "id": "F_QF",
+        "section": "detector",
+        "latex": "E_{ee}[{\\rm keVee}]=10^3\\sum_{j=1}^{4}q_j\\left(10^{-3}T[{\\rm keVnr}]\\right)^j,\\quad \\overline{\\rm PE}=13.35\\,E_{ee}",
+        "sources": [
+          "S_scintRespCoefficients",
+          "S_SUP",
+          "S_QF_PAPER"
+        ],
+        "locator": "系数文件line1–7；Supplement p3 lines90–93；校准Eq8.1",
+        "inputs": [
+          "C_QF",
+          "C_LY",
+          "C_QF_DOMAIN"
+        ],
+        "symbols": {
+          "q_j": "C_QF",
+          "T": "真实反冲变量keVnr，适用域C_QF_DOMAIN",
+          "E_ee,PE_mean": "由该式定义的派生量"
+        }
+      },
+      {
+        "id": "F_GAMMA",
+        "section": "detector",
+        "latex": "G(x\\mid E_{ee})=\\frac{[a(1+b)]^{1+b}}{\\Gamma(1+b)}x^b e^{-a(1+b)x},\\quad a=0.0749/E_{ee},\\quad b=9.56E_{ee}",
+        "sources": [
+          "S_SUP",
+          "S_2211"
+        ],
+        "locator": "Supplement p3 Eq3；2211 p12 Eq31",
+        "inputs": [
+          "C_GAMMA",
+          "C_QF"
+        ],
+        "symbols": {
+          "x": "重建PE，x≥0",
+          "a,b": "C_GAMMA",
+          "E_ee": "keVee，来自F_QF",
+          "Gamma": "Euler gamma数学函数"
+        }
+      },
+      {
+        "id": "F_EFF",
+        "section": "detector",
+        "latex": "\\epsilon_E(x)=\\max\\left(0,\\frac{a}{1+e^{-b(x-c)}}+d\\right),\\quad x={\\rm PE}+\\delta_{\\rm PE}",
+        "sources": [
+          "S_effCoefficients",
+          "S_2211",
+          "S_LEGACY_EFF"
+        ],
+        "locator": "系数文件头；2211 p12 Eq30；非负裁剪为现有实现约定",
+        "inputs": [
+          "C_EFF",
+          "C_SHIFTS"
+        ],
+        "symbols": {
+          "a,b,c,d": "C_EFF",
+          "delta_PE": "C_SHIFTS",
+          "max(0,...)": "PROJECT_CONVENTION，避免低PE负效率，需审核"
+        }
+      },
+      {
+        "id": "F_TIME_EFF",
+        "section": "detector",
+        "latex": "\\epsilon_T(t)=\\begin{cases}1&t<0.52\\,\\mu{\\rm s}\\\\e^{-0.0494(t-0.52)}&t\\ge0.52\\,\\mu{\\rm s}\\end{cases}",
+        "sources": [
+          "S_SUP",
+          "S_2211"
+        ],
+        "locator": "Supplement p2 Eq1；2211 p13 Eq33",
+        "inputs": [
+          "C_TIME_EFF"
+        ],
+        "symbols": {
+          "t": "观测时间us，位移后效率留在此坐标",
+          "0.52,0.0494": "C_TIME_EFF"
+        }
+      },
+      {
+        "id": "F_FOLD",
+        "section": "prediction",
+        "latex": "N_{ij}=\\sum_{A,n}N_A\\int_{\\mathrm{PE}_i}^{\\mathrm{PE}_{i+1}}dx\\,\\epsilon_E(x)\\int dT\\,G(x\\mid T)\\int dE\\,\\phi_n(E)\\frac{d\\sigma_{A,n}}{dT}\\int_{t_j}^{t_{j+1}}dt\\,f_n(t-\\delta_t)\\epsilon_T(t)",
+        "sources": [
+          "S_2211"
+        ],
+        "locator": "p12 Eq28与p13 Eq32，以重建PE作变量的等价书写",
+        "inputs": [
+          "C_ETA",
+          "C_QF",
+          "C_GAMMA",
+          "C_EFF",
+          "C_PE",
+          "C_TIME",
+          "C_DENOM",
+          "C_RESOURCE_BINDING"
+        ],
+        "symbols": {
+          "N_A": "按已选择的靶核数计算，质量源为C_MASS",
+          "d_sigma/dT": "选定RESPONSE，直接资源C_RESOURCE_BINDING；外部作者链另记",
+          "f_n": "C_TIME_MARGINAL与C_DENOM",
+          "G,epsilon": "Detector已列输入",
+          "x,T,E,t": "积分变量，单位分别PE,keVnr,MeV,us"
+        }
+      },
+      {
+        "id": "F_LIKELIHOOD",
+        "section": "statistics",
+        "latex": "\\chi^2=2\\sum_{ij}\\left[\\mu_{ij}-n_{ij}+n_{ij}\\ln\\frac{n_{ij}}{\\mu_{ij}}\\right]+\\sum_k\\left(\\frac{\\alpha_k}{\\sigma_k}\\right)^2",
+        "sources": [
+          "S_2202",
+          "S_2211"
+        ],
+        "locator": "2202 Eq6；2211 p14 Eq36，预测组成Eq38",
+        "inputs": [
+          "C_OBS",
+          "C_SS",
+          "C_PRIORS",
+          "C_PULL_JHEP",
+          "C_PULL_2211",
+          "C_RADIUS",
+          "C_BG_GAP"
+        ],
+        "symbols": {
+          "n_ij": "C_OBS，raw C counts",
+          "mu_ij": "CEvNS+BRN+NIN+SS，BRN/NIN归一未闭合",
+          "sigma_k": "两个benchmark各用自身宽度",
+          "alpha_k": "nuisance变量；2211半径项与当前固定RESPONSE不同"
+        }
+      }
+    ],
+    "issues": [
+      {
+        "id": "G_NUCLEAR",
+        "item": "RESPONSE原表复用与可选外部生成链",
+        "kind": "USER_SELECTED_LOCAL_RESOURCE",
+        "status": "LOCAL_REUSE_READY",
+        "available": "本地Cs/I全部16个通道数组、作者Elastic密度矩阵和Mu2e_NRET代码已取得",
+        "needed": "本次直接调用原data已获用户明确选择；外部导出Notebook/版本仍可补充，只影响作者来源认证",
+        "affects": [
+          "外部作者来源认证"
+        ],
+        "claims": [
+          "C_RESOURCE_BINDING",
+          "C_W_CONVERSION"
+        ]
+      },
+      {
+        "id": "G_BG",
+        "item": "BRN/NIN绝对归一与时间效率",
+        "kind": "PHYSICAL_NORMALIZATION_CONFLICT",
+        "status": "BLOCKED",
+        "available": "官方四个表、曝光和两个效率作用域均已取得，候选算法及差额已回读",
+        "needed": "作者明确PE概率归一、Trec绝对归一和TableI在时间效率前/后的口径",
+        "affects": [
+          "P09论文统计组成",
+          "P10外部benchmark"
+        ],
+        "claims": [
+          "C_BG_GAP",
+          "C_PRIORS"
+        ]
+      },
+      {
+        "id": "G_THEORY",
+        "item": "原生Interaction/Matching与论文定义",
+        "kind": "PROVENANCE_REVIEW_PENDING",
+        "status": "PARTIAL",
+        "available": "原生代码可读取，G_F和质量常数已追到NIST/PDG，弱角两个配置已分列",
+        "needed": "按所选SM/LEFT范围完成核子与匹配数值到原文式及单位的逐项对应；此项是未完成审计，不能写成数值文件不存在",
+        "affects": [
+          "P04共享理论适用性",
+          "同模型外部比较"
+        ],
+        "claims": [
+          "C_GF",
+          "C_SIN2_PAPER",
+          "C_SIN2_NATIVE"
+        ]
+      },
+      {
+        "id": "G_CONFIG",
+        "item": "旧诊断与本草稿输入差异",
+        "kind": "CONFIGURATION_DIFFERENCE",
+        "status": "PARTIAL",
+        "available": "统一14.6kg/官方效率/解析DAR谱的原生SM353.465609及全支撑329.016423已生成；20261117高网格逐箱复核一致",
+        "needed": "同条件本地数值已完成；作者模型/时钟/背景口径等价仍依赖G_CLOCK/G_BG/G_THEORY，不由数值复核认证",
+        "affects": [
+          "同条件数值比较"
+        ],
+        "claims": [
+          "C_DIAGNOSTICS",
+          "C_EFF_LEGACY",
+          "C_MASS"
+        ]
+      },
+      {
+        "id": "G_PE",
+        "item": "PE边界原始数字表",
+        "kind": "RECONSTRUCTION_LIMITATION",
+        "status": "PROJECT_DERIVED",
+        "available": "用户指定边界、Fig2图示和原事件重分箱",
+        "needed": "严格作者边界复现仍需机器边界表或作者配置；当前保留重建标记",
+        "affects": [
+          "精确作者分箱声称"
+        ],
+        "claims": [
+          "C_PE"
+        ]
+      },
+      {
+        "id": "G_RADIUS",
+        "item": "2211半径nuisance与RESPONSE",
+        "kind": "MODEL_DIFFERENCE",
+        "status": "BLOCKED",
+        "available": "原文5%约束及当前固定核结构",
+        "needed": "有来源并经审核的RESPONSE半径变形映射，或明确固定半径的不同主张",
+        "affects": [
+          "严格2211七nuisance复现"
+        ],
+        "claims": [
+          "C_RADIUS"
+        ]
+      },
+      {
+        "id": "G_QF",
+        "item": "QF范围外贡献",
+        "kind": "APPLICABILITY_LIMITATION",
+        "status": "PARTIAL",
+        "available": "2–70keVnr原始拟合域、当前域保护与旧低反冲延拓诊断",
+        "needed": "完整ROOT高能尾的范围外响应及小反nu_e绝对源权重，若以后选择该完整源",
+        "affects": [
+          "完整ROOT源的全反冲预测"
+        ],
+        "claims": [
+          "C_QF_DOMAIN",
+          "C_ROOT"
+        ]
+      },
+      {
+        "id": "G_CLOCK",
+        "item": "ROOT时钟起点与prompt νμ时间形状",
+        "kind": "UNVERIFIED_ONSET",
+        "status": "PARTIAL",
+        "available": "0与+75ns诊断、固定观测窗口/效率的实现及交接包测试；ROOT时间边缘保持原样",
+        "needed": "发布者的ROOT时钟起点、onset定义和作者逐分量时间模板；不能把19.3m/c自动再加一次",
+        "affects": [
+          "官方时间零点认定",
+          "prompt逐箱作者复现"
+        ],
+        "claims": [
+          "C_TIMING_DIAGNOSTIC"
+        ]
+      },
+      {
+        "id": "G_FIG1",
+        "item": "论文图形与正文积分的口径",
+        "kind": "SOURCE_LEVEL_DIFFERENCE",
+        "status": "PARTIAL",
+        "available": "已核验原始矢量图与主论文内嵌几何一致；图形信号积分约312.59；截图proxy不作权威",
+        "needed": "作者原始模板解释Fig.1可见曲线与正文306±20、PE/time残差积分的差别",
+        "affects": [
+          "论文图精确总率复现",
+          "逐味实验显著性"
+        ],
+        "claims": [
+          "C_TIMING_DIAGNOSTIC"
+        ]
+      },
+      {
+        "id": "G_EQ75",
+        "item": "共享RESPONSE装配与源论文式75对应",
+        "kind": "THEORY_CONVENTION_CONFLICT",
+        "status": "BLOCKED",
+        "available": "论文p15/18/19原式、当前amplitude/responses代码及Cs/I实际核表可查",
+        "needed": "核实q²/mN²、-2q/mN、4π/(2J+1)、np/iso归一及DeltaSigma干涉，不通过计数拟合选约定",
+        "affects": [
+          "P04/P05物理接受",
+          "P07新权威Slow"
+        ],
+        "claims": [
+          "C_RESPONSE_ASSEMBLY_REVIEW"
+        ]
+      },
+      {
+        "id": "G_FLUENCE_SCOPE",
+        "item": "POT总注量与0–6us时间归一解释",
+        "kind": "NORMALIZATION_CONFLICT",
+        "status": "BLOCKED",
+        "available": "η由POT/产额/距离计算；两种数值口径均已知",
+        "needed": "H3明确采用的注量定义与原文依据；不能按结果接近341选择",
+        "affects": [
+          "P03源合同接受",
+          "P07总率解释"
+        ],
+        "claims": [
+          "C_FLUENCE_SCOPE_REVIEW"
+        ]
+      },
+      {
+        "id": "G_TRUNCATION",
+        "item": "一体流近似与遗漏两体流",
+        "kind": "THEORY_SCOPE_LIMITATION",
+        "status": "PARTIAL",
+        "available": "2601.19883v2 p12-13功率计数、p30明确数值仅一体流",
+        "needed": "本轮先明确一体流主张及截断误差未知；若要两体流须另有电流与核矩阵元，不能用非M占比当误差",
+        "affects": [
+          "完整核理论精度声称"
+        ],
+        "claims": [
+          "C_RESTART_SCOPE"
+        ]
+      }
+    ],
+    "changes": [
+      "2026-11-18按用户要求重新进行同一99箱分析onboarding，旧计算仅参考，不继承阶段通过",
+      "三个并列入口已撤下；保留无CLI的兼容辅助模块，未新建替代计算入口",
+      "Interaction/Nuclear/Kinematics/Cross-section/Detector独立列出审核状态",
+      "式75装配、核表归一、注量支撑域与两体流截断分别登记缺口；未修改共享公式",
+      "P08/P09本轮未请求；阶段报告及Compiler输出只在实际执行后产生"
+    ],
+    "handoff": [
+      {
+        "capability": "P04原有RESPONSE资源复用",
+        "state": "LOCAL_RESOURCE_READY",
+        "required": [
+          "C_RESOURCE_BINDING",
+          "C_W_Cs133_M",
+          "C_W_I127_M"
+        ],
+        "next": "通过ResponseDB直接加载原data核表，沿原基底/单位约定使用"
+      },
+      {
+        "capability": "P06 nominal探测器响应准备",
+        "state": "DRAFT_INPUTS_PRESENT",
+        "required": [
+          "C_QF",
+          "C_QF_DOMAIN",
+          "C_GAMMA",
+          "C_EFF",
+          "C_TIME_EFF"
+        ],
+        "next": "按官方nominal系数核对实现，保留systematic标签冲突"
+      },
+      {
+        "capability": "P07下一轮逐箱预测准备",
+        "state": "BLOCKED_BY_CURRENT_PHYSICS_REVIEW",
+        "required": [
+          "C_RESOURCE_BINDING",
+          "C_SOURCE_CHOICE",
+          "C_DENOM"
+        ],
+        "next": "先完成H3和P04/P05对应审核，再确定单一阶段计算入口并运行P07"
+      },
+      {
+        "capability": "P09论文统计",
+        "state": "BLOCKED",
+        "required": [
+          "C_BG_GAP",
+          "C_RADIUS"
+        ],
+        "next": "闭合背景归一，分别声明固定半径诊断和完整论文nuisance"
+      },
+      {
+        "capability": "P10外部benchmark",
+        "state": "NOT_RUN_FOR_R3",
+        "required": [
+          "C_BG_GAP",
+          "C_RADIUS"
+        ],
+        "next": "按r3声明的能力验收；不继承旧诊断PASS"
+      }
+    ]
+  },
+  "timing_diagnostic_controls": {
+    "default_shift_ns": 0,
+    "diagnostic_shifts_ns": [
+      -125,
+      -50,
+      0,
+      50,
+      75,
+      125
+    ],
+    "positive_shift": "h(t-delta), source delayed; observer bins/efficiency fixed",
+    "q": "unshifted integral of full-support normalized h from 0 to 6 us",
+    "default_fluence_scope": "reference_window",
+    "scopes": [
+      "reference_window",
+      "full_support"
+    ],
+    "default_background_mode": "raw",
+    "background_modes": [
+      "raw",
+      "prior_posteff",
+      "bestfit_posteff",
+      "prior_preeff"
+    ],
+    "signal_and_neutrons_shift_together": true,
+    "SSB_shifted": false,
+    "official_onset_verified": false,
+    "flight_time_added": false,
+    "prior_posteff_zero_shift_ROI_events": [
+      18.4,
+      5.6
+    ],
+    "bestfit_posteff_zero_shift_ROI_events": [
+      17.3,
+      5.5
+    ],
+    "native_nominal_reference_events": 353.46560868634367,
+    "native_full_support_reference_events": 329.01642259688515,
+    "KN_nominal_reference_events": 333.11348797594866,
+    "KN_plus75_reference_events": 331.2663916870358
+  },
+  "module_selection_review": {
+    "interaction": {
+      "actual_descriptor": "li2026_legacy",
+      "theory": "SM",
+      "status": "DRAFT"
+    },
+    "nuclear_structure": {
+      "reader": "ResponseDB",
+      "path": "data/responses/responses_all.json",
+      "keys": {
+        "Cs133": "Cs133",
+        "I127": "I"
+      },
+      "status": "USER_SELECTED_LOCAL_REUSE"
+    },
+    "kinematics": {
+      "actual_process_id": "elastic_neutrino_nucleus_v1",
+      "status": "REVIEW_PENDING"
+    },
+    "cross_section": {
+      "actual_adapter": "Li2026LegacyInteraction",
+      "status": "BLOCKED_BY_RESPONSE_ASSEMBLY_REVIEW"
+    },
+    "detector": {
+      "actual_classes": [
+        "CsIGammaResponse",
+        "CsI2021Efficiency",
+        "CsITimeEfficiency"
+      ],
+      "status": "DRAFT_REVIEW_PENDING"
+    },
+    "statistics": {
+      "requested": false,
+      "status": "NOT_REQUESTED"
+    },
+    "compiler_binding": {
+      "status": "NOT_RUN",
+      "reason": "H3 and required shared-theory contract not accepted; do not fabricate a registered99bin profile"
+    }
+  }
+}

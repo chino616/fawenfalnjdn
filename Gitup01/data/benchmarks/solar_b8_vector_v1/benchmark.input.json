@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "benchmark_id": "solar_b8_vector_v1",
+  "date": "2026-11-08",
+  "status": "DRAFT; fixed-point forward benchmark, not exclusion limits",
+  "scope_selection": "USER_CONFIRMED: 同论文轻媒介子事例数谱，先做 V 和 B−L（推荐）. Fixed numerical masses/couplings remain project benchmark choices, not user-specified measurements or paper fit points.",
+  "model": "light_vector_kn_v1",
+  "formula_source": {
+    "source_id": "R19",
+    "citation": "DE ROMERI V, PAPOULIAS D K, TERNES C A. Bounds on new neutrino interactions from the first CEνNS data at direct detection experiments[J]. Journal of Cosmology and Astroparticle Physics, 2025, 05: 012. DOI: 10.1088/1475-7516/2025/05/012.",
+    "doi": "https://doi.org/10.1088/1475-7516/2025/05/012",
+    "download_url": "https://inspirehep.net/files/a78c86558acb8ac767972f8d94b079cf",
+    "file": "docs/references/Solar_CEvNS/JCAP_2025_05_012_published.pdf",
+    "sha256": "fa667efd721844f2c59eafcb692dfd87b811e58c84dc2cc29670b091db3b8c37",
+    "locator": "PDF p5, printed p4, Eqs.(2.6),(2.10), kappa paragraph and g definition",
+    "version_difference": "arXiv:2411.11749v1 p4 Eq.(10) prints C_V^2; published Eq.(2.10) defines C_V=3 A g_V^2. Adopt the published expression explicitly, without replacing v1 SM inputs."
+  },
+  "sin2thetaW": 0.23857,
+  "total_B8_flux_cm2_s": 5460000.0,
+  "SM_parameter_source": "R01 arXiv:2411.11749v1 PDF p3 Eq.(2) discussion, p5 Eq.(11) discussion; actual values loaded from immutable packages",
+  "points": [
+    {
+      "id": "SM",
+      "scenario": "SM",
+      "mass_MeV": null,
+      "coupling": 0.0,
+      "parameter_provenance": "SM reference in the existing formal packages"
+    },
+    {
+      "id": "V10_g1",
+      "scenario": "universal",
+      "mass_MeV": 10.0,
+      "coupling": 1e-05,
+      "kappa": 1.0,
+      "parameter_provenance": "PROJECT_BENCHMARK_CHOICE: these illustrative numerical masses/couplings are selected for interference, regeneration and propagator tests; not paper best fits or limits. kappa/model definitions from R19 Eqs.(2.6),(2.10)."
+    },
+    {
+      "id": "V10_g2",
+      "scenario": "universal",
+      "mass_MeV": 10.0,
+      "coupling": 2e-05,
+      "kappa": 1.0,
+      "parameter_provenance": "PROJECT_BENCHMARK_CHOICE: these illustrative numerical masses/couplings are selected for interference, regeneration and propagator tests; not paper best fits or limits. kappa/model definitions from R19 Eqs.(2.6),(2.10)."
+    },
+    {
+      "id": "V10_g3",
+      "scenario": "universal",
+      "mass_MeV": 10.0,
+      "coupling": 3e-05,
+      "kappa": 1.0,
+      "parameter_provenance": "PROJECT_BENCHMARK_CHOICE: these illustrative numerical masses/couplings are selected for interference, regeneration and propagator tests; not paper best fits or limits. kappa/model definitions from R19 Eqs.(2.6),(2.10)."
+    },
+    {
+      "id": "BL10_g2",
+      "scenario": "b_minus_l",
+      "mass_MeV": 10.0,
+      "coupling": 2e-05,
+      "kappa": -0.3333333333333333,
+      "parameter_provenance": "PROJECT_BENCHMARK_CHOICE: these illustrative numerical masses/couplings are selected for interference, regeneration and propagator tests; not paper best fits or limits. kappa/model definitions from R19 Eqs.(2.6),(2.10)."
+    },
+    {
+      "id": "V1_g2",
+      "scenario": "universal",
+      "mass_MeV": 1.0,
+      "coupling": 2e-05,
+      "kappa": 1.0,
+      "parameter_provenance": "PROJECT_BENCHMARK_CHOICE: these illustrative numerical masses/couplings are selected for interference, regeneration and propagator tests; not paper best fits or limits. kappa/model definitions from R19 Eqs.(2.6),(2.10)."
+    },
+    {
+      "id": "V100_g2",
+      "scenario": "universal",
+      "mass_MeV": 100.0,
+      "coupling": 2e-05,
+      "kappa": 1.0,
+      "parameter_provenance": "PROJECT_BENCHMARK_CHOICE: these illustrative numerical masses/couplings are selected for interference, regeneration and propagator tests; not paper best fits or limits. kappa/model definitions from R19 Eqs.(2.6),(2.10)."
+    }
+  ],
+  "packages": [
+    {
+      "family": "XENONnT",
+      "dataset_id": "XENONnT_2024_SolarB8",
+      "path": "data/experiments/XENONnT/XENONnT_2024_SolarB8",
+      "input_sha256": "271e18b89398ed90c29db2f88924a10514125328a7c27f69de49baa33c1111c4",
+      "arrays_sha256": "39aa001f5c5657ddbb0099f232ee7e2a81f78ff383da3cf43b0dc214b62fdeb2",
+      "SM_reference_output": "outputs/solar_b8_sm/20261107_run1/XENONnT_2024_SolarB8"
+    },
+    {
+      "family": "PandaX4T",
+      "dataset_id": "PandaX4T_2024_US2",
+      "path": "data/experiments/PandaX4T/PandaX4T_2024_US2",
+      "input_sha256": "c7299d35b5fdb192b425a12cb8b5571ea5218619e1bb5ce2f689e8b08bc1e046",
+      "arrays_sha256": "56a44e766476c7bc8771e2e98e316c48a97e13d485d006d12324ba473b4f09b8",
+      "SM_reference_output": "outputs/solar_b8_sm/20261107_run1/PandaX4T_2024_US2"
+    }
+  ],
+  "numerics": {
+    "grids": [
+      {
+        "label": "base",
+        "n_er": 201,
+        "n_enu": 120
+      },
+      {
+        "label": "recoil_refined",
+        "n_er": 401,
+        "n_enu": 120
+      },
+      {
+        "label": "recoil_fine",
+        "n_er": 801,
+        "n_enu": 120
+      },
+      {
+        "label": "energy_refined",
+        "n_er": 801,
+        "n_enu": 480
+      }
+    ],
+    "absolute_tolerance_events": 0.0002,
+    "relative_tolerance": 0.002,
+    "source_response_yield_knots": "Included by the standard solar Slow executor; no new integration algorithm."
+  },
+  "inference": "NOT_REQUESTED for this fixed-spectrum benchmark; no chi2 or 90% CL contours produced",
+  "limits": [
+    "Real flavor-universal diagonal vector models only; general flavor NSI, scalar, axial and tensor not implemented in this task.",
+    "Public XENONnT early-response accuracy limits retained.",
+    "PandaX US2 Ne-bin response remains missing; only acceptance-weighted true-recoil diagnostics computed."
+  ],
+  "scope_confirmation": {
+    "date": "2026-11-08",
+    "user_reply": "同论文轻媒介子事例数谱，先做 V 和 B−L（推荐）",
+    "scope": "same-paper flavor-universal V/B-L fixed-point forward spectra",
+    "result_acceptance": "NOT_REVIEWED"
+  }
+}

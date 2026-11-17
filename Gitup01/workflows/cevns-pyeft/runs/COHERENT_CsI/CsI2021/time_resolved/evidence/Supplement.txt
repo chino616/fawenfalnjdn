@@ -1,0 +1,237 @@
+1              Supplemental Material: Measurement of the Coherent Elastic
+2            Neutrino-Nucleus Scattering Cross Section on CsI by COHERENT
+
+3    D. Akimov,1 P. An,2, 3 C. Awe,2, 3 P.S. Barbeau,2, 3 B. Becker,4 V. Belov,5, 1 I. Bernardi,4 M.A. Blackston,6
+4          C. Bock,7 A. Bolozdynya,1 J. Browning,8 B. Cabrera-Palmer,9 D. Chernyak,7, ∗ E. Conley,2 J.
+5      Daughhetee,6 J. Detwiler,10 K. Ding,7 M.R. Durand,10 Y. Efremenko,4, 6 S.R. Elliott,11 L. Fabris,6 M.
+6      Febbraro,6 A. Gallo Rosso,12 A. Galindo-Uribarri,6, 4 M.P. Green,3, 6, 8 M.R. Heath,6 S. Hedges,2, 3 D.
+7     Hoang,13 M. Hughes,14 T. Johnson,2, 3 A. Khromov,1 A. Konovalov,1, 5 E. Kozlova,1, 5 A. Kumpan,1 L.
+8      Li,2, 3 J.M. Link,15 J. Liu,7 K. Mann,8 D.M. Markoff,16, 3 J. Mastroberti,14 P.E. Mueller,6 J. Newby,6
+9        D.S. Parno,13 S.I. Penttila,6 D. Pershey,2 R. Rapp,13 H. Ray,17 J. Raybern,2 O. Razuvaeva,1, 5 D.
+10        Reyna,9 G.C. Rich,3 J. Ross,16, 3 D. Rudik,1 J. Runge,2, 3 D.J. Salvat,14 A.M. Salyapongse,13 K.
+11      Scholberg,2 A. Shakirov,1 G. Simakov,1, 5 G. Sinev,2, † W.M. Snow,14 V. Sosnovstsev,1 B. Suh,14 R.
+12     Tayloe,14 K. Tellez-Giron-Flores,15 I. Tolstukhin,14, ‡ E. Ujah,16, 3 J. Vanderwerp,14 R.L. Varner,6 C.J.
+13        Virtue,12 G. Visser,14 T. Wongjirad,18 Y.-R. Yen,13 J. Yoo,19 C.-H. Yu,6 and J. Zettlemoyer14, §
+                            1
+14                                National Research Nuclear University MEPhI (Moscow Engineering
+15                                       Physics Institute), Moscow, 115409, Russian Federation
+                                2
+16                                Department of Physics, Duke University, Durham, NC, 27708, USA
+                                3
+17                                Triangle Universities Nuclear Laboratory, Durham, NC, 27708, USA
+               4
+18               Department of Physics and Astronomy, University of Tennessee, Knoxville, TN, 37996, USA
+                        5
+19                        Institute for Theoretical and Experimental Physics named by A.I. Alikhanov of
+20                  National Research Centre “Kurchatov Institute”, Moscow, 117218, Russian Federation
+                                    6
+21                                    Oak Ridge National Laboratory, Oak Ridge, TN, 37831, USA
+                        7
+22                        Physics Department, University of South Dakota, Vermillion, SD, 57069, USA
+                     8
+23                     Department of Physics, North Carolina State University, Raleigh, NC, 27695, USA
+                                      9
+24                                      Sandia National Laboratories, Livermore, CA, 94550, USA
+                            10
+25                             Center for Experimental Nuclear Physics and Astrophysics & Department
+26                                 of Physics, University of Washington, Seattle, WA, 98195, USA
+                                  11
+27                                   Los Alamos National Laboratory, Los Alamos, NM, 87545, USA
+                   12
+28                     Department of Physics, Laurentian University, Sudbury, Ontario, P3E 2C6, Canada
+                      13
+29                       Department of Physics, Carnegie Mellon University, Pittsburgh, PA, 15213, USA
+                           14
+30                            Department of Physics, Indiana University, Bloomington, IN, 47405, USA
+                           15
+31                            Center for Neutrino Physics, Virginia Tech, Blacksburg, VA, 24061, USA
+         16
+32          Department of Mathematics and Physics, North Carolina Central University, Durham, NC, 27707, USA
+                          17
+33                           Department of Physics, University of Florida, Gainesville, FL, 32611, USA
+                   18
+34                    Department of Physics and Astronomy, Tufts University, Medford, MA, 02155, USA
+                  19
+35                   Department of Physics and Astronomy, Seoul National University, Seoul, 08826, Korea
+
+
+
+
+36      With this supplemental material, we provide selected, unbinned data events relevant for this result. Can-
+37   didate waveforms are triggered from the accelerator, pulsed at 60 Hz with a FWHM of 378 ns. A sample
+38   waveform is shown in Fig. 1 illustrating epochs in our waveform analysis. There are two regions of interest:
+39   beam coincident (C) which encapsulates all beam-related activity and beam anti-coincident (AC) which
+40   immediately precedes the arrival of the beam. Each region of interest has a 40 µs pretrace used to estimate
+41   the background scintillation activity in the crystal on a spill-by-spill basis. Reconstructed events have a 3 µs
+42   integration window. For each event, we reconstruct and observed energy in photoelectrons (PE) and recoil
+43   time, trec .
+44      We also provide signal parameters, neutron background distributions, and details of systematic uncertainty
+45   to allow for future study of this analysis sample. All events selected with PE < 250 and 0 ≤ trec < 12 µs are
+46   included. Events with energy 60 ≤ PE < 250 or trec ≥ 6 µs are not used for measuring the CEvNS cross
+47   section but used for a search for light dark matter produced at the SNS.
+
+     ∗ Now at:  Institute for Nuclear Research of NASU, Kyiv,     § Now at: Fermi National Accelerator Laboratory, Batavia,
+       03028, Ukraine
+     † Now at: South Dakota School of Mines and Technology,        IL, 60510, USA
+       Rapid City, SD, 57701, USA
+     ‡ Now at: Argonne National Laboratory, Argonne, IL, 60439,
+
+       USA
+48     Observed data: Selected events in both the coincidence (C) and anticoincidence (AC) region for beam-on
+49   running are given in
+50      • dataBeamOnAC.txt
+51      • dataBeamOnC.txt.
+52   each with reconstructed energy, Erec , and recoil time, trec . A comparison of C and AC data is shown in
+53   Fig. 2 with a clearly visible beam excess. These two files contain all data relevant for this measurement. The
+54   requisite details to produce accurate predictions for signal and background distributions are below.
+55     Steady-state background : The beam-uncorrelated, steady-state background (SSBkg) can be estimated from
+56   the AC data. For selected events, there is no correlation between Erec and trec , and thus the Erec distribution
+57   can be determined using all selected events. The time distribution is exponential with a decay constant
+58      • k = −(0.0494 ± 0.0061)/µs
+59   determined by fitting the timing distribution of AC events.
+60     Neutron backgrounds: We include both prompt beam-related neutron (BRN) and neutrino-induced neutron
+61   (NIN) events. The reconstructed energy and time are uncorrelated, and so we include the one-dimensional
+62   projections in PE and trec . For each, we provide the timing distribution in 0.01 µs bins normalized to the
+63   beam exposure, 13.99 GWhr. We include the prediction for times −0.25 ≤ trec < 6.25 µs, to accommodate
+64   uncertainty in beam timing. Due to this uncertainty in timing, the time dependent efficiency, εT , is not
+65   applied. This can be included as
+                                                       (
+                                                        1            trec < a
+                                          εT (trec ) =                                                       (1)
+                                                        e−b(trec −a) trec ≥ a
+
+66   with
+67      • a = 0.52 µs
+68      • b = 0.0494 /µs.
+69   The smeared PE probability distribution with the energy dependent efficiency, εPE , applied is included with
+70   1 PE binning. All energy shape uncertainties in both backgrounds have a negligible impact and are not
+71   included. These distributions are included as text files:
+72      • brnPE.txt
+73      • brnTrec.txt
+74      • ninPE.txt
+75      • ninTrec.txt.
+76     Predicting CEvNS signal : We analyze beam triggers from 13.99 GWhr of accumulated exposure. The
+77   neutrino flux through the detector and rate of CEvNS scatters can be calculated with the parameters:
+78      • POT: 3.198 ×1023
+79      • ν yield: 0.0848 ± 10% ν/flavor/p
+80      • Detector baseline 19.3 m
+81      • Detector mass: 14.6 kg.
+82   The 2D distribution of the neutrino flux at the SNS is given in
+83      • snsFlux2D.root
+84   with a ROOT histogram for each flavor in the flux.
+85     To accurately predict the event totals in the detector as a function of Erec and trec , quenching, energy
+86   smearing, and detection efficiency must be applied.
+87     Quenching is applied by evaluating the scintillation response curve, empirically parameterized as
+                                                               2      3      4
+                                     Eee = f (Enr ) = aEnr + bEnr + cEnr + dEnr .                                (2)
+88   The best-fit coefficients are provided in
+
+
+                                                            2
+ 89      • scintRespCoefficients.txt.
+ 90   The file also includes coefficients for each of the two quenching uncertainties included, evaluated at ±1σ
+ 91   excursions. The light yield for quenched recoils is given by
+ 92      • Light yield: 13.35 PE/keVee
+ 93   whose uncertainty has a negligible impact.
+ 94     Our energy resolution is dominated by photon counting. However, the distribution of SPE charge is broad,
+ 95   µ/σ ≈ 0.5. We thus also incorporated variations in SPE pulse integral on a pulse-by-pulse basis into our
+ 96   energy resolution. Combining these two effects, the smearing was modeled with a gamma function
+                                                                  1+b
+                                                      (a(1 + b))
+                                            P (x) =                     xb e−a(1+b)x                              (3)
+                                                        Γ(1 + b)
+
+ 97   where x is the experimentally observed recoil energy in PE and a and b are parameters which depend on
+ 98   the true quenched energy deposition, Eee , in units of keVee . Empirically, this function fits well to simulated
+ 99   recoil distributions using a = 0.0749/Eee and b = 9.56 × Eee which appropriately models the asymmetric
+100   simulated distribution much better than a Gaussian model. Our analysis of the CEvNS cross section made
+101   sure to not include energy bins much narrower than the energy resolution. It is essential for any study using
+102   finer bins or an unbinned fit to include smearing effects.
+103      Finally, efficiency must also be applied.
+
+                                             ε(PE, trec ) = εE (PE) × εT (trec )                                  (4)
+
+104   which contains uncorrelated factors from the measured Erec and trec . We parameterize εE as
+                                                                  a
+                                                εE (x) =                    +d                                    (5)
+                                                           1 + e−b(x−c)
+105   where x is the observed recoil energy in PE and the function is restricted to evaluate at ≥ 0. The relevant
+106   coefficients in the best fit scenario and are included in
+107      • effCoefficients.txt
+108   along with coefficients evaluated at ±1σ excursions for the uncertainty in the CEvNS efficiency. This
+109   efficiency curve and uncertainty band are shown in Fig. 3. The time dependence is given in Eqn. 1.
+110      Likelihood fit results: We reject the no-CEvNS hypothesis at 11.6 σ level using a profiled log-likelihood
+111   fit. Tests were performed to validate the coverage of this fit, and the likelihood curve is shown in Fig. 4
+112   compared to the standard-model prediction. Best-fit pulls on systematic uncertainties were small except in
+113   the case of the threshold uncertainty which pulled at 0.4 σ. The best-fit values along with 1 σ ranges are
+114   shown in Table I. Background normalizations agree with our pre-fit assumptions on each component and the
+115   CEvNS rate is consistent with the standard model to 1 σ.
+
+
+
+
+                                                              3
+Figure 1. Timing regions of our CsI waveform reconstruction. Events were reconstructed in the 15 µs-long C and
+AC ROI periods. From the first PE peak in the ROI, we formed a 3 µs integration window. Before each ROI, there
+is a 40 µs-long pretrace to monitor the instantaneous afterglow rate. The beam arrives at 55 µs, at the beginning of
+C ROI.
+
+
+
+
+                                                         4
+Figure 2. Data after selection with trec < 6 µs collected during SNS operations comparing C and AC ROI data.
+
+
+
+
+                                                     5
+                                                 Recoil Energy (keVnr )
+                              0   5         10            15            20          25
+                              1
+
+
+
+                            0.8
+               Efficiency
+
+                            0.6
+
+
+
+                            0.4
+                                                                  133
+                                                                       Ba Data
+                                                                  Efficiency Model
+                            0.2
+
+
+
+                             0
+                              0   5    10          15     20      25         30    35       40
+                                                          PE
+
+Figure 3. Calibration data using a 133 Ba source to estimate our CEvNS selection efficiency along with an error band.
+
+
+
+
+Figure 4. The ∆χ2 curve for the CEvNS cross section determined from the fit to data both with and without
+systematic effects. The standard-model prediction, along with the 1 σ error band from the form factor uncertainty
+is given by the vertical grey band.
+
+                                                           6
+                                                  Prior Prediction Best-Fit Total
+                               SSBkg background      1286 ± 27       1273 ± 24
+                                     BRN             18.4 ± 4.6      17.3 ± 4.5
+                                     NIN              5.6 ± 2.0       5.5 ± 2.0
+                                   CEvNS                  −           306 ± 20
+
+Table I. A summary of prior prediction and best-fit event rates and statistical uncertainties for CEvNS and each
+background type. The standard-model expectation for CEvNS is 341 ± 11 ± 42.
+
+
+
+
+                                                       7
+

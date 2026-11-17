@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-10",
+  "decision_ref": "D0004",
+  "write_ref": "W0004",
+  "scope": "actual nuclear-table SM only",
+  "current_onboarding": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.1.md",
+  "result": "outputs/solar_b8_sm/20261110_nuclear_response_run2/PandaX4T_2024_US2/RESULT.json",
+  "physics_fingerprint": "0aece6ff4a1bcde676f31833ef9fb602687ed0b57ad12b700281c4c4d475356b",
+  "resources": {
+    "package_input": {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\data\\experiments\\PandaX4T\\PandaX4T_2024_US2\\experiment.input.yaml",
+      "sha256": "c7299d35b5fdb192b425a12cb8b5571ea5218619e1bb5ce2f689e8b08bc1e046",
+      "semantic": ""
+    },
+    "package_arrays": {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\data\\experiments\\PandaX4T\\PandaX4T_2024_US2\\experiment.resources.npz",
+      "sha256": "56a44e766476c7bc8771e2e98e316c48a97e13d485d006d12324ba473b4f09b8",
+      "semantic": ""
+    },
+    "mean_charge_yield": {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\data\\experiments\\PandaX4T\\PandaX4T_2024_US2\\detector\\pandax_qy_nominal.txt",
+      "sha256": "18e0cee351c09fb6e3c1b286b5a15de88c8a9c9aa371cb0367946aa57e36f75f",
+      "semantic": "2407.10892v3 p5 Fig.4 lower, digitized nominal Qy"
+    },
+    "nuclear_response": {
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\data\\responses\\responses_all.json",
+      "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+      "semantic": "existing np nuclear polynomial table; external source unresolved"
+    }
+  },
+  "coverage": {
+    "number_fraction": 0.998158,
+    "missing": [
+      "Xe124",
+      "Xe126"
+    ],
+    "renormalized": false
+  },
+  "detector": "US2 deterministic mean mapping",
+  "external_nuclear_source_certification": "UNRESOLVED",
+  "human_result_acceptance": "NOT_REVIEWED",
+  "historical_KN_results_and_packages": "preserved; old vector results not relabeled"
+}

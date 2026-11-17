@@ -1,0 +1,40 @@
+{
+  "schema": "solar_b8_fitted_signal_yields/1",
+  "statistics": "R1 PDF p20 Eq.(88); independent Gaussian normalization pulls, not raw Poisson",
+  "data_origin": "R4 PDF p13 Table II rounded sigmas, cross-checked fitted yields in R2/R3; 2601 percentage values have small rounding differences",
+  "samples": {
+    "PandaX_paired": {
+      "D": 3.5,
+      "sigma_stat": 1.3,
+      "pull_sigma": 0.12,
+      "unit": "events",
+      "meaning": "fitted_signal_yield",
+      "source": "R2 abstract; R4 Table II"
+    },
+    "PandaX_US2": {
+      "D": 75.0,
+      "sigma_stat": 28.0,
+      "pull_sigma": 0.12,
+      "unit": "events",
+      "meaning": "fitted_signal_yield",
+      "source": "R2 abstract; R4 Table II"
+    },
+    "XENONnT": {
+      "D": 10.7,
+      "sigma_stat": 3.95,
+      "pull_sigma": 0.12,
+      "unit": "events",
+      "meaning": "fitted_signal_yield",
+      "source": "R3 Table I: asymmetric -4.2/+3.7 averaged; R4 Table II"
+    }
+  },
+  "external_comparison_only": {
+    "source": "R4 Table II; flux 5.16e6, shared pull Eq.(E8)",
+    "SM_events": [
+      2.4,
+      44.3,
+      11.2
+    ],
+    "do_not_use_as_project_prediction_or_normalization": true
+  }
+}

@@ -1,0 +1,2382 @@
+{
+  "sources": [],
+  "claims": [
+    {
+      "claim_id": "PandaX4T-C001",
+      "field": "detector/pandax_qy_nominal.txt",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/detector/pandax_qy_nominal.txt",
+        "sha256": "18e0cee351c09fb6e3c1b286b5a15de88c8a9c9aa371cb0367946aa57e36f75f",
+        "coverage": "all rows; T_keVnr,Qy_e_per_keV",
+        "shape": [
+          36,
+          2
+        ]
+      },
+      "unit": "column1 keVnr, Qy columns electron/keV, visibility/line-style flags dimensionless",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R02",
+      "locator": "2407.10892v3 PDF p5 Fig.4 lower; Nominal dashed line",
+      "derivation": "PDF vector digitization; logarithmic energy; no gain/efficiency/exposure",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "用途及适用性按主文对应章节逐项说明",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C002",
+      "field": "detector/pandax_qy_bestfit.txt",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/detector/pandax_qy_bestfit.txt",
+        "sha256": "55409cc017d99c43502e3a62ae1db5d86bd4ff391009d98a26538a296bc165cd",
+        "coverage": "all rows; T_keVnr,Qy_e_per_keV",
+        "shape": [
+          37,
+          2
+        ]
+      },
+      "unit": "column1 keVnr, Qy columns electron/keV, visibility/line-style flags dimensionless",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R02",
+      "locator": "2407.10892v3 PDF p5 Fig.4 lower; same figure; Best-fit solid line",
+      "derivation": "joint paired+US2 fitted mean; not US2-only calibration",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "用途及适用性按主文对应章节逐项说明",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C003",
+      "field": "detector/pandax_qy_nominal_band.txt",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/detector/pandax_qy_nominal_band.txt",
+        "sha256": "f5f507d5b9ff85f692fe246089a2bf4d29d74d6e9bda2299287a370debe15c5f",
+        "coverage": "all rows; T_keVnr,Qy_lower,Qy_upper",
+        "shape": [
+          119,
+          3
+        ]
+      },
+      "unit": "column1 keVnr, Qy columns electron/keV, visibility/line-style flags dimensionless",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R02",
+      "locator": "2407.10892v3 PDF p5 Fig.4 lower; same figure; nominal gray +/-1 sigma band",
+      "derivation": "PDF vector band; no covariance inferred",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "用途及适用性按主文对应章节逐项说明",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C004",
+      "field": "statistics/pandax_original_fig5.txt",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/statistics/pandax_original_fig5.txt",
+        "sha256": "5bd87feb493b42df39770f96fbbeae62c4fd54fe92ca7231570f66baab42a2ad",
+        "coverage": "all 8 rows; bin,Ne_low,Ne_high,D,cathode,MD,signal; events/bin",
+        "shape": [
+          8,
+          7
+        ]
+      },
+      "unit": "D/background/reference signal events/bin, coordinate columns as declared",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R02",
+      "locator": "2407.10892v3 PDF p6 Fig.5 upper, 4<=Ne<8",
+      "derivation": "D integers; fitted stacked components separated by polygon thickness",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "用途及适用性按主文对应章节逐项说明",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C005",
+      "field": "statistics/pandax_benchmark_fig1.txt",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/statistics/pandax_benchmark_fig1.txt",
+        "sha256": "187db3effcb70807eac1092c1ae44089bc025d47e8be665cb769d63b89e3381a",
+        "coverage": "all 8 rows; bin,Ne_low,Ne_high,D,cathode,MD,signal; events/bin",
+        "shape": [
+          8,
+          7
+        ]
+      },
+      "unit": "D/background/reference signal events/bin, coordinate columns as declared",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p7 Fig.1 left",
+      "derivation": "benchmark reference components; not independent prefit B",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "用途及适用性按主文对应章节逐项说明",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C006",
+      "field": "b8_bahcall1996_official.txt",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/b8_bahcall1996_official.txt",
+        "sha256": "75ce26216a638b811d131b692e2d22b8624fcbb711839fd167c25cefaafb9789",
+        "coverage": "all rows/keys; detailed key map below"
+      },
+      "unit": "MeV; MeV^-1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R04",
+      "locator": "official b8spectrum.txt, all four columns",
+      "derivation": "byte-identical download",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Energy; central normalized shape; +3sigma and -3sigma shape spectra; no total flux",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s2"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C007",
+      "field": "xenon_natural_isotopes_nist_v2.txt",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/xenon_natural_isotopes_nist_v2.txt",
+        "sha256": "5fd5a0d923c969cb53bcc1267a4eb20d8f6c71e6c2da749d7199676ef361af67",
+        "coverage": "all rows/keys; detailed key map below",
+        "shape": [
+          9,
+          3
+        ]
+      },
+      "unit": "1; u; 1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R09",
+      "locator": "Xe rows 124,126,128,129,130,131,132,134,136",
+      "derivation": "parsed central values; uncertainties retained in official source download, not treated as zero",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Natural-xenon reference composition; experimental isotope assay not provided",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C008",
+      "field": "statistics/pandax_official_later_run0_events.csv",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/statistics/pandax_official_later_run0_events.csv",
+        "sha256": "6b1d60cf6e2d73c0c75cee1f2a6952cda6a25c441400ea2498a1ff266659e130",
+        "coverage": "all rows/keys; detailed key map below"
+      },
+      "unit": "electron; Width unit follows associated paper, not encoded in CSV header",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R10",
+      "locator": "p4-light-dark-matter/run0_data.csv",
+      "derivation": "byte-identical download",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Later 259-day release Ne/Width events; 2024 identity not certified by matching 1D counts",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C009",
+      "field": "statistics/pandax_official_later_run1_events.csv",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/statistics/pandax_official_later_run1_events.csv",
+        "sha256": "90b4fb4cf84cd8e1e9b367c5a244cbb572c9378f574e5806e72dd19841b11073",
+        "coverage": "all rows/keys; detailed key map below"
+      },
+      "unit": "electron; Width unit follows associated paper, not encoded in CSV header",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R10",
+      "locator": "p4-light-dark-matter/run1_data.csv",
+      "derivation": "byte-identical download",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Later 259-day release Ne/Width events; 2024 identity not certified by matching 1D counts",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C010",
+      "field": "statistics/pandax_official_later_run_bins_v2.txt",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/statistics/pandax_official_later_run_bins_v2.txt",
+        "sha256": "f25ab0b478640776679e6aa8074a1eb3b6f9554f88c24af3b2f6cb4f01634712",
+        "coverage": "all rows/keys; detailed key map below",
+        "shape": [
+          16,
+          5
+        ]
+      },
+      "unit": "1; 1; electron; electron; events/bin",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R10",
+      "locator": "two event CSV; 0.5-electron bins in [4,8]",
+      "derivation": "numpy.histogram by run",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Later-release one-dimensional counts, checked against 2024 published D",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C011",
+      "field": "detector/pandax_response_calibration_2403.04239v2.json",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/detector/pandax_response_calibration_2403.04239v2.json",
+        "sha256": "9af71289e6ba45a901e324ae38197a46537227687521fa9b1bd8d8a014747610",
+        "coverage": "all rows/keys; detailed key map below",
+        "parameters": [
+          {
+            "name": "p_dpe",
+            "value": 0.22,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "unit": "1",
+            "source": "R06 Table II"
+          },
+          {
+            "name": "g1",
+            "value": 0.0997,
+            "uncertainty_minus": 0.0005,
+            "uncertainty_plus": 0.0002,
+            "unit": "PE/photon",
+            "source": "R06 Table II"
+          },
+          {
+            "name": "g2b",
+            "value": 4.12,
+            "uncertainty_minus": 0.04,
+            "uncertainty_plus": 0.06,
+            "unit": "PE/electron",
+            "source": "R06 Table II"
+          },
+          {
+            "name": "f_g1_Run1",
+            "value": 0.90985,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "unit": "1",
+            "source": "R06 Table II"
+          },
+          {
+            "name": "f_g2b_Run1",
+            "value": 1.22067,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "unit": "1",
+            "source": "R06 Table II"
+          },
+          {
+            "name": "pNR_0",
+            "value": 0.7,
+            "uncertainty_minus": 0.3,
+            "uncertainty_plus": 0.3,
+            "unit": "1",
+            "source": "R06 Table II"
+          },
+          {
+            "name": "pNR_1",
+            "value": -1.6,
+            "uncertainty_minus": 0.7,
+            "uncertainty_plus": 0.9,
+            "unit": "1",
+            "source": "R06 Table II"
+          },
+          {
+            "name": "pNR_2",
+            "value": 1.3,
+            "uncertainty_minus": 0.7,
+            "uncertainty_plus": 0.5,
+            "unit": "1",
+            "source": "R06 Table II"
+          },
+          {
+            "name": "pNR_3",
+            "value": -0.6,
+            "uncertainty_minus": 0.4,
+            "uncertainty_plus": 0.4,
+            "unit": "1",
+            "source": "R06 Table II"
+          },
+          {
+            "name": "A_NR",
+            "value": 1.06,
+            "uncertainty_minus": 0.1,
+            "uncertainty_plus": 0.09,
+            "unit": "1",
+            "source": "R06 Table II"
+          }
+        ]
+      },
+      "unit": "per scalar parameter, explicitly declared in the JSON",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R06",
+      "locator": "2403.04239v2 p21 Table II",
+      "derivation": "manual transcription with visual check",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "Selected printed calibration parameters; no US2-specific sub-keV claim",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C026",
+      "field": "statistics/pandax_us2_rate_uncertainties_2024.v2.1.json",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/statistics/pandax_us2_rate_uncertainties_2024.v2.1.json",
+        "sha256": "4dae2d5a0b7505dc2f422fa06b23689c7212b3146d8713a96012a2c2d27e3f4b",
+        "coverage": "all records",
+        "parameters": [
+          {
+            "name": "signal_selection_Run0",
+            "value": 0.11,
+            "unit": "fractional rate uncertainty",
+            "sigma": null,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "PDF p5 Table IV, US2 Run0"
+          },
+          {
+            "name": "signal_selection_Run1",
+            "value": 0.17,
+            "unit": "fractional rate uncertainty",
+            "sigma": null,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "PDF p5 Table IV, US2 Run1"
+          },
+          {
+            "name": "signal_model_Run0",
+            "value": 0.17,
+            "unit": "fractional rate uncertainty",
+            "sigma": null,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "PDF p5 Table IV, US2 Run0"
+          },
+          {
+            "name": "signal_model_Run1",
+            "value": 0.16,
+            "unit": "fractional rate uncertainty",
+            "sigma": null,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "PDF p5 Table IV, US2 Run1"
+          },
+          {
+            "name": "cathode_model_Run0",
+            "value": 0.24,
+            "unit": "fractional rate uncertainty",
+            "sigma": null,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "PDF p5 Table IV, US2 Run0"
+          },
+          {
+            "name": "cathode_model_Run1",
+            "value": 0.2,
+            "unit": "fractional rate uncertainty",
+            "sigma": null,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "PDF p5 Table IV, US2 Run1"
+          },
+          {
+            "name": "MD_model_Run0",
+            "value": 0.13,
+            "unit": "fractional rate uncertainty",
+            "sigma": null,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "PDF p5 Table IV, US2 Run0"
+          },
+          {
+            "name": "MD_model_Run1",
+            "value": 0.16,
+            "unit": "fractional rate uncertainty",
+            "sigma": null,
+            "uncertainty_minus": null,
+            "uncertainty_plus": null,
+            "locator": "PDF p5 Table IV, US2 Run1"
+          }
+        ]
+      },
+      "unit": "per scalar parameter, explicitly declared in the JSON",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R02",
+      "locator": "2407.10892v3 PDF p5 Table IV, US2 columns",
+      "derivation": "transcribed printed primary-source values",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "用途及适用性按主文对应章节逐项说明",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C029",
+      "field": "detector/pandax_us2_acceptance_2407.10892v3.txt",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/detector/pandax_us2_acceptance_2407.10892v3.txt",
+        "sha256": "71fbe331a11bc25e44fbcfd6ea853b1f67a92990c6c144400629ae2a044eca38",
+        "coverage": "all 99 rows, both columns",
+        "shape": [
+          99,
+          2
+        ]
+      },
+      "unit": "as declared per column/key in the numerical file and chapter",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R02",
+      "locator": "2407.10892v3 PDF p3 Fig.1, black dashed Total(US2), PDF curve index9",
+      "derivation": "native PDF vertices calibrated to linear energy/log efficiency; edge intersections in PDF coordinates",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "用途及适用性按主文对应章节逐项说明",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-C030",
+      "field": "statistics/pandax_prefit_inputs_2024.v2.1.json",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/statistics/pandax_prefit_inputs_2024.v2.1.json",
+        "sha256": "85520ae095824ed7418659d75ae98e76cf987037cc87de55633b11e13466926f",
+        "coverage": "all ten scalar records",
+        "parameters": [
+          {
+            "name": "cathode_Run0",
+            "value": 100,
+            "sigma": 24,
+            "unit": "events",
+            "locator": "2407.10892v3 PDF p4 Table III, cathode, US2 Run0"
+          },
+          {
+            "name": "cathode_Run1",
+            "value": 104,
+            "sigma": 21,
+            "unit": "events",
+            "locator": "2407.10892v3 PDF p4 Table III, cathode, US2 Run1"
+          },
+          {
+            "name": "MD_Run0",
+            "value": 25,
+            "sigma": 3,
+            "unit": "events",
+            "locator": "2407.10892v3 PDF p4 Table III, MD, US2 Run0"
+          },
+          {
+            "name": "MD_Run1",
+            "value": 20,
+            "sigma": 4,
+            "unit": "events",
+            "locator": "2407.10892v3 PDF p4 Table III, MD, US2 Run1"
+          },
+          {
+            "name": "ER_Run0",
+            "value": 1.3,
+            "sigma": 0.1,
+            "unit": "events",
+            "locator": "2407.10892v3 PDF p4 Table III, ER, US2 Run0"
+          },
+          {
+            "name": "ER_Run1",
+            "value": 0.9,
+            "sigma": 0.2,
+            "unit": "events",
+            "locator": "2407.10892v3 PDF p4 Table III, ER, US2 Run1"
+          },
+          {
+            "name": "total_background_Run0",
+            "value": 126,
+            "sigma": 24,
+            "unit": "events",
+            "locator": "2407.10892v3 PDF p4 Table III, total_background, US2 Run0"
+          },
+          {
+            "name": "total_background_Run1",
+            "value": 125,
+            "sigma": 21,
+            "unit": "events",
+            "locator": "2407.10892v3 PDF p4 Table III, total_background, US2 Run1"
+          },
+          {
+            "name": "signal_reference_Run0",
+            "value": 18,
+            "sigma": 4,
+            "unit": "events",
+            "locator": "2407.10892v3 PDF p4 Table III, signal_reference, US2 Run0"
+          },
+          {
+            "name": "signal_reference_Run1",
+            "value": 25,
+            "sigma": 6,
+            "unit": "events",
+            "locator": "2407.10892v3 PDF p4 Table III, signal_reference, US2 Run1"
+          }
+        ]
+      },
+      "unit": "per scalar parameter, explicitly declared in the JSON",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R02",
+      "locator": "2407.10892v3 PDF p4 Table III, US2 Run0/Run1 expectation",
+      "derivation": "transcription of printed prefit totals and uncertainties",
+      "verification_scope": "本地回读与原始出处核对。图线提取和模板版本适用性在同章单列",
+      "applicability": "用途及适用性按主文对应章节逐项说明",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-S01",
+      "field": "flux_reference",
+      "value": 5460000.0,
+      "unit": "cm^-2 s^-1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p5 Eq.(11)后",
+      "verification_scope": "列出的直接原文数值已核",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s2"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-S02",
+      "field": "flux_relative_error",
+      "value": 0.12,
+      "unit": "1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p6 Eq.(17)后",
+      "verification_scope": "列出的直接原文数值已核",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s2"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-S03",
+      "field": "sin2thetaW_reference",
+      "value": 0.23857,
+      "unit": "1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p3 Eq.(2)后",
+      "verification_scope": "列出的直接原文数值已核",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s4"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-S04",
+      "field": "avogadro_constant",
+      "value": 6.02214076e+23,
+      "unit": "mol^-1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R13",
+      "locator": "§2.2 Table1，英文PDF p13–14",
+      "verification_scope": "列出的直接原文数值已核",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-S05",
+      "field": "FV_mass_Run0",
+      "value": 2.78,
+      "unit": "t",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R02",
+      "locator": "2407.10892v3 PDF p3 FV段落，括号内US2",
+      "verification_scope": "列出的直接原文数值已核",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-S06",
+      "field": "FV_mass_Run1",
+      "value": 2.16,
+      "unit": "t",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R02",
+      "locator": "2407.10892v3 PDF p3 同段",
+      "verification_scope": "列出的直接原文数值已核",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-S07",
+      "field": "US2_total_exposure",
+      "value": 1.04,
+      "unit": "t yr",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R02",
+      "locator": "2407.10892v3 PDF p3 同段及摘要",
+      "verification_scope": "列出的直接原文数值已核",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-S08",
+      "field": "benchmark_signal_sigma",
+      "value": 0.22,
+      "unit": "1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p6 Eq.(17)后",
+      "verification_scope": "列出的直接原文数值已核",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-S09",
+      "field": "benchmark_cathode_sigma",
+      "value": 0.31,
+      "unit": "1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p6 Eq.(17)后",
+      "verification_scope": "列出的直接原文数值已核",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-S10",
+      "field": "benchmark_MD_sigma",
+      "value": 0.23,
+      "unit": "1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p6 Eq.(17)后",
+      "verification_scope": "列出的直接原文数值已核",
+      "input_claims": [],
+      "decision_refs": [],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-DERIVED-INVENTORY",
+      "field": "target/derived_inventory",
+      "value": {
+        "mean_molar_mass_g_per_mol": 131.29276144779053,
+        "mass_numbers": [
+          124,
+          126,
+          128,
+          129,
+          130,
+          131,
+          132,
+          134,
+          136
+        ],
+        "nuclei_per_ton": [
+          4.366636774411816e+24,
+          4.0822549676749114e+24,
+          8.761711729497322e+25,
+          1.2109436011190817e+27,
+          1.8672876374611875e+26,
+          9.738884311872001e+26,
+          1.23424456205817e+27,
+          4.786650355748885e+26,
+          4.0626693174367414e+26
+        ],
+        "total_nuclei_per_ton": 4.5868033344661935e+27
+      },
+      "unit": "g/mol and nuclei/t, per field",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "式(2)，NIST全部9行及SI阿伏伽德罗常量",
+      "derivation": "molar-mass constant approximated as 1g/mol. M=sum(f_A*M_A), n_A=1e6*N_A*f_A/M",
+      "input_claims": [
+        "PandaX4T-C007",
+        "PandaX4T-S04"
+      ],
+      "verification_scope": "本版中心值推导，原数据精度和天然组成适用性由输入传播",
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-NUMERICAL-POLICIES",
+      "field": "prediction/numerical_policies",
+      "value": {
+        "seconds_per_year": 31557600,
+        "days_per_year": 365.25,
+        "source_interpolation": "piecewise_linear_candidate",
+        "source_outside_table": "zero_candidate",
+        "response_interpolation": "nonnegative_multilinear_within_verified_grid_candidate",
+        "quadrature_tolerance_and_grid": null
+      },
+      "unit": "per field",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "本版显式数值方案，主文第2、5、7节",
+      "derivation": "seconds_per_year=365.25*24*3600. Interpolation and support are draft numerical choices requiring P07 convergence review.",
+      "input_claims": [
+        "PandaX4T-C006"
+      ],
+      "decision_refs": [],
+      "verification_scope": "项目拟议处理约定，DRAFT",
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s7"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-NUCLEAR-LOCAL",
+      "field": "nuclear/local_coefficients",
+      "value": {
+        "file": "data/responses/responses_all.json",
+        "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+        "xenon_keys": [
+          "Xe128",
+          "Xe129",
+          "Xe130",
+          "Xe131",
+          "Xe132",
+          "Xe134",
+          "Xe136"
+        ],
+        "missing_natural_xenon_keys": [
+          "Xe124",
+          "Xe126"
+        ]
+      },
+      "unit": "as declared by the existing response reader",
+      "status": "REFERENCE_ONLY",
+      "source_id": "R16",
+      "locator": "/nuclei/Xe*/basic,exp_factor,responses",
+      "verification_scope": "本地键与数值容器已核，上游系数及绝对归一化待核",
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s4"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-M01",
+      "field": "kernel_2024",
+      "value": null,
+      "unit": null,
+      "status": "MISSING",
+      "source_id": null,
+      "locator": null,
+      "verification_scope": "已核材料列于P00，具体所需输入待取得或适用性核验",
+      "needed_material": "US2 sub-keV一维P(Ne箱|T)或可生成该核的完整涨落与选取配置",
+      "blocking_scope": [
+        "P06",
+        "P07",
+        "P09"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-M02",
+      "field": "run_exposures",
+      "value": null,
+      "unit": null,
+      "status": "MISSING",
+      "source_id": null,
+      "locator": null,
+      "verification_scope": "已核材料列于P00，具体所需输入待取得或适用性核验",
+      "needed_material": "分run预测所需afterglow veto后的US2逐run有效曝光",
+      "blocking_scope": [
+        "run_separated_prediction"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-M03",
+      "field": "width_edges_prefit_shapes",
+      "value": null,
+      "unit": null,
+      "status": "MISSING",
+      "source_id": null,
+      "locator": null,
+      "verification_scope": "已核材料列于P00，具体所需输入待取得或适用性核验",
+      "needed_material": "原生二维拟合的width边界和prefit cathode/MD/ER形状",
+      "blocking_scope": [
+        "native_2D_likelihood"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-M04",
+      "field": "nuclear_original_source",
+      "value": null,
+      "unit": null,
+      "status": "MISSING",
+      "source_id": null,
+      "locator": null,
+      "verification_scope": "已核材料列于P00，具体所需输入待取得或适用性核验",
+      "needed_material": "Xe系数原始外部来源、归一化和Fig.4算符匹配",
+      "blocking_scope": [
+        "Fig4"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s4"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-M05",
+      "field": "benchmark_inference_conventions",
+      "value": null,
+      "unit": null,
+      "status": "MISSING",
+      "source_id": null,
+      "locator": null,
+      "verification_scope": "已核材料列于P00，具体所需输入待取得或适用性核验",
+      "needed_material": "Fig.2通量扫描的α参数化及Fig.4置信区间/阈值构造对照",
+      "blocking_scope": [
+        "strict_benchmark_inference"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-EQ1",
+      "field": "source/equation_1",
+      "value": "\\frac{d\\phi}{dE_\\nu}=\\Phi_{8B}f_{8B}(E_\\nu). \\tag{1}",
+      "unit": "equation with symbol units declared in the chapter",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "本项目的数学定义或推导，主文对应编号公式",
+      "derivation": "源总量与谱形分解、质量到核数换算、接受后箱概率、真实谱折叠、计数分量求和、Poisson likelihood with external constraints",
+      "input_claims": [
+        "PandaX4T-C006",
+        "PandaX4T-S01"
+      ],
+      "verification_scope": "数学合同草稿，必需输入缺口按依赖传播",
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s2"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-EQ2",
+      "field": "target/equation_2",
+      "value": "\\overline M=\\sum_A f_A M_A,\\qquad n_A^{(t)}=\\frac{10^6N_{\\rm A}f_A}{\\overline M}. \\tag{2}",
+      "unit": "equation with symbol units declared in the chapter",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "本项目的数学定义或推导，主文对应编号公式",
+      "derivation": "源总量与谱形分解、质量到核数换算、接受后箱概率、真实谱折叠、计数分量求和、Poisson likelihood with external constraints",
+      "input_claims": [
+        "PandaX4T-C007",
+        "PandaX4T-S04"
+      ],
+      "verification_scope": "数学合同草稿，必需输入缺口按依赖传播",
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s3"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-EQ3",
+      "field": "detector/equation_3",
+      "value": "P_{r\\mathbf i}(T;\\boldsymbol\\eta)=\\int_{\\Omega_{r\\mathbf i}}p_r(\\mathbf x\\mid T;\\boldsymbol\\eta)\\epsilon_r(\\mathbf x,T;\\boldsymbol\\eta)\\,d\\mathbf x,\\qquad0\\le\\sum_{\\mathbf i}P_{r\\mathbf i}\\le1. \\tag{3}",
+      "unit": "equation with symbol units declared in the chapter",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "本项目的数学定义或推导，主文对应编号公式",
+      "derivation": "源总量与谱形分解、质量到核数换算、接受后箱概率、真实谱折叠、计数分量求和、Poisson likelihood with external constraints",
+      "input_claims": [
+        "PandaX4T-M01"
+      ],
+      "verification_scope": "数学合同草稿，必需输入缺口按依赖传播",
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s5"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-EQ4",
+      "field": "prediction/equation_4",
+      "value": "\\mu^{\\rm sig}_{r\\mathbf i}=\\mathcal E_r t_{\\rm yr}\\sum_A n_A^{(t)}\\int dT\\,dE_\\nu\\,\\frac{d\\phi}{dE_\\nu}\\frac{d\\sigma_A}{dT}P_{r\\mathbf i}(T;\\boldsymbol\\eta). \\tag{4}",
+      "unit": "equation with symbol units declared in the chapter",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "本项目的数学定义或推导，主文对应编号公式",
+      "derivation": "源总量与谱形分解、质量到核数换算、接受后箱概率、真实谱折叠、计数分量求和、Poisson likelihood with external constraints",
+      "input_claims": [
+        "PandaX4T-EQ1",
+        "PandaX4T-EQ2",
+        "PandaX4T-EQ3",
+        "PandaX4T-NUMERICAL-POLICIES",
+        "PandaX4T-S07",
+        "PandaX4T-M02"
+      ],
+      "verification_scope": "数学合同草稿，必需输入缺口按依赖传播",
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s7"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-EQ5",
+      "field": "statistics/equation_5",
+      "value": "\\mu_{r\\mathbf i}=\\mu^{\\rm sig}_{r\\mathbf i}+\\sum_k B^k_{r\\mathbf i}. \\tag{5}",
+      "unit": "equation with symbol units declared in the chapter",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "本项目的数学定义或推导，主文对应编号公式",
+      "derivation": "源总量与谱形分解、质量到核数换算、接受后箱概率、真实谱折叠、计数分量求和、Poisson likelihood with external constraints",
+      "input_claims": [
+        "PandaX4T-EQ4",
+        "PandaX4T-C004",
+        "PandaX4T-C005",
+        "PandaX4T-C008",
+        "PandaX4T-C009",
+        "PandaX4T-C010",
+        "PandaX4T-C026",
+        "PandaX4T-C030",
+        "PandaX4T-S08",
+        "PandaX4T-S09",
+        "PandaX4T-S10"
+      ],
+      "verification_scope": "数学合同草稿，必需输入缺口按依赖传播",
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "PandaX4T-EQ6",
+      "field": "statistics/equation_6",
+      "value": "-2\\ln\\mathcal L=2\\sum_{r,\\mathbf i}\\left[\\mu_{r\\mathbf i}-D_{r\\mathbf i}+D_{r\\mathbf i}\\ln\\frac{D_{r\\mathbf i}}{\\mu_{r\\mathbf i}}\\right]-2\\ln\\pi(\\boldsymbol\\eta). \\tag{6}",
+      "unit": "equation with symbol units declared in the chapter",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "本项目的数学定义或推导，主文对应编号公式",
+      "derivation": "源总量与谱形分解、质量到核数换算、接受后箱概率、真实谱折叠、计数分量求和、Poisson likelihood with external constraints",
+      "input_claims": [
+        "PandaX4T-EQ5",
+        "PandaX4T-M05",
+        "PandaX4T-C004",
+        "PandaX4T-C005",
+        "PandaX4T-C008",
+        "PandaX4T-C009",
+        "PandaX4T-C010",
+        "PandaX4T-C026",
+        "PandaX4T-C030",
+        "PandaX4T-S08",
+        "PandaX4T-S09",
+        "PandaX4T-S10"
+      ],
+      "verification_scope": "数学合同草稿，必需输入缺口按依赖传播",
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.1.md#s8"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P01",
+      "field": "source.total_flux",
+      "value": 5460000.0,
+      "unit": "cm^-2 s^-1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p5 Eq.(11)后，参考总通量；形状表不含该值",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P02",
+      "field": "target.anchor_mass_kg",
+      "value": 1000.0,
+      "unit": "kg",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "计算归一化锚点1t，不是实测探测器质量；与质量时间因子配对",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P03",
+      "field": "target.Z",
+      "value": 54.0,
+      "unit": "1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R09",
+      "locator": "NIST Xenon，Z=54",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P04",
+      "field": "constants.avogadro",
+      "value": 6.02214076e+23,
+      "unit": "mol^-1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R13",
+      "locator": "SI第9版§2.2/Table1精确值",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P05",
+      "field": "constants.amu_GeV",
+      "value": 0.93149410372,
+      "unit": "GeV/u",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R18",
+      "locator": "foundation/constants.py::AMU_GEV；原子质量的GeV换算",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P06",
+      "field": "constants.electron_mass_GeV",
+      "value": 0.0005109989506900001,
+      "unit": "GeV",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R18",
+      "locator": "foundation/constants.py::m_e；裸核质量近似扣除Z个电子，忽略电子结合能",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P07",
+      "field": "constants.G_F",
+      "value": 1.1663787e-05,
+      "unit": "GeV^-2",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R18",
+      "locator": "foundation/constants.py::G_F",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P08",
+      "field": "constants.hbarc_GeV_fm",
+      "value": 0.1973269804,
+      "unit": "GeV fm",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R18",
+      "locator": "foundation/constants.py::HBARC_GEV_FM",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P09",
+      "field": "constants.GeV_inverse2_to_cm2",
+      "value": 3.893793721e-28,
+      "unit": "cm^2 GeV^2",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R18",
+      "locator": "foundation/constants.py::GEV_INV2_TO_CM2；微分截面另乘1e-6转成每keV",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P10",
+      "field": "constants.seconds_per_year",
+      "value": 31557600.0,
+      "unit": "s/yr",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R18",
+      "locator": "365.25×86400=31557600；计算单位约定，不是额外活时间",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P11",
+      "field": "nuclear.radius_fm",
+      "value": 1.23,
+      "unit": "fm",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p3 Eq.(3)后：R_A=1.23 A^(1/3) fm",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P12",
+      "field": "nuclear.skin_fm",
+      "value": 0.7,
+      "unit": "fm",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "同上，a_k=0.7 fm",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P13",
+      "field": "interaction.sin2thetaW",
+      "value": 0.23857,
+      "unit": "1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p3 Eq.(2)后参考弱混合角",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P14",
+      "field": "interaction.include_sm",
+      "value": true,
+      "unit": "boolean",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": null,
+      "locator": "本轮用户指定纯标准模型，不扫描BSM",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P15",
+      "field": "numerics.n_er",
+      "value": 401,
+      "unit": "1",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "Slow直接积分基础节点；另并入原表/响应/观测断点，加密检查后记录",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-P16",
+      "field": "numerics.n_enu",
+      "value": 240,
+      "unit": "1",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "Slow直接积分基础节点；另并入原表/响应/观测断点，加密检查后记录",
+      "verification_scope": "本地采用源/打印值/项目约定分别标注；Runtime从新正式包读取",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "output_locations": [
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A01",
+      "field": "resources/arrays/source_energy_MeV",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.resources.npz",
+        "key": "source_energy_MeV",
+        "shape": [
+          829
+        ],
+        "minimum": 0.0,
+        "maximum": 16.56,
+        "representative_first_middle_last": [
+          0.0,
+          8.28,
+          16.56
+        ],
+        "sha256_raw_c_order": "6ac928890e222a91db8fd186d6274b8fbd1d856e9dece4b73bbffda5a08d0bea"
+      },
+      "unit": "MeV",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R04",
+      "locator": "Bahcall官网b8spectrum.txt全部829行第一列",
+      "input_claims": [
+        "PandaX4T-C006"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.physics.md",
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A02",
+      "field": "resources/arrays/source_shape_per_MeV",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.resources.npz",
+        "key": "source_shape_per_MeV",
+        "shape": [
+          829
+        ],
+        "minimum": 0.0,
+        "maximum": 0.1321716,
+        "representative_first_middle_last": [
+          0.0,
+          0.1154396,
+          0.0
+        ],
+        "sha256_raw_c_order": "22688f9623ff5e1cdb07fdbb6f09b6561be51500f801514498eb3f155a0fc839"
+      },
+      "unit": "MeV^-1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R04",
+      "locator": "同表第二列中心归一化谱；不重归一化，不含总通量/效率",
+      "input_claims": [
+        "PandaX4T-C006"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.physics.md",
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A03",
+      "field": "resources/arrays/target_mass_number",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.resources.npz",
+        "key": "target_mass_number",
+        "shape": [
+          9
+        ],
+        "minimum": 124.0,
+        "maximum": 136.0,
+        "representative_first_middle_last": [
+          124.0,
+          130.0,
+          136.0
+        ],
+        "sha256_raw_c_order": "7c80fa52360d367884280618a5eee232aafa7e9f786eb23b85efebe4cb198e3b"
+      },
+      "unit": "1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R09",
+      "locator": "NIST天然Xe表全部九行，对应A/原子质量/数丰度",
+      "input_claims": [
+        "PandaX4T-C007"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.physics.md",
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A04",
+      "field": "resources/arrays/target_atomic_mass_u",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.resources.npz",
+        "key": "target_atomic_mass_u",
+        "shape": [
+          9
+        ],
+        "minimum": 123.905892,
+        "maximum": 135.907214484,
+        "representative_first_middle_last": [
+          123.905892,
+          129.903509349,
+          135.907214484
+        ],
+        "sha256_raw_c_order": "884eee0754e989e8078a4c6321b7218f1da528a46f8a4db3a79de3c14b9b04dd"
+      },
+      "unit": "u",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R09",
+      "locator": "NIST天然Xe表全部九行，对应A/原子质量/数丰度",
+      "input_claims": [
+        "PandaX4T-C007"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.physics.md",
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A05",
+      "field": "resources/arrays/target_number_fraction",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.resources.npz",
+        "key": "target_number_fraction",
+        "shape": [
+          9
+        ],
+        "minimum": 0.00089,
+        "maximum": 0.269086,
+        "representative_first_middle_last": [
+          0.000952,
+          0.04071,
+          0.088573
+        ],
+        "sha256_raw_c_order": "a10a5b945b97d99cdabb590a3eed0643310f0e759be54e3533a171c6ba1f793b"
+      },
+      "unit": "1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R09",
+      "locator": "NIST天然Xe表全部九行，对应A/原子质量/数丰度",
+      "input_claims": [
+        "PandaX4T-C007"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.physics.md",
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A06",
+      "field": "resources/arrays/run_exposures_tyr",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.resources.npz",
+        "key": "run_exposures_tyr",
+        "shape": [
+          1
+        ],
+        "minimum": 1.04,
+        "maximum": 1.04,
+        "representative_first_middle_last": [
+          1.04,
+          1.04,
+          1.04
+        ],
+        "sha256_raw_c_order": "184c9ef3e141eeb915648a0d0b08e31b60c231120862d186dc4ac4163bbdb44b"
+      },
+      "unit": "t yr",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R02",
+      "locator": "2407.10892v3 PDF p3 US2总曝光，未拆造逐run曝光",
+      "input_claims": [
+        "PandaX4T-S07"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.physics.md",
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A07",
+      "field": "resources/arrays/efficiency_energy_keV",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.resources.npz",
+        "key": "efficiency_energy_keV",
+        "shape": [
+          99
+        ],
+        "minimum": 0.299999999496,
+        "maximum": 2.9999999995,
+        "representative_first_middle_last": [
+          0.299999999496,
+          1.6404999995,
+          2.9999999995
+        ],
+        "sha256_raw_c_order": "3cdfd59d0693c7e064b14eed9f3df3760a676e6bab9757d50163770d4d6e3f5f"
+      },
+      "unit": "keVnr",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R02",
+      "locator": "2407.10892v3 PDF p3 Fig.1黑色Total(US2)99个可见域矢量节点",
+      "input_claims": [
+        "PandaX4T-C029"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.physics.md",
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A08",
+      "field": "resources/arrays/efficiency",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.resources.npz",
+        "key": "efficiency",
+        "shape": [
+          99
+        ],
+        "minimum": 0.00579130467031,
+        "maximum": 0.191620952606,
+        "representative_first_middle_last": [
+          0.00579130467031,
+          0.141846330574,
+          0.0155469009404
+        ],
+        "sha256_raw_c_order": "e4962ce8f588e56b1c04d8693e7f7e063777442a5d538a804c47c48e8007d967"
+      },
+      "unit": "1",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R02",
+      "locator": "同曲线接受度；仅展示真实反冲接受度加权，不代表Ne 4–8的迁移概率",
+      "input_claims": [
+        "PandaX4T-C029"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。",
+      "output_locations": [
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.physics.md",
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-A09",
+      "field": "resources/arrays/observable_edges",
+      "value": {
+        "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.resources.npz",
+        "key": "observable_edges",
+        "shape": [
+          28
+        ],
+        "minimum": 0.299999999496,
+        "maximum": 2.9999999995,
+        "representative_first_middle_last": [
+          0.299999999496,
+          1.6999999994980741,
+          2.9999999995
+        ],
+        "sha256_raw_c_order": "12d9cb9803a2f71958b162e87307673dec00488f4d1ab0e4786eb375b0b267af"
+      },
+      "unit": "keVnr",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "本轮显式输出坐标：可见能区分27个真实反冲箱，非电子数箱",
+      "input_claims": [],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "正式包绑定与数组哈希已核对；原始文件及精确定位沿input_claims追溯。本轮项目输出坐标选择，不声称为论文原始分箱。",
+      "output_locations": [
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.physics.md",
+        "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v2.2.md"
+      ]
+    },
+    {
+      "claim_id": "SM20261107-MODEL",
+      "field": "theory_response/sm_runtime_profile",
+      "value": {
+        "interaction": "coherent_sm_kn_v1",
+        "nuclear_response": "klein_nystrand_v1",
+        "implementation": "cevns_pyeft/theory/sm_coherent.py",
+        "implementation_sha256": "8e5ab60e6bc7f7c63356965e8d7f937185918a18a5ea792ea77022126b249759"
+      },
+      "unit": "1",
+      "status": "PROJECT_DERIVED",
+      "source_id": "R01",
+      "locator": "2411.11749v1 PDF p3 式(1)–(3)，含−T/E的树级SM与Klein–Nystrand；参数从正式包读取。",
+      "input_claims": [
+        "PandaX4T-S03"
+      ],
+      "decision_refs": [
+        "D0001"
+      ],
+      "verification_scope": "解析共享模块实现与参数卡绑定；零反冲弱荷/单位/端点合同验证。不是实验完整likelihood认证。"
+    },
+    {
+      "claim_id": "SM20261107-RESULT",
+      "field": "prediction/sm_forward",
+      "value": {
+        "file": "outputs/solar_b8_sm/20261107_run1/PandaX4T_2024_US2/SM_RESULT.json",
+        "counts": [
+          1.2701429078975668,
+          2.8424582293673084,
+          4.397645519638373,
+          5.458905810780665,
+          5.815192206475204,
+          5.59864055543767,
+          4.987797947879388,
+          4.2063252639297595,
+          3.38041383322109,
+          2.6163813923442185,
+          1.958611433103274,
+          1.4305604454044554,
+          1.0180493414288172,
+          0.7095442184957375,
+          0.47424449923279066,
+          0.31685991799564645,
+          0.20920400908603237,
+          0.1340240589520005,
+          0.08419130675681191,
+          0.050423326995445446,
+          0.029743292263143976,
+          0.017863136956986013,
+          0.009216649350211374,
+          0.0052704059762526895,
+          0.002974007774557666,
+          0.0014798586801078478,
+          0.0005892254529220146
+        ],
+        "total_events": 47.02675280087643,
+        "package_sha256": "c7299d35b5fdb192b425a12cb8b5571ea5218619e1bb5ce2f689e8b08bc1e046",
+        "resource_sha256": "56a44e766476c7bc8771e2e98e316c48a97e13d485d006d12324ba473b4f09b8",
+        "physics_fingerprint": "4e1855e3654ce2f1bb69c1aac60dfc8480a3e13c4da3e35a7bd18fa7d3e25f90"
+      },
+      "unit": "events/bin",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "正式两文件→load_experiment_package→predict_experiment→共享recoil积分/概率折叠",
+      "verification_scope": "固定SM点的数值收敛及逐箱对照；非拟合、非官方likelihood认证",
+      "decision_refs": [
+        "D0001"
+      ],
+      "input_claims": [
+        "SM20261107-MODEL",
+        "SM20261107-P01",
+        "SM20261107-P02",
+        "SM20261107-P03",
+        "SM20261107-P04",
+        "SM20261107-P05",
+        "SM20261107-P06",
+        "SM20261107-P07",
+        "SM20261107-P08",
+        "SM20261107-P09",
+        "SM20261107-P10",
+        "SM20261107-P11",
+        "SM20261107-P12",
+        "SM20261107-P13",
+        "SM20261107-P14",
+        "SM20261107-P15",
+        "SM20261107-P16",
+        "SM20261107-A01",
+        "SM20261107-A02",
+        "SM20261107-A03",
+        "SM20261107-A04",
+        "SM20261107-A05",
+        "SM20261107-A06",
+        "SM20261107-A07",
+        "SM20261107-A08",
+        "SM20261107-A09"
+      ]
+    },
+    {
+      "claim_id": "VECTOR20261108-MODEL",
+      "field": "theory_response/light_vector",
+      "status": "SOURCE_EXTRACTED",
+      "source_id": "R19",
+      "locator": "PDF p5, printed p4, Eqs.(2.6),(2.10), kappa paragraph and g definition",
+      "value": {
+        "C_V": "3 A g^2",
+        "kappa_V": 1.0,
+        "kappa_BL": -0.3333333333333333
+      },
+      "unit": "1",
+      "input_claims": [],
+      "decision_refs": [
+        "D0002"
+      ],
+      "verification_scope": "原文公式及版本差异已目视核验；SM源/靶/Response沿既有显式输入，不认证完整官方likelihood"
+    },
+    {
+      "claim_id": "VECTOR20261108-POINTS",
+      "field": "benchmark/project_test_points",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "locator": "显式项目测试点卡，数值用于抵消/回升/传播子质量测试；不是原文拟合点",
+      "value": {
+        "file": "data/benchmarks/solar_b8_vector_v1/benchmark.input.json",
+        "sha256": "d1d589c0d3b85177948b3d388fd9f5683fe204246ff81d5c5c101fe200eb83db",
+        "points": [
+          {
+            "id": "SM",
+            "scenario": "SM",
+            "mass_MeV": null,
+            "coupling": 0.0,
+            "parameter_provenance": "SM reference in the existing formal packages"
+          },
+          {
+            "id": "V10_g1",
+            "scenario": "universal",
+            "mass_MeV": 10.0,
+            "coupling": 1e-05,
+            "kappa": 1.0,
+            "parameter_provenance": "PROJECT_BENCHMARK_CHOICE: these illustrative numerical masses/couplings are selected for interference, regeneration and propagator tests; not paper best fits or limits. kappa/model definitions from R19 Eqs.(2.6),(2.10)."
+          },
+          {
+            "id": "V10_g2",
+            "scenario": "universal",
+            "mass_MeV": 10.0,
+            "coupling": 2e-05,
+            "kappa": 1.0,
+            "parameter_provenance": "PROJECT_BENCHMARK_CHOICE: these illustrative numerical masses/couplings are selected for interference, regeneration and propagator tests; not paper best fits or limits. kappa/model definitions from R19 Eqs.(2.6),(2.10)."
+          },
+          {
+            "id": "V10_g3",
+            "scenario": "universal",
+            "mass_MeV": 10.0,
+            "coupling": 3e-05,
+            "kappa": 1.0,
+            "parameter_provenance": "PROJECT_BENCHMARK_CHOICE: these illustrative numerical masses/couplings are selected for interference, regeneration and propagator tests; not paper best fits or limits. kappa/model definitions from R19 Eqs.(2.6),(2.10)."
+          },
+          {
+            "id": "BL10_g2",
+            "scenario": "b_minus_l",
+            "mass_MeV": 10.0,
+            "coupling": 2e-05,
+            "kappa": -0.3333333333333333,
+            "parameter_provenance": "PROJECT_BENCHMARK_CHOICE: these illustrative numerical masses/couplings are selected for interference, regeneration and propagator tests; not paper best fits or limits. kappa/model definitions from R19 Eqs.(2.6),(2.10)."
+          },
+          {
+            "id": "V1_g2",
+            "scenario": "universal",
+            "mass_MeV": 1.0,
+            "coupling": 2e-05,
+            "kappa": 1.0,
+            "parameter_provenance": "PROJECT_BENCHMARK_CHOICE: these illustrative numerical masses/couplings are selected for interference, regeneration and propagator tests; not paper best fits or limits. kappa/model definitions from R19 Eqs.(2.6),(2.10)."
+          },
+          {
+            "id": "V100_g2",
+            "scenario": "universal",
+            "mass_MeV": 100.0,
+            "coupling": 2e-05,
+            "kappa": 1.0,
+            "parameter_provenance": "PROJECT_BENCHMARK_CHOICE: these illustrative numerical masses/couplings are selected for interference, regeneration and propagator tests; not paper best fits or limits. kappa/model definitions from R19 Eqs.(2.6),(2.10)."
+          }
+        ]
+      },
+      "unit": "mass MeV; g dimensionless",
+      "input_claims": [
+        "VECTOR20261108-MODEL"
+      ],
+      "decision_refs": [
+        "D0002"
+      ],
+      "verification_scope": "用户确认V/B−L事例数谱范围；各m/g为执行者明确标注的项目测试选择，不伪造用户指定参数"
+    },
+    {
+      "claim_id": "VECTOR20261108-SM",
+      "field": "prediction/vector/SM",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "value": {
+        "file": "outputs/solar_b8_vector/20261108_run1/PandaX4T_2024_US2/SM/RESULT.json",
+        "counts": [
+          1.2701429078975668,
+          2.8424582293673084,
+          4.397645519638373,
+          5.458905810780665,
+          5.815192206475204,
+          5.59864055543767,
+          4.987797947879388,
+          4.2063252639297595,
+          3.38041383322109,
+          2.6163813923442185,
+          1.958611433103274,
+          1.4305604454044554,
+          1.0180493414288172,
+          0.7095442184957375,
+          0.47424449923279066,
+          0.31685991799564645,
+          0.20920400908603237,
+          0.1340240589520005,
+          0.08419130675681191,
+          0.050423326995445446,
+          0.029743292263143976,
+          0.017863136956986013,
+          0.009216649350211374,
+          0.0052704059762526895,
+          0.002974007774557666,
+          0.0014798586801078478,
+          0.0005892254529220146
+        ],
+        "total_events": 47.02675280087643,
+        "physics_fingerprint": "4e1855e3654ce2f1bb69c1aac60dfc8480a3e13c4da3e35a7bd18fa7d3e25f90"
+      },
+      "unit": "events/bin",
+      "locator": "标准load_experiment_package→interaction组件替换→predict_experiment；共享Slow/Response",
+      "input_claims": [
+        "VECTOR20261108-MODEL",
+        "VECTOR20261108-POINTS",
+        "SM20261107-P01",
+        "SM20261107-P02",
+        "SM20261107-P03",
+        "SM20261107-P04",
+        "SM20261107-P05",
+        "SM20261107-P06",
+        "SM20261107-P07",
+        "SM20261107-P08",
+        "SM20261107-P09",
+        "SM20261107-P10",
+        "SM20261107-P11",
+        "SM20261107-P12",
+        "SM20261107-P13",
+        "SM20261107-P14",
+        "SM20261107-P15",
+        "SM20261107-P16",
+        "SM20261107-A01",
+        "SM20261107-A02",
+        "SM20261107-A03",
+        "SM20261107-A04",
+        "SM20261107-A05",
+        "SM20261107-A06",
+        "SM20261107-A07",
+        "SM20261107-A08",
+        "SM20261107-A09"
+      ],
+      "decision_refs": [
+        "D0002"
+      ],
+      "verification_scope": "独立T/Eν收敛、逐核素带符号分解闭合、同参数SM回归；非外部非零点模板/置信边界复现"
+    },
+    {
+      "claim_id": "VECTOR20261108-V10_g1",
+      "field": "prediction/vector/V10_g1",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "value": {
+        "file": "outputs/solar_b8_vector/20261108_run1/PandaX4T_2024_US2/V10_g1/RESULT.json",
+        "counts": [
+          0.5535666760132901,
+          1.3848899917470185,
+          2.3351554826672123,
+          3.102749222245544,
+          3.492125727950812,
+          3.517897480638049,
+          3.2551766138670883,
+          2.8351006646222827,
+          2.3423920052156793,
+          1.8570854757842001,
+          1.4198518639133273,
+          1.0565385764145627,
+          0.7644455094322959,
+          0.5407602949935874,
+          0.3663049131397945,
+          0.247730010249124,
+          0.16536807053193145,
+          0.10701368100977957,
+          0.06784547885486089,
+          0.04097802900394143,
+          0.024362398939384824,
+          0.014738850104436289,
+          0.007654469862220799,
+          0.004405264980797662,
+          0.0024999730146580993,
+          0.001250917861915476,
+          0.0005005407791485224
+        ],
+        "total_events": 29.508388183836942,
+        "physics_fingerprint": "8f6b13cfde1162d1bf35e00e50cb6f6ccd35ef487283e98329d727fe1167af93"
+      },
+      "unit": "events/bin",
+      "locator": "标准load_experiment_package→interaction组件替换→predict_experiment；共享Slow/Response",
+      "input_claims": [
+        "VECTOR20261108-MODEL",
+        "VECTOR20261108-POINTS",
+        "SM20261107-P01",
+        "SM20261107-P02",
+        "SM20261107-P03",
+        "SM20261107-P04",
+        "SM20261107-P05",
+        "SM20261107-P06",
+        "SM20261107-P07",
+        "SM20261107-P08",
+        "SM20261107-P09",
+        "SM20261107-P10",
+        "SM20261107-P11",
+        "SM20261107-P12",
+        "SM20261107-P13",
+        "SM20261107-P14",
+        "SM20261107-P15",
+        "SM20261107-P16",
+        "SM20261107-A01",
+        "SM20261107-A02",
+        "SM20261107-A03",
+        "SM20261107-A04",
+        "SM20261107-A05",
+        "SM20261107-A06",
+        "SM20261107-A07",
+        "SM20261107-A08",
+        "SM20261107-A09"
+      ],
+      "decision_refs": [
+        "D0002"
+      ],
+      "verification_scope": "独立T/Eν收敛、逐核素带符号分解闭合、同参数SM回归；非外部非零点模板/置信边界复现"
+    },
+    {
+      "claim_id": "VECTOR20261108-V10_g2",
+      "field": "prediction/vector/V10_g2",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "value": {
+        "file": "outputs/solar_b8_vector/20261108_run1/PandaX4T_2024_US2/V10_g2/RESULT.json",
+        "counts": [
+          0.1686413046333298,
+          0.12981099714056749,
+          0.03923955651739299,
+          0.007864154962828825,
+          0.06304253738825463,
+          0.16709755771766074,
+          0.269875597080587,
+          0.3409784999417255,
+          0.36872368991326093,
+          0.3589458243918382,
+          0.3229177319196032,
+          0.27422340706197257,
+          0.22143919392803185,
+          0.17187538822387363,
+          0.12607539585040745,
+          0.09136472000765435,
+          0.06477420939575075,
+          0.04421621003989882,
+          0.029391922612829992,
+          0.018519160654664392,
+          0.011441175186887647,
+          0.007168014711143654,
+          0.003838390025917091,
+          0.0022752708209974933,
+          0.001324822611576583,
+          0.0006795473703253824,
+          0.00027789319176228924
+        ],
+        "total_events": 3.306022173300743,
+        "physics_fingerprint": "dfda03e047bc8ff1b58b4ce7920f3137b210300dd6e55d7864b78d518f6956dc"
+      },
+      "unit": "events/bin",
+      "locator": "标准load_experiment_package→interaction组件替换→predict_experiment；共享Slow/Response",
+      "input_claims": [
+        "VECTOR20261108-MODEL",
+        "VECTOR20261108-POINTS",
+        "SM20261107-P01",
+        "SM20261107-P02",
+        "SM20261107-P03",
+        "SM20261107-P04",
+        "SM20261107-P05",
+        "SM20261107-P06",
+        "SM20261107-P07",
+        "SM20261107-P08",
+        "SM20261107-P09",
+        "SM20261107-P10",
+        "SM20261107-P11",
+        "SM20261107-P12",
+        "SM20261107-P13",
+        "SM20261107-P14",
+        "SM20261107-P15",
+        "SM20261107-P16",
+        "SM20261107-A01",
+        "SM20261107-A02",
+        "SM20261107-A03",
+        "SM20261107-A04",
+        "SM20261107-A05",
+        "SM20261107-A06",
+        "SM20261107-A07",
+        "SM20261107-A08",
+        "SM20261107-A09"
+      ],
+      "decision_refs": [
+        "D0002"
+      ],
+      "verification_scope": "独立T/Eν收敛、逐核素带符号分解闭合、同参数SM回归；非外部非零点模板/置信边界复现"
+    },
+    {
+      "claim_id": "VECTOR20261108-V10_g3",
+      "field": "prediction/vector/V10_g3",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "value": {
+        "file": "outputs/solar_b8_vector/20261108_run1/PandaX4T_2024_US2/V10_g3/RESULT.json",
+        "counts": [
+          5.409776766576291,
+          8.430098400311204,
+          9.184560295479903,
+          8.095004703900463,
+          6.148291369819379,
+          4.220528691111916,
+          2.6695838532710834,
+          1.5826136696137048,
+          0.8806003934552703,
+          0.46120673303021587,
+          0.22584276385045374,
+          0.10286625019795193,
+          0.042445936371925196,
+          0.015290089396804894,
+          0.004323670333432926,
+          0.0008373462655304951,
+          0.00016428925585642307,
+          0.0003326346127043655,
+          0.0005824204221859282,
+          0.0006777988233193502,
+          0.000643989661993331,
+          0.0005567062701777224,
+          0.0003797857243043264,
+          0.0002767099765469082,
+          0.00018941819516467013,
+          0.00011210309429863439,
+          5.150199256604538e-05
+        ],
+        "total_events": 47.47783829101464,
+        "physics_fingerprint": "7b6536e37abc9ae57f9f3d2cf422b77ac015d7af1f797cfbc17b5ef502028414"
+      },
+      "unit": "events/bin",
+      "locator": "标准load_experiment_package→interaction组件替换→predict_experiment；共享Slow/Response",
+      "input_claims": [
+        "VECTOR20261108-MODEL",
+        "VECTOR20261108-POINTS",
+        "SM20261107-P01",
+        "SM20261107-P02",
+        "SM20261107-P03",
+        "SM20261107-P04",
+        "SM20261107-P05",
+        "SM20261107-P06",
+        "SM20261107-P07",
+        "SM20261107-P08",
+        "SM20261107-P09",
+        "SM20261107-P10",
+        "SM20261107-P11",
+        "SM20261107-P12",
+        "SM20261107-P13",
+        "SM20261107-P14",
+        "SM20261107-P15",
+        "SM20261107-P16",
+        "SM20261107-A01",
+        "SM20261107-A02",
+        "SM20261107-A03",
+        "SM20261107-A04",
+        "SM20261107-A05",
+        "SM20261107-A06",
+        "SM20261107-A07",
+        "SM20261107-A08",
+        "SM20261107-A09"
+      ],
+      "decision_refs": [
+        "D0002"
+      ],
+      "verification_scope": "独立T/Eν收敛、逐核素带符号分解闭合、同参数SM回归；非外部非零点模板/置信边界复现"
+    },
+    {
+      "claim_id": "VECTOR20261108-BL10_g2",
+      "field": "prediction/vector/BL10_g2",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "value": {
+        "file": "outputs/solar_b8_vector/20261108_run1/PandaX4T_2024_US2/BL10_g2/RESULT.json",
+        "counts": [
+          2.683119486332531,
+          5.594155880556617,
+          8.156553690909021,
+          9.630636554318551,
+          9.830422093214183,
+          9.122594474072322,
+          7.8715871671829305,
+          6.454508486439474,
+          5.060101462450402,
+          3.8309328621284613,
+          2.8116024153207153,
+          2.017339717513928,
+          1.4126557938462938,
+          0.9702290070970173,
+          0.639835232057793,
+          0.42226168502755357,
+          0.2756666561093838,
+          0.17476514213412744,
+          0.10872972515373759,
+          0.06454073096103023,
+          0.037753009047839965,
+          0.022496044469663263,
+          0.011525229793223854,
+          0.00654459403633918,
+          0.003670079200213395,
+          0.001815045094768387,
+          0.000718725204528882
+        ],
+        "total_events": 77.21676098967266,
+        "physics_fingerprint": "fb76bc3b240881699d284ab614348e6ab061b1c955d0e21ac1fecc91aac973b1"
+      },
+      "unit": "events/bin",
+      "locator": "标准load_experiment_package→interaction组件替换→predict_experiment；共享Slow/Response",
+      "input_claims": [
+        "VECTOR20261108-MODEL",
+        "VECTOR20261108-POINTS",
+        "SM20261107-P01",
+        "SM20261107-P02",
+        "SM20261107-P03",
+        "SM20261107-P04",
+        "SM20261107-P05",
+        "SM20261107-P06",
+        "SM20261107-P07",
+        "SM20261107-P08",
+        "SM20261107-P09",
+        "SM20261107-P10",
+        "SM20261107-P11",
+        "SM20261107-P12",
+        "SM20261107-P13",
+        "SM20261107-P14",
+        "SM20261107-P15",
+        "SM20261107-P16",
+        "SM20261107-A01",
+        "SM20261107-A02",
+        "SM20261107-A03",
+        "SM20261107-A04",
+        "SM20261107-A05",
+        "SM20261107-A06",
+        "SM20261107-A07",
+        "SM20261107-A08",
+        "SM20261107-A09"
+      ],
+      "decision_refs": [
+        "D0002"
+      ],
+      "verification_scope": "独立T/Eν收敛、逐核素带符号分解闭合、同参数SM回归；非外部非零点模板/置信边界复现"
+    },
+    {
+      "claim_id": "VECTOR20261108-V1_g2",
+      "field": "prediction/vector/V1_g2",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "value": {
+        "file": "outputs/solar_b8_vector/20261108_run1/PandaX4T_2024_US2/V1_g2/RESULT.json",
+        "counts": [
+          4.612578242793046,
+          4.728933281164164,
+          3.4448427834930118,
+          1.9690845094607923,
+          0.8869127051454588,
+          0.29615093144418747,
+          0.05609860498547852,
+          0.006712904231196616,
+          0.03370017424420611,
+          0.07442786313502049,
+          0.1027819127820655,
+          0.11338285447789911,
+          0.10913113610577567,
+          0.09599125821497749,
+          0.07728409417324832,
+          0.060161745717125424,
+          0.045112891982458755,
+          0.032221036946165287,
+          0.022222926733799876,
+          0.014435683007701748,
+          0.009151568554470297,
+          0.0058610984168681775,
+          0.003196020757470224,
+          0.001926093839892478,
+          0.0011369196613735682,
+          0.0005905177119118876,
+          0.00024403096904207576
+        ],
+        "total_events": 16.80427379014881,
+        "physics_fingerprint": "2ab68112023799a2ab86069abd1ce44f7fba91a399fb270805a72d7a9a418a02"
+      },
+      "unit": "events/bin",
+      "locator": "标准load_experiment_package→interaction组件替换→predict_experiment；共享Slow/Response",
+      "input_claims": [
+        "VECTOR20261108-MODEL",
+        "VECTOR20261108-POINTS",
+        "SM20261107-P01",
+        "SM20261107-P02",
+        "SM20261107-P03",
+        "SM20261107-P04",
+        "SM20261107-P05",
+        "SM20261107-P06",
+        "SM20261107-P07",
+        "SM20261107-P08",
+        "SM20261107-P09",
+        "SM20261107-P10",
+        "SM20261107-P11",
+        "SM20261107-P12",
+        "SM20261107-P13",
+        "SM20261107-P14",
+        "SM20261107-P15",
+        "SM20261107-P16",
+        "SM20261107-A01",
+        "SM20261107-A02",
+        "SM20261107-A03",
+        "SM20261107-A04",
+        "SM20261107-A05",
+        "SM20261107-A06",
+        "SM20261107-A07",
+        "SM20261107-A08",
+        "SM20261107-A09"
+      ],
+      "decision_refs": [
+        "D0002"
+      ],
+      "verification_scope": "独立T/Eν收敛、逐核素带符号分解闭合、同参数SM回归；非外部非零点模板/置信边界复现"
+    },
+    {
+      "claim_id": "VECTOR20261108-V100_g2",
+      "field": "prediction/vector/V100_g2",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "value": {
+        "file": "outputs/solar_b8_vector/20261108_run1/PandaX4T_2024_US2/V100_g2/RESULT.json",
+        "counts": [
+          1.2067255820953258,
+          2.7008564834577458,
+          4.179070234053345,
+          5.188206222525869,
+          5.527488521639725,
+          5.32228773151183,
+          4.742161573547995,
+          3.9996489735276572,
+          3.214697340127539,
+          2.488411119457383,
+          1.8630304418700852,
+          1.3609056619929623,
+          0.9685909800422932,
+          0.675150270311514,
+          0.45130725231456026,
+          0.3015684891566309,
+          0.19912994785835342,
+          0.12758421618406277,
+          0.08015457627420446,
+          0.04801077323052258,
+          0.02832318613575552,
+          0.017012032940715936,
+          0.008778382809931701,
+          0.0050203045108469695,
+          0.0028331500245545337,
+          0.001409906895297789,
+          0.0005614248792029201
+        ],
+        "total_events": 44.708924779375906,
+        "physics_fingerprint": "35feb5c5cfaf47ec5da7597c68862acd5ace155bd8c3b501baacf90ee2b0b5be"
+      },
+      "unit": "events/bin",
+      "locator": "标准load_experiment_package→interaction组件替换→predict_experiment；共享Slow/Response",
+      "input_claims": [
+        "VECTOR20261108-MODEL",
+        "VECTOR20261108-POINTS",
+        "SM20261107-P01",
+        "SM20261107-P02",
+        "SM20261107-P03",
+        "SM20261107-P04",
+        "SM20261107-P05",
+        "SM20261107-P06",
+        "SM20261107-P07",
+        "SM20261107-P08",
+        "SM20261107-P09",
+        "SM20261107-P10",
+        "SM20261107-P11",
+        "SM20261107-P12",
+        "SM20261107-P13",
+        "SM20261107-P14",
+        "SM20261107-P15",
+        "SM20261107-P16",
+        "SM20261107-A01",
+        "SM20261107-A02",
+        "SM20261107-A03",
+        "SM20261107-A04",
+        "SM20261107-A05",
+        "SM20261107-A06",
+        "SM20261107-A07",
+        "SM20261107-A08",
+        "SM20261107-A09"
+      ],
+      "decision_refs": [
+        "D0002"
+      ],
+      "verification_scope": "独立T/Eν收敛、逐核素带符号分解闭合、同参数SM回归；非外部非零点模板/置信边界复现"
+    },
+    {
+      "claim_id": "NR20261110-TABLE",
+      "field": "theory_response/nuclear_table",
+      "status": "USER_CONFIRMED",
+      "source_id": "R16",
+      "value": {
+        "file": "data/responses/responses_all.json",
+        "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+        "audit": "outputs/solar_b8_sm/20261110_nuclear_response_run2/NUCLEAR_INPUT_AUDIT.json",
+        "number_fraction": 0.998158,
+        "missing": [
+          "Xe124",
+          "Xe126"
+        ]
+      },
+      "unit": "dimensionless W",
+      "locator": "seven Xe keys; all eight channels; 2x2x11 M; existing np reader normalization",
+      "decision_refs": [
+        "D0004"
+      ],
+      "verification_scope": "Local numerical existence/reader/Runtime consistency only; external author provenance and exact paper equivalence unresolved"
+    },
+    {
+      "claim_id": "NR20261110-METHOD",
+      "field": "theory_response/nuclear_method",
+      "status": "PROJECT_DERIVED",
+      "source_id": "R20",
+      "value": {
+        "mass": "A*amu",
+        "SM": "existing LEFT matching and all nonzero implemented channels",
+        "extra_KN_or_spin_factor": false
+      },
+      "unit": "shared code convention",
+      "locator": "shared amplitude, LEFT/LEC and cross-section APIs",
+      "decision_refs": [
+        "D0004"
+      ],
+      "verification_scope": "Local numerical existence/reader/Runtime consistency only; external author provenance and exact paper equivalence unresolved"
+    },
+    {
+      "claim_id": "NR20261110-RESULT",
+      "field": "slow_counts/current_nuclear_SM",
+      "status": "PROJECT_DERIVED",
+      "source_id": null,
+      "value": {
+        "file": "outputs/solar_b8_sm/20261110_nuclear_response_run2/PandaX4T_2024_US2/RESULT.json",
+        "counts": [
+          3.6030804791016733,
+          3.721828505210796,
+          3.6989997960780254,
+          3.558558822018164,
+          3.309140447463619,
+          3.0029952743197508,
+          2.6635124809786026,
+          2.3038819769020953
+        ],
+        "total_events": 25.861997782072727,
+        "physics_fingerprint": "0aece6ff4a1bcde676f31833ef9fb602687ed0b57ad12b700281c4c4d475356b"
+      },
+      "unit": "events/bin",
+      "locator": "standard Runtime, source and detector folding; independent T/E refinements",
+      "decision_refs": [
+        "D0004"
+      ],
+      "verification_scope": "Local numerical existence/reader/Runtime consistency only; external author provenance and exact paper equivalence unresolved"
+    }
+  ],
+  "source_register": "P00_SOURCE_REGISTER.yaml"
+}

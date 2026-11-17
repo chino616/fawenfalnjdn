@@ -2,6 +2,10 @@
 
 **检查实验输入文件，先读[共同输入规范](INPUT_STANDARD.md)。** 本目录集中维护所有实验共用的输入要求、格式、空白模板、证据和审核规则，作为使用者与执行者核对原始材料、整理数据和检查读取结果的共同依据。各 dataset 的具体内容与结果保存在自己的目录。
 
+**所有 onboarding 必须执行[数据溯源与补充闭环](references/onboarding/data-provenance-contract.md)。** 该文件拥有逐数据依据、output 可见标记、首次草稿后的缺口说明/用户补充及终稿验收规则；Master/Onboarding、P00/P01/P02/用户资料模板和 Physics MD 规范共同引用，不把程序字段名当作出处。
+
+物理章节的同节输入表展示实际值或数组范围、本地数值文件、标准引文与精确原文定位、核验范围及适用性。公式符号的数值取得情况和下一阶段输入交接表由上述规范统一管理，相关模板随本轮修订补充这些栏目。
+
 共同规范给出检查内容、适用条件和实际检查入口；任务路由仍由 Master 管理，科学决定、写入授权与运行算法仍由各自权威文件负责。
 
 | 子目录 | 具体用途与消费者 |
@@ -56,3 +60,7 @@ P00 独占来源身份，P01 的 sources 空兼容字段不另维护来源。
 [Experiment Physics Report Contract](references/onboarding/experiment-physics-report-contract.md)
 是两份报告的唯一内容规范，供 Master/Onboarding/Renderer 集成共同引用。
 字段映射与真实命令见[Compiler 文档](../../docs/software/onboarding-package-compiler.md)。
+
+## 实验报告阅读性与格式验收
+
+[Physics MD 公共报告规范第6节](references/onboarding/experiment-physics-report-contract.md#section-6)统一编码、可点击目录、唯一锚点、返回目录、来源/配置导航、独立数学块及表格规则。报告生成器与派生文档一起维护；文件链接PASS不能替代锚点点击或数学渲染验收。排版调整不授予物理批准。

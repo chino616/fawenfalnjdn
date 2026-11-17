@@ -1,0 +1,202 @@
+{
+  "provenance_id": "CONUS_vector_NSI_response_v1",
+  "created_date": "2026-11-06",
+  "citation": "V. De Romeri, D. K. Papoulias, and G. Sanchez Garcia, \"Implications of the first CONUS+ measurement of coherent elastic neutrino-nucleus scattering,\" Phys. Rev. D 111, 075025 (2025), doi:10.1103/PhysRevD.111.075025, arXiv:2501.17843v3.",
+  "benchmark_pdf_sha256": "b20923363badde299106a6df83f0dff5308fd69d652b59b9967d32b764057c90",
+  "inputs": {
+    "scientific_input_file_hashes": "../review/INPUT_SNAPSHOT.json",
+    "NSI_and_statistics": "../review/NSI_CONTRACT.json",
+    "original_column_sources": "../snapshot/data/experiments/CONUS_Plus/conusplus_kkl_run1/PROVENANCE_MAP.json",
+    "paper_NSIs": "../data/benchmark/REFERENCES_PROVENANCE.json"
+  },
+  "output_column_lineage": [
+    {
+      "file": "nsi_intervals.csv",
+      "columns": [
+        "coupling",
+        "confidence",
+        "delta_chi2_threshold",
+        "lower",
+        "upper",
+        "best_fit_epsilon",
+        "minimum_chi2",
+        "sigma_mode"
+      ],
+      "derivation": "Existing vector_nsi_to_np_wilson -> existing compile_fast operator kernel -> validated exact real polynomial -> existing profile_gaussian_one_pull -> multiple minima and brentq roots",
+      "source_locator": "2501.17843v3 Eqs.(7)-(9), Eq.(33), TableII p.13; threshold derivation and error choice in NSI_CONTRACT.json",
+      "status": "PROJECT_DERIVED_APPROXIMATE"
+    },
+    {
+      "file": "nsi_scan_1d.csv",
+      "columns": "epsilon, chi2_profiled, delta_chi2, alpha_profiled, predicted_total_events",
+      "derivation": "same parameter mapping, physical input snapshot, exact bilinear prediction and profiled statistic; one real NSI varied at a time",
+      "status": "PROJECT_DERIVED_APPROXIMATE"
+    },
+    {
+      "file": "nsi_spectra_19bins.csv",
+      "columns": "energy edges, total event counts, all five isotope counts, coupling point",
+      "derivation": "kernel.predict at reported best fits and 1sigma endpoints with unchanged 1kg119day normalization",
+      "status": "PROJECT_DERIVED"
+    },
+    {
+      "files": [
+        "plane_diag_ud.npz",
+        "plane_fc_ud.npz",
+        "plane_ring_mu.npz",
+        "plane_ring_tau.npz"
+      ],
+      "arrays": "x,y,chi2,delta_chi2; rows=y, columns=x",
+      "derivation": "same exact NSI polynomial and existing profile statistic at501x501 grid points; multiple-start minimum; two-parameter90percent threshold",
+      "status": "PROJECT_DERIVED_APPROXIMATE"
+    },
+    {
+      "file": "error_sensitivity.json",
+      "keys": "lower/upper intervals and minima for all six coordinates",
+      "derivation": "repeat inference with each delivered lower or upper error length as fixed sigma instead of their mean",
+      "status": "PROJECT_DERIVED_SENSITIVITY"
+    },
+    {
+      "file": "paper_contour_comparison.json",
+      "derivation": "evaluate project profiled delta-chi2 at digitized paper boundary vertices after excluding clipped panel edges",
+      "status": "PROJECT_DERIVED_FIGURE_COMPARISON"
+    }
+  ],
+  "program_sha256": {
+    "benchmark_nsi.py": "3b1b2282c1d60077c7e4e0d878d9bdb5af94d6e674ef3c5e131fcf2d3e93c1d0",
+    "extract_nsi_references.py": "2cbcd7f030023b700a623a679f1024f47597538b50bda8ccfa214dd1e4839f99",
+    "nsi_model.py": "8d851cb87ec8a0b984efef6df638517e5d1ce3c368f50fe67cfc4a9a04952578",
+    "prepare_predictions.py": "35b1bd0be7723a476f7cd805a44f8a14725ebdbe9eee9847396cc46a77184256",
+    "publish_nsi.py": "64e522d9063955e26509d8f76f63f62c33138deaa0cba7e83fc0616cfd1b9a42",
+    "sm_model.py": "5c415feec3b3e1a7f58c12d6c92cc7c8596b48c755f380d5562e7d849dd53bc5"
+  },
+  "files": {
+    "compile_summary.json": {
+      "sha256": "1f7f00e26c3815800632028416fdfb675e53f8ea9e9ca1155efd295e6c65afc0"
+    },
+    "contour_rendering_checks.json": {
+      "sha256": "478b4b1117cab070dba72c87e9af81d6b46b6b290c2c952f01f36a528c120c86"
+    },
+    "error_sensitivity.json": {
+      "sha256": "9823d18c35c974b6663ea96e50b35fd74d9561480b02ae5380670e7385dee694"
+    },
+    "nsi_contours_2d.png": {
+      "sha256": "0dabccc96301bcadf917ca126421e451186a258fd9780dfe2507a5398a6fec86"
+    },
+    "nsi_contours_2d.svg": {
+      "sha256": "f58dfca441e157423e3302b5954ef40db1500aff71bbbdfcce03f42a29698a97"
+    },
+    "nsi_intervals.csv": {
+      "sha256": "9fb51ef77ff8ab486805ad77cf0f68cb14340b54eec6bd8e9f637a228d3467bc"
+    },
+    "nsi_operator_kernel_161_641.npz": {
+      "sha256": "3d7ab6c39f333bf5626474fadaeba3b11d8b6464e414666a8828aa434d993c5e"
+    },
+    "nsi_profiles_1d.png": {
+      "sha256": "6c32993915b8d33ba60df822136f5fe6e68a3ba6353d73a113621bbf34e579f6"
+    },
+    "nsi_profiles_1d.svg": {
+      "sha256": "7c22eb109158008edb24e90c63fe03dcf356794aa94d33996108597e522e92c8"
+    },
+    "nsi_quadratic_templates.npz": {
+      "sha256": "7af568e9c27c753b1916e8b34bcf280013dd7676e2a01161b23b0a70c1898b0a"
+    },
+    "nsi_scan_1d.csv": {
+      "sha256": "9514e64b2b2f09e3daca5e92a5390c03073151bc962591992a8686b83f528b78"
+    },
+    "nsi_spectra_19bins.csv": {
+      "sha256": "ee28f34d9dc960a44ed3649d76e1d7133ddc8f842c8741b3079811f45352e390"
+    },
+    "one_dimensional_results.json": {
+      "sha256": "54a2102de9d653ebc87b3ef0b64a549568961dc481cd65e238f0135fff305a0a"
+    },
+    "paper_contour_comparison.json": {
+      "sha256": "a28f6ec2dedd227b592e1248f96e67aae6c5786543084a43b6c58f1c50ae30bb"
+    },
+    "plane_diag_ud.npz": {
+      "sha256": "f134c82032b3aa912a02076868a8f5f83bc4e2142263175171cb003261b782dc"
+    },
+    "plane_fc_ud.npz": {
+      "sha256": "58c21764215799aa27e21c53148ff99ae8b5a6bf034547b5100e9546a060d4d6"
+    },
+    "plane_ring_mu.npz": {
+      "sha256": "b8d51fba9b8da4f0329ba22e342870ca2b1e2af42316692efe1bbf7eadfd26de"
+    },
+    "plane_ring_tau.npz": {
+      "sha256": "b8d51fba9b8da4f0329ba22e342870ca2b1e2af42316692efe1bbf7eadfd26de"
+    },
+    "README.md": {
+      "sha256": "fdee7ecf614e166e98f45f49e7d676df90dc0736e9e86611d8d81a3a5ea791c1"
+    },
+    "scan_epsilon_ee_dV.npz": {
+      "sha256": "7fb47b71fa539e924dc4a8f73b2f8d0f8e9d8b0e8a0d85a1f094dea3b0b71e3e"
+    },
+    "scan_epsilon_ee_uV.npz": {
+      "sha256": "c045a1fc06eb44fdfcfea302fe33a9fed9f546ab8a071e80944e8fa46daf3f03"
+    },
+    "scan_epsilon_emu_dV.npz": {
+      "sha256": "ee742f517228ba1dad923e9303e36fe8a5c90dbd6fc0c9d8ca781742fcc05c4a"
+    },
+    "scan_epsilon_emu_uV.npz": {
+      "sha256": "393843e6f83d0c68d54bd4e107820f65bbe37a1bdd0e2d57d0865e9c5af3e591"
+    },
+    "scan_epsilon_etau_dV.npz": {
+      "sha256": "ee742f517228ba1dad923e9303e36fe8a5c90dbd6fc0c9d8ca781742fcc05c4a"
+    },
+    "scan_epsilon_etau_uV.npz": {
+      "sha256": "393843e6f83d0c68d54bd4e107820f65bbe37a1bdd0e2d57d0865e9c5af3e591"
+    },
+    "slow_combined_real.json": {
+      "sha256": "326a409fb51cef2781d34b0cb2b8c71e13e671b3cc02ea5546c15bb01a8aa021"
+    },
+    "slow_combined_real.npz": {
+      "sha256": "abc95f716364b51b976087999513dba305d809e5c5577935f96d4d241c2aed3a"
+    },
+    "slow_d_ee_034.json": {
+      "sha256": "97065676e37e4f3ee3c36e580997bff8a9a5d0bbf7c840fb41a54cd1e0845dc5"
+    },
+    "slow_d_ee_034.npz": {
+      "sha256": "24b566339b3bf86223e6a5df81b56c080ce65b94e2d90db615221a4ce2015d2a"
+    },
+    "slow_emu_complex_mixed.json": {
+      "sha256": "1ee0c4bb1403e8cfdb78d14c0a767e4d211312f3612554076cfb97f92550b767"
+    },
+    "slow_emu_complex_mixed.npz": {
+      "sha256": "4c790c215a8f72b56f04d04ae83c25deafa8e8a1cb370821c6d852df452895d1"
+    },
+    "slow_emu_u_010.json": {
+      "sha256": "3d6483bece534ff4f15f4025ff1a4ce691e86dd68a6e79341a0a1221463a5980"
+    },
+    "slow_emu_u_010.npz": {
+      "sha256": "c08689c987ac7d0d6c3a2fa38a0d23092d50b4f075acc32561cc431fa87867cc"
+    },
+    "slow_u_ee_005.json": {
+      "sha256": "97c5df410f7b47573bfd961170e7679297e9295ca49e33fb7b4e08e2ecea7737"
+    },
+    "slow_u_ee_005.npz": {
+      "sha256": "a1b5a85114f43467db05ac101d2d6462947b0ecf2217e5c7302f34a7e0bb24ae"
+    },
+    "slow_u_ee_005_energy321.json": {
+      "sha256": "9338f9be11caafb3989449943a59e8ca65bb9678e8471c7736f1a861d8276f89"
+    },
+    "slow_u_ee_005_energy321.npz": {
+      "sha256": "151a04cd60dcce52e2d76dd9f38814e159a2f35e4e37a85d7336a6878bc2272a"
+    },
+    "slow_u_ee_cancellation.json": {
+      "sha256": "b4129eb73077efa371dacb60181ed6bcff67c0d708f217348fb504d66753ba36"
+    },
+    "slow_u_ee_cancellation.npz": {
+      "sha256": "39a4d7d82f3c40e0b67900223c682fc99b97e41022cc3bd6e2863ed0294ecbcf"
+    },
+    "summary.json": {
+      "sha256": "e5deb582cacdf603808a53e65061d6d9cef07879e4769d0fa41e7f8b653d4737"
+    },
+    "two_dimensional_results.json": {
+      "sha256": "4c2579f151582638b0453a9048e323e3f25af74a79cb13de4d5ef0de032bb82b"
+    },
+    "validation.json": {
+      "sha256": "fcf5e7cc2f54f100f2f18e025d132dc811038cbd53a1345015dc0e5aa3b06674"
+    }
+  },
+  "scientific_provenance_status": "PARTIAL",
+  "human_gate": "NOT_REVIEWED"
+}

@@ -1,6 +1,12 @@
 # CsI2021
 
+[味分量历史图（2026-11-15）](<../../../../论文图NoteBook/13. CsI2021_Flavor_Components/README.md>)：保留已有预测和分箱，补上从 C/AC 计数协方差传播的统计误差条；尚不包含完整系统误差。[历史 PDF](<../../../../论文图NoteBook/13. CsI2021_Flavor_Components/Figure_CsI2021_Flavor_Components.pdf>) · [生成器](../../../../论文图NoteBook/generate_csi2021_flavor_components.py)。新作图已默认读取[公共主题 v4.0](../../../../plotting/paper_theme/README.md)，输出到新目录。
+
+[CsI2021主线现状与查验入口（2026-11-15）](MAINLINE_REVIEW_20261115.md)：区分99箱时间、9箱能谱及联合分析，集中列出已有结果、P01–P10程序、文献依据、论文图和全部选定文件地址；仅整理现状，未新增计算。
+
 COHERENT 更新 CsI 数据的项目复现身份；当前注册实现使用九个 PE 箱，不等于论文中完整的能量-时间二维分析。
+
+[CsI2021 时间分辨 onboarding 修订草稿](time_resolved/README.md)已并入主项目。该入口展示各章实际数值、原始文件/引文定位、原data中RESPONSE的直接调用映射、用户补充及下一步交接。
 
 - 实验：COHERENT。
 - 探测器／靶材：CsI[Na] 闪烁体；主要靶核为 Cs-133、I-127。
@@ -29,6 +35,6 @@ COHERENT 更新 CsI 数据的项目复现身份；当前注册实现使用九个
 
 ## 对应官方数据资源
 
-官方 [v2 附件入口](https://arxiv.org/abs/2110.07730v2) 及其事件、背景、效率、响应和 ROOT 通量资源已在 [COHERENT 文献 README](../../../references/COHERENT/README.md#csi2021-官方数据附件) 登记。本次只核对发布说明及入口，未下载这些数值文件，未替换现有正式输入。
+官方 [v2 附件入口](https://arxiv.org/abs/2110.07730v2) 及其事件、背景、效率、响应和 ROOT 通量资源已在 [COHERENT 文献 README](../../../references/COHERENT/README.md#csi2021-官方数据附件) 登记。时间分辨草稿现已取得实际附件，文件、SHA、原始网址、读取与变换范围见[来源登记](../../../../workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/P00_SOURCE_REGISTER.yaml)。原九箱注册输入和时间分析各自的观测、统计与适用性分别说明。
 
 [COHERENT](../README.md) · [COHERENT 文献](../../../references/COHERENT/README.md)

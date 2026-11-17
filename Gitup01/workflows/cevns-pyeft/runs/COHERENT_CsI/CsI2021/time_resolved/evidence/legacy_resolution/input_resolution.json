@@ -1,0 +1,1078 @@
+{
+  "PE_binning": {
+    "status": "FROZEN_RECONSTRUCTED_INPUT",
+    "pe_edges": [
+      0.0,
+      8.0,
+      12.0,
+      16.0,
+      20.0,
+      24.0,
+      32.0,
+      40.0,
+      48.0,
+      60.0
+    ],
+    "time_edges_us": [
+      0.0,
+      0.125,
+      0.25,
+      0.375,
+      0.5,
+      0.625,
+      0.75,
+      0.875,
+      1.0,
+      2.0,
+      4.0,
+      6.0
+    ],
+    "axis_order": [
+      "PE",
+      "time"
+    ],
+    "endpoint_rule": "Left closed, right open, including the last upper edge exclusion",
+    "pe_provenance": "PROJECT_DERIVED from official Supplement Fig2 error-bar endpoints",
+    "time_provenance": "SOURCE_EXTRACTED from 2211.11905v2 Fig18 panel labels",
+    "PE_numeric_official_table_found": false,
+    "raw_C_count": 1578,
+    "raw_AC_count": 1295,
+    "energy_projection": [
+      11,
+      147,
+      224,
+      177,
+      144,
+      237,
+      210,
+      193,
+      235
+    ],
+    "sources": [
+      "https://arxiv.org/src/2110.07730v2/anc/Paper_CEvNSCsI_FullDataset_SupMaterials.pdf",
+      "https://arxiv.org/pdf/2211.11905v2"
+    ],
+    "edge_event_check": "PASS"
+  },
+  "time_normalization": {
+    "status": "PASS_IMPLEMENTED_CONVENTION",
+    "checks": [
+      {
+        "shift_us": -0.25,
+        "effective_weight_max_error": 2.7755575615628914e-17,
+        "reference_fractions": [
+          0.999951141657252,
+          0.9191783169548307,
+          0.9193761082745151
+        ],
+        "reference_shape_integrals": [
+          0.9594259839625278,
+          0.939066968885705,
+          0.9390739551041734
+        ]
+      },
+      {
+        "shift_us": 0.0,
+        "effective_weight_max_error": 0.0,
+        "reference_fractions": [
+          0.999951141657252,
+          0.9191783169548307,
+          0.9193761082745151
+        ],
+        "reference_shape_integrals": [
+          0.9975230179234841,
+          0.9220403965901656,
+          0.9222429399310005
+        ]
+      },
+      {
+        "shift_us": 0.25,
+        "effective_weight_max_error": 0.0,
+        "reference_fractions": [
+          0.999951141657252,
+          0.9191783169548307,
+          0.9193761082745151
+        ],
+        "reference_shape_integrals": [
+          0.9885463097061665,
+          0.9027143044481076,
+          0.9029460642354635
+        ]
+      }
+    ],
+    "positive_shift": "Source delayed relative to fixed observer windows and efficiency",
+    "denominator": "Nominal zero-shift reference fraction remains fixed for every shift",
+    "paper_2211": "Reference-window shape on 0--6 us with explicit fluence conversion",
+    "paper_2211_unspecified": "Paper does not fully state its shifted-denominator implementation",
+    "source": "https://arxiv.org/html/2211.11905v2",
+    "locator": "Sec3.1 Eq32 and p13 footnote8"
+  },
+  "neutron_background": {
+    "brn": {
+      "published_prior": 18.4,
+      "full_PE_table_sum": 1.4977778220000002,
+      "ROI_PE_table_sum": 0.9999999700000001,
+      "full_time_table_events": 27.632009229740003,
+      "ROI_time_table_events_before_time_efficiency": 27.63181303348,
+      "ROI_time_table_events_after_time_efficiency": 27.42376346517737,
+      "full_PE_support": [
+        0.0,
+        250.0
+      ],
+      "full_time_support_us": [
+        -0.25,
+        6.25
+      ],
+      "mean_ROI_time_efficiency": 0.9924706508382006,
+      "full_probability_ROI_fraction": 0.6676557466077903,
+      "legacy_raw_product_after_time_efficiency": 27.423762642464467,
+      "probability_normalized_before_time_efficiency": 18.44853876099496,
+      "probability_normalized_after_time_efficiency": 18.309633271138438,
+      "before_efficiency_rounds_to_published_prior": true,
+      "after_efficiency_difference_from_prior": -0.09036672886156083,
+      "extra_exposure_factor": 1.0,
+      "energy_efficiency_applied_again": false,
+      "target_rescaling_applied": false,
+      "conclusion": "BLOCKED_POST_TIME_EFFICIENCY_CONVENTION",
+      "algebraic_cause": "Full-support PE probability normalization removes the large excess factor",
+      "physical_interpretation_status": "CANDIDATE: released PE tables sum to one in PE0--60, not over their full support",
+      "remaining_cause": "The full-support normalization candidate matches Table I before time efficiency after rounding. Supplement instructions require time efficiency. The release does not close this convention.",
+      "sources": [
+        "https://arxiv.org/abs/2110.07730v2",
+        "https://arxiv.org/src/2110.07730v2/anc/brnPE.txt",
+        "https://arxiv.org/src/2110.07730v2/anc/brnTrec.txt",
+        "Official Supplement p2 lines60-75 and p7 TableI"
+      ]
+    },
+    "nin": {
+      "published_prior": 5.6,
+      "full_PE_table_sum": 1.3339572780000002,
+      "ROI_PE_table_sum": 0.9999997999999999,
+      "full_time_table_events": 7.564846239112,
+      "ROI_time_table_events_before_time_efficiency": 7.492694939112,
+      "ROI_time_table_events_after_time_efficiency": 6.908566068810757,
+      "full_PE_support": [
+        0.0,
+        250.0
+      ],
+      "full_time_support_us": [
+        -0.25,
+        6.25
+      ],
+      "mean_ROI_time_efficiency": 0.922040217165111,
+      "full_probability_ROI_fraction": 0.749649045357208,
+      "legacy_raw_product_after_time_efficiency": 6.908564687097542,
+      "probability_normalized_before_time_efficiency": 5.616891608258094,
+      "probability_normalized_after_time_efficiency": 5.1789999582711825,
+      "before_efficiency_rounds_to_published_prior": true,
+      "after_efficiency_difference_from_prior": -0.4210000417288171,
+      "extra_exposure_factor": 1.0,
+      "energy_efficiency_applied_again": false,
+      "target_rescaling_applied": false,
+      "conclusion": "BLOCKED_POST_TIME_EFFICIENCY_CONVENTION",
+      "algebraic_cause": "Full-support PE probability normalization removes the large excess factor",
+      "physical_interpretation_status": "CANDIDATE: released PE tables sum to one in PE0--60, not over their full support",
+      "remaining_cause": "The full-support normalization candidate matches Table I before time efficiency after rounding. Supplement instructions require time efficiency. The release does not close this convention.",
+      "sources": [
+        "https://arxiv.org/abs/2110.07730v2",
+        "https://arxiv.org/src/2110.07730v2/anc/ninPE.txt",
+        "https://arxiv.org/src/2110.07730v2/anc/ninTrec.txt",
+        "Official Supplement p2 lines60-75 and p7 TableI"
+      ]
+    },
+    "SS": {
+      "control_events_0_12_us": 2242,
+      "decay_constant_per_us": 0.0494,
+      "accepted_events_0_6_us": 1285.9265239871502,
+      "published_prior": 1286.0,
+      "prior_consistency": "PASS_ROUNDING",
+      "source": "https://arxiv.org/src/2110.07730v2/anc/Paper_CEvNSCsI_FullDataset_SupMaterials.pdf",
+      "locator": "p2 lines55--59 and p7 TableI"
+    },
+    "status": "BLOCKED_POST_TIME_EFFICIENCY_CONVENTION"
+  },
+  "QF": {
+    "status": "PASS_DOMAIN_ENFORCED",
+    "fit_domain_keV": [
+      2.0,
+      70.0
+    ],
+    "fit_domain_MeV": [
+      0.002,
+      0.07
+    ],
+    "measured_point_span_keV": [
+      3.0,
+      63.0
+    ],
+    "coefficients": [
+      0.0554628,
+      4.30681,
+      -111.707,
+      840.384
+    ],
+    "monotonic_positive_in_domain": true,
+    "out_of_domain_behavior": "ValueError in calibrated response and smearing",
+    "source": "https://arxiv.org/html/2111.02477v2",
+    "locator": "Sec8 Fitting approach and Eq8.1",
+    "prediction_policy": "Time Slow/Fast integrate from 2 keV; source-dependent support above70keV blocks the calibrated prediction",
+    "omitted_low_recoil_sensitivity": {
+      "status": "QUANTIFIED_EXTRAPOLATION_DIAGNOSTIC",
+      "recoil_interval_keV": [
+        0.1,
+        2.0
+      ],
+      "records": [
+        {
+          "n_er": 256,
+          "n_enu": 960,
+          "total_events": 0.005312160451252449,
+          "max_bin_events": 0.000732388662471546
+        },
+        {
+          "n_er": 512,
+          "n_enu": 960,
+          "total_events": 0.005311885141465482,
+          "max_bin_events": 0.0007323476697342947,
+          "max_grid_change_events": 4.099273725132434e-08
+        }
+      ],
+      "interpretation": "Model-dependent omitted contribution, not a calibrated estimate or an error bound",
+      "production_policy": "The time Slow/Fast entries integrate from2keV and reject out-of-domain response evaluations",
+      "source": "https://arxiv.org/html/2111.02477v2#S8"
+    }
+  },
+  "nuclear_structure": {
+    "status": "USER_SELECTED_RESPONSE",
+    "backend": "Native ResponseDB + differential_cross_section_nn",
+    "resource": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\data\\responses\\responses_all.json",
+    "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+    "paper_nuclear_equivalence": "Separate acceptance required for the Helm and KN reference papers"
+  },
+  "signal_convergence": {
+    "threshold_events": 0.005,
+    "records": [
+      {
+        "level": 0,
+        "grid": {
+          "n_er": 128,
+          "n_enu": 240,
+          "n_pe_bin": 64,
+          "pe_step": 0.25,
+          "sin2thetaW": 0.2387,
+          "pe_edges": [
+            0.0,
+            8.0,
+            12.0,
+            16.0,
+            20.0,
+            24.0,
+            32.0,
+            40.0,
+            48.0,
+            60.0
+          ]
+        },
+        "total_events": 328.33875367003316,
+        "cache": "RESPONSE_er128_enu240.npz"
+      },
+      {
+        "level": 1,
+        "grid": {
+          "n_er": 256,
+          "n_enu": 480,
+          "n_pe_bin": 128,
+          "pe_step": 0.125,
+          "sin2thetaW": 0.2387,
+          "pe_edges": [
+            0.0,
+            8.0,
+            12.0,
+            16.0,
+            20.0,
+            24.0,
+            32.0,
+            40.0,
+            48.0,
+            60.0
+          ]
+        },
+        "total_events": 328.31938156221787,
+        "cache": "RESPONSE_er256_enu480.npz",
+        "max_bin_absolute_change": 0.019000038436615796,
+        "sum_absolute_change": 12.749580131711149,
+        "passed_0p005": false,
+        "worst_case": {
+          "name": "domain_corner_1",
+          "point": [
+            -0.4,
+            0.8
+          ],
+          "shift_us": -0.25,
+          "efficiency_shift_pe": 1.0,
+          "PE_bin": 3,
+          "time_bin": 1
+        }
+      },
+      {
+        "level": 2,
+        "grid": {
+          "n_er": 512,
+          "n_enu": 960,
+          "n_pe_bin": 256,
+          "pe_step": 0.0625,
+          "sin2thetaW": 0.2387,
+          "pe_edges": [
+            0.0,
+            8.0,
+            12.0,
+            16.0,
+            20.0,
+            24.0,
+            32.0,
+            40.0,
+            48.0,
+            60.0
+          ]
+        },
+        "total_events": 328.3189300697272,
+        "cache": "RESPONSE_er512_enu960.npz",
+        "max_bin_absolute_change": 0.0037095932852899693,
+        "sum_absolute_change": 1.6904153515043334,
+        "passed_0p005": true,
+        "worst_case": {
+          "name": "domain_corner_3",
+          "point": [
+            0.8,
+            0.8
+          ],
+          "shift_us": 0.25,
+          "efficiency_shift_pe": 1.0,
+          "PE_bin": 0,
+          "time_bin": 8
+        }
+      }
+    ],
+    "status": "PASS_DECLARED_GRID_CASES",
+    "scope": "Legacy eight benchmark points and four domain corners, 3 timing x 3 efficiency shifts, 99 bins; calibrated recoil domain",
+    "case_count": 108
+  },
+  "independent_benchmarks": {
+    "RESPONSE_JHEP2022_4PULL": {
+      "status": "BLOCKED_EXTERNAL_REPRODUCTION",
+      "implementation": "PASS",
+      "backend": "Native Response",
+      "normalization_sigmas": [
+        0.12,
+        0.25,
+        0.35,
+        0.021
+      ],
+      "mode": "time_nominal",
+      "fit": {
+        "chi2": 88.82896287966966,
+        "chi2_data": 87.91492367219114,
+        "chi2_prior": [
+          0.1383106919674946,
+          0.3784743543948106,
+          0.006898015595810494,
+          0.3903561455204093
+        ],
+        "nuisance": {
+          "signal_norm": -0.04462817455746899,
+          "brn_norm": -0.15380067343700307,
+          "nin_norm": -0.029069002571240475,
+          "ssb_norm": -0.01312048246729138,
+          "time_shift_us": 0.0,
+          "efficiency_shift_pe": 0.0
+        },
+        "success": true,
+        "attempts": [
+          {
+            "success": true,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "chi2": 88.82896287966966,
+            "iterations": 8,
+            "scaled": [
+              -0.3719014546455749,
+              -0.6152026937480123,
+              -0.08305429306068708,
+              -0.6247848793948276
+            ]
+          },
+          {
+            "success": true,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "chi2": 88.8289628796697,
+            "iterations": 7,
+            "scaled": [
+              -0.37190122546294324,
+              -0.615202586723222,
+              -0.08305437890034104,
+              -0.6247850581031543
+            ]
+          },
+          {
+            "success": true,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "chi2": 88.82896287966969,
+            "iterations": 8,
+            "scaled": [
+              -0.3719012462430822,
+              -0.6152025682477535,
+              -0.08305434135715403,
+              -0.6247851293231754
+            ]
+          }
+        ],
+        "active_bounds": [],
+        "mode": "time_nominal",
+        "component_totals": [
+          313.6666555480538,
+          23.205969479876885,
+          6.707739602444725,
+          1269.0545475749518
+        ],
+        "native_radius_nuisance": "unsupported_fixed_zero"
+      },
+      "background_mode": "raw_template_integrals",
+      "blockers": [
+        "BRN/NIN post-time-efficiency normalization requires original-author clarification",
+        "User-selected Response nuclear model differs from the JHEP Helm prescription"
+      ],
+      "time_representation": "full_support_fixed_time",
+      "full_support_probability_candidate_fit": {
+        "chi2": 87.43943392764727,
+        "chi2_data": 86.91204952158253,
+        "chi2_prior": [
+          0.0725640506132628,
+          0.09638408763607177,
+          0.0032138619739637913,
+          0.35522240584144
+        ],
+        "nuisance": {
+          "signal_norm": -0.03232525837222317,
+          "brn_norm": -0.07761446693274705,
+          "nin_norm": -0.019841826826443285,
+          "ssb_norm": -0.012516112854080339,
+          "time_shift_us": 0.0,
+          "efficiency_shift_pe": 0.0
+        },
+        "success": true,
+        "attempts": [
+          {
+            "success": true,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+            "chi2": 87.43943392765182,
+            "iterations": 7,
+            "scaled": [
+              -0.2693772704903072,
+              -0.31045830182615003,
+              -0.056688859141034324,
+              -0.596005362358144
+            ]
+          },
+          {
+            "success": true,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "chi2": 87.43943392764746,
+            "iterations": 6,
+            "scaled": [
+              -0.2693771483951301,
+              -0.31045786355488136,
+              -0.05669093441102895,
+              -0.5960053671037695
+            ]
+          },
+          {
+            "success": true,
+            "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+            "chi2": 87.43943392764727,
+            "iterations": 7,
+            "scaled": [
+              -0.2693771531018598,
+              -0.3104578677309882,
+              -0.05669093378983796,
+              -0.5960053740038256
+            ]
+          }
+        ],
+        "active_bounds": [],
+        "mode": "time_nominal",
+        "component_totals": [
+          317.70593582673126,
+          16.88854084506492,
+          5.07623913796501,
+          1269.8317224908717
+        ],
+        "native_radius_nuisance": "unsupported_fixed_zero"
+      },
+      "candidate_status": "DIAGNOSTIC_BLOCKED_TIME_EFFICIENCY_CONVENTION",
+      "original_paper_url": "https://arxiv.org/abs/2202.11002",
+      "source_equations": "JHEP05(2022)109 Eq2.6; four normalization pulls",
+      "reference_target": null
+    },
+    "RESPONSE_2211_TIME": {
+      "status": "BLOCKED_EXTERNAL_REPRODUCTION",
+      "implementation": "PASS",
+      "backend": "Native Response",
+      "normalization_sigmas": [
+        0.1145,
+        0.25,
+        0.35,
+        0.021
+      ],
+      "mode": "time",
+      "fit": {
+        "chi2": 85.73695636707505,
+        "chi2_data": 83.9425020163539,
+        "chi2_prior": [
+          0.8278704140241019,
+          0.3873806346630354,
+          0.013911914960949751,
+          0.5652913870730606
+        ],
+        "nuisance": {
+          "signal_norm": -0.10418055526565158,
+          "brn_norm": -0.1555997739922514,
+          "nin_norm": -0.041282073381994085,
+          "ssb_norm": -0.01578903105637644,
+          "time_shift_us": 0.06375270161041252,
+          "efficiency_shift_pe": 0.3441886632706543
+        },
+        "success": true,
+        "attempts": [
+          {
+            "success": true,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+            "chi2": 85.73701519150303,
+            "iterations": 22,
+            "scaled": [
+              -0.9099608807778721,
+              -0.6224338184465864,
+              -0.11802177337871395,
+              -0.7517171339235761,
+              0.2561429691407693,
+              0.344253790131278
+            ]
+          },
+          {
+            "success": true,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+            "chi2": 85.73695636707505,
+            "iterations": 18,
+            "scaled": [
+              -0.9098738451148609,
+              -0.6223990959690056,
+              -0.11794878109141167,
+              -0.7518586217322114,
+              0.2550108064416501,
+              0.3441886632706543
+            ]
+          },
+          {
+            "success": true,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+            "chi2": 85.73695636808219,
+            "iterations": 19,
+            "scaled": [
+              -0.9098686270023563,
+              -0.6224036896435848,
+              -0.1179723394758638,
+              -0.7518420727183304,
+              0.25501123358518346,
+              0.34418392590781516
+            ]
+          }
+        ],
+        "active_bounds": [],
+        "mode": "time",
+        "component_totals": [
+          327.4763331717105,
+          23.09303322162079,
+          6.588752280197111,
+          1265.622990163699
+        ],
+        "native_radius_nuisance": "unsupported_fixed_zero"
+      },
+      "background_mode": "raw_template_integrals",
+      "blockers": [
+        "BRN/NIN post-time-efficiency normalization requires original-author clarification",
+        "User-selected Response nuclear model uses a fixed radius; the 2211 radius nuisance is not implemented"
+      ],
+      "time_representation": "reference_window_0_6_same_numerical_eta_as_Eq29",
+      "full_support_probability_candidate_fit": {
+        "chi2": 84.2856277282506,
+        "chi2_data": 82.99694663656624,
+        "chi2_prior": [
+          0.6595349889583861,
+          0.09930164729546166,
+          0.006903020164215702,
+          0.5229414352663068
+        ],
+        "nuisance": {
+          "signal_norm": -0.09298746468740657,
+          "brn_norm": -0.07878040972200102,
+          "nin_norm": -0.02907954556241248,
+          "ssb_norm": -0.015186084846083315,
+          "time_shift_us": 0.06435209050358255,
+          "efficiency_shift_pe": 0.3432632207196314
+        },
+        "success": true,
+        "attempts": [
+          {
+            "success": true,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+            "chi2": 84.2856277282506,
+            "iterations": 15,
+            "scaled": [
+              -0.8121175955232014,
+              -0.3151216388880041,
+              -0.0830844158926071,
+              -0.7231468974325388,
+              0.2574083620143302,
+              0.3432632207196314
+            ]
+          },
+          {
+            "success": true,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+            "chi2": 84.28562772857637,
+            "iterations": 22,
+            "scaled": [
+              -0.8121105223555042,
+              -0.3151260663251272,
+              -0.0830879810907514,
+              -0.7231499634013963,
+              0.25740835038736143,
+              0.3432658497494931
+            ]
+          },
+          {
+            "success": true,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+            "chi2": 84.28562772860313,
+            "iterations": 15,
+            "scaled": [
+              -0.8121161037498255,
+              -0.31512728390102956,
+              -0.08310675457203544,
+              -0.7231465241142003,
+              0.25740878467260975,
+              0.3432615677041964
+            ]
+          }
+        ],
+        "active_bounds": [],
+        "mode": "time",
+        "component_totals": [
+          331.5169831889343,
+          16.820411408523242,
+          5.001868154307195,
+          1266.3983346880523
+        ],
+        "native_radius_nuisance": "unsupported_fixed_zero"
+      },
+      "candidate_status": "DIAGNOSTIC_BLOCKED_TIME_EFFICIENCY_CONVENTION",
+      "original_paper_url": "https://arxiv.org/abs/2211.11905v2",
+      "source_equations": "Eqs28--32,36,38; seven paper nuisances versus six fixed-radius Response nuisances",
+      "reference_target": 83.2,
+      "full_fluence_diagnostic_fit": {
+        "chi2": 84.77986475848276,
+        "chi2_data": 83.62803561695887,
+        "chi2_prior": [
+          0.3511795747565016,
+          0.3649162854786938,
+          0.010732862602944707,
+          0.4250004186857472
+        ],
+        "nuisance": {
+          "signal_norm": -0.06785316514320776,
+          "brn_norm": -0.15102075301897538,
+          "nin_norm": -0.036259835477573894,
+          "ssb_norm": -0.013690331794387401,
+          "time_shift_us": 0.0693243015485618,
+          "efficiency_shift_pe": 0.3550553597553279
+        },
+        "success": true,
+        "attempts": [
+          {
+            "success": true,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+            "chi2": 84.77986475867627,
+            "iterations": 20,
+            "scaled": [
+              -0.5925985338008998,
+              -0.6040878743797852,
+              -0.10359977000027827,
+              -0.6519113307110105,
+              0.2772965786331631,
+              0.3550556637450719
+            ]
+          },
+          {
+            "success": true,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+            "chi2": 84.77986475848276,
+            "iterations": 20,
+            "scaled": [
+              -0.592604062386094,
+              -0.6040830120759015,
+              -0.10359952993592542,
+              -0.6519205616374952,
+              0.2772972061942472,
+              0.3550553597553279
+            ]
+          },
+          {
+            "success": true,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+            "chi2": 84.7798647611012,
+            "iterations": 17,
+            "scaled": [
+              -0.5926032489856119,
+              -0.6040993605452933,
+              -0.10364301545478875,
+              -0.6519042528561738,
+              0.277296840272058,
+              0.355052829223095
+            ]
+          }
+        ],
+        "active_bounds": [],
+        "mode": "time",
+        "component_totals": [
+          317.62528833206807,
+          23.2123837183891,
+          6.620173568331103,
+          1268.3217632105627
+        ],
+        "native_radius_nuisance": "unsupported_fixed_zero"
+      },
+      "full_fluence_probability_candidate_fit": {
+        "chi2": 83.38901009003366,
+        "chi2_data": 82.66499947577893,
+        "chi2_prior": [
+          0.24303798012527517,
+          0.09041657273301022,
+          0.005201699984467616,
+          0.3853543614119776
+        ],
+        "nuisance": {
+          "signal_norm": -0.05644722029415965,
+          "brn_norm": -0.07517337158737221,
+          "nin_norm": -0.02524298413613737,
+          "ssb_norm": -0.013036152552907708,
+          "time_shift_us": 0.07040644178170948,
+          "efficiency_shift_pe": 0.3550905797262306
+        },
+        "success": true,
+        "attempts": [
+          {
+            "success": true,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+            "chi2": 83.38901009003366,
+            "iterations": 19,
+            "scaled": [
+              -0.4929888235297786,
+              -0.30069348634948884,
+              -0.07212281181753534,
+              -0.6207691691860813,
+              0.2816257671268379,
+              0.3550905797262306
+            ]
+          },
+          {
+            "success": true,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+            "chi2": 83.38915676027493,
+            "iterations": 15,
+            "scaled": [
+              -0.4928158789708485,
+              -0.30058334205591264,
+              -0.07202445221803465,
+              -0.6210173130347749,
+              0.27951975843466675,
+              0.3549651467329429
+            ]
+          },
+          {
+            "success": true,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+            "chi2": 83.38901009066338,
+            "iterations": 16,
+            "scaled": [
+              -0.49298913158728697,
+              -0.30069995647143954,
+              -0.0721464042875264,
+              -0.620765095566899,
+              0.2816257365699769,
+              0.35509031463044943
+            ]
+          }
+        ],
+        "active_bounds": [],
+        "mode": "time",
+        "component_totals": [
+          321.48712742034127,
+          16.881621313608996,
+          5.019083610477425,
+          1269.1629896486234
+        ],
+        "native_radius_nuisance": "unsupported_fixed_zero"
+      }
+    }
+  },
+  "ROOT_correlation": {
+    "status": "QUANTIFIED_QF_DOMAIN_LIMITED",
+    "records": [
+      {
+        "component": "mu",
+        "joint_total": 61.286809091285896,
+        "factorized_total": 61.29768318219044,
+        "max_bin_absolute_difference": 0.018500453566288877,
+        "sum_absolute_difference": 0.34120424639883024,
+        "ROOT_energy_ge60_fraction": 0.0024634696378976182,
+        "recoil_domain_keV": [
+          2.0,
+          70.0
+        ],
+        "energy_bin_interpolation": "uniform within original 1 MeV bins, 8-point Gauss quadrature"
+      },
+      {
+        "component": "e",
+        "joint_total": 113.70560904167907,
+        "factorized_total": 113.7114646675175,
+        "max_bin_absolute_difference": 0.005230072924831575,
+        "sum_absolute_difference": 0.04849934765641182,
+        "ROOT_energy_ge60_fraction": 2.374117536600271e-07,
+        "recoil_domain_keV": [
+          2.0,
+          70.0
+        ],
+        "energy_bin_interpolation": "uniform within original 1 MeV bins, 8-point Gauss quadrature"
+      },
+      {
+        "component": "mub",
+        "joint_total": 178.39518037462128,
+        "factorized_total": 178.3606310812399,
+        "max_bin_absolute_difference": 0.010600774272529645,
+        "sum_absolute_difference": 0.28348558047777195,
+        "ROOT_energy_ge60_fraction": 0.0005116965080734827,
+        "recoil_domain_keV": [
+          2.0,
+          70.0
+        ],
+        "energy_bin_interpolation": "uniform within original 1 MeV bins, 8-point Gauss quadrature"
+      }
+    ],
+    "grid": {
+      "n_er": 1024,
+      "n_energy_bin": 8,
+      "n_pe_bin": 128
+    },
+    "max_total_bin_absolute_difference": 0.019906826571506775,
+    "total_joint": 353.3875985075862,
+    "total_factorized": 353.36977893094786,
+    "seconds": 69.32377739998628,
+    "comparison_scope": "Same ROOT energy marginals and normalization, changes only joint versus factorized time-energy distribution",
+    "selected_paper_representation": "Per-flavor factorized DAR energy spectra and timing, per2211 Eq32 and2202 analysis text",
+    "full_ROOT_source_acceptance": "BLOCKED: additional high-energy tails require a source-model decision and recoil response beyond the calibrated domain",
+    "numerical_scope": "Calibrated recoil interval and declared uniform within-bin ROOT energy interpolation",
+    "original_url": "https://arxiv.org/src/2110.07730v2/anc/snsFlux2D.root",
+    "convergence": {
+      "status": "PASS_DECLARED_GRID_DIFFERENCE",
+      "threshold_events": 0.005,
+      "records": [
+        {
+          "level": 0,
+          "grid": {
+            "n_er": 256,
+            "n_energy_bin": 2,
+            "n_pe_bin": 32
+          },
+          "max_correlation_events": 0.01990675599518621
+        },
+        {
+          "level": 1,
+          "grid": {
+            "n_er": 512,
+            "n_energy_bin": 4,
+            "n_pe_bin": 64
+          },
+          "max_correlation_events": 0.0199068236232931,
+          "max_prediction_grid_change": 0.002368960643571394,
+          "passed_0p005": true
+        },
+        {
+          "level": 2,
+          "grid": {
+            "n_er": 1024,
+            "n_energy_bin": 8,
+            "n_pe_bin": 128
+          },
+          "max_correlation_events": 0.019906826571506775,
+          "max_prediction_grid_change": 0.0007167782772409259,
+          "passed_0p005": true
+        }
+      ]
+    }
+  },
+  "ROOT_vs_legacy": {
+    "status": "QUANTIFIED_THREE_SOURCE_REPRESENTATIONS",
+    "records": [
+      {
+        "component": "mu",
+        "ROOT_joint_events": 61.286809091285896,
+        "ROOT_factorized_events": 61.29768318219044,
+        "legacy_DAR_events": 50.4693827362674,
+        "max_bin_correlation_difference": 0.018500453566288877,
+        "max_bin_energy_model_difference": 0.869674476998493,
+        "max_bin_total_difference": 0.8704752402642164,
+        "ROOT_mean_energy_MeV": 30.67637496435611,
+        "ROOT_peak_energy_bin_MeV": [
+          30.0,
+          31.0
+        ],
+        "legacy_DAR_line_MeV": 29.792140909877446
+      },
+      {
+        "component": "e",
+        "ROOT_joint_events": 113.70560904167907,
+        "ROOT_factorized_events": 113.7114646675175,
+        "legacy_DAR_events": 107.0051999509585,
+        "max_bin_correlation_difference": 0.005230072924831575,
+        "max_bin_energy_model_difference": 0.46485674572916125,
+        "max_bin_total_difference": 0.465421500710133,
+        "ROOT_mean_energy_MeV": 32.389385805954824,
+        "ROOT_peak_energy_bin_MeV": [
+          36.0,
+          37.0
+        ],
+        "legacy_interpolated_mass_in_DAR_support": 0.9991978576993168,
+        "legacy_interpolated_mean_energy_MeV": 31.68056375700714,
+        "analytic_Michel_mass_in_DAR_support": 0.9999999942178713,
+        "analytic_Michel_mean_energy_MeV": 31.697512527822813
+      },
+      {
+        "component": "mub",
+        "ROOT_joint_events": 178.39518037462128,
+        "ROOT_factorized_events": 178.3606310812399,
+        "legacy_DAR_events": 170.84434738250118,
+        "max_bin_correlation_difference": 0.010600774272529645,
+        "max_bin_energy_model_difference": 0.5417806065321518,
+        "max_bin_total_difference": 0.5335855195841077,
+        "ROOT_mean_energy_MeV": 37.64221599519112,
+        "ROOT_peak_energy_bin_MeV": [
+          51.0,
+          52.0
+        ],
+        "legacy_interpolated_mass_in_DAR_support": 0.9999540764818752,
+        "legacy_interpolated_mean_energy_MeV": 36.97253891278669,
+        "analytic_Michel_mass_in_DAR_support": 0.9999532197914793,
+        "analytic_Michel_mean_energy_MeV": 36.97969003310568
+      }
+    ],
+    "total_ROOT_joint_events": 353.3875985075862,
+    "total_ROOT_factorized_events": 353.36977893094786,
+    "total_legacy_DAR_events": 328.3189300697272,
+    "total_event_difference": 25.06866843785912,
+    "max_bin_total_difference": 1.0058675295241777,
+    "max_bin_correlation_difference": 0.019906826571506775,
+    "max_bin_energy_model_difference": 1.0070979016956727,
+    "identical_absolute_inputs": {
+      "detector_mass_kg": 14.57,
+      "fluence_per_flavor_cm_minus2": 579361763793233.6,
+      "PE_edges": [
+        0.0,
+        8.0,
+        12.0,
+        16.0,
+        20.0,
+        24.0,
+        32.0,
+        40.0,
+        48.0,
+        60.0
+      ],
+      "time_edges_us": [
+        0.0,
+        0.125,
+        0.25,
+        0.375,
+        0.5,
+        0.625,
+        0.75,
+        0.875,
+        1.0,
+        2.0,
+        4.0,
+        6.0
+      ]
+    },
+    "legacy_energy_representation": "Original SNS 200-point interpolated Michel spectra and exact prompt line",
+    "energy_difference_scope": "Energy marginal, physical endpoint/tails, within-bin representation and associated recoil support",
+    "calibrated_recoil_scope": "ROOT2--70keV versus DAR2keV--kinematic endpoint",
+    "paper_parameter_difference": {
+      "paper_detector_mass_kg": 14.6,
+      "legacy_detector_mass_kg": 14.57,
+      "paper_nominal_sin2thetaW": 0.23857,
+      "legacy_sin2thetaW": 0.2387,
+      "legacy_endpoint": "Native finite-electron-mass muon DAR endpoint",
+      "paper_endpoint": "m_mu/2 approximation in Eq28"
+    },
+    "external_paper_status": "BLOCKED_FULL_EQUIVALENCE",
+    "sources": [
+      "https://arxiv.org/html/2211.11905v2#S3.SS1",
+      "https://arxiv.org/src/2110.07730v2/anc/snsFlux2D.root"
+    ]
+  },
+  "time_fluence_scope": {
+    "status": "PASS_DECLARED_SCOPE_GRID",
+    "records": [
+      {
+        "shift_us": -0.25,
+        "full_fluence_events": 331.4853245734871,
+        "same_eta_6us_shape_events": 356.3256845874056,
+        "total_scope_difference": 24.840360013918485,
+        "representation_conversion_max_bin_error": 1.4210854715202004e-14,
+        "fixed_reference_fractions": [
+          0.999951141657252,
+          0.9191783169548307,
+          0.9193761082745151
+        ]
+      },
+      {
+        "shift_us": 0.0,
+        "full_fluence_events": 328.3189300697272,
+        "same_eta_6us_shape_events": 352.71221639340564,
+        "total_scope_difference": 24.393286323678467,
+        "representation_conversion_max_bin_error": 9.769962616701378e-15,
+        "fixed_reference_fractions": [
+          0.999951141657252,
+          0.9191783169548307,
+          0.9193761082745151
+        ]
+      },
+      {
+        "shift_us": 0.25,
+        "full_fluence_events": 322.0471906102957,
+        "same_eta_6us_shape_events": 345.9297634244084,
+        "total_scope_difference": 23.882572814112734,
+        "representation_conversion_max_bin_error": 1.4210854715202004e-14,
+        "fixed_reference_fractions": [
+          0.999951141657252,
+          0.9191783169548307,
+          0.9193761082745151
+        ]
+      }
+    ],
+    "threshold_events": 0.005,
+    "max_bin_grid_change": 0.004015979465854969,
+    "case_count": 108,
+    "scope": "Same numerical Eq29 eta with a normalized 0--6us shape; fixed zero-shift denominator",
+    "physical_full_fluence_conversion": "Multiplying reference-window fluence by its nominal fraction preserves full-source counts",
+    "selected_2211_diagnostic": "Literal Eq29+32 numerical convention; fixed-radius Response remains an external diagnostic",
+    "original_paper": "https://arxiv.org/pdf/2211.11905v2#page=12"
+  }
+}

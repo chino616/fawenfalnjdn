@@ -1,6 +1,6 @@
 # 文献总目录
 
-本库归档 19 篇论文，保留用户提供及从 arXiv 补充的 PDF，并明确记录各自版本。标题、作者和研究对象依据本地论文；作者较多时以首位作者及合作组标识。这里的版本是论文版本，不是数据释放版本，也不代表当前最新版。
+本库归档 22 篇论文，保留用户提供及从 arXiv 补充的 PDF，并明确记录各自版本。标题、作者和研究对象依据本地论文；作者较多时以首位作者及合作组标识。这里的版本是论文版本，不是数据释放版本，也不代表当前最新版。
 
 ## 文献集合
 
@@ -8,7 +8,7 @@
 |---|---|---|
 | [COHERENT/](COHERENT/README.md) | 收录 COHERENT 的 CsI、液氩测量、公开数据说明和 CsI/LAr 联合分析。 | 5 |
 | [CONUS/](CONUS/README.md) | 收录 CONUS 与 CONUS+ 的装置、反应堆测量及相关物理分析。 | 5 |
-| [Solar_CEvNS/](Solar_CEvNS/README.md) | 收录以太阳中微子 CEvNS 为主要研究对象的测量和分析。 | 7 |
+| [Solar_CEvNS/](Solar_CEvNS/README.md) | 太阳 CEvNS 测量/分析，以及本次分析明确引用的探测器响应和相关暗物质论文。 | 10 |
 | [General_CEvNS/](General_CEvNS/README.md) | 收录跨实验分析及没有唯一实验归属的通用 EFT/NSI 理论。 | 2 |
 
 ## 全部论文
@@ -34,6 +34,11 @@
 | Probing the Solar 8B Neutrino Fog with XENONnT | E. Aprile et al.（XENON Collaboration） | [2604.06002](https://arxiv.org/abs/2604.06002v2) | v2 | XENONnT / SR0+SR1+SR2；太阳 8B 与轻暗物质分析 | [PDF](Solar_CEvNS/2604.06002v2.pdf) |
 | Constraints on neutrino non-standard interactions from COHERENT, PandaX-4T and XENONnT | Gang Li, Chuan-Qiang Song, Feng-Jie Tang, Jiang-Hao Yu | [2409.04703](https://arxiv.org/abs/2409.04703v2) | v2 | COHERENT / CsI、Ar；PandaX-4T、XENONnT | [PDF](General_CEvNS/2409.04703v2.pdf) |
 | Comprehensive Effective Field Theory Framework for Coherent Elastic Neutrino-Nucleus Scattering | Gang Li, Chuan-Qiang Song, Feng-Jie Tang, Jiang-Hao Yu | [2601.19883](https://arxiv.org/abs/2601.19883v2) | v2 | 通用 EFT；COHERENT、CONUS+、PandaX-4T、XENONnT | [PDF](General_CEvNS/2601.19883v2.pdf) |
+
+| XENONnT WIMP Search: Signal & Background Modeling and Statistical Inference | E. Aprile et al.（XENON Collaboration） | [2406.13638](https://arxiv.org/abs/2406.13638v1) | v1 | XENONnT / SR0 响应模型；2411.11749 ref.[75] | [PDF](Solar_CEvNS/2406.13638v1.pdf) |
+| First Search for Light Dark Matter in the Neutrino Fog with XENONnT | E. Aprile et al.（XENON Collaboration） | [2409.17868](https://arxiv.org/abs/2409.17868v1) | v1 | XENONnT / 早期 SR0/SR1 轻暗物质分析；2411.11749 ref.[72] | [PDF](Solar_CEvNS/2409.17868v1.pdf) |
+
+| Signal response model in PandaX-4T | Y. Luo et al.（PandaX Collaboration） | [2403.04239](https://arxiv.org/abs/2403.04239v2) | v2 | PandaX-4T通用校准；非US2 sub-keV专用核 | [PDF](Solar_CEvNS/2403.04239v2.pdf) |
 
 ## 论文简介
 
@@ -113,6 +118,14 @@
 
 利用早期 PandaX-4T、XENONnT 核反冲结果约束弱混合角及广义中微子相互作用。其简化分析使用 PandaX-4T US2 和 XENONnT 的 S2 信息；它不是新的采集或独立数据释放。
 
+### 2406.13638v1
+
+提供 XENONnT SR0 的发光/电荷产生、重建与统计模型。2411.11749v1 的式 (14) 明确引用它；本次提取第 6 页 Fig.3 右下深红 Qy 曲线与带，保留低能虚线外推及坐标框裁剪标志。
+
+### 2409.17868v1
+
+XENONnT 在中微子雾中的轻暗物质搜寻；2411.11749v1 的参考文献 [72]，用于背景及效率的相关来源定位。其信号假设、后续模板和 CEvNS 原实验最佳拟合值不自动视为同一输入。
+
 ## 本次补充论文的关联数据资源
 
 登记日期：2026-11-05。以下登记公开资源的身份与访问入口；除论文 PDF 外，本次未下载或解析数值资源，也未把它们加入 Runtime 的活动数据／资源清单。
@@ -122,12 +135,22 @@
 | 2110.07730v2 | [arXiv v2 ancillary files](https://arxiv.org/abs/2110.07730v2) | C/AC 事件 TXT、BRN/NIN 分布、效率／闪烁响应系数、ROOT 通量；[文件及格式索引](COHERENT/README.md#csi2021-官方数据附件) | 已核对附件入口及补充材料；未逐表／逐事件解析。项目 `CsI2021` 仍使用原有正式输入 |
 | 2512.08065v3 | [HEPData DOI 10.17182/hepdata.167350](https://doi.org/10.17182/hepdata.167350) | 对应 LZ WS2025；DOI 来自论文页面 Comments；资源内部版本、发布日和表结构待核对 | 仅登记官方入口；本次平台返回 HTTP 403，未逐表核验；未接入程序 |
 | 2604.06002v2 | [Zenodo 10.5281/zenodo.20576156](https://zenodo.org/records/20576156)，版本 `sr0_sr1_sr2`；[GitHub 发布标签](https://github.com/XENONnT/cevns_data_release/tree/sr0_sr1_sr2) | 2026-06-07 发布；SR0/SR1/SR2 的 CSV 事件、YAML 分箱、HDF5 模板及示例；[格式说明](Solar_CEvNS/README.md#xenonnt-公开数据资源) | 已核对 Zenodo 发布元数据和官方仓库说明；未解析数值文件；未接入程序 |
-| 2411.11749v1 | 复用 [PandaX-4T 2407.10892v3](Solar_CEvNS/2407.10892v3.pdf) 与 [XENONnT 2408.02877v2](Solar_CEvNS/2408.02877v2.pdf)；原文 [Sec. III](https://arxiv.org/html/2411.11749v1#S3) | 早期太阳核反冲测量的简化再分析；[输入身份与限制](Solar_CEvNS/README.md#241111749-分析所用资源) | 本次检查的论文与 arXiv 页面未给出独立数值发布；不新建 Dataset，不把后续 SR0+SR1+SR2 或 LZ WS2025 数据当作它的原始输入 |
+| 2411.11749v1 | 复用 [PandaX-4T 2407.10892v3](Solar_CEvNS/2407.10892v3.pdf) 与 XENONnT 2408.02877 的早期测量；本库保留 [XENONnT v2](Solar_CEvNS/2408.02877v2.pdf)，本次另核对 [v1](https://arxiv.org/abs/2408.02877v1)；原文 [Sec. III](https://arxiv.org/html/2411.11749v1#S3) | 早期太阳核反冲测量的简化再分析；[输入身份与限制](Solar_CEvNS/README.md#241111749-分析所用资源) | 未找到该再分析的独立数值发布；本次保存文献摘录，不激活 Dataset，不把后续 SR0+SR1+SR2 或 LZ WS2025 数据当作它的原始输入 |
 
 数据采集区间、数据发布日和论文版本日期分别记录；论文 PDF 版本不能替代资源版本。这里的登记不表示资源已完成单位、分箱、归一化、统计或科学审查。
+
+2026-11-06 补充：已下载 [XENONnT 官方固定提交](https://github.com/XENONnT/cevns_data_release/tree/60d230dd7a5646fd4aa2368c5fdfba575ee0cb88) 的仓库 ZIP，解析 SR0/SR1 事件 CSV 和分箱 YAML，37 个事件按各 run 箱界核对为 `[16,14,7]`。仅下表所述的早期身份及事件/分箱已核对，未读取或采用 HDF5 模板；历史表中的“未解析”是 2026-11-05 的状态。Qy 与 D/B 摘录见 [PandaX-4T 数据说明](../../data/experiments/PandaX4T/PandaX4T_2024_US2/README.md)和 [XENONnT 数据说明](../../data/experiments/XENONnT/XENONnT_2024_SolarB8/README.md)。原实验 v1 Fig.2 用于本次版本对应，下载件保存在任务审计记录；本库既有 v2 保留为文献归档，不重复保存同一篇论文。
 
 ## 新增论文
 
 PDF 放入最合适的文献集合，使用 arXiv 编号及版本命名；无 arXiv 时使用 DOI 或明确短标题。同步该集合 README、本页总表及简介；涉及已有数据集时更新对应 Dataset README。单篇论文只保存一份，不按材料、年份、单篇论文或联合分析增加目录层级。信息不确定时注明待确认。
 
 [资料目录](../README.md) · [实验与数据集](../experiments/README.md)
+
+<!-- response-onboarding-v2:start -->
+
+## Response v2补充文献
+
+LUO Y, et al. Signal response model in PandaX-4T[J]. Physical Review D, 2024, 110: 023029. DOI: [10.1103/PhysRevD.110.023029](https://doi.org/10.1103/PhysRevD.110.023029)。实际使用[2403.04239v2](Solar_CEvNS/2403.04239v2.pdf)第21页Table II；NR范围约6–90keV，不能冒称sub-keV核已齐备。[完整标准引用表](<../experiments/PandaX4T_XENONnT_SolarB8/SOLAR_B8_RESPONSE_REFERENCES.v2.md>)。
+
+<!-- response-onboarding-v2:end -->

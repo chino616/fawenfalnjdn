@@ -47,6 +47,7 @@ decision_refs 和 evidence_refs。v1–v3 JSON 实例只检查历史结构兼容
 [handoffs](scenarios/handoff-cases.yaml)、
 [P04–P10 realistic cases](scenarios/phase-cases.yaml)
 是输入和预期，不是已发生的行为结果。
+Onboarding 场景还覆盖首次草稿来源未闭合、补充后重生成、仅有字段 ID 而无出处、混合来源数组和无缺口不重复询问；验收依据为[溯源合同](../../_shared/references/onboarding/data-provenance-contract.md)。场景登记/静态结构 PASS 不等于已做真实代理试用，也不认证原文数值。
 
 独立试用保存原始请求、实际回答、审查结论和未解决项，分开记录。
 标明静态结构检查、合成合同测试、真实代码示例执行、独立 agent 试用和人工接受各自覆盖；

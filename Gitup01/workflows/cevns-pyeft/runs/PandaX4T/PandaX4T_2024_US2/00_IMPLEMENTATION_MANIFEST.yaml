@@ -1,0 +1,343 @@
+{
+  "revision": 2,
+  "date": "2026-11-07",
+  "phase0": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/00_PHASE0_PLAN.md",
+  "runtime": "load_experiment_package -> predict_experiment -> SolarExecutor -> integrate_recoil_yield/probability_fold",
+  "input_authority": [
+    "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.input.yaml",
+    "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.resources.npz"
+  ],
+  "actual_implementation": {
+    "cevns_pyeft.experiments.solar_b8": "7c696dd9a361d35878e84e3c17764fba4814b9a1e8354f7f0774eb0792c41048",
+    "cevns_pyeft.experiments.solar_input": "350197bb5456cf99f1baa9460a5953353f5aeefc078ceda34467286ac605f58f",
+    "cevns_pyeft.theory.sm_coherent": "8e5ab60e6bc7f7c63356965e8d7f937185918a18a5ea792ea77022126b249759",
+    "cevns_pyeft.rates.recoil": "560f95cf2d0962ae966232b6353bfec2bb63fe16b09a0109d001bd77d4613d22",
+    "cevns_pyeft.rates.folding": "4b2d69765f78f32f7fc11972285336cacccf8bb3512b3ba086e214ac0dfc8245",
+    "cevns_pyeft.theory.kinematics": "a934195ed0ec76294bd6e90279cf28226e5f3b438544b5a7ed380d9492216962",
+    "cevns_pyeft.sources.composable": "7ef0ab540aae35e6b83339276e499aa848343ad8d9ae75d76f090460c855189d"
+  },
+  "capabilities": [
+    {
+      "id": "true_recoil_projection",
+      "requested": true,
+      "required_for_claim": true,
+      "machine_gate": "PASS",
+      "human_gate": "NOT_REVIEWED",
+      "result_ref": "outputs/solar_b8_sm/20261107_run1/PandaX4T_2024_US2/SM_RESULT.json"
+    },
+    {
+      "id": "electron_spectrum",
+      "requested": true,
+      "required_for_claim": true,
+      "machine_gate": "BLOCKED",
+      "human_gate": "NOT_REVIEWED",
+      "result_ref": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/SM_BENCHMARK_REPORT.md"
+    },
+    {
+      "id": "simplified_mean_map_spectrum",
+      "requested": true,
+      "required_for_claim": true,
+      "machine_gate": "PASS",
+      "human_gate": "NOT_REVIEWED",
+      "result_ref": "outputs/solar_b8_sm/20261110_pandax_simplified_run1/RESULT.json"
+    }
+  ],
+  "optional": [
+    "P08 Fast NOT_REQUESTED",
+    "P09 inference NOT_REQUESTED"
+  ],
+  "extensions": {
+    "light_vector_20261108": {
+      "date": "2026-11-08",
+      "decision_ref": "D0002",
+      "authorization_ref": "W0002",
+      "inputs": [
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.input.yaml",
+        "data/experiments/PandaX4T/PandaX4T_2024_US2/experiment.resources.npz",
+        "data/benchmarks/solar_b8_vector_v1/benchmark.input.json",
+        "cevns_pyeft/theory/light_vector.py",
+        "cevns_pyeft/experiments/solar_vector.py"
+      ],
+      "actual_outputs": [
+        "outputs/solar_b8_vector/20261108_run1/PandaX4T_2024_US2/DATASET_RESULT.json",
+        "outputs/solar_b8_vector/20261108_run1/PandaX4T_2024_US2/BENCHMARK_REPORT.md",
+        "outputs/solar_b8_vector/20261108_run1/PandaX4T_2024_US2/events.png"
+      ],
+      "standard_api": "with_solar_light_vector -> load_experiment(components=interaction) -> predict_experiment",
+      "human_result_acceptance": "NOT_REVIEWED"
+    },
+    "simplified_mean_map_20261110": {
+      "date": "2026-11-10",
+      "decision_ref": "D0003",
+      "authorization_ref": "W0003",
+      "input_card": "data/benchmarks/pandax_us2_simplified_v1/benchmark.input.json",
+      "input_card_sha256": "52462e4600c4bdb41e5552e9d5f7dba12f93e2e11cfe0e8ae392c4f28c64ded3",
+      "standard_api": "load_experiment_package -> with_pandax_mean_map -> predict_experiment -> MeanMapExecutor -> shared integrate_recoil_yield",
+      "actual_implementation": {
+        "cevns_pyeft.experiments.solar_b8": "7c696dd9a361d35878e84e3c17764fba4814b9a1e8354f7f0774eb0792c41048",
+        "cevns_pyeft.experiments.solar_input": "350197bb5456cf99f1baa9460a5953353f5aeefc078ceda34467286ac605f58f",
+        "cevns_pyeft.theory.sm_coherent": "8e5ab60e6bc7f7c63356965e8d7f937185918a18a5ea792ea77022126b249759",
+        "cevns_pyeft.rates.recoil": "560f95cf2d0962ae966232b6353bfec2bb63fe16b09a0109d001bd77d4613d22",
+        "cevns_pyeft.rates.folding": "4b2d69765f78f32f7fc11972285336cacccf8bb3512b3ba086e214ac0dfc8245",
+        "cevns_pyeft.theory.kinematics": "a934195ed0ec76294bd6e90279cf28226e5f3b438544b5a7ed380d9492216962",
+        "cevns_pyeft.sources.composable": "7ef0ab540aae35e6b83339276e499aa848343ad8d9ae75d76f090460c855189d",
+        "cevns_pyeft.experiments.solar_mean_map": "ff5f7f997f3f8a3023a9882b226637b36ac240de42418243f1e691d2c6fd64c5"
+      },
+      "actual_outputs": [
+        "outputs/solar_b8_sm/20261110_pandax_simplified_run1/RESULT.json",
+        "outputs/solar_b8_sm/20261110_pandax_simplified_run1/REPORT.md",
+        "outputs/solar_b8_sm/20261110_pandax_simplified_run1/events_by_bin.tsv",
+        "outputs/solar_b8_sm/20261110_pandax_simplified_run1/events.png",
+        "outputs/solar_b8_sm/20261110_pandax_simplified_run1/prediction.npz"
+      ],
+      "claim": "simplified eight-bin calculation complete, author-equivalence not certified",
+      "human_result_acceptance": "NOT_REVIEWED"
+    },
+    "nuclear_response_20261110": {
+      "date": "2026-11-10",
+      "decision_ref": "D0004",
+      "write_ref": "W0004",
+      "scope": "actual nuclear-table SM only",
+      "current_onboarding": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.1.md",
+      "result": "outputs/solar_b8_sm/20261110_nuclear_response_run2/PandaX4T_2024_US2/RESULT.json",
+      "physics_fingerprint": "0aece6ff4a1bcde676f31833ef9fb602687ed0b57ad12b700281c4c4d475356b",
+      "resources": {
+        "package_input": {
+          "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\data\\experiments\\PandaX4T\\PandaX4T_2024_US2\\experiment.input.yaml",
+          "sha256": "c7299d35b5fdb192b425a12cb8b5571ea5218619e1bb5ce2f689e8b08bc1e046",
+          "semantic": ""
+        },
+        "package_arrays": {
+          "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\data\\experiments\\PandaX4T\\PandaX4T_2024_US2\\experiment.resources.npz",
+          "sha256": "56a44e766476c7bc8771e2e98e316c48a97e13d485d006d12324ba473b4f09b8",
+          "semantic": ""
+        },
+        "mean_charge_yield": {
+          "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\data\\experiments\\PandaX4T\\PandaX4T_2024_US2\\detector\\pandax_qy_nominal.txt",
+          "sha256": "18e0cee351c09fb6e3c1b286b5a15de88c8a9c9aa371cb0367946aa57e36f75f",
+          "semantic": "2407.10892v3 p5 Fig.4 lower, digitized nominal Qy"
+        },
+        "nuclear_response": {
+          "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\data\\responses\\responses_all.json",
+          "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+          "semantic": "existing np nuclear polynomial table; external source unresolved"
+        }
+      },
+      "coverage": {
+        "number_fraction": 0.998158,
+        "missing": [
+          "Xe124",
+          "Xe126"
+        ],
+        "renormalized": false
+      },
+      "detector": "US2 deterministic mean mapping",
+      "external_nuclear_source_certification": "UNRESOLVED",
+      "human_result_acceptance": "NOT_REVIEWED",
+      "historical_KN_results_and_packages": "preserved; old vector results not relabeled",
+      "actual_implementation": {
+        "cevns_pyeft.experiments.solar_b8": "7c696dd9a361d35878e84e3c17764fba4814b9a1e8354f7f0774eb0792c41048",
+        "cevns_pyeft.experiments.solar_input": "350197bb5456cf99f1baa9460a5953353f5aeefc078ceda34467286ac605f58f",
+        "cevns_pyeft.theory.sm_coherent": "8e5ab60e6bc7f7c63356965e8d7f937185918a18a5ea792ea77022126b249759",
+        "cevns_pyeft.rates.recoil": "560f95cf2d0962ae966232b6353bfec2bb63fe16b09a0109d001bd77d4613d22",
+        "cevns_pyeft.rates.folding": "4b2d69765f78f32f7fc11972285336cacccf8bb3512b3ba086e214ac0dfc8245",
+        "cevns_pyeft.theory.kinematics": "a934195ed0ec76294bd6e90279cf28226e5f3b438544b5a7ed380d9492216962",
+        "cevns_pyeft.sources.composable": "7ef0ab540aae35e6b83339276e499aa848343ad8d9ae75d76f090460c855189d",
+        "cevns_pyeft.experiments.solar_mean_map": "ff5f7f997f3f8a3023a9882b226637b36ac240de42418243f1e691d2c6fd64c5",
+        "cevns_pyeft.experiments.solar_nuclear": "5123641bf421a470f7c6610d92e8662d62dc8c95d580b114ce8b8b4a5a679843",
+        "cevns_pyeft.nuclear.response": "fc94a1582b11e58113e2f192be9733dfaf5b27b2604fe075da9e9f56b94d776f",
+        "cevns_pyeft.rates.differential": "b14f1d53664980bee49d45416dbbf17dc15a71c0f99fc1d6cefd6fb6e016c536",
+        "cevns_pyeft.theory.li2026.amplitude": "40a2bbfcb60716da67ff3d5182d5af6dd075bcd7dfccf9a49b9b3b0a8a9b7aed",
+        "cevns_pyeft.theory.li2026.left_to_ci": "56027d356737d85de4ae22ba3b303ade16e1c0163887bbedbc53ac2f0d46ae48",
+        "cevns_pyeft.theory.li2026.responses": "5edb06d4dd7409d0bac8245f9bf25b24f81f9e473e37f5e4f311492e9542f01b",
+        "cevns_pyeft.theory.li2026.lec": "9c981d8705ba6a17829c75e81b93ce6f85fdbcc290faf5bf64edde9dc8867691",
+        "cevns_pyeft.theory.li2026.flavor": "66c84c2f2dad58ebba132cb768db36c8661a3e053b8cb74900d47df6cffa48c4",
+        "cevns_pyeft.theory.li2026.operators": "1b67548a504a4ef1cf49a208754a6c53d0c857b444fecd2da9bbfd6f413f9c61",
+        "cevns_pyeft.foundation.constants": "0bb51033d1ca64e18a7a7bb0fd4cce38bc679558dd7392740f72d4683276cd44"
+      }
+    },
+    "singlebin_2601_19883": {
+      "analysis_id": "singlebin_2601_19883",
+      "status": "CALCULATED",
+      "date": "2026-11-11",
+      "decision_ref": "D0005",
+      "write_ref": "W0005",
+      "samples": [
+        "PandaX_paired",
+        "PandaX_US2"
+      ],
+      "input_card": "data/benchmarks/solar_b8_singlebin_2601_19883/analysis.input.json",
+      "input_card_sha256": "50c510dbe07d4f41b5c38ce897d1610efcfcc389e107d621009fc57334a0d316",
+      "statistics_input": "data/benchmarks/solar_b8_singlebin_2601_19883/fitted_yields.json",
+      "source_register_and_evidence": "data/benchmarks/solar_b8_singlebin_2601_19883/analysis.input.json /references,/extraction,/files",
+      "onboarding": "docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SOLAR_B8_SINGLEBIN_ONBOARDING.v3.2.1.md",
+      "calculation_entry": "tools/run_solar_b8_singlebin_benchmark.py",
+      "results": {
+        "PandaX_paired": "outputs/solar_b8_singlebin/20261111_response_run2/PandaX_paired/SM_RESULT.json",
+        "PandaX_US2": "outputs/solar_b8_singlebin/20261111_response_run2/PandaX_US2/SM_RESULT.json"
+      },
+      "physics_fingerprints": {
+        "PandaX_paired": "de18a1f56fcd95e2c85b9d0721a5f3ad5b31e2e522ec142f34cfcf2312a8fac5",
+        "PandaX_US2": "29c1f3f74a96333c718171ad325255989af092b713693abd968e7fc2a935516b"
+      },
+      "human_result_acceptance": "NOT_REVIEWED",
+      "old_multibin": "separate, retained; no resources reused by detector/statistics",
+      "blockers": [],
+      "common_limitations": [
+        "Xe124/Xe126 missing, no renormalization",
+        "external nuclear-table source certification unresolved; direct local reuse authorized"
+      ]
+    },
+    "solar_ee_vector_nsi": {
+      "analysis_id": "solar_ee_vector_nsi",
+      "version": "3.3",
+      "date": "2026-11-12",
+      "status": "MAINLINE_NSI_COMPUTED; EXACT_PAPER_GREEN_REPRODUCTION_NOT_ESTABLISHED",
+      "decision_ref": "D0006",
+      "write_ref": "W0006",
+      "samples": [
+        "PandaX_paired",
+        "PandaX_US2",
+        "XENONnT"
+      ],
+      "input_card": "data/benchmarks/solar_b8_nsi_2601_19883/nsi.input.json",
+      "input_card_sha256": "ee6d5d5e0844e01692ca5612e778e2785db41dcab9172bb89d0955b01830f256",
+      "statistics_input": "data/benchmarks/solar_b8_nsi_2601_19883/fitted_yields.json",
+      "onboarding": "docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/NSI_EE_VECTOR_ONBOARDING.v3.3.md",
+      "calculation_entry": "tools/run_solar_b8_nsi_benchmark.py",
+      "result": "outputs/solar_b8_nsi/20261112_fig4_run2/NSI_RESULTS.json",
+      "comparison": "outputs/solar_b8_nsi/20261112_fig4_run2/PAPER_COMPARISON.json",
+      "qa": "outputs/solar_b8_nsi/20261112_fig4_run2/QA.json",
+      "model_fingerprints": {
+        "PandaX_paired": {
+          "physics_fingerprint": "27eb17f0337bde4985d930e473854515d5d2af6d08afbefc346adf6d17e73468",
+          "analysis_fingerprint": "e518019bc00f9fb331c53050457dcf2697241650bc7cca9ceced3d6e9782daf4",
+          "kernel_sha256": "e4bf43a6413a1ad9d30be16e00c7b59017863b6cd35b187a51326121c2b30a83",
+          "K_shape": [
+            7,
+            2,
+            6,
+            144
+          ]
+        },
+        "PandaX_US2": {
+          "physics_fingerprint": "21f6cf90be35a977d3be65cd0b038d5844c896db0e6c5e74bf586dc7ea87373b",
+          "analysis_fingerprint": "008501583b32eacc508ccc9e21b7c0a8aa491e352901265748e925c748669e8f",
+          "kernel_sha256": "96524561929f2a6a33c088fa3cb658e46dc5476ffb3deb8d0bc2bea214d36aea",
+          "K_shape": [
+            7,
+            2,
+            6,
+            144
+          ]
+        },
+        "XENONnT": {
+          "physics_fingerprint": "ac7e035d82bbbbfc6b16d395c9748edde5b4d969b667af2d56cd6f4339b03ed7",
+          "analysis_fingerprint": "8a0c9b1a339c69317dfc9647d86b924a5ac944824e8b688a1e895edf4c476ea7",
+          "kernel_sha256": "c6028135a42cbf62b7dd440e51e937480bd9ac927ab461f53818c049fb59306f",
+          "K_shape": [
+            7,
+            2,
+            6,
+            144
+          ]
+        }
+      },
+      "actual_source_snapshot": "outputs/solar_b8_nsi/20261112_fig4_run2/source",
+      "analysis_source_fingerprints": "outputs/solar_b8_nsi/20261112_fig4_run2/ANALYSIS_SOURCE_FINGERPRINTS.json",
+      "scientific_result_acceptance": "NOT_REVIEWED",
+      "exact_paper_reproduction": "NOT_ESTABLISHED",
+      "limitations": [
+        "two-flavor adiabatic model, theta13_m=vacuum, no Earth regeneration",
+        "X tail is explicit project assumption; zero/unit and bounded profile controls kept separate",
+        "B16 structure is pinned secondary transcription; neutron density uses baryon mass1u approximation",
+        "paper exact oscillation/profile/SM input card not published; project choice explicitly sourced",
+        "seven directly adopted nuclear tables; Xe124/126 missing, no renormalization; external nuclear author release unverified"
+      ],
+      "phase_reports": {
+        "P03": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P03_solar_nsi2601.md",
+        "P04": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P04_solar_nsi2601.md",
+        "P05": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P05_solar_nsi2601.md",
+        "P06": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P06_solar_nsi2601.md",
+        "P07": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P07_solar_nsi2601.md",
+        "P08": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P08_solar_nsi2601.md",
+        "P09": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P09_solar_nsi2601.md",
+        "P10": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P10_solar_nsi2601.md"
+      }
+    },
+    "external_solar_rho_snudd": {
+      "analysis_id": "external_solar_rho_snudd",
+      "parent_analysis": "solar_ee_vector_nsi",
+      "version": "3.4",
+      "date": "2026-11-12",
+      "status": "INSTALLED_EXTERNAL_SOURCE_BOUND_TO_MAINLINE_RUNTIME; POINT_BENCHMARK_VERIFIED",
+      "decision_ref": "D0007",
+      "write_ref": "W0007",
+      "scientific_result_acceptance": "NOT_REVIEWED",
+      "onboarding": "docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_EXTERNAL_ONBOARDING.v3.4.md",
+      "source_card": "extensions/solar_rho_snudd/snudd.input.json",
+      "source_card_sha256": "942ae3f85b40b07b87ad271d1a0b943440a89d6d1f294c850ef4a720652861b9",
+      "entry": "tools/run_solar_b8_snudd_benchmark.py",
+      "loader": "extensions.solar_rho_snudd.experiment.load_snudd",
+      "results": "outputs/external/solar_rho_snudd/20261112_run1/RESULTS.json",
+      "qa": "outputs/external/solar_rho_snudd/20261112_run1/QA.json",
+      "software_commit": "11622ded104994959a649d85e263c2d9f933ea74",
+      "primary_old_branch": "solar_ee_vector_nsi (retained)",
+      "default_global_activation": false,
+      "capability": {
+        "installation": "PASS",
+        "rho_export": "PASS",
+        "standard_runtime": "PASS",
+        "actual_Slow_Fast": "PASS",
+        "new_full_Fig4": "COMPUTED; EXACT_PAPER_REPRODUCTION_NOT_ESTABLISHED",
+        "human": "NOT_REVIEWED"
+      },
+      "phase_reports": {
+        "P03": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P03_snudd_source.md",
+        "P07": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P07_snudd_source.md",
+        "P08": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P08_snudd_source.md",
+        "P09": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P09_snudd_source.md",
+        "P10": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P10_snudd_source.md"
+      },
+      "full_inference_extension": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/SNUDD_FIG4_BRANCH.json"
+    },
+    "external_snudd_full_fig4": {
+      "analysis_id": "external_snudd_full_fig4",
+      "parent_analysis": "solar_ee_vector_nsi",
+      "parent_source": "external_solar_rho_snudd",
+      "version": "3.4.1",
+      "date": "2026-11-12",
+      "status": "FULL_SOLAR_FIG4_STATISTICAL_CALCULATION_COMPLETE; EXACT_PAPER_REPRODUCTION_NOT_ESTABLISHED",
+      "machine": "PASS",
+      "human": "NOT_REVIEWED",
+      "write_ref": "W0008",
+      "decision_ref": "D0008",
+      "report": "docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_FULL_BENCHMARK.v3.4.1.md",
+      "results": "outputs/external/solar_rho_snudd/20261112_fig4_run2/NSI_RESULTS.json",
+      "entry": "tools/run_solar_b8_snudd_inference.py",
+      "source_card_sha256": "942ae3f85b40b07b87ad271d1a0b943440a89d6d1f294c850ef4a720652861b9",
+      "qa": "outputs/external/solar_rho_snudd/20261112_fig4_run2/QA.json",
+      "exact_paper_reproduction": "NOT_ESTABLISHED",
+      "default_global_activation": false,
+      "phase_reports": {
+        "P09": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P09_snudd_full_inference.md",
+        "P10": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/phases/P10_snudd_full_inference.md"
+      }
+    },
+    "snudd_full_rho_trace_contract": {
+      "analysis_id": "snudd_full_rho_trace_contract",
+      "version": "3.5",
+      "status": "ONBOARDING_UPDATED_RUNTIME_PENDING",
+      "write_ref": "W0009",
+      "decision_ref": "D0009",
+      "onboarding": "docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_FULL_TRACE_ONBOARDING.v3.5.md",
+      "contract": "docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_FULL_TRACE_CONTRACT.v3.5.json",
+      "availability_audit": "outputs/external/solar_rho_snudd/20261112_trace_onboarding/RHO_INPUT_AUDIT.json",
+      "implementation_audit": "outputs/external/solar_rho_snudd/20261112_trace_onboarding/IMPLEMENTATION_AUDIT.json",
+      "runtime_full_trace": "NOT_IMPLEMENTED",
+      "full_trace_statistics": "NOT_RUN",
+      "old_numerical_results_preserved": true,
+      "human_result_review": "NOT_REVIEWED"
+    }
+  }
+}

@@ -1,0 +1,403 @@
+{
+  "schema": "cevns_pyeft_paper_theme/1",
+  "version": "4.0",
+  "scope": "content-independent publication figure theme",
+  "widths_mm": {
+    "single_column": 86,
+    "double_column": 180
+  },
+  "typography": {
+    "font": "STIXGeneral",
+    "math_font": "stix",
+    "body_pt": 9.0,
+    "axis_label_pt": 9.5,
+    "panel_title_pt": 10.0,
+    "tick_label_pt": 8.0,
+    "legend_pt": 8.0,
+    "annotation_pt": 8.0,
+    "note_pt": 7.5,
+    "title_weight": "normal"
+  },
+  "colors": {
+    "series_order": [
+      "#2879B8",
+      "#D66B50",
+      "#218D7B",
+      "#BB6293",
+      "#BB9432",
+      "#8271BC",
+      "#3D9FB5",
+      "#A94C55",
+      "#718C4E",
+      "#B57737",
+      "#596E96",
+      "#568B60"
+    ],
+    "blue": "#2879B8",
+    "vermillion": "#D66B50",
+    "green": "#218D7B",
+    "magenta": "#BB6293",
+    "amber": "#BB9432",
+    "sky": "#8271BC",
+    "purple": "#3D9FB5",
+    "ink": "#344B61",
+    "neutral": "#8E9CAA",
+    "frame": "#768CA1",
+    "grid": "#E6EDF3",
+    "background": "#FFFFFF",
+    "burgundy": "#A94C55",
+    "olive": "#718C4E",
+    "rust": "#B57737",
+    "slate": "#596E96",
+    "forest": "#568B60"
+  },
+  "default_roles": {
+    "primary": {
+      "color": "blue",
+      "linestyle": "-",
+      "marker": "o"
+    },
+    "comparison": {
+      "color": "vermillion",
+      "linestyle": "--",
+      "marker": "s"
+    },
+    "secondary": {
+      "color": "green",
+      "linestyle": "-.",
+      "marker": "^"
+    },
+    "fourth": {
+      "color": "magenta",
+      "linestyle": ":",
+      "marker": "D"
+    },
+    "reference": {
+      "color": "neutral",
+      "linestyle": "--",
+      "marker": "none"
+    },
+    "data_or_total": {
+      "color": "ink",
+      "linestyle": "-",
+      "marker": "o"
+    }
+  },
+  "lines": {
+    "primary_pt": 1.55,
+    "secondary_pt": 1.4,
+    "reference_pt": 1.2,
+    "threshold_pt": 0.9,
+    "filled_edge_pt": 0.45,
+    "contour_pt": 1.4
+  },
+  "markers": {
+    "data_pt": 3.4,
+    "theory_pt": 4.5,
+    "errorbar_pt": 0.8,
+    "capsize_pt": 2.0,
+    "open_marker_face": "#FFFFFF"
+  },
+  "fills": {
+    "uncertainty_alpha": 0.18,
+    "contour_alpha": 0.16,
+    "background_alpha": 0.6,
+    "component_alpha": 0.8
+  },
+  "axes": {
+    "frame_pt": 0.65,
+    "major_tick_length_pt": 3.2,
+    "major_tick_width_pt": 0.65,
+    "minor_tick_length_pt": 1.8,
+    "minor_tick_width_pt": 0.45,
+    "tick_direction": "in",
+    "ticks_top": true,
+    "ticks_right": true,
+    "grid_axis_default": "y",
+    "grid_which_default": "major",
+    "grid_pt": 0.4,
+    "grid_alpha": 0.5,
+    "axis_below": true
+  },
+  "legends": {
+    "frameon": false,
+    "shared_position": "above axes",
+    "handle_length": 2.3,
+    "column_spacing": 1.1,
+    "handle_text_pad": 0.5,
+    "maximum_items_before_restructure": 6
+  },
+  "colormaps": {
+    "sequential": "viridis",
+    "diverging_zero_centered": "RdBu_r",
+    "monotonic_cost_or_significance": "magma",
+    "forbidden": [
+      "jet",
+      "rainbow"
+    ]
+  },
+  "layouts": {
+    "single_column": {
+      "width_mm": 86,
+      "height_mm": 65
+    },
+    "double_single": {
+      "width_mm": 180,
+      "height_mm": 100
+    },
+    "double_1x2": {
+      "width_mm": 180,
+      "height_mm": 85
+    },
+    "double_1x3": {
+      "width_mm": 180,
+      "height_mm": 78
+    },
+    "double_2x2": {
+      "width_mm": 180,
+      "height_mm": 145
+    },
+    "double_ratio": {
+      "width_mm": 180,
+      "height_mm": 120,
+      "lower_to_upper_height_ratio": 0.33
+    }
+  },
+  "chart_rules": {
+    "line_or_stairs": "Identify series by canonical palette identity plus line style/marker, especially for >6 series. Binned quantities use stairs.",
+    "scatter_errorbar": "Ink circles for observations; colored shapes for theory; do not invent missing errors.",
+    "histogram_stack": "Use bar_style.fill_by_series (medium-light opaque fill), thin white divisions, subtle total outline; for >6 components add hatches or faceting. Preserve signed components and stack order.",
+    "ratio_residual_pull": "Share x axis; neutral reference at 1 or 0; label the exact residual definition.",
+    "one_dimensional_scan": "Keep series identity; label confidence thresholds directly.",
+    "two_dimensional_contour": "Color identifies dataset/model; linestyle identifies confidence level.",
+    "heatmap_matrix": "Colorbar requires quantity and unit; disable default grid; center diverging maps at zero.",
+    "signed_log": "Use symlog and report the linear threshold; never take absolute values to mimic log."
+  },
+  "export": {
+    "formats": [
+      "pdf",
+      "svg",
+      "png"
+    ],
+    "png_dpi": 300,
+    "pdf_fonttype": 42,
+    "ps_fonttype": 42,
+    "svg_fonttype": "none",
+    "tight_crop": false,
+    "transparent_background": false
+  },
+  "prohibitions": [
+    "Do not bind the theme to a particular observable or experiment.",
+    "Do not use color as the only distinction.",
+    "Do not use presentation-style figure titles in paper figures.",
+    "Do not use jet or rainbow colormaps.",
+    "Do not change data, bins, errors, normalization, axis limits, or statistical meaning while styling."
+  ],
+  "bar_style": {
+    "description": "Medium-light opaque fills corresponding to the 12 line colors; readable without the washed-out look of v3.",
+    "fill_order": [
+      "#82B7DC",
+      "#EDA996",
+      "#7FC5B4",
+      "#D9AAC5",
+      "#E5C679",
+      "#B2D9E5",
+      "#BFB3DE",
+      "#D8A5AE",
+      "#BCCE9C",
+      "#DFB38A",
+      "#AAB9CF",
+      "#9AC8A7"
+    ],
+    "fill_by_series": {
+      "blue": "#82B7DC",
+      "vermillion": "#EDA996",
+      "green": "#7FC5B4",
+      "magenta": "#D9AAC5",
+      "amber": "#E5C679",
+      "sky": "#B2D9E5",
+      "purple": "#BFB3DE",
+      "burgundy": "#D8A5AE",
+      "olive": "#BCCE9C",
+      "rust": "#DFB38A",
+      "slate": "#AAB9CF",
+      "forest": "#9AC8A7"
+    },
+    "fill_alpha": 1.0,
+    "edge_color": "#FFFFFF",
+    "edge_pt": 0.55,
+    "total_outline_color": "ink",
+    "total_outline_pt": 1.2,
+    "bar_width_fraction": 0.88,
+    "hatch_for_grayscale": [
+      "",
+      "//",
+      "xx",
+      "..",
+      "\\\\",
+      "++",
+      "oo",
+      "||",
+      "--",
+      "OO",
+      "//",
+      "xx"
+    ],
+    "negative_component_rule": "Show signed components explicitly; never stack negative values as if positive.",
+    "color_mapping_rule": "Bar fill hue matches the identity of its line/contour series; use lightened fill, not a new semantic color."
+  },
+  "series_palette": [
+    {
+      "key": "blue",
+      "label": "Ocean blue",
+      "color": "#2879B8",
+      "bar_fill": "#82B7DC",
+      "linestyle": "-",
+      "marker": "o",
+      "hatch": ""
+    },
+    {
+      "key": "vermillion",
+      "label": "Coral",
+      "color": "#D66B50",
+      "bar_fill": "#EDA996",
+      "linestyle": "--",
+      "marker": "s",
+      "hatch": "//"
+    },
+    {
+      "key": "green",
+      "label": "Teal",
+      "color": "#218D7B",
+      "bar_fill": "#7FC5B4",
+      "linestyle": "-.",
+      "marker": "^",
+      "hatch": "xx"
+    },
+    {
+      "key": "magenta",
+      "label": "Rose",
+      "color": "#BB6293",
+      "bar_fill": "#D9AAC5",
+      "linestyle": ":",
+      "marker": "D",
+      "hatch": ".."
+    },
+    {
+      "key": "amber",
+      "label": "Ochre",
+      "color": "#BB9432",
+      "bar_fill": "#E5C679",
+      "linestyle": "-",
+      "marker": "v",
+      "hatch": "\\\\"
+    },
+    {
+      "key": "sky",
+      "label": "Iris",
+      "color": "#8271BC",
+      "bar_fill": "#B2D9E5",
+      "linestyle": "--",
+      "marker": "P",
+      "hatch": "++"
+    },
+    {
+      "key": "purple",
+      "label": "Aqua",
+      "color": "#3D9FB5",
+      "bar_fill": "#BFB3DE",
+      "linestyle": "-.",
+      "marker": "X",
+      "hatch": "oo"
+    },
+    {
+      "key": "burgundy",
+      "label": "Wine red",
+      "color": "#A94C55",
+      "bar_fill": "#D8A5AE",
+      "linestyle": ":",
+      "marker": "h",
+      "hatch": "||"
+    },
+    {
+      "key": "olive",
+      "label": "Olive",
+      "color": "#718C4E",
+      "bar_fill": "#BCCE9C",
+      "linestyle": "-",
+      "marker": ">",
+      "hatch": "--"
+    },
+    {
+      "key": "rust",
+      "label": "Copper",
+      "color": "#B57737",
+      "bar_fill": "#DFB38A",
+      "linestyle": "--",
+      "marker": "<",
+      "hatch": "OO"
+    },
+    {
+      "key": "slate",
+      "label": "Slate",
+      "color": "#596E96",
+      "bar_fill": "#AAB9CF",
+      "linestyle": "-.",
+      "marker": "*",
+      "hatch": "//"
+    },
+    {
+      "key": "forest",
+      "label": "Fern",
+      "color": "#568B60",
+      "bar_fill": "#9AC8A7",
+      "linestyle": ":",
+      "marker": "p",
+      "hatch": "xx"
+    }
+  ],
+  "series_scaling": {
+    "canonical_count": 12,
+    "assignment": "Map each physics object/dataset to a stable palette index and reuse that index in every figure; never reassign by plotting order.",
+    "line_strategy": "For indices >= 12 reuse the base color with a different linestyle and marker; 12 unique colors are not claimed perceptually separable under all conditions.",
+    "linestyle_cycle": [
+      "-",
+      "--",
+      "-.",
+      ":"
+    ],
+    "marker_cycle": [
+      "o",
+      "s",
+      "^",
+      "D",
+      "v",
+      "P",
+      "X",
+      "h",
+      ">",
+      "<",
+      "*",
+      "p"
+    ],
+    "hatch_cycle": [
+      "",
+      "//",
+      "xx",
+      "..",
+      "\\\\",
+      "++",
+      "oo",
+      "||",
+      "--",
+      "OO",
+      "//",
+      "xx"
+    ],
+    "markers_required_when_series_gt": 6,
+    "hatches_recommended_when_bars_gt": 6,
+    "facet_recommended_when_series_gt": 8,
+    "legend_restructure_threshold": 6,
+    "colors_are_not_the_only_encoding": true
+  }
+}

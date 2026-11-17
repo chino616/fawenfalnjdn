@@ -1,0 +1,398 @@
+{
+  "schema": "solar_full_rho_trace_onboarding/1",
+  "version": "3.5",
+  "date": "2026-11-12",
+  "status": "ONBOARDING_UPDATED; RUNTIME_FULL_TRACE_PENDING",
+  "user_method": "散射端需要改用trace(rho K)",
+  "this_round": "先修改onboarding，给出截面与事例数积分；不修改运行物理代码或重算结果",
+  "parent_source_card": "extensions/solar_rho_snudd/snudd.input.json",
+  "source_card_sha256": "942ae3f85b40b07b87ad271d1a0b943440a89d6d1f294c850ef4a720652861b9",
+  "software_commit": "11622ded104994959a649d85e263c2d9f933ea74",
+  "base_input_card": "data/benchmarks/solar_b8_singlebin_2601_19883/analysis.input.json",
+  "base_input_card_sha256": "50c510dbe07d4f41b5c38ce897d1610efcfcc389e107d621009fc57334a0d316",
+  "state": {
+    "basis": "flavor",
+    "order": [
+      "e",
+      "mu",
+      "tau"
+    ],
+    "phase_convention": "pinned SNuDD.UPMNS",
+    "shape": [
+      "N_E",
+      3,
+      3
+    ],
+    "dtype": "complex128",
+    "unit": "1",
+    "required": "native complete rho; no flavor dephasing or mu/tau redistribution"
+  },
+  "kernel": {
+    "definition": "K_A(E,T)=d boldsigma_A/dT in incoming flavor space; outgoing flavor summed",
+    "basis": "same flavor basis and phases as rho",
+    "shape": [
+      "N_E",
+      3,
+      3
+    ],
+    "unit": "cm2/keV",
+    "state_contraction": "sum_ab rho_ab K_ba = trace(rho @ K)",
+    "current_shared_api": "cevns_pyeft.rates.differential.differential_flavor_kernel_nn",
+    "solar_runtime_binding": "NOT_IMPLEMENTED",
+    "new_energy_resolved_matrix_kernel_arrays": "NOT_GENERATED"
+  },
+  "fixed_inputs": {
+    "flux_cm2_s": 5460000.0,
+    "sin2thetaW": 0.23857,
+    "seconds_per_year": 31557600.0,
+    "isotope_keys": [
+      "Xe128",
+      "Xe129",
+      "Xe130",
+      "Xe131",
+      "Xe132",
+      "Xe134",
+      "Xe136"
+    ],
+    "samples": {
+      "PandaX_paired": {
+        "dataset_id": "PandaX4T_2024_PAIRED__singlebin2601",
+        "experiment_slug": "PandaX4T",
+        "T_bounds_keVnr": [
+          1.1,
+          3.0
+        ],
+        "exposure_tyr": 1.2,
+        "efficiency": "pandax_paired_total.txt",
+        "source": "R2 PDF p3 Fig.1 Total paired; official exposure 1.20, not R5 1.25; T bounds R4 Table II",
+        "coverage": "COMPLETE"
+      },
+      "PandaX_US2": {
+        "dataset_id": "PandaX4T_2024_US2__singlebin2601",
+        "experiment_slug": "PandaX4T",
+        "T_bounds_keVnr": [
+          0.3,
+          3.0
+        ],
+        "exposure_tyr": 1.04,
+        "efficiency": "pandax_us2_total.txt",
+        "source": "R2 PDF p3 Fig.1 Total US2 and exposure; T bounds R4 Table II; no extra Qy/Ne window",
+        "coverage": "COMPLETE"
+      },
+      "XENONnT": {
+        "dataset_id": "XENONnT_2024_SolarB8__singlebin2601",
+        "experiment_slug": "XENONnT",
+        "T_bounds_keVnr": [
+          0.5,
+          3.0
+        ],
+        "exposure_tyr": 3.51,
+        "efficiency": "xenonnt_combined.txt",
+        "source": "R3 PDF p4 Fig.1 black combined; exposure R3 3.51; bounds R4 Table II",
+        "coverage": "MISSING_TAIL",
+        "verified_upper_keVnr": 2.770000001808045,
+        "missing_interval_keVnr": [
+          2.770000001808045,
+          3.0
+        ],
+        "clipped_low_vertices": "native PDF path exists below plotted frame; numeric extraction verified, visually clipped",
+        "allowed_tail_modes": [
+          "bounded",
+          "flat_sensitivity"
+        ],
+        "flat_sensitivity": "PROJECT ASSUMPTION: epsilon(T>last)=epsilon(last); not an experimental input or official full response"
+      }
+    }
+  },
+  "forbidden_substitutions": [
+    "diag(Pee,(1-Pee)/2,(1-Pee)/2)",
+    "rho_ee-only production contraction",
+    "constant unit-trace representative state for NSI",
+    "scalar old kernel relabeled as full flavor kernel",
+    "all-flavor NSI substituted for ee-only NSI",
+    "unrecorded phase-convention changes",
+    "flux or ci fitted to paper boundary"
+  ],
+  "availability": {
+    "native_rho_packets": "AVAILABLE_VERIFIED",
+    "shared_K_API": "AVAILABLE_INSPECTED",
+    "shared_trace_API": "AVAILABLE_INSPECTED",
+    "source_to_full_rho_binding": "PENDING_IMPLEMENTATION",
+    "full_trace_Slow": "NOT_RUN",
+    "full_trace_Fast": "NOT_RUN",
+    "full_trace_statistics": "NOT_RUN",
+    "rho_figures": "NOT_GENERATED_THIS_DOCUMENT_FIRST_STEP"
+  },
+  "rho_input_evidence": [
+    {
+      "label": "SM",
+      "epsilon_ee_uV": 0.0,
+      "epsilon_ee_dV": 0.0,
+      "manifest": "outputs/external/solar_rho_snudd/20261112_fig4_run2/validation_cache/8e2417073e926516c86038b6f3e5984f14f9d41bb05cb97da8fb1e5c078828cd/manifest.json",
+      "manifest_sha256": "276555b5b09f668b10882292e7ff7a7e141b428db0c7ad2f1b978cf25eab5aa4",
+      "npz": "outputs/external/solar_rho_snudd/20261112_fig4_run2/validation_cache/8e2417073e926516c86038b6f3e5984f14f9d41bb05cb97da8fb1e5c078828cd/rho.npz",
+      "rho_npz_sha256": "9b4a2e4623c28a5541c62609796b396fe54289e18b7de0b6ebb1a0a5bc35e44c",
+      "shape": [
+        1450,
+        3,
+        3
+      ],
+      "E_MeV_range": [
+        0.0011466214117294982,
+        16.56
+      ],
+      "flavor_order": [
+        "e",
+        "mu",
+        "tau"
+      ],
+      "rho10MeV_real": [
+        [
+          0.32214828151207653,
+          -0.25961875320027106,
+          0.18254309616529457
+        ],
+        [
+          -0.259618753200271,
+          0.4045623237343482,
+          -0.3065545781485918
+        ],
+        [
+          0.18254309616529457,
+          -0.3065545781485918,
+          0.27328939475357517
+        ]
+      ],
+      "rho10MeV_imag": [
+        [
+          0.0,
+          -0.1428568779127673,
+          0.13462151156890126
+        ],
+        [
+          0.14285687791276727,
+          0.0,
+          -0.029581498009465048
+        ],
+        [
+          -0.13462151156890126,
+          0.029581498009465048,
+          0.0
+        ]
+      ],
+      "verified_packet_checks": {
+        "hermitian_max": 1.1102230246251565e-16,
+        "trace_error_max": 4.441027621704298e-16,
+        "minimum_eigenvalue": 0.022206331922132474,
+        "pee_range": [
+          0.3020363986278053,
+          0.5522049170655977
+        ],
+        "unit": "1"
+      },
+      "role": "existing direct SNuDD output, no recomputation or projection"
+    },
+    {
+      "label": "Fig4_difference_point",
+      "epsilon_ee_uV": 0.0,
+      "epsilon_ee_dV": 0.178,
+      "manifest": "outputs/external/solar_rho_snudd/20261112_fig4_run2/validation_cache/adcedd118cdb5c452cc4d147862a8c1743aea87d2bb60dece2c300d9079f8d69/manifest.json",
+      "manifest_sha256": "db33a31d5688f812b5a17ff04bf5f1bd1e8b57f5d6ad700fae25c9618c2d66c2",
+      "npz": "outputs/external/solar_rho_snudd/20261112_fig4_run2/validation_cache/adcedd118cdb5c452cc4d147862a8c1743aea87d2bb60dece2c300d9079f8d69/rho.npz",
+      "rho_npz_sha256": "278358a57eac7bf8063a72579fed471c650d78ffc80f3556681a93861ab2a6bd",
+      "shape": [
+        1450,
+        3,
+        3
+      ],
+      "E_MeV_range": [
+        0.0011466214117294982,
+        16.56
+      ],
+      "flavor_order": [
+        "e",
+        "mu",
+        "tau"
+      ],
+      "rho10MeV_real": [
+        [
+          0.30952479886418993,
+          -0.27676830187752055,
+          0.20131796883271022
+        ],
+        [
+          -0.27676830187752055,
+          0.4150800003638953,
+          -0.3129147632462816
+        ],
+        [
+          0.20131796883271022,
+          -0.3129147632462816,
+          0.2753952007719146
+        ]
+      ],
+      "rho10MeV_imag": [
+        [
+          0.0,
+          -0.1543883581154376,
+          0.1454882287910029
+        ],
+        [
+          0.15438835811543763,
+          0.0,
+          -0.03196933164859704
+        ],
+        [
+          -0.14548822879100287,
+          0.03196933164859704,
+          0.0
+        ]
+      ],
+      "verified_packet_checks": {
+        "hermitian_max": 1.1443916996305594e-16,
+        "trace_error_max": 4.440892098500626e-16,
+        "minimum_eigenvalue": 0.016961058529124023,
+        "pee_range": [
+          0.2973388678527658,
+          0.5521950363026337
+        ],
+        "unit": "1"
+      },
+      "role": "existing direct SNuDD output, no recomputation or projection"
+    },
+    {
+      "label": "previous_mathematical_minimum",
+      "epsilon_ee_uV": -17.262106299891588,
+      "epsilon_ee_dV": 15.675962766667903,
+      "manifest": "outputs/external/solar_rho_snudd/20261112_fig4_run2/validation_cache/94190e9efd4fc2f5c9f8e892ef5158334f35858fc98e73a85a191278b24275e6/manifest.json",
+      "manifest_sha256": "fc5c063f1ce81944267f5a6bee8cda027ba058a15503a2c0f2aacfbb1d28699b",
+      "npz": "outputs/external/solar_rho_snudd/20261112_fig4_run2/validation_cache/94190e9efd4fc2f5c9f8e892ef5158334f35858fc98e73a85a191278b24275e6/rho.npz",
+      "rho_npz_sha256": "dc2263f28a13c9e7efab2b659563e7b61f2ecce041285e8379e3b400b5cb18c2",
+      "shape": [
+        1450,
+        3,
+        3
+      ],
+      "E_MeV_range": [
+        0.0011466214117294982,
+        16.56
+      ],
+      "flavor_order": [
+        "e",
+        "mu",
+        "tau"
+      ],
+      "rho10MeV_real": [
+        [
+          0.6660994606389732,
+          0.207653841341746,
+          -0.3290145913636788
+        ],
+        [
+          0.207653841341746,
+          0.11798789896466583,
+          -0.13325904435372748
+        ],
+        [
+          -0.3290145913636788,
+          -0.13325904435372748,
+          0.21591264039636102
+        ]
+      ],
+      "rho10MeV_imag": [
+        [
+          0.0,
+          0.1713405843423073,
+          -0.16146319865218595
+        ],
+        [
+          -0.17134058434230734,
+          6.938893903907228e-18,
+          0.03547964388356245
+        ],
+        [
+          0.16146319865218595,
+          -0.03547964388356246,
+          0.0
+        ]
+      ],
+      "verified_packet_checks": {
+        "hermitian_max": 6.206335383118183e-17,
+        "trace_error_max": 4.440892098500626e-16,
+        "minimum_eigenvalue": 0.0001352112727799547,
+        "pee_range": [
+          0.5526665010414131,
+          0.6661879283905416
+        ],
+        "unit": "1"
+      },
+      "role": "existing direct SNuDD output, no recomputation or projection"
+    }
+  ],
+  "implementation_evidence": [
+    {
+      "file": "extensions/solar_rho_snudd/state.py",
+      "symbol": "__call__",
+      "line": 119,
+      "sha256": "01e4e06ce56e90cf031a7aeac3995ba43cd78f11074f63d2c039da28a15c44dc",
+      "actual_status": "CURRENT: builds diag(Pee,(1-Pee)/2,(1-Pee)/2); must pass raw full rho instead"
+    },
+    {
+      "file": "cevns_pyeft/theory/li2026/ee_vector_nsi.py",
+      "symbol": "dsigma_dT",
+      "line": 93,
+      "sha256": "36269e11a92c2ae711e6a865e898c31ce18a38caeb35dfcfa983fa781dc84baf",
+      "actual_status": "CURRENT: scalar SM+rho_ee correction; must call full flavor-kernel trace"
+    },
+    {
+      "file": "cevns_pyeft/rates/differential.py",
+      "symbol": "differential_flavor_kernel_nn",
+      "line": 225,
+      "sha256": "b14f1d53664980bee49d45416dbbf17dc15a71c0f99fc1d6cefd6fb6e016c536",
+      "actual_status": "AVAILABLE: returns actual incoming-flavor3x3 K, cm2/keV, before state contraction"
+    },
+    {
+      "file": "cevns_pyeft/theory/li2026/flavor.py",
+      "symbol": "contract_density_kernel_grid",
+      "line": 281,
+      "sha256": "66c84c2f2dad58ebba132cb768db36c8661a3e053b8cb74900d47df6cffa48c4",
+      "actual_status": "AVAILABLE: validated einsum(...ab,...ba), actual Tr(rho K)"
+    },
+    {
+      "file": "cevns_pyeft/kernels/solar_nsi.py",
+      "symbol": "blocks",
+      "line": 39,
+      "sha256": "e96399cb72b0db972737752323c163b21b367768949679d1624d16837eeff62a",
+      "actual_status": "CURRENT: stores scalar ee coefficients and consumes Pee; new matrix representation required"
+    },
+    {
+      "file": "cevns_pyeft/kernels/solar_nsi.py",
+      "symbol": "predict",
+      "line": 73,
+      "sha256": "e96399cb72b0db972737752323c163b21b367768949679d1624d16837eeff62a",
+      "actual_status": "CURRENT: calls state_model.pee; full-rho matrix contraction required"
+    },
+    {
+      "file": "cevns_pyeft/statistics/solar_nsi.py",
+      "symbol": "blocks",
+      "line": 37,
+      "sha256": "8adfef582e56a358d6c5038e223e2d7fcc26f387c31b87627efcbb047fcde36a",
+      "actual_status": "CURRENT: joint scan uses scalar Pee; must bind the same full-rho trace evaluator"
+    },
+    {
+      "file": "extensions/solar_rho_snudd/scan.py",
+      "symbol": "rho",
+      "line": 77,
+      "sha256": "e1c898c700c3b9178c3e262659f9d4830a0275930eeccbd98c2ed62e26f5dbd1",
+      "actual_status": "AVAILABLE: same upstream quadrature reconstructs full rho; not currently used by joint-rate blocks"
+    }
+  ],
+  "scientific_result_acceptance": "NOT_REVIEWED",
+  "existing_limits": [
+    "two-flavor adiabatic solar source, not full3flavor ODE",
+    "X acceptance2.77-3keV missing; explicit primary last-value assumption",
+    "seven locally selected Xe tables,124/126 omitted without renormalization; external source certification unresolved",
+    "exact paper Fig4 equivalence not established"
+  ],
+  "generalization_limit": "current source mapping is real diagonal ee uV/dV only; off-diagonal/complex NSI needs separate propagation and phase-convention review"
+}

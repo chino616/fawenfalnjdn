@@ -59,6 +59,73 @@ an isolated workspace under `workflows/_shared/policies/automation.md`; those ar
 results. It does not advance canonical human gates or modify this repository.
 Canonical promotion still requires the user's review and exact approval.
 
+## Mandatory onboarding provenance
+
+All onboarding work follows the shared
+[data provenance contract](workflows/_shared/references/onboarding/data-provenance-contract.md).
+Every adopted scientific value, array, formula and processing choice must have a
+traceable direct source or explicit derivation/decision in the generated output;
+a parameter ID or bibliography alone is insufficient. Immediately after the first
+readable draft, explain what is known, what data or original-source verification is
+still missing, and its impact; interact with the user to supplement it, update the
+same evidence records and regenerate affected outputs. Preserve unresolved gaps
+and versions. Do not label an output final for its requested claim while required
+provenance is unresolved, or promote secondary transcription to verified primary data.
+
+This rule governs execution and output review; current schema/link checks do not
+authenticate scientific sources. It grants no additional physics or write approval.
+
+### Evidence beside each experimental input
+
+Every Source, Target, Detector Response, Observable, Prediction and Statistics
+section must contain its own input and availability table. Show actual scalar
+values or array dimensions, axis ranges and representative values, units, a link
+to the local numerical file, the exact primary-source locator, and the verified
+scope and applicability. Resolve bibliography numbers to a readable standard
+citation in the same section. The shared provenance contract defines the columns.
+
+A formula symbol table must distinguish a definition from an available numerical
+input. For every required function, coefficient, response kernel or distribution
+whose numbers have not been obtained, show MISSING beside that symbol, identify
+the required material and block the dependent calculation. Keep the bibliography,
+array existence check and scientific applicability review as separate records.
+
+Match required inputs to the requested observable and analysis. A one-dimensional
+prediction uses the corresponding marginal response. Record additional inputs for
+a native multidimensional likelihood under that separately requested capability.
+
+Revisions must update the same source/evidence/configuration chain and its
+generator. Preserve earlier report versions, label the new output as a draft
+while required inputs remain unresolved, and end with a capability-specific
+handoff table listing the concrete inputs required by the next phase.
+
+### Numerical data behind shared modules
+
+Naming a shared module such as ResponseDB, a nuclear response, a flux loader or
+a detector model does not establish that its required numerical inputs exist or
+have verified provenance. Before reporting a module as ready, open its actual
+resource and record the isotope/run keys, channels, coefficient or grid arrays,
+shape, axis order, units, normalization, representative values and full file link.
+Trace the local file through its extraction/conversion to a pinned author release
+or an exact paper/table/equation. A format name, matching function names or a
+plausible upstream repository is insufficient to certify that correspondence.
+
+Track numerical availability, direct-source verification, conversion equivalence
+and applicability as separate checks in the same onboarding records and outputs.
+If a local array exists but its original table or conversion cannot be verified,
+show the actual array and mark its original provenance unresolved. If the array
+itself is absent, show MISSING beside the required numerical input. Propagate
+these gaps to predictions and benchmarks that depend on them. Apply the shared
+provenance contract when regenerating the detailed report, summary and user input.
+
+When the user selects an existing project data resource for direct reuse, record
+that file and the existing reader convention as the direct adopted source. Keep
+unverified external authorship or generation separately visible. Do not require
+reconstructing that external pipeline as a new prerequisite for the authorized
+local reuse. Restrict the remaining gap to claims that require external source
+certification or paper equivalence. User selection does not turn unverified
+external provenance into a verified fact.
+
 ## Normal repository work
 
 For tasks unrelated to adding or migrating an experiment dataset, do not load
@@ -80,6 +147,24 @@ workflows/cevns-pyeft/
 ```
 
 as documentation-only material and leave it isolated from the runtime package.
+
+## Paper figure theme
+
+For new paper figures or a requested style update, first read
+`plotting/paper_theme/README.md` and `plotting/paper_theme/PAPER_THEME_GUIDE.md`.
+The single current theme authority is `plotting/paper_theme/PAPER_THEME.json`
+(user-supplied v4.0). Reuse `theme_styles.py` and `plot_template.py`; keep physical
+series identities stable across figures. Theme changes belong to `plotting/`,
+while specific plot generators and output datasets retain their own directories.
+
+Old STYLE files and modules in numbered figure collections are historical
+reproduction snapshots, not defaults for new plots. Preserve published figures
+and their numerical/provenance records when adopting the new theme. Use a new
+output directory and record the adopted theme version/hash. This is a plotting
+rule and does not activate experiment onboarding or authorize physics changes.
+
+See `plotting/README.md` for the file architecture and
+`plotting/paper_theme/MIGRATION.md` for current consumer and legacy boundaries.
 
 ## File changes and README synchronization
 

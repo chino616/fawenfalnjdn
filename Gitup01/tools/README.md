@@ -1,5 +1,31 @@
 # tools：显式执行的构建、审计和创建工具
 
+[最新实验导航生成与校验工具](<latest_experiments.py>)。本入口仅列当前选定分析；不同方法的输入、代码、结果和审核范围分别说明。
+
+<!-- solar-singlebin-v321:start -->
+
+## 太阳⁸B：单 bin独立能力
+
+单bin：[prepare_solar_b8_singlebin.py](prepare_solar_b8_singlebin.py)离线create-only提取PDF/数据；[run_solar_b8_singlebin_benchmark.py](run_solar_b8_singlebin_benchmark.py)独立Slow/收敛/统计/PNG；[build_solar_b8_singlebin_onboarding.py](build_solar_b8_singlebin_onboarding.py)同源生成新文档、默认check；[promote_solar_b8_singlebin.py](promote_solar_b8_singlebin.py)显式--write备份并登记canonical分支；[validate_solar_b8_singlebin.py](validate_solar_b8_singlebin.py)核对输入/实际快照/保护与阶段；[validate_solar_b8_singlebin.mjs](validate_solar_b8_singlebin.mjs)渲染/链接/公式/实际跳转。多bin：[run_solar_b8_multibin_benchmark.py](run_solar_b8_multibin_benchmark.py)只委托原核表多bin运行器。兼容旧SM入口支持`--analysis singlebin|multibin`；无analysis保持旧多bin行为。两者输出根分别solar_b8_singlebin/与solar_b8_sm/。
+
+<!-- solar-singlebin-v321:end -->
+
+<!-- solar-nuclear-v31:start -->
+
+## Solar SM核Response：计算与onboarding
+
+[run_solar_b8_sm_benchmark.py](run_solar_b8_sm_benchmark.py)默认调用[核表SM运行器](run_solar_b8_nuclear_benchmark.py)，`--legacy-kn`才回到历史KN。核表SM运行器保存同核素同质量KN对照、通道分解和独立网格收敛；必须指定新输出目录。[build_solar_b8_onboarding_v3_1.py](build_solar_b8_onboarding_v3_1.py)从结果/同一证据链生成v3.1，`--check`只读。v3.0生成器接管后只核对冻结历史。[build_pandax_nuclear_teaching.py](build_pandax_nuclear_teaching.py)生成全部11份独立M-only教学代码；[validate_pandax_nuclear_teaching.py](validate_pandax_nuclear_teaching.py)在空目录单文件执行并核对来源/主结果。[validate_solar_b8_nuclear_rendering.mjs](validate_solar_b8_nuclear_rendering.mjs)检查新报告的数学、导航与布局。
+
+<!-- solar-nuclear-v31:end -->
+
+<!-- solar-onboarding-v3:start -->
+
+## Solar B8 onboarding v3.0
+
+[build_solar_b8_onboarding_v3.py](build_solar_b8_onboarding_v3.py)从实际正式包、P00/P01及保存的SM/矢量结果同源生成完整总文档和两套详细/精简/用户资料；`--check`只读核对，`--validate`检查实际来源/文档/旧文件保护并只写本轮QA；科学Gate/输入/Runtime不变。[validate_solar_b8_onboarding_v3.mjs](validate_solar_b8_onboarding_v3.mjs)验证实际数学渲染、目录跳转、公式编号与窄屏布局。
+
+<!-- solar-onboarding-v3:end -->
+
 [package_build.py](package_build.py)由setuptools显式构建调用，仅将registry声明的正式三文件复制到构建产物；
 源码data仍为唯一权威，不导入工作流或复制论文/台账。
 
@@ -111,3 +137,75 @@ distinguish approximate statistics, frozen compatibility and scientific approval
 只读现有 YAML/NPZ 并更新详细/精简两份 Physics MD；`--md-only --check` 只读核对。
 完整编译仍用 `--draft/--arrays`。输出与权限状态及恢复行为见
 [package 编译器入口](compile_experiment_package.py)。
+
+<!-- solar-b8-sm-20261107:start -->
+
+## Solar B8 SM profile
+
+[prepare_solar_b8_mainline.py](prepare_solar_b8_mainline.py)备份/接入；[build_solar_b8_packages.py](build_solar_b8_packages.py)调用既有Compiler（--check只读，--overwrite按原Writer备份）；[run_solar_b8_sm_benchmark.py](run_solar_b8_sm_benchmark.py)标准Runtime/收敛/出图；[finalize_solar_b8_mainline.py](finalize_solar_b8_mainline.py)同源报告；[validate_solar_b8_mainline.py](validate_solar_b8_mainline.py)检查正式包、阶段schema、双文件可移植运行和旧文件保留；[validate_solar_b8_rendering.mjs](validate_solar_b8_rendering.mjs)检查Markdown数学、目录跳转及窄屏渲染。
+
+<!-- solar-b8-sm-20261107:end -->
+
+<!-- solar-vector-20261108:start -->
+
+## Solar B8 vector benchmark
+
+[run_solar_b8_vector_benchmark.py](run_solar_b8_vector_benchmark.py)读取显式卡、执行标准Slow、收敛、带符号分解与出图；--resume仅复用相同参数/物理指纹。[finalize_solar_b8_vector_benchmark.py](finalize_solar_b8_vector_benchmark.py)维护同源v2.3/阶段/导航，--validate-only只核验并写本轮QA。[validate_solar_b8_vector_rendering.mjs](validate_solar_b8_vector_rendering.mjs)检查公式、链接、实际目录点击与420px排版。
+
+<!-- solar-vector-20261108:end -->
+
+<!-- pandax-simplified-20261110:start -->
+
+## PandaX US2：SM简化八箱计算
+
+[run_pandax_us2_simplified_benchmark.py](run_pandax_us2_simplified_benchmark.py)读取[独立方法卡](../data/benchmarks/pandax_us2_simplified_v1/benchmark.input.json)，通过标准Runtime计算八箱，分别验证T/Eν收敛；保留固定SSM的c=1预测、后验拟合谱缩放参考、各核素数组、来源哈希和图。观测点显示68.27%中心Poisson（Garwood）误差棒。默认新运行目录，不覆盖旧运行。
+
+<!-- pandax-simplified-20261110:end -->
+
+<!-- xe132-representative-plot:start -->
+
+## Xe132代表近似结果图
+
+[plot_solar_b8_xe132_representative.py](plot_solar_b8_xe132_representative.py)读取原核Response运行的逐Xe132信号分量，按整份靶质量的纯Xe132核数换算，再与原七核素谱比较。保持通量/曝光/探测器处理；输出信号、S+B与观测误差棒、逐箱差异、PNG/PDF及逐项来源。运行时指定新的`--output`目录；不修改主计算输入。
+
+[本轮图与来源](../outputs/solar_b8_sm/20261110_xe132_representative_plot/README.md)。
+
+<!-- xe132-representative-plot:end -->
+
+<!-- solar-nsi-v33:start -->
+
+## 太阳⁸B NSI：v3.3（2026-11-12）
+
+prepare/run/build/finalize/validate_solar_b8_nsi负责来源准备、实际计算、同源onboarding、主线登记和渲染验收；旧单bin工具允许较新并列分支。
+
+[完整新onboarding：实际输入、标准引文、物理与程序](<../docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/NSI_EE_VECTOR_ONBOARDING.v3.3.md>) · [独立NSI数据](<../data/benchmarks/solar_b8_nsi_2601_19883/README.md>) · [实际结果与核对](<../outputs/solar_b8_nsi/20261112_fig4_run2/README.md>)
+
+<!-- solar-nsi-v33:end -->
+
+<!-- solar-snudd-v34:start -->
+
+## 太阳传播可选扩展：SNuDD v3.4
+
+[已安装并接入主线的新onboarding](<../docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_EXTERNAL_ONBOARDING.v3.4.md>) · [独立安装/API](<../extensions/solar_rho_snudd/README.md>) · [三样本实际对照](<../outputs/external/solar_rho_snudd/20261112_run1/README.md>)。只更换传播源，旧B16-MSW/SM/多bin入口保留；不改变全局默认注册。
+
+<!-- solar-snudd-v34:end -->
+
+<!-- solar-snudd-v341:start -->
+
+## 太阳完整统计：SNuDD v3.4.1
+
+[三样本全流程、联合区域和论文比较](<../docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_FULL_BENCHMARK.v3.4.1.md>) · [实际结果、图与验收](<../outputs/external/solar_rho_snudd/20261112_fig4_run2/README.md>)。已计算601×601面与各方案联合最小值；2601 Fig.4绿色精确复现未成立，旧结果保留。
+
+[run_solar_b8_snudd_inference.py](<run_solar_b8_snudd_inference.py>) · [finalize_solar_b8_snudd_inference.py](<finalize_solar_b8_snudd_inference.py>) · [validate_solar_b8_snudd_inference.mjs](<validate_solar_b8_snudd_inference.mjs>)
+
+<!-- solar-snudd-v341:end -->
+
+<!-- solar-full-rho-trace-onboarding-v35:start -->
+
+## 当前太阳onboarding：完整ρ与Tr(ρK) v3.5
+
+[微分/总截面、事例数积分与三样本差别](<../docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_FULL_TRACE_ONBOARDING.v3.5.md>) · [明确合同与待改程序](<../docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_FULL_TRACE_CONTRACT.v3.5.json>)。按用户要求先更新文档；旧投影程序尚未改成新版trace，旧结果保留。
+
+[同源文档生成/检查](<build_solar_b8_trace_onboarding.py>)（--write或--check，只操作文档/来源审计/主线待办）；[公式、目录和渲染校验](<validate_solar_b8_trace_onboarding.mjs>)。
+
+<!-- solar-full-rho-trace-onboarding-v35:end -->

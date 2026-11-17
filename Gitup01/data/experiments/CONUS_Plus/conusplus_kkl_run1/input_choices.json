@@ -1,0 +1,75 @@
+{
+  "version": "v3_20261106_provenance",
+  "created_date": "2026-11-06",
+  "timezone": "Asia/Shanghai",
+  "dataset_id": "conusplus_kkl_run1",
+  "benchmark": "2501.17843v3 Eq. (33); weak mixing angle and Table II vector NSI comparison",
+  "target": "natural_Ge_five_isotopes",
+  "target_number_fractions": {
+    "Ge70": 0.2057,
+    "Ge72": 0.2745,
+    "Ge73": 0.0775,
+    "Ge74": 0.365,
+    "Ge76": 0.0773
+  },
+  "target_atomic_masses_u": {
+    "Ge70": 69.92424875,
+    "Ge72": 71.922075826,
+    "Ge73": 72.923458956,
+    "Ge74": 73.921177761,
+    "Ge76": 75.921402726
+  },
+  "nuclear_structure_model_id": "nuclear_np_polynomial_v1",
+  "nuclear_response_resource": "data/responses/responses_all.json",
+  "nuclear_response_source_id": "S0007",
+  "flux_total_cm2_s": 15000000000000.0,
+  "flux_support_MeV": [
+    0.0,
+    10.0
+  ],
+  "flux_matching_energy_MeV": 2.0,
+  "flux_default_low_endpoint": "add_zero_zero_node_then_linear_interpolate",
+  "flux_reference_low_endpoint": "linear_extrapolation_of_first_two_provided_nodes_signed_diagnostic_only",
+  "fission_fraction_default": "provided_PDF_reference_fractions_not_claimed_as_KKL_measurement",
+  "flux_grid_step_MeV": 0.001,
+  "effective_detector_mass_kg": 1.0,
+  "exposure_kg_day": 119.0,
+  "detector_threshold_eVee": 160.0,
+  "detector_lindhard_k": 0.162,
+  "detector_sigma0_eVee": 20.38,
+  "detector_fano": 0.1096,
+  "detector_pair_energy_eVee": 2.96,
+  "statistics_sigma_alpha": 0.169,
+  "statistics_symmetric_error_candidate": "sigma_mean_derived; needs explicit recording when fitting",
+  "constants": {
+    "atomic_mass_kg": 1.66053906892e-27,
+    "atomic_mass_energy_GeV": 0.93149410372,
+    "electron_mass_energy_GeV": 0.00051099895069,
+    "avogadro_per_mol": 6.02214076e+23,
+    "fermi_GeV_minus2": 1.1663787e-05,
+    "sin2thetaW_reference": 0.23857,
+    "seconds_per_day": 86400
+  },
+  "user_decisions": [
+    {
+      "decision_id": "D_V2_001",
+      "scope": "nuclear_structure",
+      "verbatim": "我要用Response处理"
+    },
+    {
+      "decision_id": "D_V2_002",
+      "scope": "target_and_reference_scope",
+      "verbatim": "保留天然锗五同位素，只参考该 PDF 的 Flux 部分（推荐）"
+    },
+    {
+      "decision_id": "D_V2_003",
+      "scope": "flux_low_energy_endpoint",
+      "verbatim": "补上 (0,0) 节点，保证非负；另保留原 PDF 外推作对照（推荐）"
+    },
+    {
+      "decision_id": "D_V3_001",
+      "scope": "document_rewrite_and_main_project_integration",
+      "verbatim": "请你依据你完成的规则，然后重新去写onboarding文件，把数据来源严格标注到文件中。并且将这部分内容并入到主文件中，为进入下面一步做准备"
+    }
+  ]
+}

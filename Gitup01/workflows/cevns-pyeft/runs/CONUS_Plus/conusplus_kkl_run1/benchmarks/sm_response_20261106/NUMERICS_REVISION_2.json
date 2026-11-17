@@ -1,0 +1,16 @@
+{
+  "reason": "Initial 161-to-321 neutrino-energy refinement has max per-bin relative change 0.005998620652579684, exceeding predeclared 0.003. Continue refining, preserve the initial cases and tolerance.",
+  "new_cases": [
+    {
+      "name": "energy_641",
+      "n_er": 81,
+      "n_enu": 641
+    },
+    {
+      "name": "fine_641",
+      "n_er": 161,
+      "n_enu": 641
+    }
+  ],
+  "human_gate": "NOT_REVIEWED"
+}

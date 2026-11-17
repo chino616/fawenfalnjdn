@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "ir_version": "cevns-onboarding-draft/1",
+  "dataset_id": "XENONnT_2024_SolarB8",
+  "package_status": "DRAFT",
+  "human_approval": "NOT_REVIEWED",
+  "models": 6,
+  "parameters": 16,
+  "arrays": 17,
+  "sha256": {
+    "experiment.input.yaml": "271e18b89398ed90c29db2f88924a10514125328a7c27f69de49baa33c1111c4",
+    "experiment.resources.npz": "39aa001f5c5657ddbb0099f232ee7e2a81f78ff383da3cf43b0dc214b62fdeb2",
+    "experiment.physics.md": "93d62e37d668c3fca037e1de9fe294e558f641d582d53be1b0466e71fcc9f73a",
+    "experiment.physics.summary.md": "4a1c604bf5cb3a5ea01c9d09dbb73fda7d5152ae6389a6701ac861428662ae21"
+  },
+  "scope": "compiler checks only; no physics approval or runtime execution",
+  "diagnostics": [],
+  "temporary_acl_state": "ACL_INHERITANCE_OK",
+  "acl_state": "ACL_INHERITANCE_OK",
+  "write_state": "WRITE_OK",
+  "execution_user": "chino\\codexsandboxoffline",
+  "target_user": null,
+  "execution_user_read_state": "READ_OK",
+  "target_user_read_state": "TARGET_USER_READ_PENDING",
+  "target_user_check": "In the target user PowerShell run whoami and Get-Content -LiteralPath <each final file>; sandbox readback is not target-user verification."
+}

@@ -1,0 +1,1222 @@
+{
+  "summary_date": "2026-11-14",
+  "timezone": "Asia/Shanghai",
+  "numerical_runs_date": "2026-11-13",
+  "task": "documentation_only: summarize the current selected mainline; no physics runs or Gate promotion",
+  "backup": {
+    "original": "docs/experiments/README.md",
+    "path": "backup/docs/experiments/README.md.mainline_status_20261114_124712_339713.bak",
+    "sha256": "4e9cedbf31c34d93d7bc0496be40b15db0ba493881a8bbff059ceda35a53f8c1"
+  },
+  "adopted_source_checks": {
+    "one_d_benchmark_20261113_run1": {
+      "entries": 54,
+      "mismatches": 0,
+      "files": [
+        {
+          "path": "outputs/paper2601_chi2_corrected_20261111/SUMMARY.json",
+          "sha256": "2fe448cd8bfa4bb32098f26fe89af5b0f91df7ebce930c789b739757184bcff6",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/paper2601_chi2_corrected_20261111/CsI2021_kernel_record.json",
+          "sha256": "e8515211abbc0d1921694baab8f5951c9efb3fc0df1f7e11e5f656bb9dc0e47b",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/paper2601_chi2_corrected_20261111/CsI2021_kernel.npz",
+          "sha256": "ae29a13ba3cbc112c95837f26a301653a16adc2200f444ef14b9574dbdcca035",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/paper2601_chi2_corrected_20261111/Ar2020_kernel_record.json",
+          "sha256": "cb84270565856cc1383e48e4ac3499f825c5e96785ae486faf21d5a14cb86ecf",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/paper2601_chi2_corrected_20261111/Ar2020_kernel.npz",
+          "sha256": "addf48a5af2e079432bc1249f492de8f57fab1378a06ad0268975c51eda9e4d2",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/CONUS_Plus/conusplus_kkl_run1/nsi_response_20261106/nsi_operator_kernel_161_641.npz",
+          "sha256": "3d7ab6c39f333bf5626474fadaeba3b11d8b6464e414666a8828aa434d993c5e",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/external/solar_rho_snudd/20261112_fig4_run2/NSI_RESULTS.json",
+          "sha256": "253df0f048de8148dc0a9eeba46376a21d4190fcdf5fcd03e4953d69e323308b",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/external/solar_rho_snudd/20261112_fig4_run2/kernels/PandaX_paired.npz",
+          "sha256": "466c3d562fd6bde8c5e4c462e0f13f4095ec19b244970066bc0535e6f7300c42",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/external/solar_rho_snudd/20261112_fig4_run2/kernels/PandaX_US2.npz",
+          "sha256": "f70102905850efd9c51e67d2565bf8441d7bc7ab1b8528bca04d4016a7f9c1a1",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/external/solar_rho_snudd/20261112_fig4_run2/kernels/XENONnT.npz",
+          "sha256": "adbb4f13e183cfae2e40f7ac4b68bd355f7060e482992d964d6fac99cdc10680",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/external/solar_rho_snudd/20261112_fig4_run2/propagation_source/source.npz",
+          "sha256": "8f4fde1f317943bb09aaeb394d58f5cca21348b633a2633ac9cca4f2384e659a",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/external/solar_rho_snudd/20261112_fig4_run2/propagation_source/manifest.json",
+          "sha256": "50661a8d719397ddb3686116287cc057c04c733c5ffe478dbd9fc6c0d516ecb9",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/paper2601_chi2/audit_fast_predictions.py",
+          "sha256": "a0b689ee0c464834073efe80243da4171dac0e39fa9f8f86475b676c66407f71",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/paper2601_chi2/run_benchmark.py",
+          "sha256": "9313747382ffd8d2110a9f6b9322e1d387be5ffac6bfd112352ca5aa568038b6",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/paper2601_chi2/audit_joint_analysis.py",
+          "sha256": "94803154eb92ac6dc9016cf0a5a4c2705073c3cd23100aea57c8f780fbfdf5a6",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/kernels/compiler.py",
+          "sha256": "b56d9bf78eed51d059c2ab62abb3e84b22e720053f2fd68a3eefe4c4bc78ff3d",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/kernels/interface_storage.py",
+          "sha256": "fd5efd85bbedc9b1595092c07022356c17a7b9be850d883957f59e78fdaac6a0",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/experiments/package_profiles.py",
+          "sha256": "a9400859a6381aae5a661e3a3dc72163f054311fea2a460e277828fd012bfbd1",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/coefficients.py",
+          "sha256": "c032668684ddc7e854b0fff0c8ec808995c7b2e014d4eea570dffe8053b984b2",
+          "matches_recorded": true
+        },
+        {
+          "path": "extensions/solar_rho_snudd/experiment.py",
+          "sha256": "847c35dfaee049440b406e31f06f4fee1aa1ae35e1da3f53f2acc3df496d9237",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/sources/composable.py",
+          "sha256": "7ef0ab540aae35e6b83339276e499aa848343ad8d9ae75d76f090460c855189d",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/responses.py",
+          "sha256": "5edb06d4dd7409d0bac8245f9bf25b24f81f9e473e37f5e4f311492e9542f01b",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/foundation/constants.py",
+          "sha256": "0bb51033d1ca64e18a7a7bb0fd4cce38bc679558dd7392740f72d4683276cd44",
+          "matches_recorded": true
+        },
+        {
+          "path": "extensions/solar_rho_snudd/scan.py",
+          "sha256": "e1c898c700c3b9178c3e262659f9d4830a0275930eeccbd98c2ed62e26f5dbd1",
+          "matches_recorded": true
+        },
+        {
+          "path": "extensions/solar_rho_snudd/protocol.py",
+          "sha256": "cc77a52cfda75bfada29e1d4b280650bec707462c5cee262aa554e744ad4e568",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/cross_section.py",
+          "sha256": "adc13f3e1acc9b88b85fc033a6117cc2f99a77d1bc88e66368e416e4f5304393",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/kernels/solar_nsi.py",
+          "sha256": "e96399cb72b0db972737752323c163b21b367768949679d1624d16837eeff62a",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/nuclear/response.py",
+          "sha256": "fc94a1582b11e58113e2f192be9733dfaf5b27b2604fe075da9e9f56b94d776f",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/statistics/parameters.py",
+          "sha256": "654f3d41fea1760fdb0af7c678bf42523c8c359fc1bbac00d045ec0f76eabca6",
+          "matches_recorded": true
+        },
+        {
+          "path": "tools/run_solar_b8_snudd_inference.py",
+          "sha256": "14d126b503a6c08690ef97a75378723b40d8d8655c91a463cecb6a5f0529ab6b",
+          "matches_recorded": true
+        },
+        {
+          "path": "extensions/solar_rho_snudd/scan_source.py",
+          "sha256": "0aa28e59cd5a040aef3d6dc436d2296614c4b187ff2f8981a6c5fb19911a098c",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/adapter.py",
+          "sha256": "575b2fd346dc1ea1f33e9f4692df5fcf0cab60b20983bca224bb20e54357956c",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/ee_vector_nsi.py",
+          "sha256": "36269e11a92c2ae711e6a865e898c31ce18a38caeb35dfcfa983fa781dc84baf",
+          "matches_recorded": true
+        },
+        {
+          "path": "extensions/solar_rho_snudd/state.py",
+          "sha256": "01e4e06ce56e90cf031a7aeac3995ba43cd78f11074f63d2c039da28a15c44dc",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/sources/solar_msw.py",
+          "sha256": "0c31b658ba1bf0902b9077d4446670bf89fb734cb6b97d623acf6dfba86e39cc",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/flavor.py",
+          "sha256": "66c84c2f2dad58ebba132cb768db36c8661a3e053b8cb74900d47df6cffa48c4",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/left_to_ci.py",
+          "sha256": "56027d356737d85de4ae22ba3b303ade16e1c0163887bbedbc53ac2f0d46ae48",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/amplitude.py",
+          "sha256": "40a2bbfcb60716da67ff3d5182d5af6dd075bcd7dfccf9a49b9b3b0a8a9b7aed",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/rates/recoil.py",
+          "sha256": "560f95cf2d0962ae966232b6353bfec2bb63fe16b09a0109d001bd77d4613d22",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/operators.py",
+          "sha256": "1b67548a504a4ef1cf49a208754a6c53d0c857b444fecd2da9bbfd6f413f9c61",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/experiments/solar_singlebin.py",
+          "sha256": "71be43e273eabcd6f0a744810679f859232c824d2d97b58fefbd1cbf2540a355",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/experiments/solar_nsi.py",
+          "sha256": "afd54abe9e0418d46a4447e6819b81c4a50ae3b0818298beeeae540cc881b369",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/rates/differential.py",
+          "sha256": "b14f1d53664980bee49d45416dbbf17dc15a71c0f99fc1d6cefd6fb6e016c536",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/sm_quadratic.py",
+          "sha256": "f78705494119d516cb94dbad2107d9b31757a9680961505fd87802f03c5452ce",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/lec.py",
+          "sha256": "9c981d8705ba6a17829c75e81b93ce6f85fdbcc290faf5bf64edde9dc8867691",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/one_d_benchmark/inference.py",
+          "sha256": "45bf7f297cc5dde3e3fc14f5de8634679c7d20d04bf393c7013a41a39be5ea1f",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/one_d_benchmark/prediction_routes.py",
+          "sha256": "6dfecc4ece959f9e54ce12a2360ff7ee778c10513077475b62fd528e8a6c5214",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/one_d_benchmark/route_audit.py",
+          "sha256": "b44fd8d0355cd7e337d8a2eb719cff06ad5dd0b89964f367796d0b52c7fbadf1",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/one_d_benchmark/run_analysis.py",
+          "sha256": "0cb59283f4cb80e5abc5346b4d38774c7192ab9fa80693f01e40039cc521fc62",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/one_d_benchmark/validate_results.py",
+          "sha256": "c71ed03dfa093cd88dfe8564f80e9a3ea9c33597c611fb64dc63879cb0dc95b7",
+          "matches_recorded": true
+        },
+        {
+          "path": "data/benchmarks/CONUS_Plus/conusplus_kkl_run1/nsi_response_20261106/benchmark/tableII_1sigma.csv",
+          "sha256": "ff6c6dab2b76e791865b9440dbd9a8f0ec949aa1fb549cbc64c57b843329dadb",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/one_d_benchmark/publish.py",
+          "sha256": "fa9162a5343d8183142f7e824647c96cba4d5275a3ac7949dd6908bc7d1eb9f4",
+          "matches_recorded": true
+        },
+        {
+          "path": "论文图NoteBook/9. SM_uniform_style/STYLE.json",
+          "sha256": "a7d4a6ccdf5ade53e5c69c4f37dc4642dfd415e2a6e7da125b873b130f9e5481",
+          "matches_recorded": true
+        },
+        {
+          "path": "论文图NoteBook/9. SM_uniform_style/publication_style.py",
+          "sha256": "b4648b32739beb26323d42b04e5aff7837ec5f96a7f29587b2544aab42d1502d",
+          "matches_recorded": true
+        }
+      ]
+    },
+    "two_d_benchmark_20261113_run1": {
+      "entries": 73,
+      "mismatches": 0,
+      "files": [
+        {
+          "path": "outputs/paper2601_chi2_corrected_20261111/SUMMARY.json",
+          "sha256": "2fe448cd8bfa4bb32098f26fe89af5b0f91df7ebce930c789b739757184bcff6",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/paper2601_chi2_corrected_20261111/CsI2021_kernel_record.json",
+          "sha256": "e8515211abbc0d1921694baab8f5951c9efb3fc0df1f7e11e5f656bb9dc0e47b",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/paper2601_chi2_corrected_20261111/CsI2021_kernel.npz",
+          "sha256": "ae29a13ba3cbc112c95837f26a301653a16adc2200f444ef14b9574dbdcca035",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/paper2601_chi2_corrected_20261111/Ar2020_kernel_record.json",
+          "sha256": "cb84270565856cc1383e48e4ac3499f825c5e96785ae486faf21d5a14cb86ecf",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/paper2601_chi2_corrected_20261111/Ar2020_kernel.npz",
+          "sha256": "addf48a5af2e079432bc1249f492de8f57fab1378a06ad0268975c51eda9e4d2",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/CONUS_Plus/conusplus_kkl_run1/nsi_response_20261106/nsi_operator_kernel_161_641.npz",
+          "sha256": "3d7ab6c39f333bf5626474fadaeba3b11d8b6464e414666a8828aa434d993c5e",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/external/solar_rho_snudd/20261112_fig4_run2/NSI_RESULTS.json",
+          "sha256": "253df0f048de8148dc0a9eeba46376a21d4190fcdf5fcd03e4953d69e323308b",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/external/solar_rho_snudd/20261112_fig4_run2/kernels/PandaX_paired.npz",
+          "sha256": "466c3d562fd6bde8c5e4c462e0f13f4095ec19b244970066bc0535e6f7300c42",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/external/solar_rho_snudd/20261112_fig4_run2/kernels/PandaX_US2.npz",
+          "sha256": "f70102905850efd9c51e67d2565bf8441d7bc7ab1b8528bca04d4016a7f9c1a1",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/external/solar_rho_snudd/20261112_fig4_run2/kernels/XENONnT.npz",
+          "sha256": "adbb4f13e183cfae2e40f7ac4b68bd355f7060e482992d964d6fac99cdc10680",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/external/solar_rho_snudd/20261112_fig4_run2/propagation_source/source.npz",
+          "sha256": "8f4fde1f317943bb09aaeb394d58f5cca21348b633a2633ac9cca4f2384e659a",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/external/solar_rho_snudd/20261112_fig4_run2/propagation_source/manifest.json",
+          "sha256": "50661a8d719397ddb3686116287cc057c04c733c5ffe478dbd9fc6c0d516ecb9",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/paper2601_chi2/audit_fast_predictions.py",
+          "sha256": "a0b689ee0c464834073efe80243da4171dac0e39fa9f8f86475b676c66407f71",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/paper2601_chi2/run_benchmark.py",
+          "sha256": "9313747382ffd8d2110a9f6b9322e1d387be5ffac6bfd112352ca5aa568038b6",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/paper2601_chi2/audit_joint_analysis.py",
+          "sha256": "94803154eb92ac6dc9016cf0a5a4c2705073c3cd23100aea57c8f780fbfdf5a6",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/kernels/compiler.py",
+          "sha256": "b56d9bf78eed51d059c2ab62abb3e84b22e720053f2fd68a3eefe4c4bc78ff3d",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/kernels/interface_storage.py",
+          "sha256": "fd5efd85bbedc9b1595092c07022356c17a7b9be850d883957f59e78fdaac6a0",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/experiments/package_profiles.py",
+          "sha256": "a9400859a6381aae5a661e3a3dc72163f054311fea2a460e277828fd012bfbd1",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/coefficients.py",
+          "sha256": "c032668684ddc7e854b0fff0c8ec808995c7b2e014d4eea570dffe8053b984b2",
+          "matches_recorded": true
+        },
+        {
+          "path": "extensions/solar_rho_snudd/experiment.py",
+          "sha256": "847c35dfaee049440b406e31f06f4fee1aa1ae35e1da3f53f2acc3df496d9237",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/sources/composable.py",
+          "sha256": "7ef0ab540aae35e6b83339276e499aa848343ad8d9ae75d76f090460c855189d",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/responses.py",
+          "sha256": "5edb06d4dd7409d0bac8245f9bf25b24f81f9e473e37f5e4f311492e9542f01b",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/foundation/constants.py",
+          "sha256": "0bb51033d1ca64e18a7a7bb0fd4cce38bc679558dd7392740f72d4683276cd44",
+          "matches_recorded": true
+        },
+        {
+          "path": "extensions/solar_rho_snudd/scan.py",
+          "sha256": "e1c898c700c3b9178c3e262659f9d4830a0275930eeccbd98c2ed62e26f5dbd1",
+          "matches_recorded": true
+        },
+        {
+          "path": "extensions/solar_rho_snudd/protocol.py",
+          "sha256": "cc77a52cfda75bfada29e1d4b280650bec707462c5cee262aa554e744ad4e568",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/cross_section.py",
+          "sha256": "adc13f3e1acc9b88b85fc033a6117cc2f99a77d1bc88e66368e416e4f5304393",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/kernels/solar_nsi.py",
+          "sha256": "e96399cb72b0db972737752323c163b21b367768949679d1624d16837eeff62a",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/nuclear/response.py",
+          "sha256": "fc94a1582b11e58113e2f192be9733dfaf5b27b2604fe075da9e9f56b94d776f",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/statistics/parameters.py",
+          "sha256": "654f3d41fea1760fdb0af7c678bf42523c8c359fc1bbac00d045ec0f76eabca6",
+          "matches_recorded": true
+        },
+        {
+          "path": "tools/run_solar_b8_snudd_inference.py",
+          "sha256": "14d126b503a6c08690ef97a75378723b40d8d8655c91a463cecb6a5f0529ab6b",
+          "matches_recorded": true
+        },
+        {
+          "path": "extensions/solar_rho_snudd/scan_source.py",
+          "sha256": "0aa28e59cd5a040aef3d6dc436d2296614c4b187ff2f8981a6c5fb19911a098c",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/adapter.py",
+          "sha256": "575b2fd346dc1ea1f33e9f4692df5fcf0cab60b20983bca224bb20e54357956c",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/ee_vector_nsi.py",
+          "sha256": "36269e11a92c2ae711e6a865e898c31ce18a38caeb35dfcfa983fa781dc84baf",
+          "matches_recorded": true
+        },
+        {
+          "path": "extensions/solar_rho_snudd/state.py",
+          "sha256": "01e4e06ce56e90cf031a7aeac3995ba43cd78f11074f63d2c039da28a15c44dc",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/sources/solar_msw.py",
+          "sha256": "0c31b658ba1bf0902b9077d4446670bf89fb734cb6b97d623acf6dfba86e39cc",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/flavor.py",
+          "sha256": "66c84c2f2dad58ebba132cb768db36c8661a3e053b8cb74900d47df6cffa48c4",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/left_to_ci.py",
+          "sha256": "56027d356737d85de4ae22ba3b303ade16e1c0163887bbedbc53ac2f0d46ae48",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/amplitude.py",
+          "sha256": "40a2bbfcb60716da67ff3d5182d5af6dd075bcd7dfccf9a49b9b3b0a8a9b7aed",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/rates/recoil.py",
+          "sha256": "560f95cf2d0962ae966232b6353bfec2bb63fe16b09a0109d001bd77d4613d22",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/operators.py",
+          "sha256": "1b67548a504a4ef1cf49a208754a6c53d0c857b444fecd2da9bbfd6f413f9c61",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/experiments/solar_singlebin.py",
+          "sha256": "71be43e273eabcd6f0a744810679f859232c824d2d97b58fefbd1cbf2540a355",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/experiments/solar_nsi.py",
+          "sha256": "afd54abe9e0418d46a4447e6819b81c4a50ae3b0818298beeeae540cc881b369",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/rates/differential.py",
+          "sha256": "b14f1d53664980bee49d45416dbbf17dc15a71c0f99fc1d6cefd6fb6e016c536",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/sm_quadratic.py",
+          "sha256": "f78705494119d516cb94dbad2107d9b31757a9680961505fd87802f03c5452ce",
+          "matches_recorded": true
+        },
+        {
+          "path": "cevns_pyeft/theory/li2026/lec.py",
+          "sha256": "9c981d8705ba6a17829c75e81b93ce6f85fdbcc290faf5bf64edde9dc8867691",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/one_d_benchmark/inference.py",
+          "sha256": "45bf7f297cc5dde3e3fc14f5de8634679c7d20d04bf393c7013a41a39be5ea1f",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/one_d_benchmark/prediction_routes.py",
+          "sha256": "6dfecc4ece959f9e54ce12a2360ff7ee778c10513077475b62fd528e8a6c5214",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/one_d_benchmark/route_audit.py",
+          "sha256": "b44fd8d0355cd7e337d8a2eb719cff06ad5dd0b89964f367796d0b52c7fbadf1",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/one_d_benchmark/run_analysis.py",
+          "sha256": "0cb59283f4cb80e5abc5346b4d38774c7192ab9fa80693f01e40039cc521fc62",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/one_d_benchmark/validate_results.py",
+          "sha256": "c71ed03dfa093cd88dfe8564f80e9a3ea9c33597c611fb64dc63879cb0dc95b7",
+          "matches_recorded": true
+        },
+        {
+          "path": "data/benchmarks/CONUS_Plus/conusplus_kkl_run1/nsi_response_20261106/benchmark/tableII_1sigma.csv",
+          "sha256": "ff6c6dab2b76e791865b9440dbd9a8f0ec949aa1fb549cbc64c57b843329dadb",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/one_d_benchmark/publish.py",
+          "sha256": "fa9162a5343d8183142f7e824647c96cba4d5275a3ac7949dd6908bc7d1eb9f4",
+          "matches_recorded": true
+        },
+        {
+          "path": "论文图NoteBook/9. SM_uniform_style/STYLE.json",
+          "sha256": "a7d4a6ccdf5ade53e5c69c4f37dc4642dfd415e2a6e7da125b873b130f9e5481",
+          "matches_recorded": true
+        },
+        {
+          "path": "论文图NoteBook/9. SM_uniform_style/publication_style.py",
+          "sha256": "b4648b32739beb26323d42b04e5aff7837ec5f96a7f29587b2544aab42d1502d",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/one_d_benchmark_20261113_run1/inputs/CsI2021_fixed_model.npz",
+          "sha256": "d77b8dbda13ee8ba82fbce42cce7255210b3ad2a7c495bfb010bc7121f59a237",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/one_d_benchmark_20261113_run1/inputs/Ar2020_fixed_model.npz",
+          "sha256": "6fac379882007d0e60fa2248d322a522b18e4f6c4c3fe98308737f0eb6327cd2",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/one_d_benchmark_20261113_run1/inputs/CONUS_plus_fixed_model.npz",
+          "sha256": "215830a19e41bdc5fbf201042d2bfe91ef51c38ca01c85ea94f7f6bf90da7108",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/one_d_benchmark_20261113_run1/RESULTS.json",
+          "sha256": "6293a964666caf4da1432ea0b159114c4c11a94b1f73bd620297fac68ab101b0",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/one_d_benchmark_20261113_run1/DELIVERY_MANIFEST.json",
+          "sha256": "c15ee623040e1a17988b62366393aa3994b5614cfb44bcc03512a8a8c5e83d35",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/one_d_benchmark_20261113_run1/STATISTICS_CONTRACT.md",
+          "sha256": "33eaaa4b1f416251144f293cf33dc7e4386a6a12cdda18b9f8f055e39652a81d",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/two_d_benchmark/extend_mixed.py",
+          "sha256": "ffb06cf4c5989b698bc99b61518fd5d63e708e4d70a67e4d8a962ac70e5e9827",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/two_d_benchmark/models.py",
+          "sha256": "073a67930bb37332d0290efe91707c1c32079c108174ab511383113eb32f178b",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/two_d_benchmark/plane_inference.py",
+          "sha256": "db69a9bc8fb9c8ed66b1c8d5e5ee19bc86f4addc97db86184bf0b57ec7cd4a41",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/two_d_benchmark/run_analysis.py",
+          "sha256": "2c44ef9439026c07caa841270110e4fd90d10117c8d7184a2d0c38231078799a",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/two_d_benchmark_20261113_run1/RESULTS.json",
+          "sha256": "0817a7d646f0bf0438ee682ba98c52c15984998e68a61a2b1c452153290debe3",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/two_d_benchmark_20261113_run1/MIXED_RESULTS.json",
+          "sha256": "6247e0683ed6c30ce0c90a9e29b04b3c96bdc1f1c18eb9c7d382f7b7b295ab87",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/paper2601_chi2_20261111/paper_reference/fig4_plotted_polygons.csv",
+          "sha256": "d6160f1ddf068cd668d0f7b2331a26620946a61b610df1d1e756f6331adc92d5",
+          "matches_recorded": true
+        },
+        {
+          "path": "outputs/paper2601_chi2_20261111/paper_reference/PROVENANCE.json",
+          "sha256": "fd0f5c67e53afaa1f815b2789f106bd49cbf582d7a3b7aa68d13e23d708d6a96",
+          "matches_recorded": true
+        },
+        {
+          "path": "data/benchmarks/CONUS_Plus/conusplus_kkl_run1/nsi_response_20261106/benchmark/fig4_blue_polygons.csv",
+          "sha256": "e899f48a83cb5f138b177ae96858bbdb12cda346cfb5a4ea026ed5058621dfdc",
+          "matches_recorded": true
+        },
+        {
+          "path": "data/benchmarks/CONUS_Plus/conusplus_kkl_run1/nsi_response_20261106/benchmark/REFERENCES_PROVENANCE.json",
+          "sha256": "0118cbd64f4a736780ecbe82cdc71eb4749c9d33344e4a4a84ebc12c83dc06fd",
+          "matches_recorded": true
+        },
+        {
+          "path": "docs/references/CONUS/2501.17843v3.pdf",
+          "sha256": "b20923363badde299106a6df83f0dff5308fd69d652b59b9967d32b764057c90",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/two_d_benchmark/validate_results.py",
+          "sha256": "ee8118a3af4bbfacfbc0f9e6e7fedde22d6b2afee63a50a7be2d9ea7796cf95a",
+          "matches_recorded": true
+        },
+        {
+          "path": "examples/two_d_benchmark/publish.py",
+          "sha256": "cea3cf337eaf25c394abc2416379eb8ad414ac39ade69a90004aef7202ede3b5",
+          "matches_recorded": true
+        }
+      ]
+    }
+  },
+  "result_snapshots": {
+    "outputs/one_d_benchmark_20261113_run1/RESULTS.json": "6293a964666caf4da1432ea0b159114c4c11a94b1f73bd620297fac68ab101b0",
+    "outputs/one_d_benchmark_20261113_run1/qa/FINAL_CHECKS.json": "aec4b928e4a7e90bc0583cb1238b372a0975f609960342f519a0d49d74d5f3e1",
+    "outputs/one_d_benchmark_20261113_run1/README.md": "b56dd48d8bebcdda22600df437d48a27afbe3f91d8917ed53faf01367d2457b4",
+    "outputs/one_d_benchmark_20261113_run1/RESULTS.md": "858d3cfa5ed09a9afdd2c9aa2ce58de5da3a9793fb28d9c7182e293ef3aa4574",
+    "outputs/two_d_benchmark_20261113_run1/BENCHMARK_RESULTS.json": "813dbec03578082563b528012c56066a41da68fa73c00d0509210e9a64efdfb2",
+    "outputs/two_d_benchmark_20261113_run1/qa/FINAL_CHECKS.json": "cac628844908453abd2f4c3dfbc5c88b78743231a001c685d48bc9cd09710584",
+    "outputs/two_d_benchmark_20261113_run1/README.md": "8e1077fa1bad614daa3199176a5fde28e2785064ef178bfb610eafd0df9d7115",
+    "outputs/two_d_benchmark_20261113_run1/RESULTS.md": "05aed973343b6f67e87f6920c29d1d22676275ea69cd34ebb4bf07c89f7067dc",
+    "outputs/two_d_benchmark_20261113_run1/REFERENCE_COMPARISON.json": "da2f38c273ff8c9c169ad90d5ed3476805b612a550ac4edd9c0ec7ebd8d22aed"
+  },
+  "file_lifecycle": [
+    {
+      "file": "docs/experiments/MAINLINE_STATUS_20261114.md",
+      "operation": "create",
+      "owner": "docs/experiments/README.md"
+    },
+    {
+      "file": "docs/experiments/MAINLINE_STATUS_20261114.evidence.json",
+      "operation": "create",
+      "owner": "docs/experiments/README.md",
+      "consumer": "docs/experiments/MAINLINE_STATUS_20261114.md"
+    },
+    {
+      "file": "docs/experiments/README.md",
+      "operation": "add current summary navigation; preserve all existing prose",
+      "owner": "docs/README.md"
+    },
+    {
+      "file": "backup/BACKUP_MANIFEST.md",
+      "operation": "append explicit required backup record",
+      "owner": "AGENTS.md backup rule"
+    }
+  ],
+  "protected": "Runtime, physical inputs, one/two-dimensional scientific results, original paper figures and canonical workflow Gates are not edited",
+  "checks_not_rerun": [
+    "SM forward integration",
+    "1D/2D numerical fits",
+    "Slow/Fast regression",
+    "coverage toys"
+  ],
+  "documentation_link_check": {
+    "scope": "files",
+    "selected_documents": [
+      "docs/experiments/MAINLINE_STATUS_20261114.md",
+      "docs/experiments/README.md"
+    ],
+    "excluded_directories": [
+      ".git",
+      ".pytest-tmp",
+      ".pytest_cache",
+      "__pycache__",
+      "backup",
+      "outputs"
+    ],
+    "markdown_documents": 2,
+    "local_links": 69,
+    "broken_current_links": [],
+    "unchanged_historical_exceptions": [],
+    "links": [
+      {
+        "file": "docs/experiments/MAINLINE_STATUS_20261114.md",
+        "line": 7,
+        "target": "COMPUTATION_ROUTES_20261113.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\COMPUTATION_ROUTES_20261113.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/MAINLINE_STATUS_20261114.md",
+        "line": 7,
+        "target": "../../outputs/one_d_benchmark_20261113_run1/RESULTS.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\one_d_benchmark_20261113_run1\\RESULTS.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/MAINLINE_STATUS_20261114.md",
+        "line": 7,
+        "target": "../../outputs/two_d_benchmark_20261113_run1/RESULTS.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\two_d_benchmark_20261113_run1\\RESULTS.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/MAINLINE_STATUS_20261114.md",
+        "line": 7,
+        "target": "MAINLINE_STATUS_20261114.evidence.json",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\MAINLINE_STATUS_20261114.evidence.json",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/MAINLINE_STATUS_20261114.md",
+        "line": 25,
+        "target": "CURRENT_REPRODUCTION_STATUS.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\CURRENT_REPRODUCTION_STATUS.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/MAINLINE_STATUS_20261114.md",
+        "line": 35,
+        "target": "<../../论文图NoteBook/8. SM_experiment_benchmarks/README.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\论文图NoteBook\\8. SM_experiment_benchmarks\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/MAINLINE_STATUS_20261114.md",
+        "line": 36,
+        "target": "<../../论文图NoteBook/9. SM_uniform_style/STYLE_GUIDE.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\论文图NoteBook\\9. SM_uniform_style\\STYLE_GUIDE.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/MAINLINE_STATUS_20261114.md",
+        "line": 37,
+        "target": "../../examples/one_d_benchmark/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\examples\\one_d_benchmark\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/MAINLINE_STATUS_20261114.md",
+        "line": 37,
+        "target": "../../outputs/one_d_benchmark_20261113_run1/RESULTS.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\one_d_benchmark_20261113_run1\\RESULTS.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/MAINLINE_STATUS_20261114.md",
+        "line": 37,
+        "target": "<../../论文图NoteBook/10. OneD_Chi2_Benchmarks/README.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\论文图NoteBook\\10. OneD_Chi2_Benchmarks\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/MAINLINE_STATUS_20261114.md",
+        "line": 38,
+        "target": "../../examples/two_d_benchmark/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\examples\\two_d_benchmark\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/MAINLINE_STATUS_20261114.md",
+        "line": 38,
+        "target": "../../outputs/two_d_benchmark_20261113_run1/RESULTS.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\two_d_benchmark_20261113_run1\\RESULTS.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/MAINLINE_STATUS_20261114.md",
+        "line": 38,
+        "target": "<../../论文图NoteBook/11. TwoD_Chi2_Benchmarks/README.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\论文图NoteBook\\11. TwoD_Chi2_Benchmarks\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/MAINLINE_STATUS_20261114.md",
+        "line": 39,
+        "target": "../../outputs/two_d_benchmark_20261113_run1/surfaces/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\two_d_benchmark_20261113_run1\\surfaces\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/MAINLINE_STATUS_20261114.md",
+        "line": 39,
+        "target": "../../outputs/two_d_benchmark_20261113_run1/contours/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\two_d_benchmark_20261113_run1\\contours\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/MAINLINE_STATUS_20261114.md",
+        "line": 72,
+        "target": "../../outputs/two_d_benchmark_20261113_run1/REFERENCE_COMPARISON.json",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\two_d_benchmark_20261113_run1\\REFERENCE_COMPARISON.json",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/MAINLINE_STATUS_20261114.md",
+        "line": 91,
+        "target": "README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 3,
+        "target": "MAINLINE_STATUS_20261114.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\MAINLINE_STATUS_20261114.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 3,
+        "target": "MAINLINE_STATUS_20261114.evidence.json",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\MAINLINE_STATUS_20261114.evidence.json",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 5,
+        "target": "TWO_DIMENSIONAL_BENCHMARKS_20261113.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\TWO_DIMENSIONAL_BENCHMARKS_20261113.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 5,
+        "target": "../../outputs/two_d_benchmark_20261113_run1/RESULTS.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\two_d_benchmark_20261113_run1\\RESULTS.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 7,
+        "target": "COMPUTATION_ROUTES_20261113.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\COMPUTATION_ROUTES_20261113.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 7,
+        "target": "../../outputs/one_d_benchmark_20261113_run1/RESULTS.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\one_d_benchmark_20261113_run1\\RESULTS.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 7,
+        "target": "../../examples/one_d_benchmark/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\examples\\one_d_benchmark\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 9,
+        "target": "<../../论文图NoteBook/8. SM_experiment_benchmarks/README.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\论文图NoteBook\\8. SM_experiment_benchmarks\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 9,
+        "target": "<../../论文图NoteBook/8. SM_experiment_benchmarks/REFERENCES_AND_METHODS.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\论文图NoteBook\\8. SM_experiment_benchmarks\\REFERENCES_AND_METHODS.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 11,
+        "target": "CURRENT_REPRODUCTION_STATUS.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\CURRENT_REPRODUCTION_STATUS.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 11,
+        "target": "../../outputs/reproduction_status_20261113/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\reproduction_status_20261113\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 13,
+        "target": "../../outputs/paper2601_fig4_redraw_20261112/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\paper2601_fig4_redraw_20261112\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 13,
+        "target": "../../outputs/external/solar_rho_snudd/20261112_fig4_run2/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\external\\solar_rho_snudd\\20261112_fig4_run2\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 15,
+        "target": "../../outputs/paper2601_fast_audit_20261111/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\paper2601_fast_audit_20261111\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 17,
+        "target": "../../outputs/paper2601_joint_audit_20261111/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\paper2601_joint_audit_20261111\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 19,
+        "target": "../../outputs/paper2601_chi2_corrected_20261111/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\paper2601_chi2_corrected_20261111\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 21,
+        "target": "<LATEST_EXPERIMENTS.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\LATEST_EXPERIMENTS.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 23,
+        "target": "MAINLINE_FILE_LAYOUT_AUDIT_20261111.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\MAINLINE_FILE_LAYOUT_AUDIT_20261111.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 23,
+        "target": "../../outputs/mainline_summary_20261111/FILE_ADDRESSES_20261111.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\mainline_summary_20261111\\FILE_ADDRESSES_20261111.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 25,
+        "target": "MAINLINE_ONBOARDING_SM_SUMMARY_20261111.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\MAINLINE_ONBOARDING_SM_SUMMARY_20261111.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 25,
+        "target": "../../outputs/mainline_summary_20261111/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\mainline_summary_20261111\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 31,
+        "target": "<PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/README.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\PandaX4T_XENONnT_SolarB8\\singlebin_2601_19883\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 31,
+        "target": "<PandaX4T_XENONnT_SolarB8/SOLAR_B8_ONBOARDING.v3.1.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\PandaX4T_XENONnT_SolarB8\\SOLAR_B8_ONBOARDING.v3.1.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 33,
+        "target": "<../../data/benchmarks/solar_b8_singlebin_2601_19883/README.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\data\\benchmarks\\solar_b8_singlebin_2601_19883\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 33,
+        "target": "<../../tools/run_solar_b8_singlebin_benchmark.py>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\tools\\run_solar_b8_singlebin_benchmark.py",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 33,
+        "target": "<../../outputs/solar_b8_singlebin/20261111_response_run2/README.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\solar_b8_singlebin\\20261111_response_run2\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 41,
+        "target": "<PandaX4T_XENONnT_SolarB8/SOLAR_B8_ONBOARDING.v3.1.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\PandaX4T_XENONnT_SolarB8\\SOLAR_B8_ONBOARDING.v3.1.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 49,
+        "target": "<PandaX4T_XENONnT_SolarB8/SOLAR_B8_ONBOARDING.v3.0.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\PandaX4T_XENONnT_SolarB8\\SOLAR_B8_ONBOARDING.v3.0.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 59,
+        "target": "COHERENT/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\COHERENT\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 59,
+        "target": "COHERENT/CsI2017/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\COHERENT\\CsI2017\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 59,
+        "target": "COHERENT/CsI2021/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\COHERENT\\CsI2021\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 59,
+        "target": "COHERENT/Ar2020/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\COHERENT\\Ar2020\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 60,
+        "target": "CONUS_Plus/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\CONUS_Plus\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 60,
+        "target": "CONUS_Plus/datasets/conusplus_kkl_run1/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\CONUS_Plus\\datasets\\conusplus_kkl_run1\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 61,
+        "target": "PandaX4T/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\PandaX4T\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 61,
+        "target": "PandaX4T/datasets/PandaX4T_2024_US2/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\PandaX4T\\datasets\\PandaX4T_2024_US2\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 62,
+        "target": "XENONnT/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\XENONnT\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 62,
+        "target": "XENONnT/datasets/XENONnT_2024_SolarB8/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\XENONnT\\datasets\\XENONnT_2024_SolarB8\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 64,
+        "target": "../../cevns_pyeft/experiments/dataset_registry.json",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\cevns_pyeft\\experiments\\dataset_registry.json",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 66,
+        "target": "../references/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\references\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 66,
+        "target": "../README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 72,
+        "target": "PandaX4T_XENONnT_SolarB8/README.md",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\PandaX4T_XENONnT_SolarB8\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 82,
+        "target": "<PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/NSI_EE_VECTOR_ONBOARDING.v3.3.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\PandaX4T_XENONnT_SolarB8\\singlebin_2601_19883\\NSI_EE_VECTOR_ONBOARDING.v3.3.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 82,
+        "target": "<../../data/benchmarks/solar_b8_nsi_2601_19883/README.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\data\\benchmarks\\solar_b8_nsi_2601_19883\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 82,
+        "target": "<../../outputs/solar_b8_nsi/20261112_fig4_run2/README.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\solar_b8_nsi\\20261112_fig4_run2\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 90,
+        "target": "<PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_EXTERNAL_ONBOARDING.v3.4.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\PandaX4T_XENONnT_SolarB8\\singlebin_2601_19883\\SNUDD_EXTERNAL_ONBOARDING.v3.4.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 90,
+        "target": "<../../extensions/solar_rho_snudd/README.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\extensions\\solar_rho_snudd\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 90,
+        "target": "<../../outputs/external/solar_rho_snudd/20261112_run1/README.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\external\\solar_rho_snudd\\20261112_run1\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 98,
+        "target": "<PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_FULL_BENCHMARK.v3.4.1.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\PandaX4T_XENONnT_SolarB8\\singlebin_2601_19883\\SNUDD_FULL_BENCHMARK.v3.4.1.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 98,
+        "target": "<../../outputs/external/solar_rho_snudd/20261112_fig4_run2/README.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\outputs\\external\\solar_rho_snudd\\20261112_fig4_run2\\README.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 106,
+        "target": "<PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_FULL_TRACE_ONBOARDING.v3.5.md>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\PandaX4T_XENONnT_SolarB8\\singlebin_2601_19883\\SNUDD_FULL_TRACE_ONBOARDING.v3.5.md",
+        "status": "PASS"
+      },
+      {
+        "file": "docs/experiments/README.md",
+        "line": 106,
+        "target": "<PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SNUDD_FULL_TRACE_CONTRACT.v3.5.json>",
+        "resolved": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\261103Gitup1-CONUS-6\\Gitup01\\docs\\experiments\\PandaX4T_XENONnT_SolarB8\\singlebin_2601_19883\\SNUDD_FULL_TRACE_CONTRACT.v3.5.json",
+        "status": "PASS"
+      }
+    ],
+    "limitations": [
+      "Remote HTTP availability and Markdown anchor semantics are not checked.",
+      "New-file documentation coverage and paths in prose/code spans require change-list review.",
+      "This checker never edits README content and is not a filesystem watcher.",
+      "This is a file-link audit, not a physics or numerical regression."
+    ]
+  },
+  "final_checks": {
+    "status": "PASS_DOCUMENTATION_SUMMARY",
+    "numerical_result_snapshots_unchanged": true,
+    "backup_unchanged": true,
+    "previous_navigation_lines_preserved": true,
+    "local_links": 69,
+    "broken_links": 0,
+    "summary_sha256": "809920fb162983d231a70658ae710ad858298b50583ab82e9a36a629fc628cbc",
+    "updated_navigation_sha256": "892259b7248b4aa28291d97f6856e1189ce4b19ba307b71b8440dc63fdbb6bd6"
+  },
+  "temporary_report": "tmp/mainline_status_20261114_links.json was generated by validate_docs.py, incorporated here and removed; no active consumer depends on the temporary file"
+}

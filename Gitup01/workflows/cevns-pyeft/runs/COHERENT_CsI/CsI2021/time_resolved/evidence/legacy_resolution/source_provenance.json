@@ -1,0 +1,138 @@
+{
+  "review_date": "2026-11-06",
+  "official_website": "https://sites.duke.edu/coherent/data/",
+  "website_route": "Released Data identifies arXiv2110.07730 ancillary as the full2021 CsI data release",
+  "records": [
+    {
+      "role": "official_ancillary",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\data\\raw\\snsFlux2D.root",
+      "bytes": 11657400,
+      "sha256": "1af0639911bb9219b66cbfa617057cd145d180c2ac8bc791c3008f1d666206ae",
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/snsFlux2D.root",
+      "paper_url": "https://arxiv.org/abs/2110.07730v2",
+      "candidate_copy_identical": true
+    },
+    {
+      "role": "official_ancillary",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\data\\raw\\dataBeamOnC.txt",
+      "bytes": 123046,
+      "sha256": "b78333f0cc0c4182f913cecd91d55968e43a620683e9f51e0ceb1c1db596326f",
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/dataBeamOnC.txt",
+      "paper_url": "https://arxiv.org/abs/2110.07730v2",
+      "candidate_copy_identical": true
+    },
+    {
+      "role": "official_ancillary",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\data\\raw\\dataBeamOnAC.txt",
+      "bytes": 117736,
+      "sha256": "fba5c06334521531eda353771b5297b44a70566b0d755e23b174c716abec9468",
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/dataBeamOnAC.txt",
+      "paper_url": "https://arxiv.org/abs/2110.07730v2",
+      "candidate_copy_identical": true
+    },
+    {
+      "role": "official_ancillary",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\data\\raw\\brnPE.txt",
+      "bytes": 4081,
+      "sha256": "0000b042b8d0d28b90370eb70d1409db1d8c510fcf2b3e636370b0d4443ac0b0",
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/brnPE.txt",
+      "paper_url": "https://arxiv.org/abs/2110.07730v2",
+      "candidate_copy_identical": true
+    },
+    {
+      "role": "official_ancillary",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\data\\raw\\brnTrec.txt",
+      "bytes": 10798,
+      "sha256": "6f279d835242a868dfc048abaa42b8c400bf961036de7bc7e64636efdd46466f",
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/brnTrec.txt",
+      "paper_url": "https://arxiv.org/abs/2110.07730v2",
+      "candidate_copy_identical": true
+    },
+    {
+      "role": "official_ancillary",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\data\\raw\\ninPE.txt",
+      "bytes": 4117,
+      "sha256": "41cae0376003cc2dcd028a3913e7c16395471f612b56d311f80e2a6071c9950c",
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/ninPE.txt",
+      "paper_url": "https://arxiv.org/abs/2110.07730v2",
+      "candidate_copy_identical": true
+    },
+    {
+      "role": "official_ancillary",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\data\\raw\\ninTrec.txt",
+      "bytes": 10488,
+      "sha256": "2bb034d648b312f4ee329ae95078dc748ff3f83b999c411b08f86d82ddf8e151",
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/ninTrec.txt",
+      "paper_url": "https://arxiv.org/abs/2110.07730v2",
+      "candidate_copy_identical": true
+    },
+    {
+      "role": "official_ancillary",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\data\\raw\\scintRespCoefficients.txt",
+      "bytes": 445,
+      "sha256": "ea6b8f34b296bf6e99f2a4ac504030d99155daba3e3c252f51c87d2470319d13",
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/scintRespCoefficients.txt",
+      "paper_url": "https://arxiv.org/abs/2110.07730v2",
+      "candidate_copy_identical": true
+    },
+    {
+      "role": "official_ancillary",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\260929Gitup1-CONUS-2\\Gitup01\\src\\cevns_pyeft\\experiments\\coherent\\2021CsI_root_time\\data\\raw\\effCoefficients.txt",
+      "bytes": 329,
+      "sha256": "f1e58e6b8ec4db53da3be21fe44ebc4621e9b248b920be09759b1000dada8c51",
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/effCoefficients.txt",
+      "paper_url": "https://arxiv.org/abs/2110.07730v2",
+      "candidate_copy_identical": true
+    },
+    {
+      "role": "original_paper",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\sources\\Paper_CEvNSCsI_FullDataset_SupMaterials.pdf",
+      "bytes": 388336,
+      "sha256": "7f4aec67a7a5323a84d6db0379d973de46e4a782c6c8f3cd43e31c262c6b5753",
+      "original_url": "https://arxiv.org/src/2110.07730v2/anc/Paper_CEvNSCsI_FullDataset_SupMaterials.pdf",
+      "locator": "p2 lines60--75; p5 Fig2; p7 TableI"
+    },
+    {
+      "role": "original_paper",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\references\\COHERENT\\2211.11905v2.pdf",
+      "bytes": 2049814,
+      "sha256": "071225342b004f4e97001d6c200066b216f0af1af226f4b4aafa43512304a2b1",
+      "original_url": "https://arxiv.org/pdf/2211.11905v2",
+      "locator": "p12--14 Eqs28--38; p33 TableII; p35 Fig18"
+    },
+    {
+      "role": "original_paper",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\references\\COHERENT\\2202.11002v3.pdf",
+      "bytes": 3385209,
+      "sha256": "dd87860c25f0bde41cc65a3acebdc9e04c8ed0f47e61095801f4b9672364b6a9",
+      "original_url": "https://arxiv.org/pdf/2202.11002v3",
+      "locator": "Eq6, corresponding to JHEP05(2022)109 Eq2.6"
+    },
+    {
+      "role": "original_paper",
+      "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\tmp\\csi_issue_resolution_20261106\\2111.02477v2.pdf",
+      "bytes": 3779782,
+      "sha256": "22194a7f022dcd5918ad03db5b64e475449980b201fdafd7a5a1c7ac15330605",
+      "original_url": "https://arxiv.org/pdf/2111.02477v2",
+      "locator": "Sec8, PDF p23, Fitting approach and Eq8.1"
+    }
+  ],
+  "prior_fresh_ROOT_download_and_exact_cache_comparison": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\COHERENT_CsI\\CsI2021\\sources\\ORIGINAL_SOURCE_PROVENANCE_20261106.json",
+  "calibration_fit_domain": {
+    "source": "https://arxiv.org/html/2111.02477v2#S8",
+    "locator": "Sec8, PDF p23, Fitting approach and Eq8.1",
+    "fit_domain_keV": [
+      2.0,
+      70.0
+    ],
+    "measured_points_keV": [
+      3.0,
+      63.0
+    ]
+  },
+  "inference_status": {
+    "PE_numeric_edges": "PROJECT_DERIVED_RECONSTRUCTION",
+    "full_PE_probability_normalization": "CANDIDATE_PHYSICAL_INTERPRETATION",
+    "shifted_reference_denominator": "IMPLEMENTED_FIXED_NOMINAL_CONVENTION"
+  }
+}

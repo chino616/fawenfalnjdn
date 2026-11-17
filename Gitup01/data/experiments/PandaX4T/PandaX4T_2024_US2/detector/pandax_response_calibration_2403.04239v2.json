@@ -1,0 +1,89 @@
+{
+  "source_id": "R06",
+  "arxiv_version": "2403.04239v2",
+  "locator": "p21 Table II combined Run0+Run1 calibration fit",
+  "status": "REFERENCE_CALIBRATION_NOT_US2_SUBKEV_VALIDATION",
+  "note": "g2b is bottom-array gain, not total S2 gain. Missing time-dependent and selection functions not invented. No independent nuisance or covariance inferred from marginal intervals.",
+  "parameters": [
+    {
+      "name": "p_dpe",
+      "value": 0.22,
+      "uncertainty_minus": null,
+      "uncertainty_plus": null,
+      "unit": "1",
+      "source": "R06 Table II"
+    },
+    {
+      "name": "g1",
+      "value": 0.0997,
+      "uncertainty_minus": 0.0005,
+      "uncertainty_plus": 0.0002,
+      "unit": "PE/photon",
+      "source": "R06 Table II"
+    },
+    {
+      "name": "g2b",
+      "value": 4.12,
+      "uncertainty_minus": 0.04,
+      "uncertainty_plus": 0.06,
+      "unit": "PE/electron",
+      "source": "R06 Table II"
+    },
+    {
+      "name": "f_g1_Run1",
+      "value": 0.90985,
+      "uncertainty_minus": null,
+      "uncertainty_plus": null,
+      "unit": "1",
+      "source": "R06 Table II"
+    },
+    {
+      "name": "f_g2b_Run1",
+      "value": 1.22067,
+      "uncertainty_minus": null,
+      "uncertainty_plus": null,
+      "unit": "1",
+      "source": "R06 Table II"
+    },
+    {
+      "name": "pNR_0",
+      "value": 0.7,
+      "uncertainty_minus": 0.3,
+      "uncertainty_plus": 0.3,
+      "unit": "1",
+      "source": "R06 Table II"
+    },
+    {
+      "name": "pNR_1",
+      "value": -1.6,
+      "uncertainty_minus": 0.7,
+      "uncertainty_plus": 0.9,
+      "unit": "1",
+      "source": "R06 Table II"
+    },
+    {
+      "name": "pNR_2",
+      "value": 1.3,
+      "uncertainty_minus": 0.7,
+      "uncertainty_plus": 0.5,
+      "unit": "1",
+      "source": "R06 Table II"
+    },
+    {
+      "name": "pNR_3",
+      "value": -0.6,
+      "uncertainty_minus": 0.4,
+      "uncertainty_plus": 0.4,
+      "unit": "1",
+      "source": "R06 Table II"
+    },
+    {
+      "name": "A_NR",
+      "value": 1.06,
+      "uncertainty_minus": 0.1,
+      "uncertainty_plus": 0.09,
+      "unit": "1",
+      "source": "R06 Table II"
+    }
+  ]
+}

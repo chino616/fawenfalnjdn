@@ -1,0 +1,108 @@
+{
+  "threshold_events": 0.005,
+  "records": [
+    {
+      "level": 0,
+      "grid": {
+        "n_er": 128,
+        "n_enu": 240,
+        "n_pe_bin": 64,
+        "pe_step": 0.25,
+        "sin2thetaW": 0.2387,
+        "pe_edges": [
+          0.0,
+          8.0,
+          12.0,
+          16.0,
+          20.0,
+          24.0,
+          32.0,
+          40.0,
+          48.0,
+          60.0
+        ]
+      },
+      "total_events": 328.33875367003316,
+      "cache": "RESPONSE_er128_enu240.npz"
+    },
+    {
+      "level": 1,
+      "grid": {
+        "n_er": 256,
+        "n_enu": 480,
+        "n_pe_bin": 128,
+        "pe_step": 0.125,
+        "sin2thetaW": 0.2387,
+        "pe_edges": [
+          0.0,
+          8.0,
+          12.0,
+          16.0,
+          20.0,
+          24.0,
+          32.0,
+          40.0,
+          48.0,
+          60.0
+        ]
+      },
+      "total_events": 328.31938156221787,
+      "cache": "RESPONSE_er256_enu480.npz",
+      "max_bin_absolute_change": 0.019000038436615796,
+      "sum_absolute_change": 12.749580131711149,
+      "passed_0p005": false,
+      "worst_case": {
+        "name": "domain_corner_1",
+        "point": [
+          -0.4,
+          0.8
+        ],
+        "shift_us": -0.25,
+        "efficiency_shift_pe": 1.0,
+        "PE_bin": 3,
+        "time_bin": 1
+      }
+    },
+    {
+      "level": 2,
+      "grid": {
+        "n_er": 512,
+        "n_enu": 960,
+        "n_pe_bin": 256,
+        "pe_step": 0.0625,
+        "sin2thetaW": 0.2387,
+        "pe_edges": [
+          0.0,
+          8.0,
+          12.0,
+          16.0,
+          20.0,
+          24.0,
+          32.0,
+          40.0,
+          48.0,
+          60.0
+        ]
+      },
+      "total_events": 328.3189300697272,
+      "cache": "RESPONSE_er512_enu960.npz",
+      "max_bin_absolute_change": 0.0037095932852899693,
+      "sum_absolute_change": 1.6904153515043334,
+      "passed_0p005": true,
+      "worst_case": {
+        "name": "domain_corner_3",
+        "point": [
+          0.8,
+          0.8
+        ],
+        "shift_us": 0.25,
+        "efficiency_shift_pe": 1.0,
+        "PE_bin": 0,
+        "time_bin": 8
+      }
+    }
+  ],
+  "status": "PASS_DECLARED_GRID_CASES",
+  "scope": "Legacy eight benchmark points and four domain corners, 3 timing x 3 efficiency shifts, 99 bins; calibrated recoil domain",
+  "case_count": 108
+}

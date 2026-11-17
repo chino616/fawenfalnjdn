@@ -1,0 +1,1276 @@
+{
+  "contract_version": 4,
+  "dataset_id": "PandaX4T_2024_US2",
+  "scientific_claim": "SM nuclear-table Response forward at fixed R01 parameters, seven Xe isotopes without renormalization; original detector approximation/recasting model. No paper-exact or native-likelihood claim.",
+  "sections": {
+    "identity_and_goal": {
+      "decision_status": "DRAFT",
+      "fields": {},
+      "decision_refs": [],
+      "evidence_refs": []
+    },
+    "dataset": {
+      "decision_status": "DRAFT",
+      "fields": {},
+      "decision_refs": [],
+      "evidence_refs": []
+    },
+    "target_and_exposure": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "target_inventory_model_id": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "xenon_natural_isotopes_nist_v2.txt": {
+          "value": {
+            "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/xenon_natural_isotopes_nist_v2.txt",
+            "sha256": "5fd5a0d923c969cb53bcc1267a4eb20d8f6c71e6c2da749d7199676ef361af67",
+            "coverage": "all rows/keys; detailed key map below",
+            "shape": [
+              9,
+              3
+            ]
+          },
+          "unit": "1; u; 1",
+          "evidence_claims": [
+            "PandaX4T-C007"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "avogadro_constant": {
+          "value": 6.02214076e+23,
+          "unit": "mol^-1",
+          "evidence_claims": [
+            "PandaX4T-S04"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "FV_mass_Run0": {
+          "value": 2.78,
+          "unit": "t",
+          "evidence_claims": [
+            "PandaX4T-S05"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "FV_mass_Run1": {
+          "value": 2.16,
+          "unit": "t",
+          "evidence_claims": [
+            "PandaX4T-S06"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "US2_total_exposure": {
+          "value": 1.04,
+          "unit": "t yr",
+          "evidence_claims": [
+            "PandaX4T-S07"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "target/derived_inventory": {
+          "value": {
+            "mean_molar_mass_g_per_mol": 131.29276144779053,
+            "mass_numbers": [
+              124,
+              126,
+              128,
+              129,
+              130,
+              131,
+              132,
+              134,
+              136
+            ],
+            "nuclei_per_ton": [
+              4.366636774411816e+24,
+              4.0822549676749114e+24,
+              8.761711729497322e+25,
+              1.2109436011190817e+27,
+              1.8672876374611875e+26,
+              9.738884311872001e+26,
+              1.23424456205817e+27,
+              4.786650355748885e+26,
+              4.0626693174367414e+26
+            ],
+            "total_nuclei_per_ton": 4.5868033344661935e+27
+          },
+          "unit": "g/mol and nuclei/t, per field",
+          "evidence_claims": [
+            "PandaX4T-DERIVED-INVENTORY"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "run_exposures": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [
+            "PandaX4T-M02"
+          ],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": [
+            "run_separated_prediction"
+          ]
+        },
+        "target/equation_2": {
+          "value": "\\overline M=\\sum_A f_A M_A,\\qquad n_A^{(t)}=\\frac{10^6N_{\\rm A}f_A}{\\overline M}. \\tag{2}",
+          "unit": "equation with symbol units declared in the chapter",
+          "evidence_claims": [
+            "PandaX4T-EQ2"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
+      "decision_refs": [],
+      "evidence_refs": []
+    },
+    "source": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "source_model_ids": {
+          "value": [],
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "b8_bahcall1996_official.txt": {
+          "value": {
+            "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/b8_bahcall1996_official.txt",
+            "sha256": "75ce26216a638b811d131b692e2d22b8624fcbb711839fd167c25cefaafb9789",
+            "coverage": "all rows/keys; detailed key map below"
+          },
+          "unit": "MeV; MeV^-1",
+          "evidence_claims": [
+            "PandaX4T-C006"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "flux_reference": {
+          "value": 5460000.0,
+          "unit": "cm^-2 s^-1",
+          "evidence_claims": [
+            "PandaX4T-S01"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "flux_relative_error": {
+          "value": 0.12,
+          "unit": "1",
+          "evidence_claims": [
+            "PandaX4T-S02"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "source/equation_1": {
+          "value": "\\frac{d\\phi}{dE_\\nu}=\\Phi_{8B}f_{8B}(E_\\nu). \\tag{1}",
+          "unit": "equation with symbol units declared in the chapter",
+          "evidence_claims": [
+            "PandaX4T-EQ1"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
+      "decision_refs": [],
+      "evidence_refs": []
+    },
+    "theory_response": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "interaction_module": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "nuclear_structure_module": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "sin2thetaW_reference": {
+          "value": 0.23857,
+          "unit": "1",
+          "evidence_claims": [
+            "PandaX4T-S03"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "nuclear/local_coefficients": {
+          "value": {
+            "file": "data/responses/responses_all.json",
+            "sha256": "cef361cd91a1efa3fe2b509ba0dd478f8b8fc9c13511f6d8637aad6c9bcf3d74",
+            "xenon_keys": [
+              "Xe128",
+              "Xe129",
+              "Xe130",
+              "Xe131",
+              "Xe132",
+              "Xe134",
+              "Xe136"
+            ],
+            "missing_natural_xenon_keys": [
+              "Xe124",
+              "Xe126"
+            ]
+          },
+          "unit": "as declared by the existing response reader",
+          "evidence_claims": [
+            "PandaX4T-NUCLEAR-LOCAL"
+          ],
+          "provenance_status": "REFERENCE_ONLY",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "nuclear_original_source": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [
+            "PandaX4T-M04"
+          ],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": [
+            "Fig4"
+          ]
+        },
+        "sm_runtime_profile": {
+          "value": "coherent_sm_kn_v1 / klein_nystrand_v1",
+          "unit": "1",
+          "evidence_claims": [
+            "SM20261107-MODEL"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "light_vector_benchmark": {
+          "value": {
+            "model": "light_vector_kn_v1",
+            "scope": "flavor-universal V and B-L fixed-point spectra",
+            "implementation": "cevns_pyeft/theory/light_vector.py",
+            "parameter_card": "data/benchmarks/solar_b8_vector_v1/benchmark.input.json"
+          },
+          "unit": "1",
+          "evidence_claims": [
+            "VECTOR20261108-MODEL",
+            "VECTOR20261108-POINTS"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "current_nuclear_route": {
+          "value": {
+            "model": "solar_sm_nuclear_table_v1",
+            "resource": "data/responses/responses_all.json",
+            "basis": "np",
+            "missing": [
+              "Xe124",
+              "Xe126"
+            ],
+            "external_provenance": "UNRESOLVED"
+          },
+          "unit": "1",
+          "evidence_claims": [
+            "NR20261110-TABLE"
+          ],
+          "provenance_status": "LOCAL_RESOURCE_ADOPTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
+      "decision_refs": [
+        "D0004"
+      ],
+      "evidence_refs": []
+    },
+    "kinematics_cross_section": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "kinematics_module": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "cross_section_module": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "current_nuclear_mass_and_units": {
+          "value": {
+            "mass": "A*amu",
+            "cross_section": "m/(8pi E^2) Tr(rho K)",
+            "output_unit": "cm2/keV"
+          },
+          "unit": "1",
+          "evidence_claims": [
+            "NR20261110-METHOD"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
+      "decision_refs": [
+        "D0004"
+      ],
+      "evidence_refs": []
+    },
+    "detector_response": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "detector_model_ids": {
+          "value": [],
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/pandax_qy_nominal.txt": {
+          "value": {
+            "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/detector/pandax_qy_nominal.txt",
+            "sha256": "18e0cee351c09fb6e3c1b286b5a15de88c8a9c9aa371cb0367946aa57e36f75f",
+            "coverage": "all rows; T_keVnr,Qy_e_per_keV",
+            "shape": [
+              36,
+              2
+            ]
+          },
+          "unit": "column1 keVnr, Qy columns electron/keV, visibility/line-style flags dimensionless",
+          "evidence_claims": [
+            "PandaX4T-C001"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/pandax_qy_bestfit.txt": {
+          "value": {
+            "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/detector/pandax_qy_bestfit.txt",
+            "sha256": "55409cc017d99c43502e3a62ae1db5d86bd4ff391009d98a26538a296bc165cd",
+            "coverage": "all rows; T_keVnr,Qy_e_per_keV",
+            "shape": [
+              37,
+              2
+            ]
+          },
+          "unit": "column1 keVnr, Qy columns electron/keV, visibility/line-style flags dimensionless",
+          "evidence_claims": [
+            "PandaX4T-C002"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/pandax_qy_nominal_band.txt": {
+          "value": {
+            "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/detector/pandax_qy_nominal_band.txt",
+            "sha256": "f5f507d5b9ff85f692fe246089a2bf4d29d74d6e9bda2299287a370debe15c5f",
+            "coverage": "all rows; T_keVnr,Qy_lower,Qy_upper",
+            "shape": [
+              119,
+              3
+            ]
+          },
+          "unit": "column1 keVnr, Qy columns electron/keV, visibility/line-style flags dimensionless",
+          "evidence_claims": [
+            "PandaX4T-C003"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/pandax_response_calibration_2403.04239v2.json": {
+          "value": {
+            "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/detector/pandax_response_calibration_2403.04239v2.json",
+            "sha256": "9af71289e6ba45a901e324ae38197a46537227687521fa9b1bd8d8a014747610",
+            "coverage": "all rows/keys; detailed key map below",
+            "parameters": [
+              {
+                "name": "p_dpe",
+                "value": 0.22,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "unit": "1",
+                "source": "R06 Table II"
+              },
+              {
+                "name": "g1",
+                "value": 0.0997,
+                "uncertainty_minus": 0.0005,
+                "uncertainty_plus": 0.0002,
+                "unit": "PE/photon",
+                "source": "R06 Table II"
+              },
+              {
+                "name": "g2b",
+                "value": 4.12,
+                "uncertainty_minus": 0.04,
+                "uncertainty_plus": 0.06,
+                "unit": "PE/electron",
+                "source": "R06 Table II"
+              },
+              {
+                "name": "f_g1_Run1",
+                "value": 0.90985,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "unit": "1",
+                "source": "R06 Table II"
+              },
+              {
+                "name": "f_g2b_Run1",
+                "value": 1.22067,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "unit": "1",
+                "source": "R06 Table II"
+              },
+              {
+                "name": "pNR_0",
+                "value": 0.7,
+                "uncertainty_minus": 0.3,
+                "uncertainty_plus": 0.3,
+                "unit": "1",
+                "source": "R06 Table II"
+              },
+              {
+                "name": "pNR_1",
+                "value": -1.6,
+                "uncertainty_minus": 0.7,
+                "uncertainty_plus": 0.9,
+                "unit": "1",
+                "source": "R06 Table II"
+              },
+              {
+                "name": "pNR_2",
+                "value": 1.3,
+                "uncertainty_minus": 0.7,
+                "uncertainty_plus": 0.5,
+                "unit": "1",
+                "source": "R06 Table II"
+              },
+              {
+                "name": "pNR_3",
+                "value": -0.6,
+                "uncertainty_minus": 0.4,
+                "uncertainty_plus": 0.4,
+                "unit": "1",
+                "source": "R06 Table II"
+              },
+              {
+                "name": "A_NR",
+                "value": 1.06,
+                "uncertainty_minus": 0.1,
+                "uncertainty_plus": 0.09,
+                "unit": "1",
+                "source": "R06 Table II"
+              }
+            ]
+          },
+          "unit": "per scalar parameter, explicitly declared in the JSON",
+          "evidence_claims": [
+            "PandaX4T-C011"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "detector/pandax_us2_acceptance_2407.10892v3.txt": {
+          "value": {
+            "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/detector/pandax_us2_acceptance_2407.10892v3.txt",
+            "sha256": "71fbe331a11bc25e44fbcfd6ea853b1f67a92990c6c144400629ae2a044eca38",
+            "coverage": "all 99 rows, both columns",
+            "shape": [
+              99,
+              2
+            ]
+          },
+          "unit": "as declared per column/key in the numerical file and chapter",
+          "evidence_claims": [
+            "PandaX4T-C029"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "kernel_2024": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [
+            "PandaX4T-M01"
+          ],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": [
+            "P06",
+            "P07",
+            "P09"
+          ]
+        },
+        "detector/equation_3": {
+          "value": "P_{r\\mathbf i}(T;\\boldsymbol\\eta)=\\int_{\\Omega_{r\\mathbf i}}p_r(\\mathbf x\\mid T;\\boldsymbol\\eta)\\epsilon_r(\\mathbf x,T;\\boldsymbol\\eta)\\,d\\mathbf x,\\qquad0\\le\\sum_{\\mathbf i}P_{r\\mathbf i}\\le1. \\tag{3}",
+          "unit": "equation with symbol units declared in the chapter",
+          "evidence_claims": [
+            "PandaX4T-EQ3"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
+      "decision_refs": [],
+      "evidence_refs": []
+    },
+    "slow_counts": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "observable_definition": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "binning_definition": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "prediction/numerical_policies": {
+          "value": {
+            "seconds_per_year": 31557600,
+            "days_per_year": 365.25,
+            "source_interpolation": "piecewise_linear_candidate",
+            "source_outside_table": "zero_candidate",
+            "response_interpolation": "nonnegative_multilinear_within_verified_grid_candidate",
+            "quadrature_tolerance_and_grid": null
+          },
+          "unit": "per field",
+          "evidence_claims": [
+            "PandaX4T-NUMERICAL-POLICIES"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "prediction/equation_4": {
+          "value": "\\mu^{\\rm sig}_{r\\mathbf i}=\\mathcal E_r t_{\\rm yr}\\sum_A n_A^{(t)}\\int dT\\,dE_\\nu\\,\\frac{d\\phi}{dE_\\nu}\\frac{d\\sigma_A}{dT}P_{r\\mathbf i}(T;\\boldsymbol\\eta). \\tag{4}",
+          "unit": "equation with symbol units declared in the chapter",
+          "evidence_claims": [
+            "PandaX4T-EQ4"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "sm_runtime_result": {
+          "value": [
+            1.2701429078975668,
+            2.8424582293673084,
+            4.397645519638373,
+            5.458905810780665,
+            5.815192206475204,
+            5.59864055543767,
+            4.987797947879388,
+            4.2063252639297595,
+            3.38041383322109,
+            2.6163813923442185,
+            1.958611433103274,
+            1.4305604454044554,
+            1.0180493414288172,
+            0.7095442184957375,
+            0.47424449923279066,
+            0.31685991799564645,
+            0.20920400908603237,
+            0.1340240589520005,
+            0.08419130675681191,
+            0.050423326995445446,
+            0.029743292263143976,
+            0.017863136956986013,
+            0.009216649350211374,
+            0.0052704059762526895,
+            0.002974007774557666,
+            0.0014798586801078478,
+            0.0005892254529220146
+          ],
+          "unit": "events/bin",
+          "evidence_claims": [
+            "SM20261107-RESULT"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "light_vector_results": {
+          "value": {
+            "SM": [
+              1.2701429078975668,
+              2.8424582293673084,
+              4.397645519638373,
+              5.458905810780665,
+              5.815192206475204,
+              5.59864055543767,
+              4.987797947879388,
+              4.2063252639297595,
+              3.38041383322109,
+              2.6163813923442185,
+              1.958611433103274,
+              1.4305604454044554,
+              1.0180493414288172,
+              0.7095442184957375,
+              0.47424449923279066,
+              0.31685991799564645,
+              0.20920400908603237,
+              0.1340240589520005,
+              0.08419130675681191,
+              0.050423326995445446,
+              0.029743292263143976,
+              0.017863136956986013,
+              0.009216649350211374,
+              0.0052704059762526895,
+              0.002974007774557666,
+              0.0014798586801078478,
+              0.0005892254529220146
+            ],
+            "V10_g1": [
+              0.5535666760132901,
+              1.3848899917470185,
+              2.3351554826672123,
+              3.102749222245544,
+              3.492125727950812,
+              3.517897480638049,
+              3.2551766138670883,
+              2.8351006646222827,
+              2.3423920052156793,
+              1.8570854757842001,
+              1.4198518639133273,
+              1.0565385764145627,
+              0.7644455094322959,
+              0.5407602949935874,
+              0.3663049131397945,
+              0.247730010249124,
+              0.16536807053193145,
+              0.10701368100977957,
+              0.06784547885486089,
+              0.04097802900394143,
+              0.024362398939384824,
+              0.014738850104436289,
+              0.007654469862220799,
+              0.004405264980797662,
+              0.0024999730146580993,
+              0.001250917861915476,
+              0.0005005407791485224
+            ],
+            "V10_g2": [
+              0.1686413046333298,
+              0.12981099714056749,
+              0.03923955651739299,
+              0.007864154962828825,
+              0.06304253738825463,
+              0.16709755771766074,
+              0.269875597080587,
+              0.3409784999417255,
+              0.36872368991326093,
+              0.3589458243918382,
+              0.3229177319196032,
+              0.27422340706197257,
+              0.22143919392803185,
+              0.17187538822387363,
+              0.12607539585040745,
+              0.09136472000765435,
+              0.06477420939575075,
+              0.04421621003989882,
+              0.029391922612829992,
+              0.018519160654664392,
+              0.011441175186887647,
+              0.007168014711143654,
+              0.003838390025917091,
+              0.0022752708209974933,
+              0.001324822611576583,
+              0.0006795473703253824,
+              0.00027789319176228924
+            ],
+            "V10_g3": [
+              5.409776766576291,
+              8.430098400311204,
+              9.184560295479903,
+              8.095004703900463,
+              6.148291369819379,
+              4.220528691111916,
+              2.6695838532710834,
+              1.5826136696137048,
+              0.8806003934552703,
+              0.46120673303021587,
+              0.22584276385045374,
+              0.10286625019795193,
+              0.042445936371925196,
+              0.015290089396804894,
+              0.004323670333432926,
+              0.0008373462655304951,
+              0.00016428925585642307,
+              0.0003326346127043655,
+              0.0005824204221859282,
+              0.0006777988233193502,
+              0.000643989661993331,
+              0.0005567062701777224,
+              0.0003797857243043264,
+              0.0002767099765469082,
+              0.00018941819516467013,
+              0.00011210309429863439,
+              5.150199256604538e-05
+            ],
+            "BL10_g2": [
+              2.683119486332531,
+              5.594155880556617,
+              8.156553690909021,
+              9.630636554318551,
+              9.830422093214183,
+              9.122594474072322,
+              7.8715871671829305,
+              6.454508486439474,
+              5.060101462450402,
+              3.8309328621284613,
+              2.8116024153207153,
+              2.017339717513928,
+              1.4126557938462938,
+              0.9702290070970173,
+              0.639835232057793,
+              0.42226168502755357,
+              0.2756666561093838,
+              0.17476514213412744,
+              0.10872972515373759,
+              0.06454073096103023,
+              0.037753009047839965,
+              0.022496044469663263,
+              0.011525229793223854,
+              0.00654459403633918,
+              0.003670079200213395,
+              0.001815045094768387,
+              0.000718725204528882
+            ],
+            "V1_g2": [
+              4.612578242793046,
+              4.728933281164164,
+              3.4448427834930118,
+              1.9690845094607923,
+              0.8869127051454588,
+              0.29615093144418747,
+              0.05609860498547852,
+              0.006712904231196616,
+              0.03370017424420611,
+              0.07442786313502049,
+              0.1027819127820655,
+              0.11338285447789911,
+              0.10913113610577567,
+              0.09599125821497749,
+              0.07728409417324832,
+              0.060161745717125424,
+              0.045112891982458755,
+              0.032221036946165287,
+              0.022222926733799876,
+              0.014435683007701748,
+              0.009151568554470297,
+              0.0058610984168681775,
+              0.003196020757470224,
+              0.001926093839892478,
+              0.0011369196613735682,
+              0.0005905177119118876,
+              0.00024403096904207576
+            ],
+            "V100_g2": [
+              1.2067255820953258,
+              2.7008564834577458,
+              4.179070234053345,
+              5.188206222525869,
+              5.527488521639725,
+              5.32228773151183,
+              4.742161573547995,
+              3.9996489735276572,
+              3.214697340127539,
+              2.488411119457383,
+              1.8630304418700852,
+              1.3609056619929623,
+              0.9685909800422932,
+              0.675150270311514,
+              0.45130725231456026,
+              0.3015684891566309,
+              0.19912994785835342,
+              0.12758421618406277,
+              0.08015457627420446,
+              0.04801077323052258,
+              0.02832318613575552,
+              0.017012032940715936,
+              0.008778382809931701,
+              0.0050203045108469695,
+              0.0028331500245545337,
+              0.001409906895297789,
+              0.0005614248792029201
+            ]
+          },
+          "unit": "events/bin",
+          "evidence_claims": [
+            "VECTOR20261108-SM",
+            "VECTOR20261108-V10_g1",
+            "VECTOR20261108-V10_g2",
+            "VECTOR20261108-V10_g3",
+            "VECTOR20261108-BL10_g2",
+            "VECTOR20261108-V1_g2",
+            "VECTOR20261108-V100_g2"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": [
+            "PandaX reconstructed Ne spectrum: MISSING P(Ne-bin|T)"
+          ]
+        },
+        "current_nuclear_result": {
+          "value": {
+            "file": "outputs/solar_b8_sm/20261110_nuclear_response_run2/PandaX4T_2024_US2/RESULT.json",
+            "counts": [
+              3.6030804791016733,
+              3.721828505210796,
+              3.6989997960780254,
+              3.558558822018164,
+              3.309140447463619,
+              3.0029952743197508,
+              2.6635124809786026,
+              2.3038819769020953
+            ]
+          },
+          "unit": "events/bin",
+          "evidence_claims": [
+            "NR20261110-RESULT"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
+      "decision_refs": [
+        "D0004"
+      ],
+      "evidence_refs": []
+    },
+    "fast_counts": {
+      "decision_status": "DRAFT",
+      "fields": {},
+      "decision_refs": [],
+      "evidence_refs": []
+    },
+    "statistics": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "statistics_model_id": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "statistics/pandax_original_fig5.txt": {
+          "value": {
+            "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/statistics/pandax_original_fig5.txt",
+            "sha256": "5bd87feb493b42df39770f96fbbeae62c4fd54fe92ca7231570f66baab42a2ad",
+            "coverage": "all 8 rows; bin,Ne_low,Ne_high,D,cathode,MD,signal; events/bin",
+            "shape": [
+              8,
+              7
+            ]
+          },
+          "unit": "D/background/reference signal events/bin, coordinate columns as declared",
+          "evidence_claims": [
+            "PandaX4T-C004"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "statistics/pandax_benchmark_fig1.txt": {
+          "value": {
+            "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/statistics/pandax_benchmark_fig1.txt",
+            "sha256": "187db3effcb70807eac1092c1ae44089bc025d47e8be665cb769d63b89e3381a",
+            "coverage": "all 8 rows; bin,Ne_low,Ne_high,D,cathode,MD,signal; events/bin",
+            "shape": [
+              8,
+              7
+            ]
+          },
+          "unit": "D/background/reference signal events/bin, coordinate columns as declared",
+          "evidence_claims": [
+            "PandaX4T-C005"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "statistics/pandax_official_later_run0_events.csv": {
+          "value": {
+            "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/statistics/pandax_official_later_run0_events.csv",
+            "sha256": "6b1d60cf6e2d73c0c75cee1f2a6952cda6a25c441400ea2498a1ff266659e130",
+            "coverage": "all rows/keys; detailed key map below"
+          },
+          "unit": "electron; Width unit follows associated paper, not encoded in CSV header",
+          "evidence_claims": [
+            "PandaX4T-C008"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "statistics/pandax_official_later_run1_events.csv": {
+          "value": {
+            "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/statistics/pandax_official_later_run1_events.csv",
+            "sha256": "90b4fb4cf84cd8e1e9b367c5a244cbb572c9378f574e5806e72dd19841b11073",
+            "coverage": "all rows/keys; detailed key map below"
+          },
+          "unit": "electron; Width unit follows associated paper, not encoded in CSV header",
+          "evidence_claims": [
+            "PandaX4T-C009"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "statistics/pandax_official_later_run_bins_v2.txt": {
+          "value": {
+            "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/statistics/pandax_official_later_run_bins_v2.txt",
+            "sha256": "f25ab0b478640776679e6aa8074a1eb3b6f9554f88c24af3b2f6cb4f01634712",
+            "coverage": "all rows/keys; detailed key map below",
+            "shape": [
+              16,
+              5
+            ]
+          },
+          "unit": "1; 1; electron; electron; events/bin",
+          "evidence_claims": [
+            "PandaX4T-C010"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "statistics/pandax_us2_rate_uncertainties_2024.v2.1.json": {
+          "value": {
+            "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/statistics/pandax_us2_rate_uncertainties_2024.v2.1.json",
+            "sha256": "4dae2d5a0b7505dc2f422fa06b23689c7212b3146d8713a96012a2c2d27e3f4b",
+            "coverage": "all records",
+            "parameters": [
+              {
+                "name": "signal_selection_Run0",
+                "value": 0.11,
+                "unit": "fractional rate uncertainty",
+                "sigma": null,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "PDF p5 Table IV, US2 Run0"
+              },
+              {
+                "name": "signal_selection_Run1",
+                "value": 0.17,
+                "unit": "fractional rate uncertainty",
+                "sigma": null,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "PDF p5 Table IV, US2 Run1"
+              },
+              {
+                "name": "signal_model_Run0",
+                "value": 0.17,
+                "unit": "fractional rate uncertainty",
+                "sigma": null,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "PDF p5 Table IV, US2 Run0"
+              },
+              {
+                "name": "signal_model_Run1",
+                "value": 0.16,
+                "unit": "fractional rate uncertainty",
+                "sigma": null,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "PDF p5 Table IV, US2 Run1"
+              },
+              {
+                "name": "cathode_model_Run0",
+                "value": 0.24,
+                "unit": "fractional rate uncertainty",
+                "sigma": null,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "PDF p5 Table IV, US2 Run0"
+              },
+              {
+                "name": "cathode_model_Run1",
+                "value": 0.2,
+                "unit": "fractional rate uncertainty",
+                "sigma": null,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "PDF p5 Table IV, US2 Run1"
+              },
+              {
+                "name": "MD_model_Run0",
+                "value": 0.13,
+                "unit": "fractional rate uncertainty",
+                "sigma": null,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "PDF p5 Table IV, US2 Run0"
+              },
+              {
+                "name": "MD_model_Run1",
+                "value": 0.16,
+                "unit": "fractional rate uncertainty",
+                "sigma": null,
+                "uncertainty_minus": null,
+                "uncertainty_plus": null,
+                "locator": "PDF p5 Table IV, US2 Run1"
+              }
+            ]
+          },
+          "unit": "per scalar parameter, explicitly declared in the JSON",
+          "evidence_claims": [
+            "PandaX4T-C026"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "statistics/pandax_prefit_inputs_2024.v2.1.json": {
+          "value": {
+            "file": "data/experiments/PandaX4T/PandaX4T_2024_US2/statistics/pandax_prefit_inputs_2024.v2.1.json",
+            "sha256": "85520ae095824ed7418659d75ae98e76cf987037cc87de55633b11e13466926f",
+            "coverage": "all ten scalar records",
+            "parameters": [
+              {
+                "name": "cathode_Run0",
+                "value": 100,
+                "sigma": 24,
+                "unit": "events",
+                "locator": "2407.10892v3 PDF p4 Table III, cathode, US2 Run0"
+              },
+              {
+                "name": "cathode_Run1",
+                "value": 104,
+                "sigma": 21,
+                "unit": "events",
+                "locator": "2407.10892v3 PDF p4 Table III, cathode, US2 Run1"
+              },
+              {
+                "name": "MD_Run0",
+                "value": 25,
+                "sigma": 3,
+                "unit": "events",
+                "locator": "2407.10892v3 PDF p4 Table III, MD, US2 Run0"
+              },
+              {
+                "name": "MD_Run1",
+                "value": 20,
+                "sigma": 4,
+                "unit": "events",
+                "locator": "2407.10892v3 PDF p4 Table III, MD, US2 Run1"
+              },
+              {
+                "name": "ER_Run0",
+                "value": 1.3,
+                "sigma": 0.1,
+                "unit": "events",
+                "locator": "2407.10892v3 PDF p4 Table III, ER, US2 Run0"
+              },
+              {
+                "name": "ER_Run1",
+                "value": 0.9,
+                "sigma": 0.2,
+                "unit": "events",
+                "locator": "2407.10892v3 PDF p4 Table III, ER, US2 Run1"
+              },
+              {
+                "name": "total_background_Run0",
+                "value": 126,
+                "sigma": 24,
+                "unit": "events",
+                "locator": "2407.10892v3 PDF p4 Table III, total_background, US2 Run0"
+              },
+              {
+                "name": "total_background_Run1",
+                "value": 125,
+                "sigma": 21,
+                "unit": "events",
+                "locator": "2407.10892v3 PDF p4 Table III, total_background, US2 Run1"
+              },
+              {
+                "name": "signal_reference_Run0",
+                "value": 18,
+                "sigma": 4,
+                "unit": "events",
+                "locator": "2407.10892v3 PDF p4 Table III, signal_reference, US2 Run0"
+              },
+              {
+                "name": "signal_reference_Run1",
+                "value": 25,
+                "sigma": 6,
+                "unit": "events",
+                "locator": "2407.10892v3 PDF p4 Table III, signal_reference, US2 Run1"
+              }
+            ]
+          },
+          "unit": "per scalar parameter, explicitly declared in the JSON",
+          "evidence_claims": [
+            "PandaX4T-C030"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "benchmark_signal_sigma": {
+          "value": 0.22,
+          "unit": "1",
+          "evidence_claims": [
+            "PandaX4T-S08"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "benchmark_cathode_sigma": {
+          "value": 0.31,
+          "unit": "1",
+          "evidence_claims": [
+            "PandaX4T-S09"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "benchmark_MD_sigma": {
+          "value": 0.23,
+          "unit": "1",
+          "evidence_claims": [
+            "PandaX4T-S10"
+          ],
+          "provenance_status": "SOURCE_EXTRACTED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "width_edges_prefit_shapes": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [
+            "PandaX4T-M03"
+          ],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": [
+            "native_2D_likelihood"
+          ]
+        },
+        "benchmark_inference_conventions": {
+          "value": null,
+          "unit": null,
+          "evidence_claims": [
+            "PandaX4T-M05"
+          ],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": [
+            "strict_benchmark_inference"
+          ]
+        },
+        "statistics/equation_5": {
+          "value": "\\mu_{r\\mathbf i}=\\mu^{\\rm sig}_{r\\mathbf i}+\\sum_k B^k_{r\\mathbf i}. \\tag{5}",
+          "unit": "equation with symbol units declared in the chapter",
+          "evidence_claims": [
+            "PandaX4T-EQ5"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        },
+        "statistics/equation_6": {
+          "value": "-2\\ln\\mathcal L=2\\sum_{r,\\mathbf i}\\left[\\mu_{r\\mathbf i}-D_{r\\mathbf i}+D_{r\\mathbf i}\\ln\\frac{D_{r\\mathbf i}}{\\mu_{r\\mathbf i}}\\right]-2\\ln\\pi(\\boldsymbol\\eta). \\tag{6}",
+          "unit": "equation with symbol units declared in the chapter",
+          "evidence_claims": [
+            "PandaX4T-EQ6"
+          ],
+          "provenance_status": "PROJECT_DERIVED",
+          "decision_status": "DRAFT",
+          "blocking_scope": []
+        }
+      },
+      "decision_refs": [],
+      "evidence_refs": []
+    },
+    "validation_claim": {
+      "decision_status": "DRAFT",
+      "fields": {
+        "physics_report": {
+          "value": {
+            "models": {}
+          },
+          "unit": "1",
+          "evidence_claims": [],
+          "provenance_status": "MISSING",
+          "decision_status": "DRAFT",
+          "blocking_scope": [
+            "human_physics_report_review"
+          ]
+        }
+      },
+      "decision_refs": [],
+      "evidence_refs": []
+    }
+  }
+}

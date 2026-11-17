@@ -1,0 +1,14 @@
+[
+  {
+    "file": "NIST_CODATA2022_allascii.txt",
+    "url": "https://physics.nist.gov/cuu/Constants/Table/allascii.txt",
+    "bytes": 40801,
+    "sha256": "77fb90e66c40db3e6eb16630bc9c88e4c7c8beddbe5e71be406f2f26e3f67e67"
+  },
+  {
+    "file": "PDG2024_pi_charged.pdf",
+    "url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-pi-plus-minus.pdf",
+    "bytes": 128809,
+    "sha256": "f7c2e47de06d0e28f637441067aa144ca5a9e76cec2055060f95e39cae57bfae"
+  }
+]

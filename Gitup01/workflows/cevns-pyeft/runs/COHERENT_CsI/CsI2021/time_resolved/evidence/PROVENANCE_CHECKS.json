@@ -1,0 +1,49 @@
+{
+  "revision": "r2",
+  "date": "2026-11-06",
+  "machine_checks": [
+    {
+      "name": "direct_source_files_and_fingerprints",
+      "count": 28,
+      "result": "PASS"
+    },
+    {
+      "name": "P01_P03_schema",
+      "result": "PASS"
+    },
+    {
+      "name": "every_adopted_field_has_resolvable_evidence",
+      "count": 74,
+      "result": "PASS"
+    },
+    {
+      "name": "actual_ResponseDB_original_data_call_and_exact_arrays",
+      "arrays": 16,
+      "y_points": [
+        0.0,
+        0.1,
+        0.5
+      ],
+      "result": "PASS"
+    },
+    {
+      "name": "user_resource_selection_preserved_without_promoting_external_provenance",
+      "result": "PASS"
+    },
+    {
+      "name": "observations_units_and_legacy_nominal_differences_remain_explicit",
+      "result": "PASS"
+    },
+    {
+      "name": "formula_input_mapping_and_same_source_generated_outputs",
+      "result": "PASS"
+    }
+  ],
+  "machine_status": "PASS",
+  "sources": 28,
+  "claims": 74,
+  "arrays": 16,
+  "scientific_status": "DRAFT_PARTIAL; LOCAL_RESPONSE_REUSE_USER_SELECTED; BACKGROUND_AND_PAPER_EQUIVALENCE_GAPS_REMAIN",
+  "scope": "File fingerprints, actual arrays, original ResponseDB numerical reading, source/evidence graph and deterministic rendering",
+  "outside_scope": "Automatic authentication of external authorship, numerical citations and scientific applicability"
+}

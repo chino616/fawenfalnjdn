@@ -1,0 +1,58 @@
+{
+  "documents": 8,
+  "localLinksAndAnchors": 126,
+  "records": [
+    {
+      "file": "../../../260929Gitup1-CONUS-2/Gitup01/src/cevns_pyeft/experiments/coherent/2021CsI_root_time/benchmarks/input_resolution_20261106/README.md",
+      "localLinksAndAnchors": 57,
+      "uniqueIds": 19
+    },
+    {
+      "file": "../../../260929Gitup1-CONUS-2/Gitup01/src/cevns_pyeft/experiments/coherent/2021CsI_root_time/README.md",
+      "localLinksAndAnchors": 5,
+      "uniqueIds": 6
+    },
+    {
+      "file": "../../../260929Gitup1-CONUS-2/Gitup01/src/cevns_pyeft/experiments/coherent/2021CsI_root_time/benchmarks/README.md",
+      "localLinksAndAnchors": 11,
+      "uniqueIds": 5
+    },
+    {
+      "file": "../../../260929Gitup1-CONUS-2/Gitup01/src/cevns_pyeft/experiments/coherent/2021CsI_root_time/docs/time_binned_events_api.md",
+      "localLinksAndAnchors": 1,
+      "uniqueIds": 9
+    },
+    {
+      "file": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/README.md",
+      "localLinksAndAnchors": 16,
+      "uniqueIds": 6
+    },
+    {
+      "file": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/P02_MISSING_AND_CONFLICTS.md",
+      "localLinksAndAnchors": 3,
+      "uniqueIds": 6
+    },
+    {
+      "file": "docs/experiments/COHERENT/CsI2021/time_resolved/README.md",
+      "localLinksAndAnchors": 6,
+      "uniqueIds": 3
+    },
+    {
+      "file": "docs/experiments/COHERENT/CsI2021/time_resolved/EXPERIMENT_USER_INPUT.md",
+      "localLinksAndAnchors": 27,
+      "uniqueIds": 19
+    }
+  ],
+  "browserChecks": {
+    "tocAndReturn": "PASS",
+    "allEightSectionJumps": "PASS",
+    "displayMath": 3,
+    "math": "PASS",
+    "narrow": {
+      "viewport": 720,
+      "pageWidth": 720
+    }
+  },
+  "previewScope": "Standalone Markdown/GFM/Edge rendering; not the Codex internal renderer",
+  "verificationScope": "Documentation links, anchors, equations and layout only"
+}

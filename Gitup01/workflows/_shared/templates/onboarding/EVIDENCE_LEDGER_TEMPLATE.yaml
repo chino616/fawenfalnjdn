@@ -15,4 +15,16 @@ claims:
     conflict_group: null
     downstream_owner: null
     derivation: null
+    input_claims: []  # 推导/处理结果必须列全部输入；不得隐藏输入的来源缺口
+    upstream_source_ids: []  # source_id 是实际直接来源；上游原文及是否核过另记
+    verification_scope: null  # 原文数字/直接材料转录/仅书目等实际核验范围；不新增 evidence status
+    numerical_resource: null  # 实际文件、核素/run、通道/key/slice、shape、轴、单位、代表值
+    verification_checks: {}  # 分列数值取得、直接材料、上游对应、转换等价、适用性；不可互相代替
+    decision_refs: []  # 用户选项/近似的真实决定，不等同外部事实已核
+    output_locations: []  # output 文件 + Parameter ID/列/行范围/NPZ key/slice/公式定位
     notes: null
+# 以上是人工/AI 记录约定；现有 schema 不自动强制全部字段，不认证引用真实支持数值。
+# 使用数据溯源合同进行逐项审阅；P00 仍是来源身份唯一权威。
+# 每个实验章节从这些 claims 展示实际值、单位、数值文件、原始 locator 和适用性。
+# 数值函数或分布尚未取得时用 MISSING，在 output_locations 中定位对应公式符号和交接能力。
+# 大数组按 key/slice 登记，并记录 shape、全部轴范围、代表值与完整文件。

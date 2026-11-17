@@ -36,3 +36,11 @@ __pycache__/
 /outputs/release/build-temp/
 /outputs/release/final-validation/
 
+# Optional external propagation installations
+/.externals/
+/.venvs/
+/outputs/external/solar_rho_snudd/**/rho_cache/
+
+# Local-only user reference reproduction; no upstream/private data distribution.
+/data/benchmarks/solar_b8_reference_2601_19883/
+/outputs/solar_b8_reference/

@@ -1,0 +1,32 @@
+{
+  "analysis_id": "singlebin_2601_19883",
+  "status": "CALCULATED",
+  "date": "2026-11-11",
+  "decision_ref": "D0005",
+  "write_ref": "W0005",
+  "samples": [
+    "PandaX_paired",
+    "PandaX_US2"
+  ],
+  "input_card": "data/benchmarks/solar_b8_singlebin_2601_19883/analysis.input.json",
+  "input_card_sha256": "50c510dbe07d4f41b5c38ce897d1610efcfcc389e107d621009fc57334a0d316",
+  "statistics_input": "data/benchmarks/solar_b8_singlebin_2601_19883/fitted_yields.json",
+  "source_register_and_evidence": "data/benchmarks/solar_b8_singlebin_2601_19883/analysis.input.json /references,/extraction,/files",
+  "onboarding": "docs/experiments/PandaX4T_XENONnT_SolarB8/singlebin_2601_19883/SOLAR_B8_SINGLEBIN_ONBOARDING.v3.2.1.md",
+  "calculation_entry": "tools/run_solar_b8_singlebin_benchmark.py",
+  "results": {
+    "PandaX_paired": "outputs/solar_b8_singlebin/20261111_response_run2/PandaX_paired/SM_RESULT.json",
+    "PandaX_US2": "outputs/solar_b8_singlebin/20261111_response_run2/PandaX_US2/SM_RESULT.json"
+  },
+  "physics_fingerprints": {
+    "PandaX_paired": "de18a1f56fcd95e2c85b9d0721a5f3ad5b31e2e522ec142f34cfcf2312a8fac5",
+    "PandaX_US2": "29c1f3f74a96333c718171ad325255989af092b713693abd968e7fc2a935516b"
+  },
+  "human_result_acceptance": "NOT_REVIEWED",
+  "old_multibin": "separate, retained; no resources reused by detector/statistics",
+  "blockers": [],
+  "common_limitations": [
+    "Xe124/Xe126 missing, no renormalization",
+    "external nuclear-table source certification unresolved; direct local reuse authorized"
+  ]
+}

@@ -1,0 +1,867 @@
+{
+  "source_id": "arxiv_2501_17843v3_pdf_p10_fig1",
+  "experiment": "CONUS+",
+  "dataset_id": "conusplus_kkl_run1",
+  "benchmark_id": "CONUSPLUS_19BIN_EQ33",
+  "created_date": "2026-11-06",
+  "timezone": "Asia/Shanghai",
+  "provenance_status": "PROJECT_DERIVED",
+  "data_status": "FIGURE_DIGITIZED_NOT_AUTHOR_NUMERICAL_RELEASE",
+  "source": {
+    "title": "Implications of the first CONUS+ measurement of coherent elastic neutrino-nucleus scattering",
+    "authors": [
+      "V. De Romeri",
+      "D. K. Papoulias",
+      "G. Sanchez Garcia"
+    ],
+    "arxiv": "2501.17843v3",
+    "version_date": "2025-04-23",
+    "url": "https://arxiv.org/abs/2501.17843v3",
+    "doi": "10.1103/PhysRevD.111.075025",
+    "local_path_from_repository_root": "docs/references/CONUS/2501.17843v3.pdf",
+    "sha256": "b20923363badde299106a6df83f0dff5308fd69d652b59b9967d32b764057c90",
+    "pdf_page_one_based": 10,
+    "figure": "1",
+    "extracted_graphics": "black CONUS+ data markers and vertical error bars only; blue theory histogram excluded",
+    "upstream_experiment_reference": "Fig. 1 attributes the experimental points to its Ref. [40], CONUS+ measurement 2501.05206; extraction is directly from 2501.17843v3, not that original dataset"
+  },
+  "quantity": {
+    "observable": "reconstructed ionization energy",
+    "energy_unit": "eVee",
+    "data_semantics": "reactor-on data minus fitted background; signed excess",
+    "excess_and_error_unit": "counts kg^-1 (10 eVee)^-1",
+    "already_background_subtracted": true,
+    "raw_poisson_counts": false,
+    "preserve_original_plot_normalization": true,
+    "exposure_mass_time_or_bin_width_rescaling_applied": false,
+    "paper_effective_detector": {
+      "mass_kg": 1,
+      "exposure_kg_day": 119,
+      "threshold_eVee": 160
+    }
+  },
+  "method": {
+    "extraction": "pdfplumber PDF vector paths; circle centres, vertical-line endpoints; linear maps from all major axis ticks",
+    "pdfplumber_version": "0.11.9",
+    "energy_centres": "Mapped PDF positions coincide with 165,175,...,345 eVee; stored at these exact bin centres",
+    "edges": "PROJECT_DERIVED: centre +/-5 eVee; supported by 10 eVee spacing and 19-bin paper definition; not an author edge file",
+    "errors": "error_minus = excess - lower_endpoint; error_plus = upper_endpoint - excess",
+    "symmetric_error_optional_column": "sigma_mean_derived = (error_minus + error_plus)/2; a declared arithmetic conversion, not a verified author-code convention",
+    "precision": "Four decimal places preserve the plotted geometry reproducibly; they do not imply experimental precision or recovery of unpublished original values",
+    "visual_linewidth_reference_scale": {
+      "half_error_bar_stroke_in_y_plot_units": 0.2839881731421368,
+      "meaning": "Visible half-stroke scale only, not a statistical uncertainty or a certified digitization error bound"
+    },
+    "overlay": "432 dpi rendering of source page cropped to Fig. 1; read-back CSV centres/endpoints overlaid for visual verification"
+  },
+  "columns": {
+    "bin_index": "1-based index, increasing reconstructed energy",
+    "energy_low_eVee": "derived lower edge",
+    "energy_high_eVee": "derived upper edge",
+    "energy_center_eVee": "plotted data-point energy",
+    "excess": "signed central value in original plot units",
+    "error_minus": "positive lower error length in original plot units",
+    "error_plus": "positive upper error length in original plot units",
+    "sigma_mean_derived": "optional symmetric error, arithmetic average of both lengths",
+    "error_lower_endpoint": "lower endpoint value in original plot units",
+    "error_upper_endpoint": "upper endpoint value in original plot units",
+    "source_id": "joins this table to source identity in this provenance file"
+  },
+  "calibration": {
+    "coordinate_system": "PDF points; x from left, y from top; 72 points/inch",
+    "page_size_points": [
+      612,
+      792
+    ],
+    "plot_bbox_pdf_points": {
+      "x0": 193.82245835263998,
+      "top": 80.99316022688004,
+      "x1": 454.99898445391995,
+      "bottom": 266.03326069664
+    },
+    "legend_excluded_bbox_pdf_points": {
+      "x0": 334.3476474128,
+      "top": 85.45188022688001,
+      "x1": 450.54026445392,
+      "bottom": 112.98387557360002
+    },
+    "x_ticks": [
+      {
+        "pdf_line_index_zero_based": 0,
+        "pdf_x": 193.82245835263998,
+        "value_eVee": 150.0
+      },
+      {
+        "pdf_line_index_zero_based": 2,
+        "pdf_x": 259.11658971872,
+        "value_eVee": 200.0
+      },
+      {
+        "pdf_line_index_zero_based": 4,
+        "pdf_x": 324.41072172175996,
+        "value_eVee": 250.0
+      },
+      {
+        "pdf_line_index_zero_based": 6,
+        "pdf_x": 389.70485308784,
+        "value_eVee": 300.0
+      },
+      {
+        "pdf_line_index_zero_based": 8,
+        "pdf_x": 454.99898445391995,
+        "value_eVee": 350.0
+      }
+    ],
+    "y_ticks": [
+      {
+        "pdf_line_index_zero_based": 52,
+        "pdf_top": 80.99316022688004,
+        "value": 80.0
+      },
+      {
+        "pdf_line_index_zero_based": 50,
+        "pdf_top": 114.63681479984007,
+        "value": 60.0
+      },
+      {
+        "pdf_line_index_zero_based": 48,
+        "pdf_top": 148.28046937279998,
+        "value": 40.0
+      },
+      {
+        "pdf_line_index_zero_based": 46,
+        "pdf_top": 181.92412394576002,
+        "value": 20.0
+      },
+      {
+        "pdf_line_index_zero_based": 44,
+        "pdf_top": 215.56777851872005,
+        "value": 0.0
+      },
+      {
+        "pdf_line_index_zero_based": 42,
+        "pdf_top": 249.21143309167996,
+        "value": -20.0
+      }
+    ],
+    "energy_eVee_equals_a_times_pdf_x_plus_b": [
+      0.7657656026288173,
+      1.5774283765916075
+    ],
+    "excess_equals_a_times_pdf_top_plus_b": [
+      -0.5944657396427548,
+      128.14765890027638
+    ],
+    "max_x_tick_residual_eVee": 1.9510466131578141e-07,
+    "max_y_tick_residual_in_plot_units": 8.526512829121202e-14
+  },
+  "coordinate_trace": [
+    {
+      "bin_index": 1,
+      "marker_curve_index_zero_based": 2,
+      "error_bar_line_index_zero_based": 88,
+      "marker_bbox_pdf_points": {
+        "x0": 211.49981788660747,
+        "top": 191.33260451724163,
+        "x1": 215.32157788660746,
+        "bottom": 195.15436451724167
+      },
+      "marker_center_pdf_points": [
+        213.41069788660747,
+        193.24348451724165
+      ],
+      "error_bar_bbox_pdf_points": {
+        "x0": 213.41069814463998,
+        "top": 154.46419425344004,
+        "x1": 213.41069814463998,
+        "bottom": 231.81315732368
+      },
+      "error_bar_linewidth_pdf_points": 0.95544,
+      "mapped_energy_before_rounding_eVee": 165.00000005116604,
+      "extracted_values_before_rounding": {
+        "bin_index": 1,
+        "energy_low_eVee": 160.0,
+        "energy_high_eVee": 170.0,
+        "energy_center_eVee": 165.0,
+        "excess": 13.271027945591072,
+        "error_minus": 22.92834907265842,
+        "error_plus": 23.05295946949191,
+        "sigma_mean_derived": 22.990654271075165,
+        "error_lower_endpoint": -9.657321127067348,
+        "error_upper_endpoint": 36.32398741508298,
+        "source_id": "arxiv_2501_17843v3_pdf_p10_fig1"
+      }
+    },
+    {
+      "bin_index": 2,
+      "marker_curve_index_zero_based": 3,
+      "error_bar_line_index_zero_based": 89,
+      "marker_bbox_pdf_points": {
+        "x0": 224.55864418288144,
+        "top": 149.61866523506865,
+        "x1": 228.38040418288142,
+        "bottom": 153.4404252350687
+      },
+      "marker_center_pdf_points": [
+        226.46952418288143,
+        151.52954523506867
+      ],
+      "error_bar_bbox_pdf_points": {
+        "x0": 226.46952403567997,
+        "top": 125.11770433088009,
+        "x1": 226.46952403567997,
+        "bottom": 177.94138631887995
+      },
+      "error_bar_linewidth_pdf_points": 0.95544,
+      "mapped_energy_before_rounding_eVee": 175.0000000395573,
+      "extracted_values_before_rounding": {
+        "bin_index": 2,
+        "energy_low_eVee": 170.0,
+        "energy_high_eVee": 180.0,
+        "energy_center_eVee": 175.0,
+        "excess": 38.068535714381014,
+        "error_minus": 15.700934645214772,
+        "error_plus": 15.700934538435234,
+        "sigma_mean_derived": 15.700934591825003,
+        "error_lower_endpoint": 22.36760106916624,
+        "error_upper_endpoint": 53.76947025281625,
+        "source_id": "arxiv_2501_17843v3_pdf_p10_fig1"
+      }
+    },
+    {
+      "bin_index": 3,
+      "marker_curve_index_zero_based": 4,
+      "error_bar_line_index_zero_based": 90,
+      "marker_bbox_pdf_points": {
+        "x0": 237.6174704791554,
+        "top": 164.71114577937374,
+        "x1": 241.43923047915538,
+        "bottom": 168.53290577937378
+      },
+      "marker_center_pdf_points": [
+        239.5283504791554,
+        166.62202577937376
+      ],
+      "error_bar_bbox_pdf_points": {
+        "x0": 239.52835056367996,
+        "top": 145.24101154256005,
+        "x1": 239.52835056367996,
+        "bottom": 187.79342180287995
+      },
+      "error_bar_linewidth_pdf_points": 0.95544,
+      "mapped_energy_before_rounding_eVee": 185.0000000279486,
+      "extracted_values_before_rounding": {
+        "bin_index": 3,
+        "energy_low_eVee": 180.0,
+        "energy_high_eVee": 190.0,
+        "energy_center_eVee": 185.0,
+        "excess": 29.0965731045668,
+        "error_minus": 12.585669596383283,
+        "error_plus": 12.710280442599725,
+        "sigma_mean_derived": 12.647975019491504,
+        "error_lower_endpoint": 16.510903508183517,
+        "error_upper_endpoint": 41.806853547166526,
+        "source_id": "arxiv_2501_17843v3_pdf_p10_fig1"
+      }
+    },
+    {
+      "bin_index": 4,
+      "marker_curve_index_zero_based": 5,
+      "error_bar_line_index_zero_based": 91,
+      "marker_bbox_pdf_points": {
+        "x0": 250.67629677542936,
+        "top": 177.7074484702748,
+        "x1": 254.49805677542935,
+        "bottom": 181.52920847027485
+      },
+      "marker_center_pdf_points": [
+        252.58717677542936,
+        179.61832847027483
+      ],
+      "error_bar_bbox_pdf_points": {
+        "x0": 252.58717709168,
+        "top": 159.07578529040006,
+        "x1": 252.58717709168,
+        "bottom": 200.16087156416006
+      },
+      "error_bar_linewidth_pdf_points": 0.95544,
+      "mapped_energy_before_rounding_eVee": 195.00000001633987,
+      "extracted_values_before_rounding": {
+        "bin_index": 4,
+        "energy_low_eVee": 190.0,
+        "energy_high_eVee": 200.0,
+        "energy_center_eVee": 195.0,
+        "excess": 21.37071641279917,
+        "error_minus": 12.211838074449645,
+        "error_plus": 12.211838125567482,
+        "sigma_mean_derived": 12.211838100008563,
+        "error_lower_endpoint": 9.158878338349524,
+        "error_upper_endpoint": 33.58255453836665,
+        "source_id": "arxiv_2501_17843v3_pdf_p10_fig1"
+      }
+    },
+    {
+      "bin_index": 5,
+      "marker_curve_index_zero_based": 6,
+      "error_bar_line_index_zero_based": 92,
+      "marker_bbox_pdf_points": {
+        "x0": 263.7351230717033,
+        "top": 193.0095467999139,
+        "x1": 267.55688307170334,
+        "bottom": 196.83130679991393
+      },
+      "marker_center_pdf_points": [
+        265.6460030717033,
+        194.9204267999139
+      ],
+      "error_bar_bbox_pdf_points": {
+        "x0": 265.64600298272,
+        "top": 175.63559048191996,
+        "x1": 265.64600298272,
+        "bottom": 214.41488091871997
+      },
+      "error_bar_linewidth_pdf_points": 0.95544,
+      "mapped_energy_before_rounding_eVee": 205.00000000473113,
+      "extracted_values_before_rounding": {
+        "bin_index": 5,
+        "energy_low_eVee": 200.0,
+        "energy_high_eVee": 210.0,
+        "energy_center_eVee": 205.0,
+        "excess": 12.27414321118411,
+        "error_minus": 11.588785086667798,
+        "error_plus": 11.464174485665723,
+        "sigma_mean_derived": 11.52647978616676,
+        "error_lower_endpoint": 0.6853581245163127,
+        "error_upper_endpoint": 23.738317696849833,
+        "source_id": "arxiv_2501_17843v3_pdf_p10_fig1"
+      }
+    },
+    {
+      "bin_index": 6,
+      "marker_curve_index_zero_based": 7,
+      "error_bar_line_index_zero_based": 93,
+      "marker_bbox_pdf_points": {
+        "x0": 276.79394936797723,
+        "top": 205.37699613481288,
+        "x1": 280.6157093679773,
+        "bottom": 209.19875613481292
+      },
+      "marker_center_pdf_points": [
+        278.70482936797725,
+        207.2878761348129
+      ],
+      "error_bar_bbox_pdf_points": {
+        "x0": 278.70482951071995,
+        "top": 187.79342180287995,
+        "x1": 278.70482951071995,
+        "bottom": 226.78233004304002
+      },
+      "error_bar_linewidth_pdf_points": 0.95544,
+      "mapped_energy_before_rounding_eVee": 214.9999999931224,
+      "extracted_values_before_rounding": {
+        "bin_index": 6,
+        "energy_low_eVee": 210.0,
+        "energy_high_eVee": 220.0,
+        "energy_center_eVee": 215.0,
+        "excess": 4.922118294819086,
+        "error_minus": 11.588784961485828,
+        "error_plus": 11.588785213364432,
+        "sigma_mean_derived": 11.58878508742513,
+        "error_lower_endpoint": -6.6666666666667425,
+        "error_upper_endpoint": 16.510903508183517,
+        "source_id": "arxiv_2501_17843v3_pdf_p10_fig1"
+      }
+    },
+    {
+      "bin_index": 7,
+      "marker_curve_index_zero_based": 8,
+      "error_bar_line_index_zero_based": 94,
+      "marker_bbox_pdf_points": {
+        "x0": 289.85277566425117,
+        "top": 206.42508506148306,
+        "x1": 293.6745356642512,
+        "bottom": 210.2468450614831
+      },
+      "marker_center_pdf_points": [
+        291.7636556642512,
+        208.33596506148308
+      ],
+      "error_bar_bbox_pdf_points": {
+        "x0": 291.76365540175993,
+        "top": 189.26074642640003,
+        "x1": 291.76365540175993,
+        "bottom": 227.20156564976003
+      },
+      "error_bar_linewidth_pdf_points": 0.95544,
+      "mapped_energy_before_rounding_eVee": 224.99999998151367,
+      "extracted_values_before_rounding": {
+        "bin_index": 7,
+        "energy_low_eVee": 220.0,
+        "energy_high_eVee": 230.0,
+        "energy_center_eVee": 225.0,
+        "excess": 4.299065335814717,
+        "error_minus": 11.214953207514853,
+        "error_plus": 11.339563954751895,
+        "sigma_mean_derived": 11.277258581133374,
+        "error_lower_endpoint": -6.915887871700136,
+        "error_upper_endpoint": 15.638629290566612,
+        "source_id": "arxiv_2501_17843v3_pdf_p10_fig1"
+      }
+    },
+    {
+      "bin_index": 8,
+      "marker_curve_index_zero_based": 9,
+      "error_bar_line_index_zero_based": 95,
+      "marker_bbox_pdf_points": {
+        "x0": 302.9116019605251,
+        "top": 213.5520897629675,
+        "x1": 306.73336196052514,
+        "bottom": 217.37384976296755
+      },
+      "marker_center_pdf_points": [
+        304.8224819605251,
+        215.46296976296753
+      ],
+      "error_bar_bbox_pdf_points": {
+        "x0": 304.82248192976,
+        "top": 197.43584012047995,
+        "x1": 304.82248192976,
+        "bottom": 233.69971691696003
+      },
+      "error_bar_linewidth_pdf_points": 0.95544,
+      "mapped_energy_before_rounding_eVee": 234.9999999699049,
+      "extracted_values_before_rounding": {
+        "bin_index": 8,
+        "energy_low_eVee": 230.0,
+        "energy_high_eVee": 240.0,
+        "energy_center_eVee": 235.0,
+        "excess": 0.062305214509365214,
+        "error_minus": 10.84112138557606,
+        "error_plus": 10.716510956557215,
+        "sigma_mean_derived": 10.778816171066637,
+        "error_lower_endpoint": -10.778816171066694,
+        "error_upper_endpoint": 10.77881617106658,
+        "source_id": "arxiv_2501_17843v3_pdf_p10_fig1"
+      }
+    },
+    {
+      "bin_index": 9,
+      "marker_curve_index_zero_based": 10,
+      "error_bar_line_index_zero_based": 96,
+      "marker_bbox_pdf_points": {
+        "x0": 315.97042825679904,
+        "top": 198.24999143332843,
+        "x1": 319.7921882567991,
+        "bottom": 202.07175143332847
+      },
+      "marker_center_pdf_points": [
+        317.88130825679906,
+        200.16087143332845
+      ],
+      "error_bar_bbox_pdf_points": {
+        "x0": 317.88130845776,
+        "top": 181.71450614240007,
+        "x1": 317.88130845776,
+        "bottom": 218.81685415232005
+      },
+      "error_bar_linewidth_pdf_points": 0.95544,
+      "mapped_energy_before_rounding_eVee": 244.99999995829617,
+      "extracted_values_before_rounding": {
+        "bin_index": 9,
+        "energy_low_eVee": 240.0,
+        "energy_high_eVee": 250.0,
+        "energy_center_eVee": 245.0,
+        "excess": 9.158878416124423,
+        "error_minus": 11.090342565807788,
+        "error_plus": 10.965732186392188,
+        "sigma_mean_derived": 11.028037376099988,
+        "error_lower_endpoint": -1.9314641496833644,
+        "error_upper_endpoint": 20.12461060251661,
+        "source_id": "arxiv_2501_17843v3_pdf_p10_fig1"
+      }
+    },
+    {
+      "bin_index": 10,
+      "marker_curve_index_zero_based": 11,
+      "error_bar_line_index_zero_based": 97,
+      "marker_bbox_pdf_points": {
+        "x0": 329.029254553073,
+        "top": 209.56935184155725,
+        "x1": 332.851014553073,
+        "bottom": 213.3911118415573
+      },
+      "marker_center_pdf_points": [
+        330.940134553073,
+        211.48023184155727
+      ],
+      "error_bar_bbox_pdf_points": {
+        "x0": 330.9401343488,
+        "top": 194.29157370704002,
+        "x1": 330.9401343488,
+        "bottom": 228.87850807663995
+      },
+      "error_bar_linewidth_pdf_points": 0.95544,
+      "mapped_energy_before_rounding_eVee": 254.99999994668744,
+      "extracted_values_before_rounding": {
+        "bin_index": 10,
+        "energy_low_eVee": 250.0,
+        "energy_high_eVee": 260.0,
+        "energy_center_eVee": 255.0,
+        "excess": 2.4299064587637673,
+        "error_minus": 10.342679150597391,
+        "error_plus": 10.218068371402254,
+        "sigma_mean_derived": 10.280373760999822,
+        "error_lower_endpoint": -7.912772691833624,
+        "error_upper_endpoint": 12.64797483016602,
+        "source_id": "arxiv_2501_17843v3_pdf_p10_fig1"
+      }
+    },
+    {
+      "bin_index": 11,
+      "marker_curve_index_zero_based": 12,
+      "error_bar_line_index_zero_based": 98,
+      "marker_bbox_pdf_points": {
+        "x0": 342.0880808493469,
+        "top": 207.05393841748514,
+        "x1": 345.90984084934695,
+        "bottom": 210.87569841748518
+      },
+      "marker_center_pdf_points": [
+        343.99896084934693,
+        208.96481841748516
+      ],
+      "error_bar_bbox_pdf_points": {
+        "x0": 343.99896087679997,
+        "top": 191.77616006671997,
+        "x1": 343.99896087679997,
+        "bottom": 226.57271223967996
+      },
+      "error_bar_linewidth_pdf_points": 0.95544,
+      "mapped_energy_before_rounding_eVee": 264.99999993507873,
+      "extracted_values_before_rounding": {
+        "bin_index": 11,
+        "energy_low_eVee": 260.0,
+        "energy_high_eVee": 270.0,
+        "energy_center_eVee": 265.0,
+        "excess": 3.92523356041211,
+        "error_minus": 10.467289624562127,
+        "error_plus": 10.218068499954242,
+        "sigma_mean_derived": 10.342679062258185,
+        "error_lower_endpoint": -6.542056064150017,
+        "error_upper_endpoint": 14.143302060366352,
+        "source_id": "arxiv_2501_17843v3_pdf_p10_fig1"
+      }
+    },
+    {
+      "bin_index": 12,
+      "marker_curve_index_zero_based": 13,
+      "error_bar_line_index_zero_based": 99,
+      "marker_bbox_pdf_points": {
+        "x0": 355.14690714562084,
+        "top": 217.95406325504587,
+        "x1": 358.9686671456209,
+        "bottom": 221.7758232550459
+      },
+      "marker_center_pdf_points": [
+        357.05778714562086,
+        219.8649432550459
+      ],
+      "error_bar_bbox_pdf_points": {
+        "x0": 357.05778740479997,
+        "top": 201.83781399103998,
+        "x1": 357.05778740479997,
+        "bottom": 238.10169078752006
+      },
+      "error_bar_linewidth_pdf_points": 0.95544,
+      "mapped_energy_before_rounding_eVee": 274.99999992346994,
+      "extracted_values_before_rounding": {
+        "bin_index": 12,
+        "energy_low_eVee": 270.0,
+        "energy_high_eVee": 280.0,
+        "energy_center_eVee": 275.0,
+        "excess": -2.5545172133467986,
+        "error_minus": 10.84112161057044,
+        "error_plus": 10.716510731562835,
+        "sigma_mean_derived": 10.778816171066637,
+        "error_lower_endpoint": -13.395638823917238,
+        "error_upper_endpoint": 8.161993518216036,
+        "source_id": "arxiv_2501_17843v3_pdf_p10_fig1"
+      }
+    },
+    {
+      "bin_index": 13,
+      "marker_curve_index_zero_based": 14,
+      "error_bar_line_index_zero_based": 100,
+      "marker_bbox_pdf_points": {
+        "x0": 368.2057334418948,
+        "top": 212.71361862163133,
+        "x1": 372.0274934418948,
+        "bottom": 216.53537862163137
+      },
+      "marker_center_pdf_points": [
+        370.1166134418948,
+        214.62449862163135
+      ],
+      "error_bar_bbox_pdf_points": {
+        "x0": 370.11661329584,
+        "top": 197.43584012047995,
+        "x1": 370.11661329584,
+        "bottom": 232.23239229344006
+      },
+      "error_bar_linewidth_pdf_points": 0.95544,
+      "mapped_energy_before_rounding_eVee": 284.9999999118612,
+      "extracted_values_before_rounding": {
+        "bin_index": 13,
+        "energy_low_eVee": 280.0,
+        "energy_high_eVee": 290.0,
+        "energy_center_eVee": 285.0,
+        "excess": 0.5607475817128886,
+        "error_minus": 10.467289535162735,
+        "error_plus": 10.218068589353692,
+        "sigma_mean_derived": 10.342679062258213,
+        "error_lower_endpoint": -9.906541953449846,
+        "error_upper_endpoint": 10.77881617106658,
+        "source_id": "arxiv_2501_17843v3_pdf_p10_fig1"
+      }
+    },
+    {
+      "bin_index": 14,
+      "marker_curve_index_zero_based": 15,
+      "error_bar_line_index_zero_based": 101,
+      "marker_bbox_pdf_points": {
+        "x0": 381.2645597381687,
+        "top": 231.3696015166787,
+        "x1": 385.08631973816875,
+        "bottom": 235.19136151667874
+      },
+      "marker_center_pdf_points": [
+        383.17543973816873,
+        233.28048151667872
+      ],
+      "error_bar_bbox_pdf_points": {
+        "x0": 383.17543982383995,
+        "top": 216.51105895232,
+        "x1": 383.17543982383995,
+        "bottom": 250.67875771520005
+      },
+      "error_bar_linewidth_pdf_points": 0.95544,
+      "mapped_energy_before_rounding_eVee": 294.9999999002525,
+      "extracted_values_before_rounding": {
+        "bin_index": 14,
+        "energy_low_eVee": 290.0,
+        "energy_high_eVee": 300.0,
+        "energy_center_eVee": 295.0,
+        "excess": -10.529595088754036,
+        "error_minus": 10.342679128862926,
+        "error_plus": 9.96884718810341,
+        "sigma_mean_derived": 10.155763158483168,
+        "error_lower_endpoint": -20.872274217616962,
+        "error_upper_endpoint": -0.5607479006506253,
+        "source_id": "arxiv_2501_17843v3_pdf_p10_fig1"
+      }
+    },
+    {
+      "bin_index": 15,
+      "marker_curve_index_zero_based": 16,
+      "error_bar_line_index_zero_based": 102,
+      "marker_bbox_pdf_points": {
+        "x0": 394.32338603444265,
+        "top": 220.88871224978607,
+        "x1": 398.1451460344427,
+        "bottom": 224.7104722497861
+      },
+      "marker_center_pdf_points": [
+        396.23426603444267,
+        222.7995922497861
+      ],
+      "error_bar_bbox_pdf_points": {
+        "x0": 396.23426635184,
+        "top": 206.03016942128,
+        "x1": 396.23426635184,
+        "bottom": 239.98825038079997
+      },
+      "error_bar_linewidth_pdf_points": 0.95544,
+      "mapped_energy_before_rounding_eVee": 304.99999988864374,
+      "extracted_values_before_rounding": {
+        "bin_index": 15,
+        "energy_low_eVee": 300.0,
+        "energy_high_eVee": 310.0,
+        "energy_center_eVee": 305.0,
+        "excess": -4.299065498596889,
+        "error_minus": 10.21806836931961,
+        "error_plus": 9.968847345129973,
+        "sigma_mean_derived": 10.093457857224791,
+        "error_lower_endpoint": -14.517133867916499,
+        "error_upper_endpoint": 5.669781846533084,
+        "source_id": "arxiv_2501_17843v3_pdf_p10_fig1"
+      }
+    },
+    {
+      "bin_index": 16,
+      "marker_curve_index_zero_based": 17,
+      "error_bar_line_index_zero_based": 103,
+      "marker_bbox_pdf_points": {
+        "x0": 407.3822123307166,
+        "top": 228.4349525219386,
+        "x1": 411.2039723307166,
+        "bottom": 232.25671252193865
+      },
+      "marker_center_pdf_points": [
+        409.2930923307166,
+        230.34583252193863
+      ],
+      "error_bar_bbox_pdf_points": {
+        "x0": 409.29309224288,
+        "top": 214.20526311536003,
+        "x1": 409.29309224288,
+        "bottom": 247.53449066480005
+      },
+      "error_bar_linewidth_pdf_points": 0.95544,
+      "mapped_energy_before_rounding_eVee": 314.999999877035,
+      "extracted_values_before_rounding": {
+        "bin_index": 16,
+        "energy_low_eVee": 310.0,
+        "energy_high_eVee": 320.0,
+        "energy_center_eVee": 315.0,
+        "excess": -8.785046803504002,
+        "error_minus": 10.218068376362567,
+        "error_plus": 9.595015530536969,
+        "sigma_mean_derived": 9.906541953449768,
+        "error_lower_endpoint": -19.00311517986657,
+        "error_upper_endpoint": 0.8099687270329667,
+        "source_id": "arxiv_2501_17843v3_pdf_p10_fig1"
+      }
+    },
+    {
+      "bin_index": 17,
+      "marker_curve_index_zero_based": 18,
+      "error_bar_line_index_zero_based": 104,
+      "marker_bbox_pdf_points": {
+        "x0": 420.4410386269905,
+        "top": 214.6001786896377,
+        "x1": 424.26279862699056,
+        "bottom": 218.42193868963773
+      },
+      "marker_center_pdf_points": [
+        422.35191862699054,
+        216.5110586896377
+      ],
+      "error_bar_bbox_pdf_points": {
+        "x0": 422.35191877088,
+        "top": 200.16087156416006,
+        "x1": 422.35191877088,
+        "bottom": 233.28048131024002
+      },
+      "error_bar_linewidth_pdf_points": 0.95544,
+      "mapped_energy_before_rounding_eVee": 324.9999998654263,
+      "extracted_values_before_rounding": {
+        "bin_index": 17,
+        "energy_low_eVee": 320.0,
+        "energy_high_eVee": 330.0,
+        "energy_center_eVee": 325.0,
+        "excess": -0.5607477444949893,
+        "error_minus": 9.968847221538311,
+        "error_plus": 9.719626082844513,
+        "sigma_mean_derived": 9.844236652191412,
+        "error_lower_endpoint": -10.5295949660333,
+        "error_upper_endpoint": 9.158878338349524,
+        "source_id": "arxiv_2501_17843v3_pdf_p10_fig1"
+      }
+    },
+    {
+      "bin_index": 18,
+      "marker_curve_index_zero_based": 19,
+      "error_bar_line_index_zero_based": 105,
+      "marker_bbox_pdf_points": {
+        "x0": 433.49986492326445,
+        "top": 215.22903204563977,
+        "x1": 437.3216249232645,
+        "bottom": 219.0507920456398
+      },
+      "marker_center_pdf_points": [
+        435.4107449232645,
+        217.1399120456398
+      ],
+      "error_bar_bbox_pdf_points": {
+        "x0": 435.41074466192,
+        "top": 200.78972497424002,
+        "x1": 435.41074466192,
+        "bottom": 233.69971691696003
+      },
+      "error_bar_linewidth_pdf_points": 0.95544,
+      "mapped_energy_before_rounding_eVee": 334.9999998538175,
+      "extracted_values_before_rounding": {
+        "bin_index": 18,
+        "energy_low_eVee": 330.0,
+        "energy_high_eVee": 340.0,
+        "energy_center_eVee": 335.0,
+        "excess": -0.9345795198975964,
+        "error_minus": 9.844236651169098,
+        "error_plus": 9.719626050697059,
+        "sigma_mean_derived": 9.781931350933078,
+        "error_lower_endpoint": -10.778816171066694,
+        "error_upper_endpoint": 8.785046530799463,
+        "source_id": "arxiv_2501_17843v3_pdf_p10_fig1"
+      }
+    },
+    {
+      "bin_index": 19,
+      "marker_curve_index_zero_based": 20,
+      "error_bar_line_index_zero_based": 106,
+      "marker_bbox_pdf_points": {
+        "x0": 446.5586912195384,
+        "top": 190.91336894650988,
+        "x1": 450.38045121953843,
+        "bottom": 194.73512894650992
+      },
+      "marker_center_pdf_points": [
+        448.4695712195384,
+        192.8242489465099
+      ],
+      "error_bar_bbox_pdf_points": {
+        "x0": 448.46957118992,
+        "top": 176.89329730208,
+        "x1": 448.46957118992,
+        "bottom": 209.17443647168
+      },
+      "error_bar_linewidth_pdf_points": 0.95544,
+      "mapped_energy_before_rounding_eVee": 344.99999984220875,
+      "extracted_values_before_rounding": {
+        "bin_index": 19,
+        "energy_low_eVee": 340.0,
+        "energy_high_eVee": 350.0,
+        "energy_center_eVee": 345.0,
+        "excess": 13.520249129230692,
+        "error_minus": 9.719626320447986,
+        "error_plus": 9.470404952518976,
+        "sigma_mean_derived": 9.595015636483481,
+        "error_lower_endpoint": 3.8006228087827054,
+        "error_upper_endpoint": 22.990654081749668,
+        "source_id": "arxiv_2501_17843v3_pdf_p10_fig1"
+      }
+    }
+  ],
+  "checks": {
+    "row_count": 19,
+    "bin_count_is_19": true,
+    "centres_are_165_to_345_step_10_eVee": true,
+    "derived_edges_are_160_to_350_step_10_eVee": true,
+    "all_error_lengths_positive": true,
+    "negative_excess_count": 6,
+    "negative_values_preserved": true,
+    "max_error_plus_minus_difference": 0.6230528458255975,
+    "csv_rounding_decimal_places": 4,
+    "statistical_fit_executed": false
+  },
+  "files": {
+    "conusplus_2501_17843v3_fig1_digitized.csv": {
+      "sha256": "ee4d11af7e543b2d9c895c5e0165d557b68869a1d6dc1b733360e0c41ec4ce60"
+    },
+    "digitize_fig1.py": {
+      "sha256": "1be7a1f8b5f3afc3a98f70ce8a3bd1481a4a95a462b296a60f6ae918b06e0e09"
+    },
+    "conusplus_2501_17843v3_fig1_digitized.overlay.png": {
+      "sha256": "aaf8204dd3c5342dc5d4db0fccaf5bf937b5d97cfa890e64f9a25de8516a0c36"
+    }
+  }
+}

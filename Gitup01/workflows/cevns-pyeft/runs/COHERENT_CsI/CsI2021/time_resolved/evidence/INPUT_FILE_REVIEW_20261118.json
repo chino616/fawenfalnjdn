@@ -1,0 +1,215 @@
+{
+  "date": "2026-11-18",
+  "status": "PASS_FOR_LISTED_FILE_CHECKS;PHYSICS_NOT_APPROVED",
+  "input_standard_version": 2,
+  "input_standard_sha256": "ce50abb7b09c06cc1f4d23a7d412e416e418c36b63e7f7959182e8cc360a4e4e",
+  "analysis_id": "CsI2021_time_9x11",
+  "sources_verified": 37,
+  "observed_shape": [
+    9,
+    11
+  ],
+  "raw_event_histograms": {
+    "C_counts": 1578,
+    "AC_counts": 1295,
+    "AC_0_12us": 2242
+  },
+  "PE_edges": [
+    0.0,
+    8.0,
+    12.0,
+    16.0,
+    20.0,
+    24.0,
+    32.0,
+    40.0,
+    48.0,
+    60.0
+  ],
+  "time_edges_us": [
+    0.0,
+    0.125,
+    0.25,
+    0.375,
+    0.5,
+    0.625,
+    0.75,
+    0.875,
+    1.0,
+    2.0,
+    4.0,
+    6.0
+  ],
+  "POT": 3.198e+23,
+  "yield_per_flavor_per_POT": 0.0848,
+  "baseline_m": 19.3,
+  "eta_cm_minus2": 579361763793233.9,
+  "spectrum_integrals_per_eta": [
+    1.0,
+    0.999999999999999,
+    0.9999999999999998
+  ],
+  "nuclei": {
+    "Cs133": 3.381663658707092e+25,
+    "I127": 3.3816636587070914e+25
+  },
+  "nuclear_inventory": {
+    "Cs133": {
+      "basic": {
+        "name": "Cs133",
+        "A": 133,
+        "Z": 55,
+        "N": 78,
+        "J": 3.5,
+        "T": 11.5,
+        "b": 11.644334960750054
+      },
+      "channels": [
+        "Delta",
+        "M",
+        "MPhiPP",
+        "PhiPP",
+        "PhiPT",
+        "SigmaP",
+        "SigmaPDelta",
+        "SigmaPP"
+      ],
+      "matrix_shapes": {
+        "Delta": [
+          2,
+          2,
+          9
+        ],
+        "M": [
+          2,
+          2,
+          11
+        ],
+        "MPhiPP": [
+          2,
+          2,
+          10
+        ],
+        "PhiPP": [
+          2,
+          2,
+          9
+        ],
+        "PhiPT": [
+          2,
+          2,
+          9
+        ],
+        "SigmaP": [
+          2,
+          2,
+          11
+        ],
+        "SigmaPDelta": [
+          2,
+          2,
+          10
+        ],
+        "SigmaPP": [
+          2,
+          2,
+          11
+        ]
+      },
+      "zero_momentum_M": [
+        [
+          3024.998274020381,
+          4289.9996412299715
+        ],
+        [
+          4289.9996412299715,
+          6084.002453757858
+        ]
+      ]
+    },
+    "I": {
+      "basic": {
+        "name": "I",
+        "A": 127,
+        "Z": 53,
+        "N": 74,
+        "J": 2.5,
+        "T": 10.5,
+        "b": 11.566047952236252
+      },
+      "channels": [
+        "Delta",
+        "M",
+        "MPhiPP",
+        "PhiPP",
+        "PhiPT",
+        "SigmaP",
+        "SigmaPDelta",
+        "SigmaPP"
+      ],
+      "matrix_shapes": {
+        "Delta": [
+          2,
+          2,
+          9
+        ],
+        "M": [
+          2,
+          2,
+          11
+        ],
+        "MPhiPP": [
+          2,
+          2,
+          10
+        ],
+        "PhiPP": [
+          2,
+          2,
+          9
+        ],
+        "PhiPT": [
+          2,
+          2,
+          9
+        ],
+        "SigmaP": [
+          2,
+          2,
+          11
+        ],
+        "SigmaPDelta": [
+          2,
+          2,
+          10
+        ],
+        "SigmaPP": [
+          2,
+          2,
+          11
+        ]
+      },
+      "zero_momentum_M": [
+        [
+          2808.9995665607275,
+          3921.985800775471
+        ],
+        [
+          3921.985800775471,
+          5475.961194368475
+        ]
+      ]
+    }
+  },
+  "source_root_read": "PASS: four TH2F marginals and ns->us coordinates exactly equal cached arrays",
+  "normalization_scope": "CONFLICT_REVIEW_REQUIRED",
+  "theory_convention": "CONFLICT_REVIEW_REQUIRED",
+  "checked": "declared direct source hashes; actual raw counts, shape/edges; eta and unit spectra; actual nuclear coefficients",
+  "not_checked": [
+    "author nuclear conversion equivalence",
+    "Eq75 full assembly equivalence",
+    "new physics acceptance",
+    "P07 prediction",
+    "Compiler runtime package"
+  ]
+}

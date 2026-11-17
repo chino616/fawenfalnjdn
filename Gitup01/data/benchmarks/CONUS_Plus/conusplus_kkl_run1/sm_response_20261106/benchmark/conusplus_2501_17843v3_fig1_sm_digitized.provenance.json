@@ -1,0 +1,710 @@
+{
+  "source_id": "arxiv_2501_17843v3_pdf_p10_fig1_blue_sm",
+  "created_date": "2026-11-06",
+  "citation": "V. De Romeri, D. K. Papoulias, and G. Sanchez Garcia, \"Implications of the first CONUS+ measurement of coherent elastic neutrino-nucleus scattering,\" Phys. Rev. D 111, 075025 (2025), doi:10.1103/PhysRevD.111.075025, arXiv:2501.17843v3.",
+  "source_pdf": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\conusplus-sm-response-20261106\\snapshot\\docs\\references\\CONUS\\2501.17843v3.pdf",
+  "source_pdf_sha256": "b20923363badde299106a6df83f0dff5308fd69d652b59b9967d32b764057c90",
+  "locator": "PDF page 10, Fig. 1, blue unfilled theoretical histogram outline",
+  "method": "PDF vector horizontal-segment ordinates sampled at all 19 observed bin centres",
+  "quantity_unit": "counts kg^-1 (10 eVee)^-1",
+  "rescaling_applied": false,
+  "scope": "Recover plotted SM ordinate values, without acquiring author numerical arrays.",
+  "limitations": [
+    "Nominal 10 eVee bin edges follow the observed-point grid, not a released author edge file.",
+    "The blue path ends at 345 eVee. The last value is sampled at that endpoint and associated with the nominal 340-350 eVee bin.",
+    "A small extra plateau before 162.5 eVee is retained in the path trace. The 165 eVee centre selects the dominant first-bin level.",
+    "PDF-coordinate numerical precision does not establish physical or author-array precision."
+  ],
+  "calibration": {
+    "coordinate_system": "PDF points; x from left, y from top; 72 points/inch",
+    "page_size_points": [
+      612,
+      792
+    ],
+    "plot_bbox_pdf_points": {
+      "x0": 193.82245835263998,
+      "top": 80.99316022688004,
+      "x1": 454.99898445391995,
+      "bottom": 266.03326069664
+    },
+    "legend_excluded_bbox_pdf_points": {
+      "x0": 334.3476474128,
+      "top": 85.45188022688001,
+      "x1": 450.54026445392,
+      "bottom": 112.98387557360002
+    },
+    "x_ticks": [
+      {
+        "pdf_line_index_zero_based": 0,
+        "pdf_x": 193.82245835263998,
+        "value_eVee": 150.0
+      },
+      {
+        "pdf_line_index_zero_based": 2,
+        "pdf_x": 259.11658971872,
+        "value_eVee": 200.0
+      },
+      {
+        "pdf_line_index_zero_based": 4,
+        "pdf_x": 324.41072172175996,
+        "value_eVee": 250.0
+      },
+      {
+        "pdf_line_index_zero_based": 6,
+        "pdf_x": 389.70485308784,
+        "value_eVee": 300.0
+      },
+      {
+        "pdf_line_index_zero_based": 8,
+        "pdf_x": 454.99898445391995,
+        "value_eVee": 350.0
+      }
+    ],
+    "y_ticks": [
+      {
+        "pdf_line_index_zero_based": 52,
+        "pdf_top": 80.99316022688004,
+        "value": 80.0
+      },
+      {
+        "pdf_line_index_zero_based": 50,
+        "pdf_top": 114.63681479984007,
+        "value": 60.0
+      },
+      {
+        "pdf_line_index_zero_based": 48,
+        "pdf_top": 148.28046937279998,
+        "value": 40.0
+      },
+      {
+        "pdf_line_index_zero_based": 46,
+        "pdf_top": 181.92412394576002,
+        "value": 20.0
+      },
+      {
+        "pdf_line_index_zero_based": 44,
+        "pdf_top": 215.56777851872005,
+        "value": 0.0
+      },
+      {
+        "pdf_line_index_zero_based": 42,
+        "pdf_top": 249.21143309167996,
+        "value": -20.0
+      }
+    ],
+    "energy_eVee_equals_a_times_pdf_x_plus_b": [
+      0.7657656026288173,
+      1.5774283765916075
+    ],
+    "excess_equals_a_times_pdf_top_plus_b": [
+      -0.5944657396427548,
+      128.14765890027638
+    ],
+    "max_x_tick_residual_eVee": 1.9510466131578141e-07,
+    "max_y_tick_residual_in_plot_units": 8.526512829121202e-14
+  },
+  "pdf_curve_index_zero_based": 1,
+  "all_blue_horizontal_segments": [
+    {
+      "segment_index": 0,
+      "x_low_eVee": 160.0000001658389,
+      "x_high_eVee": 162.50000020729868,
+      "ordinate": 32.33999987996765,
+      "pdf_start": [
+        206.88128488063998,
+        161.16598927615996
+      ],
+      "pdf_end": [
+        210.14599151263997,
+        161.16598927615996
+      ]
+    },
+    {
+      "segment_index": 2,
+      "x_low_eVee": 162.50000020729868,
+      "x_high_eVee": 169.99999984391596,
+      "ordinate": 32.23478642697832,
+      "pdf_start": [
+        210.14599151263997,
+        161.34297752960003
+      ],
+      "pdf_end": [
+        219.94011077168,
+        161.34297752960003
+      ]
+    },
+    {
+      "segment_index": 4,
+      "x_low_eVee": 169.99999984391596,
+      "x_high_eVee": 180.00000000975507,
+      "ordinate": 25.11035922402384,
+      "pdf_start": [
+        219.94011077168,
+        173.32756592192004
+      ],
+      "pdf_end": [
+        232.99893729968,
+        173.32756592192004
+      ]
+    },
+    {
+      "segment_index": 6,
+      "x_low_eVee": 180.00000000975507,
+      "x_high_eVee": 190.00000017559418,
+      "ordinate": 19.671627504602895,
+      "pdf_start": [
+        232.99893729968,
+        182.47650648607998
+      ],
+      "pdf_end": [
+        246.05776382768,
+        182.47650648607998
+      ]
+    },
+    {
+      "segment_index": 8,
+      "x_low_eVee": 190.00000017559418,
+      "x_high_eVee": 199.99999985367123,
+      "ordinate": 15.48997776391532,
+      "pdf_start": [
+        246.05776382768,
+        189.51080545712
+      ],
+      "pdf_end": [
+        259.11658971872,
+        189.51080545712
+      ]
+    },
+    {
+      "segment_index": 10,
+      "x_low_eVee": 199.99999985367123,
+      "x_high_eVee": 210.0000000195103,
+      "ordinate": 12.25421765508652,
+      "pdf_start": [
+        259.11658971872,
+        194.95394522623997
+      ],
+      "pdf_end": [
+        272.17541624672,
+        194.95394522623997
+      ]
+    },
+    {
+      "segment_index": 12,
+      "x_low_eVee": 210.0000000195103,
+      "x_high_eVee": 220.00000018534942,
+      "ordinate": 9.735876420918231,
+      "pdf_start": [
+        272.17541624672,
+        199.19025535519995
+      ],
+      "pdf_end": [
+        285.23424277472,
+        199.19025535519995
+      ]
+    },
+    {
+      "segment_index": 14,
+      "x_low_eVee": 220.00000018534942,
+      "x_high_eVee": 229.99999986342647,
+      "ordinate": 7.765560038592767,
+      "pdf_start": [
+        285.23424277472,
+        202.50468754352005
+      ],
+      "pdf_end": [
+        298.29306866575996,
+        202.50468754352005
+      ]
+    },
+    {
+      "segment_index": 16,
+      "x_low_eVee": 229.99999986342647,
+      "x_high_eVee": 240.0000000292656,
+      "ordinate": 6.216575704308099,
+      "pdf_start": [
+        298.29306866575996,
+        205.11036223760004
+      ],
+      "pdf_end": [
+        311.35189519376,
+        205.11036223760004
+      ]
+    },
+    {
+      "segment_index": 18,
+      "x_low_eVee": 240.0000000292656,
+      "x_high_eVee": 250.00000019510466,
+      "ordinate": 4.993423875199952,
+      "pdf_start": [
+        311.35189519376,
+        207.16792711903997
+      ],
+      "pdf_end": [
+        324.41072172175996,
+        207.16792711903997
+      ]
+    },
+    {
+      "segment_index": 20,
+      "x_low_eVee": 250.00000019510466,
+      "x_high_eVee": 259.9999998731817,
+      "ordinate": 4.023605399872224,
+      "pdf_start": [
+        324.41072172175996,
+        208.79933900816002
+      ],
+      "pdf_end": [
+        337.46954761279994,
+        208.79933900816002
+      ]
+    },
+    {
+      "segment_index": 22,
+      "x_low_eVee": 259.9999998731817,
+      "x_high_eVee": 270.0000000390209,
+      "ordinate": 3.251725923922777,
+      "pdf_start": [
+        337.46954761279994,
+        210.09778133120005
+      ],
+      "pdf_end": [
+        350.5283741408,
+        210.09778133120005
+      ]
+    },
+    {
+      "segment_index": 24,
+      "x_low_eVee": 270.0000000390209,
+      "x_high_eVee": 279.9999997170979,
+      "ordinate": 2.6352091831323747,
+      "pdf_start": [
+        350.5283741408,
+        211.13487514448002
+      ],
+      "pdf_end": [
+        363.58720003184,
+        211.13487514448002
+      ]
+    },
+    {
+      "segment_index": 26,
+      "x_low_eVee": 279.9999997170979,
+      "x_high_eVee": 289.999999882937,
+      "ordinate": 2.141153443713435,
+      "pdf_start": [
+        363.58720003184,
+        211.96596717631996
+      ],
+      "pdf_end": [
+        376.64602655984,
+        211.96596717631996
+      ]
+    },
+    {
+      "segment_index": 28,
+      "x_low_eVee": 289.999999882937,
+      "x_high_eVee": 300.00000004877614,
+      "ordinate": 1.7440077217519416,
+      "pdf_start": [
+        376.64602655984,
+        212.63403885056005
+      ],
+      "pdf_end": [
+        389.70485308784,
+        212.63403885056005
+      ]
+    },
+    {
+      "segment_index": 30,
+      "x_low_eVee": 300.00000004877614,
+      "x_high_eVee": 309.99999972685316,
+      "ordinate": 1.4238337755880366,
+      "pdf_start": [
+        389.70485308784,
+        213.17262993296004
+      ],
+      "pdf_end": [
+        402.76367897887997,
+        213.17262993296004
+      ]
+    },
+    {
+      "segment_index": 32,
+      "x_low_eVee": 309.99999972685316,
+      "x_high_eVee": 319.99999989269224,
+      "ordinate": 1.1650058186336167,
+      "pdf_start": [
+        402.76367897887997,
+        213.60802585184
+      ],
+      "pdf_end": [
+        415.82250550687996,
+        213.60802585184
+      ]
+    },
+    {
+      "segment_index": 34,
+      "x_low_eVee": 319.99999989269224,
+      "x_high_eVee": 330.00000005853144,
+      "ordinate": 0.9552248910862033,
+      "pdf_start": [
+        415.82250550687996,
+        213.96091570496003
+      ],
+      "pdf_end": [
+        428.88133203488,
+        213.96091570496003
+      ]
+    },
+    {
+      "segment_index": 36,
+      "x_low_eVee": 330.00000005853144,
+      "x_high_eVee": 339.9999997366084,
+      "ordinate": 0.7847770828207814,
+      "pdf_start": [
+        428.88133203488,
+        214.24764006416
+      ],
+      "pdf_end": [
+        441.94015792591995,
+        214.24764006416
+      ]
+    },
+    {
+      "segment_index": 38,
+      "x_low_eVee": 339.9999997366084,
+      "x_high_eVee": 344.999999819528,
+      "ordinate": 0.49599897582497476,
+      "pdf_start": [
+        441.94015792591995,
+        214.73341760816004
+      ],
+      "pdf_end": [
+        448.46957118992,
+        214.73341760816004
+      ]
+    }
+  ],
+  "coordinate_trace": [
+    {
+      "bin_index": 1,
+      "sample_at_bin_centre": true,
+      "segment_index": 2,
+      "x_low_eVee": 162.50000020729868,
+      "x_high_eVee": 169.99999984391596,
+      "ordinate": 32.23478642697832,
+      "pdf_start": [
+        210.14599151263997,
+        161.34297752960003
+      ],
+      "pdf_end": [
+        219.94011077168,
+        161.34297752960003
+      ]
+    },
+    {
+      "bin_index": 2,
+      "sample_at_bin_centre": true,
+      "segment_index": 4,
+      "x_low_eVee": 169.99999984391596,
+      "x_high_eVee": 180.00000000975507,
+      "ordinate": 25.11035922402384,
+      "pdf_start": [
+        219.94011077168,
+        173.32756592192004
+      ],
+      "pdf_end": [
+        232.99893729968,
+        173.32756592192004
+      ]
+    },
+    {
+      "bin_index": 3,
+      "sample_at_bin_centre": true,
+      "segment_index": 6,
+      "x_low_eVee": 180.00000000975507,
+      "x_high_eVee": 190.00000017559418,
+      "ordinate": 19.671627504602895,
+      "pdf_start": [
+        232.99893729968,
+        182.47650648607998
+      ],
+      "pdf_end": [
+        246.05776382768,
+        182.47650648607998
+      ]
+    },
+    {
+      "bin_index": 4,
+      "sample_at_bin_centre": true,
+      "segment_index": 8,
+      "x_low_eVee": 190.00000017559418,
+      "x_high_eVee": 199.99999985367123,
+      "ordinate": 15.48997776391532,
+      "pdf_start": [
+        246.05776382768,
+        189.51080545712
+      ],
+      "pdf_end": [
+        259.11658971872,
+        189.51080545712
+      ]
+    },
+    {
+      "bin_index": 5,
+      "sample_at_bin_centre": true,
+      "segment_index": 10,
+      "x_low_eVee": 199.99999985367123,
+      "x_high_eVee": 210.0000000195103,
+      "ordinate": 12.25421765508652,
+      "pdf_start": [
+        259.11658971872,
+        194.95394522623997
+      ],
+      "pdf_end": [
+        272.17541624672,
+        194.95394522623997
+      ]
+    },
+    {
+      "bin_index": 6,
+      "sample_at_bin_centre": true,
+      "segment_index": 12,
+      "x_low_eVee": 210.0000000195103,
+      "x_high_eVee": 220.00000018534942,
+      "ordinate": 9.735876420918231,
+      "pdf_start": [
+        272.17541624672,
+        199.19025535519995
+      ],
+      "pdf_end": [
+        285.23424277472,
+        199.19025535519995
+      ]
+    },
+    {
+      "bin_index": 7,
+      "sample_at_bin_centre": true,
+      "segment_index": 14,
+      "x_low_eVee": 220.00000018534942,
+      "x_high_eVee": 229.99999986342647,
+      "ordinate": 7.765560038592767,
+      "pdf_start": [
+        285.23424277472,
+        202.50468754352005
+      ],
+      "pdf_end": [
+        298.29306866575996,
+        202.50468754352005
+      ]
+    },
+    {
+      "bin_index": 8,
+      "sample_at_bin_centre": true,
+      "segment_index": 16,
+      "x_low_eVee": 229.99999986342647,
+      "x_high_eVee": 240.0000000292656,
+      "ordinate": 6.216575704308099,
+      "pdf_start": [
+        298.29306866575996,
+        205.11036223760004
+      ],
+      "pdf_end": [
+        311.35189519376,
+        205.11036223760004
+      ]
+    },
+    {
+      "bin_index": 9,
+      "sample_at_bin_centre": true,
+      "segment_index": 18,
+      "x_low_eVee": 240.0000000292656,
+      "x_high_eVee": 250.00000019510466,
+      "ordinate": 4.993423875199952,
+      "pdf_start": [
+        311.35189519376,
+        207.16792711903997
+      ],
+      "pdf_end": [
+        324.41072172175996,
+        207.16792711903997
+      ]
+    },
+    {
+      "bin_index": 10,
+      "sample_at_bin_centre": true,
+      "segment_index": 20,
+      "x_low_eVee": 250.00000019510466,
+      "x_high_eVee": 259.9999998731817,
+      "ordinate": 4.023605399872224,
+      "pdf_start": [
+        324.41072172175996,
+        208.79933900816002
+      ],
+      "pdf_end": [
+        337.46954761279994,
+        208.79933900816002
+      ]
+    },
+    {
+      "bin_index": 11,
+      "sample_at_bin_centre": true,
+      "segment_index": 22,
+      "x_low_eVee": 259.9999998731817,
+      "x_high_eVee": 270.0000000390209,
+      "ordinate": 3.251725923922777,
+      "pdf_start": [
+        337.46954761279994,
+        210.09778133120005
+      ],
+      "pdf_end": [
+        350.5283741408,
+        210.09778133120005
+      ]
+    },
+    {
+      "bin_index": 12,
+      "sample_at_bin_centre": true,
+      "segment_index": 24,
+      "x_low_eVee": 270.0000000390209,
+      "x_high_eVee": 279.9999997170979,
+      "ordinate": 2.6352091831323747,
+      "pdf_start": [
+        350.5283741408,
+        211.13487514448002
+      ],
+      "pdf_end": [
+        363.58720003184,
+        211.13487514448002
+      ]
+    },
+    {
+      "bin_index": 13,
+      "sample_at_bin_centre": true,
+      "segment_index": 26,
+      "x_low_eVee": 279.9999997170979,
+      "x_high_eVee": 289.999999882937,
+      "ordinate": 2.141153443713435,
+      "pdf_start": [
+        363.58720003184,
+        211.96596717631996
+      ],
+      "pdf_end": [
+        376.64602655984,
+        211.96596717631996
+      ]
+    },
+    {
+      "bin_index": 14,
+      "sample_at_bin_centre": true,
+      "segment_index": 28,
+      "x_low_eVee": 289.999999882937,
+      "x_high_eVee": 300.00000004877614,
+      "ordinate": 1.7440077217519416,
+      "pdf_start": [
+        376.64602655984,
+        212.63403885056005
+      ],
+      "pdf_end": [
+        389.70485308784,
+        212.63403885056005
+      ]
+    },
+    {
+      "bin_index": 15,
+      "sample_at_bin_centre": true,
+      "segment_index": 30,
+      "x_low_eVee": 300.00000004877614,
+      "x_high_eVee": 309.99999972685316,
+      "ordinate": 1.4238337755880366,
+      "pdf_start": [
+        389.70485308784,
+        213.17262993296004
+      ],
+      "pdf_end": [
+        402.76367897887997,
+        213.17262993296004
+      ]
+    },
+    {
+      "bin_index": 16,
+      "sample_at_bin_centre": true,
+      "segment_index": 32,
+      "x_low_eVee": 309.99999972685316,
+      "x_high_eVee": 319.99999989269224,
+      "ordinate": 1.1650058186336167,
+      "pdf_start": [
+        402.76367897887997,
+        213.60802585184
+      ],
+      "pdf_end": [
+        415.82250550687996,
+        213.60802585184
+      ]
+    },
+    {
+      "bin_index": 17,
+      "sample_at_bin_centre": true,
+      "segment_index": 34,
+      "x_low_eVee": 319.99999989269224,
+      "x_high_eVee": 330.00000005853144,
+      "ordinate": 0.9552248910862033,
+      "pdf_start": [
+        415.82250550687996,
+        213.96091570496003
+      ],
+      "pdf_end": [
+        428.88133203488,
+        213.96091570496003
+      ]
+    },
+    {
+      "bin_index": 18,
+      "sample_at_bin_centre": true,
+      "segment_index": 36,
+      "x_low_eVee": 330.00000005853144,
+      "x_high_eVee": 339.9999997366084,
+      "ordinate": 0.7847770828207814,
+      "pdf_start": [
+        428.88133203488,
+        214.24764006416
+      ],
+      "pdf_end": [
+        441.94015792591995,
+        214.24764006416
+      ]
+    },
+    {
+      "bin_index": 19,
+      "sample_at_bin_centre": true,
+      "segment_index": 38,
+      "x_low_eVee": 339.9999997366084,
+      "x_high_eVee": 344.999999819528,
+      "ordinate": 0.49599897582497476,
+      "pdf_start": [
+        441.94015792591995,
+        214.73341760816004
+      ],
+      "pdf_end": [
+        448.46957118992,
+        214.73341760816004
+      ]
+    }
+  ],
+  "files": {
+    "conusplus_2501_17843v3_fig1_sm_digitized.csv": {
+      "sha256": "b8dfc3a62e69ef8331df3ac77434895ce7b89fe89dc00299eb1cde66feef303d"
+    },
+    "extract_sm_reference.py": {
+      "sha256": "ddb05de8cea285decfa2ace4896ca6a136b043c9b57ec6510ada57c6fbd5e594"
+    }
+  },
+  "checks": {
+    "row_count": 19,
+    "source_hash_matched": true,
+    "observed_reextraction_matched": true,
+    "histogram_level_match_count_per_bin": 1,
+    "sum_of_sampled_ordinates": 152.0929468299723
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-07",
+  "scope": "Only the modified, backed-up examples/README.md documentation fingerprint",
+  "updates": [
+    {
+      "path": "examples/README.md",
+      "previous_sha256": "7d9b8a0f085dfea23a18da26b4370727e7aa0918e8d91d6211ea760e9eefeabe",
+      "current_sha256": "2ead6592bc5791e96952552e5927b92b3cf5cc5fce9bcf18bf94588a04c93356"
+    }
+  ],
+  "other_protected_entries_unchanged": true
+}

@@ -71,7 +71,12 @@
 | [scintRespCoefficients.txt](https://arxiv.org/src/2110.07730v2/anc/scintRespCoefficients.txt) | 闪烁响应／淬灭关系及其不确定度参数 |
 | [snsFlux2D.root](https://arxiv.org/src/2110.07730v2/anc/snsFlux2D.root) | 各中微子味的二维源通量直方图 |
 
-以上列出本次核对的主要附件，不把页面未展开的其他附件猜写为完整清单。资源未下载或逐数值校验；使用时需按补充材料分别核对效率、时间窗口和归一化。官方逐事件附件不是当前项目九箱 YAML/NPZ 的替代品，项目输入位置见 [CsI2021](../../experiments/COHERENT/CsI2021/README.md)。
+以上列出主要附件。CsI2021时间分辨onboarding现已取得官方ROOT、C/AC、BRN/NIN四表、效率和淬灭系数，实际文件、原始网址、SHA及逐项核验范围见[时间分析来源P00](../../../workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/P00_SOURCE_REGISTER.yaml)。效率、时间窗和归一化的未闭合项继续按P02记录。项目九箱注册输入与时间分析配置分别说明，入口见 [CsI2021](../../experiments/COHERENT/CsI2021/README.md)。
+
+## CsI2021时间分析的统计与校准补充
+
+- M. Atzori Corona et al., *Probing light mediators and (g−2)mu through detection of coherent elastic neutrino nucleus scattering at COHERENT*, JHEP05(2022)109，arXiv2202.11002v3。四pull统计分支定位到arXiv式(6)、期刊式(2.6)。[归档PDF](2202.11002v3.pdf) · [原始版本](https://arxiv.org/abs/2202.11002v3)
+- COHERENT Collaboration, *Measurement of scintillation response of CsI[Na] to low-energy nuclear recoils by COHERENT*, JINST17(2022)P10034，arXiv2111.02477v2。Sec8、PDF第23页/印刷第21页给出2–70keVnr拟合域及式(8.1)。[归档PDF](2111.02477v2.pdf) · [原始版本](https://arxiv.org/abs/2111.02477v2)
 
 ## 相关资料
 

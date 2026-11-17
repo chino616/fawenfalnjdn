@@ -1,0 +1,679 @@
+              Citation: S. Navas et al. (Particle Data Group), Phys. Rev. D 110, 030001 (2024)
+
+
+
+                                                       I G (J P ) = 1− (0− )
+  π±
+         We have omitted some results that have been superseded by later
+         experiments. The omitted results may be found in our 1988 edition
+         Physics Letters B204 1 (1988).
+
+                                               π ± MASS
+         The most accurate charged pion mass measurements are based upon x-
+         ray wavelength measurements for transitions in π − -mesonic atoms. The
+         observed line is the blend of three components, corresponding to different
+         K-shell occupancies. JECKELMANN 94 revisits the occupancy question,
+         with the conclusion that two sets of occupancy ratios, resulting in two dif-
+         ferent pion masses (Solutions A and B), are equally probable. We choose
+         the higher Solution B since only this solution is consistent with a positive
+         mass-squared for the muon neutrino, given the precise muon momentum
+         measurements now available (DAUM 91, ASSAMAGAN 94, and ASSAM-
+         AGAN 96) for the decay of pions at rest. Earlier mass determinations with
+         pi-mesonic atoms may have used incorrect K-shell screening corrections.
+
+         Measurements with an error of > 0.005 MeV have been omitted from this
+         Listing.
+
+VALUE (MeV)                     DOCUMENT ID               TECN      CHG     COMMENT
+139.57039± 0.00018 OUR FIT Error includes scale factor of 1.8.
+139.57039± 0.00017 OUR AVERAGE Error includes scale factor of 1.6. See the ideogram
+below.
+139.57021± 0.00014         1 DAUM          19 SPEC               π + → µ+ ν µ
+139.57077± 0.00018         2 TRASSINELLI 16 CNTR                 X-ray transitions in pionic
+                                                                     N2
+139.57071± 0.00053         3 LENZ          98 CNTR −             pionic N2-atoms gas target
+139.56995± 0.00035         4 JECKELMANN 94 CNTR −                π − atom, Soln. B
+• • • We do not use the following data for averages, fits, limits, etc. • • •
+139.57022± 0.00014         5 ASSAMAGAN 96 SPEC +                 π + → µ+ ν µ
+139.56782± 0.00037         6 JECKELMANN 94 CNTR −                π − atom, Soln. A
+139.56996± 0.00067         7 DAUM          91 SPEC +             π + → µ+ ν
+139.56752± 0.00037         8 JECKELMANN 86B CNTR −               Mesonic atoms
+139.5704 ± 0.0011          7 ABELA         84 SPEC +             See DAUM 91
+139.5664 ± 0.0009          9 LU            80 CNTR −             Mesonic atoms
+139.5686 ± 0.0020            CARTER        76 CNTR −             Mesonic atoms
+139.5660 ± 0.0024       9,10 MARUSHEN... 76 CNTR −               Mesonic atoms
+  1 DAUM 19 value is based on their previous (1991+1996) measurements of the µ+
+    momentum of 29.79200 ± 0.00011 MeV for π + decay at rest. It also uses m µ =
+    105.6583745 ± 0.0000024 MeV, and assumes conservatively m ν = 2.0 ± 2.0 MeV. It
+                                                                      µ
+    is the most precise charged pion mass determination.
+  2 TRASSINELLI 16 use the muonic oxygen line for online energy calibration of the pionic
+    line.
+  3 LENZ 98 result does not suffer K-electron configuration uncertainties as does JECKEL-
+    MANN 94.
+
+
+
+
+https://pdg.lbl.gov                         Page 1                     Created: 7/25/2024 17:21
+            Citation: S. Navas et al. (Particle Data Group), Phys. Rev. D 110, 030001 (2024)
+
+
+  4 JECKELMANN 94 Solution B (dominant 2-electron K-shell occupancy), chosen for con-
+    sistency with positive m 2 .
+                             νµ
+  5 ASSAMAGAN 96 measures the µ+ momentum p in π + → µ+ ν decay at rest to
+                                                 µ                µ
+    be 29.79200 ± 0.00011 MeV/c. Combined with the µ+ mass and the assumption m ν
+                                                                                                       µ
+   = 0, this gives the π + mass above; if m ν      > 0, m + given above is a lower limit.
+                                                 µ         π
+   Combined instead with m µ        and (assuming CPT) the π − mass of JECKELMANN 94,
+   pµ gives an upper limit on m ν       (see the νµ ).
+                                     µ
+  6 JECKELMANN 94 Solution A (small 2-electron K-shell occupancy) in combination with
+    either the DAUM 91 or ASSAMAGAN 94 pion decay muon momentum measurement
+    yields a significantly negative m 2 . It is accordingly not used in our fits.
+                                      νµ
+  7 The DAUM 91 value includes the ABELA 84 result. The value is based on a measurement
+    of the µ+ momentum for π + decay at rest, pµ = 29.79179 ± 0.00053 MeV, uses m µ =
+    105.658389 ± 0.000034 MeV, and assumes that m ν = 0. The last assumption means
+                                                             µ
+    that in fact the value is a lower limit.
+  8 JECKELMANN 86B gives m /m = 273.12677(71). We use m = 0.51099906(15)
+                                   π     e                               e
+    MeV from COHEN 87. The authors note that two solutions for the probability distribution
+    of K-shell occupancy fit equally well, and use other data to choose the lower of the two
+    possible π ± masses.
+  9 These values are scaled with a new wavelength-energy conversion factor Vλ =
+    1.23984244(37) × 10−6 eV m from COHEN 87. The LU 80 screening correction re-
+    lies upon a theoretical calculation of inner-shell refilling rates.
+ 10 This MARUSHENKO 76 value used at the authors’ request to use the accepted set of
+    calibration γ energies. Error increased from 0.0017 MeV to include QED calculation error
+    of 0.0017 MeV (12 ppm).
+
+         WEIGHTED AVERAGE
+         139.57039±0.00017 (Error scaled by 1.6)
+
+
+                                               Values above of weighted average, error,
+                                               and scale factor are based upon the data in
+                                               this ideogram only. They are not neces-
+                                               sarily the same as our ‘best’ values,
+                                               obtained from a least-squares constrained fit
+                                               utilizing measurements of other (related)
+                                               quantities as additional information.
+
+
+
+
+                                                                                                   2
+                                                                                               χ
+                                                       DAUM        19             SPEC   1.7
+                                                       TRASSINELLI 16             CNTR   4.4
+                                                       LENZ        98             CNTR   0.4
+                                                       JECKELMANN 94              CNTR   1.6
+                                                                                         8.1
+                                                                    (Confidence Level = 0.045)
+
+     139.569        139.57         139.571         139.572         139.573
+
+          π ± mass (MeV)
+
+
+https://pdg.lbl.gov                       Page 2                     Created: 7/25/2024 17:21
+              Citation: S. Navas et al. (Particle Data Group), Phys. Rev. D 110, 030001 (2024)
+
+
+                                             m π + − m µ+
+          Measurements with an error > 0.05 MeV have been omitted from this
+          Listing.
+
+VALUE (MeV)                  EVTS           DOCUMENT ID               TECN      CHG     COMMENT
+• • • We do not use the following data for averages, fits, limits, etc. • • •
+33.91157± 0.00067                 1 DAUM            91 SPEC +              π + → µ+ ν
+33.9111 ± 0.0011                    ABELA           84 SPEC                See DAUM 91
+33.925 ± 0.025                      BOOTH           70 CNTR +              Magnetic spect.
+33.881 ± 0.035           145        HYMAN           67 HEBC +              K − He
+  1 The DAUM 91 value assumes that m
+                                       νµ = 0 and uses our m µ = 105.658389 ± 0.000034
+    MeV.
+
+                                    (m π + − m π − ) / m average
+          A test of CPT invariance.
+
+VALUE (units 10−4 )                         DOCUMENT ID               TECN
+2± 5                                        AYRES              71     CNTR
+
+
+                                          π ± MEAN LIFE
+          Measurements with an error > 0.02 × 10−8 s have been omitted.
+
+VALUE (10−8 s)                              DOCUMENT ID               TECN      CHG     COMMENT
+2.6033 ± 0.0005 OUR AVERAGE Error includes scale factor of 1.2.
+2.60361± 0.00052                  1 KOPTEV          95 SPEC +              Surface µ+ ’s
+2.60231± 0.00050 ± 0.00084          NUMAO           95 SPEC +              Surface µ+ ’s
+2.609 ± 0.008                       DUNAITSEV 73 CNTR +
+2.602 ± 0.004                       AYRES           71 CNTR ±
+2.604 ± 0.005                       NORDBERG 67 CNTR +
+2.602 ± 0.004                       ECKHAUSE        65 CNTR +
+• • • We do not use the following data for averages, fits, limits, etc. • • •
+2.640 ± 0.008                     2 KINSEY          66 CNTR +
+  1 KOPTEV 95 combines the statistical and systematic errors; the statistical error domi-
+    nates.
+  2 Systematic errors in the calibration of this experiment are discussed by NORDBERG 67.
+
+
+                                    (τ π + − τ π − ) / τ average
+          A test of CPT invariance.
+
+VALUE (units 10−4 )                         DOCUMENT ID               TECN
+   5.5± 7.1                         AYRES           71 CNTR
+• • • We do not use the following data for averages, fits, limits, etc. • • •
+− 14 ± 29                                   PETRUKHIN 68              CNTR
+  40 ± 70                                   BARDON    66              CNTR
+  23 ± 40                                 1 LOBKOWICZ 66              CNTR
+
+https://pdg.lbl.gov                         Page 3                     Created: 7/25/2024 17:21
+             Citation: S. Navas et al. (Particle Data Group), Phys. Rev. D 110, 030001 (2024)
+
+
+  1 This is the most conservative value given by LOBKOWICZ 66.
+
+
+                           π ELECTRIC POLARIZABILITY απ
+          See HOLSTEIN 14 for a general review on hadron polarizability.
+
+
+VALUE (10−4 fm3 )   EVTS          DOCUMENT ID             TECN       COMMENT
+2.0± 0.6± 0.7       63k         1 ADOLPH
+                                       15A SPEC                      π − γ → π − γ Compton scatt.
+  1 Value is derived assuming α = −β .
+                               π    π
+
+
+                                      π + DECAY MODES
+          π − modes are charge conjugates of the modes below.
+
+          For decay limits to particles which are not established, see the section on
+          Searches for Axions and Other Very Light Bosons.
+
+
+        Mode                                                   Fraction (Γi /Γ)          Confidence level
+
+Γ1      µ+ νµ                                            [a]     (99.98770± 0.00004) %
+Γ2         µ+ νµ γ                                       [b]     ( 2.00     ± 0.25      ) × 10−4
+Γ3      e + νe                                           [a]     ( 1.230    ± 0.004     ) × 10−4
+Γ4         e + νe γ                                      [b]     ( 7.39     ± 0.05      ) × 10−7
+Γ5        +
+        e νe π 0                                                 ( 1.036    ± 0.006     ) × 10−8
+Γ6      e + νe e + e −                                           ( 3.2      ± 0.5       ) × 10−9
+Γ7      µ+ νµ ν ν                                              < 9                        × 10−6    90%
+Γ8      e + νe ν ν                                             < 1.6                      × 10−7    90%
+
+       Lepton Family number (LF ) or Lepton number (L) violating modes
+Γ9      µ+ ν e                     L     [c] < 1.5             × 10−3 90%
+Γ10     µ+ νe                      LF    [c] < 8.0             × 10−3 90%
+Γ11      −  +
+        µ e e ν+                   LF        < 1.6             × 10−6 90%
+
+     [a] Measurements of Γ(e + νe )/Γ(µ+ νµ ) always include decays with γ’s, and
+         measurements of Γ(e + νe γ) and Γ(µ+ νµ γ) never include low-energy γ’s.
+         Therefore, since no clean separation is possible, we consider the modes
+         with γ’s to be subreactions of the modes without them, and let [Γ(e + νe )
+         + Γ(µ+ νµ )]/Γtotal = 100%.
+     [b] See the Particle Listings below for the energy limits used in this mea-
+         surement; low-energy γ’s are not included.
+     [c] Derived from an analysis of neutrino-oscillation experiments.
+
+
+
+
+https://pdg.lbl.gov                        Page 4                      Created: 7/25/2024 17:21
+              Citation: S. Navas et al. (Particle Data Group), Phys. Rev. D 110, 030001 (2024)
+
+
+                                   π + BRANCHING RATIOS
+Γ e + νe /Γtotal
+        
+                                                                                     Γ3 /Γ
+                                    +
+       See note [a] in the list of π decay modes just above, and see also the next block of
+       data. See also the note on “Decay Constants of Charged Pseudoscalar Mesons” in the
+       D + Listings.
+         s
+VALUE (units 10−4 )                         DOCUMENT ID
+1.230± 0.004 OUR EVALUATION
+
+ Γ e + νe + Γ e + νe γ / Γ µ+ νµ + Γ µ+ νµ γ
+                                       
+                                                                (Γ3 +Γ4 )/(Γ1 +Γ2 )
+                                    +
+       See note [a] in the list of π decay modes above. See NUMAO 92 for a discussion
+       of e-µ universality. See also the note on “Decay Constants of Charged Pseudoscalar
+       Mesons” in the D + Listings.
+                          s
+VALUE (units 10−4 )            EVTS          DOCUMENT ID               TECN      CHG     COMMENT
+1.2327± 0.0023 OUR AVERAGE
+1.2344± 0.0023 ± 0.0019 400k         AGUILAR-AR...15 CNTR +                 Stopping π +
+1.2346± 0.0035 ± 0.0036 120k         CZAPEK          93 CALO                Stopping π +
+1.2265± 0.0034 ± 0.0044 190k         BRITTON         92 CNTR                Stopping π +
+1.218 ± 0.014             32k        BRYMAN          86 CNTR                Stopping π +
+• • • We do not use the following data for averages, fits, limits, etc. • • •
+1.273 ± 0.028             11k      1 DICAPUA         64 CNTR
+1.21 ± 0.07                       ANDERSON 60 SPEC
+  1 DICAPUA 64 has been updated using the current mean life.
+
+Γ µ+ νµ γ /Γtotal
+         
+                                                                                                   Γ2 /Γ
+       Note that measurements here do not cover the full kinematic range.
+VALUE (units 10−4 )       EVTS           DOCUMENT ID               TECN      CHG    COMMENT
+      0.24 ± 0.08
+2.0 ± 0.24±                           1 BRESSI   98 CALO +               Stopping π +
+• • • We do not use the following data for averages, fits, limits, etc. • • •
+1.24± 0.25                   26          CASTAGNOLI 58             EMUL             KEµ < 3.38 MeV
+    1 BRESSI 98 result is given for E
+                                   γ > 1 MeV only. Result agrees with QED expectation,
+     2.283 × 10−4 and does not confirm discrepancy of earlier experiment CASTAGNOLI 58.
+
+Γ e + νe γ /Γtotal
+          
+                                                                                      Γ4 /Γ
+       The very different values reflect the very different kinematic ranges covered (bigger
+       range, bigger value). And none of them covers the whole kinematic range.
+VALUE (units 10−8 )          EVTS           DOCUMENT ID               TECN      COMMENT
+73.86± 0.54               65k             1 BYCHKOV 09 PIBE e + ν γ at rest
+• • • We do not use the following data for averages, fits, limits, etc. • • •
+16.1 ± 2.3                        2 BOLOTOV         90B SPEC 17 GeV π − → e − ν e γ
+ 5.6 ± 0.7               226      3 STETZ           78 SPEC Pe > 56 MeV/c
+ 3.0                     143        DEPOMMIER 63B CNTR (KE) + > 48 MeV
+                                                                          e γ
+  1 This BYCHKOV 09 value is for E > 10 MeV and Θ                    ◦
+                                                                > 40 .
+                                    γ                     e+ γ
+  2 BOLOTOV 90B is for E > 21 MeV, E > 70 − 0.8 E .
+                           γ               e                   γ
+  3 STETZ 78 is for an e − γ opening angle > 132◦ . Obtains 3.7 when using same cutoffs
+    as DEPOMMIER 63B.
+
+
+https://pdg.lbl.gov                         Page 5                     Created: 7/25/2024 17:21
+              Citation: S. Navas et al. (Particle Data Group), Phys. Rev. D 110, 030001 (2024)
+
+
+Γ e + νe π 0 /Γtotal
+            
+                                                                                                      Γ5 /Γ
+VALUE (units 10−8 )     EVTS            DOCUMENT ID             TECN       CHG     COMMENT
+1.036± 0.006 OUR AVERAGE
+1.036± 0.006        64k     1,2 POCANIC        04 PIBE +               π decay at rest
+1.026± 0.039       1224       3 MCFARLANE 85 CNTR +                    Decay in flight
+     + 0.08
+1.00 −              332         DEPOMMIER 68 CNTR +
+       0.10
+1.07 ± 0.21          38       4 BACASTOW 65 OSPK +
+1.10 ± 0.26                   4 BERTRAM        65 OSPK +
+1.1 ± 0.2            43       4 DUNAITSEV 65 CNTR +
+0.97 ± 0.20          36       4 BARTLETT       64 OSPK +
+• • • We do not use the following data for averages, fits, limits, etc. • • •
+1.15 ± 0.22          52       4 DEPOMMIER 63 CNTR +                    See DEPOMMIER 68
+  1 POCANIC 04 normalizes to e + ν decays, using the PDG 2004 value B(π + → e + ν )
+                                      e                                                      e
+    = (1.230 ± 0.004) × 10−4 . We add their statistical (0.004 × 10−8 ), systematic (0.004 ×
+    10−8 ) and systematic error due to the uncertainty of B(π + → e + νe ) (0.003 × 10−8 )
+    in quadrature.
+  2 This result can be used to calculate V                              P IBET A = 0.9728 ±
+                                          ud from pion beta decay: Vud
+    0.0030.
+  3 MCFARLANE 85 combines a measured rate (0.394 ± 0.015)/s with 1982 PDG mean
+    life.
+  4 DEPOMMIER 68 says the result of DEPOMMIER 63 is at least 10% too large because
+    of a systematic error in the π 0 detection efficiency, and that this may be true of all the
+    previous measurements (also V. Soergel, private communication, 1972).
+
+Γ e + νe e + e − /Γ µ+ νµ
+                         
+                                                                                                     Γ6 /Γ1
+VALUE (units 10−9 )        CL%    EVTS         DOCUMENT ID                 TECN     COMMENT
+    3.2 ± 0.5 ± 0.2                    98      EGLI                 89  Uses RPCAC =
+                                                                           SPEC
+                                                                           0.068 ± 0.004
+• • • We do not use the following data for averages, fits, limits, etc. • • •
+   0.46± 0.16 ± 0.07          7      1 BARANOV          92 SPEC Stopped π +
+< 4.8              90                KORENCHE... 76B SPEC
+<34                90                KORENCHE... 71 OSPK
+ 1 This measurement by BARANOV 92 is of the structure-dependent part of the decay.
+   The value depends on values assumed for ratios of form factors.
+
+Γ µ+ νµ ν ν /Γ µ+ νµ
+                    
+                                                                                                     Γ7 /Γ1
+VALUE                 CL%    EVTS            DOCUMENT ID                 TECN     COMMENT
+<8.6 × 10−6           90     9.1M            AGUILAR-AR...20A SPEC                fit E µ spectrum
+
+Γ e + νe ν ν /Γtotal
+            
+                                                                                                      Γ8 /Γ
+VALUE                 CL%    EVTS            DOCUMENT ID                 TECN     COMMENT
+<1.6 × 10−7      90    1.3M         AGUILAR-AR...20A SPEC fit E e spectrum
+• • • We do not use the following data for averages, fits, limits, etc. • • •
+<5 × 10−6        90                 PICCIOTTO 88 SPEC
+
+Γ µ+ ν e /Γtotal
+        
+                                                                                    Γ9 /Γ
+        Forbidden by total lepton number conservation. See the note on “Decay Constants of
+        Charged Pseudoscalar Mesons” in the D + Listings.
+                                               s
+VALUE (units 10−3 )              CL%         DOCUMENT ID                 TECN     COMMENT
+<1.5                             90         1 COOPER           82        HLBC Wideband ν beam
+
+https://pdg.lbl.gov                          Page 6                      Created: 7/25/2024 17:21
+              Citation: S. Navas et al. (Particle Data Group), Phys. Rev. D 110, 030001 (2024)
+
+
+  1 COOPER 82 limit on ν observation is here interpreted as a limit on lepton number
+                        e
+    violation.
+
+Γ µ+ νe /Γtotal
+       
+                                                                                                  Γ10 /Γ
+        Forbidden by lepton family number conservation.
+VALUE (units 10−3 )           CL%           DOCUMENT ID               TECN      COMMENT
+<8.0                   90      1 COOPER            82 HLBC Wideband ν beam
+ 1 COOPER 82 limit on ν observation is here interpreted as a limit on lepton family number
+                       e
+   violation.
+
+Γ µ− e + e + ν /Γtotal
+              
+                                                                                                  Γ11 /Γ
+        Forbidden by lepton family number conservation.
+VALUE (units 10−6 )           CL%           DOCUMENT ID               TECN      CHG
+<1.6                    90          BARANOV         91B SPEC +
+• • • We do not use the following data for averages, fits, limits, etc. • • •
+<7.7                          90            KORENCHE... 87            SPEC      +
+
+
+                       π + — POLARIZATION OF EMITTED µ+
+π + → µ+ ν
+        Tests the Lorentz structure of leptonic charged weak interactions.
+VALUE                         CL%           DOCUMENT ID               TECN      CHG     COMMENT
+• • • We do not use the following data for averages, fits, limits, etc. • • •
+<(− 0.9959)             90        1 FETSCHER        84 RVUE +
+− 0.99± 0.16                      2 ABELA           83 SPEC −              µ X-rays
+  1 FETSCHER 84 uses only the measurement of CARR 83.
+  2 Sign of measurement reversed in ABELA 83 to compare with µ+ measurements.
+
+
+See the related review(s):
+  Form Factors for Semileptonic Kaon (Kℓ3 ), Radiative Pion (πℓ 2γ )
+and Kaon (Kℓ 2γ ) Decays
+
+                                      π ± FORM FACTORS
+FV , VECTOR FORM FACTOR
+VALUE                        EVTS           DOCUMENT ID               TECN      COMMENT
+0.0254± 0.0017 OUR AVERAGE
+0.0258± 0.0017           65k  1 BYCHKOV          09 PIBE e + ν γ at rest
+0.014 ± 0.009                 2  BOLOTOV         90B SPEC 17 GeV π − → e − ν e γ
+      + 0.015
+0.023 −                   98     EGLI            89 SPEC π + → e + νe e + e −
+        0.013
+  1 The BYCHKOV 09 F and F results are highly (anti-)correlated: F + 1.0286 F
+                       A     V                                    A           V
+    = 0.03853 ± 0.00014.
+  2 BOLOTOV 90B only determines the absolute value.
+
+FA , AXIAL-VECTOR FORM FACTOR
+VALUE                        EVTS           DOCUMENT ID               TECN      COMMENT
+0.0119± 0.0001                 65k     1,2 BYCHKOV             09     PIBE      e + ν γ at rest
+
+
+https://pdg.lbl.gov                         Page 7                     Created: 7/25/2024 17:21
+              Citation: S. Navas et al. (Particle Data Group), Phys. Rev. D 110, 030001 (2024)
+
+
+• • • We do not use the following data for averages, fits, limits, etc. • • •
+0.0115± 0.0004           41k    1,3 FRLEZ           04 PIBE π + → e + ν γ at rest
+0.0106± 0.0060                  1,4 BOLOTOV         90B SPEC 17 GeV π − → e − ν e γ
+      + 0.011
+0.021 −                   98        EGLI            89 SPEC π + → e + νe e + e −
+        0.013
+0.0135± 0.0016                  1,4 BAY             86 SPEC π + → e + ν γ
+0.006 ± 0.003                   1,4 PIILONEN        86 SPEC π + → e + ν γ
+0.011 ± 0.003                 1,4,5 STETZ           78 SPEC π + → e + ν γ
+  1 These values come from fixing the vector form factor at the CVC prediction, F =
+                                                                                    V
+    0.0259 ± 0.0005.
+  2 When F is released, the BYCHKOV 09 F is 0.0117 ± 0.0017, and F and F results
+            V                                A                          A      V
+    are highly (anti-)correlated: FA + 1.0286 FV = 0.03853 ± 0.00014.
+  3 The sign of γ = F /F is determined to be positive.
+                       A     V
+  4 Only the absolute value of F is determined.
+                                  A
+  5 The result of STETZ 78 has a two-fold ambiguity. We take the solution compatible with
+    later determinations.
+
+VECTOR FORM FACTOR SLOPE PARAMETER a
+        This is a in FV (q2 ) = FV (0) (1 + a q2 )
+VALUE                        EVTS           DOCUMENT ID               TECN      COMMENT
+0.10± 0.06                     65k          BYCHKOV            09     PIBE      e + ν γ at rest
+
+R, SECOND AXIAL-VECTOR FORM FACTOR
+VALUE                        EVTS           DOCUMENT ID               TECN      COMMENT
+      + 0.009
+0.059 − 0.008                   98          EGLI               89     SPEC      π + → e + νe e + e −
+
+
+                                      π ± CHARGE RADIUS
+                                           q
+          The charge radius of the pion       r2 is defined in relation to the form
+                                               π
+          factor of the pion electromagnetic vertex, called vector form factor VFF,
+          FV . The VFF is a function of the squared four-momentum transfer t,
+            π
+          or of the squared c.m. energy s, depending on the channel in which the
+          photon exchange takes place. In both cases, it is related to the slope of
+          the VFF at zero, namely
+                                  V (q)
+                               dF π
+                     r2 = 6             (q=0) where q = t, s.
+                      π           dq
+          The quantity cannot be measured directly. It can be extracted from the
+          cross sections of three processes: pion electroproduction, e N → e N π,
+          and pion electron scattering e π → e π, for the t channel, and positron
+          electron annihilation into two charged pions, e + e − → π + π − , for the s
+          channel. We encode all measurements, but we do not use electroproduc-
+          tion data in averaging because the extraction of the pion radius involves,
+          in this case, theoretical uncertainties that cannot be controlled at the
+          needed level of accuracy. In case of analyses based on the same data
+          set, as ANANTHANARAYAN 17 and COLANGELO 19, which cannot be
+          averaged, we combine the results into a common value, with the uncer-
+          tainty range chosen to cover both analyses. Note that for consistency
+          the form factor needs to be defined in both channels with the vacuum
+          polarisation removed. For details see COLANGELO 19 or Appendix B of
+          ANANTHANARAYAN 16A.
+
+
+
+
+https://pdg.lbl.gov                         Page 8                     Created: 7/25/2024 17:21
+             Citation: S. Navas et al. (Particle Data Group), Phys. Rev. D 110, 030001 (2024)
+
+
+
+VALUE (fm)                                 DOCUMENT ID               TECN      COMMENT
+0.659 ± 0.004 OUR AVERAGE
+0.656 ± 0.005                     1 PDG             19 FIT
+0.65 ± 0.05 ± 0.06                  ESCHRICH        01 CNTR π e → π e
+0.663 ± 0.006                       AMENDOLIA 86 CNTR π e → π e
+0.663 ± 0.023                       DALLY           82 CNTR π e → π e
+• • • We do not use the following data for averages, fits, limits, etc. • • •
+0.640 ± 0.007                     2 CUI             21A FIT          Fit existing data
+0.655 ± 0.004                     3 COLANGELO 19 FIT                 Fit existing data
+0.657 ± 0.003                     4 ANANTHANA...17 FIT               Fit existing data
+0.6603± 0.0005 ± 0.0004           5 HANHART         17 FIT           Fit existing data
+0.740 ± 0.031                     6 LIESENFELD 99 CNTR e p → e π + n
+0.661 ± 0.012                     7 BIJNENS         98 CNTR χPT extraction
+0.660 ± 0.024                          AMENDOLIA 84 CNTR π e → π e
+0.711 ± 0.009 ± 0.016                6 BEBEK          78 CNTR e N → e π N
+0.678 ± 0.004 ± 0.008                8 QUENZER        78 CNTR e + e − → π + π −
+0.78 − + 0.09                          ADYLOV         77 CNTR π e → π e
+          0.10
+0.74 − + 0.11                          BARDIN         77 CNTR e p → e π + n
+          0.13
+0.56 ± 0.04                            DALLY          77 CNTR π e → π e
+  1 This value combines the measurements of ANANTHANARAYAN 17 and COLAN-
+    GELO 19 which are based on the same data set. The uncertainty range is chosen
+    to cover both results.
+  2 CUI 21A perform a fit including spacelike data only. Employ a new mathematical proce-
+    dure based on interpolation via continued fractions augmented by statistical sampling.
+    Also do not impose the charge conserving normalization condition F(0) = 1.
+  3 COLANGELO 19 fit existing F data, using an extended Omnes dispersive representa-
+                                    V
+    tion. This analysis is based on the same data set of ANANTHANARAYAN 17 . Accord-
+    ingly, they cannot be averaged. We combine the results into a common value, with the
+    uncertainty range chosen to cover the uncertainty ranges of both analyses.
+  4 ANANTHANARAYAN 17 fit existing F data, using a mixed phase-modulus dispersive
+                                           V
+    representation. This analysis is based on the same data set of COLANGELO 19. Ac-
+    cordingly, they cannot be averaged. We combine the results into a common value, with
+    the uncertainty range chosen to cover the uncertainty ranges of both analyses.
+  5 According to the authors the uncertainty could be underestimated. The value quoted
+    omits the BaBar data AUBERT 09.
+  6 The extractions could contain an additional theoretical uncertainty which cannot be
+    sufficiently quantified.
+  7 BIJNENS 98 fits existing data.
+  8 The extraction is based on a parametrization that does not have correct analytic prop-
+    erties.
+
+                                        π ± REFERENCES
+         We have omitted some papers that have been superseded by later exper-
+         iments. The omitted papers may be found in our 1988 edition Physics
+         Letters B204 1 (1988).
+
+CUI           21A   PL B822 136631            Z.-F. Cui et al.                         (NJU, ECT, HZDR)
+AGUILAR-AR... 20A   PR D102 012001            A. Aguilar-Arevalo et al.                   (PIENU Collab.)
+COLANGELO 19        JHEP 1902 006             G. Colangelo, M. Hoferichter, P. Stoffer         (BERN+)
+DAUM          19    PL B796 11                M. Daum, R. Frosch, P.-R. Kettle                     (PSI)
+PDG           19    RPP 2019 at pdg.lbl.gov   M. Tanabashi et al.                           (PDG Collab.)
+ANANTHANA...17      PRL 119 132002            B. Ananthanarayan, I. Caprini, D. Das
+
+https://pdg.lbl.gov                        Page 9                     Created: 7/25/2024 17:21
+              Citation: S. Navas et al. (Particle Data Group), Phys. Rev. D 110, 030001 (2024)
+
+
+HANHART       17     EPJ C77 98               C. Hanhart et al.
+ANANTHANA...16A      PR D93 116007            B. Ananthanarayan et al.
+TRASSINELLI 16       PL B759 583              M. Trassinelli et al.
+ADOLPH        15A    PRL 114 062002           C. Adolph et al.                      (COMPASS Collab.)
+AGUILAR-AR... 15     PRL 115 071801           A. Aguilar-Arevalo et al.                  (PIENU Collab.)
+HOLSTEIN      14     ARNPS 64 51              B. Holstein, S. Scherer                  (MASA, MAINZ)
+AUBERT        09     PR D79 011102            B. Aubert et al.                         (BABAR Collab.)
+BYCHKOV       09     PRL 103 051802           M. Bychkov et al.                   (PSI PIBETA Collab.)
+FRLEZ         04     PRL 93 181804            E. Frlez et al.                     (PSI PIBETA Collab.)
+POCANIC       04     PRL 93 181803            D. Pocanic et al.                   (PSI PIBETA Collab.)
+ESCHRICH      01     PL B522 233              I. Eschrich et al.                (FNAL SELEX Collab.)
+LIESENFELD 99        PL B468 20               A. Liesenfeld et al.
+BIJNENS       98     JHEP 9805 014            J. Bijnens et al.
+BRESSI        98     NP B513 555              G. Bressi et al.
+LENZ          98     PL B416 50               S. Lenz et al.
+ASSAMAGAN 96         PR D53 6065              K.A. Assamagan et al.                 (PSI, ZURI, VILL+)
+KOPTEV        95     JETPL 61 877             V.P. Koptev et al.                                   (PNPI)
+                     Translated from ZETFP 61 865.
+NUMAO      95        PR D52 4855              T. Numao et al.                             (TRIU, BRCO)
+ASSAMAGAN 94         PL B335 231              K.A. Assamagan et al.                 (PSI, ZURI, VILL+)
+JECKELMANN 94        PL B335 326              B. Jeckelmann, P.F.A. Goudsmit, H.J. Leisi       (WABRN+)
+CZAPEK     93        PRL 70 17                G. Czapek et al.                              (BERN, VILL)
+BARANOV    92        SJNP 55 1644             V.A. Baranov et al.                                   (JINR)
+                     Translated from YAF 55 2940.
+BRITTON        92    PRL 68 3000              D.I. Britton et al.                          (TRIU, CARL)
+   Also              PR D49 28                D.I. Britton et al.                          (TRIU, CARL)
+NUMAO          92    MPL A7 3357              T. Numao                                             (TRIU)
+BARANOV        91B   SJNP 54 790              V.A. Baranov et al.                                   (JINR)
+                     Translated from YAF 54 1298.
+DAUM           91    PL B265 425              M. Daum et al.                                        (VILL)
+BOLOTOV        90B   PL B243 308              V.N. Bolotov et al.                                 (INRM)
+EGLI           89    PL B222 533              S. Egli et al.                        (SINDRUM Collab.)
+   Also              PL B175 97               S. Egli et al.                (AACH3, ETH, SIN, ZURI)
+PDG            88    PL B204 1                G.P. Yost et al.                                    (LBL+)
+PICCIOTTO      88    PR D37 1131              C.E. Picciotto et al.                        (TRIU, CNRC)
+COHEN          87    RMP 59 1121              E.R. Cohen, B.N. Taylor                         (RISC, NBS)
+KORENCHE...    87    SJNP 46 192              S.M. Korenchenko et al.                               (JINR)
+                     Translated from YAF 46 313.
+AMENDOLIA 86         NP B277 168              S.R. Amendolia et al.                (CERN NA7 Collab.)
+BAY         86       PL B174 445              A. Bay et al.                                 (LAUS, ZURI)
+BRYMAN      86       PR D33 1211              D.A. Bryman et al.                           (TRIU, CNRC)
+    Also             PRL 50 7                 D.A. Bryman et al.                           (TRIU, CNRC)
+JECKELMANN 86B       NP A457 709              B. Jeckelmann et al.                           (ETH, FRIB)
+    Also             PRL 56 1444              B. Jeckelmann et al.                           (ETH, FRIB)
+PIILONEN    86       PRL 57 1402              L.E. Piilonen et al.               (LANL, TEMP, CHIC)
+MCFARLANE 85         PR D32 547               W.K. McFarlane et al.                       (TEMP, LANL)
+ABELA       84       PL 146B 431              R. Abela et al.                                        (SIN)
+    Also             PL 74B 126               M. Daum et al.                                         (SIN)
+    Also             PR D20 2692              M. Daum et al.                                         (SIN)
+AMENDOLIA 84         PL 146B 116              S.R. Amendolia et al.                (CERN NA7 Collab.)
+FETSCHER    84       PL 140B 117              W. Fetscher                                           (ETH)
+ABELA       83       NP A395 413              R. Abela et al.                 (BASL, KARLK, KARLE)
+CARR        83       PRL 51 627               J. Carr et al.                       (LBL, NWES, TRIU)
+COOPER      82       PL 112B 97               A.M. Cooper et al.                                      (RL)
+DALLY       82       PRL 48 375               E.B. Dally et al.
+LU          80       PRL 45 1066              D.C. Lu et al.                       (YALE, COLU, JHU)
+BEBEK       78       PR D17 1693              C.J. Bebek et al.
+QUENZER     78       PL 76B 512               A. Quenzer et al.                                   (LALO)
+STETZ       78       NP B138 285              A.W. Stetz et al.                              (LBL, UCLA)
+ADYLOV      77       NP B128 461              G.T. Adylov et al.
+BARDIN      77       NP B120 45               G. Bardin et al.
+DALLY       77       PRL 39 1176              E.B. Dally et al.
+CARTER      76       PRL 37 1380              A.L. Carter et al.               (CARL, CNRC, CHIC+)
+KORENCHE... 76B      JETP 44 35               S.M. Korenchenko et al.                               (JINR)
+                     Translated from ZETF 71 69.
+MARUSHEN... 76       JETPL 23 72              V.I. Marushenko et al.                               (PNPI)
+                     Translated from ZETFP 23 80.
+   Also              Private Comm.            R.E. Shafer                                         (FNAL)
+   Also              Private Comm.            A. Smirnov                                           (PNPI)
+DUNAITSEV      73    SJNP 16 292              A.F. Dunaitsev et al.                                (SERP)
+                     Translated from YAF 16 524.
+
+
+
+https://pdg.lbl.gov                        Page 10                      Created: 7/25/2024 17:21
+             Citation: S. Navas et al. (Particle Data Group), Phys. Rev. D 110, 030001 (2024)
+
+
+AYRES       71      PR D3 1051               D.S. Ayres et al.                           (LRL, UCSB)
+   Also             PR 157 1288              D.S. Ayres et al.                                   (LRL)
+   Also             PRL 21 261               D.S. Ayres et al.                           (LRL, UCSB)
+   Also             Thesis UCRL 18369        D.S. Ayres                                          (LRL)
+   Also             PRL 23 1267              A.J. Greenberg et al.                       (LRL, UCSB)
+KORENCHE... 71      SJNP 13 189              S.M. Korenchenko et al.                            (JINR)
+                    Translated from YAF 13 339.
+BOOTH         70    PL 32B 723               P.S.L. Booth et al.                                (LIVP)
+DEPOMMIER     68    NP B4 189                P. Depommier et al.                              (CERN)
+PETRUKHIN     68    JINR P1 3862             V.I. Petrukhin et al.                              (JINR)
+HYMAN         67    PL 25B 376               L.G. Hyman et al.                    (ANL, CMU, NWES)
+NORDBERG      67    PL 24B 594               M.E. Nordberg, F. Lobkowicz, R.L. Burman         (ROCH)
+BARDON        66    PRL 16 775               M. Bardon et al.                                 (COLU)
+KINSEY        66    PR 144 1132              K.F. Kinsey, F. Lobkowicz, M.E. Nordberg         (ROCH)
+LOBKOWICZ     66    PRL 17 548               F. Lobkowicz et al.                        (ROCH, BNL)
+BACASTOW      65    PR 139 B407              R.B. Bacastow et al.                        (LRL, SLAC)
+BERTRAM       65    PR 139 B617              W.K. Bertram et al.                        (MICH, CMU)
+DUNAITSEV     65    JETP 20 58               A.F. Dunaitsev et al.                              (JINR)
+                    Translated from ZETF 47 84.
+ECKHAUSE      65    PL 19 348                M. Eckhause et al.                                (WILL)
+BARTLETT      64    PR 136 B1452             D. Bartlett et al.                               (COLU)
+DICAPUA       64    PR 133 B1333             M. di Capua et al.                               (COLU)
+   Also             Private Comm.            L. Pondrom                                        (WISC)
+DEPOMMIER     63    PL 5 61                  P. Depommier et al.                              (CERN)
+DEPOMMIER     63B   PL 7 285                 P. Depommier et al.                              (CERN)
+ANDERSON      60    PR 119 2050              H.L. Anderson et al.                                 (EFI)
+CASTAGNOLI    58    PR 112 1779              C. Castagnoli, M. Muchnik                       (ROMA)
+
+
+
+
+https://pdg.lbl.gov                       Page 11                     Created: 7/25/2024 17:21
+

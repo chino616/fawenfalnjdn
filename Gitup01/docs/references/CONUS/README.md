@@ -58,3 +58,8 @@
 CONUS/CONUS+ 的论文归档不表示程序中已注册相应数据集；当前已接入数据集见[实验总目录](../../experiments/README.md)。相关通用框架见 [2601.19883v2](../General_CEvNS/2601.19883v2.pdf)。
 
 [文献总目录](../README.md)
+
+
+## 本轮来源标注与数据集入口
+
+[CONUS+ v3 主文件](../../experiments/CONUS_Plus/datasets/conusplus_kkl_run1/experiment.physics.md) · [标准引用与核验范围](../../experiments/CONUS_Plus/datasets/conusplus_kkl_run1/REFERENCES.md)。Mueller、Kopeikin、NIST/CODATA、BIPM 和用户材料的具体用途按数据项登记。

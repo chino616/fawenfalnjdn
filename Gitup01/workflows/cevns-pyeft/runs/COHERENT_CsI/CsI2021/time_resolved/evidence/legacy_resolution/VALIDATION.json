@@ -1,0 +1,65 @@
+{
+  "status": "PASS_IMPLEMENTATION_AND_DECLARED_NUMERICAL_CHECKS",
+  "date": "2026-11-06",
+  "python": {
+    "executable": "C:\\Program Files\\WindowsApps\\OpenAI.CodexPrimaryRuntime.v26-1030-493-0_26.1030.493.0_x64__3k8sg7r9htsxt\\dependencies\\python\\python.exe",
+    "version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "dependencies": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pytest": "9.2.0",
+    "uproot": "5.7.7"
+  },
+  "command": "python -B -m pytest tests -q -p no:cacheprovider --basetemp=tmp/csi-input-resolution-complete-tests-20261106",
+  "pytest": {
+    "passed": 186,
+    "failed": 0,
+    "seconds": 63.02,
+    "log": "pytest.log"
+  },
+  "audit_command": "python -B src/cevns_pyeft/experiments/coherent/2021CsI_root_time/tools/resolve_input_issues.py --output-dir src/cevns_pyeft/experiments/coherent/2021CsI_root_time/benchmarks/input_resolution_20261106 --signal --max-level 4 --root-correlation --source-comparison",
+  "declared_count_precision": {
+    "threshold_events": 0.005,
+    "full_fluence_max_grid_change": 0.0037095932852899693,
+    "reference_6us_max_grid_change": 0.004015979465854969,
+    "total_configurations": 216,
+    "bins_per_configuration": 99,
+    "scope": "Eight legacy benchmarks and four corners, three timing and three efficiency shifts for each of two fluence scopes"
+  },
+  "numerical_evidence": {
+    "RESPONSE_JHEP2022_4PULL_bins.csv": "PASS_99_BINS_POISSON_COMPONENTS_RESIDUALS",
+    "RESPONSE_JHEP2022_4PULL_probability_candidate_bins.csv": "PASS_99_BINS_POISSON_COMPONENTS_RESIDUALS",
+    "RESPONSE_2211_TIME_bins.csv": "PASS_99_BINS_POISSON_COMPONENTS_RESIDUALS",
+    "RESPONSE_2211_TIME_probability_candidate_bins.csv": "PASS_99_BINS_POISSON_COMPONENTS_RESIDUALS",
+    "public_entry_and_numeric_dependency_hash": "PASS",
+    "signal_grid_cases.npz": "PASS_GRID_DIFFERENCE_BELOW_0p005",
+    "time_fluence_scope_grid.npz": "PASS_GRID_DIFFERENCE_BELOW_0p005",
+    "ROOT_per_flavor_total_closure": "PASS",
+    "ROOT_vs_actual_legacy_decomposition": "PASS",
+    "time_scope_conversion_and_same_eta_difference": "PASS",
+    "original_source_records_verified": 13
+  },
+  "documentation": {
+    "documents": 8,
+    "links_and_anchors": 126,
+    "display_math": 3,
+    "eight_toc_jumps": "PASS",
+    "rendering": "Standalone Edge with GFM and KaTeX",
+    "narrow_page_width": 720
+  },
+  "scientific_status": {
+    "PE_edges": "FROZEN_PROJECT_DERIVED_RECONSTRUCTION",
+    "time_denominator": "IMPLEMENTED_FIXED_NOMINAL_CONVENTION",
+    "primary_2211": "6us shape with same numerical Eq29 eta",
+    "BRN_NIN": "BLOCKED_POST_TIME_EFFICIENCY_CONVENTION",
+    "QF": "2--70keV fit domain enforced; lower-domain extrapolation contribution recorded",
+    "full_ROOT": "THREE_PRIMARY_FLAVORS_QF_DOMAIN_LIMITED; full-source response support remains BLOCKED",
+    "paper_reproduction": "BOTH_BENCHMARKS_BLOCKED_EXTERNAL_REPRODUCTION",
+    "limitations": [
+      "Fixed-radius native Response instead of the original paper nuclear prescriptions",
+      "Legacy14.57kg, sin2thetaW0.2387 and200-point SNS interpolation differ from2211 nominal inputs",
+      "Source energy-bin interpolation and QF truncation are explicit model assumptions"
+    ]
+  }
+}

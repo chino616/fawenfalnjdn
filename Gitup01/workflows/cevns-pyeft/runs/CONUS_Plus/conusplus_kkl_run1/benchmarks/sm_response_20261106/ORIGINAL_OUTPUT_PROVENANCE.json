@@ -1,0 +1,137 @@
+{
+  "provenance_id": "conusplus_sm_response_isolated_v1",
+  "created_date": "2026-11-06",
+  "source_map": "../snapshot/data/experiments/CONUS_Plus/conusplus_kkl_run1/PROVENANCE_MAP.json",
+  "source_register": "../snapshot/workflows/cevns-pyeft/runs/CONUS_Plus/conusplus_kkl_run1/P00_SOURCE_REGISTER.yaml",
+  "input_fingerprints": "../review/INPUT_SNAPSHOT.json",
+  "columns": [
+    {
+      "files": [
+        "sm_counts_19bins.csv",
+        "true_recoil_and_response.csv"
+      ],
+      "columns": "all SM prediction/isotope/recoil/response columns",
+      "direct_inputs": [
+        "input_choices.json",
+        "reactor_flux_default.csv",
+        "responses_all.json"
+      ],
+      "derivation": "calculate_sm.py, existing core.predict -> integrate_recoil_yield -> Li2026LegacyInteraction -> probability_fold; see fine_641.json for actual grid, exposure and nuclei.",
+      "source_locator": "2501.17843v3 Eqs.(26),(29)-(32) for detector folding; 2601.19883v2 Table II and Eqs.(75)-(78) for theoretical framework; exact executable formula is the fingerprinted local implementation.",
+      "status": "PROJECT_DERIVED; upstream flux numeric-table and Response conversion provenance remain partial"
+    },
+    {
+      "file": "sm_counts_19bins.csv",
+      "columns": [
+        "paper_sm_digitized_counts_per_kg_per_10eVee"
+      ],
+      "direct_input": "../data/benchmark/conusplus_2501_17843v3_fig1_sm_digitized.csv",
+      "source_locator": "2501.17843v3 PDF p.10 Fig.1 blue theoretical histogram",
+      "status": "FIGURE_DIGITIZED"
+    },
+    {
+      "file": "sm_counts_19bins.csv",
+      "columns": [
+        "observed_excess_digitized",
+        "observed_error_minus",
+        "observed_error_plus"
+      ],
+      "direct_input": "../snapshot/data/experiments/CONUS_Plus/conusplus_kkl_run1/statistics/conusplus_2501_17843v3_fig1_digitized.csv",
+      "source_locator": "2501.17843v3 PDF p.10 Fig.1 black markers and error bars, retained signed excess",
+      "status": "FIGURE_DIGITIZED"
+    },
+    {
+      "file": "sm_counts_19bins.csv",
+      "columns": [
+        "response_over_paper_sm"
+      ],
+      "derivation": "same-row SM prediction divided by digitized paper SM, without fitted rescaling",
+      "status": "PROJECT_DERIVED"
+    },
+    {
+      "file": "sm_counts_19bins.csv",
+      "columns": [
+        "signed_flux_extrapolation_diagnostic_events"
+      ],
+      "derivation": "default counts times N_default/N_literal from numerical_checks.json; source shapes are identical above 0.01 MeV before normalization",
+      "status": "PROJECT_DERIVED_DIAGNOSTIC"
+    },
+    {
+      "file": "sm_counts_19bins.csv",
+      "columns": [
+        "bin_index",
+        "energy_low_eVee",
+        "energy_high_eVee",
+        "energy_center_eVee"
+      ],
+      "derivation": "19 bins, edges160..350 step10, centres=edge midpoint; retained observation-grid definition",
+      "source_locator": "2501.17843v3 PDF pp.9-10, 19-bin definition and Fig.1",
+      "status": "PROJECT_DERIVED"
+    }
+  ],
+  "software": {
+    "calculate_sm.py": "5c415feec3b3e1a7f58c12d6c92cc7c8596b48c755f380d5562e7d849dd53bc5",
+    "validate_results.py": "f865cfaf309b181081c6fb9e542a02c245df0567814024ad0f064f0015e2468e",
+    "extract_sm_reference.py": "ddb05de8cea285decfa2ace4896ca6a136b043c9b57ec6510ada57c6fbd5e594"
+  },
+  "files": {
+    "base.json": {
+      "sha256": "a00c8a8cea861e8fbee5ead4cc01417e63b4e1b21fd61adc0afc5d75518d6a56"
+    },
+    "base.npz": {
+      "sha256": "7d28288eae9472884de62efdaf91c95f6488f73e9f435791f278d94404dfd109"
+    },
+    "conusplus_sm_event_spectrum.png": {
+      "sha256": "a626003b19288882f53a3c8f4af185e9448803652fe8b1d25ed4af157ba25c87"
+    },
+    "conusplus_sm_event_spectrum.svg": {
+      "sha256": "bb494a8132a2e9877b72e42869694331835421a4480a2dae6d45e7da3bf5c927"
+    },
+    "energy_641.json": {
+      "sha256": "0f0645c3cee1391ba09e0eb2b22ce624d0aa506de6748508ec08b8c1de9187c8"
+    },
+    "energy_641.npz": {
+      "sha256": "cab603dd6e183f9b3942f240e91266be347f0f2d90a407eefeabb26398e98739"
+    },
+    "energy_refined.json": {
+      "sha256": "53d5fa525f94b0c15af3af3dd50cb397f5f675aaa36b9ba318d2da0fcc3ebab3"
+    },
+    "energy_refined.npz": {
+      "sha256": "80250402dbb1d3d27db11ed0a4e22de8b7fa5e94719d635128b3c8d159b26850"
+    },
+    "fine.json": {
+      "sha256": "a6696c339082d90434b8b96d0c570263ff4c4b7043d8b8f5546e04c8e2c37f7d"
+    },
+    "fine.npz": {
+      "sha256": "84d8dbd1f4dc7e10377cc425ad99a82773eb0af019e9cee2c1c7dc658cb940b0"
+    },
+    "fine_641.json": {
+      "sha256": "ee65bfca14e9929d36297778b7f99d905b35d3e4374619840530c45335a90904"
+    },
+    "fine_641.npz": {
+      "sha256": "c767a59d6337195e0e9941257409b9d4daa5575a56ad845eeb772fae5ed0d5b9"
+    },
+    "README.md": {
+      "sha256": "b4331626a4f255969ed55022b5019ec8603f54b1230ca442718dc9c2dc4929fc"
+    },
+    "recoil_refined.json": {
+      "sha256": "a7bd24f2778e872b6dab1714a2301516dd15199595baff42f9301bd93050dc60"
+    },
+    "recoil_refined.npz": {
+      "sha256": "d3fe08afdc1dad9e19870b187effb6b79f116d30df3e95efd9e3ba235cf3b517"
+    },
+    "sm_counts_19bins.csv": {
+      "sha256": "4fbd45f1a4a8b156a17b066389f34dd462c23aa6787fbca0983faf5ba7fa171a"
+    },
+    "summary.json": {
+      "sha256": "85e7d5385f662853128c9497b08ac44c67452358de354cc97203d48c3301abef"
+    },
+    "true_recoil_and_response.csv": {
+      "sha256": "0d402401dc46eb4433a30b5ad8306cd807032a307867f6d19488ab3bf0fa918b"
+    },
+    "validation.json": {
+      "sha256": "9e687f409f9cc8721b060faa9175f2f7e474a0f2c434f61ea477e182fb5651b1"
+    }
+  },
+  "human_gate": "NOT_REVIEWED"
+}

@@ -1,0 +1,48 @@
+{
+  "status": "PASS_DECLARED_SCOPE_GRID",
+  "records": [
+    {
+      "shift_us": -0.25,
+      "full_fluence_events": 331.4853245734871,
+      "same_eta_6us_shape_events": 356.3256845874056,
+      "total_scope_difference": 24.840360013918485,
+      "representation_conversion_max_bin_error": 1.4210854715202004e-14,
+      "fixed_reference_fractions": [
+        0.999951141657252,
+        0.9191783169548307,
+        0.9193761082745151
+      ]
+    },
+    {
+      "shift_us": 0.0,
+      "full_fluence_events": 328.3189300697272,
+      "same_eta_6us_shape_events": 352.71221639340564,
+      "total_scope_difference": 24.393286323678467,
+      "representation_conversion_max_bin_error": 9.769962616701378e-15,
+      "fixed_reference_fractions": [
+        0.999951141657252,
+        0.9191783169548307,
+        0.9193761082745151
+      ]
+    },
+    {
+      "shift_us": 0.25,
+      "full_fluence_events": 322.0471906102957,
+      "same_eta_6us_shape_events": 345.9297634244084,
+      "total_scope_difference": 23.882572814112734,
+      "representation_conversion_max_bin_error": 1.4210854715202004e-14,
+      "fixed_reference_fractions": [
+        0.999951141657252,
+        0.9191783169548307,
+        0.9193761082745151
+      ]
+    }
+  ],
+  "threshold_events": 0.005,
+  "max_bin_grid_change": 0.004015979465854969,
+  "case_count": 108,
+  "scope": "Same numerical Eq29 eta with a normalized 0--6us shape; fixed zero-shift denominator",
+  "physical_full_fluence_conversion": "Multiplying reference-window fluence by its nominal fraction preserves full-source counts",
+  "selected_2211_diagnostic": "Literal Eq29+32 numerical convention; fixed-radius Response remains an external diagnostic",
+  "original_paper": "https://arxiv.org/pdf/2211.11905v2#page=12"
+}

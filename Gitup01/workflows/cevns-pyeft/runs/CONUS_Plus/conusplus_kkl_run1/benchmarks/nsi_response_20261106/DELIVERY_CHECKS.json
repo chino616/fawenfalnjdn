@@ -1,0 +1,38 @@
+{
+  "created_date": "2026-11-06",
+  "normal_entrypoint_exit_code": 0,
+  "final_publish_exit_code": 0,
+  "markdown_files_checked": 14,
+  "local_links_checked": 137,
+  "missing_paths": [],
+  "missing_anchors": [],
+  "output_provenance_hash_mismatches": [],
+  "phase_artifact_and_slow_reference_checks": 6,
+  "scientific_snapshot_files": 201,
+  "changed_snapshot_paths": [],
+  "original_source_paths_changed_since_copy": [
+    "data/responses/README.md"
+  ],
+  "NSI_rows": 6,
+  "all_1sigma_paper_endpoint_comparisons_within_0_001": true,
+  "largest_endpoint_difference": 0.0006663702662004778,
+  "spectrum_rows_checked_for_isotope_sum": 437,
+  "interval_rows": 16,
+  "Fast_Slow_max_absolute_error_events": 1.2079226507921703e-13,
+  "visual_QA": "Both final scientific PNGs inspected. Titles, legends, axes, tick labels, confidence bands and citation footers are readable and separated.",
+  "python_syntax": "PASS",
+  "readme_ownership": {
+    "root scripts": "README.md",
+    "outputs/*": "outputs/README.md",
+    "data/statistics_input.csv": "data/README.md",
+    "data/benchmark/*": "data/benchmark/README.md",
+    "data/sm_reference/*": "data/sm_reference/README.md",
+    "review/*": "review/README.md",
+    "review/phase_reports/*": "review/phase_reports/README.md"
+  },
+  "validation_scope": "New delivery files and frozen scientific input identity. Primary-source gaps and approximate statistical choices remain explicit.",
+  "original_source_update_review": {
+    "data/responses/README.md": "Added CsI time-analysis and candidate Cs133/I127 upstream-source documentation. All frozen Ge numerical resources and calculation code passed input-identity checks."
+  },
+  "status": "PASS"
+}

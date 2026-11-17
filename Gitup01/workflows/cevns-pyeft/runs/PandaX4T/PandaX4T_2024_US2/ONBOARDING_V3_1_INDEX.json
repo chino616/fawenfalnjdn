@@ -1,0 +1,11 @@
+{
+  "version": "3.1",
+  "detailed": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.v3.1.md",
+  "summary": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/experiment.physics.summary.v3.1.md",
+  "user_input": "docs/experiments/PandaX4T/datasets/PandaX4T_2024_US2/EXPERIMENT_USER_INPUT.v3.1.md",
+  "source_register": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/P00_SOURCE_REGISTER.yaml",
+  "evidence_ledger": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/P01_EVIDENCE_LEDGER.yaml",
+  "physics_contract": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/P03_PHYSICS_CONTRACT.yaml",
+  "current_branch": "workflows/cevns-pyeft/runs/PandaX4T/PandaX4T_2024_US2/NUCLEAR_BRANCH.json",
+  "human_result_acceptance": "NOT_REVIEWED"
+}

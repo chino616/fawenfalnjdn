@@ -1,0 +1,170 @@
+[
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\experiments\\CONUS_Plus\\datasets\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\experiment.physics.md",
+    "sha256": "c95432c5ec22a032733a4c839bb6621640e095bb479bf997cc2d441d6c54a114"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\experiments\\CONUS_Plus\\datasets\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\experiment.physics.summary.md",
+    "sha256": "aec09ddfaeb95f0cafbbfbaa4179e22a40ce24055eae058930e3ec038c4ed1ed"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\experiments\\CONUS_Plus\\datasets\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\EXPERIMENT_USER_INPUT.md",
+    "sha256": "eac848c416e4f49520e22934cc734f4e5229dcf2d08acda8afae52286720a419"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\experiments\\CONUS_Plus\\datasets\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\README.md",
+    "sha256": "6b2907b242ef7c9234028fc1a135aff25b816e508ef20c0d48ebda6c46aba0ca"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\experiments\\CONUS_Plus\\datasets\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\REFERENCES.bib",
+    "sha256": "62e906f58b0f8fa2ee4fb62ea95d3cd9d9565cf0171ee35ea48bf8b6fad162bd"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\docs\\experiments\\CONUS_Plus\\datasets\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\REFERENCES.md",
+    "sha256": "5b252d6f0322f457ba02caa00f41155edad08f16fa0d6a92c00a2cd02c968386"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\benchmark\\BENCHMARK_REGISTER.md",
+    "sha256": "c14430f50552ac0e74bab8e7272f8313d600c1f92c149c48cf75519fa4e33acc"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\build_onboarding_v2.py",
+    "sha256": "744f13d0295cf3e813ec956e44382794425a898aa124e0aa11eab52b798fa0b1"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\OLD_VERSION_FINGERPRINTS.json",
+    "sha256": "6c8b8a7fe65ff4303a1acb737eb91c401be57acc74da2d4d2a41376dd95464af"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\P00_SOURCE_REGISTER.yaml",
+    "sha256": "3d97e3a7b8fffb04a85190899ee776b7c12e0ac2aeb4f2f14fc0956bd8a9cc36"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\P01_EVIDENCE_LEDGER.yaml",
+    "sha256": "710ed27bc3ed9afb8b2a48532f161795c49e8ca7827ddb3adf6cadb96c5a31c3"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\P02_MISSING_AND_CONFLICTS.md",
+    "sha256": "671e91d413a7f930e89b410d97ab8fcecc388d06a46f43bd230687f22af8c18e"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\P03_PHYSICS_CONTRACT.yaml",
+    "sha256": "ced5184e85a82d3f8fd4910b97ec3210840ac2118e2f80fd596160e313739f97"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\P04_DECISION_LOG.yaml",
+    "sha256": "9d83cd84c944d6365f638c7460c3dcc5b30cda482d02d25ceec9c6fc62984cfa"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\P05_CONTRACT_STATUS.md",
+    "sha256": "3492bb389b29e8c960a50fac302536c9d6948dfb1f68b3002915341193ae83d8"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\qa\\BROWSER_CHECKS.json",
+    "sha256": "14a54d320453edbdd28705e4e3da1ec373501d53f6f2a1ccb05e6a6a3546c856"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\qa\\experiment.physics.preview.html",
+    "sha256": "7546b29d7d0b9cf5d4a1f54c169249d9e2c602babdc5c9e784d090dc67e25d1c"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\qa\\FINAL_CHECKS.json",
+    "sha256": "25c2cfd7c77cb9212ddd5b5bbfbbff1cbf778676832c8f5f5b1766eadf0217b4"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\qa\\MARKDOWN_MATH_LINK_CHECKS.json",
+    "sha256": "2a34a742f9475fe075e813b48ca1cc2dd7ffdab2327ca8adb4f783d9d912c476"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\qa\\source_formula_desktop.png",
+    "sha256": "963a44f1d77fd7b8e2bfd04a357dca8710dee7e077d1dbb671e151beabe95ada"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\qa\\source_formula_narrow.png",
+    "sha256": "3727f8f5296016d8efc5041f840c7a6ce8bedd56b03ffb0a1bb31f829807e282"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\qa\\statistics_desktop.png",
+    "sha256": "3007e0f83850a88add6a8bbf77a973b40e023fba327c6ff245c119f614a01890"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\README.md",
+    "sha256": "701e14b9565e9a4f98eb0ed31c5c4ae6b60a7659c4cd0c0f22ca42ee89d3aca4"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\sources\\1101.2663v3.pdf",
+    "sha256": "1421b06de707afa7d5bd6ec2a61b31a011bc069a6d7358e477a7a49695afa429"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\sources\\hep-ph_0110030v1.pdf",
+    "sha256": "300fe5f280ad092dffda52b7519e3020de8b8c935a2afdfd617db8c428528def"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\sources\\kopeikin_2012_inspire_metadata.json",
+    "sha256": "a0152f456ff596dd4e4124b5f8821e1ef1c7abe268c088a7dac163f498d1f345"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\sources\\kopeikin_2012_publisher.html",
+    "sha256": "a512f096496f388b81046dae0652aa2e399bc28a9c76297a346ce08ae74ac447"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\sources\\neon_2023_publisher.html",
+    "sha256": "4b0893c25b159ee2ebf1d628ce61814148f33540464e19d5c74f0e8d5b1ff65f"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\sources\\nist_codata2022_allascii.txt",
+    "sha256": "77fb90e66c40db3e6eb16630bc9c88e4c7c8beddbe5e71be406f2f26e3f67e67"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\sources\\nist_ge_isotopic_masses.html",
+    "sha256": "3dd6571ed66ea7046a444e3eb02c5dfe30ee559054a9c2a877ff4ca054a221c5"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\workflows\\cevns-pyeft\\runs\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\sources\\README.md",
+    "sha256": "f6744f52bd4d10a0942ddd3320bfb82b5549df6669f31eda963a79b0bbb6526e"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\build_inputs.py",
+    "sha256": "670e0715b127529527db8a4e516f5973c8e93e9c8b3c3eaccd77538e5b4387ad"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\fission_fractions.csv",
+    "sha256": "5781f04a6b0ef1a4ef7f3de7aeb693f5a3c87825ab853092cef135f7d02a321a"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\flux_comparison.png",
+    "sha256": "59aaf6e4d8eaa6ec6e4158d4f68023e544f39bd52f7361bfefc0aa94980cbb81"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\input_choices.json",
+    "sha256": "0cc22d0bce36d556bd814d74761094d9aeb38520d961d834c170a4cce608240d"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\kopeikin_low_energy_transcribed.csv",
+    "sha256": "5594737d150727bf40d1512cc6b8bbc50217f6282b3e4ba5a8abd9651569b856"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\mueller_coefficients.csv",
+    "sha256": "6e9d43f06fc0a99c04a8b15e5b60187c6c9b1e4c8f0172875352f23c09e8dfd4"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\natural_ge_inventory.csv",
+    "sha256": "964a9f24692f63e969ad81f7338f6773f0750e98ada1695680b3fc92021815dd"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\numerical_checks.json",
+    "sha256": "0168b935198c2163d7ea17a0384752be2e9bc4a3bd2973dc5952b8cd1072ae9a"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\reactor_flux_reference_linear_extrapolation.csv",
+    "sha256": "cc8a9e186615a2cf426c87b58804a50949dad98198361dfe2664134254a34e21"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\reactor_flux_v2.csv",
+    "sha256": "0b7d66c0e2111f6bc5ecb0870f27edd1f5a4715340a264dfd21cd38786b41b4b"
+  },
+  {
+    "path": "F:\\Work\\2026-07-15 CEvNSpyEFT-Local\\.experiment-auto-runs\\cevns-threephase-20261105-high01\\snapshot\\data\\experiments\\CONUS_Plus\\conusplus_kkl_run1\\onboarding_versions\\v2_20261106_response_flux\\README.md",
+    "sha256": "e85cef337bf2bc673114516beac46343695659842aec2d735689e964d936e5e8"
+  }
+]

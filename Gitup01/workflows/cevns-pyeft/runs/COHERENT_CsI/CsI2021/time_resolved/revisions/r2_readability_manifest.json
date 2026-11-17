@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-06",
+  "revision": "r2",
+  "archive": "r2_before_readability_review.zip",
+  "files": [
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/P00_SOURCE_REGISTER.yaml",
+      "sha256": "2f29260a755628e707d900d30ee3f08c6fde4c39a57e5b06d19ce9d11d6e2268"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/P01_EVIDENCE_LEDGER.yaml",
+      "sha256": "84659b2ce4fba37092eb3bff3a7ea55be1a04d004363879a5081bf854c678b01"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/P03_PHYSICS_CONTRACT.yaml",
+      "sha256": "562d7380c4447ff62b8d3278cb15c0a6259dea6d07d30b81ea750047eace3c03"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/DECISION_LOG.json",
+      "sha256": "ebb78f1241e263620150cf7d560e851b65c01c81e1e85b0baec7f717e30a4c78"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/export_physics_docs.py",
+      "sha256": "a762eda8c46c3ac354bfc7b43fdc4b1dddc986d3beb58855b02279247f377118"
+    },
+    {
+      "path": "workflows/cevns-pyeft/runs/COHERENT_CsI/CsI2021/time_resolved/P02_MISSING_AND_CONFLICTS.md",
+      "sha256": "2bccf78e5bb83a65c397fd41c9216caa7b018a934bcc0052af273a0056dfc968"
+    },
+    {
+      "path": "docs/experiments/COHERENT/CsI2021/time_resolved/experiment.physics.md",
+      "sha256": "bff93173b711a4098c8b33dbad373d98956c66e06b0fe088758ae17775a71583"
+    },
+    {
+      "path": "docs/experiments/COHERENT/CsI2021/time_resolved/experiment.physics.summary.md",
+      "sha256": "af1fa685527f4f13d97ab6178abaeca3ddaa5cafb23fb3e9406336e86c5a133e"
+    },
+    {
+      "path": "docs/experiments/COHERENT/CsI2021/time_resolved/EXPERIMENT_USER_INPUT.md",
+      "sha256": "bc65ef5e2da31ce7fcc389f08d05ab6e9a5271c40eb15c4eb8cea00fb7577a21"
+    }
+  ]
+}

@@ -14,4 +14,11 @@ sources:
     completeness: null
     material_role: []  # source, target, detector, observed_data, statistics, etc.
     dataset_scope: null
+    citation: null  # 标准书目：作者/机构、题名、期刊或数据发布、卷页/文章号、年份
+    doi_or_persistent_id: null
+    accessed: null
+    upstream_source_ids: []  # 二手材料所引原文也独立登记；不能用原文替换实际转录来源
+    verification_scope: null  # 明确全文/具体数字表已核、仅直接材料已核或仅书目已核
+    numerical_availability: null  # 实际数值已取得/部分取得/未取得；附数组或文件范围
+    upstream_correspondence: null  # 已证实的上游文件/版本与转换链；仅候选时明确写待核
     notes: null

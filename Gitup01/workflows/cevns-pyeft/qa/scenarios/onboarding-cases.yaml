@@ -28,6 +28,60 @@
         "statistics_not_requested_or_blocked",
         "no_official_likelihood_claim"
       ]
+    },
+    {
+      "id": "first-output-secondary-provenance",
+      "input": "首次 onboarding 草稿已生成：高能谱系数核到原文，低能32点仅来自用户笔记且无法确定上游原表。用户要求严格数据溯源。",
+      "expected_behaviors": [
+        "label_first_output_as_draft",
+        "explain_known_inputs_and_actual_verification_scope_in_chat_and_output",
+        "distinguish_available_data_from_missing_primary_provenance",
+        "ask_specific_supplementation_question_after_authorized_search",
+        "keep_primary_verification_open_and_no_final_benchmark_claim"
+      ]
+    },
+    {
+      "id": "supplement-and-regenerate",
+      "input": "用户针对上次草稿缺口补交官方数据表，并确认一个边界处理选择；其余物理选择未改变。",
+      "expected_behaviors": [
+        "register_new_material_identity_and_precise_locators",
+        "update_claims_issues_and_only_actual_user_decision",
+        "regenerate_all_affected_outputs_from_same_records",
+        "report_resolved_and_remaining_gaps",
+        "do_not_restart_unrelated_phases_or_promote_user_choice_to_primary_verification"
+      ]
+    },
+    {
+      "id": "output-id-is-not-citation",
+      "input": "详细版参数表只显示 source.coefficients 和 derived/constant，文末虽列论文却没有把每个值对应到页表。执行者准备报告终稿完成。",
+      "expected_behaviors": [
+        "reject_final_completion_for_unmapped_adopted_values",
+        "require_nearby_direct_source_locator_and_verification_scope",
+        "trace_derived_values_to_inputs_and_transformations",
+        "record_renderer_output_gap_if_current_generation_cannot_show_sources",
+        "do_not_call_schema_pass_provenance_acceptance"
+      ]
+    },
+    {
+      "id": "array-coverage-and-derived-limits",
+      "input": "同一NPZ的部分行来自官方表，另一些来自数字化图；随后插值并归一化，其中一段原始出处尚未查清。",
+      "expected_behaviors": [
+        "map_each_source_to_exact_key_slice_or_row_range",
+        "record_digitization_units_transformations_and_uncertainty_limits",
+        "propagate_unresolved_upstream_provenance_to_generated_array",
+        "retain_affected_claim_as_partial",
+        "no_need_to_repeat_a_bibliography_for_every_uniform_row"
+      ]
+    },
+    {
+      "id": "complete-first-output",
+      "input": "首次输出所用的所有数据、物理常数、数组、公式和用户配置已逐项溯源且核验满足本次主张，用户已明确过模块选择。",
+      "expected_behaviors": [
+        "explicitly_report_no_remaining_data_or_provenance_gaps_for_scope",
+        "show_verification_scope_and_proceed_to_existing_review",
+        "do_not_invent_missing_inputs_or_repeat_resolved_questions",
+        "do_not_treat_machine_pass_as_human_approval"
+      ]
     }
   ]
 }
